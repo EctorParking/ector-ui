@@ -1,0 +1,25 @@
+{
+  "scripts": {
+    "start": "start-storybook -p 9001 -c .storybook",
+    "build": "build-storybook -c .storybook -o .out"
+  },
+  "devDependencies": {
+    "@storybook/cli": "^3.3.14",
+    "@storybook/react": "^3.3.14",
+    "babel-core": "^6.26.0"
+  },
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "name": "ector-ui",
+  "version": "0.0.1",
+  "description": "Ector's react components",
+  "main": "components/index.js",
+  "repository": {
+    "type": "git",
+    "url": "ector-ui"
+  },
+  "author": "",
+  "license": "ISC"
+}
