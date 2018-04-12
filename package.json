@@ -9,8 +9,10 @@
     "babel-core": "^6.26.0"
   },
   "dependencies": {
+    "css-loader": "^0.28.11",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "style-loader": "^0.20.3"
   },
   "name": "ector-ui",
   "version": "0.0.1",

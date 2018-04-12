@@ -13,10 +13,14 @@ class Button extends Component {
   props :{
     fetching ?:boolean,
     children :string,
+    onClick :() => void,
   };
 
   render() {
-    <div>{ this.props.children }</div>
+    return (<a
+      className={s.root}
+      onClick={this.props.onClick}
+    >{ this.props.children }</a>);
   }
 }
 
