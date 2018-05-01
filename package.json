@@ -1,15 +1,29 @@
 {
   "scripts": {
-    "start": "start-storybook -p 9001 -c .storybook",
+    "start": "start-storybook -p 9001 -c .storybook watch-css",
     "build": "build-storybook -c .storybook -o .out"
   },
   "devDependencies": {
     "@storybook/cli": "^3.3.14",
-    "@storybook/react": "^3.3.14",
-    "babel-core": "^6.26.0"
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.3",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-es2016": "^6.24.1",
+    "css-hot-loader": "^1.3.9",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "extract-text-webpack-plugin": "^3.0.2"
   },
   "dependencies": {
+    "@storybook/addon-actions": "^3.4.3",
+    "@storybook/react": "^3.3.14",
     "css-loader": "^0.28.11",
+    "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "style-loader": "^0.20.3"
@@ -23,6 +37,6 @@
     "type": "git",
     "url": "ector-ui"
   },
-  "author": "",
+  "author": "Ector Parking",
   "license": "ISC"
 }

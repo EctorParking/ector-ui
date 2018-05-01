@@ -1,0 +1,25 @@
+.title_button_normal {
+    border-style: solid;
+    color: green;
+}
+.title_button_active {
+    border-style: solid;
+    color: red;
+}
+.title_button_checked {
+    border-style: solid;
+    color: blue;
+}
+.title_button .pin {
+    height: 16px;
+    width: 16px;
+}
+.title_button .pin:after {
+    height: 16px;
+    width: 16px;
+}
+.title_button .pin:before {
+    height: 16px;
+    width: 16px;
+}
+
