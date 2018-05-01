@@ -9,7 +9,7 @@ storiesOf('TitleButton', module)
     .add('done', () => (
         <TitleButton
             Active={false}
-            ButtonNumber="1"
+            ButtonNumber={1}
             Done
             onClick={action('clicked')}
         >
@@ -20,7 +20,7 @@ storiesOf('TitleButton', module)
     .add('active', () => (
         <TitleButton
             Active
-            ButtonNumber="2"
+            ButtonNumber={2}
             Done={false}
             onClick={action('clicked')}
         >
@@ -30,8 +30,8 @@ storiesOf('TitleButton', module)
 
     .add('normal', () => (
         <TitleButton
-            Active
-            ButtonNumber="3"
+            Active={false}
+            ButtonNumber={3}
             Done={false}
             onClick={action('clicked')}
         >
@@ -42,7 +42,7 @@ storiesOf('TitleButton', module)
     .add('without children', () => (
         <TitleButton
             Active
-            ButtonNumber="3"
+            ButtonNumber={3}
             Done={false}
             onClick={action('clicked')}
         />

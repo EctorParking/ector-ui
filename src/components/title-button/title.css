@@ -1,6 +1,9 @@
+@import "../../style/variable.css";
+
+
 .title_button_normal {
     border-style: solid;
-    color: green;
+    color: var(--color);
 }
 .title_button_active {
     border-style: solid;

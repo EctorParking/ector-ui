@@ -11,7 +11,7 @@ const TitleButton = ({
 
     const className = Active ? s.title_button_active : s.title_button_normal;
 
-    // console.log('className :', className);
+    console.log('className :', className);
 
     return (
         <button
@@ -24,7 +24,7 @@ const TitleButton = ({
 };
 
 TitleButton.defaultProps = {
-    ButtonNumber: '7',
+    ButtonNumber: 7,
     children: 'Infos Voyageur',
     Done: false,
 };

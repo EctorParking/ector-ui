@@ -1,4 +1,8 @@
 {
     // Helper for Ector Parking teams in VSCode
     "eslint.autoFixOnSave" : true,
+
+    "files.associations": {
+        "*.css": "postcss"
+    }
 }

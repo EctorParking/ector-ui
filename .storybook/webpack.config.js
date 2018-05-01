@@ -18,6 +18,9 @@ module.exports = (storybookBaseConfig, configType) => {
             modules: true,
             localIdentName: '[name]__[local]___[hash:base64:5]',
           },
+        },
+        {
+          loader: 'postcss-loader'
         }
       ],
       include: path.resolve(__dirname, "../")
