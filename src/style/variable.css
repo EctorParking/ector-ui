@@ -1,3 +1,9 @@
+@import '../../node_modules/normalize.css/normalize.css';
 :root {
     --color: yellow;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
 }

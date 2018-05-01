@@ -17,25 +17,29 @@
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
-    "extract-text-webpack-plugin": "^3.0.2"
+    "extract-text-webpack-plugin": "^3.0.2",
+    "postcss-normalize": "^4.0.0"
   },
   "dependencies": {
     "@storybook/addon-actions": "^3.4.3",
     "@storybook/react": "^3.3.14",
     "css-loader": "^0.28.11",
+    "normalize.css": "^8.0.0",
     "postcss": "^6.0.22",
     "postcss-cssnext": "^3.1.0",
     "postcss-import": "^11.1.0",
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "style-loader": "^0.20.3"
+    "style-loader": "^0.20.3",
+    "stylelint": "^9.2.0"
   },
   "name": "ector-ui",
   "version": "0.0.1",
   "scope": "ectorparking",
   "description": "Ector's react components",
   "main": "components/index.js",
+  "browserslist": "last 2 versions",
   "repository": {
     "type": "git",
     "url": "ector-ui"

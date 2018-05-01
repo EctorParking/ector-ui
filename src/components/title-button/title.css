@@ -7,7 +7,6 @@
 }
 .title_button_active {
     border-style: solid;
-    color: red;
 }
 .title_button_checked {
     border-style: solid;
@@ -24,5 +23,6 @@
 .title_button .pin:before {
     height: 16px;
     width: 16px;
+    width: 24px;
 }
 
