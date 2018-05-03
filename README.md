@@ -1,6 +1,6 @@
 # Ector-Ui
 
-Blablabla
+Ector parking storybook components
 
 ## Installation
 - yarn

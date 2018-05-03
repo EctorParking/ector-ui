@@ -30,3 +30,8 @@ button {
         cursor: default;
     }
 }
+
+textarea:focus, input:focus{
+    outline: none;
+}
+

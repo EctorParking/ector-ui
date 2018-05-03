@@ -25,9 +25,10 @@ storiesOf('Input.Label', module)
         </InputLabel>
     ))
 
-    .add('with input id', () => (
+    .add('with input id and placeholder', () => (
         <InputLabel
             inputId="StartInput"
+            inputPlaceHolder="AB 000"
         >
             Aller
         </InputLabel>

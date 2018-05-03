@@ -5,7 +5,9 @@ import s from './input-label.css';
 
 import Input from '../input';
 
-const InputLabel = ({ children, inputId, isImportant }) => {
+const InputLabel = ({
+    children, inputId, isImportant, placeHolder,
+}) => {
     const labelClassName = isImportant ? s.isimportant : '';
 
     return (
@@ -16,7 +18,11 @@ const InputLabel = ({ children, inputId, isImportant }) => {
             { children }
 
             {/* TODO : put the right input component here */}
-            <Input inputType="text" inputId={inputId} />
+            <Input
+                inputType="text"
+                inputId={inputId}
+                inputPlaceHolder={placeHolder}
+            />
 
         </label>
     );
@@ -25,12 +31,14 @@ const InputLabel = ({ children, inputId, isImportant }) => {
 InputLabel.defaultProps = {
     inputId: 'InputStart',
     isImportant: false,
+    placeHolder: '',
 };
 
 InputLabel.propTypes = {
     children: PropTypes.node.isRequired,
     inputId: PropTypes.string,
     isImportant: PropTypes.bool,
+    placeHolder: PropTypes.string,
 };
 
 
