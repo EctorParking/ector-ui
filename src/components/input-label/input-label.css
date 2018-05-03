@@ -7,6 +7,6 @@ input, label {
 }
 
 .isimportant {
-    font-weight: var(--fontWeightRegular);
+    font-weight: var(--fontWeightBold);
 }
 
