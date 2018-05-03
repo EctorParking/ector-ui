@@ -1,0 +1,43 @@
+
+
+@import '../../style/variable.css';
+
+.card {
+    background-color: var(--lightGrey);
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    padding: 0.3rem;
+    min-width: 15rem;
+    min-height: 10rem;
+}
+
+.card_selected {
+    background-color: var(--yellow);
+}
+
+.card_clickable {
+
+    &:hover {
+        cursor: pointer;
+        background-color: var(--yellow);
+
+        &:active {
+            cursor: default;
+        }
+    }
+}
+
+.card_content {
+    flex: 1;
+    background-color: white;
+    border-radius: 0.3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.card_footer {
+    background-color: transparent;
+    height: 3rem;
+    position: relative;
+}
