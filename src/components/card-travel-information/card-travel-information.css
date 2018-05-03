@@ -1,0 +1,9 @@
+
+
+@import '../../style/variable.css';
+
+.card_travel_information {
+    border: 2px solid red;
+    border-radius: 0.5rem;
+}
+
