@@ -1,0 +1,16 @@
+@import './font.css';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: 'gt_walsheim', 'Arial', 'Helvetica', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+

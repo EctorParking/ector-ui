@@ -1,0 +1,33 @@
+@import '../../style/variable.css';
+
+
+.title_button {
+    border-style: solid;
+
+    &_normal {
+        color: var(--gold);
+
+    }
+    &_active {
+        color: red;
+    }
+
+    &_checked {
+        color: blue;
+    }
+
+    .pin {
+        height: 16px;
+        width: 16px;
+
+        &:after {
+            height: 16px;
+            width: 16px;
+        }
+
+        &:before {
+            height: 16px;
+            width: 16px;
+        }
+    }
+}
