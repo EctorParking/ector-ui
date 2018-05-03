@@ -1,28 +1,33 @@
-@import "../../style/variable.css";
+@import '../../style/variable.css';
 
 
-.title_button_normal {
+.title_button {
     border-style: solid;
-    color: var(--color);
-}
-.title_button_active {
-    border-style: solid;
-}
-.title_button_checked {
-    border-style: solid;
-    color: blue;
-}
-.title_button .pin {
-    height: 16px;
-    width: 16px;
-}
-.title_button .pin:after {
-    height: 16px;
-    width: 16px;
-}
-.title_button .pin:before {
-    height: 16px;
-    width: 16px;
-    width: 24px;
-}
 
+    &_normal {
+        color: var(--gold);
+
+    }
+    &_active {
+        color: red;
+    }
+
+    &_checked {
+        color: blue;
+    }
+
+    .pin {
+        height: 16px;
+        width: 16px;
+
+        &:after {
+            height: 16px;
+            width: 16px;
+        }
+
+        &:before {
+            height: 16px;
+            width: 16px;
+        }
+    }
+}

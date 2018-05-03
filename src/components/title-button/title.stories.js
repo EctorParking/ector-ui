@@ -2,45 +2,45 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
-import TitleButton from './';
+import TitleTab from './';
 
-storiesOf('TitleButton', module)
+storiesOf('TitleTab', module)
 
     .add('done', () => (
-        <TitleButton
+        <TitleTab
             Active={false}
             ButtonNumber={1}
             Done
             onClick={action('clicked')}
         >
             Options
-        </TitleButton>
+        </TitleTab>
     ))
 
     .add('active', () => (
-        <TitleButton
+        <TitleTab
             Active
             ButtonNumber={2}
             Done={false}
             onClick={action('clicked')}
         >
             Infos Voyageurs
-        </TitleButton>
+        </TitleTab>
     ))
 
     .add('normal', () => (
-        <TitleButton
+        <TitleTab
             Active={false}
             ButtonNumber={3}
             Done={false}
             onClick={action('clicked')}
         >
             Paiement
-        </TitleButton>
+        </TitleTab>
     ))
 
     .add('without children', () => (
-        <TitleButton
+        <TitleTab
             Active
             ButtonNumber={3}
             Done={false}

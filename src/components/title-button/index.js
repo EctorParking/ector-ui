@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import s from './title.css';
 
-const TitleButton = ({
+const TitleTab = ({
     Active, ButtonNumber, children, Done, onClick,
 }) => {
     // console.log('s.inactive :', s.inactive);
@@ -23,13 +23,13 @@ const TitleButton = ({
     );
 };
 
-TitleButton.defaultProps = {
+TitleTab.defaultProps = {
     ButtonNumber: 7,
     children: 'Infos Voyageur',
     Done: false,
 };
 
-TitleButton.propTypes = {
+TitleTab.propTypes = {
     Active: PropTypes.bool.isRequired,
     ButtonNumber: PropTypes.number,
     children: PropTypes.node,
@@ -38,4 +38,4 @@ TitleButton.propTypes = {
 };
 
 
-export default TitleButton;
+export default TitleTab;

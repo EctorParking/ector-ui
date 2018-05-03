@@ -5,7 +5,7 @@ module.exports = {
         'color-named': 'always-where-possible',
         'color-no-invalid-hex': true,
 
-        'font-family-name-quotes': 'always-where-recommended',
+        'font-family-name-quotes': 'always-unless-keyword',
         'font-family-no-duplicate-names': true,
 
         'font-weight-notation': 'named-where-possible',

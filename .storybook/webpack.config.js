@@ -13,6 +13,7 @@ module.exports = (storybookBaseConfig, configType) => {
         {
           loader: require.resolve('css-loader'),
           options: {
+            url: false,
             importLoaders: 1,
             modules: true,
             localIdentName: '[name]__[local]___[hash:base64:5]',
@@ -34,6 +35,9 @@ module.exports = (storybookBaseConfig, configType) => {
       },
     },
   );
+
+  // Fix Chrome security issues
+  storybookBaseConfig.output.publicPath = 'http://localhost:9001/';
 
   // Return the altered config
   return storybookBaseConfig;

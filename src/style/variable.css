@@ -1,9 +1,11 @@
 @import '../../node_modules/normalize.css/normalize.css';
-:root {
-    --color: yellow;
-}
+@import './index.css';
 
-* {
-    box-sizing: border-box;
-    margin: 0;
+:root {
+    --gold: #ffcd02;
+    --navy: #163457;
+    --darkgrey: #4b4b50;
+    --turquoise: #32a0c5;
+    --lavender: #9ca3ff;
+    --seagreen: #59c871;
 }

@@ -6,6 +6,7 @@ module.exports = {
             ]
         }),
         require("postcss-cssnext"),
+        require("postcss-url"),
         require("postcss-reporter")({ clearReportedMessages: true })
     ],
 };
