@@ -7,10 +7,16 @@
 
 body {
     font-family: 'gt_walsheim', 'Arial', 'Helvetica', sans-serif;
+    font-size: var(--fontSizeRegular);
 }
 
 a {
     text-decoration: none;
     color: inherit;
+}
+
+/* Chrome outline fix */
+button:focus {
+    outline: 0;
 }
 

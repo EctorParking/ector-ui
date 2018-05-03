@@ -1,7 +1,7 @@
 import Button from './button';
-import TitleButton from './title-button';
+import TitleStep from './title-step';
 
 export default {
-  Button,
-  TitleButton,
+    Button,
+    TitleStep,
 };
