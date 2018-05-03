@@ -6,7 +6,11 @@ import s from './title-step.css';
 const TitleStep = ({
     Active, children, Done, onClick,
 }) => {
-    const className = `${s.step_button} ${Done ? s.done : ''} ${Active ? s.active : ''}`;
+    const className = `
+        ${s.step_button} 
+        ${Done ? s.done : ''} 
+        ${Active ? s.active : ''}
+    `;
 
     return (
         <button

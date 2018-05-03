@@ -26,9 +26,11 @@ const Card = ({
 }) => {
     const isClickable = typeof onClick === 'function' && !isSelected;
 
-    const cardClassName = `${s.card} 
+    const cardClassName = `
+        ${s.card} 
         ${isSelected ? s.card_selected : ''} 
-        ${isClickable ? s.card_clickable : ''}`;
+        ${isClickable ? s.card_clickable : ''}
+    `;
 
     return (
 
