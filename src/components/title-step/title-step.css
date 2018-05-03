@@ -1,0 +1,69 @@
+/**
+ * This element has to be wrapped in a .steps div to increment the counter
+ */
+
+@import '../../style/variable.css';
+
+
+.steps {
+    display: flex;
+    flex-direction: row;
+    counter-reset: steps;
+}
+
+button.active:before,
+button.active + button:before,
+button.active + button + button:before {
+    content: counter(steps);
+}
+
+button {
+    align-items: center;
+    color: var(--aquaHazeGrey);
+    display: flex;
+    font-size: 1.1rem;
+    margin-right: 3rem;
+    position: relative;
+    background-color: transparent;
+    border: 0;
+    counter-increment: steps;
+    cursor: pointer;
+    font-weight: 300;
+
+    &.active {
+        color: var(--yellow);
+        cursor: default;
+        &:before {
+            background-color: white;
+        }
+        &:after {
+            border-right: 2px solid white;
+            content: '';
+            height: 35px;
+            left: 19px;
+            position: absolute;
+            top: 26px;
+        }
+    }
+
+    &.done {
+        &:before {
+            content: '✓';
+        }
+    }
+
+    &:before {
+        align-items: center;
+        background-color: #9eb3c2;
+        border-radius: 50%;
+        color: var(--deepBlue);
+        content: '7';
+        display: flex;
+        font-size: 13px;
+        font-weight: bold;
+        height: 25px;
+        justify-content: center;
+        margin-right: 10px;
+        width: 25px;
+    }
+}
