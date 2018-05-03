@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import s from './input-label.css';
 
+import Input from '../input';
+
 const InputLabel = ({ children, inputId, isImportant }) => {
     const labelClassName = isImportant ? s.isimportant : '';
 
@@ -14,7 +16,7 @@ const InputLabel = ({ children, inputId, isImportant }) => {
             { children }
 
             {/* TODO : put the right input component here */}
-            <input type="text" id={inputId} />
+            <Input inputType="text" inputId={inputId} />
 
         </label>
     );

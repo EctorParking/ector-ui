@@ -1,0 +1,11 @@
+
+
+@import '../../style/variable.css';
+
+.input {
+    display: block;
+    height: 2.5rem;
+    padding: 0.5rem;
+    margin-top: 0.25rem;
+}
+
