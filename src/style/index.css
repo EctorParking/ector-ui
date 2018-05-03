@@ -21,3 +21,12 @@ button:focus {
     outline: 0;
 }
 
+button {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+
+    &:active {
+        cursor: default;
+    }
+}

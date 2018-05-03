@@ -11,13 +11,13 @@
     counter-reset: steps;
 }
 
-button.active:before,
-button.active + button:before,
-button.active + button + button:before {
+.step_button.active:before,
+.step_button.active + .step_button:before,
+.step_button.active + .step_button + .step_button:before {
     content: counter(steps);
 }
 
-button {
+.step_button {
     align-items: center;
     color: var(--aquaHazeGrey);
     display: flex;
@@ -29,6 +29,8 @@ button {
     counter-increment: steps;
     cursor: pointer;
     font-weight: 300;
+    transition: all var(--animationDuration) ease-in-out;
+    opacity: 1;
 
     &.active {
         color: var(--yellow);
@@ -65,5 +67,21 @@ button {
         justify-content: center;
         margin-right: 10px;
         width: 25px;
+    }
+
+    &:before, &:after {
+        transition: all var(--animationDuration) ease-in-out;
+    }
+
+    &:hover {
+        color: white;
+        &:before, &:after {
+            background-color: white;
+        }
+
+        &:active {
+            transition: all 0s ease-in-out;
+            opacity: 0.6;
+        }
     }
 }
