@@ -7,10 +7,31 @@
 
 body {
     font-family: 'gt_walsheim', 'Arial', 'Helvetica', sans-serif;
+    font-size: var(--fontSizeRegular);
+    color: var(--deepBlue);
 }
 
 a {
     text-decoration: none;
     color: inherit;
+}
+
+/* Chrome outline fix */
+button:focus {
+    outline: 0;
+}
+
+button {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+
+    &:active {
+        cursor: default;
+    }
+}
+
+textarea:focus, input:focus{
+    outline: none;
 }
 

@@ -1,7 +1,12 @@
-import Button from './button';
-import TitleButton from './title-button';
+
+import CardTitle from './card-title';
+import TitleStep from './title-step';
+import Input from './input';
+import InputLabel from './input-label';
 
 export default {
-  Button,
-  TitleButton,
+    CardTitle,
+    TitleStep,
+    Input,
+    InputLabel,
 };

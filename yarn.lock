@@ -204,6 +204,21 @@
     react-inspector "^2.2.2"
     uuid "^3.2.1"
 
+"@storybook/addon-backgrounds@^3.4.3":
+  version "3.4.3"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-backgrounds/-/addon-backgrounds-3.4.3.tgz#fb4cc36eb0462298109b483943345dda5515ad35"
+  dependencies:
+    babel-runtime "^6.26.0"
+    global "^4.3.2"
+    prop-types "^15.6.1"
+
+"@storybook/addon-centered@^3.4.3":
+  version "3.4.3"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-centered/-/addon-centered-3.4.3.tgz#5b9f593acaf24cf8eb25592aa53b97d4a42786ef"
+  dependencies:
+    babel-runtime "^6.26.0"
+    global "^4.3.2"
+
 "@storybook/addon-links@3.4.3":
   version "3.4.3"
   resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-3.4.3.tgz#93bb28e10830b1b230be8b1710265d5d06453bde"
@@ -5129,10 +5144,6 @@ mime@^1.4.1, mime@^1.5.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/mime/-/mime-1.6.0.tgz#32cd9e5c64553bd58d19a568af452acff04981b1"
 
-mime@^2.0.3:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/mime/-/mime-2.3.1.tgz#b1621c54d63b97c47d3cfe7f7215f7d64517c369"
-
 mimic-fn@^1.0.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/mimic-fn/-/mimic-fn-1.2.0.tgz#820c86a39334640e99516928bd03fca88057d022"
@@ -7226,7 +7237,7 @@ schema-utils@^0.3.0:
   dependencies:
     ajv "^5.0.0"
 
-schema-utils@^0.4.0, schema-utils@^0.4.3, schema-utils@^0.4.5:
+schema-utils@^0.4.0, schema-utils@^0.4.5:
   version "0.4.5"
   resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-0.4.5.tgz#21836f0608aac17b78f9e3e24daff14a5ca13a3e"
   dependencies:
@@ -8131,14 +8142,6 @@ url-loader@^0.6.2:
     loader-utils "^1.0.2"
     mime "^1.4.1"
     schema-utils "^0.3.0"
-
-url-loader@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/url-loader/-/url-loader-1.0.1.tgz#61bc53f1f184d7343da2728a1289ef8722ea45ee"
-  dependencies:
-    loader-utils "^1.1.0"
-    mime "^2.0.3"
-    schema-utils "^0.4.3"
 
 url-parse-lax@^1.0.0:
   version "1.0.0"

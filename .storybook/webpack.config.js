@@ -36,9 +36,6 @@ module.exports = (storybookBaseConfig, configType) => {
     },
   );
 
-  // Fix Chrome security issues
-  storybookBaseConfig.output.publicPath = 'http://localhost:9001/';
-
   // Return the altered config
   return storybookBaseConfig;
 };
