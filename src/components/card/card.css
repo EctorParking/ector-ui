@@ -27,13 +27,13 @@
         }
     }
 }
-
 .card_content {
     flex: 1;
     background-color: white;
     border-radius: 0.3rem;
     display: flex;
     flex-direction: column;
+    padding: 1rem;
 }
 
 .card_footer {

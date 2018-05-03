@@ -1,27 +1,29 @@
 import React from 'react';
 
+import Card from '../card';
+import CardTitle from '../card-title';
+import InputLabel from '../input-label';
 
 import s from './card-travel-information.css';
 
-import InputLabel from '../input-label';
-import CardTitle from '../card-title';
-
-
 const CardTravelInformation = () => (
-    <div className={s.card_travel_information}>
+    <Card>
         <CardTitle>
-            Not finished : create Card component to do it clean
+            Numéro de Vol / Train
         </CardTitle>
 
         <div className={s.inputs_row}>
-            <InputLabel>
+            <InputLabel placeHolder="AB 000">
                 Aller
             </InputLabel>
-            <InputLabel isImportant>
+            <InputLabel
+                isImportant
+                placeHolder="AB 000"
+            >
                 Retour*
             </InputLabel>
         </div>
-    </div>
+    </Card>
 );
 
 

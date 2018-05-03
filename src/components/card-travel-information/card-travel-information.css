@@ -2,8 +2,20 @@
 
 @import '../../style/variable.css';
 
-.card_travel_information {
-    border: 2px solid red;
-    border-radius: 0.5rem;
+.inputs_row {
+    display: flex;
+    margin-top: auto;
+
+    & > label {
+        margin: 1rem 0.5rem;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
 }
 
