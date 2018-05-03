@@ -3,6 +3,7 @@ import React from 'react';
 import Card from '../card';
 import CardTitle from '../card-title';
 import InputLabel from '../input-label';
+import InputCheckbox from '../input-checkbox';
 
 import s from './card-travel-information.css';
 
@@ -23,6 +24,10 @@ const CardTravelInformation = () => (
                 Retour*
             </InputLabel>
         </div>
+
+        <InputCheckbox>
+            Voyage professionnel
+        </InputCheckbox>
     </Card>
 );
 
