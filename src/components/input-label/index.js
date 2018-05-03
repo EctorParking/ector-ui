@@ -17,7 +17,6 @@ const InputLabel = ({
         >
             { children }
 
-            {/* TODO : put the right input component here */}
             <Input
                 inputType="text"
                 inputId={inputId}
