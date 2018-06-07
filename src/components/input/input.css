@@ -3,8 +3,6 @@
 @import '../../style/variable.css';
 
 .input {
-    color: var(--deepBlue);
-    border-radius: var(--inputBorderRadius);
     display: block;
     height: 2.5rem;
     padding: 0.5rem;
@@ -14,3 +12,4 @@
         opacity: 0.3;
     }
 }
+

@@ -28,6 +28,7 @@
 
     &:hover {
         &:before {
+            background: var(--darkYellow);
             transform: translate3d(0, 4px, 0) scaleY(0.6);
             transition-delay: 0s;
             transition-timing-function: ease-out;
@@ -43,3 +44,4 @@
         }
     }
 }
+
