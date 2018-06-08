@@ -9,7 +9,7 @@ const onClick = () => {
     console.log('Clicked');
 };
 
-storiesOf('Card', module)
+storiesOf('ActionLink', module)
 
     .addDecorator(backgrounds([
         { name: 'header', value: 'white', default: true },

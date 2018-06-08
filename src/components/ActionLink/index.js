@@ -21,12 +21,12 @@ const ActionLink = ({ icon, label, onClick }) => {
 };
 
 ActionLink.defaultProps = {
-    icon: null,
+    icon: '',
     onClick: () => {},
 };
 
 ActionLink.propTypes = {
-    icon: PropTypes.oneOf(PropTypes.string, PropTypes.null),
+    icon: PropTypes.string,
     label: PropTypes.string.isRequired,
     onClick: PropTypes.func,
 };
