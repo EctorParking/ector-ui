@@ -22,14 +22,15 @@ CardFooter.propTypes = {
 
 
 const Card = ({
-    children, FooterChildren, isSelected, onClick,
+    children, FooterChildren, isSelected, onClick, className, contentClassName,
 }) => {
     const isClickable = typeof onClick === 'function' && !isSelected;
 
     const cardClassName = `
-        ${s.card} 
-        ${isSelected ? s.card_selected : ''} 
+        ${s.card}
+        ${isSelected ? s.card_selected : ''}
         ${isClickable ? s.card_clickable : ''}
+        ${className}
     `;
 
     return (
@@ -38,9 +39,9 @@ const Card = ({
         <div
             className={cardClassName}
             onClick={onClick}
-        > 
-        
-            <div className={s.card_content}>
+        >
+
+            <div className={`${s.card_content} ${contentClassName}`}>
                 { children }
             </div>
             { FooterChildren &&
@@ -57,13 +58,20 @@ Card.defaultProps = {
     FooterChildren: null,
     isSelected: false,
     onClick: null,
+    className: '',
+    contentClassName: '',
 };
 
 Card.propTypes = {
-    children: PropTypes.string.isRequired,
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node,
+    ]).isRequired,
     FooterChildren: PropTypes.node,
     onClick: PropTypes.func,
     isSelected: PropTypes.bool,
+    className: PropTypes.string,
+    contentClassName: PropTypes.string,
 };
 
 
