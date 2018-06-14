@@ -1,56 +1,5 @@
 @import '../../style/variable.css';
 
-.name {
-    color: var(--blue);
-    display: flex;
-    font-size: var(--fontSizeSubtitle);
-    justify-content: space-between;
-    margin-top: -0.75em;
-}
-.footer {
-    align-items: flex-end;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 32px;
-    padding: 0 2rem;
-}
-.carImage {
-    margin-top: -1.3em;
-    width: 50px;
-}
-.checkIcon {
-    color: var(--white);
-    font-size: var(--fontSizeSubtitle);
-}
-.editIcon {
-    margin-right: -0.75em;
-}
-.editButton {
-    background: none;
-    border: 0;
-    margin: 0;
-    padding: 0;
-}
-.text {
-
-}
 .pendingDeletion {
     background-color: var(--lightGrey);
-}
-.deletionAlert {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-}
-.deletionAlert p {
-    margin: var(--marginSmall) 0;
-}
-.deletionButtons {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-.column {
-    display: flex;
-    flex-direction: column;
 }
