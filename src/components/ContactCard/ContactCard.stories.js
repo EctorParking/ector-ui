@@ -7,11 +7,20 @@ import ContactCard from './';
 
 const texts = {
     modify: 'Changer',
+    delete: 'Supprimer',
     save: 'Enregistrer',
     confirmDeletionTitle: 'Confirmation',
     confirmDeletionSentence: 'Êtes-vous sûr(e) de vouloir supprimer ce contact ?',
     cancel: 'Annuler',
     confirm: 'Confirmer',
+};
+
+const contact = {
+    firstName: 'Jean',
+    lastName: 'Dupont',
+    email: 'jeandupont@gmail.com',
+    phoneNumber: '+33 6 12 15 32 54',
+    gender: 'male',
 };
 
 storiesOf('CarCard', module)
@@ -23,22 +32,14 @@ storiesOf('CarCard', module)
 
     .add('basic', () => (
         <ContactCard
-            firstName="Jean"
-            lastName="Dupont"
-            email="jeandupont@gmail.com"
-            phoneNumber="+33 6 12 15 32 54"
-            gender="male"
+            contact={contact}
             texts={texts}
         />
     ))
 
     .add('selected', () => (
         <ContactCard
-            firstName="Jean"
-            lastName="Dupont"
-            email="jeandupont@gmail.com"
-            phoneNumber="+33 6 12 15 32 54"
-            gender="male"
+            contact={contact}
             texts={texts}
             selected
         />
@@ -46,11 +47,7 @@ storiesOf('CarCard', module)
 
     .add('pendingModification', () => (
         <ContactCard
-            firstName="Jean"
-            lastName="Dupont"
-            email="jeandupont@gmail.com"
-            phoneNumber="+33 6 12 15 32 54"
-            gender="male"
+            contact={contact}
             modifiable
             pendingModification
             texts={texts}
@@ -59,11 +56,7 @@ storiesOf('CarCard', module)
 
     .add('deletable', () => (
         <ContactCard
-            firstName="Jean"
-            lastName="Dupont"
-            email="jeandupont@gmail.com"
-            phoneNumber="+33 6 12 15 32 54"
-            gender="male"
+            contact={contact}
             deletable
             modifiable
             pendingModification
@@ -73,11 +66,7 @@ storiesOf('CarCard', module)
 
     .add('pendingDeletion', () => (
         <ContactCard
-            firstName="Jean"
-            lastName="Dupont"
-            email="jeandupont@gmail.com"
-            phoneNumber="+33 6 12 15 32 54"
-            gender="male"
+            contact={contact}
             modifiable
             pendingDeletion
             texts={texts}
