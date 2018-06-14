@@ -1,0 +1,13 @@
+.deletionAlert {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.deletionAlert p {
+    margin: var(--marginSmall) 0;
+}
+.deletionButtons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}

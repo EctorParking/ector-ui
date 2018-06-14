@@ -1,54 +1,69 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Card from '../card';
-import LinkUnderlined from '../link-underlined';
-import Input from '../input';
 import s from './CarCard.css';
-
-/* eslint-disable */
-
-const DeletionAlert = ({ texts }) => (
-    <div className={s.deletionAlert}>
-        <strong>{texts.confirmDeletionTitle}</strong>
-        <p>{texts.confirmDeletionSentence}</p>
-        <div className={s.deletionButtons}>
-            <LinkUnderlined>
-                <strong>{texts.cancel}</strong>
-            </LinkUnderlined>
-            <LinkUnderlined>
-                <strong>{texts.confirm}</strong>
-            </LinkUnderlined>
-        </div>
-    </div>
-);
+import CarType from './CarType';
+import CarCardTextsType from './CarCardTextsType';
+import CarCardDeletionAlert from './CarCardDeletionAlert';
+import CarCardHeader from './CarCardHeader';
+import CarCardFooter from './CarCardFooter';
+import CarCardContentRead from './CarCardContentRead';
+import CarCardContentEdit from './CarCardContentEdit';
 
 const CarCard = ({
-    carName, numberPlate, modifiable, texts, selected, pendingModification, pendingDeletion, deletable,
+    car,
+    modifiable,
+    texts,
+    selected,
+    pendingModification,
+    pendingDeletion,
+    deletable,
+    onClick,
+    onDelete,
 }) => {
-    const footer = !pendingDeletion ? (
-        <div className={s.footer}>
-            <img
-                src="./images/voiture-01-trois-quart-grise.png"
-                className={s.carImage}
+    let mode = 'read';
+
+    if (pendingDeletion) {
+        mode = 'delete';
+    }
+    if (pendingModification) {
+        mode = 'edit';
+    }
+
+    if (selected) {
+        mode += '-selected';
+    }
+
+    const footer = mode.indexOf('delete') === 0 ? null : (
+        <CarCardFooter
+            texts={texts}
+            mode={mode}
+        />
+    );
+
+    console.log(footer);
+
+    let header = null;
+    let content = mode.indexOf('read') === 0 ? <CarCardContentRead car={car} /> : <CarCardContentEdit car={car} />;
+
+    if (mode.indexOf('delete') === 0) {
+        content = (
+            <CarCardDeletionAlert
+                texts={texts}
+                onDelete={onDelete}
             />
-            {
-                !selected && !pendingModification &&
-                <LinkUnderlined>
-                    <strong>{texts.modify}</strong>
-                </LinkUnderlined>
-            }
-            {
-                selected && !pendingModification &&
-                <i className={`icon-checkmark ${s.checkIcon}`} />
-            }
-            {
-                pendingModification &&
-                <LinkUnderlined>
-                    <strong>{texts.save}</strong>
-                </LinkUnderlined>
-            }
-        </div>
-    ) : null;
+        );
+    } else {
+        header = (
+            <CarCardHeader
+                texts={texts}
+                car={car}
+                modifiable={modifiable}
+                deletable={deletable}
+                pendingModification={pendingModification}
+            />
+        );
+    }
 
     return (
         <Card
@@ -56,54 +71,22 @@ const CarCard = ({
             isSelected={selected}
             contentClassName={pendingDeletion ? s.pendingDeletion : ''}
         >
-            {
-                !pendingDeletion && (
-                    <span className={s.carName}>
-                        {carName}
-
-                        {
-                            modifiable && !pendingModification &&
-                            <button className={s.editButton}>
-                                <i className={`icon-edit ${s.editIcon}`} />
-                            </button>
-                        }
-                        {
-                            modifiable && deletable && pendingModification &&
-                            <button className={s.editButton}>
-                                <i className={`icon-remove ${s.editIcon}`} />
-                            </button>
-                        }
-                    </span>
-                )
-            }
-            {
-                !pendingModification && !pendingDeletion &&
-                <span className={s.numberPlate}>{numberPlate}</span>
-            }
-            {
-                pendingModification &&
-                <Input inputType="text" defaultValue={numberPlate} />
-            }
-            {
-                pendingModification &&
-                <Input inputType="text" />
-            }
-            {
-                pendingDeletion && <DeletionAlert texts={texts} />
-            }
+            {header}
+            {content}
         </Card>
     );
 };
 
 CarCard.propTypes = {
-    carName: PropTypes.string.isRequired,
-    numberPlate: PropTypes.string.isRequired,
+    car: CarType.isRequired,
     modifiable: PropTypes.bool,
     deletable: PropTypes.bool,
     selected: PropTypes.bool,
     pendingModification: PropTypes.bool,
     pendingDeletion: PropTypes.bool,
-    texts: PropTypes.object.isRequired,
+    texts: CarCardTextsType.isRequired,
+    onClick: PropTypes.func,
+    onDelete: PropTypes.func,
 };
 
 CarCard.defaultProps = {
@@ -112,6 +95,8 @@ CarCard.defaultProps = {
     selected: false,
     pendingModification: false,
     pendingDeletion: false,
+    onClick: () => {},
+    onDelete: () => {},
 };
 
 export default CarCard;

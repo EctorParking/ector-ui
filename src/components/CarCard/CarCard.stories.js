@@ -14,6 +14,11 @@ const texts = {
     confirm: 'Confirmer',
 };
 
+const car = {
+    name: 'Audi A3',
+    numberPlate: 'TB-894-LI',
+};
+
 storiesOf('CarCard', module)
 
     .addDecorator(backgrounds([
@@ -23,16 +28,14 @@ storiesOf('CarCard', module)
 
     .add('not selected', () => (
         <CarCard
-            carName="Audi A3"
-            numberPlate="TB-894-LI"
+            car={car}
             texts={texts}
         />
     ))
 
     .add('modifiable selected', () => (
         <CarCard
-            carName="Audi A3"
-            numberPlate="TB-894-LI"
+            car={car}
             texts={texts}
             modifiable
             selected
@@ -41,8 +44,7 @@ storiesOf('CarCard', module)
 
     .add('modifiable selected pendingModification', () => (
         <CarCard
-            carName="Audi A3"
-            numberPlate="TB-894-LI"
+            car={car}
             texts={texts}
             modifiable
             selected
@@ -52,8 +54,7 @@ storiesOf('CarCard', module)
 
     .add('modifiable deletable selected pendingModification', () => (
         <CarCard
-            carName="Audi A3"
-            numberPlate="TB-894-LI"
+            car={car}
             texts={texts}
             modifiable
             deletable
@@ -64,8 +65,7 @@ storiesOf('CarCard', module)
 
     .add('pendingDeletion', () => (
         <CarCard
-            carName="Audi A3"
-            numberPlate="TB-894-LI"
+            car={car}
             texts={texts}
             selected
             pendingDeletion
