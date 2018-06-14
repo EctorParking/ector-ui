@@ -1,0 +1,26 @@
+@import '../../style/variable.css';
+
+.container {
+    align-items: center;
+    background: none;
+    border: 0;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.commonLabelStyle {
+    color: var(--melrose);
+    font-size: var(--defaultFontSize);
+}
+
+.labelWithIcon {
+    font-weight: var(--fontWeightRegular);
+    margin-left: var(--marginXSmall);
+}
+
+.labelWithoutIcon {
+    font-style: italic;
+    font-weight: var(--fontWeightBold);
+    text-decoration: underline;
+}
