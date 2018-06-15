@@ -24,3 +24,4 @@ deploy:
   acl: public_read
   on:
     repo: EctorParking/ector-ui
+    branch: master
