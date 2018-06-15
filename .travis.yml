@@ -22,6 +22,7 @@ deploy:
   bucket: ector-storybook
   local-dir: ".out"
   acl: public_read
+  skip_cleanup: true
   on:
     repo: EctorParking/ector-ui
     branch: master
