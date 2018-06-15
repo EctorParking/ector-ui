@@ -17,8 +17,8 @@ cache:
 deploy:
   provider: s3
   access_key_id: AKIAIKZGQRXT6X4RF44Q
-  secret_access_key:
-    secure: WkW5zi68/pxY7pnzRkW19pWzQc17MoDw/U3lDa7zFlQ41tmLYmU317Pg7Snw8L5vjENTKuHcmu1OYrfUodvFt+eLCDcIiU114iZU448SpXeG0oQy0pnmOqLPt+H0bdB01nQVsciub5ZRBau9ST7gOTlhHY5MLIIiBubD7KXt71k+KwQgO2ZXlNApSyGT0+uxDpb6KxMNlk7R+D0Ja9XwsPIKP7R3gXpm82U8DiJzeOcHjYzp14IRbJl6Py0EE+ngrqQQthuG2XUs34RR0sMKMhd8Owr0ExmJ0Uwu0+d0LJxKmbYE9lHlvrNTc0KBa7iTLTxIp7W9xoUcwCcC10UmQRCGZ6jzVoJUQoIt2zNgL+E8ReXsZ5LJ01ybuNtKzXbS0vgph6L2QDWUULaBl72+XLJzvX3pdk0c0vUZOduKf8IH64uDQZIV9a6n6cF/itT/I5k+c7IFkLGxAnRcmGpDv+iuHAMlfQ34hPLLCyFOX9iERyiWV4qj6cFC4wm6B4Hv4tdjpw9ryRomwk6j63wfd9oc0FBBjQUeTy9IpOek/94MrCODYYQGpB18z8GA/UBRJTwo+q9ri/7CoW+ixAJM7+jdJecUy0MJQhoLT4XF6OVdIIQ+nfQqv4ilc1dzm6dwGbr6sMTcw5mgvQz0NtMN/J4Qh3AiZrDJN9oyqvkNBWQ=
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
   bucket: ector-storybook
   local-dir: ".out"
   acl: public_read
