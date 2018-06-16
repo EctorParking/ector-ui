@@ -41,8 +41,6 @@ const CarCard = ({
         />
     );
 
-    console.log(footer);
-
     let header = null;
     let content = mode.indexOf('read') === 0 ? <CarCardContentRead car={car} /> : <CarCardContentEdit car={car} />;
 
