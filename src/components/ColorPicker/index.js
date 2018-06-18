@@ -9,6 +9,7 @@ const ColorPicker = ({
     <div className={s.colorPicker}>
         {colorsList.map(color => (
             <button
+                key={`color-${color.label}`}
                 className={`${s.badge} ${color.hexadecimalCode === 'transparent' ? s.transparent : ''}`}
                 style={{ backgroundColor: color.hexadecimalCode }}
                 title={color.label}
