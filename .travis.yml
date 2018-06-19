@@ -1,0 +1,28 @@
+language: node_js
+
+install:
+  - yarn
+
+node_js:
+  - "node"
+
+script:
+  - yarn build
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
+
+deploy:
+  provider: s3
+  access_key_id: AKIAIKZGQRXT6X4RF44Q
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
+  bucket: ector-storybook
+  local-dir: ".out"
+  acl: public_read
+  skip_cleanup: true
+  on:
+    repo: EctorParking/ector-ui
+    branch: master

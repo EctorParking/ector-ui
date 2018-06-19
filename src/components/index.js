@@ -4,6 +4,7 @@ import TitleStep from './title-step';
 import Input from './input';
 import InputLabel from './input-label';
 import ColorPicker from './ColorPicker';
+import ActionLink from './ActionLink';
 
 export default {
     CardTitle,
@@ -11,4 +12,5 @@ export default {
     Input,
     InputLabel,
     ColorPicker,
+    ActionLink,
 };
