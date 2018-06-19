@@ -1,0 +1,5 @@
+@import '../../style/variable.css';
+
+.pendingDeletion {
+    background-color: var(--lightGrey);
+}

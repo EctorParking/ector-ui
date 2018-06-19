@@ -1,0 +1,17 @@
+@import '../../style/variable.css';
+
+.footer {
+    align-items: flex-end;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 32px;
+    padding: 0 2rem;
+}
+.genderImage {
+    margin-top: -1.3em;
+    width: 50px;
+}
+.checkIcon {
+    color: var(--white);
+    font-size: var(--fontSizeSubtitle);
+}
