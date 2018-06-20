@@ -13,7 +13,7 @@ const LinkUnderlined = ({ children }) => (
 );
 
 LinkUnderlined.propTypes = {
-    children: PropTypes.string.isRequired,
+    children: PropTypes.node.isRequired,
 };
 
 
