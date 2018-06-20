@@ -1,0 +1,17 @@
+@import '../../style/variable.css';
+
+.footer {
+    align-items: flex-end;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 32px;
+    padding: 0 2rem;
+}
+.carImage {
+    margin-top: -0.5em;
+    width: 100px;
+}
+.checkIcon {
+    color: var(--white);
+    font-size: var(--fontSizeSubtitle);
+}

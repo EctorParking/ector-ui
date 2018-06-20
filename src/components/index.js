@@ -4,6 +4,7 @@ import TitleStep from './title-step';
 import Input from './input';
 import InputLabel from './input-label';
 import ColorPicker from './ColorPicker';
+import CarCard from './CarCard';
 import ActionLink from './ActionLink';
 
 export default {
@@ -12,5 +13,6 @@ export default {
     Input,
     InputLabel,
     ColorPicker,
+    CarCard,
     ActionLink,
 };
