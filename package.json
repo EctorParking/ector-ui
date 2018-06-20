@@ -4,7 +4,6 @@
     "build": "build-storybook -c .storybook -o .out"
   },
   "devDependencies": {
-    "@storybook/cli": "^3.3.14",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.3",

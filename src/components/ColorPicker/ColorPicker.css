@@ -1,0 +1,36 @@
+@import '../../style/variable.css';
+
+.colorPicker {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 300px;
+}
+.badge {
+    background: none;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    height: 30px;
+    margin: 15px;
+    overflow: hidden;
+    position: relative;
+    width: 30px;
+}
+.transparent:before,
+.transparent:after {
+    background-color: #ccc;
+    content: '';
+    height: 1px;
+    position: absolute;
+    top: 15px;
+    transform-origin: center center;
+    width: 150%;
+}
+.transparent:before {
+    transform: rotate(45deg);
+    left: -5px;
+}
+.transparent:after {
+    right: -5px;
+    transform: rotate(-45deg);
+}
