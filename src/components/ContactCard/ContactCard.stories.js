@@ -23,7 +23,7 @@ const contact = {
     gender: 'male',
 };
 
-storiesOf('CarCard', module)
+storiesOf('ContactCard', module)
 
     .addDecorator(backgrounds([
         { name: 'header', value: 'white', default: true },
