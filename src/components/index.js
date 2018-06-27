@@ -6,6 +6,8 @@ import InputLabel from './input-label';
 import ColorPicker from './ColorPicker';
 import CarCard from './CarCard';
 import ActionLink from './ActionLink';
+import Select from './Select';
+import PhoneInput from './PhoneInput';
 
 export default {
     CardTitle,
@@ -15,4 +17,6 @@ export default {
     ColorPicker,
     CarCard,
     ActionLink,
+    Seelct,
+    PhoneInput,
 };
