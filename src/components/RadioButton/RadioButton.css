@@ -1,0 +1,36 @@
+@import '../../style/variable.css';
+
+.radioButton {
+    position: relative;
+}
+.radioButton input {
+    position: absolute;
+    opacity: 0;
+}
+.radioButton span {
+    align-items: center;
+    display: flex;
+    position: relative;
+}
+.radioButton span:before {
+    border-radius: 50%;
+    border: 2px solid var(--darkMetalGrey);
+    content: '';
+    height: 10px;
+    margin-right: var(--marginSmall);
+    width: 10px;
+}
+.radioButton span:after {
+    background-color: var(--yellow);
+    border-radius: 50%;
+    content: '';
+    display: none;
+    height: 6px;
+    left: 4px;
+    position: absolute;
+    top: 6px;
+    width: 6px;
+}
+.radioButton input[type="radio"]:checked + span:after {
+    display: block;
+}
