@@ -12,6 +12,13 @@
     position: relative;
 }
 
+.select:after {
+    content: '\e954';
+    font-family: 'icomoon';
+    font-size: 80%;
+    margin-left: var(--marginSmall);
+}
+
 .select select {
     position: absolute;
     opacity: 0;
