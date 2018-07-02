@@ -17,7 +17,7 @@ const GenderPicker = ({
                 label={gender.label}
                 name="gender"
                 checked={gender.value === selected}
-                onSelect={value => onSelect(value)}
+                onSelect={onSelect}
             />
         ))}
     </div>
