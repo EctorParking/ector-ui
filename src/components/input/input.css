@@ -4,6 +4,7 @@
 
 .input {
     color: var(--deepBlue);
+    border: 2px solid var(--darkMetalGrey);
     border-radius: var(--inputBorderRadius);
     display: block;
     height: 2.5rem;
