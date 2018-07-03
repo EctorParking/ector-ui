@@ -6,6 +6,7 @@ import Input from '../input';
 import GenderPicker from '../GenderPicker';
 import PhoneInput from '../PhoneInput';
 import LinkUnderlined from '../link-underlined';
+import ContactFormField from './ContactFormField';
 
 const genders = [
     { value: 'male', label: 'Mr' },
@@ -66,26 +67,15 @@ class ContactForm extends React.Component {
 
                 <div className={s.columns}>
                     <div>
-                        <label
-                            htmlFor="civility"
-                            className={s.field}
-                        >
-                            <span className={s.label}>
-                                {civility}
-                            </span>
-
+                        <ContactFormField label={civility}>
                             <GenderPicker
                                 genders={genders}
                             />
-                        </label>
-                        <label
-                            htmlFor="first-name"
-                            className={s.field}
+                        </ContactFormField>
+                        <ContactFormField
+                            label={firstName}
+                            mandatory
                         >
-                            <span className={s.label}>
-                                {firstName}
-                            </span>
-
                             <Input
                                 inputType="text"
                                 inputId="first-name"
@@ -93,15 +83,11 @@ class ContactForm extends React.Component {
                                 onFocus={this.setSelected}
                                 onBlur={this.setNotSelected}
                             />
-                        </label>
-                        <label
-                            htmlFor="last-name"
-                            className={s.field}
+                        </ContactFormField>
+                        <ContactFormField
+                            label={lastName}
+                            mandatory
                         >
-                            <span className={s.label}>
-                                {lastName}
-                            </span>
-
                             <Input
                                 inputType="text"
                                 inputId="last-name"
@@ -109,17 +95,13 @@ class ContactForm extends React.Component {
                                 onFocus={this.setSelected}
                                 onBlur={this.setNotSelected}
                             />
-                        </label>
+                        </ContactFormField>
                     </div>
                     <div>
-                        <label
-                            htmlFor="email"
-                            className={s.field}
+                        <ContactFormField
+                            label={email}
+                            mandatory
                         >
-                            <span className={s.label}>
-                                {email}
-                            </span>
-
                             <Input
                                 inputType="text"
                                 inputId="email"
@@ -127,28 +109,19 @@ class ContactForm extends React.Component {
                                 onFocus={this.setSelected}
                                 onBlur={this.setNotSelected}
                             />
-                        </label>
-                        <label
-                            htmlFor="phone"
-                            className={s.field}
+                        </ContactFormField>
+                        <ContactFormField
+                            label={phone}
+                            mandatory
                         >
-                            <span className={s.label}>
-                                {phone}
-                            </span>
-
                             <PhoneInput
                                 onFocus={this.setSelected}
                                 onBlur={this.setNotSelected}
                             />
-                        </label>
-                        <label
-                            htmlFor="postCode"
-                            className={s.field}
+                        </ContactFormField>
+                        <ContactFormField
+                            label={postCode}
                         >
-                            <span className={s.label}>
-                                {postCode}
-                            </span>
-
                             <div className={s.postCode}>
                                 <Input
                                     type="text"
@@ -160,7 +133,7 @@ class ContactForm extends React.Component {
                             </div>
 
                             <span>{notMandatory}</span>
-                        </label>
+                        </ContactFormField>
                     </div>
                 </div>
             </Card>

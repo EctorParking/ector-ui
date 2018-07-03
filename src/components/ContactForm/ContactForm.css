@@ -25,25 +25,8 @@
     margin-left: var(--marginLarge);
 }
 
-.field {
-    align-items: center;
-    display: flex;
-    height: 44px;
-    flex: 1;
-    margin: var(--marginXSmall) 0;
-}
-
-.field .label {
-    font-weight: var(--fontWeightBold);
-    min-width: 150px;
-}
-
-.field .label:after {
-    content: '*';
-}
-
 .postCode input {
-    width: 80px;
+    width: var(--postCodeInputWidth);
 }
 
 .postCode {
