@@ -8,6 +8,7 @@ import CarCard from './CarCard';
 import ActionLink from './ActionLink';
 import Select from './Select';
 import PhoneInput from './PhoneInput';
+import BookingSteps from './BookingSteps';
 
 export default {
     CardTitle,
@@ -19,4 +20,5 @@ export default {
     ActionLink,
     Seelct,
     PhoneInput,
+    BookingSteps,
 };
