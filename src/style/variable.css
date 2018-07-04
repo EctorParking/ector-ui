@@ -52,6 +52,7 @@
     --fontFamilies: 'gtwalsheim', 'Arial', 'Helvetica', sans-serif;
     --headerHeight: 86px;
     --mobileHeaderHeight: 60px;
+    --titleHrWidth: 50px;
 
     --logoHeight: 48px;
     --mobileLogoHeight: 20px;
