@@ -8,6 +8,8 @@ import CarCard from './CarCard';
 import ActionLink from './ActionLink';
 import Select from './Select';
 import PhoneInput from './PhoneInput';
+import Title from './Title';
+import Subtitle from './Subtitle';
 
 export default {
     CardTitle,
@@ -17,6 +19,8 @@ export default {
     ColorPicker,
     CarCard,
     ActionLink,
-    Seelct,
+    Select,
     PhoneInput,
+    Title,
+    Subtitle,
 };
