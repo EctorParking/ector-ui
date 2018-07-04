@@ -29,10 +29,10 @@
     border: 2px solid var(--white);
     display: flex;
     font-size: 150%;
-    height: 40px;
+    height: var(--alertIconSize);
     justify-content: center;
     margin-right: var(--marginMedium);
-    width: 40px;
+    width: var(--alertIconSize);
 }
 
 .title {
