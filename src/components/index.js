@@ -6,6 +6,7 @@ import InputLabel from './input-label';
 import ColorPicker from './ColorPicker';
 import CarCard from './CarCard';
 import ActionLink from './ActionLink';
+import Alert from './Alert';
 import Select from './Select';
 import PhoneInput from './PhoneInput';
 import ContactForm from './ContactForm';
@@ -18,6 +19,7 @@ export default {
     ColorPicker,
     CarCard,
     ActionLink,
+    Alert,
     Select,
     PhoneInput,
     ContactForm,
