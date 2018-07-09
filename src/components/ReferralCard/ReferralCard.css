@@ -1,0 +1,14 @@
+@import '../../style/variable.css';
+
+.referralCard {
+    background-color: var(--lightGrey);
+    border-radius: var(--borderRadius);
+    color: var(--deepBlue);
+    display: flex;
+    max-width: var(--bpMobileIPhoneFive);
+    padding: var(--marginMedium);
+}
+
+.referralCard i {
+    margin-right: var(--marginMedium);
+}

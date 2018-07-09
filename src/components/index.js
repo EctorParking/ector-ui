@@ -8,6 +8,7 @@ import ActionLink from './ActionLink';
 import Alert from './Alert';
 import Select from './Select';
 import PhoneInput from './PhoneInput';
+import ReferralCard from './ReferralCard';
 import BookingSteps from './BookingSteps';
 import Title from './Title';
 import Subtitle from './Subtitle';
@@ -24,6 +25,7 @@ export default {
     Alert,
     Select,
     PhoneInput,
+    ReferralCard,
     BookingSteps,
     Title,
     Subtitle,
