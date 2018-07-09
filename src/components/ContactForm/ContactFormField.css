@@ -1,0 +1,21 @@
+@import '../../style/variable.css';
+
+.field {
+    align-items: center;
+    display: flex;
+    height: 44px;
+    flex: 1;
+    margin: var(--marginXSmall) 0;
+}
+
+.field .label {
+    min-width: 150px;
+}
+
+.field.mandatory .label {
+    font-weight: var(--fontWeightBold);
+}
+
+.field.mandatory .label:after {
+    content: '*';
+}
