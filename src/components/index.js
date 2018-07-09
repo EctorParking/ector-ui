@@ -1,4 +1,3 @@
-
 import CardTitle from './card-title';
 import TitleStep from './title-step';
 import Input from './input';
@@ -9,6 +8,8 @@ import ActionLink from './ActionLink';
 import Alert from './Alert';
 import Select from './Select';
 import PhoneInput from './PhoneInput';
+import Title from './Title';
+import Subtitle from './Subtitle';
 import ContactForm from './ContactForm';
 
 export default {
@@ -22,5 +23,7 @@ export default {
     Alert,
     Select,
     PhoneInput,
+    Title,
+    Subtitle,
     ContactForm,
 };
