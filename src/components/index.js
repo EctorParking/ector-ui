@@ -8,6 +8,7 @@ import ActionLink from './ActionLink';
 import Alert from './Alert';
 import Select from './Select';
 import PhoneInput from './PhoneInput';
+import BookingSteps from './BookingSteps';
 import Title from './Title';
 import Subtitle from './Subtitle';
 import ContactForm from './ContactForm';
@@ -23,6 +24,7 @@ export default {
     Alert,
     Select,
     PhoneInput,
+    BookingSteps,
     Title,
     Subtitle,
     ContactForm,
