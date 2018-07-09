@@ -8,6 +8,7 @@ import CarCard from './CarCard';
 import ActionLink from './ActionLink';
 import Select from './Select';
 import PhoneInput from './PhoneInput';
+import ContactForm from './ContactForm';
 
 export default {
     CardTitle,
@@ -17,6 +18,7 @@ export default {
     ColorPicker,
     CarCard,
     ActionLink,
-    Seelct,
+    Select,
     PhoneInput,
+    ContactForm,
 };
