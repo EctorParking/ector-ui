@@ -1,0 +1,41 @@
+@import '../../style/variable.css';
+
+.alert {
+    align-items: center;
+    border-radius: var(--borderRadius);
+    color: var(--white);
+    display: flex;
+    flex: 1;
+    margin-bottom: var(--marginLarge);
+    padding: var(--marginMedium);
+    width: 100%;
+}
+
+.alert.success {
+    background-color: var(--green);
+}
+
+.alert.error {
+    background-color: var(--red);
+}
+
+.alert.warning {
+    /* background-color: var(--orange); */
+}
+
+.icon {
+    align-items: center;
+    border-radius: 50%;
+    border: 2px solid var(--white);
+    display: flex;
+    font-size: 150%;
+    height: var(--alertIconSize);
+    justify-content: center;
+    margin-right: var(--marginMedium);
+    width: var(--alertIconSize);
+}
+
+.title {
+    display: block;
+    margin-bottom: var(--marginXSmall);
+}
