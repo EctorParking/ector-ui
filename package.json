@@ -1,7 +1,11 @@
 {
   "scripts": {
     "start": "start-storybook -p 9001 -c .storybook watch-css -s ./src",
-    "build": "build-storybook -c .storybook -o .out"
+    "prebuild": "rimraf dist",
+    "build": "webpack --config webpack.config.js",
+    "lint": "eslint ./src --ext .js",
+    "lintfix": "eslint ./src --fix --ext .js",
+    "build:storybook": "build-storybook -c .storybook -o .out"
   },
   "peerDependencies": {
     "react": "^16.x",
