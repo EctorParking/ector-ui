@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import s from './link-underlined.css';
+import s from './LinkUnderlined.css';
 
 const LinkUnderlined = ({ children }) => (
 

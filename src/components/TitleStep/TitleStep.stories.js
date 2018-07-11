@@ -6,7 +6,7 @@ import centered from '@storybook/addon-centered';
 
 import TitleStep from './';
 
-import s from './title-step.css';
+import s from './TitleStep.css';
 
 
 storiesOf('Title.Step', module)
@@ -70,7 +70,7 @@ storiesOf('Title.Step', module)
       Done={false}
       onClick={action('clicked')}
     >
-            Paiement
+      Paiement
     </TitleStep>
   ))
 

@@ -1,7 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import Select from '../Select';
-import Input from '../input';
+import Input from '../Input';
 
 import s from './PhoneInput.css';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import s from './card-title.css';
+import s from './CardTitle.css';
 
 const CardTitle = ({ children }) => (
 

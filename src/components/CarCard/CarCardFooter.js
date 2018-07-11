@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import LinkUnderlined from '../link-underlined';
+import LinkUnderlined from '../LinkUnderlined';
 import s from './CarCardFooter.css';
 import CarCardTextsType from './CarCardTextsType';
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import s from './input-label.css';
+import s from './InputLabel.css';
 
-import Input from '../input';
+import Input from '../Input';
 
 const InputLabel = ({
   children, inputId, isImportant, placeHolder,

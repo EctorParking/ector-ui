@@ -1,6 +1,6 @@
 import React from 'react';
 import CarType from './CarType';
-import Input from '../input';
+import Input from '../Input';
 import s from './CarCardContentEdit.css';
 
 const CarCardContentEdit = ({ car }) => {

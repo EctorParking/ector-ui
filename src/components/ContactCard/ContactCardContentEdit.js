@@ -1,6 +1,6 @@
 import React from 'react';
 import ContactType from './ContactType';
-import Input from '../input';
+import Input from '../Input';
 import s from './ContactCardContentEdit.css';
 
 const ContactCardContentEdit = ({ contact }) => {

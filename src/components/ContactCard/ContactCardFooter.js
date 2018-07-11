@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import LinkUnderlined from '../link-underlined';
+import LinkUnderlined from '../LinkUnderlined';
 import s from './ContactCardFooter.css';
 import ContactCardTextsType from './ContactCardTextsType';
 import ContactType from './ContactType';

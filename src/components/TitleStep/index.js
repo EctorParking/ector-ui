@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import s from './title-step.css';
+import s from './TitleStep.css';
 
 const TitleStep = ({
   Active, children, Done, onClick,

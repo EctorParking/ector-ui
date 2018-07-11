@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Card from '../card';
+import Card from '../Card';
 import s from './CarCard.css';
 import CarType from './CarType';
 import CarCardTextsType from './CarCardTextsType';

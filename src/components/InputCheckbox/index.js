@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import s from './input-checkbox.css';
+import s from './InputCheckbox.css';
 
-import Input from '../input';
+import Input from '../Input';
 
 const InputCheckbox = ({ inputId, children }) => (
   <label
-    htmlFor={inputId}
+    htmlFor={`${inputId}`}
     className={s.input_checkbox}
   >
 
@@ -15,7 +15,8 @@ const InputCheckbox = ({ inputId, children }) => (
 
     <Input
       inputType="checkbox"
-      inputId={inputId}
+      inputId={`${inputId}`}
+      id={`${inputId}`}
     />
     <span className={s.checkmark} />
 

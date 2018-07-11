@@ -1,11 +1,11 @@
 import React from 'react';
 
-import Card from '../card';
-import CardTitle from '../card-title';
-import InputLabel from '../input-label';
-import InputCheckbox from '../input-checkbox';
+import Card from '../Card';
+import CardTitle from '../CardTitle';
+import InputLabel from '../InputLabel';
+import InputCheckbox from '../InputCheckbox';
 
-import s from './card-travel-information.css';
+import s from './CardTravelInformation.css';
 
 const CardTravelInformation = () => (
   <Card>

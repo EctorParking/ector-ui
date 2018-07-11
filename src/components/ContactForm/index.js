@@ -1,11 +1,11 @@
 import React from 'react';
 import s from './ContactForm.css';
 import ContactFormTextsType from './ContactFormTextsType';
-import Card from '../card';
-import Input from '../input';
+import Card from '../Card';
+import Input from '../Input';
 import GenderPicker from '../GenderPicker';
 import PhoneInput from '../PhoneInput';
-import LinkUnderlined from '../link-underlined';
+import LinkUnderlined from '../LinkUnderlined';
 import ContactFormField from './ContactFormField';
 
 const genders = [
