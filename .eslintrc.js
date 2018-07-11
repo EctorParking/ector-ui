@@ -33,6 +33,12 @@ module.exports = {
 
         // Indent props with 4 spaces
         "react/jsx-indent-props": ["error", 2],
+
+        "jsx-a11y/label-has-for": [ 2, {
+          "required": {
+            "some": [ "nesting", "id" ]
+          },
+        }]
     },
 
     parser: 'babel-eslint',
@@ -41,4 +47,4 @@ module.exports = {
         React: false,
     },
 
-}
+};
