@@ -1,0 +1,19 @@
+@import '../../style/variable.css';
+
+.title {
+    margin-bottom: var(--marginLarge);
+}
+
+.title h1 {
+    color: var(--deepBlue);
+    font-size: var(--fontSizeTitle);
+    font-weight: var(--fontWeightRegular);
+    line-height: 1;
+    margin: 0 0 var(--marginSmall);
+}
+
+.title hr {
+    border: 0;
+    border-top: 2px solid var(--aquaHazeGrey);
+    width: var(--titleHrWidth);
+}
