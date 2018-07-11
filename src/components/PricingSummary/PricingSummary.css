@@ -1,0 +1,45 @@
+@import '../../style/variable.css';
+
+.pricingSummary {
+    min-width: 250px;
+    width: 100%;
+}
+
+.total {
+    align-items: flex-end;
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--marginMedium);
+}
+
+.totalLabel {
+    font-weight: var(--fontWeightBold);
+    text-transform: uppercase;
+}
+
+.totalPrice {
+    display: inline-flex;
+    font-size: var(--fontSizeTitle);
+    line-height: 1;
+}
+
+.currency-after {
+    flex-direction: row;
+}
+
+.currency-before {
+    flex-direction: row-reverse;
+}
+
+.add {
+    border: 0;
+    color: var(--darkMetalGrey);
+    padding: 0;
+    margin: 0;
+    background: transparent;
+}
+
+.add span {
+    margin-left: var(--marginXSmall);
+    text-decoration: underline;
+}
