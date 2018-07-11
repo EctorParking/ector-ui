@@ -3,26 +3,26 @@ import PropTypes from 'prop-types';
 import s from './ContactFormField.css';
 
 const ContactFormField = ({ children, label, mandatory }) => (
-    <label
-        htmlFor="civility"
-        className={`${s.field} ${mandatory ? s.mandatory : ''}`}
-    >
-        <span className={s.label}>
-            {label}
-        </span>
+  <label
+    htmlFor="civility"
+    className={`${s.field} ${mandatory ? s.mandatory : ''}`}
+  >
+    <span className={s.label}>
+      {label}
+    </span>
 
-        {children}
-    </label>
+    {children}
+  </label>
 );
 
 ContactFormField.defaultProps = {
-    mandatory: false,
+  mandatory: false,
 };
 
 ContactFormField.propTypes = {
-    children: PropTypes.node.isRequired,
-    label: PropTypes.string.isRequired,
-    mandatory: PropTypes.bool,
+  children: PropTypes.node.isRequired,
+  label: PropTypes.string.isRequired,
+  mandatory: PropTypes.bool,
 };
 
 export default ContactFormField;

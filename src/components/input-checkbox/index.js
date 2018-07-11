@@ -6,29 +6,29 @@ import s from './input-checkbox.css';
 import Input from '../input';
 
 const InputCheckbox = ({ inputId, children }) => (
-    <label
-        htmlFor={inputId}
-        className={s.input_checkbox}
-    >
+  <label
+    htmlFor={inputId}
+    className={s.input_checkbox}
+  >
 
-        { children }
+    { children }
 
-        <Input
-            inputType="checkbox"
-            inputId={inputId}
-        />
-        <span className={s.checkmark} />
+    <Input
+      inputType="checkbox"
+      inputId={inputId}
+    />
+    <span className={s.checkmark} />
 
-    </label>
+  </label>
 );
 
 InputCheckbox.defaultProps = {
-    inputId: 'InputStart',
+  inputId: 'InputStart',
 };
 
 InputCheckbox.propTypes = {
-    children: PropTypes.node.isRequired,
-    inputId: PropTypes.string,
+  children: PropTypes.node.isRequired,
+  inputId: PropTypes.string,
 };
 
 

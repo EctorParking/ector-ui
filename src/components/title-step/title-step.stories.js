@@ -11,73 +11,73 @@ import s from './title-step.css';
 
 storiesOf('Title.Step', module)
 
-    .addDecorator(backgrounds([
-        { name: 'header', value: '#163457', default: true },
-    ]))
-    .addDecorator(centered)
+  .addDecorator(backgrounds([
+    { name: 'header', value: '#163457', default: true },
+  ]))
+  .addDecorator(centered)
 
-    .add('full presentation', () => (
-        <div className={s.steps}>
-            <TitleStep
-                Active={false}
-                Done
-                onClick={action('clicked')}
-            >
+  .add('full presentation', () => (
+    <div className={s.steps}>
+      <TitleStep
+        Active={false}
+        Done
+        onClick={action('clicked')}
+      >
                 Options
-            </TitleStep>
+      </TitleStep>
 
-            <TitleStep
-                Active
-                Done={false}
-                onClick={action('clicked')}
-            >
+      <TitleStep
+        Active
+        Done={false}
+        onClick={action('clicked')}
+      >
                 Informations
-            </TitleStep>
+      </TitleStep>
 
-            <TitleStep
-                Active={false}
-                Done={false}
-                onClick={action('clicked')}
-            >
+      <TitleStep
+        Active={false}
+        Done={false}
+        onClick={action('clicked')}
+      >
                 Paiment
-            </TitleStep>
-        </div>
-    ))
+      </TitleStep>
+    </div>
+  ))
 
-    .add('done', () => (
-        <TitleStep
-            Active={false}
-            Done
-            onClick={action('clicked')}
-        >
+  .add('done', () => (
+    <TitleStep
+      Active={false}
+      Done
+      onClick={action('clicked')}
+    >
             Options
-        </TitleStep>
-    ))
+    </TitleStep>
+  ))
 
-    .add('active', () => (
-        <TitleStep
-            Active
-            Done={false}
-            onClick={action('clicked')}
-        >
+  .add('active', () => (
+    <TitleStep
+      Active
+      Done={false}
+      onClick={action('clicked')}
+    >
             Infos Voyageurs
-        </TitleStep>
-    ))
+    </TitleStep>
+  ))
 
-    .add('normal', () => (
-        <TitleStep
-            Active={false}
-            Done={false}
-            onClick={action('clicked')}
-        >
+  .add('normal', () => (
+    <TitleStep
+      Active={false}
+      Done={false}
+      onClick={action('clicked')}
+    >
             Paiement
-        </TitleStep>
-    ))
+    </TitleStep>
+  ))
 
-    .add('without children', () => (
-        <TitleStep
-            Active={false}
-            Done={false}
-            onClick={action('clicked')}
-        />
-    ));
+  .add('without children', () => (
+    <TitleStep
+      Active={false}
+      Done={false}
+      onClick={action('clicked')}
+    />
+  ));

@@ -26,13 +26,13 @@ module.exports = {
         "no-console": 0,
 
         // Indent with 4 spaces
-        "indent": ["error", 4],
+        "indent": ["error", 2],
 
         // Indent JSX with 4 spaces
-        "react/jsx-indent": ["error", 4],
+        "react/jsx-indent": ["error", 2],
 
         // Indent props with 4 spaces
-        "react/jsx-indent-props": ["error", 4],
+        "react/jsx-indent-props": ["error", 2],
     },
 
     parser: 'babel-eslint',

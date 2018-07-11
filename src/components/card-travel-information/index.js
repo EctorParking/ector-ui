@@ -8,27 +8,27 @@ import InputCheckbox from '../input-checkbox';
 import s from './card-travel-information.css';
 
 const CardTravelInformation = () => (
-    <Card>
-        <CardTitle>
+  <Card>
+    <CardTitle>
             Numéro de Vol / Train
-        </CardTitle>
+    </CardTitle>
 
-        <div className={s.inputs_row}>
-            <InputLabel placeHolder="AB 000">
+    <div className={s.inputs_row}>
+      <InputLabel placeHolder="AB 000">
                 Aller
-            </InputLabel>
-            <InputLabel
-                isImportant
-                placeHolder="AB 000"
-            >
+      </InputLabel>
+      <InputLabel
+        isImportant
+        placeHolder="AB 000"
+      >
                 Retour*
-            </InputLabel>
-        </div>
+      </InputLabel>
+    </div>
 
-        <InputCheckbox>
+    <InputCheckbox>
             Voyage professionnel
-        </InputCheckbox>
-    </Card>
+    </InputCheckbox>
+  </Card>
 );
 
 

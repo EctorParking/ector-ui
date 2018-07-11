@@ -6,43 +6,43 @@ import Input from '../input';
 import s from './PhoneInput.css';
 
 const values = [
-    { value: 'fr', label: '+33', image: './images/flags/fr.png' },
-    { value: 'uk', label: '+44', image: './images/flags/uk.png' },
+  { value: 'fr', label: '+33', image: './images/flags/fr.png' },
+  { value: 'uk', label: '+44', image: './images/flags/uk.png' },
 ];
 
 class PhoneInput extends React.Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
 
-        this.state = {
-            countryCode: 'fr',
-        };
+    this.state = {
+      countryCode: 'fr',
+    };
 
-        this.onCountryCodeChange = this.onCountryCodeChange.bind(this);
-    }
+    this.onCountryCodeChange = this.onCountryCodeChange.bind(this);
+  }
 
-    onCountryCodeChange(countryCode) {
-        this.setState({ countryCode });
-    }
+  onCountryCodeChange(countryCode) {
+    this.setState({ countryCode });
+  }
 
-    render() {
-        const { countryCode } = this.state;
+  render() {
+    const { countryCode } = this.state;
 
-        return (
-            <div className={s.phoneInput}>
-                <Select
-                    values={values}
-                    selected={countryCode}
-                    hasImage
-                    onChange={this.onCountryCodeChange}
-                />
-                <Input
-                    inputPlaceHolder="06 07 08 09 00"
-                    inputType="text"
-                />
-            </div>
-        );
-    }
+    return (
+      <div className={s.phoneInput}>
+        <Select
+          values={values}
+          selected={countryCode}
+          hasImage
+          onChange={this.onCountryCodeChange}
+        />
+        <Input
+          inputPlaceHolder="06 07 08 09 00"
+          inputType="text"
+        />
+      </div>
+    );
+  }
 }
 
 PhoneInput.defaultProps = {

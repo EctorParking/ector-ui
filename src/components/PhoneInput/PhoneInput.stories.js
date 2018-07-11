@@ -7,11 +7,11 @@ import PhoneInput from './';
 
 storiesOf('PhoneInput', module)
 
-    .addDecorator(backgrounds([
-        { name: 'header', value: 'white', default: true },
-    ]))
-    .addDecorator(centered)
+  .addDecorator(backgrounds([
+    { name: 'header', value: 'white', default: true },
+  ]))
+  .addDecorator(centered)
 
-    .add('basic', () => (
-        <PhoneInput />
-    ));
+  .add('basic', () => (
+    <PhoneInput />
+  ));

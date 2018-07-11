@@ -6,38 +6,39 @@ import s from './input-label.css';
 import Input from '../input';
 
 const InputLabel = ({
-    children, inputId, isImportant, placeHolder,
+  children, inputId, isImportant, placeHolder,
 }) => {
-    const labelClassName = isImportant ? s.isimportant : '';
+  const labelClassName = isImportant ? s.isimportant : '';
 
-    return (
-        <label
-            htmlFor={inputId}
-            className={labelClassName}
-        >
-            { children }
+  return (
+    <label
+      htmlFor={inputId}
+      className={[labelClassName, s.label].join(' ')}
+    >
+      { children }
 
-            <Input
-                inputType="text"
-                inputId={inputId}
-                inputPlaceHolder={placeHolder}
-            />
+      <Input
+        className={s.input}
+        inputType="text"
+        inputId={inputId}
+        inputPlaceHolder={placeHolder}
+      />
 
-        </label>
-    );
+    </label>
+  );
 };
 
 InputLabel.defaultProps = {
-    inputId: 'InputStart',
-    isImportant: false,
-    placeHolder: '',
+  inputId: 'InputStart',
+  isImportant: false,
+  placeHolder: '',
 };
 
 InputLabel.propTypes = {
-    children: PropTypes.node.isRequired,
-    inputId: PropTypes.string,
-    isImportant: PropTypes.bool,
-    placeHolder: PropTypes.string,
+  children: PropTypes.node.isRequired,
+  inputId: PropTypes.string,
+  isImportant: PropTypes.bool,
+  placeHolder: PropTypes.string,
 };
 
 

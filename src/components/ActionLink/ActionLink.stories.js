@@ -6,27 +6,27 @@ import centered from '@storybook/addon-centered';
 import ActionLink from './';
 
 const onClick = () => {
-    console.log('Clicked');
+  console.log('Clicked');
 };
 
 storiesOf('ActionLink', module)
 
-    .addDecorator(backgrounds([
-        { name: 'header', value: 'white', default: true },
-    ]))
-    .addDecorator(centered)
+  .addDecorator(backgrounds([
+    { name: 'header', value: 'white', default: true },
+  ]))
+  .addDecorator(centered)
 
-    .add('without icon', () => (
-        <ActionLink
-            onClick={onClick}
-            label="Action Link"
-        />
-    ))
+  .add('without icon', () => (
+    <ActionLink
+      onClick={onClick}
+      label="Action Link"
+    />
+  ))
 
-    .add('with icon', () => (
-        <ActionLink
-            onClick={onClick}
-            label="Action Link"
-            icon="faq"
-        />
-    ));
+  .add('with icon', () => (
+    <ActionLink
+      onClick={onClick}
+      label="Action Link"
+      icon="faq"
+    />
+  ));

@@ -8,28 +8,28 @@ import InputLabel from './';
 
 storiesOf('Input.Label', module)
 
-    .addDecorator(backgrounds([
-        { name: 'header', value: 'white', default: true },
-    ]))
-    .addDecorator(centered)
+  .addDecorator(backgrounds([
+    { name: 'header', value: 'white', default: true },
+  ]))
+  .addDecorator(centered)
 
-    .add('normal', () => (
-        <InputLabel>
+  .add('normal', () => (
+    <InputLabel>
             Aller
-        </InputLabel>
-    ))
+    </InputLabel>
+  ))
 
-    .add('important', () => (
-        <InputLabel isImportant>
+  .add('important', () => (
+    <InputLabel isImportant>
             Retour*
-        </InputLabel>
-    ))
+    </InputLabel>
+  ))
 
-    .add('with placeholder', () => (
-        <InputLabel
-            inputId="StartInput"
-            placeHolder="AB 000"
-        >
+  .add('with placeholder', () => (
+    <InputLabel
+      inputId="StartInput"
+      placeHolder="AB 000"
+    >
             Aller
-        </InputLabel>
-    ));
+    </InputLabel>
+  ));

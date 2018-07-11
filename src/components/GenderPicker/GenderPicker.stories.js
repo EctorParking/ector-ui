@@ -6,17 +6,17 @@ import centered from '@storybook/addon-centered';
 import GenderPicker from './';
 
 const genders = [
-    { value: 'male', label: 'Mr' },
-    { value: 'female', label: 'Mme' },
+  { value: 'male', label: 'Mr' },
+  { value: 'female', label: 'Mme' },
 ];
 
 storiesOf('GenderPicker', module)
 
-    .addDecorator(backgrounds([
-        { name: 'header', value: 'white', default: true },
-    ]))
-    .addDecorator(centered)
+  .addDecorator(backgrounds([
+    { name: 'header', value: 'white', default: true },
+  ]))
+  .addDecorator(centered)
 
-    .add('normal', () => (
-        <GenderPicker genders={genders} />
-    ));
+  .add('normal', () => (
+    <GenderPicker genders={genders} />
+  ));
