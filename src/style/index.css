@@ -1,9 +1,16 @@
 @import './font.css';
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-}
+/**
+ ** Those commented lines, specially margin: 0, breaks style of components.
+ ** It also override a lot of styles when integrating this components library
+ */
+
+/**
+ ** * {
+ **    box-sizing: border-box;
+ **    margin: 0;
+ ** }
+ */
 
 body {
     font-family: 'gt_walsheim', 'Arial', 'Helvetica', sans-serif;
