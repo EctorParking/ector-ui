@@ -7,11 +7,11 @@ import Title from './';
 
 storiesOf('Title', module)
 
-    .addDecorator(backgrounds([
-        { name: 'header', value: 'white', default: true },
-    ]))
-    .addDecorator(centered)
+  .addDecorator(backgrounds([
+    { name: 'header', value: 'white', default: true },
+  ]))
+  .addDecorator(centered)
 
-    .add('normal', () => (
-        <Title label="Récapitulatif de réservation" />
-    ));
+  .add('normal', () => (
+    <Title label="Récapitulatif de réservation" />
+  ));

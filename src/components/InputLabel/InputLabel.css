@@ -2,7 +2,7 @@
 
 @import '../../style/variable.css';
 
-input, label {
+.input, .label {
     display: block;
 }
 

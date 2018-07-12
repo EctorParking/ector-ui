@@ -7,27 +7,27 @@ import Alert from './';
 
 storiesOf('Alert', module)
 
-    .addDecorator(backgrounds([
-        { name: 'header', value: 'white', default: true },
-    ]))
-    .addDecorator(centered)
+  .addDecorator(backgrounds([
+    { name: 'header', value: 'white', default: true },
+  ]))
+  .addDecorator(centered)
 
-    .add('success', () => (
-        <Alert
-            type="success"
-            title="Félicitations !"
-        >
+  .add('success', () => (
+    <Alert
+      type="success"
+      title="Félicitations !"
+    >
             Merci de votre confiance !
             Un email de confirmation vous a été envoyé, vérifiez vos courriers
             indésirables si vous ne le trouvez pas.
-        </Alert>
-    ))
+    </Alert>
+  ))
 
-    .add('error', () => (
-        <Alert
-            type="error"
-            title="Uh oh!"
-        >
+  .add('error', () => (
+    <Alert
+      type="error"
+      title="Uh oh!"
+    >
             Something went wrong!
-        </Alert>
-    ));
+    </Alert>
+  ));

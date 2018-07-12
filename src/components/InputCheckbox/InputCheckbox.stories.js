@@ -8,14 +8,14 @@ import InputCheckbox from './';
 
 storiesOf('Input.Checkbox', module)
 
-    .addDecorator(backgrounds([
-        { name: 'header', value: 'white', default: true },
-    ]))
-    .addDecorator(centered)
+  .addDecorator(backgrounds([
+    { name: 'header', value: 'white', default: true },
+  ]))
+  .addDecorator(centered)
 
-    .add('basic', () => (
-        <InputCheckbox>
+  .add('basic', () => (
+    <InputCheckbox>
             Voyage professionnel
-        </InputCheckbox>
-    ));
+    </InputCheckbox>
+  ));
 

@@ -8,14 +8,14 @@ import LinkUnderlined from './';
 
 storiesOf('Link.Underlined', module)
 
-    .addDecorator(backgrounds([
-        { name: 'header', value: 'white', default: true },
-    ]))
-    .addDecorator(centered)
+  .addDecorator(backgrounds([
+    { name: 'header', value: 'white', default: true },
+  ]))
+  .addDecorator(centered)
 
-    .add('basic', () => (
-        <LinkUnderlined>
+  .add('basic', () => (
+    <LinkUnderlined>
             Nouveau conducteur
-        </LinkUnderlined>
-    ));
+    </LinkUnderlined>
+  ));
 

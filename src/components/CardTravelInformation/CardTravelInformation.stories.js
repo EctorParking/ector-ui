@@ -8,11 +8,11 @@ import CardTravelInformation from './';
 
 storiesOf('Card.TravelInformation', module)
 
-    .addDecorator(backgrounds([
-        { name: 'header', value: 'white', default: true },
-    ]))
-    .addDecorator(centered)
+  .addDecorator(backgrounds([
+    { name: 'header', value: 'white', default: true },
+  ]))
+  .addDecorator(centered)
 
-    .add('basic', () => (
-        <CardTravelInformation />
-    ));
+  .add('basic', () => (
+    <CardTravelInformation />
+  ));

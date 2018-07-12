@@ -8,13 +8,13 @@ import CardTitle from './';
 
 storiesOf('Card.Title', module)
 
-    .addDecorator(backgrounds([
-        { name: 'header', value: 'white', default: true },
-    ]))
-    .addDecorator(centered)
+  .addDecorator(backgrounds([
+    { name: 'header', value: 'white', default: true },
+  ]))
+  .addDecorator(centered)
 
-    .add('basic', () => (
-        <CardTitle>
+  .add('basic', () => (
+    <CardTitle>
             Numéro de Vol / Train
-        </CardTitle>
-    ));
+    </CardTitle>
+  ));
