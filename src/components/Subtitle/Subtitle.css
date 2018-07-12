@@ -1,19 +1,20 @@
 @import '../../style/variable.css';
 
 .subtitle {
-    margin-bottom: var(--marginLarge);
+  margin-bottom: var(--marginLarge);
 }
 
 .subtitle h2 {
-    color: var(--deepBlue);
-    font-size: var(--fontSizeSubtitle);
-    font-weight: var(--fontWeightRegular);
-    line-height: 1;
-    margin: 0 0 var(--marginSmall);
+  color: var(--deepBlue);
+  font-size: var(--fontSizeSubtitle);
+  font-weight: var(--fontWeightRegular);
+  line-height: 1;
+  margin: 0 0 var(--marginSmall);
 }
 
 .subtitle hr {
-    border: 0;
-    border-top: 2px dotted var(--aquaHazeGrey);
-    width: var(--titleHrWidth);
+  border: 0;
+  border-top: 2px dotted var(--aquaHazeGrey);
+  margin: 0;
+  width: var(--titleHrWidth);
 }

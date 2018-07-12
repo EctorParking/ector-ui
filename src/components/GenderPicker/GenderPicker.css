@@ -1,11 +1,11 @@
 @import '../../style/variable.css';
 
 .genderPicker {
-    display: flex;
+  display: flex;
 }
 .genderPicker label {
-    margin-right: var(--marginMedium);
+  margin-right: var(--marginMedium);
 }
 .genderPicker label:last-child {
-    margin-right: 0;
+  margin-right: 0;
 }

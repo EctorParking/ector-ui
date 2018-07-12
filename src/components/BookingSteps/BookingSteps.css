@@ -1,51 +1,52 @@
 @import '../../style/variable.css';
 
 .bookingSteps {
-    padding-left: var(--marginLarge);
-    font-size: var(--fontSizeRegular);
+  padding-left: var(--marginLarge);
+  font-size: var(--fontSizeRegular);
 }
 
 .bookingSteps > div:first-child {
-    padding-bottom: var(--marginLarge);
-    position: relative;
+  padding-bottom: var(--marginLarge);
+  position: relative;
 }
 
 .bookingSteps > div:first-child:before {
-    content: '';
-    position: absolute;
-    top: var(--marginSmall);
-    left: calc(var(--marginMedium) * -1);
-    margin-left: calc(var(--marginXSmall) - 1px);
-    bottom: calc(var(--marginSmall) * -1);
-    border-right: 2px dotted var(--blue);
+  content: '';
+  position: absolute;
+  top: var(--marginSmall);
+  left: calc(var(--marginMedium) * -1);
+  margin-left: calc(var(--marginXSmall) - 1px);
+  bottom: calc(var(--marginSmall) * -1);
+  border-right: 2px dotted var(--blue);
 }
 
 .stepName {
-    font-size: 1.2em;
-    font-weight: var(--fontWeightRegular);
-    color: var(--blue);
-    position: relative;
+  font-size: 1.2em;
+  font-weight: var(--fontWeightRegular);
+  color: var(--blue);
+  margin: 0;
+  position: relative;
 }
 
 .stepName:before {
-    position: absolute;
-    content: '';
-    width: var(--marginSmall);
-    height: var(--marginSmall);
-    top: 50%;
-    left: calc(var(--marginMedium) * -1);
-    border-radius: 50%;
-    background-color: var(--blue);
-    margin-top: calc(var(--marginXSmall) * -1);
+  position: absolute;
+  content: '';
+  width: var(--marginSmall);
+  height: var(--marginSmall);
+  top: 50%;
+  left: calc(var(--marginMedium) * -1);
+  border-radius: 50%;
+  background-color: var(--blue);
+  margin-top: calc(var(--marginXSmall) * -1);
 }
 
 .bookingSteps div span {
-    align-items: center;
-    display: flex;
-    font-size: 0.9em;
+  align-items: center;
+  display: flex;
+  font-size: 0.9em;
 }
 .bookingSteps div span i {
-    /* margin-right: var(--marginSmall); */
-    font-size: 0.7em;
-    width: var(--marginLarge);
+  /* margin-right: var(--marginSmall); */
+  font-size: 0.7em;
+  width: var(--marginLarge);
 }

@@ -34,13 +34,13 @@ const ContactCard = ({
     mode += '-selected';
   }
 
-  const footer = (
+  const footer = mode !== 'delete' ? (
     <ContactCardFooter
       texts={texts}
       mode={mode}
       contact={contact}
     />
-  );
+  ) : null;
 
   let header = null;
   let content = mode.indexOf('read') === 0 ? <ContactCardContentRead contact={contact} /> : <ContactCardContentEdit contact={contact} />;

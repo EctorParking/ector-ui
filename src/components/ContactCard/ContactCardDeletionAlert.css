@@ -1,15 +1,15 @@
 @import '../../style/variable.css';
 
 .deletionAlert {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 .deletionAlert p {
-    margin: var(--marginSmall) 0;
+  margin: var(--marginSmall) 0;
 }
 .deletionButtons {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }

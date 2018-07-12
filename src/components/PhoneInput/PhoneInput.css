@@ -1,10 +1,10 @@
 @import '../../style/variable.css';
 
 .phoneInput {
-    display: flex;
-    flex: 1;
+  display: flex;
+  flex: 1;
 }
 .phoneInput input {
-    margin-left: var(--marginSmall);
-    max-width: 150px;
+  margin-left: var(--marginSmall);
+  max-width: 150px;
 }

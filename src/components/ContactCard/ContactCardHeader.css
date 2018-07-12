@@ -1,18 +1,18 @@
 @import '../../style/variable.css';
 
 .name {
-    color: var(--blue);
-    display: flex;
-    font-size: var(--fontSizeSubtitle);
-    justify-content: space-between;
-    margin-top: -0.75em;
+  color: var(--blue);
+  display: flex;
+  font-size: var(--fontSizeSubtitle);
+  justify-content: space-between;
+  margin-top: -0.75em;
 }
 .editIcon {
-    margin-right: -0.75em;
+  margin-right: -0.75em;
 }
 .editButton {
-    background: none;
-    border: 0;
-    margin: 0;
-    padding: 0;
+  background: none;
+  border: 0;
+  margin: 0;
+  padding: 0;
 }
