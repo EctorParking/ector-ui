@@ -1,0 +1,14 @@
+@import '../../style/variable.css';
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bookingSteps {
+    margin-right: var(--marginLarge);
+}
+
+.pricingSummary {
+    margin-left: var(--marginLarge);
+}
