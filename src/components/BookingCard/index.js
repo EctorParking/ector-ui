@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Card from '../card';
+import Card from '../Card';
 import BookingSteps from '../BookingSteps';
 import BookingStepsTextsType from '../BookingSteps/BookingStepsTextsType';
 import PricingSummary from '../PricingSummary';
