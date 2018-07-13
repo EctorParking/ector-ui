@@ -1,5 +1,6 @@
 @import '../../style/variable.css';
 
 .pendingDeletion {
-    background-color: var(--lightGrey);
+  background-color: var(--lightGrey);
+  justify-content: center;
 }

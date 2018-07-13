@@ -1,35 +1,35 @@
 @import '../../style/variable.css';
 
 .option {
-    align-items: center;
-    color: var(--deepBlue);
-    display: flex;
-    justify-content: space-between;
+  align-items: center;
+  color: var(--deepBlue);
+  display: flex;
+  justify-content: space-between;
 }
 
 .label {
-    align-items: center;
-    display: flex;
+  align-items: center;
+  display: flex;
 }
 
 .label i {
-    font-size: 0.9em;
-    margin-left: var(--marginSmall);
+  font-size: 0.9em;
+  margin-left: var(--marginSmall);
 }
 
 .label i:before {
-    color: var(--deepBlue);
+  color: var(--deepBlue);
 }
 
 .price {
-    display: inline-flex;
-    font-weight: var(--fontWeightBold);
+  display: inline-flex;
+  font-weight: var(--fontWeightBold);
 }
 
 .currency-after {
-    flex-direction: row;
+  flex-direction: row;
 }
 
 .currency-before {
-    flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }

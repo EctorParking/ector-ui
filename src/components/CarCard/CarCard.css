@@ -1,51 +1,52 @@
 @import '../../style/variable.css';
 
 .carName {
-    color: var(--blue);
-    display: flex;
-    font-size: var(--fontSizeSubtitle);
-    justify-content: space-between;
-    margin-top: -0.75em;
+  color: var(--blue);
+  display: flex;
+  font-size: var(--fontSizeSubtitle);
+  justify-content: space-between;
+  margin-top: -0.75em;
 }
 .footer {
-    align-items: flex-end;
-    display: flex;
-    justify-content: space-between;
-    padding-left: 0.5em;
+  align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0.5em;
 }
 .carImage {
-    margin-top: -0.5em;
-    width: 100px;
+  margin-top: -0.5em;
+  width: 100px;
 }
 .checkIcon {
-    color: var(--white);
-    font-size: var(--fontSizeSubtitle);
+  color: var(--white);
+  font-size: var(--fontSizeSubtitle);
 }
 .editIcon {
-    margin-right: -0.75em;
+  margin-right: -0.75em;
 }
 .editButton {
-    background: none;
-    border: 0;
-    margin: 0;
-    padding: 0;
+  background: none;
+  border: 0;
+  margin: 0;
+  padding: 0;
 }
 .numberPlate {
 
 }
 .pendingDeletion {
-    background-color: var(--lightGrey);
+  background-color: var(--lightGrey);
+  justify-content: center;
 }
 .deletionAlert {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 .deletionAlert p {
-    margin: var(--marginSmall) 0;
+  margin: var(--marginSmall) 0;
 }
 .deletionButtons {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }

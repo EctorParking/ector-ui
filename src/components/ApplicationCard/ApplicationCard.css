@@ -1,50 +1,54 @@
 @import '../../style/variable.css';
 
 .applicationCard {
-    background-color: var(--deepBlue);
-    border-radius: var(--borderRadius);
-    display: flex;
-    padding: 0 var(--marginMedium);
-    max-width: 410px;
-    overflow: hidden;
+  background-color: var(--deepBlue);
+  border-radius: var(--borderRadius);
+  display: flex;
+  padding: 0 var(--marginMedium);
+  max-width: 410px;
+  overflow: hidden;
 }
 
 .applicationCard > div:first-child {
-    padding: var(--marginMedium);
-    padding-left: 0;
+  padding: var(--marginMedium);
+  padding-left: 0;
 }
 
 .applicationCard > div:last-child {
-    align-self: flex-end;
-    margin-bottom: calc(var(--marginMedium) * -1);
+  align-self: flex-end;
+  margin-bottom: calc(var(--marginMedium) * -1);
 }
 
 .applicationCard h2 {
-    color: var(--yellow);
-    font-weight: var(--fontWeightRegular);
-    margin-bottom: var(--marginSmall);
+  color: var(--yellow);
+  font-weight: var(--fontWeightRegular);
+  margin-bottom: var(--marginSmall);
 }
 
 .applicationCard p {
-    color: var(--white);
+  color: var(--white);
 }
 
 .applicationCard img {
-    display: block;
-    max-height: 220px;
-    max-width: 100%;
-    margin: 0;
+  display: block;
+  max-height: 220px;
+  max-width: 100%;
+  margin: 0;
 }
 
 .icons {
-    display: flex;
-    margin-top: var(--marginLarge);
+  display: flex;
+  margin-top: var(--marginLarge);
 }
 
 .icons a:first-child {
-    margin-right: var(--marginXSmall);
+  margin-right: var(--marginXSmall);
 }
 
 .icons a:last-child {
-    margin-left: var(--marginXSmall);
+  margin-left: var(--marginXSmall);
+}
+
+.applicationCard p {
+  margin: 0;
 }

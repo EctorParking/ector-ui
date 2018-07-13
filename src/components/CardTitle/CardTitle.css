@@ -1,10 +1,9 @@
 @import '../../style/variable.css';
 
-
 .card_title {
-    color: var(--blue);
-    font-size: 1.4rem;
-    font-weight: var(--fontWeightRegular);
-    margin: 0;
-    margin-bottom: 1rem;
+  color: var(--blue);
+  font-size: 1.4rem;
+  font-weight: var(--fontWeightRegular);
+  margin: 0;
+  margin-bottom: 1rem;
 }

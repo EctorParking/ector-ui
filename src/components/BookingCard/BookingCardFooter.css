@@ -1,21 +1,21 @@
 @import '../../style/variable.css';
 
 .footer {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    height: 100%;
-    padding: 0 var(--marginMedium);
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 var(--marginMedium);
 }
 
 .left {
-    display: flex;
+  display: flex;
 }
 
 .left > * {
-    margin-right: var(--marginMedium);
+  margin-right: var(--marginMedium);
 }
 
 .left > *:last-child {
-    margin-right: 0;
+  margin-right: 0;
 }

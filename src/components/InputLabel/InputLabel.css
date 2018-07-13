@@ -1,12 +1,9 @@
-
-
 @import '../../style/variable.css';
 
 .input, .label {
-    display: block;
+  display: block;
 }
 
 .isimportant {
-    font-weight: var(--fontWeightBold);
+  font-weight: var(--fontWeightBold);
 }
-

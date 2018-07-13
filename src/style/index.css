@@ -1,44 +1,43 @@
 @import './font.css';
 
 /**
- ** Those commented lines, specially margin: 0, breaks style of components.
- ** It also override a lot of styles when integrating this components library
- */
+** Those commented lines, specially margin: 0, breaks style of components.
+** It also override a lot of styles when integrating this components library
+*/
 
 /**
- ** * {
- **    box-sizing: border-box;
- **    margin: 0;
- ** }
- */
+** * {
+**    box-sizing: border-box;
+**    margin: 0;
+** }
+*/
 
 body {
-    font-family: 'gt_walsheim', 'Arial', 'Helvetica', sans-serif;
-    font-size: var(--fontSizeRegular);
-    color: var(--deepBlue);
+  font-family: 'gt_walsheim', 'Arial', 'Helvetica', sans-serif;
+  font-size: var(--fontSizeRegular);
+  color: var(--deepBlue);
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 /* Chrome outline fix */
 button:focus {
-    outline: 0;
+  outline: 0;
 }
 
 button {
-    background-color: transparent;
-    border: 0;
-    cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
 
-    &:active {
-        cursor: default;
-    }
+  &:active {
+    cursor: default;
+  }
 }
 
 textarea:focus, input:focus{
-    outline: none;
+  outline: none;
 }
-

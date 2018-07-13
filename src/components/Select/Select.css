@@ -1,33 +1,34 @@
 @import '../../style/variable.css';
 
 .select {
-    align-items: center;
-    border-radius: var(--inputBorderRadius);
-    border: 2px solid var(--darkMetalGrey);
-    color: var(--darkMetalGrey);
-    display: flex;
-    height: 2.5rem;
-    margin-top: 0.25rem;
-    padding: 0.5rem;
-    position: relative;
+  align-items: center;
+  border-radius: var(--inputBorderRadius);
+  border: 2px solid var(--darkMetalGrey);
+  box-sizing: border-box;
+  color: var(--darkMetalGrey);
+  display: flex;
+  height: 2.5rem;
+  margin-top: 0.25rem;
+  padding: 0.5rem;
+  position: relative;
 }
 
 .select:after {
-    content: '\e954';
-    font-family: 'icomoon';
-    font-size: 80%;
-    margin-left: var(--marginSmall);
+  content: '\e954';
+  font-family: 'icomoon';
+  font-size: 80%;
+  margin-left: var(--marginSmall);
 }
 
 .select select {
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .selectImage {
-    margin-right: var(--marginSmall);
+  margin-right: var(--marginSmall);
 }
