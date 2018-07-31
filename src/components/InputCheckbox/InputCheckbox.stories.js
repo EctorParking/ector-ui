@@ -5,7 +5,6 @@ import centered from '@storybook/addon-centered';
 
 import InputCheckbox from './';
 
-
 storiesOf('Input.Checkbox', module)
 
   .addDecorator(backgrounds([
