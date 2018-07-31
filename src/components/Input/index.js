@@ -9,6 +9,9 @@ const Input = ({
   inputId,
   onFocus,
   onBlur,
+  onChange,
+  checked,
+  value,
 }) => (
   <input
     className={s.input}
@@ -17,6 +20,9 @@ const Input = ({
     id={inputId}
     onFocus={onFocus}
     onBlur={onBlur}
+    onChange={onChange}
+    checked={checked}
+    value={value}
   />
 );
 
@@ -25,6 +31,9 @@ Input.defaultProps = {
   inputId: '',
   onFocus: () => {},
   onBlur: () => {},
+  onChange: () => {},
+  checked: false,
+  value: '',
 };
 
 Input.propTypes = {
@@ -33,6 +42,9 @@ Input.propTypes = {
   inputId: PropTypes.string,
   onFocus: PropTypes.func,
   onBlur: PropTypes.func,
+  onChange: PropTypes.func,
+  checked: PropTypes.bool,
+  value: PropTypes.string,
 };
 
 
