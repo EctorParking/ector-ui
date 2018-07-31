@@ -11,6 +11,7 @@ const Input = ({
   onBlur,
   onChange,
   checked,
+  value,
 }) => (
   <input
     className={s.input}
@@ -21,6 +22,7 @@ const Input = ({
     onBlur={onBlur}
     onChange={onChange}
     checked={checked}
+    value={value}
   />
 );
 
@@ -31,6 +33,7 @@ Input.defaultProps = {
   onBlur: () => {},
   onChange: () => {},
   checked: false,
+  value: '',
 };
 
 Input.propTypes = {
@@ -41,6 +44,7 @@ Input.propTypes = {
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
   checked: PropTypes.bool,
+  value: PropTypes.string,
 };
 
 
