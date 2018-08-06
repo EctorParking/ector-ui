@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import formatHtmlPrice from '../../Services/Utils';
 
 import s from './ServiceCardFooter.css';
 import LinkUnderline from '../LinkUnderlined';
@@ -17,7 +18,7 @@ const ServiceCardFooter = ({
       /* eslint-disable no-undef */
       // eslint-disable-next-line react/no-danger
       dangerouslySetInnerHTML={{
-        __html: [price, '€'].join(''),
+        __html: formatHtmlPrice(price, '€'),
       }}
     />
     {!isSubscribed && (

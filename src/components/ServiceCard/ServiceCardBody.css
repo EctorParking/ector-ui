@@ -1,8 +1,8 @@
 @import '../../style/variable.css';
 
-.card_content {
+.cardContent {
     background-color: var(--white);
-    height: 197px;
+    height: 177px;
     padding: var(--marginSmall);
 }
 
@@ -33,4 +33,21 @@
 
 .punctuationKnowMore:after {
     content: '…';
+}
+
+@media (max-width: 1232px) {
+    .cardContent {
+        flex: 7;
+        height: auto;
+        padding: var(--marginSmall);
+    }
+
+    .title {
+        font-size: 20px;
+        margin-right: 0;
+    }
+
+    .icon {
+        display: none;
+    }
 }

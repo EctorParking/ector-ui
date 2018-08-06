@@ -21,7 +21,7 @@ const ServiceCardBody = ({
   }
 
   return (
-    <div className={`${s.card_content} ${contentClassName}`}>
+    <div className={`${s.cardContent} ${contentClassName}`}>
       {image}
       <h2 className={s.title}>{title}</h2>
       <span
@@ -37,7 +37,7 @@ const ServiceCardBody = ({
           onClick={openShowMore}
           type="button"
         >
-          <span>knowMore</span>
+          <span>En savoir plus</span>
         </button>
       )}
     </div>

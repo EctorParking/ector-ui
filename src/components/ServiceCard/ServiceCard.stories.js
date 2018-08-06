@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import backgrounds from '@storybook/addon-backgrounds';
+import { action } from '@storybook/addon-actions';
 import centered from '@storybook/addon-centered';
 
 import ServiceCard from './';
@@ -17,8 +18,9 @@ storiesOf('ServiceCard', module)
     <ServiceCard
       title="Option 1"
       description="Small description ndeaznd dheoz ado ezhd heizandieazd eizan diez deiandeizndi dei andienzdij ezniadneziandeia dnijz anidenziad niz"
-      price={120}
-      actionFooter={() => {}}
+      price={120.99}
+      actionFooter={action('add')}
+      openShowMore={action('showMore')}
       buttonLabelFooter="Ajouter"
     />
   ))
@@ -27,8 +29,9 @@ storiesOf('ServiceCard', module)
     <ServiceCard
       title="Option 1"
       description="Small description"
-      price={120}
-      actionFooter={() => {}}
+      price={120.00}
+      actionFooter={action('remove')}
+      openShowMore={action('showMore')}
       buttonLabelFooter="Supprimer"
       isSubscribed
     />
@@ -38,8 +41,9 @@ storiesOf('ServiceCard', module)
     <ServiceCard
       title="Option 1"
       description="Small description"
-      price={120}
-      actionFooter={() => {}}
+      price={120.00}
+      actionFooter={action('add')}
+      openShowMore={action('showMore')}
       buttonLabelFooter="Supprimer"
       labelColor="green"
       labelLogo="star"
@@ -51,8 +55,8 @@ storiesOf('ServiceCard', module)
     <ServiceCard
       title="Option 1"
       description="Small description"
-      price={120}
-      actionFooter={() => {}}
+      price={120.00}
+      actionFooter={action('remove')}
       buttonLabelFooter="Supprimer"
       labelColor="green"
       labelLogo="star"
