@@ -28,7 +28,7 @@ const leftActions = [
   <ActionLink label="Annuler" />,
 ];
 
-const rightAction = <LinkUnderlined>Télécharger la facture</LinkUnderlined>;
+const rightAction = <LinkUnderlined onClick={() => {}}>Télécharger la facture</LinkUnderlined>;
 
 storiesOf('BookingCard', module)
 

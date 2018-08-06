@@ -1,0 +1,18 @@
+@import '../../style/variable.css';
+
+.card {
+  background-color: var(--lightGrey);
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--borderRadius);
+  padding: 5px;
+  margin-top: 25px;
+  margin-right: 25px;
+  position: relative;
+  width: 255px;
+  height: 260px;
+}
+
+.optionCardContainerSelected {
+  background-color: var(--yellow);
+}

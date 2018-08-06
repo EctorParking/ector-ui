@@ -1,0 +1,36 @@
+@import '../../style/variable.css';
+
+.card_content {
+    background-color: var(--white);
+    height: 197px;
+    padding: var(--marginSmall);
+}
+
+.title {
+    color: var(--blue);
+    font-weight: var(--fontWeightLight);
+    font-size: var(--fontSizeSubtitle);
+    box-sizing: content-box;
+    margin: 0 20px 0 0;
+}
+
+.description {
+    color: var(--deepBlue);
+}
+
+.icon{
+    height: 45px;
+    width: 45px;
+}
+
+.knowMore {
+    color: var(--melrose);
+    cursor: pointer;
+    display: block;
+    padding: 0;
+    text-decoration: underline;
+}
+
+.punctuationKnowMore:after {
+    content: '…';
+}
