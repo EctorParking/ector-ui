@@ -1,0 +1,36 @@
+@import '../../style/variable.css';
+
+.labelContainer {
+    border-radius: var(--inputBorderRadius);
+    color: var(--white);
+    font-size: var(--fontSizeLabel);
+    padding: var(--marginXSmall);
+    display: flex;
+    align-items: center;
+}
+
+.text {
+    padding: 0 var(--marginXSmall);
+    font-weight: var(--fontWeightRegular);
+    letter-spacing: 1px;
+}
+
+.deepBlue {
+    background-color: var(--deepBlue);
+}
+
+.green {
+    background-color: var(--green);
+}
+
+.red {
+    background-color: var(--red);
+}
+
+.melrose {
+    background-color: var(--melrose);
+}
+
+.blue {
+    background-color: var(--blue);
+}
