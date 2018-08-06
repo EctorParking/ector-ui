@@ -32,4 +32,31 @@ storiesOf('ServiceCard', module)
       buttonLabelFooter="Supprimer"
       isSubscribed
     />
+  ))
+
+  .add('normal with label', () => (
+    <ServiceCard
+      title="Option 1"
+      description="Small description"
+      price={120}
+      actionFooter={() => {}}
+      buttonLabelFooter="Supprimer"
+      labelColor="green"
+      labelLogo="star"
+      labelText="Populaire"
+    />
+  ))
+
+  .add('selected with label', () => (
+    <ServiceCard
+      title="Option 1"
+      description="Small description"
+      price={120}
+      actionFooter={() => {}}
+      buttonLabelFooter="Supprimer"
+      labelColor="green"
+      labelLogo="star"
+      labelText="Populaire"
+      isSubscribed
+    />
   ));
