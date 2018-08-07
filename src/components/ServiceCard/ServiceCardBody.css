@@ -1,0 +1,53 @@
+@import '../../style/variable.css';
+
+.cardContent {
+    background-color: var(--white);
+    height: 177px;
+    padding: var(--marginSmall);
+}
+
+.title {
+    color: var(--blue);
+    font-weight: var(--fontWeightLight);
+    font-size: var(--fontSizeSubtitle);
+    box-sizing: content-box;
+    margin: 0 20px 0 0;
+}
+
+.description {
+    color: var(--deepBlue);
+}
+
+.icon{
+    height: 45px;
+    width: 45px;
+}
+
+.knowMore {
+    color: var(--melrose);
+    cursor: pointer;
+    display: block;
+    padding: 0;
+    text-decoration: underline;
+}
+
+.punctuationKnowMore:after {
+    content: '…';
+}
+
+@media (max-width: 1232px) {
+    .cardContent {
+        flex: 7;
+        height: auto;
+        padding: var(--marginSmall);
+    }
+
+    .title {
+        font-size: 20px;
+        margin-right: 0;
+    }
+
+    .icon {
+        display: none;
+    }
+}

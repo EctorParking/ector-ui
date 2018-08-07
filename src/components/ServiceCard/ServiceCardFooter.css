@@ -1,0 +1,45 @@
+@import '../../style/variable.css';
+
+.footerContainer {
+    box-sizing: border-box;
+    height: 62px;
+    display: flex;
+    justify-content: space-between;
+    padding: var(--marginMedium) var(--marginSmall);
+}
+
+.price {
+    color: var(--deepBlue);
+    font-size: 35px;
+    font-weight: var(--fontWeightRegular);
+}
+
+.deleteButton {
+    background: none;
+    border: 0;
+    color: var(--blue);
+    padding: 0;
+    text-decoration: underline;
+    font-style: italic;
+    font-weight: var(--fontWeightLight);
+    text-align: end;
+}
+
+@media (max-width: 1232px) {
+    .footerContainer {
+        align-items: center;
+        flex: 3;
+        flex-direction: column;
+        justify-content: center;
+        padding: var(--marginSmall);
+    }
+
+    .price {
+        font-size: 14px;
+        line-height: 1;
+    }
+
+    .price small {
+        font-size: 70%;
+    }
+}

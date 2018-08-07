@@ -1,0 +1,33 @@
+@import '../../style/variable.css';
+
+.card {
+    background-color: var(--lightGrey);
+    border-radius: var(--borderRadius);
+    padding: 5px;
+    margin-top: 25px;
+    position: relative;
+    width: 255px;
+    height: 250px;
+}
+
+.optionCardContainerSelected {
+    background-color: var(--yellow);
+}
+
+.labelContainer {
+    position: absolute;
+    top: -10px;
+    right: 10%;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 1232px) {
+    .card {
+        display: flex;
+        flex: 1;
+        height: auto;
+        margin-right: 0;
+        max-width: 100%;
+    }
+}
