@@ -54,7 +54,7 @@
   },
   "browserslist": "last 2 versions",
   "name": "ector-ui",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "scope": "ectorparking",
   "description": "Ector's react components",
   "main": "dist/ector-ui.js",
