@@ -29,6 +29,7 @@
     .footerContainer {
         align-items: center;
         flex: 3;
+        height: initial;
         flex-direction: column;
         justify-content: center;
         padding: var(--marginSmall);

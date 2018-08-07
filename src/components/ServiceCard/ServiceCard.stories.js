@@ -17,7 +17,7 @@ storiesOf('ServiceCard', module)
   .add('normal', () => (
     <ServiceCard
       title="Option 1"
-      description="Small description ndeaznd dheoz ado ezhd heizandieazd eizan diez deiandeizndi dei andienzdij ezniadneziandeia dnijz anidenziad niz"
+      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
       price={120.99}
       actionFooter={action('add')}
       openShowMore={action('showMore')}
@@ -28,7 +28,7 @@ storiesOf('ServiceCard', module)
   .add('selected', () => (
     <ServiceCard
       title="Option 1"
-      description="Small description"
+      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
       price={120.00}
       actionFooter={action('remove')}
       openShowMore={action('showMore')}
@@ -40,7 +40,7 @@ storiesOf('ServiceCard', module)
   .add('normal with label', () => (
     <ServiceCard
       title="Option 1"
-      description="Small description"
+      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
       price={120.00}
       actionFooter={action('add')}
       openShowMore={action('showMore')}
@@ -54,7 +54,7 @@ storiesOf('ServiceCard', module)
   .add('selected with label', () => (
     <ServiceCard
       title="Option 1"
-      description="Small description"
+      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
       price={120.00}
       actionFooter={action('remove')}
       buttonLabelFooter="Supprimer"
