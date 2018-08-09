@@ -1,0 +1,36 @@
+@import '../../style/variable.css';
+
+.container {
+  min-height: auto;
+  min-width: auto;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  padding: var(--marginMedium) var(--marginLarge);
+  font-size: 30px;
+  font-weight: var(--fontWeightBold);
+}
+
+.content i {
+  margin-right: var(--marginSmall);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  padding: var(--marginXSmall) var(--marginSmall) var(--marginSmall);
+}
+
+.footerContainer {
+  display: flex;
+  justify-content: flex-end;
+  height: 21px;
+  line-height: 1;
+  padding: var(--marginXSmall);
+  margin-top: 3px;
+}
