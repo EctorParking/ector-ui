@@ -1,8 +1,13 @@
 @import '../../style/variable.css';
 
 .container {
+  box-sizing: border-box;
   min-height: auto;
   min-width: auto;
+
+  * {
+    box-sizing: border-box;
+  }
 }
 
 .content {
@@ -27,9 +32,10 @@
 }
 
 .footerContainer {
+  box-sizing: border-box;
   display: flex;
   justify-content: flex-end;
-  height: 21px;
+  height: 31px;
   line-height: 1;
   padding: var(--marginXSmall);
   margin-top: 3px;
