@@ -17177,13 +17177,15 @@ textarea:focus, input:focus{
 }
 
 .ServiceCard__card___24ogC {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     background-color: #eceff6;
     border-radius: 8px;
     padding: 5px;
     margin-top: 25px;
     position: relative;
     width: 255px;
-    height: 250px;
+    height: 260px;
 }
 
 .ServiceCard__optionCardContainerSelected___3LgNu {
@@ -17670,8 +17672,10 @@ textarea:focus, input:focus{
 }
 
 .ServiceCardBody__cardContent___34NH1 {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     background-color: white;
-    height: 177px;
+    height: 197px;
     padding: 10px;
 }
 
@@ -18180,7 +18184,6 @@ textarea:focus, input:focus{
 .ServiceCardFooter__footerContainer___DmoJn {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    height: 62px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
