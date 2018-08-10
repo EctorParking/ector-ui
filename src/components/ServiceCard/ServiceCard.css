@@ -1,13 +1,14 @@
 @import '../../style/variable.css';
 
 .card {
+    box-sizing: border-box;
     background-color: var(--lightGrey);
     border-radius: var(--borderRadius);
     padding: 5px;
     margin-top: 25px;
     position: relative;
     width: 255px;
-    height: 250px;
+    height: 260px;
 }
 
 .optionCardContainerSelected {

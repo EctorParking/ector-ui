@@ -2,7 +2,6 @@
 
 .footerContainer {
     box-sizing: border-box;
-    height: 62px;
     display: flex;
     justify-content: space-between;
     padding: var(--marginMedium) var(--marginSmall);
