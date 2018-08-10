@@ -1,8 +1,9 @@
 @import '../../style/variable.css';
 
 .cardContent {
+    box-sizing: border-box;
     background-color: var(--white);
-    height: 177px;
+    height: 197px;
     padding: var(--marginSmall);
 }
 

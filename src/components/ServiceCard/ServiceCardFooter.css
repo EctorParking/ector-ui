@@ -2,7 +2,6 @@
 
 .footerContainer {
     box-sizing: border-box;
-    height: 62px;
     display: flex;
     justify-content: space-between;
     padding: var(--marginMedium) var(--marginSmall);
@@ -29,6 +28,7 @@
     .footerContainer {
         align-items: center;
         flex: 3;
+        height: initial;
         flex-direction: column;
         justify-content: center;
         padding: var(--marginSmall);
