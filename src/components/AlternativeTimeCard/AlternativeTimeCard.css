@@ -1,0 +1,42 @@
+@import '../../style/variable.css';
+
+.container {
+  box-sizing: border-box;
+  min-height: auto;
+  min-width: auto;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  padding: var(--marginMedium) var(--marginLarge);
+  font-size: 30px;
+  font-weight: var(--fontWeightBold);
+}
+
+.content i {
+  margin-right: var(--marginSmall);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  padding: var(--marginXSmall) var(--marginSmall) var(--marginSmall);
+}
+
+.footerContainer {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+  height: 31px;
+  line-height: 1;
+  padding: var(--marginXSmall);
+  margin-top: 3px;
+}

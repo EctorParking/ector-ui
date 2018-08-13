@@ -87,7 +87,7 @@ module.exports = {
         'selector-type-case': 'lower',
         'selector-type-no-unknown': true,
 
-        indentation: 4,
+        indentation: 2,
         'no-duplicate-selectors': true,
         'max-line-length': 79,
         // TODO
@@ -98,5 +98,3 @@ module.exports = {
         'no-missing-end-of-source-newline': true,
     },
 }
-
-
