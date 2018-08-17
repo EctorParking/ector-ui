@@ -2,72 +2,32 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import backgrounds from '@storybook/addon-backgrounds';
 import centered from '@storybook/addon-centered';
+import { withKnobs, object, boolean } from '@storybook/addon-knobs/react';
+
+import { DefaultTexts } from './CarCardTextsType';
 
 import CarCard from './';
 
-const texts = {
-  modify: 'Changer',
-  save: 'Enregistrer',
-  confirmDeletionTitle: 'Confirmation',
-  confirmDeletionSentence: 'Êtes-vous sûr(e) de vouloir supprimer ce véhicule ?',
-  cancel: 'Annuler',
-  confirm: 'Confirmer',
-};
-
-const car = {
-  name: 'Audi A3',
-  numberPlate: 'TB-894-LI',
-};
-
 storiesOf('CarCard', module)
-
   .addDecorator(backgrounds([
     { name: 'header', value: 'white', default: true },
   ]))
   .addDecorator(centered)
+  .addDecorator(withKnobs)
+  .add('With Knobs', () => {
+    const props = {
+      car: object('Voiture', {
+        name: 'Audi A3',
+        numberPlate: 'TB-894-LI',
+      }),
+      texts: object('Texts', DefaultTexts),
+      editable: boolean('Editable', false),
+      pendingModification: boolean('Selected', false),
+      deletable: boolean('Pending modification', false),
+      selected: boolean('Deletable', false),
+    };
 
-  .add('not selected', () => (
-    <CarCard
-      car={car}
-      texts={texts}
-    />
-  ))
-
-  .add('modifiable selected', () => (
-    <CarCard
-      car={car}
-      texts={texts}
-      modifiable
-      selected
-    />
-  ))
-
-  .add('modifiable selected pendingModification', () => (
-    <CarCard
-      car={car}
-      texts={texts}
-      modifiable
-      selected
-      pendingModification
-    />
-  ))
-
-  .add('modifiable deletable selected pendingModification', () => (
-    <CarCard
-      car={car}
-      texts={texts}
-      modifiable
-      deletable
-      selected
-      pendingModification
-    />
-  ))
-
-  .add('pendingDeletion', () => (
-    <CarCard
-      car={car}
-      texts={texts}
-      selected
-      pendingDeletion
-    />
-  ));
+    return (
+      <CarCard {...props} />
+    );
+  });
