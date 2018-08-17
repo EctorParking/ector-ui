@@ -6,7 +6,7 @@ import ContactCardTextsType from './ContactCardTextsType';
 
 const ContactCardHeader = ({
   contact,
-  modifiable,
+  editable,
   deletable,
   pendingModification,
   texts,
@@ -15,7 +15,7 @@ const ContactCardHeader = ({
 
   let button = null;
 
-  if (modifiable) {
+  if (editable) {
     if (!pendingModification) {
       button = (
         <button
@@ -48,7 +48,7 @@ const ContactCardHeader = ({
 
 ContactCardHeader.propTypes = {
   contact: ContactType.isRequired,
-  modifiable: PropTypes.bool.isRequired,
+  editable: PropTypes.bool.isRequired,
   deletable: PropTypes.bool.isRequired,
   pendingModification: PropTypes.bool.isRequired,
   texts: ContactCardTextsType.isRequired,

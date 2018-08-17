@@ -14,22 +14,17 @@ storiesOf('Input.Label', module)
   .addDecorator(centered)
 
   .add('normal', () => (
-    <InputLabel>
-            Aller
-    </InputLabel>
+    <InputLabel label="Aller" />
   ))
 
   .add('important', () => (
-    <InputLabel isImportant>
-            Retour*
-    </InputLabel>
+    <InputLabel mandatory label="Retour" />
   ))
 
   .add('with placeholder', () => (
     <InputLabel
       inputId="StartInput"
       placeHolder="AB 000"
-    >
-            Aller
-    </InputLabel>
+      label="Aller"
+    />
   ));

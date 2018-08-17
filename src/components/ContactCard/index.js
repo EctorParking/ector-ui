@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Card from '../Card';
 import s from './ContactCard.css';
 import ContactType from './ContactType';
-import ContactCardTextsType from './ContactCardTextsType';
+import TextsType, { DefaultTexts } from './ContactCardTextsType';
 import ContactCardDeletionAlert from './ContactCardDeletionAlert';
 import ContactCardHeader from './ContactCardHeader';
 import ContactCardFooter from './ContactCardFooter';
@@ -12,7 +12,7 @@ import ContactCardContentEdit from './ContactCardContentEdit';
 
 const ContactCard = ({
   contact,
-  modifiable,
+  editable,
   texts,
   selected,
   pendingModification,
@@ -52,7 +52,7 @@ const ContactCard = ({
       <ContactCardHeader
         texts={texts}
         contact={contact}
-        modifiable={modifiable}
+        editable={editable}
         deletable={deletable}
         pendingModification={pendingModification}
       />
@@ -73,24 +73,25 @@ const ContactCard = ({
 
 ContactCard.propTypes = {
   contact: ContactType.isRequired,
-  modifiable: PropTypes.bool,
+  editable: PropTypes.bool,
   deletable: PropTypes.bool,
   selected: PropTypes.bool,
   pendingModification: PropTypes.bool,
   pendingDeletion: PropTypes.bool,
-  texts: ContactCardTextsType.isRequired,
+  texts: TextsType,
   onClick: PropTypes.func,
   onDelete: PropTypes.func,
 };
 
 ContactCard.defaultProps = {
-  modifiable: true,
+  editable: true,
   deletable: true,
   selected: false,
   pendingModification: false,
   pendingDeletion: false,
   onClick: () => {},
   onDelete: () => {},
+  texts: DefaultTexts,
 };
 
 export default ContactCard;
