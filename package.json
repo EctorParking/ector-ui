@@ -1,8 +1,8 @@
 {
   "scripts": {
     "start": "start-storybook -p 9001 -c .storybook watch-css -s ./src",
-    "prebuild": "rimraf dist",
-    "build": "webpack --config webpack.config.js",
+    "preinstall": "rimraf dist",
+    "install": "webpack --config webpack.config.js",
     "lint": "eslint ./src --ext .js",
     "lintfix": "eslint ./src --fix --ext .js",
     "build:storybook": "build-storybook -c .storybook -o .out"
@@ -45,6 +45,7 @@
     "@storybook/addon-actions": "^3.4.3",
     "@storybook/addon-backgrounds": "^3.4.3",
     "@storybook/addon-centered": "^3.4.3",
+    "@storybook/addon-knobs": "^3.4.10",
     "@storybook/react": "^3.3.14",
     "normalize.css": "^8.0.0",
     "prop-types": "^15.6.1",
@@ -54,7 +55,7 @@
   },
   "browserslist": "last 2 versions",
   "name": "ector-ui",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "scope": "ectorparking",
   "description": "Ector's react components",
   "main": "dist/ector-ui.js",
