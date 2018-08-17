@@ -27,7 +27,7 @@ const CardTravelInformation = ({
           onChange={onOutwardChange}
           value={outwardValue}
           className={s.outwardInputLabel}
-          inputClassName={[s.input, inputClassName].join(' ')}
+          inputClassName={inputClassName}
         />
         <InputLabel
           mandatory
@@ -36,7 +36,7 @@ const CardTravelInformation = ({
           onChange={onReturnChange}
           value={returnValue}
           className={s.returnInputLabel}
-          inputClassName={[s.input, inputClassName].join(' ')}
+          inputClassName={inputClassName}
         />
       </div>
     </Card>
