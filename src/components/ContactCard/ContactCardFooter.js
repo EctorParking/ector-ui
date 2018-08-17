@@ -4,6 +4,13 @@ import LinkUnderlined from '../LinkUnderlined';
 import s from './ContactCardFooter.css';
 import ContactCardTextsType from './ContactCardTextsType';
 import ContactType from './ContactType';
+import maleImage from '../../images/avatar-man.svg';
+import femaleImage from '../../images/avatar-woman.svg';
+
+const avatars = {
+  male: maleImage,
+  female: femaleImage,
+};
 
 const ContactCardFooter = ({ texts, contact, mode }) => {
   const { gender } = contact;
@@ -32,7 +39,7 @@ const ContactCardFooter = ({ texts, contact, mode }) => {
   return (
     <div className={s.footer}>
       <img
-        src={`./images/${gender}.png`}
+        src={avatars[gender]}
         className={s.genderImage}
         alt={gender}
       />
