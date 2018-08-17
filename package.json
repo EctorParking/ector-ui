@@ -27,7 +27,6 @@
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-jsx-a11y": "^6.1.0",
     "eslint-plugin-react": "^7.7.0",
-    "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.11",
     "isomorphic-style-loader": "^4.0.0",
     "postcss": "^6.0.22",
@@ -51,7 +50,8 @@
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "wordwrap": "^1.0.0"
+    "wordwrap": "^1.0.0",
+    "extract-text-webpack-plugin": "^3.0.2"
   },
   "browserslist": "last 2 versions",
   "name": "ector-ui",
