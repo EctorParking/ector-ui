@@ -38,7 +38,8 @@
     "stylelint": "^9.2.0",
     "stylelint-config-standard": "^18.2.0",
     "url-loader": "^1.0.1",
-    "webpack": "3.5.5"
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0"
   },
   "dependencies": {
     "@storybook/addon-actions": "^3.4.3",
@@ -46,12 +47,12 @@
     "@storybook/addon-centered": "^3.4.3",
     "@storybook/addon-knobs": "^3.4.10",
     "@storybook/react": "^3.3.14",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "normalize.css": "^8.0.0",
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "wordwrap": "^1.0.0",
-    "extract-text-webpack-plugin": "^3.0.2"
+    "wordwrap": "^1.0.0"
   },
   "browserslist": "last 2 versions",
   "name": "ector-ui",
