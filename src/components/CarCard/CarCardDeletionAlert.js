@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import LinkUnderlined from '../LinkUnderlined';
-import CarCardTextsType from './CarCardTextsType';
+import TextsType, { DefaultTexts } from './CarCardTextsType';
 import s from './CarCardDeletionAlert.css';
 
 const CarCardDeletionAlert = ({ texts, onDelete }) => (
@@ -19,8 +19,12 @@ const CarCardDeletionAlert = ({ texts, onDelete }) => (
   </div>
 );
 
+CarCardDeletionAlert.defaultProps = {
+  texts: DefaultTexts,
+};
+
 CarCardDeletionAlert.propTypes = {
-  texts: CarCardTextsType.isRequired,
+  texts: TextsType,
   onDelete: PropTypes.func.isRequired,
 };
 

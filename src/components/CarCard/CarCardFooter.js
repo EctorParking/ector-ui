@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import LinkUnderlined from '../LinkUnderlined';
 import s from './CarCardFooter.css';
-import CarCardTextsType from './CarCardTextsType';
+import TextsType, { DefaultTexts } from './CarCardTextsType';
+import carImage from '../../images/voiture-01-trois-quart-grise.svg';
 
 const CarCardFooter = ({ texts, mode }) => {
   let what;
@@ -30,7 +31,7 @@ const CarCardFooter = ({ texts, mode }) => {
   return (
     <div className={s.footer}>
       <img
-        src="images/voiture-01-trois-quart-grise.png"
+        src={carImage}
         className={s.carImage}
         alt="Car"
       />
@@ -39,8 +40,12 @@ const CarCardFooter = ({ texts, mode }) => {
   );
 };
 
+CarCardFooter.defaultProps = {
+  texts: DefaultTexts,
+};
+
 CarCardFooter.propTypes = {
-  texts: CarCardTextsType.isRequired,
+  texts: TextsType,
   mode: PropTypes.string.isRequired,
 };
 
