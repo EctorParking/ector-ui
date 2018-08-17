@@ -8,7 +8,6 @@ module.exports = {
     filename: 'ector-ui.js',
     library: 'ector-ui',
     libraryTarget: 'commonjs',
-    globalObject: 'this',
   },
   devtool: 'eval-source-map',
   module: {
