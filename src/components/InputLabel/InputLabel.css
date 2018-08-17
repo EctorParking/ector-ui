@@ -4,6 +4,6 @@
   display: block;
 }
 
-.isimportant {
+.mandatory {
   font-weight: var(--fontWeightBold);
 }

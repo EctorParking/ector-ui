@@ -9,3 +9,13 @@ export default PropTypes.shape({
   cancel: PropTypes.string,
   confirm: PropTypes.string,
 });
+
+export const DefaultTexts = {
+  modify: 'Changer',
+  delete: 'Supprimer',
+  save: 'Enregistrer',
+  confirmDeletionTitle: 'Confirmation',
+  confirmDeletionSentence: 'Êtes-vous sûr(e) de vouloir supprimer ce contact ?',
+  cancel: 'Annuler',
+  confirm: 'Confirmer',
+};

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import LinkUnderlined from '../LinkUnderlined';
-import ContactCardTextsType from './ContactCardTextsType';
+import TextsType, { DefaultTexts } from './ContactCardTextsType';
 import s from './ContactCardDeletionAlert.css';
 
 const ContactCardDeletionAlert = ({ texts, onDelete }) => (
@@ -19,8 +19,12 @@ const ContactCardDeletionAlert = ({ texts, onDelete }) => (
   </div>
 );
 
+ContactCardDeletionAlert.defaultProps = {
+  texts: DefaultTexts,
+};
+
 ContactCardDeletionAlert.propTypes = {
-  texts: ContactCardTextsType.isRequired,
+  texts: TextsType,
   onDelete: PropTypes.func.isRequired,
 };
 

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Card from '../Card';
 import s from './CarCard.css';
 import CarType from './CarType';
-import CarCardTextsType from './CarCardTextsType';
+import TextsType, { DefaultTexts } from './CarCardTextsType';
 import CarCardDeletionAlert from './CarCardDeletionAlert';
 import CarCardHeader from './CarCardHeader';
 import CarCardFooter from './CarCardFooter';
@@ -12,7 +12,7 @@ import CarCardContentEdit from './CarCardContentEdit';
 
 const CarCard = ({
   car,
-  modifiable,
+  editable,
   texts,
   selected,
   pendingModification,
@@ -56,7 +56,7 @@ const CarCard = ({
       <CarCardHeader
         texts={texts}
         car={car}
-        modifiable={modifiable}
+        editable={editable}
         deletable={deletable}
         pendingModification={pendingModification}
       />
@@ -77,18 +77,19 @@ const CarCard = ({
 
 CarCard.propTypes = {
   car: CarType.isRequired,
-  modifiable: PropTypes.bool,
+  editable: PropTypes.bool,
   deletable: PropTypes.bool,
   selected: PropTypes.bool,
   pendingModification: PropTypes.bool,
   pendingDeletion: PropTypes.bool,
-  texts: CarCardTextsType.isRequired,
+  texts: TextsType,
   onClick: PropTypes.func,
   onDelete: PropTypes.func,
 };
 
 CarCard.defaultProps = {
-  modifiable: true,
+  texts: DefaultTexts,
+  editable: true,
   deletable: true,
   selected: false,
   pendingModification: false,

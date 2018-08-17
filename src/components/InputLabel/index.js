@@ -6,22 +6,22 @@ import s from './InputLabel.css';
 import Input from '../Input';
 
 const InputLabel = ({
-  children, inputId, isImportant, placeHolder,
+  label, id, mandatory, placeholder, type, className, inputClassName,
 }) => {
-  const labelClassName = isImportant ? s.isimportant : '';
+  const labelClassName = mandatory ? s.mandatory : '';
 
   return (
     <label
-      htmlFor={inputId}
-      className={[labelClassName, s.label].join(' ')}
+      htmlFor={id}
+      className={[labelClassName, s.label, className].join(' ')}
     >
-      { children }
+      {`${label}${mandatory ? '*' : ''}`}
 
       <Input
-        className={s.input}
-        inputType="text"
-        inputId={inputId}
-        inputPlaceHolder={placeHolder}
+        className={[s.input, inputClassName].join(' ')}
+        inputId={id}
+        inputPlaceHolder={placeholder}
+        inputType={type}
       />
 
     </label>
@@ -29,16 +29,21 @@ const InputLabel = ({
 };
 
 InputLabel.defaultProps = {
-  inputId: 'InputStart',
-  isImportant: false,
-  placeHolder: '',
+  id: 'InputStart',
+  mandatory: false,
+  placeholder: '',
+  className: '',
+  inputClassName: '',
 };
 
 InputLabel.propTypes = {
-  children: PropTypes.node.isRequired,
-  inputId: PropTypes.string,
-  isImportant: PropTypes.bool,
-  placeHolder: PropTypes.string,
+  label: PropTypes.string.isRequired,
+  id: PropTypes.string,
+  mandatory: PropTypes.bool,
+  placeholder: PropTypes.string,
+  type: PropTypes.oneOfType(['text', 'number']).isRequired,
+  className: PropTypes.string,
+  inputClassName: PropTypes.string,
 };
 
 

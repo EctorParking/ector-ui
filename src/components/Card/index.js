@@ -22,7 +22,6 @@ CardFooter.propTypes = {
 };
 
 const CardHeader = ({ HeaderChildren }) => (
-
   <div>
     { HeaderChildren }
   </div>
@@ -50,35 +49,33 @@ const Card = ({
   const isClickable = typeof onClick === 'function' && !isSelected;
 
   const cardClassName = `
-        ${s.card}
-        ${isSelected ? s.card_selected : ''}
-        ${isClickable ? s.card_clickable : ''}
-        ${className}
-    `;
+    ${s.card}
+    ${isSelected ? s.card_selected : ''}
+    ${isClickable ? s.card_clickable : ''}
+    ${className}
+  `;
 
   return (
-
-  /* eslint-disable */
-        <div
-            className={cardClassName}
-            onClick={onClick}
-        >
-            { HeaderChildren &&
-                <CardHeader
-                    HeaderChildren={HeaderChildren}
-                />
-            }
-            <div className={`${s.card_content} ${contentClassName}`}>
-                { children }
-            </div>
-            { FooterChildren &&
-                <CardFooter
-                    className={footerClassName}
-                    FooterChildren={FooterChildren}
-                />
-            }
-        </div>
-        /* eslint-enable */
+    <div
+      role="presentation"
+      className={cardClassName}
+      onClick={onClick}
+    >
+      { HeaderChildren &&
+        <CardHeader
+          HeaderChildren={HeaderChildren}
+        />
+      }
+      <div className={`${s.card_content} ${contentClassName}`}>
+        { children }
+      </div>
+      { FooterChildren &&
+        <CardFooter
+          className={footerClassName}
+          FooterChildren={FooterChildren}
+        />
+      }
+    </div>
   );
 };
 

@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import s from './CarCardHeader.css';
 import CarType from './CarType';
-import CarCardTextsType from './CarCardTextsType';
+import TextsType, { DefaultTexts } from './CarCardTextsType';
 
 const CarCardHeader = ({
   car,
-  modifiable,
+  editable,
   deletable,
   pendingModification,
   texts,
@@ -15,7 +15,7 @@ const CarCardHeader = ({
 
   let button = null;
 
-  if (modifiable) {
+  if (editable) {
     if (!pendingModification) {
       button = (
         <button
@@ -46,12 +46,16 @@ const CarCardHeader = ({
   );
 };
 
+CarCardHeader.defaultProps = {
+  texts: DefaultTexts,
+};
+
 CarCardHeader.propTypes = {
   car: CarType.isRequired,
-  modifiable: PropTypes.bool.isRequired,
+  editable: PropTypes.bool.isRequired,
   deletable: PropTypes.bool.isRequired,
   pendingModification: PropTypes.bool.isRequired,
-  texts: CarCardTextsType.isRequired,
+  texts: TextsType,
 };
 
 export default CarCardHeader;
