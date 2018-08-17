@@ -12,9 +12,10 @@ const Input = ({
   onChange,
   checked,
   value,
+  className,
 }) => (
   <input
-    className={s.input}
+    className={[s.input, className].join(' ')}
     type={inputType}
     placeholder={inputPlaceHolder}
     id={inputId}
@@ -34,6 +35,7 @@ Input.defaultProps = {
   onChange: () => {},
   checked: false,
   value: '',
+  className: '',
 };
 
 Input.propTypes = {
@@ -45,6 +47,7 @@ Input.propTypes = {
   onChange: PropTypes.func,
   checked: PropTypes.bool,
   value: PropTypes.string,
+  className: PropTypes.string,
 };
 
 

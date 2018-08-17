@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 
 import s from './ActionLink.css';
 
-const ActionLink = ({ icon, label, onClick }) => {
+const ActionLink = ({
+  icon, label, onClick, className,
+}) => {
   const labelStyle = icon ? s.labelWithIcon : s.labelWithoutIcon;
 
   return (
     <button
-      className={s.container}
+      className={[s.container, className].join(' ')}
       onClick={onClick}
     >
       { icon && <i className={`icon-${icon}`} /> }
@@ -22,6 +24,7 @@ const ActionLink = ({ icon, label, onClick }) => {
 
 ActionLink.defaultProps = {
   icon: '',
+  className: '',
   onClick: () => {},
 };
 
@@ -29,6 +32,7 @@ ActionLink.propTypes = {
   icon: PropTypes.string,
   label: PropTypes.string.isRequired,
   onClick: PropTypes.func,
+  className: PropTypes.string,
 };
 
 

@@ -3,16 +3,20 @@ import PropTypes from 'prop-types';
 
 import s from './CardTitle.css';
 
-const CardTitle = ({ children }) => (
+const CardTitle = ({ children, className }) => (
 
-  <h3 className={s.card_title}>
+  <h3 className={[s.card_title, className].join(' ')}>
     { children }
   </h3>
 );
 
-CardTitle.propTypes = {
-  children: PropTypes.node.isRequired,
+CardTitle.defaultProps = {
+  className: '',
 };
 
+CardTitle.propTypes = {
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
+};
 
 export default CardTitle;
