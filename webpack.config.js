@@ -1,5 +1,5 @@
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: path.resolve(__dirname, './src/components/index.js'),
@@ -7,7 +7,8 @@ module.exports = {
     path: path.resolve(__dirname, './dist/'),
     filename: 'ector-ui.js',
     library: 'ector-ui',
-    libraryTarget: 'umd',
+    libraryTarget: 'commonjs',
+    globalObject: 'this',
   },
   devtool: 'eval-source-map',
   module: {
@@ -33,26 +34,29 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                importLoaders: 1,
-                modules: true,
-                localIdentName: '[name]__[local]___[hash:base64:5]',
-              },
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              modules: true,
+              localIdentName: '[name]__[local]___[hash:base64:5]',
             },
-            {
-              loader: 'postcss-loader',
-            },
-          ],
-        }),
+          },
+          {
+            loader: 'postcss-loader',
+          },
+        ],
         include: path.resolve(__dirname, './'),
       },
     ],
   },
   plugins: [
-    new ExtractTextPlugin('styles.css'),
+    new MiniCssExtractPlugin({
+      filename: 'styles.css',
+    }),
   ],
 };
