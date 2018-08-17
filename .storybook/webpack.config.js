@@ -26,6 +26,14 @@ module.exports = (storybookBaseConfig, configType) => {
       include: path.resolve(__dirname, "../")
     },
     {
+      test: /\.(png|jpg|jpeg|gif|svg|ico|woff|woff2|eot|ttf)$/,
+      loader: 'url-loader',
+      options: {
+        limit: 10000,
+        name: path.join('files', '[hash].[ext]'),
+      },
+    },
+    {
       test: /\.js$/,
       exclude: /node_modules/,
       loader: "eslint-loader",
