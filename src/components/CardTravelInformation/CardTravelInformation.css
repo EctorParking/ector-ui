@@ -3,16 +3,35 @@
 .inputs_row {
   display: flex;
   margin-top: auto;
+  justify-content: space-between;
+}
 
-  & > label {
-    margin: 1rem 0.5rem;
+.input {
+  width: 100%;
+}
 
-    &:first-child {
-      margin-left: 0;
-    }
+.outwardInputLabel {
+  margin: 1rem 0.5rem 1rem 0;
+}
 
-    &:last-child {
-      margin-right: 0;
-    }
+.returnInputLabel {
+  margin: 1rem 0 1rem 0.5rem;
+}
+
+.mandatorySentence {
+  margin-top: var(--marginSmall);
+  margin-left: var(--marginSmall);
+}
+
+@media (max-width: 768px) {
+  .inputs_row {
+    flex-direction: column;
+  }
+  .outwardInput, .returnInput {
+    margin: var(--marginSmall) auto;
+  }
+  .title {
+    text-align: center;
   }
 }
+
