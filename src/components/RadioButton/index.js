@@ -10,10 +10,11 @@ const RadioButton = ({
   checked,
   required,
   onSelect,
+  className,
 }) => (
   <label
     htmlFor={`${name}-${value}`}
-    className={s.radioButton}
+    className={`${s.radioButton} ${className}`}
   >
     <input
       type="radio"
@@ -33,6 +34,7 @@ RadioButton.defaultProps = {
   checked: false,
   required: false,
   onSelect: () => {},
+  className: '',
 };
 
 RadioButton.propTypes = {
@@ -42,6 +44,7 @@ RadioButton.propTypes = {
   checked: PropTypes.bool,
   required: PropTypes.bool,
   onSelect: PropTypes.func,
+  className: PropTypes.string,
 };
 
 export default RadioButton;

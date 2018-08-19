@@ -12,6 +12,7 @@ const AlternativeTimeCard = ({
   alternative,
   mode,
   onSelect,
+  className,
 }) => {
   const footer = mode !== 'selectedWithoutFooter' ? (
     <AlternativeTimeCardFooter
@@ -33,7 +34,7 @@ const AlternativeTimeCard = ({
       isSelected={mode.indexOf('selected') === 0}
       HeaderChildren={header}
       FooterChildren={footer}
-      className={s.container}
+      className={`${s.container} ${className}`}
       contentClassName={s.content}
       footerClassName={s.footerContainer}
     >
@@ -43,11 +44,16 @@ const AlternativeTimeCard = ({
   );
 };
 
+AlternativeTimeCard.defaultProps = {
+  className: '',
+};
+
 AlternativeTimeCard.propTypes = {
   texts: AlternativeTimeCardTextsType.isRequired,
   alternative: AlternativeTimeCardAlternativeType.isRequired,
   mode: PropTypes.oneOf(['normal', 'selectedWithFooter', 'selectedWithoutFooter']).isRequired,
   onSelect: PropTypes.func.isRequired,
+  className: PropTypes.string,
 };
 
 export default AlternativeTimeCard;

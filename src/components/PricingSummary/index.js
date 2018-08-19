@@ -12,8 +12,9 @@ const PricingSummary = ({
   options,
   texts,
   onAddClick,
+  className,
 }) => (
-  <div className={s.pricingSummary}>
+  <div className={`${s.pricingSummary} ${className}`}>
     <div className={s.options}>
       {
         options.map(option => (
@@ -50,6 +51,7 @@ const PricingSummary = ({
 PricingSummary.defaultProps = {
   currencyPosition: 'after',
   onAddClick: () => {},
+  className: '',
 };
 
 PricingSummary.propTypes = {
@@ -58,6 +60,7 @@ PricingSummary.propTypes = {
   options: PropTypes.arrayOf(PricingSummaryOptionType).isRequired,
   texts: PricingSummaryTextsType.isRequired,
   onAddClick: PropTypes.func,
+  className: PropTypes.string,
 };
 
 export default PricingSummary;

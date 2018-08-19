@@ -4,9 +4,11 @@ import PropTypes from 'prop-types';
 import s from './ColorPicker.css';
 
 const ColorPicker = ({
-  colorsList, onSelect,
+  colorsList,
+  onSelect,
+  className,
 }) => (
-  <div className={s.colorPicker}>
+  <div className={`${s.colorPicker} ${className}`}>
     {colorsList.map(color => (
       <button
         key={`color-${color.label}`}
@@ -19,12 +21,17 @@ const ColorPicker = ({
   </div>
 );
 
+ColorPicker.defaultProps = {
+  className: '',
+};
+
 ColorPicker.propTypes = {
   colorsList: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
     hexadecimalCode: PropTypes.string,
   })).isRequired,
   onSelect: PropTypes.func.isRequired,
+  className: PropTypes.string,
 };
 
 export default ColorPicker;

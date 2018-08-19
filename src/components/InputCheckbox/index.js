@@ -11,6 +11,7 @@ const InputCheckbox =
   children,
   onChange,
   checked,
+  className,
 }) => (
   <label
     htmlFor={`${inputId}`}
@@ -35,6 +36,7 @@ InputCheckbox.defaultProps = {
   inputId: 'InputStart',
   onChange: () => {},
   checked: false,
+  className: '',
 };
 
 InputCheckbox.propTypes = {
@@ -42,7 +44,7 @@ InputCheckbox.propTypes = {
   inputId: PropTypes.string,
   onChange: PropTypes.func,
   checked: PropTypes.bool,
+  className: PropTypes.string,
 };
-
 
 export default InputCheckbox;

@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ReferralCardTextsType from './ReferralCardTextsType';
 
 import s from './ReferralCard.css';
 
-const ReferralCard = ({ texts }) => (
-  <div className={s.referralCard}>
+const ReferralCard = ({ texts, className }) => (
+  <div className={`${s.referralCard} ${className}`}>
     <i className="icon icon-ec-referral" />
     <div>
       <strong>{texts.title}</strong>
@@ -13,8 +14,13 @@ const ReferralCard = ({ texts }) => (
   </div>
 );
 
+ReferralCard.defaultProps = {
+  className: '',
+};
+
 ReferralCard.propTypes = {
   texts: ReferralCardTextsType.isRequired,
+  className: PropTypes.string,
 };
 
 export default ReferralCard;

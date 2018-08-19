@@ -20,6 +20,7 @@ const BookingCard = ({
   pricingSummaryTexts,
   leftActions,
   rightAction,
+  className,
 }) => {
   const footer = (
     <BookingCardFooter
@@ -29,7 +30,10 @@ const BookingCard = ({
   );
 
   return (
-    <Card FooterChildren={footer}>
+    <Card
+      className={className}
+      FooterChildren={footer}
+    >
       <div className={s.container}>
         <div className={s.bookingSteps}>
           <BookingSteps
@@ -57,6 +61,7 @@ const BookingCard = ({
 BookingCard.defaultProps = {
   leftActions: [],
   rightAction: null,
+  className: '',
 };
 
 BookingCard.propTypes = {
@@ -69,6 +74,7 @@ BookingCard.propTypes = {
   pricingSummaryTexts: PricingSummaryTextsType.isRequired,
   leftActions: PropTypes.arrayOf(PropTypes.node),
   rightAction: PropTypes.node,
+  className: PropTypes.string,
 };
 
 export default BookingCard;

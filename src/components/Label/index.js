@@ -6,11 +6,11 @@ import s from './Label.css';
 const Label = ({
   label,
   logo,
-  containerClass,
+  className,
   color,
 }) => (
   <div
-    className={[s.labelContainer, containerClass, s[color]].join(' ')}
+    className={[s.labelContainer, className, s[color]].join(' ')}
   >
     <span className={`icon-ec-${logo}`} />
     <span className={s.text}>{label}</span>
@@ -18,13 +18,13 @@ const Label = ({
 );
 
 Label.defaultProps = {
-  containerClass: '',
+  className: '',
 };
 
 Label.propTypes = {
   logo: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  containerClass: PropTypes.string,
+  className: PropTypes.string,
   color: PropTypes.string.isRequired,
 };
 

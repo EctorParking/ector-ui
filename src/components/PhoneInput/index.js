@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import Select from '../Select';
 import Input from '../Input';
 
@@ -26,10 +26,11 @@ class PhoneInput extends React.Component {
   }
 
   render() {
+    const { className } = this.props;
     const { countryCode } = this.state;
 
     return (
-      <div className={s.phoneInput}>
+      <div className={`${s.phoneInput} ${className}`}>
         <Select
           values={values}
           selected={countryCode}
@@ -46,10 +47,11 @@ class PhoneInput extends React.Component {
 }
 
 PhoneInput.defaultProps = {
+  className: '',
 };
 
 PhoneInput.propTypes = {
+  className: PropTypes.string,
 };
-
 
 export default PhoneInput;

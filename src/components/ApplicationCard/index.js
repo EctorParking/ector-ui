@@ -4,8 +4,13 @@ import ApplicationCardUrlsType from './ApplicationCardUrlsType';
 
 import s from './ApplicationCard.css';
 
-const ApplicationCard = ({ title, description, urls }) => (
-  <div className={s.applicationCard}>
+const ApplicationCard = ({
+  title,
+  description,
+  urls,
+  className,
+}) => (
+  <div className={`${s.applicationCard} ${className}`}>
     <div>
       <h2>{title}</h2>
       <p>{description}</p>
@@ -34,10 +39,15 @@ const ApplicationCard = ({ title, description, urls }) => (
   </div>
 );
 
+ApplicationCard.defaultProps = {
+  className: '',
+};
+
 ApplicationCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   urls: ApplicationCardUrlsType.isRequired,
+  className: PropTypes.string,
 };
 
 export default ApplicationCard;
