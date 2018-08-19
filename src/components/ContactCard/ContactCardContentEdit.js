@@ -8,8 +8,8 @@ const ContactCardContentEdit = ({ contact }) => {
 
   return (
     <div className={s.column}>
-      <Input inputType="text" defaultValue={email} />
-      <Input inputType="text" defaultValue={phoneNumber} />
+      <Input type="text" defaultValue={email} />
+      <Input type="text" defaultValue={phoneNumber} />
     </div>
   );
 };

@@ -7,25 +7,26 @@ import Input from '../Input';
 
 const InputCheckbox =
 ({
-  inputId,
+  id,
   children,
   onChange,
   checked,
   className,
+  ...restOfProps
 }) => (
   <label
-    htmlFor={`${inputId}`}
+    htmlFor={`${id}`}
     className={s.input_checkbox}
   >
 
     { children }
 
     <Input
-      inputType="checkbox"
-      inputId={`${inputId}`}
-      id={`${inputId}`}
+      type="checkbox"
+      id={`${id}`}
       onChange={onChange}
       checked={checked}
+      {...restOfProps}
     />
     <span className={s.checkmark} />
 
@@ -33,7 +34,7 @@ const InputCheckbox =
 );
 
 InputCheckbox.defaultProps = {
-  inputId: 'InputStart',
+  id: 'InputStart',
   onChange: () => {},
   checked: false,
   className: '',
@@ -41,7 +42,7 @@ InputCheckbox.defaultProps = {
 
 InputCheckbox.propTypes = {
   children: PropTypes.node.isRequired,
-  inputId: PropTypes.string,
+  id: PropTypes.string,
   onChange: PropTypes.func,
   checked: PropTypes.bool,
   className: PropTypes.string,

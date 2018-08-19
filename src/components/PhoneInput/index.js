@@ -38,8 +38,8 @@ class PhoneInput extends React.Component {
           onChange={this.onCountryCodeChange}
         />
         <Input
-          inputPlaceHolder="06 07 08 09 00"
-          inputType="text"
+          placeholder="06 07 08 09 00"
+          type="text"
         />
       </div>
     );

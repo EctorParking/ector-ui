@@ -23,7 +23,7 @@ storiesOf('Input.Label', module)
 
   .add('with placeholder', () => (
     <InputLabel
-      inputId="StartInput"
+      id="StartInput"
       placeHolder="AB 000"
       label="Aller"
     />

@@ -79,9 +79,9 @@ class ContactForm extends React.Component {
               mandatory
             >
               <Input
-                inputType="text"
-                inputId="first-name"
-                inputPlaceHolder={firstNamePlaceholder}
+                type="text"
+                id="first-name"
+                placeholder={firstNamePlaceholder}
                 onFocus={this.setSelected}
                 onBlur={this.setNotSelected}
               />
@@ -91,9 +91,9 @@ class ContactForm extends React.Component {
               mandatory
             >
               <Input
-                inputType="text"
-                inputId="last-name"
-                inputPlaceHolder={lastNamePlaceholder}
+                type="text"
+                id="last-name"
+                placeholder={lastNamePlaceholder}
                 onFocus={this.setSelected}
                 onBlur={this.setNotSelected}
               />
@@ -105,9 +105,9 @@ class ContactForm extends React.Component {
               mandatory
             >
               <Input
-                inputType="text"
-                inputId="email"
-                inputPlaceHolder={emailPlaceholder}
+                type="text"
+                id="email"
+                placeholder={emailPlaceholder}
                 onFocus={this.setSelected}
                 onBlur={this.setNotSelected}
               />
@@ -127,8 +127,8 @@ class ContactForm extends React.Component {
               <div className={s.postCode}>
                 <Input
                   type="text"
-                  inputId="postCode"
-                  inputPlaceHolder={postCodePlaceholder}
+                  id="postCode"
+                  placeholder={postCodePlaceholder}
                   onFocus={this.setSelected}
                   onBlur={this.setNotSelected}
                 />
