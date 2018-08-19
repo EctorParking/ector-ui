@@ -12,8 +12,9 @@ const Select = ({
   hasImage,
   selected,
   onChange,
+  className,
 }) => (
-  <div className={s.select}>
+  <div className={`${s.select} ${className}`}>
     <select onChange={e => onChange(e.target.value)} defaultValue={selected}>
       {values.map(value => (
         <SelectValue
@@ -39,6 +40,7 @@ const Select = ({
 Select.defaultProps = {
   hasImage: false,
   onChange: () => {},
+  className: '',
 };
 
 Select.propTypes = {
@@ -46,7 +48,7 @@ Select.propTypes = {
   hasImage: PropTypes.bool,
   selected: PropTypes.string.isRequired,
   onChange: PropTypes.func,
+  className: PropTypes.string,
 };
-
 
 export default Select;

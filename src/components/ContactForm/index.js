@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import s from './ContactForm.css';
 import ContactFormTextsType from './ContactFormTextsType';
 import Card from '../Card';
@@ -34,7 +35,7 @@ class ContactForm extends React.Component {
   }
 
   render() {
-    const { texts } = this.props;
+    const { texts, className } = this.props;
     const { selected } = this.state;
     const {
       addDriver,
@@ -62,6 +63,7 @@ class ContactForm extends React.Component {
       <Card
         FooterChildren={footer}
         isSelected={selected}
+        className={className}
       >
         <span className={s.title}>{newDriver}</span>
 
@@ -141,8 +143,13 @@ class ContactForm extends React.Component {
   }
 }
 
+ContactForm.defaultProps = {
+  className: '',
+};
+
 ContactForm.propTypes = {
   texts: ContactFormTextsType.isRequired,
+  className: PropTypes.string,
 };
 
 export default ContactForm;

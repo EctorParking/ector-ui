@@ -9,6 +9,7 @@ const GenderPicker = ({
   genders,
   onSelect,
   selected,
+  className,
 }) => (
   <div className={s.genderPicker}>
     {genders.map(gender => (
@@ -26,12 +27,14 @@ const GenderPicker = ({
 GenderPicker.defaultProps = {
   selected: '',
   onSelect: () => {},
+  className: '',
 };
 
 GenderPicker.propTypes = {
   selected: PropTypes.string,
   genders: PropTypes.arrayOf(GenderType).isRequired,
   onSelect: PropTypes.func,
+  className: PropTypes.string,
 };
 
 export default GenderPicker;

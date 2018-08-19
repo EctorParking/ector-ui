@@ -20,6 +20,7 @@ const CarCard = ({
   deletable,
   onClick,
   onDelete,
+  className,
 }) => {
   let mode = 'read';
 
@@ -68,6 +69,7 @@ const CarCard = ({
       FooterChildren={footer}
       isSelected={selected}
       contentClassName={pendingDeletion ? s.pendingDeletion : ''}
+      className={className}
     >
       {header}
       {content}
@@ -85,6 +87,7 @@ CarCard.propTypes = {
   texts: TextsType,
   onClick: PropTypes.func,
   onDelete: PropTypes.func,
+  className: '',
 };
 
 CarCard.defaultProps = {
@@ -96,6 +99,7 @@ CarCard.defaultProps = {
   pendingDeletion: false,
   onClick: () => {},
   onDelete: () => {},
+  className: PropTypes.string,
 };
 
 export default CarCard;

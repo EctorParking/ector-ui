@@ -20,6 +20,7 @@ const ContactCard = ({
   deletable,
   onClick,
   onDelete,
+  className,
 }) => {
   let mode = 'read';
 
@@ -64,6 +65,7 @@ const ContactCard = ({
       FooterChildren={footer}
       isSelected={selected}
       contentClassName={pendingDeletion ? s.pendingDeletion : ''}
+      className={className}
     >
       {header}
       {content}
@@ -81,6 +83,7 @@ ContactCard.propTypes = {
   texts: TextsType,
   onClick: PropTypes.func,
   onDelete: PropTypes.func,
+  className: '',
 };
 
 ContactCard.defaultProps = {
@@ -92,6 +95,7 @@ ContactCard.defaultProps = {
   onClick: () => {},
   onDelete: () => {},
   texts: DefaultTexts,
+  className: PropTypes.string,
 };
 
 export default ContactCard;

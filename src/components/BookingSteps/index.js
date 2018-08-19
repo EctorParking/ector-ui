@@ -10,8 +10,9 @@ const BookingSteps = ({
   startAt,
   endAt,
   texts,
+  className,
 }) => (
-  <div className={s.bookingSteps}>
+  <div className={`${s.bookingSteps} ${className}`}>
     <div>
       <h3 className={s.stepName}>{texts.pickup}</h3>
       <span>
@@ -41,12 +42,17 @@ const BookingSteps = ({
   </div>
 );
 
+BookingSteps.defaultProps = {
+  className: '',
+};
+
 BookingSteps.propTypes = {
   fromSpot: PropTypes.string.isRequired,
   toSpot: PropTypes.string.isRequired,
   startAt: PropTypes.string.isRequired,
   endAt: PropTypes.string.isRequired,
   texts: BookingStepsTextsType.isRequired,
+  className: PropTypes.string,
 };
 
 export default BookingSteps;
