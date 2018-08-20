@@ -4,6 +4,7 @@ import ApplicationCardUrlsType from './ApplicationCardUrlsType';
 
 import s from './ApplicationCard.css';
 
+/* eslint-disable global-require */
 const ApplicationCard = ({
   title,
   description,
@@ -18,13 +19,15 @@ const ApplicationCard = ({
       <div className={s.icons}>
         <a href={urls.googlePlay}>
           <img
-            src="images/disponible-sur-googleplay.png"
+            src={require('../../images/PlayStore.svg')}
+            // src={require('../../images/disponible-sur-googleplay.png')}
             alt="Google Play"
           />
         </a>
         <a href={urls.appStore}>
           <img
-            src="images/disponible-sur-appstore.png"
+            src={require('../../images/AppStore.svg')}
+            // src={require('../../images/disponible-sur-appstore.png')}
             alt="App Store"
           />
         </a>
