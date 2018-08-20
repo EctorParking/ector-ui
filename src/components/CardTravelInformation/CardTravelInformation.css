@@ -1,6 +1,6 @@
 @import '../../style/variable.css';
 
-.inputs_row {
+.inputsRow {
   display: flex;
   margin-top: auto;
   justify-content: space-between;
@@ -19,8 +19,12 @@
   margin-left: var(--marginSmall);
 }
 
+.unknownFlightNumber {
+  float: right;
+}
+
 @media (max-width: 768px) {
-  .inputs_row {
+  .inputsRow {
     flex-direction: column;
   }
   .outwardInput, .returnInput {

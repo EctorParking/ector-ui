@@ -24,6 +24,7 @@ storiesOf('Card.TravelInformation', module)
       returnLabel: 'Retour',
       businessTravel: 'Voyage professionel',
       mandatoryFields: '* Champs obligatoires',
+      unknownFlightNumber: 'Je ne le connais pas',
     });
 
     return (

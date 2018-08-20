@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Card, CardTitle, InputLabel } from '../';
+import { Card, CardTitle, InputLabel, ActionLink } from '../';
 
 import s from './CardTravelInformation.css';
 
@@ -13,6 +13,7 @@ const CardTravelInformation = ({
   returnValue,
   outwardValue,
   inputClassName,
+  onClickUnknownFlightNumber,
 }) => (
   <div className={className}>
     <Card>
@@ -20,7 +21,7 @@ const CardTravelInformation = ({
         {texts.title}
       </CardTitle>
 
-      <div className={s.inputs_row}>
+      <div className={s.inputsRow}>
         <InputLabel
           placeholder={texts.outwardPlaceholder}
           label={texts.outwardLabel}
@@ -29,15 +30,22 @@ const CardTravelInformation = ({
           className={s.outwardInputLabel}
           inputClassName={inputClassName}
         />
-        <InputLabel
-          mandatory
-          placeholder={texts.returnPlaceholder}
-          label={texts.returnLabel}
-          onChange={onReturnChange}
-          value={returnValue}
-          className={s.returnInputLabel}
-          inputClassName={inputClassName}
-        />
+        <div>
+          <InputLabel
+            mandatory
+            placeholder={texts.returnPlaceholder}
+            label={texts.returnLabel}
+            onChange={onReturnChange}
+            value={returnValue}
+            className={s.returnInputLabel}
+            inputClassName={inputClassName}
+          />
+          <ActionLink
+            label={texts.unknownFlightNumber}
+            className={s.unknownFlightNumber}
+            onClick={onClickUnknownFlightNumber}
+          />
+        </div>
       </div>
     </Card>
     <div className={s.mandatorySentence}>{texts.mandatoryFields}</div>
@@ -53,9 +61,11 @@ CardTravelInformation.defaultProps = {
     returnLabel: 'Retour',
     businessTravel: 'Voyage professionel',
     mandatoryFields: '* Champs obligatoires',
+    unknownFlightNumber: 'Je ne le connais pas',
   },
   onOutwardChange: () => {},
   onReturnChange: () => {},
+  onClickUnknownFlightNumber: () => {},
   className: '',
   outwardValue: '',
   returnValue: '',
@@ -71,6 +81,7 @@ CardTravelInformation.propTypes = {
     returnLabel: PropTypes.string,
     businessTravel: PropTypes.string,
     mandatoryFields: PropTypes.string,
+    unknownFlightNumber: PropTypes.string,
   }),
   className: PropTypes.string,
   onOutwardChange: PropTypes.func,
@@ -78,6 +89,7 @@ CardTravelInformation.propTypes = {
   outwardValue: PropTypes.string,
   returnValue: PropTypes.string,
   inputClassName: PropTypes.string,
+  onClickUnknownFlightNumber: PropTypes.func,
 };
 
 
