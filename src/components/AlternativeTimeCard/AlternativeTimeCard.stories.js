@@ -3,10 +3,11 @@ import { storiesOf } from '@storybook/react';
 import backgrounds from '@storybook/addon-backgrounds';
 import centered from '@storybook/addon-centered';
 import { action } from '@storybook/addon-actions';
+import { withKnobs, object, select } from '@storybook/addon-knobs';
 
 import AlternativeTimeCard from './';
 
-const texts = {
+const DefaultTexts = {
   select: 'Sélectionner',
 };
 
@@ -16,36 +17,27 @@ const alternative = {
   spot: 'Lyon St Exupéry',
 };
 
+const modes = ['normal', 'selectedWithFooter', 'selectedWithoutFooter'];
+
 storiesOf('AlternativeTimeCard', module)
 
   .addDecorator(backgrounds([
     { name: 'header', value: 'white', default: true },
   ]))
   .addDecorator(centered)
+  .addDecorator(withKnobs)
 
-  .add('normal', () => (
-    <AlternativeTimeCard
-      texts={texts}
-      alternative={alternative}
-      mode="normal"
-      onSelect={action('Selected')}
-    />
-  ))
+  .add('with knobs', () => {
+    const props = {
+      alternative: object('Alternative', alternative),
+      texts: object('Texts', DefaultTexts),
+      mode: select('Mode', modes, 'normal'),
+    };
 
-  .add('selectedWithFooter', () => (
-    <AlternativeTimeCard
-      texts={texts}
-      alternative={alternative}
-      mode="selectedWithFooter"
-      onSelect={action('Selected')}
-    />
-  ))
-
-  .add('selectedWithoutFooter', () => (
-    <AlternativeTimeCard
-      texts={texts}
-      alternative={alternative}
-      mode="selectedWithoutFooter"
-      onSelect={action('Selected')}
-    />
-  ));
+    return (
+      <AlternativeTimeCard
+        onSelect={action('Selected')}
+        {...props}
+      />
+    );
+  });

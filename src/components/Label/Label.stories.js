@@ -2,9 +2,11 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import backgrounds from '@storybook/addon-backgrounds';
 import centered from '@storybook/addon-centered';
+import { withKnobs, select, text } from '@storybook/addon-knobs';
 
 import Label from './';
 
+const colors = ['deepBlue', 'green', 'red', 'melrose', 'blue'];
 
 storiesOf('Label', module)
 
@@ -12,39 +14,14 @@ storiesOf('Label', module)
     { name: 'header', value: 'white', default: true },
   ]))
   .addDecorator(centered)
+  .addDecorator(withKnobs)
 
-  .add('deepBlue', () => (
-    <Label
-      label="Label"
-      logo="star"
-      color="deepBlue"
-    />
-  ))
-  .add('green', () => (
-    <Label
-      label="Label"
-      logo="star"
-      color="green"
-    />
-  ))
-  .add('red', () => (
-    <Label
-      label="Populaire"
-      logo="heart"
-      color="red"
-    />
-  ))
-  .add('blue', () => (
-    <Label
-      label="Label"
-      logo="heart"
-      color="blue"
-    />
-  ))
-  .add('melrose', () => (
-    <Label
-      label="Label"
-      logo="heart"
-      color="melrose"
-    />
-  ));
+  .add('with knobs', () => {
+    const props = {
+      label: text('Label', 'Label'),
+      logo: text('Icon', 'star'),
+      color: select('Color', colors, colors[0]),
+    };
+
+    return <Label {...props} />;
+  });

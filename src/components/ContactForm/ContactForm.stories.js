@@ -2,24 +2,10 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import backgrounds from '@storybook/addon-backgrounds';
 import centered from '@storybook/addon-centered';
+import { withKnobs, object } from '@storybook/addon-knobs';
 
 import ContactForm from './';
-
-const texts = {
-  newDriver: 'Ajouter un nouveau conducteur',
-  addDriver: 'Ajouter ce conducteur',
-  civility: 'Civilité',
-  firstName: 'Prénom',
-  lastName: 'Nom',
-  firstNamePlaceholder: 'Alain',
-  lastNamePlaceholder: 'Prost',
-  email: 'Email',
-  phone: 'Téléphone',
-  postCode: 'Code postal',
-  notMandatory: 'facultatif',
-  emailPlaceholder: 'alain.prost@gmail.com',
-  postCodePlaceholder: '44 100',
-};
+import { defaultTexts } from './ContactFormTextsType';
 
 storiesOf('ContactForm', module)
 
@@ -27,7 +13,12 @@ storiesOf('ContactForm', module)
     { name: 'header', value: 'white', default: true },
   ]))
   .addDecorator(centered)
+  .addDecorator(withKnobs)
 
-  .add('normal', () => (
-    <ContactForm texts={texts} />
-  ));
+  .add('with knobs', () => {
+    const props = {
+      texts: object('Texts', defaultTexts),
+    };
+
+    return <ContactForm {...props} />;
+  });

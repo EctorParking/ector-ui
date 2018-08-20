@@ -10,48 +10,40 @@ const values = [
   { value: 'uk', label: '+44', image: './images/flags/uk.png' },
 ];
 
-class PhoneInput extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      countryCode: 'fr',
-    };
-
-    this.onCountryCodeChange = this.onCountryCodeChange.bind(this);
-  }
-
-  onCountryCodeChange(countryCode) {
-    this.setState({ countryCode });
-  }
-
-  render() {
-    const { className } = this.props;
-    const { countryCode } = this.state;
-
-    return (
-      <div className={`${s.phoneInput} ${className}`}>
-        <Select
-          values={values}
-          selected={countryCode}
-          hasImage
-          onChange={this.onCountryCodeChange}
-        />
-        <Input
-          placeholder="06 07 08 09 00"
-          type="text"
-        />
-      </div>
-    );
-  }
-}
+const PhoneInput = ({
+  className,
+  countryCode,
+  value,
+  onCountryCodeChange,
+  onPhoneNumberChange,
+}) => (
+  <div className={`${s.phoneInput} ${className}`}>
+    <Select
+      values={values}
+      selected={countryCode}
+      hasImage
+      onChange={onCountryCodeChange}
+    />
+    <Input
+      placeholder="06 07 08 09 00"
+      type="text"
+      onChange={onPhoneNumberChange}
+      {...value}
+    />
+  </div>
+);
 
 PhoneInput.defaultProps = {
   className: '',
+  countryCode: values[0].value,
 };
 
 PhoneInput.propTypes = {
   className: PropTypes.string,
+  countryCode: PropTypes.string,
+  value: PropTypes.string.isRequired,
+  onCountryCodeChange: PropTypes.func.isRequired,
+  onPhoneNumberChange: PropTypes.func.isRequired,
 };
 
 export default PhoneInput;

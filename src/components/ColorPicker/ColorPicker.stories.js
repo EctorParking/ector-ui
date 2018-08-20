@@ -26,7 +26,7 @@ storiesOf('ColorPicker', module)
   ]))
   .addDecorator(centered)
 
-  .add('normal', () => (
+  .add('basic', () => (
     <ColorPicker
       colorsList={colorsList}
       onSelect={action('chosen')}

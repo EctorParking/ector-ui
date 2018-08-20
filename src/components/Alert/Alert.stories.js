@@ -2,8 +2,11 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import backgrounds from '@storybook/addon-backgrounds';
 import centered from '@storybook/addon-centered';
+import { withKnobs, text, select } from '@storybook/addon-knobs';
 
 import Alert from './';
+
+const defaultText = 'Merci de votre confiance ! Un email de confirmation vous a été envoyé, vérifiez vos courriers indésirables si vous ne le trouvez pas.';
 
 storiesOf('Alert', module)
 
@@ -11,23 +14,18 @@ storiesOf('Alert', module)
     { name: 'header', value: 'white', default: true },
   ]))
   .addDecorator(centered)
+  .addDecorator(withKnobs)
 
-  .add('success', () => (
-    <Alert
-      type="success"
-      title="Félicitations !"
-    >
-            Merci de votre confiance !
-            Un email de confirmation vous a été envoyé, vérifiez vos courriers
-            indésirables si vous ne le trouvez pas.
-    </Alert>
-  ))
+  .add('with knobs', () => {
+    const props = {
+      type: select('Type', ['success', 'error', 'warning'], 'success'),
+      title: text('Title', 'Félicitations !'),
+      children: text('Content', defaultText),
+    };
 
-  .add('error', () => (
-    <Alert
-      type="error"
-      title="Uh oh!"
-    >
-            Something went wrong!
-    </Alert>
-  ));
+    return (
+      <Alert
+        {...props}
+      />
+    );
+  });

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Card from '../Card';
 import BookingSteps from '../BookingSteps';
-import BookingStepsTextsType from '../BookingSteps/BookingStepsTextsType';
+import BookingStepsTextsType, { defaultTexts as bookingStepsDefaultTexts } from '../BookingSteps/BookingStepsTextsType';
 import PricingSummary from '../PricingSummary';
 import PricingSummaryOptionType from '../PricingSummary/PricingSummaryOptionType';
 import PricingSummaryTextsType from '../PricingSummary/PricingSummaryTextsType';
@@ -62,6 +62,7 @@ BookingCard.defaultProps = {
   leftActions: [],
   rightAction: null,
   className: '',
+  bookingStepsTexts: bookingStepsDefaultTexts,
 };
 
 BookingCard.propTypes = {
@@ -69,7 +70,7 @@ BookingCard.propTypes = {
   toSpot: PropTypes.string.isRequired,
   startAt: PropTypes.string.isRequired,
   endAt: PropTypes.string.isRequired,
-  bookingStepsTexts: BookingStepsTextsType.isRequired,
+  bookingStepsTexts: BookingStepsTextsType,
   options: PropTypes.arrayOf(PricingSummaryOptionType).isRequired,
   pricingSummaryTexts: PricingSummaryTextsType.isRequired,
   leftActions: PropTypes.arrayOf(PropTypes.node),

@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import backgrounds from '@storybook/addon-backgrounds';
 import centered from '@storybook/addon-centered';
+import { withKnobs, text, object } from '@storybook/addon-knobs';
 
 import ApplicationCard from './';
 
@@ -16,11 +17,18 @@ storiesOf('ApplicationCard', module)
     { name: 'header', value: 'white', default: true },
   ]))
   .addDecorator(centered)
+  .addDecorator(withKnobs)
 
-  .add('normal', () => (
-    <ApplicationCard
-      title="Téléchargez l’application"
-      description="Gérez vos réservations plus facilement depuis l’application."
-      urls={urls}
-    />
-  ));
+  .add('with knobs', () => {
+    const props = {
+      title: text('Title', 'Téléchargez l’application'),
+      description: text('Description', 'Gérez vos réservations plus facilement depuis l’application.'),
+      urls: object('URLs', urls),
+    };
+
+    return (
+      <ApplicationCard
+        {...props}
+      />
+    );
+  });

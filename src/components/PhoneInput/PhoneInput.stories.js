@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import backgrounds from '@storybook/addon-backgrounds';
 import centered from '@storybook/addon-centered';
 
@@ -13,5 +14,9 @@ storiesOf('PhoneInput', module)
   .addDecorator(centered)
 
   .add('basic', () => (
-    <PhoneInput />
+    <PhoneInput
+      countryCode="fr"
+      onCountryCodeChange={action('Country code changed')}
+      onPhoneNumberChange={action('Phone number changed')}
+    />
   ));

@@ -10,7 +10,7 @@ export default PropTypes.shape({
   confirm: PropTypes.string,
 });
 
-export const DefaultTexts = {
+export const defaultTexts = {
   modify: 'Changer',
   delete: 'Supprimer',
   save: 'Enregistrer',
