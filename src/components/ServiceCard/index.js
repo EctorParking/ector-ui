@@ -10,7 +10,7 @@ import Label from '../Label';
 const ServiceCard = ({
   className, contentClassName, image, title, description,
   price, actionFooter, openShowMore, isSubscribed, buttonLabelFooter,
-  labelText, labelLogo, labelColor,
+  labelText, labelLogo, labelColor, knowMoreLabel,
 }) => {
   const cardClassName = `
         ${s.card}
@@ -34,6 +34,7 @@ const ServiceCard = ({
         title={title}
         description={description}
         openShowMore={openShowMore}
+        knowMoreLabel={knowMoreLabel}
       />
       <ServiceCardFooter
         price={price}
@@ -57,6 +58,7 @@ ServiceCard.defaultProps = {
   labelText: '',
   labelLogo: '',
   labelColor: '',
+  knowMoreLabel: 'En savoir plus',
 };
 
 ServiceCard.propTypes = {
@@ -73,7 +75,7 @@ ServiceCard.propTypes = {
   labelText: PropTypes.string,
   labelLogo: PropTypes.string,
   labelColor: PropTypes.string,
+  knowMoreLabel: PropTypes.string,
 };
-
 
 export default ServiceCard;

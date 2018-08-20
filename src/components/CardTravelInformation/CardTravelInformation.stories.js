@@ -15,7 +15,7 @@ storiesOf('Card.TravelInformation', module)
   .addDecorator(centered)
   .addDecorator(withKnobs)
 
-  .add('basic', () => {
+  .add('with knobs', () => {
     const texts = object('Texts', {
       title: 'Numéro de Vol / Train',
       outwardPlaceholder: 'AB 000',

@@ -46,10 +46,13 @@ const AlternativeTimeCard = ({
 
 AlternativeTimeCard.defaultProps = {
   className: '',
+  texts: {
+    select: 'Sélectionner',
+  },
 };
 
 AlternativeTimeCard.propTypes = {
-  texts: AlternativeTimeCardTextsType.isRequired,
+  texts: AlternativeTimeCardTextsType,
   alternative: AlternativeTimeCardAlternativeType.isRequired,
   mode: PropTypes.oneOf(['normal', 'selectedWithFooter', 'selectedWithoutFooter']).isRequired,
   onSelect: PropTypes.func.isRequired,

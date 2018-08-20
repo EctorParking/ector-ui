@@ -10,6 +10,7 @@ const ServiceCardBody = ({
   description,
   contentClassName,
   openShowMore,
+  knowMoreLabel,
 }) => {
   let descriptionFormatted = description;
   let showKnowMoreLink = false;
@@ -37,7 +38,7 @@ const ServiceCardBody = ({
           onClick={openShowMore}
           type="button"
         >
-          <span>En savoir plus</span>
+          <span>{knowMoreLabel}</span>
         </button>
       )}
     </div>
@@ -48,6 +49,7 @@ ServiceCardBody.defaultProps = {
   image: null,
   contentClassName: '',
   openShowMore: () => {},
+  knowMoreLabel: 'En savoir plus',
 };
 
 ServiceCardBody.propTypes = {
@@ -56,6 +58,7 @@ ServiceCardBody.propTypes = {
   description: PropTypes.string.isRequired,
   contentClassName: PropTypes.string,
   openShowMore: PropTypes.func,
+  knowMoreLabel: PropTypes.string,
 };
 
 export default ServiceCardBody;

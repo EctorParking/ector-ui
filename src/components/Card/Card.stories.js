@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import backgrounds from '@storybook/addon-backgrounds';
 import centered from '@storybook/addon-centered';
+import { withKnobs, boolean } from '@storybook/addon-knobs';
 
 import Card from './';
 
@@ -13,35 +14,29 @@ storiesOf('Card', module)
     { name: 'header', value: 'white', default: true },
   ]))
   .addDecorator(centered)
+  .addDecorator(withKnobs)
 
-  .add('normal', () => (
-    <Card>
-            Normal
-    </Card>
-  ))
-  .add('selected', () => (
-    <Card isSelected>
-            Normal
-    </Card>
-  ))
+  .add('with knobs', () => {
+    const props = {
+      isSelected: boolean('Selected', false),
+    };
 
-  .add('with footer', () => (
-    <Card FooterChildren="The Footer Node">
-            With footer
-    </Card>
-  ))
+    return (
+      <Card {...props}>
+        Content
+      </Card>
+    );
+  })
+  .add('with knobs & footer', () => {
+    const props = {
+      isSelected: boolean('Selected', false),
+      FooterChildren: 'The Footer Node',
+      onClick: action('clicked'),
+    };
 
-  .add('clickable', () => (
-    <Card onClick={action('clicked')}>
-            Clickable
-    </Card>
-  ))
-
-  .add('clickable with footer', () => (
-    <Card
-      onClick={action('clicked')}
-      FooterChildren="The Footer Node"
-    >
-            Clickable
-    </Card>
-  ));
+    return (
+      <Card {...props}>
+        Content
+      </Card>
+    );
+  });

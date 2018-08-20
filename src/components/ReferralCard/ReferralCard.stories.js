@@ -2,13 +2,10 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import backgrounds from '@storybook/addon-backgrounds';
 import centered from '@storybook/addon-centered';
+import { withKnobs, object } from '@storybook/addon-knobs';
 
 import ReferralCard from './';
-
-const texts = {
-  title: 'Aidez Ector à conquérir le monde',
-  description: 'Devenez parrain Ector et faites profiter à votre filleul de 10€ offert lors de sa première réservation',
-};
+import { defaultTexts } from './ReferralCardTextsType';
 
 storiesOf('ReferralCard', module)
 
@@ -16,7 +13,12 @@ storiesOf('ReferralCard', module)
     { name: 'header', value: 'white', default: true },
   ]))
   .addDecorator(centered)
+  .addDecorator(withKnobs)
 
-  .add('normal', () => (
-    <ReferralCard texts={texts} />
-  ));
+  .add('with knobs', () => {
+    const props = {
+      texts: object('Texts', defaultTexts),
+    };
+
+    return <ReferralCard {...props} />;
+  });

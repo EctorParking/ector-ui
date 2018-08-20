@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Card, CardTitle, InputLabel, ActionLink } from '../';
+import CardTravelInformationTextsType, { defaultTexts } from './CardTravelInformationTextsType';
 
 import s from './CardTravelInformation.css';
 
@@ -53,16 +54,7 @@ const CardTravelInformation = ({
 );
 
 CardTravelInformation.defaultProps = {
-  texts: {
-    title: 'Numéro de Vol / Train',
-    outwardPlaceholder: 'AB 000',
-    outwardLabel: 'Aller',
-    returnPlaceholder: 'AB 0000',
-    returnLabel: 'Retour',
-    businessTravel: 'Voyage professionel',
-    mandatoryFields: '* Champs obligatoires',
-    unknownFlightNumber: 'Je ne le connais pas',
-  },
+  texts: defaultTexts,
   onOutwardChange: () => {},
   onReturnChange: () => {},
   onClickUnknownFlightNumber: () => {},
@@ -73,16 +65,7 @@ CardTravelInformation.defaultProps = {
 };
 
 CardTravelInformation.propTypes = {
-  texts: PropTypes.shape({
-    title: PropTypes.string,
-    outwardPlaceholder: PropTypes.string,
-    outwardLabel: PropTypes.string,
-    returnPlaceholder: PropTypes.string,
-    returnLabel: PropTypes.string,
-    businessTravel: PropTypes.string,
-    mandatoryFields: PropTypes.string,
-    unknownFlightNumber: PropTypes.string,
-  }),
+  texts: CardTravelInformationTextsType,
   className: PropTypes.string,
   onOutwardChange: PropTypes.func,
   onReturnChange: PropTypes.func,

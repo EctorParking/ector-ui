@@ -8,8 +8,8 @@ const CarCardContentEdit = ({ car }) => {
 
   return (
     <div className={s.column}>
-      <Input inputType="text" defaultValue={name} />
-      <Input inputType="text" defaultValue={numberPlate} />
+      <Input type="text" defaultValue={name} />
+      <Input type="text" defaultValue={numberPlate} />
     </div>
   );
 };

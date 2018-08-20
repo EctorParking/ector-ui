@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ReferralCardTextsType from './ReferralCardTextsType';
+import ReferralCardTextsType, { defaultTexts } from './ReferralCardTextsType';
 
 import s from './ReferralCard.css';
 
@@ -16,10 +16,11 @@ const ReferralCard = ({ texts, className }) => (
 
 ReferralCard.defaultProps = {
   className: '',
+  texts: defaultTexts,
 };
 
 ReferralCard.propTypes = {
-  texts: ReferralCardTextsType.isRequired,
+  texts: ReferralCardTextsType,
   className: PropTypes.string,
 };
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import PricingSummaryTextsType from './PricingSummaryTextsType';
+import PricingSummaryTextsType, { defaultTexts } from './PricingSummaryTextsType';
 import PricingSummaryOptionType from './PricingSummaryOptionType';
 import PricingSummaryOption from './PricingSummaryOption';
 
@@ -52,13 +52,14 @@ PricingSummary.defaultProps = {
   currencyPosition: 'after',
   onAddClick: () => {},
   className: '',
+  texts: defaultTexts,
 };
 
 PricingSummary.propTypes = {
   currency: PropTypes.string.isRequired,
   currencyPosition: PropTypes.oneOf(['before', 'after']),
   options: PropTypes.arrayOf(PricingSummaryOptionType).isRequired,
-  texts: PricingSummaryTextsType.isRequired,
+  texts: PricingSummaryTextsType,
   onAddClick: PropTypes.func,
   className: PropTypes.string,
 };

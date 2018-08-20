@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import s from './ContactForm.css';
-import ContactFormTextsType from './ContactFormTextsType';
+import ContactFormTextsType, { defaultTexts } from './ContactFormTextsType';
 import Card from '../Card';
 import Input from '../Input';
 import GenderPicker from '../GenderPicker';
@@ -145,10 +145,11 @@ class ContactForm extends React.Component {
 
 ContactForm.defaultProps = {
   className: '',
+  texts: defaultTexts,
 };
 
 ContactForm.propTypes = {
-  texts: ContactFormTextsType.isRequired,
+  texts: ContactFormTextsType,
   className: PropTypes.string,
 };
 
