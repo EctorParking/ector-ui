@@ -7,8 +7,12 @@ import s from './Select.css';
 
 const getSelectedValue = (values, selected) => values.find(({ value }) => value === selected);
 
+const getPreferedValues = (preferredValues, values) =>
+  preferredValues.map(prefValue => values.find(value => value.value === prefValue));
+
 const Select = ({
   values,
+  preferredValues,
   hasImage,
   selected,
   onChange,
@@ -16,12 +20,24 @@ const Select = ({
 }) => (
   <div className={`${s.select} ${className}`}>
     <select onChange={e => onChange(e.target.value)} defaultValue={selected}>
-      {values.map(value => (
-        <SelectValue
-          value={value}
-          key={value.value}
-        />
-      ))}
+      <optgroup>
+        {
+          getPreferedValues(preferredValues, values).map(value => (
+            <SelectValue
+              value={value}
+              key={value.value}
+            />
+          ))
+        }
+      </optgroup>
+      <optgroup>
+        {values.map(value => (
+          <SelectValue
+            value={value}
+            key={value.value}
+          />
+        ))}
+      </optgroup>
     </select>
     {
       hasImage &&
@@ -41,10 +57,12 @@ Select.defaultProps = {
   hasImage: false,
   onChange: () => {},
   className: '',
+  preferredValues: [],
 };
 
 Select.propTypes = {
   values: PropTypes.arrayOf(SelectValueType).isRequired,
+  preferredValues: PropTypes.arrayOf(PropTypes.string),
   hasImage: PropTypes.bool,
   selected: PropTypes.string.isRequired,
   onChange: PropTypes.func,
