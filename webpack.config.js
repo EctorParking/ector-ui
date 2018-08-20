@@ -7,7 +7,8 @@ module.exports = {
     path: path.resolve(__dirname, './dist/'),
     filename: 'ector-ui.js',
     library: 'ector-ui',
-    libraryTarget: 'commonjs',
+    libraryTarget: 'umd',
+    globalObject: 'this',
   },
   devtool: 'eval-source-map',
   module: {
