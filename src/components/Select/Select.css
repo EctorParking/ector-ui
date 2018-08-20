@@ -30,5 +30,8 @@
 }
 
 .selectImage {
+  --maxImageSize: 24px;
   margin-right: var(--marginSmall);
+  max-height: var(--maxImageSize);
+  max-width: var(--maxImageSize);
 }
