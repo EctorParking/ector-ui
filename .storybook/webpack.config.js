@@ -36,11 +36,21 @@ module.exports = (storybookBaseConfig, configType) => {
     {
       test: /\.js$/,
       exclude: /node_modules/,
-      loader: "eslint-loader",
-      options: {
-        emitError: true,
-        failOnError: true
-      },
+      loaders: [
+        {
+          loader: 'babel-loader',
+          options: {
+            presets: ['env', 'stage-2'],
+          },
+        },
+        {
+          loader: 'eslint-loader',
+          options: {
+            emitError: true,
+            failOnError: true
+          },
+        },
+      ],
     },
   );
 

@@ -22,9 +22,9 @@ storiesOf('CarCard', module)
       }),
       texts: object('Texts', DefaultTexts),
       editable: boolean('Editable', false),
-      pendingModification: boolean('Selected', false),
-      deletable: boolean('Pending modification', false),
-      selected: boolean('Deletable', false),
+      pendingModification: boolean('Pending Modification', false),
+      deletable: boolean('Deletable', false),
+      selected: boolean('Selected', false),
     };
 
     return (

@@ -6,7 +6,7 @@ import s from './InputLabel.css';
 import Input from '../Input';
 
 const InputLabel = ({
-  label, id, mandatory, placeholder, type, className, inputClassName,
+  label, id, mandatory, placeholder, type, className, inputClassName, ...inputProps
 }) => {
   const labelClassName = mandatory ? s.mandatory : '';
 
@@ -22,6 +22,7 @@ const InputLabel = ({
         inputId={id}
         inputPlaceHolder={placeholder}
         inputType={type}
+        {...inputProps}
       />
 
     </label>

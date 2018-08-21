@@ -1,95 +1,99 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { Card, CardTitle, InputLabel, ActionLink } from '../';
+import TextsType, { DefaultTexts } from './CardTravelInformationTextsType';
 
 import s from './CardTravelInformation.css';
 
-const CardTravelInformation = ({
-  texts,
-  className,
-  onOutwardChange,
-  onReturnChange,
-  returnValue,
-  outwardValue,
-  inputClassName,
-  onClickUnknownFlightNumber,
-}) => (
-  <div className={className}>
-    <Card>
-      <CardTitle className={s.title}>
-        {texts.title}
-      </CardTitle>
+class CardTravelInformation extends Component {
+  constructor(props) {
+    super(props);
 
-      <div className={s.inputsRow}>
-        <InputLabel
-          placeholder={texts.outwardPlaceholder}
-          label={texts.outwardLabel}
-          onChange={onOutwardChange}
-          value={outwardValue}
-          className={s.outwardInputLabel}
-          inputClassName={inputClassName}
-        />
-        <div>
+    this.state = {
+      values: {
+        travelingNumberFrom: '',
+        travelingNumberTo: '',
+      },
+    };
+
+    this.handleChangeTravelingNumberFrom = this.handleChange.bind(this, 'travelingNumberFrom');
+    this.handleChangeTravelingNumberTo = this.handleChange.bind(this, 'travelingNumberTo');
+  }
+
+  handleChange(field, event) {
+    const { onChangeProperty } = this.props;
+
+    this.setState({
+      values: {
+        ...this.state.values,
+        [field]: event.currentTarget.value,
+      },
+    });
+    onChangeProperty(field, event.currentTarget.value);
+  }
+
+  render() {
+    const {
+      texts,
+      className,
+      inputClassName,
+      onClickUnknownTravelingNumberTo,
+    } = this.props;
+    const { values } = this.state;
+
+    return (
+      <Card>
+        <CardTitle className={[s.title, className].join(' ')}>
+          {texts.title}
+        </CardTitle>
+
+        <div className={s.inputsRow}>
           <InputLabel
-            mandatory
-            placeholder={texts.returnPlaceholder}
-            label={texts.returnLabel}
-            onChange={onReturnChange}
-            value={returnValue}
-            className={s.returnInputLabel}
+            placeholder={texts.travelingNumberFromPlaceholder}
+            label={texts.travelingNumberFromLabel}
+            onChange={this.handleChangeTravelingNumberFrom}
+            className={s.travelingNumberFromInputLabel}
             inputClassName={inputClassName}
+            value={values.travelingNumberFrom}
           />
-          <ActionLink
-            label={texts.unknownFlightNumber}
-            className={s.unknownFlightNumber}
-            onClick={onClickUnknownFlightNumber}
-          />
+          <div>
+            <InputLabel
+              mandatory
+              placeholder={texts.travelingNumberToPlaceholder}
+              label={texts.travelingNumberToLabel}
+              onChange={this.handleChangeTravelingNumberTo}
+              value={values.travelingNumberTo}
+              className={s.travelingNumberToInputLabel}
+              inputClassName={inputClassName}
+            />
+            <ActionLink
+              label={texts.unknownTravelingNumberTo}
+              className={s.unknownTravelingNumberTo}
+              onClick={onClickUnknownTravelingNumberTo}
+            />
+          </div>
         </div>
-      </div>
-    </Card>
-    <div className={s.mandatorySentence}>{texts.mandatoryFields}</div>
-  </div>
-);
+      </Card>
+    );
+  }
+}
+
 
 CardTravelInformation.defaultProps = {
-  texts: {
-    title: 'Numéro de Vol / Train',
-    outwardPlaceholder: 'AB 000',
-    outwardLabel: 'Aller',
-    returnPlaceholder: 'AB 0000',
-    returnLabel: 'Retour',
-    businessTravel: 'Voyage professionel',
-    mandatoryFields: '* Champs obligatoires',
-    unknownFlightNumber: 'Je ne le connais pas',
-  },
-  onOutwardChange: () => {},
-  onReturnChange: () => {},
-  onClickUnknownFlightNumber: () => {},
+  texts: DefaultTexts,
   className: '',
-  outwardValue: '',
-  returnValue: '',
   inputClassName: '',
+  onChangeProperty: () => {},
+  onClickUnknownTravelingNumberTo: () => {},
 };
 
 CardTravelInformation.propTypes = {
-  texts: PropTypes.shape({
-    title: PropTypes.string,
-    outwardPlaceholder: PropTypes.string,
-    outwardLabel: PropTypes.string,
-    returnPlaceholder: PropTypes.string,
-    returnLabel: PropTypes.string,
-    businessTravel: PropTypes.string,
-    mandatoryFields: PropTypes.string,
-    unknownFlightNumber: PropTypes.string,
-  }),
+  texts: TextsType,
   className: PropTypes.string,
-  onOutwardChange: PropTypes.func,
-  onReturnChange: PropTypes.func,
-  outwardValue: PropTypes.string,
-  returnValue: PropTypes.string,
+  onChangeProperty: PropTypes.func,
   inputClassName: PropTypes.string,
-  onClickUnknownFlightNumber: PropTypes.func,
+  onClickUnknownTravelingNumberTo: PropTypes.func,
 };
 
 
