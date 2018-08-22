@@ -6,72 +6,35 @@ import { Card, Input, GenderPicker, LinkUnderlined, CardTitle } from '../';
 import PhoneInput from '../PhoneInput';
 import ContactFormField from './ContactFormField';
 
-const genders = [
-  { value: 'male', label: 'Mr' },
-  { value: 'female', label: 'Mme' },
-];
-
 class ContactForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      selected: false,
-      values: {
-        firstName: '',
-        lastName: '',
-        email: '',
-        phoneNumber: '',
-        postalCode: '',
-      },
-    };
-
-    this.setSelected = this.setSelected.bind(this);
-    this.setNotSelected = this.setNotSelected.bind(this);
-
-    this.handleChangeGender = this.handleSelectGender.bind(this);
+    this.handleChangeGender = props.onChangeProperty.bind(this, 'gender');
     this.handleChangeFirstName = this.handleChangeProperty.bind(this, 'firstname');
     this.handleChangeLastName = this.handleChangeProperty.bind(this, 'lastname');
     this.handleChangeEmail = this.handleChangeProperty.bind(this, 'email');
     this.handleChangePhone = this.handleChangeProperty.bind(this, 'phone');
     this.handleChangePostalCode = this.handleChangeProperty.bind(this, 'postalCode');
-  }
-
-  setSelected() {
-    this.setState({ selected: true });
-  }
-
-  setNotSelected() {
-    this.setState({ selected: false });
+    this.genders = [{
+      value: 'male',
+      label: props.texts.male,
+    }, {
+      value: 'female',
+      label: props.texts.female,
+    }];
   }
 
   handleChangeProperty(field, event) {
     const { onChangeProperty } = this.props;
 
-    this.setState({
-      values: {
-        ...this.state.values,
-        [field]: event.currentTarget.value,
-      },
-    });
     onChangeProperty(field, event.currentTarget.value);
   }
 
-  handleSelectGender(gender) {
-    const { onChangeProperty } = this.props;
-
-    this.setState({
-      values: {
-        ...this.state.values,
-        gender,
-      },
-    });
-    onChangeProperty('gender', gender);
-  }
-
   render() {
-    const { texts } = this.props;
-    const { selected, values } = this.state;
+    const {
+      texts, values, selected, onInputBlur, onInputFocus,
+    } = this.props;
     const {
       addDriver,
       newDriver,
@@ -105,8 +68,9 @@ class ContactForm extends React.Component {
           <div>
             <ContactFormField label={civility}>
               <GenderPicker
-                genders={genders}
+                genders={this.genders}
                 onSelect={this.handleChangeGender}
+                selected={values.gender}
               />
             </ContactFormField>
             <ContactFormField
@@ -117,8 +81,8 @@ class ContactForm extends React.Component {
                 inputType="text"
                 inputId="first-name"
                 inputPlaceHolder={firstNamePlaceholder}
-                onFocus={this.setSelected}
-                onBlur={this.setNotSelected}
+                onFocus={onInputFocus}
+                onBlur={onInputBlur}
                 onChange={this.handleChangeFirstName}
                 value={values.firstName}
               />
@@ -131,8 +95,8 @@ class ContactForm extends React.Component {
                 inputType="text"
                 inputId="last-name"
                 inputPlaceHolder={lastNamePlaceholder}
-                onFocus={this.setSelected}
-                onBlur={this.setNotSelected}
+                onFocus={onInputFocus}
+                onBlur={onInputBlur}
                 onChange={this.handleChangeLastName}
                 value={values.lastName}
               />
@@ -147,8 +111,8 @@ class ContactForm extends React.Component {
                 inputType="email"
                 inputId="email"
                 inputPlaceHolder={emailPlaceholder}
-                onFocus={this.setSelected}
-                onBlur={this.setNotSelected}
+                onFocus={onInputFocus}
+                onBlur={onInputBlur}
                 onChange={this.handleChangeEmail}
                 value={values.email}
               />
@@ -158,8 +122,8 @@ class ContactForm extends React.Component {
               mandatory
             >
               <PhoneInput
-                onFocus={this.setSelected}
-                onBlur={this.setNotSelected}
+                onFocus={onInputFocus}
+                onBlur={onInputBlur}
                 onChange={this.handleChangePhone}
               />
             </ContactFormField>
@@ -171,8 +135,8 @@ class ContactForm extends React.Component {
                   type="text"
                   inputId="postCode"
                   inputPlaceHolder={postCodePlaceholder}
-                  onFocus={this.setSelected}
-                  onBlur={this.setNotSelected}
+                  onFocus={onInputFocus}
+                  onBlur={onInputBlur}
                   onChange={this.handleChangePostalCode}
                   value={values.postalCode}
                 />
@@ -190,11 +154,31 @@ class ContactForm extends React.Component {
 ContactForm.defaultProps = {
   texts: DefaultTexts,
   onChangeProperty: () => {},
+  values: {
+    firstName: '',
+    lastName: '',
+    email: '',
+    phoneNumber: '',
+    postalCode: '',
+  },
+  onInputFocus: () => {},
+  onInputBlur: () => {},
+  selected: false,
 };
 
 ContactForm.propTypes = {
   texts: TextsType,
   onChangeProperty: PropTypes.func,
+  values: PropTypes.shape({
+    firstName: PropTypes.string,
+    lastName: PropTypes.string,
+    email: PropTypes.string,
+    phoneNumber: PropTypes.string,
+    postalCode: PropTypes.string,
+  }),
+  onInputFocus: PropTypes.func,
+  onInputBlur: PropTypes.func,
+  selected: PropTypes.bool,
 };
 
 export default ContactForm;

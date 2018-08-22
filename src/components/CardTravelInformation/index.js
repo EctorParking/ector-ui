@@ -10,13 +10,6 @@ class CardTravelInformation extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      values: {
-        travelingNumberFrom: '',
-        travelingNumberTo: '',
-      },
-    };
-
     this.handleChangeTravelingNumberFrom = this.handleChange.bind(this, 'travelingNumberFrom');
     this.handleChangeTravelingNumberTo = this.handleChange.bind(this, 'travelingNumberTo');
   }
@@ -24,12 +17,6 @@ class CardTravelInformation extends Component {
   handleChange(field, event) {
     const { onChangeProperty } = this.props;
 
-    this.setState({
-      values: {
-        ...this.state.values,
-        [field]: event.currentTarget.value,
-      },
-    });
     onChangeProperty(field, event.currentTarget.value);
   }
 
@@ -39,8 +26,8 @@ class CardTravelInformation extends Component {
       className,
       inputClassName,
       onClickUnknownTravelingNumberTo,
+      values,
     } = this.props;
-    const { values } = this.state;
 
     return (
       <Card>
@@ -79,16 +66,23 @@ class CardTravelInformation extends Component {
   }
 }
 
-
 CardTravelInformation.defaultProps = {
   texts: DefaultTexts,
   className: '',
   inputClassName: '',
   onChangeProperty: () => {},
   onClickUnknownTravelingNumberTo: () => {},
+  values: {
+    travelingNumberFrom: '',
+    travelingNumberTo: '',
+  },
 };
 
 CardTravelInformation.propTypes = {
+  values: PropTypes.shape({
+    travelingNumberFrom: PropTypes.string,
+    travelingNumberTo: PropTypes.string,
+  }),
   texts: TextsType,
   className: PropTypes.string,
   onChangeProperty: PropTypes.func,

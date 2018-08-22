@@ -8,7 +8,7 @@ import { DefaultTexts } from './CardTravelInformationTextsType';
 import CardTravelInformation from './';
 
 
-storiesOf('Card.TravelInformation', module)
+storiesOf('CardTravelInformation', module)
 
   .addDecorator(backgrounds([
     { name: 'header', value: 'white', default: true },
@@ -16,10 +16,14 @@ storiesOf('Card.TravelInformation', module)
   .addDecorator(centered)
   .addDecorator(withKnobs)
 
-  .add('basic', () => {
+  .add('With Knobs', () => {
     const texts = object('Texts', DefaultTexts);
+    const values = object('Values', {
+      travelingNumberFrom: '',
+      travelingNumberTo: '',
+    });
 
     return (
-      <CardTravelInformation texts={texts} />
+      <CardTravelInformation texts={texts} values={values} />
     );
   });
