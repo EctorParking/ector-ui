@@ -19,8 +19,8 @@ storiesOf('ContactForm', module)
   .add('normal', () => {
     const texts = object('Textes', DefaultTexts);
     const values = object('Values', {
-      firstName: '',
-      lastName: '',
+      firstname: '',
+      lastname: '',
       email: '',
       gender: '',
       phoneNumber: '',

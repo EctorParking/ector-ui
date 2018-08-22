@@ -33,7 +33,7 @@ class ContactForm extends React.Component {
 
   render() {
     const {
-      texts, values, selected, onInputBlur, onInputFocus,
+      texts, values, selected, onInputBlur, onInputFocus, errors,
     } = this.props;
     const {
       addDriver,
@@ -70,7 +70,7 @@ class ContactForm extends React.Component {
               <GenderPicker
                 genders={this.genders}
                 onSelect={this.handleChangeGender}
-                selected={values.gender}
+                selected={values.gender || ''}
               />
             </ContactFormField>
             <ContactFormField
@@ -84,7 +84,8 @@ class ContactForm extends React.Component {
                 onFocus={onInputFocus}
                 onBlur={onInputBlur}
                 onChange={this.handleChangeFirstName}
-                value={values.firstName}
+                value={values.firstname || ''}
+                hasError={errors.firstname !== null}
               />
             </ContactFormField>
             <ContactFormField
@@ -98,7 +99,8 @@ class ContactForm extends React.Component {
                 onFocus={onInputFocus}
                 onBlur={onInputBlur}
                 onChange={this.handleChangeLastName}
-                value={values.lastName}
+                value={values.lastname || ''}
+                hasError={errors.lastname !== null}
               />
             </ContactFormField>
           </div>
@@ -114,7 +116,8 @@ class ContactForm extends React.Component {
                 onFocus={onInputFocus}
                 onBlur={onInputBlur}
                 onChange={this.handleChangeEmail}
-                value={values.email}
+                value={values.email || ''}
+                hasError={errors.email !== null}
               />
             </ContactFormField>
             <ContactFormField
@@ -138,7 +141,8 @@ class ContactForm extends React.Component {
                   onFocus={onInputFocus}
                   onBlur={onInputBlur}
                   onChange={this.handleChangePostalCode}
-                  value={values.postalCode}
+                  value={values.postalCode || ''}
+                  hasError={errors.postalCode !== null}
                 />
               </div>
 
@@ -155,11 +159,20 @@ ContactForm.defaultProps = {
   texts: DefaultTexts,
   onChangeProperty: () => {},
   values: {
-    firstName: '',
-    lastName: '',
-    email: '',
-    phoneNumber: '',
-    postalCode: '',
+    gender: null,
+    firstname: null,
+    lastname: null,
+    email: null,
+    phoneNumber: null,
+    postalCode: null,
+  },
+  errors: {
+    gender: null,
+    firstname: null,
+    lastname: null,
+    email: null,
+    phoneNumber: null,
+    postalCode: null,
   },
   onInputFocus: () => {},
   onInputBlur: () => {},
@@ -170,8 +183,17 @@ ContactForm.propTypes = {
   texts: TextsType,
   onChangeProperty: PropTypes.func,
   values: PropTypes.shape({
-    firstName: PropTypes.string,
-    lastName: PropTypes.string,
+    gender: PropTypes.oneOf(['male', 'female']),
+    firstname: PropTypes.string,
+    lastname: PropTypes.string,
+    email: PropTypes.string,
+    phoneNumber: PropTypes.string,
+    postalCode: PropTypes.string,
+  }),
+  errors: PropTypes.shape({
+    gender: PropTypes.string,
+    firstname: PropTypes.string,
+    lastname: PropTypes.string,
     email: PropTypes.string,
     phoneNumber: PropTypes.string,
     postalCode: PropTypes.string,

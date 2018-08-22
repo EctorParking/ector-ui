@@ -27,6 +27,7 @@ class CardTravelInformation extends Component {
       inputClassName,
       onClickUnknownTravelingNumberTo,
       values,
+      errors,
     } = this.props;
 
     return (
@@ -42,7 +43,8 @@ class CardTravelInformation extends Component {
             onChange={this.handleChangeTravelingNumberFrom}
             className={s.travelingNumberFromInputLabel}
             inputClassName={inputClassName}
-            value={values.travelingNumberFrom}
+            value={values.travelingNumberFrom || ''}
+            error={errors.travelingNumberFrom}
           />
           <div>
             <InputLabel
@@ -50,7 +52,8 @@ class CardTravelInformation extends Component {
               placeholder={texts.travelingNumberToPlaceholder}
               label={texts.travelingNumberToLabel}
               onChange={this.handleChangeTravelingNumberTo}
-              value={values.travelingNumberTo}
+              value={values.travelingNumberTo || ''}
+              error={errors.travelingNumberTo}
               className={s.travelingNumberToInputLabel}
               inputClassName={inputClassName}
             />
@@ -73,13 +76,21 @@ CardTravelInformation.defaultProps = {
   onChangeProperty: () => {},
   onClickUnknownTravelingNumberTo: () => {},
   values: {
-    travelingNumberFrom: '',
-    travelingNumberTo: '',
+    travelingNumberFrom: null,
+    travelingNumberTo: null,
+  },
+  errors: {
+    travelingNumberFrom: null,
+    travelingNumberTo: null,
   },
 };
 
 CardTravelInformation.propTypes = {
   values: PropTypes.shape({
+    travelingNumberFrom: PropTypes.string,
+    travelingNumberTo: PropTypes.string,
+  }),
+  errors: PropTypes.shape({
     travelingNumberFrom: PropTypes.string,
     travelingNumberTo: PropTypes.string,
   }),

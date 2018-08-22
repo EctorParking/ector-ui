@@ -27,4 +27,8 @@ storiesOf('Input.Label', module)
       placeHolder="AB 000"
       label="Aller"
     />
+  ))
+
+  .add('with error', () => (
+    <InputLabel label="Aller" error="Champ invalide" />
   ));

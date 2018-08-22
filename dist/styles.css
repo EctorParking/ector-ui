@@ -7992,6 +7992,10 @@ textarea:focus, input:focus{
   border-color: #ffcd02;
 }
 
+.Input__inputWithError___1lZwv {
+  border-color: #ff5757 !important;
+}
+
 .CarCardContentEdit__column___1xkAS {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -15315,6 +15319,11 @@ textarea:focus, input:focus{
 
 .InputLabel__input___1KZDL, .InputLabel__label___3f3oS {
   display: block;
+}
+
+.InputLabel__error___3rhhc {
+  text-align: right;
+  color: #ff5757;
 }
 
 .InputLabel__mandatory___3cwg6 {

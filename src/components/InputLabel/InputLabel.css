@@ -4,6 +4,11 @@
   display: block;
 }
 
+.error {
+  text-align: right;
+  color: var(--red);
+}
+
 .mandatory {
   font-weight: var(--fontWeightBold);
 }

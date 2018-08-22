@@ -6,7 +6,7 @@ import s from './InputLabel.css';
 import Input from '../Input';
 
 const InputLabel = ({
-  label, id, mandatory, placeholder, type, className, inputClassName, ...inputProps
+  label, id, mandatory, placeholder, type, className, inputClassName, error, ...inputProps
 }) => {
   const labelClassName = mandatory ? s.mandatory : '';
 
@@ -22,9 +22,15 @@ const InputLabel = ({
         inputId={id}
         inputPlaceHolder={placeholder}
         inputType={type}
+        hasError={error !== null}
         {...inputProps}
       />
 
+      {
+        error && (
+          <div className={s.error}>{error}</div>
+        )
+      }
     </label>
   );
 };
@@ -35,6 +41,7 @@ InputLabel.defaultProps = {
   placeholder: '',
   className: '',
   inputClassName: '',
+  error: null,
 };
 
 InputLabel.propTypes = {
@@ -45,7 +52,7 @@ InputLabel.propTypes = {
   type: PropTypes.oneOfType(['text', 'number']).isRequired,
   className: PropTypes.string,
   inputClassName: PropTypes.string,
+  error: PropTypes.string,
 };
-
 
 export default InputLabel;
