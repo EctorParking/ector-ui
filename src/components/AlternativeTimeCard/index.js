@@ -19,6 +19,7 @@ const AlternativeTimeCard = ({
       mode={mode}
       texts={texts}
       onSelect={onSelect}
+      testid={testid}
     />
   ) : null;
 
@@ -37,7 +38,6 @@ const AlternativeTimeCard = ({
       className={s.container}
       contentClassName={s.content}
       footerClassName={s.footerContainer}
-      testid={testid}
     >
       <i className="icon icon-ec-clock" />
       {alternative.time}
