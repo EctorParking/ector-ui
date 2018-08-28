@@ -12,6 +12,7 @@ const AlternativeTimeCard = ({
   alternative,
   mode,
   onSelect,
+  testid,
 }) => {
   const footer = mode !== 'selectedWithoutFooter' ? (
     <AlternativeTimeCardFooter
@@ -36,6 +37,7 @@ const AlternativeTimeCard = ({
       className={s.container}
       contentClassName={s.content}
       footerClassName={s.footerContainer}
+      testid={testid}
     >
       <i className="icon icon-ec-clock" />
       {alternative.time}
@@ -48,6 +50,11 @@ AlternativeTimeCard.propTypes = {
   alternative: AlternativeTimeCardAlternativeType.isRequired,
   mode: PropTypes.oneOf(['normal', 'selectedWithFooter', 'selectedWithoutFooter']).isRequired,
   onSelect: PropTypes.func.isRequired,
+  testid: PropTypes.string,
+};
+
+AlternativeTimeCard.defaultProps = {
+  testid: '',
 };
 
 export default AlternativeTimeCard;
