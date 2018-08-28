@@ -8920,7 +8920,7 @@ textarea:focus, input:focus{
   outline: none;
 }
 
-.CardTravelInformation__inputs_row___2ESyN {
+.CardTravelInformation__inputsRow___1Kn1W {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8945,8 +8945,12 @@ textarea:focus, input:focus{
   margin-left: 10px;
 }
 
+.CardTravelInformation__unknownFlightNumber___2XdpI {
+  float: right;
+}
+
 @media (max-width: 768px) {
-  .CardTravelInformation__inputs_row___2ESyN {
+  .CardTravelInformation__inputsRow___1Kn1W {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
