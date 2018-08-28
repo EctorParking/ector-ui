@@ -3,7 +3,12 @@ import PropTypes from 'prop-types';
 import AlternativeTimeCardTextsType from './AlternativeTimeCardTextsType';
 import LinkUnderlined from '../LinkUnderlined';
 
-const AlternativeTimeCardFooter = ({ texts, mode, onSelect, testid }) => {
+const AlternativeTimeCardFooter = ({
+  texts,
+  mode,
+  onSelect,
+  testid,
+}) => {
   if (mode === 'normal') {
     return <LinkUnderlined testid={testid} onClick={onSelect}>{texts.select}</LinkUnderlined>;
   }
