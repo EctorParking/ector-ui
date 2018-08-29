@@ -1,6 +1,25 @@
 @import '../../style/variable.css';
 
-.input, .label {
+.container {
+  display: flex;
+  flex-direction: column;
+  &>.label {
+     max-width: 30%;
+  }
+}
+
+.container.left {
+  flex-direction: row;
+  align-items: center;
+  &>.label {
+     margin-right: 1em;
+     width: 10em;
+     max-width: none;
+  }
+}
+
+
+.input {
   display: block;
 }
 

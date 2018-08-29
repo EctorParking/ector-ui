@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Colors from './Colors';
 
 import s from './ColorPicker.css';
 
@@ -19,11 +20,15 @@ const ColorPicker = ({
   </div>
 );
 
+ColorPicker.defaultProps = {
+  colorsList: Colors,
+};
+
 ColorPicker.propTypes = {
   colorsList: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
     hexadecimalCode: PropTypes.string,
-  })).isRequired,
+  })),
   onSelect: PropTypes.func.isRequired,
 };
 

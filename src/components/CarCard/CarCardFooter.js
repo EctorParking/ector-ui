@@ -5,7 +5,7 @@ import s from './CarCardFooter.css';
 import TextsType, { DefaultTexts } from './CarCardTextsType';
 import carImage from '../../images/voiture-01-trois-quart-grise.svg';
 
-const CarCardFooter = ({ texts, mode }) => {
+const CarCardFooter = ({ texts, mode, onClick }) => {
   let what;
 
   if (mode.indexOf('delete') === 0) {
@@ -14,7 +14,7 @@ const CarCardFooter = ({ texts, mode }) => {
 
   if (mode.indexOf('edit') === 0) {
     what = (
-      <LinkUnderlined>
+      <LinkUnderlined onClick={onClick}>
         <strong>{texts.save}</strong>
       </LinkUnderlined>
     );
@@ -22,7 +22,7 @@ const CarCardFooter = ({ texts, mode }) => {
     what = mode.indexOf('selected') !== -1 ? (
       <i className={`icon-checkmark ${s.checkIcon}`} />
     ) : (
-      <LinkUnderlined>
+      <LinkUnderlined onClick={onClick}>
         <strong>{texts.modify}</strong>
       </LinkUnderlined>
     );
@@ -42,11 +42,13 @@ const CarCardFooter = ({ texts, mode }) => {
 
 CarCardFooter.defaultProps = {
   texts: DefaultTexts,
+  onClick: () => {},
 };
 
 CarCardFooter.propTypes = {
   texts: TextsType,
   mode: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
 };
 
 export default CarCardFooter;

@@ -46,23 +46,23 @@ class CardTravelInformation extends Component {
             value={values.travelingNumberFrom || ''}
             error={errors.travelingNumberFrom}
           />
-          <div>
-            <InputLabel
-              mandatory
-              placeholder={texts.travelingNumberToPlaceholder}
-              label={texts.travelingNumberToLabel}
-              onChange={this.handleChangeTravelingNumberTo}
-              value={values.travelingNumberTo || ''}
-              error={errors.travelingNumberTo}
-              className={s.travelingNumberToInputLabel}
-              inputClassName={inputClassName}
-            />
-            <ActionLink
-              label={texts.unknownTravelingNumberTo}
-              className={s.unknownTravelingNumberTo}
-              onClick={onClickUnknownTravelingNumberTo}
-            />
-          </div>
+          <InputLabel
+            mandatory
+            placeholder={texts.travelingNumberToPlaceholder}
+            label={texts.travelingNumberToLabel}
+            onChange={this.handleChangeTravelingNumberTo}
+            value={values.travelingNumberTo || ''}
+            error={errors.travelingNumberTo}
+            className={s.travelingNumberToInputLabel}
+            inputClassName={inputClassName}
+          />
+        </div>
+        <div className={s.unknownTravelingNumberTo}>
+          <ActionLink
+            className={s.unknownTravelingNumberToButton}
+            label={texts.unknownTravelingNumberTo}
+            onClick={onClickUnknownTravelingNumberTo}
+          />
         </div>
       </Card>
     );

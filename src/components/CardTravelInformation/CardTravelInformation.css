@@ -20,7 +20,10 @@
 }
 
 .unknownTravelingNumberTo {
-  float: right;
+  display: inline-block;
+  &>.unknownTravelingNumberToButton {
+    float: right;
+  }
 }
 
 @media (max-width: 768px) {
