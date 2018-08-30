@@ -7,7 +7,7 @@ import ContactCardTextsType from './ContactCardTextsType';
 const ContactCardHeader = ({
   contact,
   editable,
-  deletable,
+  pendingDeletion,
   pendingModification,
   texts,
 }) => {
@@ -25,7 +25,7 @@ const ContactCardHeader = ({
           <i className={`icon-edit ${s.editIcon}`} />
         </button>
       );
-    } else if (deletable) {
+    } else if (pendingDeletion) {
       button = (
         <button
           className={s.editButton}
@@ -49,7 +49,7 @@ const ContactCardHeader = ({
 ContactCardHeader.propTypes = {
   contact: ContactType.isRequired,
   editable: PropTypes.bool.isRequired,
-  deletable: PropTypes.bool.isRequired,
+  pendingDeletion: PropTypes.bool.isRequired,
   pendingModification: PropTypes.bool.isRequired,
   texts: ContactCardTextsType.isRequired,
 };

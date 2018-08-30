@@ -7,7 +7,7 @@ import TextsType, { DefaultTexts } from './CarCardTextsType';
 const CarCardHeader = ({
   car,
   editable,
-  deletable,
+  pendingDeletion,
   pendingModification,
   texts,
 }) => {
@@ -25,7 +25,7 @@ const CarCardHeader = ({
           <i className={`icon-edit ${s.editIcon}`} />
         </button>
       );
-    } else if (deletable) {
+    } else if (!pendingDeletion) {
       button = (
         <button
           className={s.editButton}
@@ -53,7 +53,7 @@ CarCardHeader.defaultProps = {
 CarCardHeader.propTypes = {
   car: CarType.isRequired,
   editable: PropTypes.bool.isRequired,
-  deletable: PropTypes.bool.isRequired,
+  pendingDeletion: PropTypes.bool.isRequired,
   pendingModification: PropTypes.bool.isRequired,
   texts: TextsType,
 };

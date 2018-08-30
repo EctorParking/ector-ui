@@ -26,7 +26,7 @@ storiesOf('ContactCard', module)
       texts: object('Texts', DefaultTexts),
       editable: boolean('Editable', false),
       pendingModification: boolean('Pending modification', false),
-      deletable: boolean('Deletable', false),
+      pendingDeletion: boolean('Pending Deletion', false),
       selected: boolean('Selected', false),
     };
 
