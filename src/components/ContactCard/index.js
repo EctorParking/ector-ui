@@ -20,6 +20,7 @@ const ContactCard = ({
   deletable,
   onClick,
   onDelete,
+  onEdit,
 }) => {
   let mode = 'read';
 
@@ -56,6 +57,8 @@ const ContactCard = ({
         deletable={deletable}
         pendingDeletion={pendingDeletion}
         pendingModification={pendingModification}
+        onDelete={onDelete}
+        onEdit={onEdit}
       />
     );
   }
@@ -82,6 +85,7 @@ ContactCard.propTypes = {
   texts: TextsType,
   onClick: PropTypes.func,
   onDelete: PropTypes.func,
+  onEdit: PropTypes.func,
 };
 
 ContactCard.defaultProps = {
@@ -92,6 +96,7 @@ ContactCard.defaultProps = {
   pendingDeletion: false,
   onClick: () => {},
   onDelete: () => {},
+  onEdit: () => {},
   texts: DefaultTexts,
 };
 

@@ -11,6 +11,8 @@ const CarCardHeader = ({
   pendingDeletion,
   pendingModification,
   texts,
+  onEdit,
+  onDelete,
 }) => {
   const { name } = car;
 
@@ -21,6 +23,7 @@ const CarCardHeader = ({
       <button
         className={s.editButton}
         title={texts.modify}
+        onClick={onEdit}
       >
         <i className={`icon-edit ${s.editIcon}`} />
       </button>
@@ -30,6 +33,7 @@ const CarCardHeader = ({
       <button
         className={s.editButton}
         title={texts.delete}
+        onClick={onDelete}
       >
         <i className={`icon-bin ${s.editIcon}`} />
       </button>
@@ -56,6 +60,8 @@ CarCardHeader.propTypes = {
   pendingDeletion: PropTypes.bool.isRequired,
   pendingModification: PropTypes.bool.isRequired,
   texts: TextsType,
+  onEdit: PropTypes.func.isRequired,
+  onDelete: PropTypes.func.isRequired,
 };
 
 export default CarCardHeader;
