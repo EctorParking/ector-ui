@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import LinkUnderlined from '../LinkUnderlined';
 import s from './CarCardFooter.css';
 import TextsType, { DefaultTexts } from './CarCardTextsType';
-import carImage from '../../images/voiture-01-trois-quart-grise.png';
+import carImage from '../../images/voiture-01-trois-quart-grise.svg';
 
 const CarCardFooter = ({ texts, mode, onClick }) => {
   let what;
