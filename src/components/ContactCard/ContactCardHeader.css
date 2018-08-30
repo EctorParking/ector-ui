@@ -9,6 +9,8 @@
 }
 .editIcon {
   margin-right: -0.75em;
+  -webkit-text-fill-color: var(--blue);
+  fill: var(--blue);
 }
 .editButton {
   background: none;

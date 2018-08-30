@@ -17,6 +17,7 @@ const ContactCard = ({
   selected,
   pendingModification,
   pendingDeletion,
+  deletable,
   onClick,
   onDelete,
 }) => {
@@ -52,6 +53,7 @@ const ContactCard = ({
         texts={texts}
         contact={contact}
         editable={editable}
+        deletable={deletable}
         pendingDeletion={pendingDeletion}
         pendingModification={pendingModification}
       />
@@ -73,6 +75,7 @@ const ContactCard = ({
 ContactCard.propTypes = {
   contact: ContactType.isRequired,
   editable: PropTypes.bool,
+  deletable: PropTypes.bool,
   selected: PropTypes.bool,
   pendingModification: PropTypes.bool,
   pendingDeletion: PropTypes.bool,
@@ -83,6 +86,7 @@ ContactCard.propTypes = {
 
 ContactCard.defaultProps = {
   editable: true,
+  deletable: false,
   selected: false,
   pendingModification: false,
   pendingDeletion: false,

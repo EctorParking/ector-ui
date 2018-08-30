@@ -5480,6 +5480,9 @@
           "M288.136 940.716c-6.962 0-14.016-1.774-20.48-5.504-19.626-11.332-26.35-36.428-15.020-56.054l89.53-155.070c11.33-19.628 36.426-26.352 56.054-15.022 19.626 11.332 26.35 36.43 15.020 56.054l-89.53 155.072c-7.598 13.166-21.392 20.524-35.574 20.524z",
           "M646.266 309.242c-5.062 0-10.196-1.29-14.894-4.002-14.274-8.242-19.164-26.494-10.924-40.766l89.534-155.070c8.24-14.274 26.492-19.166 40.766-10.922 14.274 8.242 19.164 26.494 10.924 40.766l-89.532 155.070c-5.53 9.57-15.56 14.924-25.874 14.924z"
         ],
+        "attrs": [],
+        "isMulticolor": false,
+        "isMulticolor2": false,
         "tags": [
           "spinner",
           "loading",
@@ -5488,27 +5491,29 @@
           "wait"
         ],
         "defaultCode": 59772,
-        "grid": 16,
-        "attrs": []
+        "grid": 16
       },
       "attrs": [],
       "properties": {
         "ligatures": "spinner3, loading4",
         "name": "spinner",
         "order": 7,
-        "id": 125,
+        "id": 10,
         "prevSize": 32,
         "code": 59772
       },
-      "setIdx": 5,
-      "setId": 1,
-      "iconIdx": 124
+      "setIdx": 3,
+      "setId": 3,
+      "iconIdx": 10
     },
     {
       "icon": {
         "paths": [
           "M864 128l-480 480-224-224-160 160 384 384 640-640z"
         ],
+        "attrs": [],
+        "isMulticolor": false,
+        "isMulticolor2": false,
         "tags": [
           "checkmark",
           "tick",
@@ -5517,21 +5522,51 @@
           "ok"
         ],
         "defaultCode": 59920,
-        "grid": 16,
-        "attrs": []
+        "grid": 16
       },
       "attrs": [],
       "properties": {
         "ligatures": "checkmark, tick",
         "name": "checkmark",
         "order": 8,
-        "id": 273,
+        "id": 11,
         "prevSize": 32,
         "code": 59920
       },
+      "setIdx": 3,
+      "setId": 3,
+      "iconIdx": 11
+    },
+    {
+      "icon": {
+        "paths": [
+          "M128 320v640c0 35.2 28.8 64 64 64h576c35.2 0 64-28.8 64-64v-640h-704zM320 896h-64v-448h64v448zM448 896h-64v-448h64v448zM576 896h-64v-448h64v448zM704 896h-64v-448h64v448z",
+          "M848 128h-208v-80c0-26.4-21.6-48-48-48h-224c-26.4 0-48 21.6-48 48v80h-208c-26.4 0-48 21.6-48 48v80h832v-80c0-26.4-21.6-48-48-48zM576 128h-192v-63.198h192v63.198z"
+        ],
+        "tags": [
+          "bin",
+          "trashcan",
+          "remove",
+          "delete",
+          "recycle",
+          "dispose"
+        ],
+        "defaultCode": 59820,
+        "grid": 16,
+        "attrs": []
+      },
+      "attrs": [],
+      "properties": {
+        "ligatures": "bin, trashcan",
+        "name": "bin",
+        "order": 1329,
+        "id": 173,
+        "prevSize": 32,
+        "code": 59820
+      },
       "setIdx": 5,
       "setId": 1,
-      "iconIdx": 272
+      "iconIdx": 172
     },
     {
       "icon": {
