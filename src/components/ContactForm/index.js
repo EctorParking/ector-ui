@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import s from './ContactForm.css';
 import TextsType, { DefaultTexts } from './ContactFormTextsType';
-import { Card, Input, GenderPicker, LinkUnderlined, CardTitle } from '../';
-import PhoneInput from '../PhoneInput';
+import { Card, GenderPicker, LinkUnderlined, CardTitle, InputLabel, PhoneInput } from '../';
 import ContactFormField from './ContactFormField';
 
 class ContactForm extends React.Component {
@@ -48,7 +47,6 @@ class ContactForm extends React.Component {
       phone,
       postCode,
       postCodePlaceholder,
-      notMandatory,
     } = texts;
 
     const footer = (
@@ -73,53 +71,47 @@ class ContactForm extends React.Component {
                 selected={values.gender || ''}
               />
             </ContactFormField>
-            <ContactFormField
+            <InputLabel
+              left
+              type="text"
+              id="first-name"
+              placeholder={firstNamePlaceholder}
+              onFocus={onInputFocus}
+              onBlur={onInputBlur}
+              onChange={this.handleChangeFirstName}
+              value={values.firstname || ''}
+              error={errors.firstname}
               label={firstName}
               mandatory
-            >
-              <Input
-                inputType="text"
-                inputId="first-name"
-                inputPlaceHolder={firstNamePlaceholder}
-                onFocus={onInputFocus}
-                onBlur={onInputBlur}
-                onChange={this.handleChangeFirstName}
-                value={values.firstname || ''}
-                hasError={errors.firstname !== null}
-              />
-            </ContactFormField>
-            <ContactFormField
+            />
+            <InputLabel
+              left
               label={lastName}
               mandatory
-            >
-              <Input
-                inputType="text"
-                inputId="last-name"
-                inputPlaceHolder={lastNamePlaceholder}
-                onFocus={onInputFocus}
-                onBlur={onInputBlur}
-                onChange={this.handleChangeLastName}
-                value={values.lastname || ''}
-                hasError={errors.lastname !== null}
-              />
-            </ContactFormField>
+              type="text"
+              id="last-name"
+              placeholder={lastNamePlaceholder}
+              onFocus={onInputFocus}
+              onBlur={onInputBlur}
+              onChange={this.handleChangeLastName}
+              value={values.lastname || ''}
+              error={errors.lastname}
+            />
           </div>
           <div>
-            <ContactFormField
+            <InputLabel
+              left
               label={email}
               mandatory
-            >
-              <Input
-                inputType="email"
-                inputId="email"
-                inputPlaceHolder={emailPlaceholder}
-                onFocus={onInputFocus}
-                onBlur={onInputBlur}
-                onChange={this.handleChangeEmail}
-                value={values.email || ''}
-                hasError={errors.email !== null}
-              />
-            </ContactFormField>
+              type="email"
+              id="email"
+              placeholder={emailPlaceholder}
+              onFocus={onInputFocus}
+              onBlur={onInputBlur}
+              onChange={this.handleChangeEmail}
+              value={values.email || ''}
+              error={errors.email}
+            />
             <ContactFormField
               label={phone}
               mandatory
@@ -130,24 +122,19 @@ class ContactForm extends React.Component {
                 onChange={this.handleChangePhone}
               />
             </ContactFormField>
-            <ContactFormField
+            <InputLabel
+              left
               label={postCode}
-            >
-              <div className={s.postCode}>
-                <Input
-                  type="text"
-                  inputId="postCode"
-                  inputPlaceHolder={postCodePlaceholder}
-                  onFocus={onInputFocus}
-                  onBlur={onInputBlur}
-                  onChange={this.handleChangePostalCode}
-                  value={values.postalCode || ''}
-                  hasError={errors.postalCode !== null}
-                />
-              </div>
+              type="text"
+              id="postCode"
+              placeholder={postCodePlaceholder}
+              onFocus={onInputFocus}
+              onBlur={onInputBlur}
+              onChange={this.handleChangePostalCode}
+              value={values.postalCode || ''}
+              error={errors.postalCode}
+            />
 
-              <span>{notMandatory}</span>
-            </ContactFormField>
           </div>
         </div>
       </Card>

@@ -25,26 +25,6 @@
   margin-left: var(--marginLarge);
 }
 
-.postCode input {
-  width: var(--postCodeInputWidth);
-}
-
-.postCode {
-  margin-right: var(--marginLarge);
-}
-
-.postCode + span {
-  font-style: italic;
-}
-
-.postCode + span:before {
-  content: '(';
-}
-
-.postCode + span:after {
-  content: ')';
-}
-
 .footer {
   align-items: center;
   display: flex;
