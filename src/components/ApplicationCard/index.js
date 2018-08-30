@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ApplicationCardUrlsType from './ApplicationCardUrlsType';
+import playStoreImg from '../../images/PlayStore.svg';
+import appStoreImg from '../../images/AppStore.svg';
+import phoneImg from '../../images/phone.png';
 
 import s from './ApplicationCard.css';
 
@@ -19,15 +22,13 @@ const ApplicationCard = ({
       <div className={s.icons}>
         <a href={urls.googlePlay}>
           <img
-            src={require('../../images/PlayStore.svg')}
-            // src={require('../../images/disponible-sur-googleplay.png')}
+            src={playStoreImg}
             alt="Google Play"
           />
         </a>
         <a href={urls.appStore}>
           <img
-            src={require('../../images/AppStore.svg')}
-            // src={require('../../images/disponible-sur-appstore.png')}
+            src={appStoreImg}
             alt="App Store"
           />
         </a>
@@ -35,7 +36,7 @@ const ApplicationCard = ({
     </div>
     <div>
       <img
-        src="images/phone.png"
+        src={phoneImg}
         alt="Phone"
       />
     </div>
