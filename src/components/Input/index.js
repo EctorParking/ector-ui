@@ -12,10 +12,11 @@ const Input = ({
   onChange,
   checked,
   value,
+  hasError,
   className,
 }) => (
   <input
-    className={[s.input, className].join(' ')}
+    className={[s.input, hasError ? s.inputWithError : {}, className].join(' ')}
     type={inputType}
     placeholder={inputPlaceHolder}
     id={inputId}
@@ -36,6 +37,7 @@ Input.defaultProps = {
   checked: false,
   value: '',
   className: '',
+  hasError: false,
 };
 
 Input.propTypes = {
@@ -48,6 +50,7 @@ Input.propTypes = {
   checked: PropTypes.bool,
   value: PropTypes.string,
   className: PropTypes.string,
+  hasError: PropTypes.bool,
 };
 
 

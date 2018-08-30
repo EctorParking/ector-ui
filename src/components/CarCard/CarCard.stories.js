@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import backgrounds from '@storybook/addon-backgrounds';
 import centered from '@storybook/addon-centered';
 import { withKnobs, object, boolean } from '@storybook/addon-knobs/react';
@@ -16,15 +17,16 @@ storiesOf('CarCard', module)
   .addDecorator(withKnobs)
   .add('With Knobs', () => {
     const props = {
-      car: object('Voiture', {
+      car: object('Car', {
         name: 'Audi A3',
         numberPlate: 'TB-894-LI',
       }),
       texts: object('Texts', DefaultTexts),
       editable: boolean('Editable', false),
-      pendingModification: boolean('Selected', false),
-      deletable: boolean('Pending modification', false),
-      selected: boolean('Deletable', false),
+      pendingModification: boolean('Pending Modification', false),
+      deletable: boolean('Deletable', false),
+      selected: boolean('Selected', false),
+      onClick: action('clicked'),
     };
 
     return (

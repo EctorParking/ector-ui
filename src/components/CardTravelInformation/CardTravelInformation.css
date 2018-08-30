@@ -6,11 +6,11 @@
   justify-content: space-between;
 }
 
-.outwardInputLabel {
+.travelingNumberFromInputLabel {
   margin: 1rem 0.5rem 1rem 0;
 }
 
-.returnInputLabel {
+.travelingNumberToInputLabel {
   margin: 1rem 0 1rem 0.5rem;
 }
 
@@ -19,15 +19,18 @@
   margin-left: var(--marginSmall);
 }
 
-.unknownFlightNumber {
-  float: right;
+.unknownTravelingNumberTo {
+  display: inline-block;
+  &>.unknownTravelingNumberToButton {
+    float: right;
+  }
 }
 
 @media (max-width: 768px) {
   .inputsRow {
     flex-direction: column;
   }
-  .outwardInput, .returnInput {
+  .travelingNumberFromInputLabel, .travelingNumberToInputLabel {
     margin: var(--marginSmall) auto;
   }
   .title {

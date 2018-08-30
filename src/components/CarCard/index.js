@@ -18,12 +18,14 @@ const CarCard = ({
   pendingModification,
   pendingDeletion,
   deletable,
-  onClick,
+  onEdit,
   onDelete,
+  onClick,
+  className,
 }) => {
   let mode = 'read';
 
-  if (pendingDeletion) {
+  if (deletable) {
     mode = 'delete';
   }
   if (pendingModification) {
@@ -38,6 +40,7 @@ const CarCard = ({
     <CarCardFooter
       texts={texts}
       mode={mode}
+      onClick={onClick}
     />
   );
 
@@ -59,6 +62,8 @@ const CarCard = ({
         editable={editable}
         deletable={deletable}
         pendingModification={pendingModification}
+        onDelete={onDelete}
+        onEdit={onEdit}
       />
     );
   }
@@ -68,6 +73,7 @@ const CarCard = ({
       FooterChildren={footer}
       isSelected={selected}
       contentClassName={pendingDeletion ? s.pendingDeletion : ''}
+      className={className}
     >
       {header}
       {content}
@@ -83,19 +89,23 @@ CarCard.propTypes = {
   pendingModification: PropTypes.bool,
   pendingDeletion: PropTypes.bool,
   texts: TextsType,
-  onClick: PropTypes.func,
+  onEdit: PropTypes.func,
   onDelete: PropTypes.func,
+  onClick: PropTypes.func,
+  className: PropTypes.string,
 };
 
 CarCard.defaultProps = {
   texts: DefaultTexts,
   editable: true,
-  deletable: true,
+  deletable: false,
   selected: false,
   pendingModification: false,
   pendingDeletion: false,
   onClick: () => {},
+  onEdit: () => {},
   onDelete: () => {},
+  className: '',
 };
 
 export default CarCard;

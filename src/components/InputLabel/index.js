@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 import s from './InputLabel.css';
@@ -6,25 +6,52 @@ import s from './InputLabel.css';
 import Input from '../Input';
 
 const InputLabel = ({
-  label, id, mandatory, placeholder, type, className, inputClassName,
+  label,
+  id,
+  mandatory,
+  placeholder,
+  type,
+  className,
+  inputClassName,
+  error,
+  left,
+  children,
+  ...inputProps
 }) => {
   const labelClassName = mandatory ? s.mandatory : '';
 
   return (
-    <label
-      htmlFor={id}
-      className={[labelClassName, s.label, className].join(' ')}
-    >
-      {`${label}${mandatory ? '*' : ''}`}
+    <Fragment>
+      <div className={[s.container, left ? s.left : '', className].join(' ')}>
+        <label
+          htmlFor={id}
+          className={[labelClassName, s.label].join(' ')}
+        >
+          {`${label}${mandatory ? '*' : ''}`}
+        </label>
 
-      <Input
-        className={[s.input, inputClassName].join(' ')}
-        inputId={id}
-        inputPlaceHolder={placeholder}
-        inputType={type}
-      />
+        {
+          React.Children.count(children) === 1 ? (
+            children
+          ) : (
+            <Input
+              className={[s.input, inputClassName].join(' ')}
+              inputId={id}
+              inputPlaceHolder={placeholder}
+              inputType={type}
+              hasError={!!error}
+              {...inputProps}
+            />
+          )
+        }
 
-    </label>
+      </div>
+      {
+        !!error && (
+          <div className={s.error}>{error}</div>
+        )
+      }
+    </Fragment>
   );
 };
 
@@ -34,6 +61,9 @@ InputLabel.defaultProps = {
   placeholder: '',
   className: '',
   inputClassName: '',
+  error: null,
+  left: false,
+  children: null,
 };
 
 InputLabel.propTypes = {
@@ -44,7 +74,9 @@ InputLabel.propTypes = {
   type: PropTypes.oneOfType(['text', 'number']).isRequired,
   className: PropTypes.string,
   inputClassName: PropTypes.string,
+  error: PropTypes.string,
+  left: PropTypes.bool,
+  children: PropTypes.node,
 };
-
 
 export default InputLabel;
