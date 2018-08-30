@@ -1,21 +1,24 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import CarType from './CarType';
-import Input from '../Input';
+import { Input } from '..';
 import s from './CarCardContentEdit.css';
 
-const CarCardContentEdit = ({ car }) => {
-  const { name, numberPlate } = car;
+const CarCardContentEdit = ({ car, onChangeNumberPlate, onChangeColor }) => {
+  const { name, color } = car;
 
   return (
     <div className={s.column}>
-      <Input inputType="text" defaultValue={name} />
-      <Input inputType="text" defaultValue={numberPlate} />
+      <Input inputType="text" value={name} onChange={onChangeNumberPlate} />
+      <Input inputType="text" value={color} onChange={onChangeColor} />
     </div>
   );
 };
 
 CarCardContentEdit.propTypes = {
   car: CarType.isRequired,
+  onChangeNumberPlate: PropTypes.func.isRequired,
+  onChangeColor: PropTypes.func.isRequired,
 };
 
 export default CarCardContentEdit;

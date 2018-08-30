@@ -20,6 +20,7 @@ storiesOf('CarCard', module)
       car: object('Car', {
         name: 'Audi A3',
         numberPlate: 'TB-894-LI',
+        color: 'Noir',
       }),
       texts: object('Texts', DefaultTexts),
       editable: boolean('Editable', false),

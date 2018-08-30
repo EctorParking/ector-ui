@@ -22,6 +22,8 @@ const CarCard = ({
   onDelete,
   onClick,
   className,
+  onChangeColor,
+  onChangeNumberPlate,
 }) => {
   let mode = 'read';
 
@@ -45,7 +47,15 @@ const CarCard = ({
   );
 
   let header = null;
-  let content = mode.indexOf('read') === 0 ? <CarCardContentRead car={car} /> : <CarCardContentEdit car={car} />;
+  let content = mode.indexOf('read') === 0 ? (
+    <CarCardContentRead car={car} />
+  ) : (
+    <CarCardContentEdit
+      car={car}
+      onChangeColor={onChangeColor}
+      onChangeNumberPlate={onChangeNumberPlate}
+    />
+  );
 
   if (mode.indexOf('delete') === 0) {
     content = (
@@ -94,6 +104,8 @@ CarCard.propTypes = {
   onDelete: PropTypes.func,
   onClick: PropTypes.func,
   className: PropTypes.string,
+  onChangeNumberPlate: PropTypes.func,
+  onChangeColor: PropTypes.func,
 };
 
 CarCard.defaultProps = {
@@ -107,6 +119,8 @@ CarCard.defaultProps = {
   onDelete: () => {},
   className: '',
   deletable: false,
+  onChangeNumberPlate: () => {},
+  onChangeColor: () => {},
 };
 
 export default CarCard;
