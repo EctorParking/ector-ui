@@ -24,7 +24,7 @@ storiesOf('CarCard', module)
       texts: object('Texts', DefaultTexts),
       editable: boolean('Editable', false),
       pendingModification: boolean('Pending Modification', false),
-      deletable: boolean('Deletable', false),
+      pendingDeletion: boolean('Pending Deletion', false),
       selected: boolean('Selected', false),
       onClick: action('clicked'),
     };

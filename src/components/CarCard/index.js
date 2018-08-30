@@ -17,7 +17,6 @@ const CarCard = ({
   selected,
   pendingModification,
   pendingDeletion,
-  deletable,
   onEdit,
   onDelete,
   onClick,
@@ -25,7 +24,7 @@ const CarCard = ({
 }) => {
   let mode = 'read';
 
-  if (deletable) {
+  if (pendingDeletion) {
     mode = 'delete';
   }
   if (pendingModification) {
@@ -60,7 +59,7 @@ const CarCard = ({
         texts={texts}
         car={car}
         editable={editable}
-        deletable={deletable}
+        pendingDeletion={pendingDeletion}
         pendingModification={pendingModification}
         onDelete={onDelete}
         onEdit={onEdit}
@@ -84,7 +83,6 @@ const CarCard = ({
 CarCard.propTypes = {
   car: CarType.isRequired,
   editable: PropTypes.bool,
-  deletable: PropTypes.bool,
   selected: PropTypes.bool,
   pendingModification: PropTypes.bool,
   pendingDeletion: PropTypes.bool,
@@ -98,7 +96,6 @@ CarCard.propTypes = {
 CarCard.defaultProps = {
   texts: DefaultTexts,
   editable: true,
-  deletable: false,
   selected: false,
   pendingModification: false,
   pendingDeletion: false,
