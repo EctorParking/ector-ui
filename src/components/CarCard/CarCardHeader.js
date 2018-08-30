@@ -7,6 +7,7 @@ import TextsType, { DefaultTexts } from './CarCardTextsType';
 const CarCardHeader = ({
   car,
   editable,
+  deletable,
   pendingDeletion,
   pendingModification,
   texts,
@@ -15,26 +16,24 @@ const CarCardHeader = ({
 
   let button = null;
 
-  if (editable) {
-    if (!pendingModification) {
-      button = (
-        <button
-          className={s.editButton}
-          title={texts.modify}
-        >
-          <i className={`icon-edit ${s.editIcon}`} />
-        </button>
-      );
-    } else if (!pendingDeletion) {
-      button = (
-        <button
-          className={s.editButton}
-          title={texts.delete}
-        >
-          <i className={`icon-remove ${s.editIcon}`} />
-        </button>
-      );
-    }
+  if (editable && !pendingModification) {
+    button = (
+      <button
+        className={s.editButton}
+        title={texts.modify}
+      >
+        <i className={`icon-edit ${s.editIcon}`} />
+      </button>
+    );
+  } else if (deletable && !pendingDeletion) {
+    button = (
+      <button
+        className={s.editButton}
+        title={texts.delete}
+      >
+        <i className={`icon-bin ${s.editIcon}`} />
+      </button>
+    );
   }
 
   return (
@@ -53,6 +52,7 @@ CarCardHeader.defaultProps = {
 CarCardHeader.propTypes = {
   car: CarType.isRequired,
   editable: PropTypes.bool.isRequired,
+  deletable: PropTypes.bool.isRequired,
   pendingDeletion: PropTypes.bool.isRequired,
   pendingModification: PropTypes.bool.isRequired,
   texts: TextsType,
