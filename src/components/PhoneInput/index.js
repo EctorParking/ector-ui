@@ -17,7 +17,7 @@ class PhoneInput extends React.Component {
     super(props);
 
     this.state = {
-      countryCode: 'fr',
+      country: values[0],
       phone: '',
     };
 
@@ -25,34 +25,49 @@ class PhoneInput extends React.Component {
     this.onPhoneNumberChange = this.onPhoneNumberChange.bind(this);
   }
 
-  onCountryCodeChange(countryCode) {
-    this.setState({ countryCode });
+  onCountryCodeChange(event) {
+    const { currentTarget: { value: countryCode } } = event;
+    const country = values.find(option => option.value === countryCode);
+
+    this.setState({ country });
   }
 
   onPhoneNumberChange(event) {
     const { onChange } = this.props;
-    const { countryCode } = this.state;
+    const { country } = this.state;
     const { currentTarget: { value } } = event;
-    const foundedCountry = values.find(country => country.value === countryCode);
 
     this.setState({ phone: value });
-    if (foundedCountry) {
-      onChange(event, `${foundedCountry.label}${value}`);
-    }
+    onChange(event, `${country.label}${value}`);
   }
+
+  renderSelectOption = option => (
+    <option key={option.value} value={option.value}>
+      {option.label}
+    </option>
+  );
 
   render() {
     const { ...inputProps } = this.props;
-    const { countryCode, phone } = this.state;
+    const { country, phone } = this.state;
 
     return (
       <div className={s.phoneInput}>
         <Select
-          values={values}
-          selected={countryCode}
-          hasImage
+          options={values}
+          value={country.value}
+          renderOption={this.renderSelectOption}
           onChange={this.onCountryCodeChange}
-        />
+        >
+          <img
+            src={country.image}
+            className={s.selectImage}
+            alt={country.label}
+          />
+          <span>
+            {country.label}
+          </span>
+        </Select>
         <Input
           {...inputProps}
           inputPlaceHolder="06 07 08 09 00"
