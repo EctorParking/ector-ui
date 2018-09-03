@@ -24,6 +24,7 @@ const CarCard = ({
   className,
   onChangeColor,
   onChangeNumberPlate,
+  children,
 }) => {
   let mode = 'read';
 
@@ -87,7 +88,7 @@ const CarCard = ({
       className={className}
     >
       {header}
-      {content}
+      {children !== null ? children : content}
     </Card>
   );
 };
@@ -106,6 +107,7 @@ CarCard.propTypes = {
   className: PropTypes.string,
   onChangeNumberPlate: PropTypes.func,
   onChangeColor: PropTypes.func,
+  children: PropTypes.node,
 };
 
 CarCard.defaultProps = {
@@ -121,6 +123,7 @@ CarCard.defaultProps = {
   deletable: false,
   onChangeNumberPlate: () => {},
   onChangeColor: () => {},
+  children: null,
 };
 
 export default CarCard;

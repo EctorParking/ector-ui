@@ -15370,10 +15370,6 @@ textarea:focus, input:focus{
   height: 100%;
 }
 
-.Select__selectImage___1GhfN {
-  margin-right: 10px;
-}
-
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
@@ -15841,6 +15837,11 @@ textarea:focus, input:focus{
   margin-left: 10px;
   max-width: 150px;
 }
+
+.PhoneInput__selectImage___1zoZp {
+  margin-right: 10px;
+}
+
 
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 

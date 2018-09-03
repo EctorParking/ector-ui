@@ -1,51 +1,49 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SelectValue from './SelectValue';
 import SelectValueType from './SelectValueType';
 
 import s from './Select.css';
 
-const getSelectedValue = (values, selected) => values.find(({ value }) => value === selected);
-
-const Select = ({
-  values,
-  hasImage,
-  selected,
-  onChange,
-}) => (
-  <div className={s.select}>
-    <select onChange={e => onChange(e.target.value)} defaultValue={selected}>
-      {values.map(value => (
-        <SelectValue
-          value={value}
-          key={value.value}
-        />
-      ))}
-    </select>
-    {
-      hasImage &&
-      <img
-        src={getSelectedValue(values, selected).image}
-        className={s.selectImage}
-        alt={getSelectedValue(values, selected).label}
-      />
-    }
-    <span className={s.label}>
-      {getSelectedValue(values, selected).label}
-    </span>
-  </div>
+const renderSelectOption = option => (
+  <option value={option}>{option}</option>
 );
 
+const Select = (props) => {
+  const {
+    value, options, children, className, renderOption, ...selectProps
+  } = props;
+  const optionRenderer = renderOption || renderSelectOption;
+
+  return (
+    <div className={[s.select, className].join(' ')}>
+      <select {...selectProps}>
+        { options.map(optionRenderer) }
+      </select>
+      {
+        children !== null ? (
+          children
+        ) : (
+          <span className={s.label}>
+            {value}
+          </span>
+        )
+      }
+    </div>
+  );
+};
+
 Select.defaultProps = {
-  hasImage: false,
-  onChange: () => {},
+  children: null,
+  className: '',
+  renderOption: null,
 };
 
 Select.propTypes = {
-  values: PropTypes.arrayOf(SelectValueType).isRequired,
-  hasImage: PropTypes.bool,
-  selected: PropTypes.string.isRequired,
-  onChange: PropTypes.func,
+  options: PropTypes.arrayOf(SelectValueType).isRequired,
+  value: PropTypes.string.isRequired,
+  children: PropTypes.node,
+  className: PropTypes.string,
+  renderOption: PropTypes.func,
 };
 
 
