@@ -17,11 +17,11 @@ storiesOf('ContactCard', module)
   .add('With Knobs', () => {
     const props = {
       contact: object('Contact', {
-        firstName: 'Jean',
-        lastName: 'Dupont',
+        firstname: 'Jean',
+        lastname: 'Dupont',
         email: 'jeandupont@gmail.com',
-        phoneNumber: '+33 6 12 15 32 54',
-        gender: 'male',
+        phone: '+33 6 12 15 32 54',
+        title: 'male',
       }),
       texts: object('Texts', DefaultTexts),
       editable: boolean('Editable', false),

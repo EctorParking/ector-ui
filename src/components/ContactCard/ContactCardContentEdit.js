@@ -4,12 +4,12 @@ import Input from '../Input';
 import s from './ContactCardContentEdit.css';
 
 const ContactCardContentEdit = ({ contact }) => {
-  const { email, phoneNumber } = contact;
+  const { email, phone } = contact;
 
   return (
     <div className={s.column}>
       <Input inputType="text" defaultValue={email} />
-      <Input inputType="text" defaultValue={phoneNumber} />
+      <Input inputType="text" defaultValue={phone} />
     </div>
   );
 };
