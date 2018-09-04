@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 
 import s from './LinkUnderlined.css';
 
-const LinkUnderlined = ({ children, onClick, testid }) => (
+const LinkUnderlined = ({
+  children, onClick, testid, className,
+}) => (
 
-  <div className={s.link_underlined}>
+  <div className={[s.link_underlined, className].join(' ')}>
     <button testid={testid} onClick={onClick}>
       { children }
     </button>
@@ -16,10 +18,12 @@ LinkUnderlined.propTypes = {
   children: PropTypes.node.isRequired,
   onClick: PropTypes.func.isRequired,
   testid: PropTypes.string,
+  className: PropTypes.string,
 };
 
 LinkUnderlined.defaultProps = {
   testid: '',
+  className: '',
 };
 
 
