@@ -44,7 +44,7 @@ storiesOf('ServiceCard', module)
       price={120.00}
       actionFooter={action('add')}
       openShowMore={action('showMore')}
-      buttonLabelFooter="Supprimer"
+      buttonLabelFooter="Ajouter"
       labelColor="green"
       labelLogo="star"
       labelText="Populaire"
