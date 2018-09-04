@@ -36,7 +36,7 @@ const ServiceCard = ({
         openShowMore={openShowMore}
       />
       <ServiceCardFooter
-        id={id}
+        testid={`serviceCard${id}${isSubscribed ? 'Selected' : ''}`}
         price={price}
         actionFooter={actionFooter}
         buttonLabelFooter={buttonLabelFooter}

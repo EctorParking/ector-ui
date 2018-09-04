@@ -10,7 +10,7 @@ const ServiceCardFooter = ({
   actionFooter,
   buttonLabelFooter,
   isSubscribed,
-  id,
+  testid,
 }) => (
 
   <div className={s.footerContainer}>
@@ -25,14 +25,14 @@ const ServiceCardFooter = ({
     {!isSubscribed && (
       <LinkUnderline
         onClick={actionFooter}
-        testid={`serviceCard${id}`}
+        testid={testid}
       >
         {buttonLabelFooter}
       </LinkUnderline>
     )}
     {isSubscribed && (
       <button
-        testid={`serviceCard${id}Selected`}
+        testid={testid}
         className={s.deleteButton}
         onClick={actionFooter}
         type="button"
@@ -45,7 +45,7 @@ const ServiceCardFooter = ({
 );
 
 ServiceCardFooter.defaultProps = {
-  id: '',
+  testid: '',
 };
 
 ServiceCardFooter.propTypes = {
@@ -53,7 +53,7 @@ ServiceCardFooter.propTypes = {
   actionFooter: PropTypes.func.isRequired,
   buttonLabelFooter: PropTypes.string.isRequired,
   isSubscribed: PropTypes.bool.isRequired,
-  id: PropTypes.string,
+  testid: PropTypes.string,
 };
 
 export default ServiceCardFooter;
