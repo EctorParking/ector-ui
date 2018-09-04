@@ -5,7 +5,9 @@ import s from './CarCardFooter.css';
 import TextsType, { DefaultTexts } from './CarCardTextsType';
 import carImage from '../../images/voiture-01-trois-quart-grise.svg';
 
-const CarCardFooter = ({ texts, mode, onClick }) => {
+const CarCardFooter = ({
+  texts, mode, onClick, onSubmit,
+}) => {
   let what;
 
   if (mode.indexOf('delete') === 0) {
@@ -14,7 +16,7 @@ const CarCardFooter = ({ texts, mode, onClick }) => {
 
   if (mode.indexOf('edit') === 0) {
     what = (
-      <LinkUnderlined onClick={onClick}>
+      <LinkUnderlined onClick={onSubmit}>
         <strong>{texts.save}</strong>
       </LinkUnderlined>
     );
@@ -43,12 +45,14 @@ const CarCardFooter = ({ texts, mode, onClick }) => {
 CarCardFooter.defaultProps = {
   texts: DefaultTexts,
   onClick: () => {},
+  onSubmit: () => {},
 };
 
 CarCardFooter.propTypes = {
   texts: TextsType,
   mode: PropTypes.string.isRequired,
   onClick: PropTypes.func,
+  onSubmit: PropTypes.func,
 };
 
 export default CarCardFooter;

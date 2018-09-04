@@ -25,6 +25,8 @@ const CarCard = ({
   onChangeColor,
   onChangeNumberPlate,
   children,
+  onSubmit,
+  ...cardProps
 }) => {
   let mode = 'read';
 
@@ -44,6 +46,7 @@ const CarCard = ({
       texts={texts}
       mode={mode}
       onClick={onClick}
+      onSubmit={onSubmit}
     />
   );
 
@@ -86,6 +89,7 @@ const CarCard = ({
       isSelected={selected}
       contentClassName={pendingDeletion ? s.pendingDeletion : ''}
       className={className}
+      {...cardProps}
     >
       {header}
       {children !== null ? children : content}
@@ -108,6 +112,7 @@ CarCard.propTypes = {
   onChangeNumberPlate: PropTypes.func,
   onChangeColor: PropTypes.func,
   children: PropTypes.node,
+  onSubmit: PropTypes.func,
 };
 
 CarCard.defaultProps = {
@@ -124,6 +129,7 @@ CarCard.defaultProps = {
   onChangeNumberPlate: () => {},
   onChangeColor: () => {},
   children: null,
+  onSubmit: () => {},
 };
 
 export default CarCard;
