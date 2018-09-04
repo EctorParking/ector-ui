@@ -16,7 +16,7 @@ const Select = (props) => {
 
   return (
     <div className={[s.select, className].join(' ')}>
-      <select {...selectProps}>
+      <select value={value} {...selectProps}>
         { options.map(optionRenderer) }
       </select>
       {
