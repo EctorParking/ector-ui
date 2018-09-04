@@ -5,7 +5,9 @@ import s from './CarCardFooter.css';
 import TextsType, { DefaultTexts } from './CarCardTextsType';
 import carImage from '../../images/voiture-01-trois-quart-grise.svg';
 
-const CarCardFooter = ({ texts, mode, onClick, onSubmit }) => {
+const CarCardFooter = ({
+  texts, mode, onClick, onSubmit,
+}) => {
   let what;
 
   if (mode.indexOf('delete') === 0) {
