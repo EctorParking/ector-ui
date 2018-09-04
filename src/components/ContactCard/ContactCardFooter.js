@@ -13,7 +13,7 @@ const avatars = {
 };
 
 const ContactCardFooter = ({ texts, contact, mode }) => {
-  const { gender } = contact;
+  const { title } = contact;
   let what;
 
   if (mode.indexOf('delete') === 0) {
@@ -39,9 +39,9 @@ const ContactCardFooter = ({ texts, contact, mode }) => {
   return (
     <div className={s.footer}>
       <img
-        src={avatars[gender]}
+        src={avatars[title]}
         className={s.genderImage}
-        alt={gender}
+        alt={title}
       />
       {what}
     </div>
