@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export default ([
   { label: 'black', hexadecimalCode: '#000000' },
   { label: 'grey', hexadecimalCode: '#818181' },
@@ -10,3 +12,8 @@ export default ([
   { label: 'brown', hexadecimalCode: '#5d4e47' },
   { label: 'transparent', hexadecimalCode: 'transparent' },
 ]);
+
+export const ColorPropsType = PropTypes.shape({
+  label: PropTypes.string,
+  hexadecimalCode: PropTypes.string,
+});

@@ -1,35 +1,66 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import Colors from './Colors';
+import Colors, { ColorPropsType } from './Colors';
 
 import s from './ColorPicker.css';
 
-const ColorPicker = ({
-  colorsList, onSelect,
-}) => (
-  <div className={s.colorPicker}>
-    {colorsList.map(color => (
-      <button
-        key={`color-${color.label}`}
-        className={`${s.badge} ${color.hexadecimalCode === 'transparent' ? s.transparent : ''}`}
-        style={{ backgroundColor: color.hexadecimalCode }}
-        title={color.label}
-        onClick={() => onSelect(color)}
-      />
-    ))}
-  </div>
-);
+class ColorPicker extends PureComponent {
+  renderColorBadge = (color) => {
+    const {
+      onSelect, tooltipClassName, showTooltip, selected, badgeClassName,
+    } = this.props;
+    const tooltipContainerClassName = showTooltip ? s.tooltip : '';
+    const badgeClassNames = [
+      s.badge,
+      color.hexadecimalCode === 'transparent' ? s.transparent : '',
+      selected.hexadecimalCode === color.hexadecimalCode ? s.badgeSelected : '',
+      badgeClassName,
+    ];
+
+    return (
+      <div className={tooltipContainerClassName}>
+        <button
+          key={`color-${color.label}`}
+          className={badgeClassNames.join(' ')}
+          style={{ backgroundColor: color.hexadecimalCode }}
+          title={color.label}
+          onClick={() => onSelect(color)}
+        />
+        <span className={[s.tooltipText, tooltipClassName].join(' ')}>{color.label}</span>
+      </div>
+    );
+  };
+
+  render() {
+    const {
+      colorsList, className,
+    } = this.props;
+
+    return (
+      <div className={[s.colorPicker, className].join(' ')}>
+        {colorsList.map(this.renderColorBadge)}
+      </div>
+    );
+  }
+}
 
 ColorPicker.defaultProps = {
   colorsList: Colors,
+  className: '',
+  tooltipClassName: '',
+  showTooltip: true,
+  selected: {},
+  badgeClassName: '',
 };
 
 ColorPicker.propTypes = {
-  colorsList: PropTypes.arrayOf(PropTypes.shape({
-    label: PropTypes.string,
-    hexadecimalCode: PropTypes.string,
-  })),
+  showTooltip: PropTypes.bool,
+  badgeClassName: PropTypes.string,
+  tooltipClassName: PropTypes.string,
+  className: PropTypes.string,
+  colorsList: PropTypes.arrayOf(ColorPropsType),
   onSelect: PropTypes.func.isRequired,
+  selected: ColorPropsType,
 };
 
 export default ColorPicker;
