@@ -9,13 +9,18 @@
 .badge {
   background: none;
   border-radius: 15px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--deepBlue);
   height: 30px;
   margin: 15px;
   overflow: hidden;
   position: relative;
   width: 30px;
 }
+
+.badgeSelected {
+  border-color: var(--yellow);
+}
+
 .transparent:before,
 .transparent:after {
   background-color: #ccc;
@@ -33,4 +38,27 @@
 .transparent:after {
   right: -5px;
   transform: rotate(-45deg);
+}
+
+.tooltip {
+  position: relative;
+  &:hover {
+      &>.tooltipText {
+          visibility: visible;
+      }
+  }
+}
+
+.tooltipText {
+  visibility: hidden;
+  display: block;
+  min-width: 80px;
+  background-color: var(--deepBlue);
+  border: 2px solid var(--yellow);
+  color: var(--white);
+  text-align: center;
+  position: absolute;
+  border-radius: 8px;
+  z-index: 1;
+  left: -11px;
 }
