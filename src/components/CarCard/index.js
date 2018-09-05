@@ -26,6 +26,8 @@ const CarCard = ({
   onChangeNumberPlate,
   children,
   onSubmit,
+  onConfirmDeletion,
+  onCancelDeletion,
   ...cardProps
 }) => {
   let mode = 'read';
@@ -65,7 +67,8 @@ const CarCard = ({
     content = (
       <CarCardDeletionAlert
         texts={texts}
-        onDelete={onDelete}
+        onDelete={onConfirmDeletion}
+        onCancel={onCancelDeletion}
       />
     );
   } else {
@@ -113,6 +116,8 @@ CarCard.propTypes = {
   onChangeColor: PropTypes.func,
   children: PropTypes.node,
   onSubmit: PropTypes.func,
+  onConfirmDeletion: PropTypes.func,
+  onCancelDeletion: PropTypes.func,
 };
 
 CarCard.defaultProps = {
@@ -130,6 +135,8 @@ CarCard.defaultProps = {
   onChangeColor: () => {},
   children: null,
   onSubmit: () => {},
+  onConfirmDeletion: () => {},
+  onCancelDeletion: () => {},
 };
 
 export default CarCard;
