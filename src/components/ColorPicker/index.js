@@ -7,13 +7,13 @@ import s from './ColorPicker.css';
 class ColorPicker extends PureComponent {
   renderColorBadge = (color) => {
     const {
-      onSelect, tooltipClassName, showTooltip, selected, badgeClassName,
+      onSelect, tooltipClassName, showTooltip, value, badgeClassName,
     } = this.props;
     const tooltipContainerClassName = showTooltip ? s.tooltip : '';
     const badgeClassNames = [
       s.badge,
       color.hexadecimalCode === 'transparent' ? s.transparent : '',
-      selected.hexadecimalCode === color.hexadecimalCode ? s.badgeSelected : '',
+      value === color.hexadecimalCode ? s.badgeSelected : '',
       badgeClassName,
     ];
 
@@ -49,7 +49,7 @@ ColorPicker.defaultProps = {
   className: '',
   tooltipClassName: '',
   showTooltip: true,
-  selected: {},
+  value: '',
   badgeClassName: '',
 };
 
@@ -60,7 +60,7 @@ ColorPicker.propTypes = {
   className: PropTypes.string,
   colorsList: PropTypes.arrayOf(ColorPropsType),
   onSelect: PropTypes.func.isRequired,
-  selected: ColorPropsType,
+  value: PropTypes.string,
 };
 
 export default ColorPicker;
