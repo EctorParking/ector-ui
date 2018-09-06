@@ -21,6 +21,8 @@ const ContactCard = ({
   onClick,
   onDelete,
   onEdit,
+  onSubmit,
+  ...cardProps
 }) => {
   let mode = 'read';
 
@@ -40,6 +42,8 @@ const ContactCard = ({
       texts={texts}
       mode={mode}
       contact={contact}
+      onClick={onClick}
+      onSubmit={onSubmit}
     />
   ) : null;
 
@@ -68,6 +72,7 @@ const ContactCard = ({
       FooterChildren={footer}
       isSelected={selected}
       contentClassName={pendingDeletion ? s.pendingDeletion : ''}
+      {...cardProps}
     >
       {header}
       {content}
@@ -86,6 +91,7 @@ ContactCard.propTypes = {
   onClick: PropTypes.func,
   onDelete: PropTypes.func,
   onEdit: PropTypes.func,
+  onSubmit: PropTypes.func,
 };
 
 ContactCard.defaultProps = {
@@ -98,6 +104,7 @@ ContactCard.defaultProps = {
   onDelete: () => {},
   onEdit: () => {},
   texts: DefaultTexts,
+  onSubmit: () => {},
 };
 
 export default ContactCard;
