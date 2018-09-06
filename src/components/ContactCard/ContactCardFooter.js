@@ -12,7 +12,9 @@ const avatars = {
   female: femaleImage,
 };
 
-const ContactCardFooter = ({ texts, contact, mode }) => {
+const ContactCardFooter = ({
+  texts, contact, mode, onClick, onSubmit,
+}) => {
   const { title } = contact;
   let what;
 
@@ -22,7 +24,7 @@ const ContactCardFooter = ({ texts, contact, mode }) => {
 
   if (mode.indexOf('edit') === 0) {
     what = (
-      <LinkUnderlined>
+      <LinkUnderlined onClick={onSubmit}>
         <strong>{texts.save}</strong>
       </LinkUnderlined>
     );
@@ -30,7 +32,7 @@ const ContactCardFooter = ({ texts, contact, mode }) => {
     what = mode.indexOf('selected') !== -1 ? (
       <i className={`icon-checkmark ${s.checkIcon}`} />
     ) : (
-      <LinkUnderlined>
+      <LinkUnderlined onClick={onClick}>
         <strong>{texts.modify}</strong>
       </LinkUnderlined>
     );
@@ -52,6 +54,8 @@ ContactCardFooter.propTypes = {
   texts: ContactCardTextsType.isRequired,
   contact: ContactType.isRequired,
   mode: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired,
 };
 
 export default ContactCardFooter;
