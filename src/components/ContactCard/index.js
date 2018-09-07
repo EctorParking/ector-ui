@@ -25,6 +25,8 @@ const ContactCard = ({
   onChangeEmail,
   onChangePhoneNumber,
   formValues,
+  onCancelDeletion,
+  onConfirmDeletion,
   ...cardProps
 }) => {
   let mode = 'read';
@@ -40,7 +42,7 @@ const ContactCard = ({
     mode += '-selected';
   }
 
-  const footer = mode !== 'delete' ? (
+  const footer = mode.indexOf('delete') === 0 ? null : (
     <ContactCardFooter
       texts={texts}
       mode={mode}
@@ -48,7 +50,7 @@ const ContactCard = ({
       onClick={onClick}
       onSubmit={onSubmit}
     />
-  ) : null;
+  );
 
   let header = null;
   let content = mode.indexOf('read') === 0 ? (
@@ -63,7 +65,13 @@ const ContactCard = ({
   );
 
   if (mode.indexOf('delete') === 0) {
-    content = <ContactCardDeletionAlert texts={texts} />;
+    content = (
+      <ContactCardDeletionAlert
+        texts={texts}
+        onCancel={onCancelDeletion}
+        onConfirm={onConfirmDeletion}
+      />
+    );
   } else {
     header = (
       <ContactCardHeader
@@ -107,6 +115,8 @@ ContactCard.propTypes = {
   onChangeEmail: PropTypes.func,
   onChangePhoneNumber: PropTypes.func,
   formValues: ContactFormValuesType.isRequired,
+  onCancelDeletion: PropTypes.func,
+  onConfirmDeletion: PropTypes.func,
 };
 
 ContactCard.defaultProps = {
@@ -122,6 +132,8 @@ ContactCard.defaultProps = {
   onSubmit: () => {},
   onChangeEmail: () => {},
   onChangePhoneNumber: () => {},
+  onCancelDeletion: () => {},
+  onConfirmDeletion: () => {},
 };
 
 export default ContactCard;
