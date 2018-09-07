@@ -3,11 +3,10 @@ import CarType from './CarType';
 import s from './CarCardContentRead.css';
 
 const CarCardContentRead = ({ car }) => {
-  const { name, numberPlate } = car;
+  const { numberPlate } = car;
 
   return (
     <div className={s.column}>
-      <span className={s.text}>{name}</span>
       <span className={s.text}>{numberPlate}</span>
     </div>
   );
