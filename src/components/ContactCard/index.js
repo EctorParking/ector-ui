@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Card from '../Card';
 import s from './ContactCard.css';
-import ContactType from './ContactType';
+import ContactType, { ContactFormValuesType } from './ContactType';
 import TextsType, { DefaultTexts } from './ContactCardTextsType';
 import ContactCardDeletionAlert from './ContactCardDeletionAlert';
 import ContactCardHeader from './ContactCardHeader';
@@ -22,6 +22,9 @@ const ContactCard = ({
   onDelete,
   onEdit,
   onSubmit,
+  onChangeEmail,
+  onChangePhoneNumber,
+  formValues,
   ...cardProps
 }) => {
   let mode = 'read';
@@ -48,7 +51,16 @@ const ContactCard = ({
   ) : null;
 
   let header = null;
-  let content = mode.indexOf('read') === 0 ? <ContactCardContentRead contact={contact} /> : <ContactCardContentEdit contact={contact} />;
+  let content = mode.indexOf('read') === 0 ? (
+    <ContactCardContentRead contact={contact} />
+  ) : (
+    <ContactCardContentEdit
+      contact={contact}
+      onChangeEmail={onChangeEmail}
+      onChangePhoneNumber={onChangePhoneNumber}
+      values={formValues}
+    />
+  );
 
   if (mode.indexOf('delete') === 0) {
     content = <ContactCardDeletionAlert texts={texts} />;
@@ -92,6 +104,9 @@ ContactCard.propTypes = {
   onDelete: PropTypes.func,
   onEdit: PropTypes.func,
   onSubmit: PropTypes.func,
+  onChangeEmail: PropTypes.func,
+  onChangePhoneNumber: PropTypes.func,
+  formValues: ContactFormValuesType.isRequired,
 };
 
 ContactCard.defaultProps = {
@@ -105,6 +120,8 @@ ContactCard.defaultProps = {
   onEdit: () => {},
   texts: DefaultTexts,
   onSubmit: () => {},
+  onChangeEmail: () => {},
+  onChangePhoneNumber: () => {},
 };
 
 export default ContactCard;

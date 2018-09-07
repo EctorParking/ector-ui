@@ -1,21 +1,20 @@
 import React from 'react';
-import ContactType from './ContactType';
+import PropTypes from 'prop-types';
+import { ContactFormValuesType } from './ContactType';
 import Input from '../Input';
 import s from './ContactCardContentEdit.css';
 
-const ContactCardContentEdit = ({ contact }) => {
-  const { email, phone } = contact;
-
-  return (
-    <div className={s.column}>
-      <Input inputType="text" defaultValue={email} />
-      <Input inputType="text" defaultValue={phone} />
-    </div>
-  );
-};
+const ContactCardContentEdit = ({ onChangeEmail, onChangePhoneNumber, values }) => (
+  <div className={s.column}>
+    <Input inputType="text" value={values.email} onChange={onChangeEmail} />
+    <Input inputType="text" value={values.phone} onChange={onChangePhoneNumber} />
+  </div>
+);
 
 ContactCardContentEdit.propTypes = {
-  contact: ContactType.isRequired,
+  onChangeEmail: PropTypes.func.isRequired,
+  onChangePhoneNumber: PropTypes.func.isRequired,
+  values: ContactFormValuesType.isRequired,
 };
 
 export default ContactCardContentEdit;
