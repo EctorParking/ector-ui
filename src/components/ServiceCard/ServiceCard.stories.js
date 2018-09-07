@@ -37,6 +37,19 @@ storiesOf('ServiceCard', module)
     />
   ))
 
+  .add('selected without button', () => (
+    <ServiceCard
+      title="Option 1"
+      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      price={120.00}
+      actionFooter={action('remove')}
+      openShowMore={action('showMore')}
+      buttonLabelFooter="Supprimer"
+      isSubscribed
+      showButton={false}
+    />
+  ))
+
   .add('normal with label', () => (
     <ServiceCard
       title="Option 1"

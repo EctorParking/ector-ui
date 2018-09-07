@@ -11,6 +11,7 @@ const ServiceCardFooter = ({
   buttonLabelFooter,
   isSubscribed,
   testid,
+  showButton,
 }) => (
 
   <div className={s.footerContainer}>
@@ -30,7 +31,7 @@ const ServiceCardFooter = ({
         {buttonLabelFooter}
       </LinkUnderline>
     )}
-    {isSubscribed && (
+    {isSubscribed && showButton && (
       <button
         testid={testid}
         className={s.deleteButton}
@@ -46,6 +47,7 @@ const ServiceCardFooter = ({
 
 ServiceCardFooter.defaultProps = {
   testid: '',
+  showButton: true,
 };
 
 ServiceCardFooter.propTypes = {
@@ -54,6 +56,7 @@ ServiceCardFooter.propTypes = {
   buttonLabelFooter: PropTypes.string.isRequired,
   isSubscribed: PropTypes.bool.isRequired,
   testid: PropTypes.string,
+  showButton: PropTypes.bool,
 };
 
 export default ServiceCardFooter;
