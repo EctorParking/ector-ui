@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Card from '../Card';
 import s from './ContactCard.css';
-import ContactType, { ContactFormValuesType } from './ContactType';
+import ContactType, { ContactFormValuesType, ContactFormErrorsType } from './ContactType';
 import TextsType, { DefaultTexts } from './ContactCardTextsType';
 import ContactCardDeletionAlert from './ContactCardDeletionAlert';
 import ContactCardHeader from './ContactCardHeader';
@@ -25,6 +25,7 @@ const ContactCard = ({
   onChangeEmail,
   onChangePhoneNumber,
   formValues,
+  formErrors,
   onCancelDeletion,
   onConfirmDeletion,
   ...cardProps
@@ -61,6 +62,7 @@ const ContactCard = ({
       onChangeEmail={onChangeEmail}
       onChangePhoneNumber={onChangePhoneNumber}
       values={formValues}
+      errors={formErrors}
     />
   );
 
@@ -115,6 +117,7 @@ ContactCard.propTypes = {
   onChangeEmail: PropTypes.func,
   onChangePhoneNumber: PropTypes.func,
   formValues: ContactFormValuesType.isRequired,
+  formErrors: ContactFormErrorsType.isRequired,
   onCancelDeletion: PropTypes.func,
   onConfirmDeletion: PropTypes.func,
 };

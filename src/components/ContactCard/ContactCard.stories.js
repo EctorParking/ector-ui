@@ -27,6 +27,10 @@ storiesOf('ContactCard', module)
         email: 'jeandupont@gmail.com',
         phone: '+33 6 12 15 32 54',
       }),
+      formErrors: object('Form errors', {
+        email: '',
+        phone: '',
+      }),
       texts: object('Texts', DefaultTexts),
       editable: boolean('Editable', false),
       deletable: boolean('Deletable', false),
