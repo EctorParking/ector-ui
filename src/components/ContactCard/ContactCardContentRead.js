@@ -3,12 +3,12 @@ import ContactType from './ContactType';
 import s from './ContactCardContentRead.css';
 
 const ContactCardContentRead = ({ contact }) => {
-  const { email, phoneNumber } = contact;
+  const { email, phone } = contact;
 
   return (
     <div className={s.column}>
       <span className={s.text}>{email}</span>
-      <span className={s.text}>{phoneNumber}</span>
+      <span className={s.text}>{phone}</span>
     </div>
   );
 };
