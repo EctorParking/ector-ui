@@ -113,16 +113,16 @@ class ContactForm extends React.Component {
               value={values.email || ''}
               error={errors.email}
             />
-            <ContactFormField
+            <PhoneInput
               label={phone}
               mandatory
-            >
-              <PhoneInput
-                onFocus={onInputFocus}
-                onBlur={onInputBlur}
-                onChange={this.handleChangePhone}
-              />
-            </ContactFormField>
+              left
+              onFocus={onInputFocus}
+              onBlur={onInputBlur}
+              onChange={this.handleChangePhone}
+              error={errors.phone}
+              value={values.phone || ''}
+            />
             <InputLabel
               left
               label={postCode}
@@ -151,7 +151,7 @@ ContactForm.defaultProps = {
     firstname: null,
     lastname: null,
     email: null,
-    phoneNumber: null,
+    phone: null,
     postalCode: null,
   },
   errors: {
@@ -159,7 +159,7 @@ ContactForm.defaultProps = {
     firstname: null,
     lastname: null,
     email: null,
-    phoneNumber: null,
+    phone: null,
     postalCode: null,
   },
   onInputFocus: () => {},
