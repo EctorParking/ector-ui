@@ -1,12 +1,13 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { Select, InputLabel, Input } from '../';
+import Select from '../Select';
+import Input from '../Input';
 import ukFlag from '../../images/flags/uk.png';
 import frFlag from '../../images/flags/fr.png';
 
 import s from './PhoneInput.css';
 
-const countries = [
+const values = [
   { value: 'fr', label: '+33', image: frFlag },
   { value: 'uk', label: '+44', image: ukFlag },
 ];
@@ -14,18 +15,10 @@ const countries = [
 class PhoneInput extends React.Component {
   constructor(props) {
     super(props);
-    let country;
-    let phone = '';
 
-    if (props.value && props.value !== PhoneInput.defaultProps.value) {
-      country = countries.find(c => props.value.startsWith(c.label));
-      if (country) {
-        phone = props.value.substring(country.label.length);
-      }
-    }
     this.state = {
-      country: country || countries[0],
-      phone,
+      country: values[0],
+      phone: '',
     };
 
     this.onCountryCodeChange = this.onCountryCodeChange.bind(this);
@@ -34,7 +27,7 @@ class PhoneInput extends React.Component {
 
   onCountryCodeChange(event) {
     const { currentTarget: { value: countryCode } } = event;
-    const country = countries.find(option => option.value === countryCode);
+    const country = values.find(option => option.value === countryCode);
 
     this.setState({ country });
   }
@@ -45,7 +38,12 @@ class PhoneInput extends React.Component {
     const { currentTarget: { value } } = event;
 
     this.setState({ phone: value });
-    onChange(event, `${country.label}${value}`);
+    onChange({
+      ...event,
+      currentTarget: {
+        value: `${country.label}${value}`,
+      },
+    });
   }
 
   renderSelectOption = option => (
@@ -54,14 +52,14 @@ class PhoneInput extends React.Component {
     </option>
   );
 
-  renderPhoneInputs = () => {
-    const { error, ...phoneInputProps } = this.props;
+  render() {
+    const { ...inputProps } = this.props;
     const { country, phone } = this.state;
 
     return (
-      <Fragment>
+      <div className={s.phoneInput}>
         <Select
-          options={countries}
+          options={values}
           value={country.value}
           renderOption={this.renderSelectOption}
           onChange={this.onCountryCodeChange}
@@ -76,30 +74,13 @@ class PhoneInput extends React.Component {
           </span>
         </Select>
         <Input
-          {...phoneInputProps}
-          hasError={!!error && error.length > 0}
+          {...inputProps}
           inputPlaceHolder="06 07 08 09 00"
           inputType="text"
           onChange={this.onPhoneNumberChange}
           value={phone}
         />
-      </Fragment>
-    );
-  };
-
-  render() {
-    const {
-      label, error, mandatory, left,
-    } = this.props;
-
-    return (
-      <InputLabel
-        error={error}
-        label={label}
-        left={left}
-        mandatory={mandatory}
-        InputComponent={this.renderPhoneInputs}
-      />
+      </div>
     );
   }
 }
@@ -108,22 +89,12 @@ PhoneInput.defaultProps = {
   onChange: () => {},
   onFocus: () => {},
   onBlur: () => {},
-  value: '',
-  error: '',
-  label: '',
-  mandatory: false,
-  left: false,
 };
 
 PhoneInput.propTypes = {
   onChange: PropTypes.func,
   onFocus: PropTypes.func,
   onBlur: PropTypes.func,
-  error: PropTypes.string,
-  value: PropTypes.string,
-  label: PropTypes.string,
-  mandatory: PropTypes.bool,
-  left: PropTypes.bool,
 };
 
 
