@@ -17,17 +17,27 @@ storiesOf('ContactForm', module)
   .addDecorator(withKnobs)
 
   .add('normal', () => {
-    const texts = object('Textes', DefaultTexts);
-    const values = object('Values', {
-      firstname: '',
-      lastname: '',
-      email: '',
-      gender: '',
-      phoneNumber: '',
-      postalCode: '',
-    });
+    const props = {
+      texts: object('Textes', DefaultTexts),
+      values: object('Values', {
+        firstname: '',
+        lastname: '',
+        email: '',
+        gender: '',
+        phone: '',
+        postalCode: '',
+      }),
+      errors: object('Errors', {
+        firstname: '',
+        lastname: '',
+        email: '',
+        gender: '',
+        phone: '',
+        postalCode: '',
+      }),
+    };
 
     return (
-      <ContactForm texts={texts} values={values} onChangeProperty={action('change-property')} />
+      <ContactForm {...props} onChangeProperty={action('change-property')} />
     );
   });
