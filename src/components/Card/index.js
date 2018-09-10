@@ -45,6 +45,7 @@ const Card = ({
   className,
   contentClassName,
   footerClassName,
+  testid,
 }) => {
   const isClickable = typeof onClick === 'function' && !isSelected;
 
@@ -60,6 +61,7 @@ const Card = ({
       role="presentation"
       className={cardClassName}
       onClick={onClick}
+      testid={testid}
     >
       { HeaderChildren &&
         <CardHeader
@@ -87,6 +89,7 @@ Card.defaultProps = {
   className: '',
   contentClassName: '',
   footerClassName: '',
+  testid: '',
 };
 
 Card.propTypes = {
@@ -101,6 +104,7 @@ Card.propTypes = {
   className: PropTypes.string,
   contentClassName: PropTypes.string,
   footerClassName: PropTypes.string,
+  testid: PropTypes.string,
 };
 
 

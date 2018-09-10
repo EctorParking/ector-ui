@@ -32,7 +32,7 @@ class ContactForm extends React.Component {
 
   render() {
     const {
-      texts, values, selected, onInputBlur, onInputFocus, errors,
+      texts, values, selected, onInputBlur, onInputFocus, errors, ...cardProps
     } = this.props;
     const {
       addDriver,
@@ -59,6 +59,7 @@ class ContactForm extends React.Component {
       <Card
         FooterChildren={footer}
         isSelected={selected}
+        {...cardProps}
       >
         <CardTitle>{newDriver}</CardTitle>
 
