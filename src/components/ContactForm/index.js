@@ -121,7 +121,7 @@ class ContactForm extends React.Component {
               onBlur={onInputBlur}
               onChange={this.handleChangePhone}
               error={errors.phone}
-              value={values.phone || ''}
+              value={values.phone || ''}
             />
             <InputLabel
               left
