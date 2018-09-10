@@ -9,7 +9,7 @@ class ContactForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleChangeGender = props.onChangeProperty.bind(this, 'gender');
+    this.handleChangeGender = props.onChangeProperty.bind(this, 'title');
     this.handleChangeFirstName = this.handleChangeProperty.bind(this, 'firstname');
     this.handleChangeLastName = this.handleChangeProperty.bind(this, 'lastname');
     this.handleChangeEmail = this.handleChangeProperty.bind(this, 'email');
