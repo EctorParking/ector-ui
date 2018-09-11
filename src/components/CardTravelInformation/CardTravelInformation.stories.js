@@ -17,13 +17,19 @@ storiesOf('CardTravelInformation', module)
   .addDecorator(withKnobs)
 
   .add('With Knobs', () => {
-    const texts = object('Texts', DefaultTexts);
-    const values = object('Values', {
-      travelingNumberFrom: '',
-      travelingNumberTo: '',
-    });
+    const props = {
+      texts: object('Texts', DefaultTexts),
+      values: object('Values', {
+        travelingNumberFrom: '',
+        travelingNumberTo: '',
+      }),
+      errors: object('Errors', {
+        travelingNumberFrom: '',
+        travelingNumberTo: '',
+      }),
+    };
 
     return (
-      <CardTravelInformation texts={texts} values={values} />
+      <CardTravelInformation {...props} />
     );
   });
