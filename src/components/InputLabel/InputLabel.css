@@ -3,9 +3,6 @@
 .container {
   display: flex;
   flex-direction: column;
-  &>.label {
-     max-width: 30%;
-  }
 }
 
 .container.left {

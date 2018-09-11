@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import backgrounds from '@storybook/addon-backgrounds';
 import centered from '@storybook/addon-centered';
-import { withKnobs, object } from '@storybook/addon-knobs/react';
+import { withKnobs, object, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { DefaultTexts } from './ContactFormTextsType';
 
@@ -35,6 +35,10 @@ storiesOf('ContactForm', module)
         phone: '',
         postalCode: '',
       }),
+      labelPosition: select('Label Position', {
+        left: 'Left',
+        top: 'Top',
+      }, 'left'),
     };
 
     return (

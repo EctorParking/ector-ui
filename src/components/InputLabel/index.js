@@ -65,6 +65,7 @@ InputLabel.defaultProps = {
   left: false,
   children: null,
   InputComponent: null,
+  type: 'text',
 };
 
 InputLabel.propTypes = {
@@ -72,7 +73,7 @@ InputLabel.propTypes = {
   id: PropTypes.string,
   mandatory: PropTypes.bool,
   placeholder: PropTypes.string,
-  type: PropTypes.oneOfType(['text', 'number']).isRequired,
+  type: PropTypes.oneOfType(['text', 'number']),
   className: PropTypes.string,
   inputClassName: PropTypes.string,
   error: PropTypes.string,

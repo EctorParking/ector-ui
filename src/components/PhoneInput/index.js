@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Select, InputLabel, Input } from '../';
 import ukFlag from '../../images/flags/uk.png';
@@ -64,7 +64,7 @@ class PhoneInput extends React.Component {
     const { country, phone } = this.state;
 
     return (
-      <Fragment>
+      <div className={s.phoneInput}>
         <Select
           options={countries}
           value={country.value}
@@ -88,13 +88,13 @@ class PhoneInput extends React.Component {
           onChange={this.onPhoneNumberChange}
           value={phone}
         />
-      </Fragment>
+      </div>
     );
   };
 
   render() {
     const {
-      label, error, mandatory, left,
+      label, error, mandatory, left, className,
     } = this.props;
 
     return (
@@ -104,6 +104,7 @@ class PhoneInput extends React.Component {
         left={left}
         mandatory={mandatory}
         InputComponent={this.renderPhoneInputs}
+        className={className}
       />
     );
   }
@@ -118,6 +119,7 @@ PhoneInput.defaultProps = {
   label: '',
   mandatory: false,
   left: false,
+  className: '',
 };
 
 PhoneInput.propTypes = {
@@ -129,6 +131,7 @@ PhoneInput.propTypes = {
   label: PropTypes.string,
   mandatory: PropTypes.bool,
   left: PropTypes.bool,
+  className: PropTypes.string,
 };
 
 
