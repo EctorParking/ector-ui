@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import s from './ContactForm.css';
 import TextsType, { DefaultTexts } from './ContactFormTextsType';
 import { Card, GenderPicker, LinkUnderlined, CardTitle, InputLabel, PhoneInput } from '../';
-import ContactFormField from './ContactFormField';
 
 class ContactForm extends React.Component {
   constructor(props) {
@@ -30,9 +29,22 @@ class ContactForm extends React.Component {
     onChangeProperty(field, event.currentTarget.value);
   }
 
+  renderGenderPicker = () => {
+    const { values: { gender } } = this.props;
+
+    return (
+      <GenderPicker
+        genders={this.genders}
+        onSelect={this.handleChangeGender}
+        selected={gender || ''}
+        className={s.genderPickerInputs}
+      />
+    );
+  };
+
   render() {
     const {
-      texts, values, selected, onInputBlur, onInputFocus, errors, ...cardProps
+      texts, values, selected, onInputBlur, onInputFocus, errors, labelPosition, ...cardProps
     } = this.props;
     const {
       addDriver,
@@ -65,15 +77,14 @@ class ContactForm extends React.Component {
 
         <div className={s.columns}>
           <div>
-            <ContactFormField label={civility}>
-              <GenderPicker
-                genders={this.genders}
-                onSelect={this.handleChangeGender}
-                selected={values.gender || ''}
-              />
-            </ContactFormField>
             <InputLabel
-              left
+              label={civility}
+              left={labelPosition === 'left'}
+              InputComponent={this.renderGenderPicker}
+              className={[labelPosition === 'left' ? s.leftGenderPickerField : s.topGenderPickerField, s.contactFormInput].join(' ')}
+            />
+            <InputLabel
+              left={labelPosition === 'left'}
               type="text"
               id="first-name"
               placeholder={firstNamePlaceholder}
@@ -84,9 +95,10 @@ class ContactForm extends React.Component {
               error={errors.firstname}
               label={firstName}
               mandatory
+              className={s.contactFormInput}
             />
             <InputLabel
-              left
+              left={labelPosition === 'left'}
               label={lastName}
               mandatory
               type="text"
@@ -97,11 +109,12 @@ class ContactForm extends React.Component {
               onChange={this.handleChangeLastName}
               value={values.lastname || ''}
               error={errors.lastname}
+              className={s.contactFormInput}
             />
           </div>
           <div>
             <InputLabel
-              left
+              left={labelPosition === 'left'}
               label={email}
               mandatory
               type="email"
@@ -112,19 +125,21 @@ class ContactForm extends React.Component {
               onChange={this.handleChangeEmail}
               value={values.email || ''}
               error={errors.email}
+              className={s.contactFormInput}
             />
             <PhoneInput
               label={phone}
               mandatory
-              left
+              left={labelPosition === 'left'}
               onFocus={onInputFocus}
               onBlur={onInputBlur}
               onChange={this.handleChangePhone}
               error={errors.phone}
               value={values.phone || ''}
+              className={s.contactFormInput}
             />
             <InputLabel
-              left
+              left={labelPosition === 'left'}
               label={postCode}
               type="text"
               id="postCode"
@@ -134,6 +149,7 @@ class ContactForm extends React.Component {
               onChange={this.handleChangePostalCode}
               value={values.postalCode || ''}
               error={errors.postalCode}
+              className={s.contactFormInput}
             />
 
           </div>
@@ -165,6 +181,7 @@ ContactForm.defaultProps = {
   onInputFocus: () => {},
   onInputBlur: () => {},
   selected: false,
+  labelPosition: 'left',
 };
 
 ContactForm.propTypes = {
@@ -189,6 +206,7 @@ ContactForm.propTypes = {
   onInputFocus: PropTypes.func,
   onInputBlur: PropTypes.func,
   selected: PropTypes.bool,
+  labelPosition: PropTypes.oneOf(['top', 'left']),
 };
 
 export default ContactForm;
