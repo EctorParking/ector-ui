@@ -13932,8 +13932,15 @@ textarea:focus, input:focus{
   max-width: none;
 }
 
+.InputLabel__inputContainer___1lJ9K {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
 .InputLabel__input___1KZDL {
   display: block;
+  width: 100%;
 }
 
 .InputLabel__error___3rhhc {
@@ -14903,7 +14910,6 @@ textarea:focus, input:focus{
 
 .PhoneInput__phoneInput___34fOL input {
   margin-left: 10px;
-  max-width: 150px;
 }
 
 .PhoneInput__selectImage___1zoZp {

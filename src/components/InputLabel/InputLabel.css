@@ -15,9 +15,13 @@
   }
 }
 
+.inputContainer {
+  flex: 1;
+}
 
 .input {
   display: block;
+  width: 100%;
 }
 
 .error {

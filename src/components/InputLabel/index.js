@@ -30,7 +30,7 @@ const InputLabel = ({
         {`${label}${mandatory ? '*' : ''}`}
       </label>
 
-      <div>
+      <div className={s.inputContainer}>
         {
           InputComponent !== null && typeof InputComponent === 'function' ? (
             <InputComponent />
