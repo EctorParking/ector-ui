@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import s from './InputLabel.css';
@@ -22,15 +22,15 @@ const InputLabel = ({
   const labelClassName = mandatory ? s.mandatory : '';
 
   return (
-    <Fragment>
-      <div className={[s.container, left ? s.left : '', className].join(' ')}>
-        <label
-          htmlFor={id}
-          className={[labelClassName, s.label].join(' ')}
-        >
-          {`${label}${mandatory ? '*' : ''}`}
-        </label>
+    <div className={[s.container, left ? s.left : '', className].join(' ')}>
+      <label
+        htmlFor={id}
+        className={[labelClassName, s.label].join(' ')}
+      >
+        {`${label}${mandatory ? '*' : ''}`}
+      </label>
 
+      <div>
         {
           InputComponent !== null && typeof InputComponent === 'function' ? (
             <InputComponent />
@@ -45,13 +45,13 @@ const InputLabel = ({
             />
           )
         }
+        {
+          !!error && (
+            <div className={s.error}>{error}</div>
+          )
+        }
       </div>
-      {
-        !!error && (
-          <div className={s.error}>{error}</div>
-        )
-      }
-    </Fragment>
+    </div>
   );
 };
 
