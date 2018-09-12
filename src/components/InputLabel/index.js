@@ -17,6 +17,7 @@ const InputLabel = ({
   left,
   children,
   InputComponent,
+  inputContainerClassName,
   ...inputProps
 }) => {
   const labelClassName = mandatory ? s.mandatory : '';
@@ -30,7 +31,7 @@ const InputLabel = ({
         {`${label}${mandatory ? '*' : ''}`}
       </label>
 
-      <div className={s.inputContainer}>
+      <div className={[s.inputContainer, inputContainerClassName].join(' ')}>
         {
           InputComponent !== null && typeof InputComponent === 'function' ? (
             <InputComponent />
@@ -66,6 +67,7 @@ InputLabel.defaultProps = {
   children: null,
   InputComponent: null,
   type: 'text',
+  inputContainerClassName: '',
 };
 
 InputLabel.propTypes = {
@@ -76,6 +78,7 @@ InputLabel.propTypes = {
   type: PropTypes.oneOfType(['text', 'number']),
   className: PropTypes.string,
   inputClassName: PropTypes.string,
+  inputContainerClassName: PropTypes.string,
   error: PropTypes.string,
   left: PropTypes.bool,
   children: PropTypes.node,
