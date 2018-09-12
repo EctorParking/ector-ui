@@ -16,7 +16,7 @@ const Input = ({
   className,
 }) => (
   <input
-    className={[s.input, hasError ? s.inputWithError : {}, className].join(' ')}
+    className={[s.input, hasError ? s.inputWithError : '', className].join(' ')}
     type={inputType}
     placeholder={inputPlaceHolder}
     id={inputId}
