@@ -26,7 +26,7 @@ const ServiceCard = ({
           logo={labelLogo}
           label={labelText}
           color={labelColor}
-          containerClass={s.labelContainer}
+          className={s.labelContainer}
         />
       }
       <ServiceCardBody
