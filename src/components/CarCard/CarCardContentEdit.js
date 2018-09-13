@@ -9,8 +9,8 @@ const CarCardContentEdit = ({ car, onChangeNumberPlate, onChangeColor }) => {
 
   return (
     <div className={s.column}>
-      <Input type="text" value={name} onChange={onChangeNumberPlate} />
-      <Input type="text" value={color} onChange={onChangeColor} />
+      <Input type="text" value={name} onChange={onChangeNumberPlate} id="carNameInput" />
+      <Input type="text" value={color} onChange={onChangeColor} id="carColorInput" />
     </div>
   );
 };

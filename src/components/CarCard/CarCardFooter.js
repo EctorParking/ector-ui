@@ -22,7 +22,7 @@ const CarCardFooter = ({
     );
   } else {
     what = mode.indexOf('selected') !== -1 ? (
-      <i className={`icon-checkmark ${s.checkIcon}`} />
+      <i className={`icon-checkmark ${s.checkIcon}`} id="carSelectedIcon" />
     ) : (
       <LinkUnderlined onClick={onClick}>
         <strong>{texts.modify}</strong>

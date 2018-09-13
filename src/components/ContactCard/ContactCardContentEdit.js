@@ -8,8 +8,8 @@ const ContactCardContentEdit = ({
   onChangeEmail, onChangePhoneNumber, values, errors,
 }) => (
   <div className={s.column}>
-    <InputLabel label="" type="text" value={values.email} onChange={onChangeEmail} error={errors.email} />
-    <InputLabel label="" type="text" value={values.phone} onChange={onChangePhoneNumber} error={errors.phone} />
+    <InputLabel label="" type="text" id="contactEmailInput" value={values.email} onChange={onChangeEmail} error={errors.email} />
+    <InputLabel label="" type="text" id="contactPhoneInput" value={values.phone} onChange={onChangePhoneNumber} error={errors.phone} />
   </div>
 );
 
