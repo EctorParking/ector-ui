@@ -18,7 +18,7 @@ class ColorPicker extends PureComponent {
     ];
 
     return (
-      <div className={tooltipContainerClassName}>
+      <div className={tooltipContainerClassName} key={color.hexadecimalCode}>
         <button
           key={`color-${color.label}`}
           className={badgeClassNames.join(' ')}

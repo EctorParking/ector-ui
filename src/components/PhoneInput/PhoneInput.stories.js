@@ -13,9 +13,8 @@ storiesOf('PhoneInput', module)
   ]))
   .addDecorator(centered)
 
-  .add('basic', () => (
+  .add('Basic', () => (
     <PhoneInput
-      countryCode="fr"
       onCountryCodeChange={action('Country code changed')}
       onPhoneNumberChange={action('Phone number changed')}
     />

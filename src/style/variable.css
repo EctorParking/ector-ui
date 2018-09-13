@@ -15,6 +15,15 @@
   --sixthColor: #59c871;
   --seventhColor: white;
 
+  --metalGrey: #d5d6d7;
+  --darkMetalGrey: color(#d5d6d7 blackness(20%));
+  --aquaHazeGrey: #9eb3c2;
+  --lightGrey: #eceff6;
+  --darkYellow: color(yellow blackness(10%));
+  --red: #ff5757;
+  --whiteOverlay: rgba(255, 255, 255, 0.07);
+  --orange: #f39c12;
+
   --deepBlue: var(--firstColor);
   --yellow: var(--secondColor);
   --grey: var(--thirdColor);
@@ -26,13 +35,6 @@
   --bpDesktop: var(--containerWidth);
   --bpTablet: var(--containerWidth);
   --bpMobile: 600px;
-  --metalGrey: #d5d6d7;
-  --darkMetalGrey: color(#d5d6d7 blackness(20%));
-  --aquaHazeGrey: #9eb3c2;
-  --lightGrey: #eceff6;
-  --darkYellow: color(yellow blackness(10%));
-  --red: #ff5757;
-  --whiteOverlay: rgba(255, 255, 255, 0.07);
 
   --fontSizeLabel: 11px;
   --fontSizeRegular: 16px;
@@ -71,4 +73,6 @@
   --bpTablet: 768px;
   --bpMobile: 480px;
   --bpMobileIPhoneFive: 320px;
+
+  --maxImageSize: 24px;
 }

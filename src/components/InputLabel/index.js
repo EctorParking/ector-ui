@@ -38,9 +38,9 @@ const InputLabel = ({
           ) : (
             <Input
               className={[s.input, inputClassName].join(' ')}
-              inputId={id}
-              inputPlaceHolder={placeholder}
-              inputType={type}
+              id={id}
+              placeholder={placeholder}
+              type={type}
               hasError={!!error}
               {...inputProps}
             />

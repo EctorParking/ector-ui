@@ -1,21 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Select, InputLabel, Input } from '../';
-import ukFlag from '../../images/flags/uk.png';
-import frFlag from '../../images/flags/fr.png';
-
+import frFlag from '../../images/flags/fr.svg';
+import gbFlag from '../../images/flags/gb.svg';
+import esFlag from '../../images/flags/es.svg';
+import deFlag from '../../images/flags/de.svg';
 import s from './PhoneInput.css';
 
-
-const values = [
-  { value: 'fr', label: '+33', image: require('../../images/flags/fr.svg') },
-  { value: 'es', label: '+34', image: require('../../images/flags/es.svg') },
-  { value: 'gb', label: '+44', image: require('../../images/flags/gb.svg') },
-  { value: 'de', label: '+49', image: require('../../images/flags/de.svg') },
-];
 const countries = [
   { value: 'fr', label: '+33', image: frFlag },
-  { value: 'uk', label: '+44', image: ukFlag },
+  { value: 'es', label: '+34', image: esFlag },
+  { value: 'gb', label: '+44', image: gbFlag },
+  { value: 'de', label: '+49', image: deFlag },
 ];
 
 class PhoneInput extends React.Component {
@@ -67,7 +63,10 @@ class PhoneInput extends React.Component {
   );
 
   renderPhoneInputs = () => {
-    const { error, ...phoneInputProps } = this.props;
+    const {
+      // eslint-disable-next-line no-unused-vars
+      error, mandatory, left, ...phoneInputProps
+    } = this.props;
     const { country, phone } = this.state;
 
     return (
@@ -90,8 +89,8 @@ class PhoneInput extends React.Component {
         <Input
           {...phoneInputProps}
           hasError={!!error && error.length > 0}
-          inputPlaceHolder="06 07 08 09 00"
-          inputType="text"
+          placeholder="06 07 08 09 00"
+          type="text"
           onChange={this.onPhoneNumberChange}
           value={phone}
         />

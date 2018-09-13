@@ -21,7 +21,7 @@
 }
 
 .alert.warning {
-  /* background-color: var(--orange); */
+  background-color: var(--orange);
 }
 
 .icon {

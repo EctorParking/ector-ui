@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Card from '../Card';
-import BookingSteps from '../BookingSteps';
+import { Card, BookingSteps, PricingSummary } from '../';
 import BookingStepsTextsType, { defaultTexts as bookingStepsDefaultTexts } from '../BookingSteps/BookingStepsTextsType';
-import PricingSummary from '../PricingSummary';
 import PricingSummaryOptionType from '../PricingSummary/PricingSummaryOptionType';
 import PricingSummaryTextsType from '../PricingSummary/PricingSummaryTextsType';
 import BookingCardFooter from './BookingCardFooter';

@@ -14,6 +14,7 @@ const GenderPicker = ({
   <div className={[s.genderPicker, className].join(' ')}>
     {genders.map(gender => (
       <RadioButton
+        key={gender.value}
         value={gender.value}
         label={gender.label}
         name="gender"

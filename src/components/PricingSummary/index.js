@@ -22,6 +22,7 @@ const PricingSummary = ({
             currency={currency}
             currencyPosition={currencyPosition}
             option={option}
+            key={option.label}
           />
         ))
       }

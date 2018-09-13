@@ -34,10 +34,11 @@ Input.defaultProps = {
   value: '',
   className: '',
   hasError: false,
+  type: 'text',
 };
 
 Input.propTypes = {
-  type: PropTypes.string.isRequired,
+  type: PropTypes.string,
   placeholder: PropTypes.string,
   id: PropTypes.string,
   onFocus: PropTypes.func,

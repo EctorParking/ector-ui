@@ -44,7 +44,15 @@ class ContactForm extends React.Component {
 
   render() {
     const {
-      texts, values, selected, onInputBlur, onInputFocus, errors, labelPosition, ...cardProps
+      texts,
+      values,
+      selected,
+      onInputBlur,
+      onInputFocus,
+      errors,
+      labelPosition,
+      onSubmit,
+      ...cardProps
     } = this.props;
     const {
       addDriver,
@@ -63,7 +71,7 @@ class ContactForm extends React.Component {
 
     const footer = (
       <div className={s.footer}>
-        <LinkUnderlined>{addDriver}</LinkUnderlined>
+        <LinkUnderlined onClick={onSubmit}>{addDriver}</LinkUnderlined>
       </div>
     );
 
@@ -182,13 +190,14 @@ ContactForm.defaultProps = {
   onInputBlur: () => {},
   selected: false,
   labelPosition: 'left',
+  onSubmit: () => {},
 };
 
 ContactForm.propTypes = {
   texts: TextsType,
   onChangeProperty: PropTypes.func,
   values: PropTypes.shape({
-    gender: PropTypes.oneOf(['male', 'female']),
+    gender: PropTypes.oneOf(['male', 'female', null, '']),
     firstname: PropTypes.string,
     lastname: PropTypes.string,
     email: PropTypes.string,
@@ -207,6 +216,7 @@ ContactForm.propTypes = {
   onInputBlur: PropTypes.func,
   selected: PropTypes.bool,
   labelPosition: PropTypes.oneOf(['top', 'left']),
+  onSubmit: PropTypes.func,
 };
 
 export default ContactForm;

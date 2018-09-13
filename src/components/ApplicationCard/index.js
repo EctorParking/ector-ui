@@ -7,7 +7,6 @@ import phoneImg from '../../images/phone.png';
 
 import s from './ApplicationCard.css';
 
-/* eslint-disable global-require */
 const ApplicationCard = ({
   title,
   description,
