@@ -4,7 +4,7 @@ import backgrounds from '@storybook/addon-backgrounds';
 import centered from '@storybook/addon-centered';
 import { withKnobs, object, boolean } from '@storybook/addon-knobs/react';
 
-import { DefaultTexts } from './ContactCardTextsType';
+import { defaultTexts } from './ContactCardTextsType';
 import ContactCard from './';
 
 storiesOf('ContactCard', module)
@@ -14,7 +14,7 @@ storiesOf('ContactCard', module)
   .addDecorator(centered)
   .addDecorator(withKnobs)
 
-  .add('With Knobs', () => {
+  .add('with knobs', () => {
     const props = {
       contact: object('Contact', {
         firstname: 'Jean',
@@ -31,7 +31,7 @@ storiesOf('ContactCard', module)
         email: '',
         phone: '',
       }),
-      texts: object('Texts', DefaultTexts),
+      texts: object('Texts', defaultTexts),
       editable: boolean('Editable', false),
       deletable: boolean('Deletable', false),
       pendingModification: boolean('Pending modification', false),

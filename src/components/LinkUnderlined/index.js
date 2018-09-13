@@ -14,6 +14,10 @@ const LinkUnderlined = ({
   </div>
 );
 
+LinkUnderlined.defaultProps = {
+  className: '',
+};
+
 LinkUnderlined.propTypes = {
   children: PropTypes.node.isRequired,
   onClick: PropTypes.func.isRequired,
@@ -25,6 +29,5 @@ LinkUnderlined.defaultProps = {
   testid: '',
   className: '',
 };
-
 
 export default LinkUnderlined;

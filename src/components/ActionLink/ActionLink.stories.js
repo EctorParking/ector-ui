@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import backgrounds from '@storybook/addon-backgrounds';
 import centered from '@storybook/addon-centered';
+import { withKnobs, text } from '@storybook/addon-knobs';
 
 import ActionLink from './';
 
@@ -15,18 +16,18 @@ storiesOf('ActionLink', module)
     { name: 'header', value: 'white', default: true },
   ]))
   .addDecorator(centered)
+  .addDecorator(withKnobs)
 
-  .add('without icon', () => (
-    <ActionLink
-      onClick={onClick}
-      label="Action Link"
-    />
-  ))
+  .add('with knobs', () => {
+    const props = {
+      onClick,
+      label: text('Label', 'Action Link'),
+      icon: text('Icon', 'faq'),
+    };
 
-  .add('with icon', () => (
-    <ActionLink
-      onClick={onClick}
-      label="Action Link"
-      icon="faq"
-    />
-  ));
+    return (
+      <ActionLink
+        {...props}
+      />
+    );
+  });

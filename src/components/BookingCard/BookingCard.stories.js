@@ -2,26 +2,19 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import backgrounds from '@storybook/addon-backgrounds';
 import centered from '@storybook/addon-centered';
+import { withKnobs, text, object } from '@storybook/addon-knobs';
 
 import BookingCard from './';
 import ActionLink from '../ActionLink';
 import LinkUnderlined from '../LinkUnderlined';
-
-const bookingStepsTexts = {
-  pickup: 'Prise en charge',
-  return: 'Restitution',
-};
+import { defaultTexts as defaultBookingStepsTexts } from '../BookingSteps/BookingStepsTextsType';
+import { defaultTexts as defaultPricingSummaryTexts } from '../PricingSummary/PricingSummaryTextsType';
 
 const options = [
   { label: 'Parking + Voiturier', price: 64 },
   { label: 'Parking couvert', price: 9 },
   { label: 'Cagnotte', price: -3 },
 ];
-
-const pricingSummaryTexts = {
-  addOption: 'Ajouter une option',
-  total: 'Total TTC',
-};
 
 const leftActions = [
   <ActionLink label="Modifier" />,
@@ -36,17 +29,20 @@ storiesOf('BookingCard', module)
     { name: 'header', value: 'white', default: true },
   ]))
   .addDecorator(centered)
+  .addDecorator(withKnobs)
 
-  .add('normal', () => (
-    <BookingCard
-      fromSpot="Paris Gare de l’Est"
-      toSpot="Paris Gare de l’Est"
-      startAt="Ven. 20 avril à 15:00"
-      endAt="Dim. 22 avril à 15:00"
-      bookingStepsTexts={bookingStepsTexts}
-      options={options}
-      pricingSummaryTexts={pricingSummaryTexts}
-      leftActions={leftActions}
-      rightAction={rightAction}
-    />
-  ));
+  .add('with knobs', () => {
+    const props = {
+      fromSpot: text('From spot', 'Paris Gare de l’Est'),
+      toSpot: text('To spot', 'Paris Gare de l’Est'),
+      startAt: text('Start at', 'Ven. 20 avril à 15:00'),
+      endAt: text('End at', 'Dim. 22 avril à 15:00'),
+      bookingStepsTexts: object('Texts', defaultBookingStepsTexts),
+      options: object('Options', options),
+      pricingSummaryTexts: object('Pricing summary texts', defaultPricingSummaryTexts),
+      leftActions,
+      rightAction,
+    };
+
+    return <BookingCard {...props} />;
+  });

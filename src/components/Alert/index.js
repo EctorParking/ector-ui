@@ -8,8 +8,13 @@ const icons = {
   warning: 'warning',
 };
 
-const Alert = ({ children, type, title }) => (
-  <div className={`${s.alert} ${s[type]}`}>
+const Alert = ({
+  children,
+  type,
+  title,
+  className,
+}) => (
+  <div className={`${s.alert} ${s[type]} ${className}`}>
     <i className={`icon-${icons[type]} ${s.icon}`} />
 
     <div>
@@ -19,10 +24,15 @@ const Alert = ({ children, type, title }) => (
   </div>
 );
 
+Alert.defaultProps = {
+  className: '',
+};
+
 Alert.propTypes = {
   children: PropTypes.node.isRequired,
   type: PropTypes.oneOf(Object.keys(icons)).isRequired,
   title: PropTypes.string.isRequired,
+  className: PropTypes.string,
 };
 
 export default Alert;

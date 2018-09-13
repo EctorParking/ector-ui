@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Card from '../Card';
 import BookingSteps from '../BookingSteps';
-import BookingStepsTextsType from '../BookingSteps/BookingStepsTextsType';
+import BookingStepsTextsType, { defaultTexts as bookingStepsDefaultTexts } from '../BookingSteps/BookingStepsTextsType';
 import PricingSummary from '../PricingSummary';
 import PricingSummaryOptionType from '../PricingSummary/PricingSummaryOptionType';
 import PricingSummaryTextsType from '../PricingSummary/PricingSummaryTextsType';
@@ -20,6 +20,7 @@ const BookingCard = ({
   pricingSummaryTexts,
   leftActions,
   rightAction,
+  className,
 }) => {
   const footer = (
     <BookingCardFooter
@@ -29,7 +30,10 @@ const BookingCard = ({
   );
 
   return (
-    <Card FooterChildren={footer}>
+    <Card
+      className={className}
+      FooterChildren={footer}
+    >
       <div className={s.container}>
         <div className={s.bookingSteps}>
           <BookingSteps
@@ -57,6 +61,8 @@ const BookingCard = ({
 BookingCard.defaultProps = {
   leftActions: [],
   rightAction: null,
+  className: '',
+  bookingStepsTexts: bookingStepsDefaultTexts,
 };
 
 BookingCard.propTypes = {
@@ -64,11 +70,12 @@ BookingCard.propTypes = {
   toSpot: PropTypes.string.isRequired,
   startAt: PropTypes.string.isRequired,
   endAt: PropTypes.string.isRequired,
-  bookingStepsTexts: BookingStepsTextsType.isRequired,
+  bookingStepsTexts: BookingStepsTextsType,
   options: PropTypes.arrayOf(PricingSummaryOptionType).isRequired,
   pricingSummaryTexts: PricingSummaryTextsType.isRequired,
   leftActions: PropTypes.arrayOf(PropTypes.node),
   rightAction: PropTypes.node,
+  className: PropTypes.string,
 };
 
 export default BookingCard;

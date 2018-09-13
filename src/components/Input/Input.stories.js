@@ -15,13 +15,12 @@ storiesOf('Input', module)
 
   .add('with placeholder', () => (
     <Input
-      inputType="text"
-      inputPlaceHolder="AB 000"
-      inputId="return-input"
+      type="text"
+      placeholder="AB 000"
+      id="return-input"
     />
   ))
 
   .add('without placeholder', () => (
-    <Input inputType="text" />
+    <Input type="text" />
   ));
-

@@ -4,9 +4,6 @@ import PropTypes from 'prop-types';
 import s from './Input.css';
 
 const Input = ({
-  inputType,
-  inputPlaceHolder,
-  inputId,
   onFocus,
   onBlur,
   onChange,
@@ -14,23 +11,22 @@ const Input = ({
   value,
   hasError,
   className,
+  ...restOfProps
 }) => (
   <input
     className={[s.input, hasError ? s.inputWithError : '', className].join(' ')}
-    type={inputType}
-    placeholder={inputPlaceHolder}
-    id={inputId}
     onFocus={onFocus}
     onBlur={onBlur}
     onChange={onChange}
     checked={checked}
     value={value}
+    {...restOfProps}
   />
 );
 
 Input.defaultProps = {
-  inputPlaceHolder: '',
-  inputId: '',
+  placeholder: '',
+  id: '',
   onFocus: () => {},
   onBlur: () => {},
   onChange: () => {},
@@ -41,9 +37,9 @@ Input.defaultProps = {
 };
 
 Input.propTypes = {
-  inputType: PropTypes.string.isRequired,
-  inputPlaceHolder: PropTypes.string,
-  inputId: PropTypes.string,
+  type: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
+  id: PropTypes.string,
   onFocus: PropTypes.func,
   onBlur: PropTypes.func,
   onChange: PropTypes.func,

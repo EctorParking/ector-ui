@@ -1,5 +1,8 @@
 @import '../../style/variable.css';
 
+.radioButton * {
+  box-sizing: border-box;
+}
 .radioButton {
   position: relative;
 }
@@ -28,7 +31,7 @@
   height: 6px;
   left: 4px;
   position: absolute;
-  top: 6px;
+  top: 8px;
   width: 6px;
 }
 .radioButton input[type="radio"]:checked + span:after {

@@ -46,5 +46,4 @@ Select.propTypes = {
   renderOption: PropTypes.func,
 };
 
-
 export default Select;

@@ -6,6 +6,13 @@ import frFlag from '../../images/flags/fr.png';
 
 import s from './PhoneInput.css';
 
+
+const values = [
+  { value: 'fr', label: '+33', image: require('../../images/flags/fr.svg') },
+  { value: 'es', label: '+34', image: require('../../images/flags/es.svg') },
+  { value: 'gb', label: '+44', image: require('../../images/flags/gb.svg') },
+  { value: 'de', label: '+49', image: require('../../images/flags/de.svg') },
+];
 const countries = [
   { value: 'fr', label: '+33', image: frFlag },
   { value: 'uk', label: '+44', image: ukFlag },
@@ -133,6 +140,5 @@ PhoneInput.propTypes = {
   left: PropTypes.bool,
   className: PropTypes.string,
 };
-
 
 export default PhoneInput;

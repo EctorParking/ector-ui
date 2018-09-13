@@ -3,8 +3,10 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import backgrounds from '@storybook/addon-backgrounds';
 import centered from '@storybook/addon-centered';
+import { withKnobs, object, select, text } from '@storybook/addon-knobs';
 
 import PricingSummary from './';
+import { defaultTexts } from './PricingSummaryTextsType';
 
 const options = [
   { label: 'Parking + Voiturier', price: 64 },
@@ -12,34 +14,22 @@ const options = [
   { label: 'Cagnotte', price: -3 },
 ];
 
-const texts = {
-  addOption: 'Ajouter une option',
-  total: 'Total TTC',
-};
-
 storiesOf('PricingSummary', module)
 
   .addDecorator(backgrounds([
     { name: 'header', value: 'white', default: true },
   ]))
   .addDecorator(centered)
+  .addDecorator(withKnobs)
 
-  .add('normal', () => (
-    <PricingSummary
-      currency="€"
-      currencyPosition="after"
-      options={options}
-      texts={texts}
-      onAddClick={action('AddClick')}
-    />
-  ))
+  .add('with knobs', () => {
+    const props = {
+      currency: text('Currency symbol', '€'),
+      currencyPosition: select('Currency position', ['before', 'after'], 'after'),
+      texts: object('Texts', defaultTexts),
+      onAddClick: action('Add option clicked'),
+      options,
+    };
 
-  .add('currency before', () => (
-    <PricingSummary
-      currency="$"
-      currencyPosition="before"
-      options={options}
-      texts={texts}
-      onAddClick={action('AddClick')}
-    />
-  ));
+    return <PricingSummary {...props} />;
+  });
