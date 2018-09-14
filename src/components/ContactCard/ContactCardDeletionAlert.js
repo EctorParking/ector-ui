@@ -4,15 +4,17 @@ import LinkUnderlined from '../LinkUnderlined';
 import TextsType, { DefaultTexts } from './ContactCardTextsType';
 import s from './ContactCardDeletionAlert.css';
 
-const ContactCardDeletionAlert = ({ texts, onConfirm, onCancel }) => (
-  <div className={s.deletionAlert}>
+const ContactCardDeletionAlert = ({
+  texts, onConfirm, onCancel, id,
+}) => (
+  <div className={s.deletionAlert} id={id}>
     <strong>{texts.confirmDeletionTitle}</strong>
     <p>{texts.confirmDeletionSentence}</p>
     <div className={s.deletionButtons}>
-      <LinkUnderlined onClick={onCancel}>
+      <LinkUnderlined onClick={onCancel} id={`${id}CancelLink`}>
         <strong>{texts.cancel}</strong>
       </LinkUnderlined>
-      <LinkUnderlined onClick={onConfirm}>
+      <LinkUnderlined onClick={onConfirm} id={`${id}ConfirmLink`}>
         <strong>{texts.confirm}</strong>
       </LinkUnderlined>
     </div>
@@ -27,6 +29,7 @@ ContactCardDeletionAlert.propTypes = {
   texts: TextsType,
   onConfirm: PropTypes.func.isRequired,
   onCancel: PropTypes.func.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default ContactCardDeletionAlert;

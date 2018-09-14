@@ -13,6 +13,7 @@ const CarCardHeader = ({
   texts,
   onEdit,
   onDelete,
+  id,
 }) => {
   const { name } = car;
 
@@ -24,8 +25,9 @@ const CarCardHeader = ({
         className={s.editButton}
         title={texts.modify}
         onClick={onEdit}
+        id={`${id}Button`}
       >
-        <i className={`icon-edit ${s.editIcon}`} />
+        <i className={`icon-edit ${s.editIcon}`} id={`${id}Icon`} />
       </button>
     );
   } else if (deletable && !pendingDeletion) {
@@ -34,14 +36,15 @@ const CarCardHeader = ({
         className={s.editButton}
         title={texts.delete}
         onClick={onDelete}
+        id={`${id}Button`}
       >
-        <i className={`icon-bin ${s.editIcon}`} />
+        <i className={`icon-bin ${s.editIcon}`} id={`${id}Icon`} />
       </button>
     );
   }
 
   return (
-    <span className={s.name}>
+    <span className={s.name} id={id}>
       {name}
 
       {button}
@@ -62,6 +65,7 @@ CarCardHeader.propTypes = {
   texts: TextsType,
   onEdit: PropTypes.func.isRequired,
   onDelete: PropTypes.func.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default CarCardHeader;

@@ -6,7 +6,7 @@ import TextsType, { DefaultTexts } from './CarCardTextsType';
 import carImage from '../../images/voiture-01-trois-quart-grise.svg';
 
 const CarCardFooter = ({
-  texts, mode, onClick, onSubmit,
+  texts, mode, onClick, onSubmit, id,
 }) => {
   let what;
 
@@ -16,22 +16,22 @@ const CarCardFooter = ({
 
   if (mode.indexOf('edit') === 0) {
     what = (
-      <LinkUnderlined onClick={onSubmit}>
+      <LinkUnderlined onClick={onSubmit} id={`${id}Link`}>
         <strong>{texts.save}</strong>
       </LinkUnderlined>
     );
   } else {
     what = mode.indexOf('selected') !== -1 ? (
-      <i className={`icon-checkmark ${s.checkIcon}`} id="carSelectedIcon" />
+      <i className={`icon-checkmark ${s.checkIcon}`} id={`${id}Icon`} />
     ) : (
-      <LinkUnderlined onClick={onClick}>
+      <LinkUnderlined onClick={onClick} id={`${id}Link`}>
         <strong>{texts.modify}</strong>
       </LinkUnderlined>
     );
   }
 
   return (
-    <div className={s.footer}>
+    <div className={s.footer} id={id}>
       <img
         src={carImage}
         className={s.carImage}
@@ -53,6 +53,7 @@ CarCardFooter.propTypes = {
   mode: PropTypes.string.isRequired,
   onClick: PropTypes.func,
   onSubmit: PropTypes.func,
+  id: PropTypes.string.isRequired,
 };
 
 export default CarCardFooter;

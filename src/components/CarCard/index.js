@@ -28,6 +28,7 @@ const CarCard = ({
   onSubmit,
   onConfirmDeletion,
   onCancelDeletion,
+  idPrefix,
   ...cardProps
 }) => {
   let mode = 'read';
@@ -49,17 +50,19 @@ const CarCard = ({
       mode={mode}
       onClick={onClick}
       onSubmit={onSubmit}
+      id={`${idPrefix}Footer`}
     />
   );
 
   let header = null;
   let content = mode.indexOf('read') === 0 ? (
-    <CarCardContentRead car={car} />
+    <CarCardContentRead car={car} id={`${idPrefix}ContentRead`} />
   ) : (
     <CarCardContentEdit
       car={car}
       onChangeColor={onChangeColor}
       onChangeNumberPlate={onChangeNumberPlate}
+      id={`${idPrefix}ContentEdit`}
     />
   );
 
@@ -69,6 +72,7 @@ const CarCard = ({
         texts={texts}
         onDelete={onConfirmDeletion}
         onCancel={onCancelDeletion}
+        id={`${idPrefix}DeletionAlert`}
       />
     );
   } else {
@@ -82,6 +86,7 @@ const CarCard = ({
         pendingModification={pendingModification}
         onDelete={onDelete}
         onEdit={onEdit}
+        id={`${idPrefix}Header`}
       />
     );
   }
@@ -118,6 +123,7 @@ CarCard.propTypes = {
   onSubmit: PropTypes.func,
   onConfirmDeletion: PropTypes.func,
   onCancelDeletion: PropTypes.func,
+  idPrefix: PropTypes.string,
 };
 
 CarCard.defaultProps = {
@@ -137,6 +143,7 @@ CarCard.defaultProps = {
   onSubmit: () => {},
   onConfirmDeletion: () => {},
   onCancelDeletion: () => {},
+  idPrefix: 'carCard',
 };
 
 export default CarCard;
