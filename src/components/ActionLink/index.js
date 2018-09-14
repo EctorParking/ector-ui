@@ -35,7 +35,7 @@ ActionLink.propTypes = {
   label: PropTypes.string.isRequired,
   onClick: PropTypes.func,
   className: PropTypes.string,
-  id: PropTypes.string
+  id: PropTypes.string,
 };
 
 
