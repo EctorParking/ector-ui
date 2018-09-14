@@ -5,9 +5,9 @@ import { InputLabel } from '../';
 import s from './ContactCardContentEdit.css';
 
 const ContactCardContentEdit = ({
-  onChangeEmail, onChangePhoneNumber, values, errors,
+  onChangeEmail, onChangePhoneNumber, values, errors, id,
 }) => (
-  <div className={s.column}>
+  <div className={s.column} id={id}>
     <InputLabel label="" type="text" id="contactEmailInput" value={values.email} onChange={onChangeEmail} error={errors.email} />
     <InputLabel label="" type="text" id="contactPhoneInput" value={values.phone} onChange={onChangePhoneNumber} error={errors.phone} />
   </div>
@@ -18,6 +18,7 @@ ContactCardContentEdit.propTypes = {
   onChangePhoneNumber: PropTypes.func.isRequired,
   values: ContactFormValuesType.isRequired,
   errors: ContactFormErrorsType.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default ContactCardContentEdit;

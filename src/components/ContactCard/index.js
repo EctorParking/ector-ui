@@ -28,6 +28,7 @@ const ContactCard = ({
   formErrors,
   onCancelDeletion,
   onConfirmDeletion,
+  idPrefix,
   ...cardProps
 }) => {
   let mode = 'read';
@@ -50,12 +51,13 @@ const ContactCard = ({
       contact={contact}
       onClick={onClick}
       onSubmit={onSubmit}
+      id={`${idPrefix}Footer`}
     />
   );
 
   let header = null;
   let content = mode.indexOf('read') === 0 ? (
-    <ContactCardContentRead contact={contact} />
+    <ContactCardContentRead contact={contact} id={`${idPrefix}ContentRead`} />
   ) : (
     <ContactCardContentEdit
       contact={contact}
@@ -63,6 +65,7 @@ const ContactCard = ({
       onChangePhoneNumber={onChangePhoneNumber}
       values={formValues}
       errors={formErrors}
+      id={`${idPrefix}ContentEdit`}
     />
   );
 
@@ -72,6 +75,7 @@ const ContactCard = ({
         texts={texts}
         onCancel={onCancelDeletion}
         onConfirm={onConfirmDeletion}
+        id={`${idPrefix}DeletionAlert`}
       />
     );
   } else {
@@ -85,6 +89,7 @@ const ContactCard = ({
         pendingModification={pendingModification}
         onDelete={onDelete}
         onEdit={onEdit}
+        id={`${idPrefix}Header`}
       />
     );
   }
@@ -120,6 +125,7 @@ ContactCard.propTypes = {
   formErrors: ContactFormErrorsType.isRequired,
   onCancelDeletion: PropTypes.func,
   onConfirmDeletion: PropTypes.func,
+  idPrefix: PropTypes.string,
 };
 
 ContactCard.defaultProps = {
@@ -137,6 +143,7 @@ ContactCard.defaultProps = {
   onChangePhoneNumber: () => {},
   onCancelDeletion: () => {},
   onConfirmDeletion: () => {},
+  idPrefix: 'contactCard',
 };
 
 export default ContactCard;

@@ -13,6 +13,7 @@ const ContactCardHeader = ({
   texts,
   onEdit,
   onDelete,
+  id,
 }) => {
   const { firstname, lastname } = contact;
 
@@ -24,6 +25,7 @@ const ContactCardHeader = ({
         className={s.editButton}
         title={texts.modify}
         onClick={onEdit}
+        id={`${id}Button`}
       >
         <i className={`icon-edit ${s.editIcon}`} />
       </button>
@@ -34,6 +36,7 @@ const ContactCardHeader = ({
         className={s.editButton}
         title={texts.delete}
         onClick={onDelete}
+        id={`${id}Button`}
       >
         <i className={`icon-bin ${s.editIcon}`} />
       </button>
@@ -41,7 +44,7 @@ const ContactCardHeader = ({
   }
 
   return (
-    <span className={s.name}>
+    <span className={s.name} id={id}>
       {`${firstname} ${lastname}`}
 
       {button}
@@ -58,6 +61,7 @@ ContactCardHeader.propTypes = {
   texts: ContactCardTextsType.isRequired,
   onEdit: PropTypes.func.isRequired,
   onDelete: PropTypes.func.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default ContactCardHeader;
