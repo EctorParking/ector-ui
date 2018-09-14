@@ -28,10 +28,11 @@ class CardTravelInformation extends Component {
       onClickUnknownTravelingNumberTo,
       values,
       errors,
+      ...cardProps
     } = this.props;
 
     return (
-      <Card>
+      <Card {...cardProps}>
         <CardTitle className={[s.title, className].join(' ')}>
           {texts.title}
         </CardTitle>
@@ -45,6 +46,7 @@ class CardTravelInformation extends Component {
             inputClassName={inputClassName}
             value={values.travelingNumberFrom || ''}
             error={errors.travelingNumberFrom}
+            id="travelingNumberFromInput"
           />
           <InputLabel
             mandatory
@@ -55,6 +57,7 @@ class CardTravelInformation extends Component {
             error={errors.travelingNumberTo}
             className={s.travelingNumberToInputLabel}
             inputClassName={inputClassName}
+            id="travelingNumberToInput"
           />
         </div>
         <div className={s.unknownTravelingNumberTo}>
@@ -62,6 +65,7 @@ class CardTravelInformation extends Component {
             className={s.unknownTravelingNumberToButton}
             label={texts.unknownTravelingNumberTo}
             onClick={onClickUnknownTravelingNumberTo}
+            id="unknownFlightNumberButton"
           />
         </div>
       </Card>
