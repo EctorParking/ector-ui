@@ -23,7 +23,6 @@ class CardTravelInformation extends Component {
   render() {
     const {
       texts,
-      className,
       inputClassName,
       onClickUnknownTravelingNumberTo,
       values,
@@ -33,7 +32,7 @@ class CardTravelInformation extends Component {
 
     return (
       <Card {...cardProps}>
-        <CardTitle className={[s.title, className].join(' ')}>
+        <CardTitle className={s.title}>
           {texts.title}
         </CardTitle>
 

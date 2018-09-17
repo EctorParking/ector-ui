@@ -14,7 +14,7 @@
 
 .title hr {
   border: 0;
-  border-top: 2px solid var(--aquaHazeGrey);
+  border-top: 2px solid var(--blue);
   margin: 0;
   width: var(--titleHrWidth);
 }

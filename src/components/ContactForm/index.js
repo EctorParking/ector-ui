@@ -158,6 +158,7 @@ class ContactForm extends React.Component {
               value={values.postalCode || ''}
               error={errors.postalCode}
               className={s.contactFormInput}
+              inputClassName={s.postalCodeInput}
             />
 
           </div>

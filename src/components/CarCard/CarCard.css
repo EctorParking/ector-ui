@@ -30,9 +30,6 @@
   margin: 0;
   padding: 0;
 }
-.numberPlate {
-
-}
 .pendingDeletion {
   background-color: var(--lightGrey);
   justify-content: center;
