@@ -10,7 +10,7 @@ module.exports = {
     libraryTarget: 'umd',
     globalObject: 'this',
   },
-  devtool: 'eval-source-map',
+  devtool: false,
   module: {
     rules: [
       {
