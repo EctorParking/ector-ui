@@ -25,7 +25,6 @@
   top: 0;
   left: 0;
   height: 22px;
-  width: 22px;
   margin-top: 0;
   width: 100%;
   z-index: 1;
@@ -40,18 +39,18 @@
   height: 22px;
   width: 22px;
   border-radius: 0.25rem;
-  border: 0.15rem solid #eee;
+  border: 0.15rem solid var(--metalGrey);
 }
 
 /* On mouse-over, add a grey background color */
 .input_checkbox:hover input ~ .checkmark {
-  border-color: #ccc;
+  border-color: var(--darkMetalGrey);
 }
 
 /* When the checkbox is checked, add a blue background */
 .input_checkbox input:checked ~ .checkmark {
   background-color: transparent;
-  border-color: #ccc;
+  border-color: var(--darkMetalGrey);
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */

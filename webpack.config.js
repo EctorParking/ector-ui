@@ -41,9 +41,13 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
+              minimize: { autoprefixer: false },
+              discardComments: {
+                removeAll: true,
+              },
               importLoaders: 1,
               modules: true,
-              localIdentName: '[name]__[local]___[hash:base64:5]',
+              localIdentName: '[hash:base64]',
             },
           },
           {

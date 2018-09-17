@@ -3,7 +3,7 @@
 .select {
   align-items: center;
   border-radius: var(--inputBorderRadius);
-  border: 2px solid var(--darkMetalGrey);
+  border: 2px solid var(--metalGrey);
   box-sizing: border-box;
   color: var(--darkMetalGrey);
   display: flex;

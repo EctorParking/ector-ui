@@ -5,7 +5,7 @@ import Colors, { ColorPropsType } from './Colors';
 import s from './ColorPicker.css';
 
 class ColorPicker extends PureComponent {
-  renderColorBadge = (color) => {
+  renderColorBadge = (color, index) => {
     const {
       onSelect, tooltipClassName, showTooltip, value, badgeClassName,
     } = this.props;
@@ -25,6 +25,7 @@ class ColorPicker extends PureComponent {
           style={{ backgroundColor: color.hexadecimalCode }}
           title={color.label}
           onClick={() => onSelect(color)}
+          id={`color${index}`}
         />
         <span className={[s.tooltipText, tooltipClassName].join(' ')}>{color.label}</span>
       </div>
@@ -33,11 +34,11 @@ class ColorPicker extends PureComponent {
 
   render() {
     const {
-      colorsList, className,
+      colorsList, className, testid,
     } = this.props;
 
     return (
-      <div className={[s.colorPicker, className].join(' ')}>
+      <div className={[s.colorPicker, className].join(' ')} testid={testid}>
         {colorsList.map(this.renderColorBadge)}
       </div>
     );
@@ -51,6 +52,7 @@ ColorPicker.defaultProps = {
   showTooltip: true,
   value: '',
   badgeClassName: '',
+  testid: '',
 };
 
 ColorPicker.propTypes = {
@@ -61,6 +63,7 @@ ColorPicker.propTypes = {
   colorsList: PropTypes.arrayOf(ColorPropsType),
   onSelect: PropTypes.func.isRequired,
   value: PropTypes.string,
+  testid: PropTypes.string,
 };
 
 export default ColorPicker;

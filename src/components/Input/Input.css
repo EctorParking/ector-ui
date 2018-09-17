@@ -3,7 +3,7 @@
 .input {
   box-sizing: border-box;
   color: var(--deepBlue);
-  border: 2px solid var(--darkMetalGrey);
+  border: 2px solid var(--metalGrey);
   border-radius: var(--inputBorderRadius);
   display: block;
   height: 2.5rem;
@@ -13,6 +13,7 @@
 
   &::placeholder {
     opacity: 0.3;
+    color: var(--metalGrey)
   }
 
   &:focus {

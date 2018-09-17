@@ -1,4 +1,3 @@
-@import '../../node_modules/normalize.css/normalize.css';
 @import './index.css';
 
 :root {
@@ -13,15 +12,13 @@
   --fourthColor: #32a0c5;
   --fifthColor: #9ca3ff;
   --sixthColor: #59c871;
-  --seventhColor: white;
+  --seventhColor: #fefefe;
 
   --metalGrey: #d5d6d7;
   --darkMetalGrey: color(#d5d6d7 blackness(20%));
   --aquaHazeGrey: #9eb3c2;
   --lightGrey: #eceff6;
-  --darkYellow: color(yellow blackness(10%));
   --red: #ff5757;
-  --whiteOverlay: rgba(255, 255, 255, 0.07);
   --orange: #f39c12;
 
   --deepBlue: var(--firstColor);
