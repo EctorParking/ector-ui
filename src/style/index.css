@@ -1,4 +1,5 @@
 @import './font.css';
+@import '../../node_modules/normalize.css/normalize.css';
 
 /**
 ** Those commented lines, specially margin: 0, breaks style of components.
