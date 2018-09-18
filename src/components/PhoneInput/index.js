@@ -1,34 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Select, InputLabel, Input } from '../';
-import frFlag from '../../images/flags/fr.svg';
-import gbFlag from '../../images/flags/gb.svg';
-import esFlag from '../../images/flags/es.svg';
-import deFlag from '../../images/flags/de.svg';
+import { DefaultCountries, CountryPropType } from './PhoneInputCountries';
 import s from './PhoneInput.css';
-
-const countries = [
-  { value: 'fr', label: '+33', image: frFlag },
-  { value: 'es', label: '+34', image: esFlag },
-  { value: 'gb', label: '+44', image: gbFlag },
-  { value: 'de', label: '+49', image: deFlag },
-];
 
 class PhoneInput extends React.Component {
   constructor(props) {
     super(props);
+    const { value, countries } = props;
     let country;
-    let phone = '';
 
-    if (props.value && props.value !== PhoneInput.defaultProps.value) {
-      country = countries.find(c => props.value.startsWith(c.label));
-      if (country) {
-        phone = props.value.substring(country.label.length);
-      }
+    if (value && value !== PhoneInput.defaultProps.value) {
+      country = countries.find(c => value.startsWith(c.label));
     }
     this.state = {
       country: country || countries[0],
-      phone,
     };
 
     this.onCountryCodeChange = this.onCountryCodeChange.bind(this);
@@ -37,6 +23,7 @@ class PhoneInput extends React.Component {
 
   onCountryCodeChange(event) {
     const { currentTarget: { value: countryCode } } = event;
+    const { countries } = this.props;
     const country = countries.find(option => option.value === countryCode);
 
     this.setState({ country });
@@ -47,7 +34,7 @@ class PhoneInput extends React.Component {
     const { country } = this.state;
     const { currentTarget: { value } } = event;
 
-    this.setState({ phone: value });
+    event.preventDefault();
     onChange({
       ...event,
       currentTarget: {
@@ -65,9 +52,9 @@ class PhoneInput extends React.Component {
   renderPhoneInputs = () => {
     const {
       // eslint-disable-next-line no-unused-vars
-      error, mandatory, left, ...phoneInputProps
+      error, mandatory, left, countries, ...phoneInputProps
     } = this.props;
-    const { country, phone } = this.state;
+    const { country } = this.state;
 
     return (
       <div className={s.phoneInput}>
@@ -92,7 +79,6 @@ class PhoneInput extends React.Component {
           placeholder="06 07 08 09 00"
           type="text"
           onChange={this.onPhoneNumberChange}
-          value={phone}
         />
       </div>
     );
@@ -126,6 +112,7 @@ PhoneInput.defaultProps = {
   mandatory: false,
   left: false,
   className: '',
+  countries: DefaultCountries,
 };
 
 PhoneInput.propTypes = {
@@ -138,6 +125,7 @@ PhoneInput.propTypes = {
   mandatory: PropTypes.bool,
   left: PropTypes.bool,
   className: PropTypes.string,
+  countries: PropTypes.shape(CountryPropType),
 };
 
 export default PhoneInput;

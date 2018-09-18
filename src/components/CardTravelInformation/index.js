@@ -27,6 +27,8 @@ class CardTravelInformation extends Component {
       onClickUnknownTravelingNumberTo,
       values,
       errors,
+      unknownTravelingNumberToClassName,
+      travelingNumberToClassName,
       ...cardProps
     } = this.props;
 
@@ -54,12 +56,12 @@ class CardTravelInformation extends Component {
             onChange={this.handleChangeTravelingNumberTo}
             value={values.travelingNumberTo || ''}
             error={errors.travelingNumberTo}
-            className={s.travelingNumberToInputLabel}
+            className={[s.travelingNumberToInputLabel, travelingNumberToClassName].join(' ')}
             inputClassName={inputClassName}
             id="travelingNumberToInput"
           />
         </div>
-        <div className={s.unknownTravelingNumberTo}>
+        <div className={[s.unknownTravelingNumberTo, unknownTravelingNumberToClassName].join(' ')}>
           <ActionLink
             className={s.unknownTravelingNumberToButton}
             label={texts.unknownTravelingNumberTo}
@@ -86,6 +88,8 @@ CardTravelInformation.defaultProps = {
     travelingNumberFrom: null,
     travelingNumberTo: null,
   },
+  unknownTravelingNumberToClassName: '',
+  travelingNumberToClassName: '',
 };
 
 CardTravelInformation.propTypes = {
@@ -102,6 +106,8 @@ CardTravelInformation.propTypes = {
   onChangeProperty: PropTypes.func,
   inputClassName: PropTypes.string,
   onClickUnknownTravelingNumberTo: PropTypes.func,
+  unknownTravelingNumberToClassName: PropTypes.string,
+  travelingNumberToClassName: PropTypes.string,
 };
 
 
