@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import s from './ContactForm.css';
 import TextsType, { DefaultTexts } from './ContactFormTextsType';
 import { Card, GenderPicker, LinkUnderlined, CardTitle, InputLabel, PhoneInput } from '../';
+import { CountryPropType } from '../PhoneInput/PhoneInputCountries';
 
 class ContactForm extends React.Component {
   constructor(props) {
@@ -52,6 +53,7 @@ class ContactForm extends React.Component {
       errors,
       labelPosition,
       onSubmit,
+      countries,
       ...cardProps
     } = this.props;
     const {
@@ -145,6 +147,7 @@ class ContactForm extends React.Component {
               error={errors.phone}
               value={values.phone || ''}
               className={s.contactFormInput}
+              countries={countries}
             />
             <InputLabel
               left={labelPosition === 'left'}
@@ -192,6 +195,7 @@ ContactForm.defaultProps = {
   selected: false,
   labelPosition: 'left',
   onSubmit: () => {},
+  countries: undefined,
 };
 
 ContactForm.propTypes = {
@@ -218,6 +222,7 @@ ContactForm.propTypes = {
   selected: PropTypes.bool,
   labelPosition: PropTypes.oneOf(['top', 'left']),
   onSubmit: PropTypes.func,
+  countries: PropTypes.arrayOf(CountryPropType),
 };
 
 export default ContactForm;

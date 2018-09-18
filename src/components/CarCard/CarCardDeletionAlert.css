@@ -4,9 +4,11 @@
   align-items: center;
   display: flex;
   flex-direction: column;
+  padding: var(--marginMedium);
 }
 .deletionAlert p {
   margin: var(--marginSmall) 0;
+  text-align: center;
 }
 .deletionButtons {
   display: flex;
