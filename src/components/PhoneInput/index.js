@@ -7,18 +7,20 @@ import s from './PhoneInput.css';
 class PhoneInput extends React.Component {
   constructor(props) {
     super(props);
-    const { value, countries } = props;
-    let country;
+    const { value } = props;
 
-    if (value && value !== PhoneInput.defaultProps.value) {
-      country = countries.find(c => value.startsWith(c.label));
-    }
-    this.state = {
-      country: country || countries[0],
-    };
-
+    this.state = this.getCountryAndPhoneFromValue(value);
     this.onCountryCodeChange = this.onCountryCodeChange.bind(this);
     this.onPhoneNumberChange = this.onPhoneNumberChange.bind(this);
+  }
+
+  componentWillReceiveProps(newProps) {
+    const { phone, country } = this.state;
+    const { value: nextValue } = newProps;
+
+    if (nextValue !== `${country.label}${phone}`) {
+      this.setState(this.getCountryAndPhoneFromValue(nextValue));
+    }
   }
 
   onCountryCodeChange(event) {
@@ -34,13 +36,32 @@ class PhoneInput extends React.Component {
     const { country } = this.state;
     const { currentTarget: { value } } = event;
 
-    event.preventDefault();
     onChange({
       ...event,
       currentTarget: {
         value: `${country.label}${value}`,
       },
     });
+    this.setState({ phone: value });
+  }
+
+  getCountryAndPhoneFromValue(value) {
+    const { countries } = this.props;
+    const country = countries.find(c => value.startsWith(c.label));
+    let phone = '';
+    let countryCode; // eslint-disable-line no-unused-vars
+
+    if (country) {
+      [countryCode, phone] = value.split(country.label);
+      return {
+        country,
+        phone,
+      };
+    }
+    return {
+      country: countries[0],
+      phone,
+    };
   }
 
   renderSelectOption = option => (
@@ -54,7 +75,7 @@ class PhoneInput extends React.Component {
       // eslint-disable-next-line no-unused-vars
       error, mandatory, left, countries, ...phoneInputProps
     } = this.props;
-    const { country } = this.state;
+    const { country, phone } = this.state;
 
     return (
       <div className={s.phoneInput}>
@@ -79,6 +100,7 @@ class PhoneInput extends React.Component {
           placeholder="06 07 08 09 00"
           type="text"
           onChange={this.onPhoneNumberChange}
+          value={phone}
         />
       </div>
     );
