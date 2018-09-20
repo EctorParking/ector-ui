@@ -2,3 +2,9 @@
   display: flex;
   flex-direction: column;
 }
+
+.text {
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
