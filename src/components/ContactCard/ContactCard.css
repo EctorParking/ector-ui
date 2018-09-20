@@ -6,6 +6,10 @@
   padding: var(--marginMedium);
 }
 
+.pendingModification {
+  padding: var(--marginMedium);
+}
+
 .pendingDeletion p {
   text-align: center;
 }

@@ -34,6 +34,9 @@
   background-color: var(--lightGrey);
   justify-content: center;
 }
+.pendingModification {
+  padding: var(--marginMedium);
+}
 .deletionAlert {
   align-items: center;
   display: flex;

@@ -95,7 +95,7 @@ const CarCard = ({
     <Card
       FooterChildren={footer}
       isSelected={selected}
-      contentClassName={pendingDeletion ? s.pendingDeletion : ''}
+      contentClassName={[pendingModification ? s.pendingModification : '', pendingDeletion ? s.pendingDeletion : ''].join(' ')}
       className={className}
       {...cardProps}
     >
