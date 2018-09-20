@@ -148,12 +148,13 @@ class ContactForm extends React.Component {
               value={values.phone || ''}
               className={s.contactFormInput}
               countries={countries}
+              id="phone-number"
             />
             <InputLabel
               left={labelPosition === 'left'}
               label={postCode}
               type="text"
-              id="postCode"
+              id="postal-code"
               placeholder={postCodePlaceholder}
               onFocus={onInputFocus}
               onBlur={onInputBlur}
