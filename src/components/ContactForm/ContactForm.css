@@ -32,14 +32,6 @@
   justify-content: flex-end;
 }
 
-.leftGenderPickerField {
-  height: 44px;
-}
-
-.topGenderPickerField {
-  height: 66px;
-}
-
 .genderPickerInputs {
   height: 100%;
   align-items: center;

@@ -2,26 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import s from './ContactForm.css';
 import TextsType, { DefaultTexts } from './ContactFormTextsType';
-import { Card, GenderPicker, LinkUnderlined, CardTitle, InputLabel, PhoneInput } from '../';
+import { Card, LinkUnderlined, CardTitle, InputLabel, PhoneInput } from '../';
 import { CountryPropType } from '../PhoneInput/PhoneInputCountries';
 
 class ContactForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleChangeGender = props.onChangeProperty.bind(this, 'title');
     this.handleChangeFirstName = this.handleChangeProperty.bind(this, 'firstname');
     this.handleChangeLastName = this.handleChangeProperty.bind(this, 'lastname');
     this.handleChangeEmail = this.handleChangeProperty.bind(this, 'email');
     this.handleChangePhone = this.handleChangeProperty.bind(this, 'phone');
     this.handleChangePostalCode = this.handleChangeProperty.bind(this, 'postalCode');
-    this.genders = [{
-      value: 'male',
-      label: props.texts.male,
-    }, {
-      value: 'female',
-      label: props.texts.female,
-    }];
   }
 
   handleChangeProperty(field, event) {
@@ -29,19 +21,6 @@ class ContactForm extends React.Component {
 
     onChangeProperty(field, event.currentTarget.value);
   }
-
-  renderGenderPicker = () => {
-    const { values: { gender } } = this.props;
-
-    return (
-      <GenderPicker
-        genders={this.genders}
-        onSelect={this.handleChangeGender}
-        selected={gender || ''}
-        className={s.genderPickerInputs}
-      />
-    );
-  };
 
   render() {
     const {
@@ -59,7 +38,6 @@ class ContactForm extends React.Component {
     const {
       addDriver,
       newDriver,
-      civility,
       firstName,
       firstNamePlaceholder,
       lastName,
@@ -88,12 +66,6 @@ class ContactForm extends React.Component {
         <div className={s.columns}>
           <div>
             <InputLabel
-              label={civility}
-              left={labelPosition === 'left'}
-              InputComponent={this.renderGenderPicker}
-              className={[labelPosition === 'left' ? s.leftGenderPickerField : s.topGenderPickerField, s.contactFormInput].join(' ')}
-            />
-            <InputLabel
               left={labelPosition === 'left'}
               type="text"
               id="first-name"
@@ -121,8 +93,6 @@ class ContactForm extends React.Component {
               error={errors.lastname}
               className={s.contactFormInput}
             />
-          </div>
-          <div>
             <InputLabel
               left={labelPosition === 'left'}
               label={email}
@@ -137,6 +107,8 @@ class ContactForm extends React.Component {
               error={errors.email}
               className={s.contactFormInput}
             />
+          </div>
+          <div>
             <PhoneInput
               label={phone}
               mandatory
@@ -176,7 +148,6 @@ ContactForm.defaultProps = {
   texts: DefaultTexts,
   onChangeProperty: () => {},
   values: {
-    gender: null,
     firstname: null,
     lastname: null,
     email: null,
@@ -184,7 +155,6 @@ ContactForm.defaultProps = {
     postalCode: null,
   },
   errors: {
-    gender: null,
     firstname: null,
     lastname: null,
     email: null,
@@ -203,7 +173,6 @@ ContactForm.propTypes = {
   texts: TextsType,
   onChangeProperty: PropTypes.func,
   values: PropTypes.shape({
-    gender: PropTypes.oneOf(['male', 'female', null, '']),
     firstname: PropTypes.string,
     lastname: PropTypes.string,
     email: PropTypes.string,
@@ -211,7 +180,6 @@ ContactForm.propTypes = {
     postalCode: PropTypes.string,
   }),
   errors: PropTypes.shape({
-    gender: PropTypes.string,
     firstname: PropTypes.string,
     lastname: PropTypes.string,
     email: PropTypes.string,
