@@ -22,6 +22,8 @@ storiesOf('CardTravelInformation', module)
       values: object('Values', {
         travelingNumberFrom: '',
         travelingNumberTo: '',
+        returnFlightCompany: '',
+        returnFlightOrigin: '',
       }),
       errors: object('Errors', {
         travelingNumberFrom: '',

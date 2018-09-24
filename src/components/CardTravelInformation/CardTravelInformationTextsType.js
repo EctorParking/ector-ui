@@ -8,6 +8,10 @@ export default PropTypes.shape({
   travelingNumberToLabel: PropTypes.string,
   businessTravel: PropTypes.string,
   unknownFlightNumber: PropTypes.string,
+  returnFlightCompany: PropTypes.string,
+  returnFlightOrigin: PropTypes.string,
+  defaultReturnFlightOrigin: PropTypes.string,
+  updateReturnFlightCompany: PropTypes.string,
 });
 
 export const DefaultTexts = {
@@ -18,4 +22,8 @@ export const DefaultTexts = {
   travelingNumberToLabel: 'Retour',
   businessTravel: 'Voyage professionel',
   unknownTravelingNumberTo: 'Je ne le connais pas',
+  returnFlightCompany: 'Compagnie aérienne',
+  returnFlightOrigin: 'Ville de provenance',
+  defaultReturnFlightOrigin: 'Non renseigné',
+  updateReturnFlightCompany: 'Modifier',
 };

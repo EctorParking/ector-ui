@@ -33,7 +33,7 @@ const InputLabel = ({
 
       <div className={[s.inputContainer, inputContainerClassName].join(' ')}>
         {
-          InputComponent !== null && typeof InputComponent === 'function' ? (
+          InputComponent !== null && typeof InputComponent === 'function' && InputComponent() ? (
             <InputComponent />
           ) : (
             <Input
