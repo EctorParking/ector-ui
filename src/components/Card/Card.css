@@ -8,6 +8,7 @@
   padding: 0.3rem;
   min-width: 15rem;
   min-height: 10rem;
+  position: relative;
 }
 
 .card_selected {
@@ -38,4 +39,10 @@
   background-color: transparent;
   height: 3rem;
   position: relative;
+}
+
+.label {
+  position: absolute;
+  top: -10px;
+  right: 20px;
 }
