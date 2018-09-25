@@ -29,6 +29,7 @@ const ContactCard = ({
   onCancelDeletion,
   onConfirmDeletion,
   idPrefix,
+  children,
   ...cardProps
 }) => {
   let mode = 'read';
@@ -102,7 +103,7 @@ const ContactCard = ({
       {...cardProps}
     >
       {header}
-      {content}
+      {children !== null ? children : content}
     </Card>
   );
 };
@@ -126,6 +127,7 @@ ContactCard.propTypes = {
   onCancelDeletion: PropTypes.func,
   onConfirmDeletion: PropTypes.func,
   idPrefix: PropTypes.string,
+  children: PropTypes.node,
 };
 
 ContactCard.defaultProps = {
@@ -144,6 +146,7 @@ ContactCard.defaultProps = {
   onCancelDeletion: () => {},
   onConfirmDeletion: () => {},
   idPrefix: 'contactCard',
+  children: null,
   formValues: {
     email: '',
     phone: '',
