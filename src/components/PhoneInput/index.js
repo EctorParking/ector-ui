@@ -73,7 +73,7 @@ class PhoneInput extends React.Component {
   renderPhoneInputs = () => {
     const {
       // eslint-disable-next-line no-unused-vars
-      error, mandatory, left, countries, ...phoneInputProps
+      error, mandatory, left, countries, withFlag, ...phoneInputProps
     } = this.props;
     const { country, phone } = this.state;
 
@@ -85,11 +85,12 @@ class PhoneInput extends React.Component {
           renderOption={this.renderSelectOption}
           onChange={this.onCountryCodeChange}
         >
-          <img
+          {withFlag && (<img
             src={country.image}
             className={s.selectImage}
             alt={country.label}
           />
+          )}
           <span>
             {country.label}
           </span>
@@ -135,6 +136,7 @@ PhoneInput.defaultProps = {
   left: false,
   className: '',
   countries: DefaultCountries,
+  withFlag: true,
 };
 
 PhoneInput.propTypes = {
@@ -148,6 +150,7 @@ PhoneInput.propTypes = {
   left: PropTypes.bool,
   className: PropTypes.string,
   countries: PropTypes.shape(CountryPropType),
+  withFlag: PropTypes.bool,
 };
 
 export default PhoneInput;
