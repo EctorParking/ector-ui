@@ -45,6 +45,7 @@ const Card = ({
   className,
   contentClassName,
   footerClassName,
+  LabelComponent,
   testid,
 }) => {
   const isClickable = typeof onClick === 'function' && !isSelected;
@@ -68,6 +69,7 @@ const Card = ({
           HeaderChildren={HeaderChildren}
         />
       }
+      {React.createElement(LabelComponent, { className: s.label })}
       <div className={`${s.card_content} ${contentClassName}`}>
         { children }
       </div>
@@ -90,6 +92,7 @@ Card.defaultProps = {
   contentClassName: '',
   footerClassName: '',
   testid: '',
+  LabelComponent: () => null,
 };
 
 Card.propTypes = {
@@ -105,6 +108,7 @@ Card.propTypes = {
   contentClassName: PropTypes.string,
   footerClassName: PropTypes.string,
   testid: PropTypes.string,
+  LabelComponent: PropTypes.func,
 };
 
 

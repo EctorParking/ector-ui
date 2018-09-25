@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 import { Card, CardTitle, InputLabel, ActionLink } from '../';
@@ -20,6 +20,24 @@ class CardTravelInformation extends Component {
     onChangeProperty(field, event.currentTarget.value);
   }
 
+  renderReturnFlightCompany = () => {
+    const { values, texts } = this.props;
+
+    if (!values.returnFlightCompany || values.returnFlightCompany === '') {
+      return null;
+    }
+    return (
+      <Fragment>
+        <div>{texts.returnFlightCompany}&nbsp;:&nbsp;{values.returnFlightCompany}</div>
+        <div>
+          {texts.returnFlightOrigin}
+          &nbsp;:&nbsp;
+          {values.returnFlightOrigin || texts.defaultReturnFlightOrigin}
+        </div>
+      </Fragment>
+    );
+  };
+
   render() {
     const {
       texts,
@@ -31,6 +49,8 @@ class CardTravelInformation extends Component {
       travelingNumberToClassName,
       ...cardProps
     } = this.props;
+    const hasFilledReturnFlightCompany =
+      values.returnFlightCompany !== null && values.returnFlightCompany.length > 0;
 
     return (
       <Card {...cardProps}>
@@ -59,12 +79,16 @@ class CardTravelInformation extends Component {
             className={[s.travelingNumberToInputLabel, travelingNumberToClassName].join(' ')}
             inputClassName={inputClassName}
             id="travelingNumberToInput"
+            InputComponent={this.renderReturnFlightCompany}
           />
         </div>
         <div className={[s.unknownTravelingNumberTo, unknownTravelingNumberToClassName].join(' ')}>
           <ActionLink
             className={s.unknownTravelingNumberToButton}
-            label={texts.unknownTravelingNumberTo}
+            label={hasFilledReturnFlightCompany
+              ? texts.updateReturnFlightCompany
+              : texts.unknownTravelingNumberTo
+            }
             onClick={onClickUnknownTravelingNumberTo}
             id="unknownFlightNumberButton"
           />
@@ -83,6 +107,8 @@ CardTravelInformation.defaultProps = {
   values: {
     travelingNumberFrom: null,
     travelingNumberTo: null,
+    returnFlightCompany: null,
+    returnFlightOrigin: null,
   },
   errors: {
     travelingNumberFrom: null,
@@ -96,6 +122,8 @@ CardTravelInformation.propTypes = {
   values: PropTypes.shape({
     travelingNumberFrom: PropTypes.string,
     travelingNumberTo: PropTypes.string,
+    returnFlightCompany: PropTypes.string,
+    returnFlightOrigin: PropTypes.string,
   }),
   errors: PropTypes.shape({
     travelingNumberFrom: PropTypes.string,

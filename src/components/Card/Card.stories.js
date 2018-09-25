@@ -3,7 +3,8 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import backgrounds from '@storybook/addon-backgrounds';
 import centered from '@storybook/addon-centered';
-import { withKnobs, boolean } from '@storybook/addon-knobs';
+import { withKnobs, boolean, text } from '@storybook/addon-knobs';
+import { Label } from '..';
 
 import Card from './';
 
@@ -19,6 +20,8 @@ storiesOf('Card', module)
   .add('with knobs', () => {
     const props = {
       isSelected: boolean('Selected', false),
+      FooterChildren: text('The Footer Node'),
+      onClick: action('clicked'),
     };
 
     return (
@@ -27,15 +30,13 @@ storiesOf('Card', module)
       </Card>
     );
   })
-  .add('with knobs & footer', () => {
+  .add('with label', () => {
     const props = {
       isSelected: boolean('Selected', false),
-      FooterChildren: 'The Footer Node',
-      onClick: action('clicked'),
     };
 
     return (
-      <Card {...props}>
+      <Card {...props} LabelComponent={labelProps => <Label label="label" logo="star" color="green" {...labelProps} />}>
         Content
       </Card>
     );
