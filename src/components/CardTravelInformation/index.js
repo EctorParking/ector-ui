@@ -47,6 +47,7 @@ class CardTravelInformation extends Component {
       errors,
       unknownTravelingNumberToClassName,
       travelingNumberToClassName,
+      travelingNumberFromClassName,
       ...cardProps
     } = this.props;
     const hasFilledReturnFlightCompany =
@@ -63,7 +64,7 @@ class CardTravelInformation extends Component {
             placeholder={texts.travelingNumberFromPlaceholder}
             label={texts.travelingNumberFromLabel}
             onChange={this.handleChangeTravelingNumberFrom}
-            className={s.travelingNumberFromInputLabel}
+            className={[s.travelingNumberFromInputLabel, travelingNumberFromClassName].join(' ')}
             inputClassName={inputClassName}
             value={values.travelingNumberFrom || ''}
             error={errors.travelingNumberFrom}
@@ -116,6 +117,7 @@ CardTravelInformation.defaultProps = {
   },
   unknownTravelingNumberToClassName: '',
   travelingNumberToClassName: '',
+  travelingNumberFromClassName: '',
 };
 
 CardTravelInformation.propTypes = {
@@ -136,6 +138,7 @@ CardTravelInformation.propTypes = {
   onClickUnknownTravelingNumberTo: PropTypes.func,
   unknownTravelingNumberToClassName: PropTypes.string,
   travelingNumberToClassName: PropTypes.string,
+  travelingNumberFromClassName: PropTypes.string,
 };
 
 

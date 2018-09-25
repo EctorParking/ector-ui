@@ -33,8 +33,5 @@
   .travelingNumberFromInputLabel, .travelingNumberToInputLabel {
     margin: var(--marginSmall) auto;
   }
-  .title {
-    text-align: center;
-  }
 }
 
