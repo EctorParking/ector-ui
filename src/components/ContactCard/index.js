@@ -144,6 +144,14 @@ ContactCard.defaultProps = {
   onCancelDeletion: () => {},
   onConfirmDeletion: () => {},
   idPrefix: 'contactCard',
+  formValues: {
+    email: '',
+    phone: '',
+  },
+  formErrors: {
+    email: null,
+    phone: null,
+  },
 };
 
 export default ContactCard;
