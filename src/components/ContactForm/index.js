@@ -54,6 +54,10 @@ class ContactForm extends React.Component {
       labelPosition,
       onSubmit,
       countries,
+      contentClassName,
+      firstSectionClassName,
+      secondSectionClassName,
+      withCountryFlag,
       ...cardProps
     } = this.props;
     const {
@@ -85,8 +89,8 @@ class ContactForm extends React.Component {
       >
         <CardTitle>{newDriver}</CardTitle>
 
-        <div className={s.columns}>
-          <div>
+        <div className={[s.columns, contentClassName].join(' ')}>
+          <div className={[s.firstSection, firstSectionClassName].join(' ')}>
             <InputLabel
               label={civility}
               left={labelPosition === 'left'}
@@ -122,7 +126,7 @@ class ContactForm extends React.Component {
               className={s.contactFormInput}
             />
           </div>
-          <div>
+          <div className={[s.secondSection, secondSectionClassName].join(' ')}>
             <InputLabel
               left={labelPosition === 'left'}
               label={email}
@@ -147,8 +151,10 @@ class ContactForm extends React.Component {
               error={errors.phone}
               value={values.phone || ''}
               className={s.contactFormInput}
+              inputClassName={s.phoneInput}
               countries={countries}
               id="phone-number"
+              withFlag={withCountryFlag}
             />
             <InputLabel
               left={labelPosition === 'left'}
@@ -197,6 +203,10 @@ ContactForm.defaultProps = {
   labelPosition: 'left',
   onSubmit: () => {},
   countries: undefined,
+  contentClassName: '',
+  firstSectionClassName: '',
+  secondSectionClassName: '',
+  withCountryFlag: true,
 };
 
 ContactForm.propTypes = {
@@ -224,6 +234,10 @@ ContactForm.propTypes = {
   labelPosition: PropTypes.oneOf(['top', 'left']),
   onSubmit: PropTypes.func,
   countries: PropTypes.arrayOf(CountryPropType),
+  contentClassName: PropTypes.string,
+  firstSectionClassName: PropTypes.string,
+  secondSectionClassName: PropTypes.string,
+  withCountryFlag: PropTypes.bool,
 };
 
 export default ContactForm;

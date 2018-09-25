@@ -17,11 +17,11 @@
   flex: 1;
 }
 
-.columns > div:first-child {
+.firstSection {
   margin-right: var(--marginLarge);
 }
 
-.columns > div:last-child {
+.secondSection {
   margin-left: var(--marginLarge);
 }
 
@@ -51,4 +51,8 @@
 
 .postalCodeInput {
   max-width: 42%;
+}
+
+.phoneInput {
+  width: 100%;
 }
