@@ -10,8 +10,9 @@ export default PropTypes.shape({
   unknownFlightNumber: PropTypes.string,
   returnFlightCompany: PropTypes.string,
   returnFlightOrigin: PropTypes.string,
-  defaultReturnFlightOrigin: PropTypes.string,
+  blank: PropTypes.string,
   updateReturnFlightCompany: PropTypes.string,
+  travelingNumberTo: PropTypes.string,
 });
 
 export const DefaultTexts = {
@@ -24,6 +25,7 @@ export const DefaultTexts = {
   unknownTravelingNumberTo: 'Je ne le connais pas',
   returnFlightCompany: 'Compagnie aérienne',
   returnFlightOrigin: 'Ville de provenance',
-  defaultReturnFlightOrigin: 'Non renseigné',
+  blank: 'Non renseigné',
   updateReturnFlightCompany: 'Modifier',
+  travelingNumberTo: 'Numéro billet',
 };

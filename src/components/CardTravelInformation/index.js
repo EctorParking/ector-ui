@@ -28,11 +28,12 @@ class CardTravelInformation extends Component {
     }
     return (
       <Fragment>
+        <div>{texts.travelingNumberTo}&nbsp;:&nbsp;{values.travelingNumberTo || texts.blank}</div>
         <div>{texts.returnFlightCompany}&nbsp;:&nbsp;{values.returnFlightCompany}</div>
         <div>
           {texts.returnFlightOrigin}
           &nbsp;:&nbsp;
-          {values.returnFlightOrigin || texts.defaultReturnFlightOrigin}
+          {values.returnFlightOrigin || texts.blank}
         </div>
       </Fragment>
     );
