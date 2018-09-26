@@ -55,7 +55,7 @@ class PhoneInput extends React.Component {
       [countryCode, phone] = value.split(country.label);
       return {
         country,
-        phone: `0${phone}`,
+        phone,
       };
     }
     return {
