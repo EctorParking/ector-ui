@@ -9,6 +9,10 @@
   margin-bottom: var(--marginMedium);
 }
 
+.hidden {
+  display: none;
+}
+
 .columns {
   display: flex;
 }

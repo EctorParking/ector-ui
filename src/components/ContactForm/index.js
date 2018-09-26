@@ -98,7 +98,7 @@ class ContactForm extends React.Component {
         isSelected={selected}
         {...cardProps}
       >
-        <CardTitle>{newDriver}</CardTitle>
+        <CardTitle className={!newDriver ? s.hidden : ''}>{newDriver}</CardTitle>
 
         <div className={[s.columns, contentClassName].join(' ')}>
           <div className={[s.firstSection, firstSectionClassName].join(' ')}>
