@@ -4,7 +4,7 @@ import s from './Title.css';
 
 const Title = ({ label, className }) => (
   <div className={`${s.title} ${className}`}>
-    <h1>{label}</h1>
+    <h2>{label}</h2>
     <hr />
   </div>
 );
