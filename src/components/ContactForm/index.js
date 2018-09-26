@@ -15,6 +15,11 @@ class ContactForm extends React.Component {
     this.handleChangeEmail = this.handleChangeProperty.bind(this, 'email');
     this.handleChangePhone = this.handleChangeProperty.bind(this, 'phone');
     this.handleChangePostalCode = this.handleChangeProperty.bind(this, 'postalCode');
+
+    this.renderFirstNameInput = this.renderInputComponent.bind(this, 'firstName');
+    this.renderLastNameInput = this.renderInputComponent.bind(this, 'lastName');
+    this.renderEmailInput = this.renderInputComponent.bind(this, 'email');
+    this.renderPostalCodeInput = this.renderInputComponent.bind(this, 'postalCode');
     this.genders = [{
       value: 'male',
       label: props.texts.male,
@@ -28,6 +33,12 @@ class ContactForm extends React.Component {
     const { onChangeProperty } = this.props;
 
     onChangeProperty(field, event.currentTarget.value);
+  }
+
+  renderInputComponent(inputName) {
+    const { renderInput } = this.props;
+
+    return renderInput(inputName);
   }
 
   renderGenderPicker = () => {
@@ -100,6 +111,7 @@ class ContactForm extends React.Component {
             <InputLabel
               left={labelPosition === 'left'}
               type="text"
+              name="firstName"
               id="first-name"
               placeholder={firstNamePlaceholder}
               onFocus={onInputFocus}
@@ -110,11 +122,13 @@ class ContactForm extends React.Component {
               label={firstName}
               mandatory
               className={s.contactFormInput}
+              InputComponent={this.renderFirstNameInput}
             />
             <InputLabel
               left={labelPosition === 'left'}
               label={lastName}
               mandatory
+              name="lastName"
               type="text"
               id="last-name"
               placeholder={lastNamePlaceholder}
@@ -124,6 +138,7 @@ class ContactForm extends React.Component {
               value={values.lastname || ''}
               error={errors.lastname}
               className={s.contactFormInput}
+              InputComponent={this.renderLastNameInput}
             />
           </div>
           <div className={[s.secondSection, secondSectionClassName].join(' ')}>
@@ -131,6 +146,7 @@ class ContactForm extends React.Component {
               left={labelPosition === 'left'}
               label={email}
               mandatory
+              name="email"
               type="email"
               id="email"
               placeholder={emailPlaceholder}
@@ -140,6 +156,7 @@ class ContactForm extends React.Component {
               value={values.email || ''}
               error={errors.email}
               className={s.contactFormInput}
+              InputComponent={this.renderEmailInput}
             />
             <PhoneInput
               label={phone}
@@ -154,6 +171,7 @@ class ContactForm extends React.Component {
               inputClassName={s.phoneInput}
               countries={countries}
               id="phone-number"
+              name="phoneNumber"
               withFlag={withCountryFlag}
             />
             <InputLabel
@@ -161,6 +179,7 @@ class ContactForm extends React.Component {
               label={postCode}
               type="text"
               id="postal-code"
+              name="postalCode"
               placeholder={postCodePlaceholder}
               onFocus={onInputFocus}
               onBlur={onInputBlur}
@@ -169,6 +188,7 @@ class ContactForm extends React.Component {
               error={errors.postalCode}
               className={s.contactFormInput}
               inputClassName={s.postalCodeInput}
+              InputComponent={this.renderPostalCodeInput}
             />
 
           </div>
@@ -207,6 +227,7 @@ ContactForm.defaultProps = {
   firstSectionClassName: '',
   secondSectionClassName: '',
   withCountryFlag: true,
+  renderInput: () => null,
 };
 
 ContactForm.propTypes = {
@@ -238,6 +259,7 @@ ContactForm.propTypes = {
   firstSectionClassName: PropTypes.string,
   secondSectionClassName: PropTypes.string,
   withCountryFlag: PropTypes.bool,
+  renderInput: PropTypes.func,
 };
 
 export default ContactForm;
