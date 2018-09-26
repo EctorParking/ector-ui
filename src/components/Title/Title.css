@@ -4,7 +4,7 @@
   margin-bottom: var(--marginLarge);
 }
 
-.title h1 {
+.title .element {
   color: var(--deepBlue);
   font-size: var(--fontSizeTitle);
   font-weight: var(--fontWeightRegular);
@@ -12,7 +12,7 @@
   margin: 0 0 var(--marginSmall);
 }
 
-.title hr {
+.title .horizontalRule {
   border: 0;
   border-top: 2px solid var(--blue);
   margin: 0;
