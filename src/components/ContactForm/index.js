@@ -42,13 +42,13 @@ class ContactForm extends React.Component {
   }
 
   renderGenderPicker = () => {
-    const { values: { gender } } = this.props;
+    const { values: { title } } = this.props;
 
     return (
       <GenderPicker
         genders={this.genders}
         onSelect={this.handleChangeGender}
-        selected={gender || ''}
+        selected={title || ''}
         className={s.genderPickerInputs}
       />
     );
@@ -234,7 +234,7 @@ ContactForm.propTypes = {
   texts: TextsType,
   onChangeProperty: PropTypes.func,
   values: PropTypes.shape({
-    gender: PropTypes.oneOf(['male', 'female', null, '']),
+    title: PropTypes.oneOf(['male', 'female', null, '']),
     firstname: PropTypes.string,
     lastname: PropTypes.string,
     email: PropTypes.string,
@@ -242,7 +242,7 @@ ContactForm.propTypes = {
     postalCode: PropTypes.string,
   }),
   errors: PropTypes.shape({
-    gender: PropTypes.string,
+    title: PropTypes.string,
     firstname: PropTypes.string,
     lastname: PropTypes.string,
     email: PropTypes.string,
