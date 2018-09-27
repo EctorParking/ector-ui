@@ -7,8 +7,8 @@ import s from './RideSummary.css';
 const RideSummary = ({ texts, className }) => (
   <div className={`${s.rideSummary} ${className}`}>
     <p className={s.rideSummaryTitle}>{texts.title}</p>
-    <p>{texts.date}</p>
-    <p>{texts.spot}</p>
+    <p className={s.rideSummaryText}>{texts.date}</p>
+    <p className={s.rideSummaryText}>{texts.spot}</p>
   </div>
 );
 

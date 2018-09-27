@@ -1,0 +1,28 @@
+@import '../../style/variable.css';
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+}
+
+.summaryRow p {
+  margin: 0;
+}
+
+.bold {
+  font-weight: var(--fontWeightBold);
+}
+
+.bigText {
+  text-transform: uppercase;
+  font-weight: var(--fontWeightBold);
+}
+
+.bigPrice {
+  font-size: var(--fontSizeTotalPrice);
+}
+
+.price {
+  font-size: var(--fontSizeSubtitle);
+}

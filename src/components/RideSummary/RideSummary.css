@@ -3,14 +3,15 @@
 .rideSummary {
   display: flex;
   flex-direction: column;
-  height: 60px;
-}
-
-.rideSummary p {
-  margin: 0;
 }
 
 .rideSummaryTitle {
   color: var(--blue);
   font-size: var(--fontSizeSubtitle);
+  margin: 0;
+}
+
+.rideSummaryText {
+  margin: 0;
+  color: var(--deepBlue);
 }
