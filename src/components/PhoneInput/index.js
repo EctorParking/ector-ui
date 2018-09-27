@@ -23,13 +23,21 @@ class PhoneInput extends React.Component {
     }
   }
 
-  onCountryCodeChange(event) {
-    const { currentTarget: { value: countryCode } } = event;
-    const { countries } = this.props;
-    const country = countries.find(option => option.value === countryCode);
+    onCountryCodeChange(event) {
+        const { currentTarget: { value: countryCode } } = event;
+        const { countries, onChange } = this.props;
+        const { phone } = this.state;
+        const country = countries.find(option => option.value === countryCode);
 
-    this.setState({ country });
-  }
+        onChange({
+            ...event,
+            currentTarget: {
+                value: `${country.label}${phone}`,
+            },
+        });
+
+        this.setState({ country });
+    }
 
   onPhoneNumberChange(event) {
     const { onChange } = this.props;
