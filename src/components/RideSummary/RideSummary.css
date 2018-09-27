@@ -1,0 +1,16 @@
+@import '../../style/variable.css';
+
+.rideSummary {
+  display: flex;
+  flex-direction: column;
+  height: 60px;
+}
+
+.rideSummary p {
+  margin: 0;
+}
+
+.rideSummaryTitle {
+  color: var(--blue);
+  font-size: var(--fontSizeSubtitle);
+}

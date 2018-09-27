@@ -21,6 +21,7 @@ export { default as PhoneInput } from './PhoneInput';
 export { default as PricingSummary } from './PricingSummary';
 export { default as RadioButton } from './RadioButton';
 export { default as ReferralCard } from './ReferralCard';
+export { default as RideSummary } from './RideSummary';
 export { default as Select } from './Select';
 export { default as ServiceCard } from './ServiceCard';
 export { default as Subtitle } from './Subtitle';
