@@ -47,6 +47,7 @@ const Card = ({
   footerClassName,
   LabelComponent,
   testid,
+  FooterComponent,
 }) => {
   const isClickable = typeof onClick === 'function' && !isSelected;
 
@@ -79,6 +80,7 @@ const Card = ({
           FooterChildren={FooterChildren}
         />
       }
+      <FooterComponent className={s.card_footer} />
     </div>
   );
 };
@@ -93,6 +95,7 @@ Card.defaultProps = {
   footerClassName: '',
   testid: '',
   LabelComponent: () => null,
+  FooterComponent: () => null,
 };
 
 Card.propTypes = {
@@ -109,6 +112,7 @@ Card.propTypes = {
   footerClassName: PropTypes.string,
   testid: PropTypes.string,
   LabelComponent: PropTypes.func,
+  FooterComponent: PropTypes.func,
 };
 
 

@@ -54,6 +54,19 @@ class ContactForm extends React.Component {
     );
   };
 
+  renderFooter = (footerProps) => {
+    const { FooterComponent, texts, onSubmit } = this.props;
+
+    if (FooterComponent(footerProps)) {
+      return FooterComponent(footerProps);
+    }
+    return (
+      <div className={[s.footer, footerProps.className].join(' ')}>
+        <LinkUnderlined onClick={onSubmit}>{texts.addDriver}</LinkUnderlined>
+      </div>
+    );
+  };
+
   render() {
     const {
       texts,
@@ -63,7 +76,6 @@ class ContactForm extends React.Component {
       onInputFocus,
       errors,
       labelPosition,
-      onSubmit,
       countries,
       contentClassName,
       firstSectionClassName,
@@ -72,7 +84,6 @@ class ContactForm extends React.Component {
       ...cardProps
     } = this.props;
     const {
-      addDriver,
       newDriver,
       civility,
       firstName,
@@ -86,17 +97,11 @@ class ContactForm extends React.Component {
       postCodePlaceholder,
     } = texts;
 
-    const footer = (
-      <div className={s.footer}>
-        <LinkUnderlined onClick={onSubmit}>{addDriver}</LinkUnderlined>
-      </div>
-    );
-
     return (
       <Card
-        FooterChildren={footer}
-        isSelected={selected}
         {...cardProps}
+        isSelected={selected}
+        FooterComponent={this.renderFooter}
       >
         <CardTitle className={!newDriver ? s.hidden : ''}>{newDriver}</CardTitle>
 
@@ -228,6 +233,7 @@ ContactForm.defaultProps = {
   secondSectionClassName: '',
   withCountryFlag: true,
   renderInput: () => null,
+  FooterComponent: () => null,
 };
 
 ContactForm.propTypes = {
@@ -260,6 +266,7 @@ ContactForm.propTypes = {
   secondSectionClassName: PropTypes.string,
   withCountryFlag: PropTypes.bool,
   renderInput: PropTypes.func,
+  FooterComponent: PropTypes.func,
 };
 
 export default ContactForm;
