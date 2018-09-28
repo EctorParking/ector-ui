@@ -6,23 +6,13 @@
   margin: 5px 0;
 }
 
-.summaryRow p {
+.summaryRowText {
+  color: var(--deepBlue);
+  font-size: var(--fontSizeRegular);
   margin: 0;
 }
 
-.bold {
-  font-weight: var(--fontWeightBold);
-}
-
-.bigText {
-  text-transform: uppercase;
-  font-weight: var(--fontWeightBold);
-}
-
-.bigPrice {
-  font-size: var(--fontSizeTotalPrice);
-}
-
-.price {
+.summaryRowPrice {
+  margin: 0;
   font-size: var(--fontSizeSubtitle);
 }

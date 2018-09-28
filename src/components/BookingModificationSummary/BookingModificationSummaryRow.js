@@ -4,23 +4,20 @@ import PropTypes from 'prop-types';
 import s from './BookingModificationSummaryRow.css';
 
 const BookingModificationSummaryRow = ({
-  text, price, isExtra, bold, total, className,
-}) => {
-  let textClassName = total ? `${s.bigText}` : '';
-  textClassName += bold ? ` ${s.bold}` : '';
-
-  return (
-    <div className={`${s.summaryRow} ${className}`}>
-      <p className={textClassName}>{text}</p>
-      <p className={total ? s.bigPrice : s.price}>{isExtra ? '+' : ''}{parseFloat(price).toFixed(2)}€</p>
-    </div>
-  );
-};
+  text, price, isExtra, className, textClassName, priceClassName,
+}) => (
+  <div className={`${s.summaryRow} ${className}`}>
+    <p className={`${s.summaryRowText} ${textClassName}`}>{text}</p>
+    <p className={`${s.summaryRowPrice} ${priceClassName}`}>
+      {isExtra ? '+' : ''}{parseFloat(price).toFixed(2)}€
+    </p>
+  </div>
+);
 
 BookingModificationSummaryRow.defaultProps = {
   isExtra: false,
-  bold: false,
-  total: false,
+  textClassName: '',
+  priceClassName: '',
   className: '',
 };
 
@@ -28,8 +25,8 @@ BookingModificationSummaryRow.propTypes = {
   text: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   isExtra: PropTypes.bool,
-  bold: PropTypes.bool,
-  total: PropTypes.bool,
+  textClassName: PropTypes.string,
+  priceClassName: PropTypes.string,
   className: PropTypes.string,
 };
 

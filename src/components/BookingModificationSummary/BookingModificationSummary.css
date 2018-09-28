@@ -16,3 +16,16 @@
 .totalSummaryRow > .price {
   font-size: var(--fontSizeSubtitle);
 }
+
+.bold {
+  font-weight: var(--fontWeightBold);
+}
+
+.bigText {
+  text-transform: uppercase;
+  font-weight: var(--fontWeightBold);
+}
+
+.bigPrice {
+  font-size: var(--fontSizeTotalPrice);
+}

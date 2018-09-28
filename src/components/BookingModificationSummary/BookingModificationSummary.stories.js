@@ -26,7 +26,7 @@ storiesOf('BookingModificationSummary', module)
   .add('with knobs', () => {
     const props = {
       texts: object('Texts', defaultTexts),
-      bookingModificationSummaryPrice,
+      bookingModificationSummaryPrice: object('Booking modifications', bookingModificationSummaryPrice),
     };
 
     return (<BookingModificationSummary {...props} />);
