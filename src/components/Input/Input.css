@@ -12,8 +12,8 @@
   margin-top: 0.25rem;
 
   &::placeholder {
-    opacity: 0.3;
-    color: var(--metalGrey)
+    opacity: 0.8;
+    color: var(--metalGrey);
   }
 
   &:focus {
