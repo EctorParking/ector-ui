@@ -54,14 +54,14 @@ class ContactForm extends React.Component {
     );
   };
 
-  renderFooter = ({ className }) => {
+  renderFooter = (footerProps) => {
     const { FooterComponent, texts, onSubmit } = this.props;
 
-    if (FooterComponent()) {
-      return FooterComponent;
+    if (FooterComponent(footerProps)) {
+      return FooterComponent(footerProps);
     }
     return (
-      <div className={[s.footer, className].join(' ')}>
+      <div className={[s.footer, footerProps.className].join(' ')}>
         <LinkUnderlined onClick={onSubmit}>{texts.addDriver}</LinkUnderlined>
       </div>
     );
