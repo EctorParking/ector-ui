@@ -1,37 +1,38 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import BookingModificationSummaryRow from './BookingModificationSummaryRow';
-import RideSummaryTextType, { defaultTexts } from './BookingModificationSummaryTextsType';
+import bookingModificationSummaryTextType, { defaultTexts } from './BookingModificationSummaryTextsType';
+import BookingModificationSummaryPriceType from './BookingModificationSummaryPriceType';
 
 import s from './BookingModificationSummary.css';
 
-const BookingModificationSummary = ({ texts, className }) => (
+const BookingModificationSummary = ({ texts, className, bookingModificationSummaryPrice }) => (
   <div className={`${s.bookingModificationSummaryContainer} ${className}`}>
     <BookingModificationSummaryRow
-      price={39}
-      text="Prix initial"
+      price={bookingModificationSummaryPrice.initialPrice}
+      text={texts.initialPrice}
       bold
     />
     <hr className={s.horizontalRule} />
     <BookingModificationSummaryRow
-      price={10}
-      text="Durée de stationnement supplémentaire"
+      price={bookingModificationSummaryPrice.parkingFee}
+      text={texts.parkingFee}
       isExtra
     />
     <BookingModificationSummaryRow
-      price={15}
-      text="Acheminement"
+      price={bookingModificationSummaryPrice.routingFee}
+      text={texts.routingFee}
       isExtra
     />
     <BookingModificationSummaryRow
-      price={10}
-      text="Frais de dossier*"
+      price={bookingModificationSummaryPrice.administrativeFee}
+      text={texts.administrativeFee}
       isExtra
     />
     <hr className={s.horizontalRule} />
     <BookingModificationSummaryRow
-      price={35}
-      text="Total reste à payer"
+      price={bookingModificationSummaryPrice.leftToPay}
+      text={texts.leftToPay}
       total
     />
   </div>
@@ -43,8 +44,9 @@ BookingModificationSummary.defaultProps = {
 };
 
 BookingModificationSummary.propTypes = {
-  texts: RideSummaryTextType,
+  texts: bookingModificationSummaryTextType,
   className: PropTypes.string,
+  bookingModificationSummaryPrice: BookingModificationSummaryPriceType.isRequired,
 };
 
 export default BookingModificationSummary;

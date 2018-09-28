@@ -1,15 +1,19 @@
 import PropTypes from 'prop-types';
 
 export default PropTypes.shape({
-  title: PropTypes.string,
-  date: PropTypes.string,
-  spot: PropTypes.string,
+  initialPrice: PropTypes.string,
+  routingFee: PropTypes.string,
+  parkingFee: PropTypes.string,
+  administrativeFee: PropTypes.string,
+  leftToPay: PropTypes.string,
 });
 
 const defaultTexts = {
-  title: 'Aller',
-  date: 'Mer. 26 septembre 2018 à 12:00',
-  spot: 'Roissy CDG T1',
+  initialPrice: 'Prix initial',
+  routingFee: 'Acheminement',
+  parkingFee: 'Durée de stationnement supplémentaire',
+  administrativeFee: 'Frais de dossier*',
+  leftToPay: 'Total reste à payer',
 };
 
 export { defaultTexts };
