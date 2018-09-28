@@ -1,0 +1,31 @@
+@import '../../style/variable.css';
+
+.bookingModificationSummaryContainer {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.horizontalRule {
+  border: 0;
+  border-top: 2px solid var(--deepBlue);
+  margin: 8px 0;
+  width: 100%;
+}
+
+.totalSummaryRow > .price {
+  font-size: var(--fontSizeSubtitle);
+}
+
+.bold {
+  font-weight: var(--fontWeightBold);
+}
+
+.bigText {
+  text-transform: uppercase;
+  font-weight: var(--fontWeightBold);
+}
+
+.bigPrice {
+  font-size: var(--fontSizeTotalPrice);
+}

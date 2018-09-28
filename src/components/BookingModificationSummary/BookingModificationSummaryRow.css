@@ -1,0 +1,18 @@
+@import '../../style/variable.css';
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+}
+
+.summaryRowText {
+  color: var(--deepBlue);
+  font-size: var(--fontSizeRegular);
+  margin: 0;
+}
+
+.summaryRowPrice {
+  margin: 0;
+  font-size: var(--fontSizeSubtitle);
+}
