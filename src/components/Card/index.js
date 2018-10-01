@@ -70,7 +70,7 @@ const Card = ({
           HeaderChildren={HeaderChildren}
         />
       }
-      {React.createElement(LabelComponent, { className: s.label })}
+      <LabelComponent className={s.label} />
       <div className={`${s.card_content} ${contentClassName}`}>
         { children }
       </div>

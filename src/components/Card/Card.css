@@ -39,6 +39,8 @@
   background-color: transparent;
   height: 3rem;
   position: relative;
+  display: inline-flex;
+  justify-content: flex-end;
 }
 
 .label {
