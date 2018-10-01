@@ -39,6 +39,9 @@
   background-color: transparent;
   height: 3rem;
   position: relative;
+}
+
+.footerComponent {
   display: inline-flex;
   justify-content: flex-end;
 }

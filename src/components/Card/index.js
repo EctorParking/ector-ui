@@ -80,7 +80,7 @@ const Card = ({
           FooterChildren={FooterChildren}
         />
       }
-      <FooterComponent className={s.card_footer} />
+      <FooterComponent className={`${s.card_footer} ${s.footerComponent}`} />
     </div>
   );
 };
