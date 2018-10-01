@@ -57,7 +57,9 @@ class ContactForm extends React.Component {
   renderFooter = (footerProps) => {
     const { FooterComponent, texts, onSubmit } = this.props;
 
-    if (FooterComponent(footerProps)) {
+    if (FooterComponent === null) {
+      return null;
+    } else if (typeof FooterComponent === 'function' && FooterComponent(footerProps)) {
       return FooterComponent(footerProps);
     }
     return (
