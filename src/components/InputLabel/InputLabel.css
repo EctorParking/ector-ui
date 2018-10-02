@@ -32,3 +32,7 @@
 .mandatory {
   font-weight: var(--fontWeightBold);
 }
+
+.mandatory:after {
+  content: '*';
+}

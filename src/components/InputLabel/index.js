@@ -17,6 +17,7 @@ const InputLabel = ({
   left,
   children,
   InputComponent,
+  LabelComponent,
   inputContainerClassName,
   ...inputProps
 }) => {
@@ -24,12 +25,18 @@ const InputLabel = ({
 
   return (
     <div className={[s.container, left ? s.left : '', className].join(' ')}>
-      <label
-        htmlFor={id}
-        className={[labelClassName, s.label].join(' ')}
-      >
-        {`${label}${mandatory ? '*' : ''}`}
-      </label>
+      {
+        LabelComponent !== null && typeof LabelComponent === 'function' && LabelComponent() ? (
+          <LabelComponent className={labelClassName} />
+        ) : (
+          <label
+            htmlFor={id}
+            className={[labelClassName, s.label].join(' ')}
+          >
+            {label}
+          </label>
+        )
+      }
 
       <div className={[s.inputContainer, inputContainerClassName].join(' ')}>
         {
@@ -66,6 +73,7 @@ InputLabel.defaultProps = {
   left: false,
   children: null,
   InputComponent: null,
+  LabelComponent: null,
   type: 'text',
   inputContainerClassName: '',
 };
@@ -83,6 +91,7 @@ InputLabel.propTypes = {
   left: PropTypes.bool,
   children: PropTypes.node,
   InputComponent: PropTypes.func,
+  LabelComponent: PropTypes.func,
 };
 
 export default InputLabel;
