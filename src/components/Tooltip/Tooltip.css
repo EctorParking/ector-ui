@@ -1,0 +1,67 @@
+@import '../../style/variable.css';
+
+.tooltipContainer {
+    font-size: var(--iconFontSize);
+    height: 30px;
+    width: 30px;
+    position: relative;
+    &:hover {
+        &>.tooltipText {
+             visibility: visible;
+         }
+    }
+}
+
+.tooltipContainer > i:before {
+    color: var(--deepBlue) !important;
+}
+
+.tooltipText {
+    visibility: hidden;
+    display: block;
+    position: absolute;
+    z-index: 1;
+    padding: var(--marginXSmall);
+    border-radius: var(--borderRadius);
+    text-align: center;
+    background-color: var(--deepBlue);
+    color: var(--white);
+    font-size: var(--fontSizeRegular);
+}
+
+.right {
+    transform: translateY(-50%);
+    left: 35px;
+    top: 15px;
+}
+
+.left {
+    transform: translateY(-50%) translateX(-100%);
+    top: 15px;
+    left: -5px;
+}
+
+.bottom {
+    transform: translateX(-50%);
+    left: 15px;
+    top: 35px;
+}
+
+.top {
+    transform: translateX(-50%) translateY(-100%);
+    left: 15px;
+    top: -5px;
+}
+
+.small {
+    width: 100px;
+}
+
+.medium {
+    width: 200px;
+}
+
+.large {
+    width: 400px;
+
+}
