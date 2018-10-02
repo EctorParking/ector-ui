@@ -13,3 +13,10 @@
 .pendingDeletion p {
   text-align: center;
 }
+
+.contactCard {
+  min-width: 15rem;
+  min-height: 11rem;
+  max-width: 15rem;
+  min-height: 11rem;
+}
