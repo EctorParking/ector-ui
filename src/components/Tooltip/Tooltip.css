@@ -2,14 +2,17 @@
 
 .tooltipContainer {
     font-size: var(--iconFontSize);
-    height: 30px;
-    width: 30px;
+    text-align: center;
     position: relative;
     &:hover {
         &>.tooltipText {
              visibility: visible;
          }
     }
+}
+
+.tooltipContainer > i {
+    font-size: var(--fontSizeRegular);
 }
 
 .tooltipContainer > i:before {
@@ -31,37 +34,37 @@
 
 .right {
     transform: translateY(-50%);
-    left: 35px;
-    top: 15px;
+    left: 24px;
+    top: 12px;
 }
 
 .left {
     transform: translateY(-50%) translateX(-100%);
-    top: 15px;
-    left: -5px;
+    top: 12px;
+    left: -8px;
 }
 
 .bottom {
     transform: translateX(-50%);
-    left: 15px;
-    top: 35px;
+    left: 8px;
+    top: 30px;
 }
 
 .top {
     transform: translateX(-50%) translateY(-100%);
-    left: 15px;
-    top: -5px;
+    left: 8px;
+    top: -8px;
 }
 
 .small {
-    width: 100px;
-}
-
-.medium {
     width: 200px;
 }
 
-.large {
+.medium {
     width: 400px;
+}
+
+.large {
+    width: 600px;
 
 }
