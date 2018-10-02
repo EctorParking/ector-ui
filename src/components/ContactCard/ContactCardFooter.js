@@ -4,18 +4,10 @@ import LinkUnderlined from '../LinkUnderlined';
 import s from './ContactCardFooter.css';
 import ContactCardTextsType from './ContactCardTextsType';
 import ContactType from './ContactType';
-import maleImage from '../../images/avatar-man.svg';
-import femaleImage from '../../images/avatar-woman.svg';
-
-const avatars = {
-  male: maleImage,
-  female: femaleImage,
-};
 
 const ContactCardFooter = ({
   texts, contact, mode, onClick, onSubmit, id,
 }) => {
-  const { title } = contact;
   let what;
 
   if (mode.indexOf('delete') === 0) {
@@ -40,11 +32,6 @@ const ContactCardFooter = ({
 
   return (
     <div className={s.footer} id={id}>
-      <img
-        src={avatars[title]}
-        className={s.genderImage}
-        alt={title}
-      />
       {what}
     </div>
   );
