@@ -3,13 +3,11 @@
 .footer {
   align-items: flex-end;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 0 2rem;
+  height: 2rem;
 }
-.genderImage {
-  margin-top: -1.3em;
-  width: 50px;
-}
+
 .checkIcon {
   color: var(--white);
   font-size: var(--fontSizeSubtitle);
