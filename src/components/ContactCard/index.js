@@ -99,6 +99,7 @@ const ContactCard = ({
     <Card
       FooterChildren={footer}
       isSelected={selected}
+      className={s.contactCard}
       contentClassName={[pendingModification ? s.pendingModification : '', pendingDeletion ? s.pendingDeletion : ''].join(' ')}
       {...cardProps}
     >
