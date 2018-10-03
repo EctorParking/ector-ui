@@ -18,7 +18,7 @@ const RadioButton = ({
   >
     <input
       type="radio"
-      defaultChecked={checked}
+      checked={checked}
       required={required}
       name={name}
       value={value}
