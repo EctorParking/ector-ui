@@ -21,7 +21,7 @@ const PaymentMethodCardFooter = ({
 );
 
 PaymentMethodCardFooter.defaultProps = {
-  className: '',
+  className: undefined,
 };
 
 PaymentMethodCardFooter.propTypes = {

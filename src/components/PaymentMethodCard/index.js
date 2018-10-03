@@ -15,7 +15,7 @@ class PaymentMethodCard extends React.Component {
     } = this.props;
 
     if (typeof FooterComponent === 'function') {
-      return FooterComponent();
+      return FooterComponent(footerProps);
     }
     return (
       <PaymentMethodCardFooter
