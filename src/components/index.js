@@ -29,3 +29,4 @@ export { default as Subtitle } from './Subtitle';
 export { default as Title } from './Title';
 export { default as TitleStep } from './TitleStep';
 export { default as Tooltip } from './Tooltip';
+export { default as PaymentMethodCard } from './PaymentMethodCard';

@@ -1,0 +1,27 @@
+@import '../../style/variable.css';
+
+.card {
+  position: relative;
+}
+
+.cardContent {
+  padding: var(--marginSmall);
+  justify-content: center;
+}
+
+.header {
+  position: absolute;
+  width: 100%;
+  top: var(--marginMedium);
+  right: var(--marginMedium);
+}
+
+.pendingDeletion {
+  background-color: var(--lightGrey);
+  justify-content: center;
+  padding: var(--marginMedium);
+}
+
+.footer {
+  display: block;
+}

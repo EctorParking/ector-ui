@@ -1,0 +1,13 @@
+@import '../../style/variable.css';
+
+.container {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  align-items: center;
+}
+
+.checkIcon {
+  color: var(--white);
+  font-size: var(--fontSizeSubtitle);
+}
