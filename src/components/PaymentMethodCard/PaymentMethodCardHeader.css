@@ -1,0 +1,21 @@
+@import '../../style/variable.css';
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: var(--fontSizeSubtitle);
+}
+
+.icon {
+  -webkit-text-fill-color: var(--blue);
+  fill: var(--blue);
+}
+
+.button {
+  background: none;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
