@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 import Colors, { ColorPropsType } from './Colors';
 
 import s from './ColorPicker.css';
+import { Tooltip } from '../';
 
 class ColorPicker extends PureComponent {
   renderColorBadge = (color, index) => {
     const {
-      onSelect, tooltipClassName, showTooltip, value, badgeClassName,
+      onSelect, tooltipClassName, showTooltip, value, badgeClassName, tooltipSize,
     } = this.props;
     const tooltipContainerClassName = showTooltip ? s.tooltip : '';
     const badgeClassNames = [
@@ -18,17 +19,22 @@ class ColorPicker extends PureComponent {
     ];
 
     return (
-      <div className={tooltipContainerClassName} key={color.hexadecimalCode}>
-        <button
-          key={`color-${color.label}`}
-          className={badgeClassNames.join(' ')}
-          style={{ backgroundColor: color.hexadecimalCode }}
-          title={color.label}
-          onClick={() => onSelect(color)}
-          id={`color${index}`}
-        />
-        <span className={[s.tooltipText, tooltipClassName].join(' ')}>{color.label}</span>
-      </div>
+      <Tooltip
+        text={color.label}
+        className={tooltipContainerClassName}
+        tooltipClassName={[s.tooltipText, tooltipClassName].join(' ')}
+        tooltipSize={tooltipSize}
+        IconComponent={() => (
+          <button
+            key={`color-${color.label}`}
+            className={badgeClassNames.join(' ')}
+            style={{ backgroundColor: color.hexadecimalCode }}
+            title={color.label}
+            onClick={() => onSelect(color)}
+            id={`color${index}`}
+          />
+        )}
+      />
     );
   };
 
@@ -53,12 +59,14 @@ ColorPicker.defaultProps = {
   value: '',
   badgeClassName: '',
   testid: '',
+  tooltipSize: 'xSmall',
 };
 
 ColorPicker.propTypes = {
   showTooltip: PropTypes.bool,
   badgeClassName: PropTypes.string,
   tooltipClassName: PropTypes.string,
+  tooltipSize: PropTypes.oneOf(['xSmall', 'small', 'medium', 'large']),
   className: PropTypes.string,
   colorsList: PropTypes.arrayOf(ColorPropsType),
   onSelect: PropTypes.func.isRequired,
