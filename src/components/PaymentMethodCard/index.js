@@ -5,12 +5,18 @@ import TextsType, { DefaultTexts } from './PaymentmethodTextsType';
 import PaymentMethodType from './PaymentMethodType';
 import PaymentMethodCardContent from './PaymentMethodCardContent';
 import PaymentMethodCardFooter from './PaymentMethodCardFooter';
+import PaymentMethodCardHeader from './PaymentMethodCardHeader';
 import { Card } from '..';
 
 class PaymentMethodCard extends React.Component {
   renderFooter = (footerProps) => {
-    const { texts, onClick, selected } = this.props;
+    const {
+      texts, onClick, selected, FooterComponent,
+    } = this.props;
 
+    if (typeof FooterComponent === 'function') {
+      return FooterComponent();
+    }
     return (
       <PaymentMethodCardFooter
         {...footerProps}
@@ -23,19 +29,42 @@ class PaymentMethodCard extends React.Component {
 
   render() {
     const {
-      selected, children, paymentMethod, texts, ...cardProps
+      selected,
+      children,
+      paymentMethod,
+      texts,
+      pendingDeletion,
+      onConfirmDeletion,
+      onCancelDeletion,
+      deletable,
+      onDelete,
+      contentClassName,
+      className,
+      ...cardProps
     } = this.props;
+    const cardContentProps = {
+      paymentMethod, texts, pendingDeletion, onConfirmDeletion, onCancelDeletion,
+    };
+    const cardHeaderProps = {
+      onDelete, texts, pendingDeletion,
+    };
 
     return (
       <Card
         {...cardProps}
+        className={[s.card, className].join(' ')}
         FooterComponent={this.renderFooter}
         isSelected={selected}
-        contentClassName={s.card}
+        contentClassName={[s.cardContent, pendingDeletion ? s.pendingDeletion : undefined, contentClassName].join(' ')}
       >
         {
+          deletable && (
+            <PaymentMethodCardHeader {...cardHeaderProps} className={s.header} />
+          )
+        }
+        {
           children === null ? (
-            <PaymentMethodCardContent paymentMethod={paymentMethod} texts={texts} />
+            <PaymentMethodCardContent {...cardContentProps} />
           ) : children
         }
       </Card>
@@ -55,6 +84,8 @@ PaymentMethodCard.defaultProps = {
   children: null,
   idPrefix: 'paymentMethodCard',
   className: undefined,
+  FooterComponent: undefined,
+  contentClassName: undefined,
 };
 
 PaymentMethodCard.propTypes = {
@@ -70,6 +101,8 @@ PaymentMethodCard.propTypes = {
   idPrefix: PropTypes.string,
   children: PropTypes.node,
   className: PropTypes.string,
+  FooterComponent: PropTypes.func,
+  contentClassName: PropTypes.string,
 };
 
 export default PaymentMethodCard;

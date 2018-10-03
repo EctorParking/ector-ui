@@ -22,11 +22,13 @@ storiesOf('PaymentMethodCard', module)
         type: 'card',
         expireAt: '10/19',
       }),
-      texts: DefaultTexts,
+      texts: object('Texts', DefaultTexts),
       selected: boolean('Selected', false),
+      deletable: boolean('Deletable', true),
+      pendingDeletion: boolean('Pending deletion', false),
     };
 
     return (
-      <PaymentMethodCard {...props} />
+      <PaymentMethodCard {...props} FooterComponent={() => null} />
     );
   });
