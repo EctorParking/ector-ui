@@ -1,0 +1,9 @@
+@import '../../style/variable.css';
+
+.card {
+  padding: var(--marginSmall);
+}
+
+.footer {
+  display: block;
+}

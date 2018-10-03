@@ -1,0 +1,12 @@
+@import '../../style/variable.css';
+
+.content {
+  display: block;
+  color: var(--deepBlue);
+  text-align: center;
+}
+
+.brandIcon {
+  width: 150px;
+  align-self: center;
+}
