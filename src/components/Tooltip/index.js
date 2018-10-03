@@ -9,12 +9,13 @@ const Tooltip = ({
   className,
   tooltipClassName,
   position,
-  tooltipWidth,
+  tooltipSize,
+  IconComponent,
 }) => {
   const computedTooltipClassName = [
     s.tooltipText,
     s[position],
-    s[tooltipWidth],
+    s[tooltipSize],
     tooltipClassName,
   ];
 
@@ -22,7 +23,13 @@ const Tooltip = ({
     <div
       className={[s.tooltipContainer, className].join(' ')}
     >
-      <i className={iconClassName} />
+      {
+        IconComponent !== null && typeof IconComponent === 'function' && IconComponent() ? (
+          <IconComponent />
+        ) : (
+          <i className={iconClassName} />
+        )
+      }
       <span className={computedTooltipClassName.join(' ')}>{text}</span>
     </div>
   );
@@ -32,16 +39,19 @@ Tooltip.defaultProps = {
   className: '',
   tooltipClassName: '',
   position: 'bottom',
-  tooltipWidth: 'medium',
+  tooltipSize: 'medium',
+  IconComponent: null,
+  iconClassName: '',
 };
 
 Tooltip.propTypes = {
-  iconClassName: PropTypes.string.isRequired,
+  iconClassName: PropTypes.string,
   text: PropTypes.string.isRequired,
   className: PropTypes.string,
   tooltipClassName: PropTypes.string,
-  position: PropTypes.string,
-  tooltipWidth: PropTypes.string,
+  position: PropTypes.oneOf(['left', 'top', 'right', 'bottom']),
+  tooltipSize: PropTypes.oneOf(['xSmall', 'small', 'medium', 'large']),
+  IconComponent: PropTypes.func,
 };
 
 
