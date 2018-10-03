@@ -9,4 +9,5 @@
 .brandIcon {
   width: 150px;
   align-self: center;
+  margin-bottom: var(--marginSmall);
 }

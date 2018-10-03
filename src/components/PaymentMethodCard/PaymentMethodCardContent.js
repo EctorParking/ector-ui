@@ -1,41 +1,24 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+import PaymentMethodCardContentRead from './PaymentMethodCardContentRead';
+import PaymentMethodCardContentDelete from './PaymentMethodCardContentDelete';
 import PaymentMethodType from './PaymentMethodType';
 import PaymentMethodTextsType from './PaymentmethodTextsType';
-import iconVisa from '../../images/visa.svg';
-import iconAmerican from '../../images/amercan-express.svg';
-import iconCb from '../../images/cb.svg';
-import iconMastercard from '../../images/mastercard.svg';
-import s from './PaymentMethodCardContent.css';
 
-const creditCardBrandIcons = {
-  visa: iconVisa,
-  american: iconAmerican,
-  cb: iconCb,
-  mastercard: iconMastercard,
-};
-
-const PaymentMethodCardContent = ({ paymentMethod, texts }) => (
-  <Fragment>
-    {
-      paymentMethod.type === 'card' && (
-        <img
-          className={s.brandIcon}
-          src={creditCardBrandIcons[paymentMethod.brand]}
-          alt={paymentMethod.brand}
-        />
-      )
-    }
-    <span className={s.content}>
-      &#183;&#183;&#183;&#183;&nbsp;&#183;&#183;&#183;&#183;&nbsp;&#183;&#183;&#183;&#183;&nbsp;
-      {paymentMethod.last4digits}
-    </span>
-    <span className={s.content}>{texts.expireAt}&nbsp;:&nbsp;{paymentMethod.expireAt}</span>
-  </Fragment>
+const PaymentMethodCardContent = ({ pendingDeletion, ...contentProps }) => (
+  pendingDeletion ? (
+    <PaymentMethodCardContentDelete {...contentProps} />
+  ) : (
+    <PaymentMethodCardContentRead {...contentProps} />
+  )
 );
 
 PaymentMethodCardContent.propTypes = {
   paymentMethod: PaymentMethodType.isRequired,
   texts: PaymentMethodTextsType.isRequired,
+  pendingDeletion: PropTypes.bool.isRequired,
+  onConfirmDeletion: PropTypes.func.isRequired,
+  onCancelDeletion: PropTypes.func.isRequired,
 };
 
 export default PaymentMethodCardContent;
