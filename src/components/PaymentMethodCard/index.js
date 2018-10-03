@@ -14,7 +14,9 @@ class PaymentMethodCard extends React.Component {
       texts, onClick, selected, FooterComponent,
     } = this.props;
 
-    if (typeof FooterComponent === 'function') {
+    if (typeof FooterComponent !== 'undefined' && !FooterComponent) {
+      return null;
+    } else if (typeof FooterComponent === 'function') {
       return FooterComponent(footerProps);
     }
     return (
