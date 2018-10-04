@@ -25,7 +25,7 @@ storiesOf('LoginForm', module)
       }),
       errors: object('Form errors', {
         email: '',
-        phone: '',
+        password: '',
       }),
     };
 

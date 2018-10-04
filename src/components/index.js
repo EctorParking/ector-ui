@@ -30,3 +30,4 @@ export { default as Title } from './Title';
 export { default as TitleStep } from './TitleStep';
 export { default as Tooltip } from './Tooltip';
 export { default as PaymentMethodCard } from './PaymentMethodCard';
+export { default as LoginForm } from './LoginForm';
