@@ -9,6 +9,7 @@ const RadioButton = ({
   label,
   onSelect,
   className,
+  labelClassName,
   ...restOfProps
 }) => (
   <label
@@ -24,13 +25,14 @@ const RadioButton = ({
       {...restOfProps}
     />
 
-    <span>{label}</span>
+    <span className={labelClassName}>{label}</span>
   </label>
 );
 
 RadioButton.defaultProps = {
   onSelect: () => {},
   className: '',
+  labelClassName: '',
 };
 
 RadioButton.propTypes = {
@@ -39,6 +41,7 @@ RadioButton.propTypes = {
   label: PropTypes.string.isRequired,
   onSelect: PropTypes.func,
   className: PropTypes.string,
+  labelClassName: PropTypes.string,
 };
 
 export default RadioButton;

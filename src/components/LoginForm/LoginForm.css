@@ -1,0 +1,19 @@
+@import '../../style/variable.css';
+
+.card {
+  width: 400px;
+}
+
+.contentCard {
+  align-items: flex-start;
+  padding: 1rem 2rem;
+}
+
+.input {
+  margin-bottom: var(--marginSmall);
+  width: 100%;
+}
+
+.button {
+  margin: var(--marginSmall) 0;
+}
