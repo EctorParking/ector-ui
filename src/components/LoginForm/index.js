@@ -18,8 +18,9 @@ const LoginForm = ({
   passwordInputClassName,
   contentClassName,
   buttonClassName,
+  ...cardProps
 }) => (
-  <Card className={[s.card, className].join(' ')} contentClassName={[s.contentCard, contentClassName].join(' ')}>
+  <Card {...cardProps} className={[s.card, className].join(' ')} contentClassName={[s.contentCard, contentClassName].join(' ')}>
     <InputLabel
       className={[s.input, emailInputClassName].join('')}
       label={texts.email}
