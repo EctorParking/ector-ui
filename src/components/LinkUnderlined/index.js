@@ -2,19 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import s from './LinkUnderlined.css';
-import { Loader } from '..';
 
 const LinkUnderlined = ({
-  children, onClick, testid, className, id, fetching, ...loaderProps
-}) => (fetching
-  ? (<Loader {...loaderProps} />)
-  : (
-    <div className={[s.link_underlined, className].join(' ')} id={id}>
-      <button testid={testid} onClick={onClick} id={id === LinkUnderlined.defaultProps.id ? '' : `${id}Button`}>
-        { children }
-      </button>
-    </div>
-  ));
+  children, onClick, testid, className, id, fetching,
+}) => (
+  <div className={[s.link_underlined, fetching ? s.link_underlined_fetching : undefined, className].join(' ')} id={id}>
+    <button
+      testid={testid}
+      onClick={onClick}
+      id={id === LinkUnderlined.defaultProps.id ? '' : `${id}Button`}
+      className={fetching ? s.fetching : undefined}
+    >
+      { children }
+    </button>
+  </div>
+);
 
 LinkUnderlined.defaultProps = {
   className: '',

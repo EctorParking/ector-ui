@@ -42,7 +42,7 @@ const LoginForm = ({
       onChange={onChangePassword}
       error={errors.password}
     />
-    <LinkUnderlined onClick={onSubmit} className={[s.button, buttonClassName].join(' ')} fetching={fetching} size="xSmall">
+    <LinkUnderlined onClick={onSubmit} className={[s.button, buttonClassName].join(' ')} fetching={fetching}>
       <span>{texts.submitButton}</span>
     </LinkUnderlined>
   </Card>
