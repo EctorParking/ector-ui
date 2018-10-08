@@ -2,11 +2,12 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import backgrounds from '@storybook/addon-backgrounds';
 import centered from '@storybook/addon-centered';
-import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import { withKnobs, select } from '@storybook/addon-knobs';
 
-import LinkUnderlined from './';
+import Loader from './';
 
-storiesOf('Link.Underlined', module)
+
+storiesOf('Loader', module)
 
   .addDecorator(backgrounds([
     { name: 'header', value: 'white', default: true },
@@ -16,9 +17,10 @@ storiesOf('Link.Underlined', module)
 
   .add('with knobs', () => {
     const props = {
-      children: text('Text', 'Nouveau conducteur'),
-      fetching: boolean('Fetching'),
+      size: select('Size', {
+        xSmall: 'xSmall', small: 'small', medium: 'medium', large: 'large',
+      }, 'medium'),
     };
 
-    return <LinkUnderlined {...props} />;
+    return <Loader {...props} />;
   });
