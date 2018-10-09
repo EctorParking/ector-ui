@@ -83,6 +83,7 @@ class ContactForm extends React.Component {
       firstSectionClassName,
       secondSectionClassName,
       withCountryFlag,
+      RootComponent,
       ...cardProps
     } = this.props;
     const {
@@ -100,7 +101,7 @@ class ContactForm extends React.Component {
     } = texts;
 
     return (
-      <Card
+      <RootComponent
         {...cardProps}
         isSelected={selected}
         FooterComponent={this.renderFooter}
@@ -197,10 +198,9 @@ class ContactForm extends React.Component {
               inputClassName={s.postalCodeInput}
               InputComponent={this.renderPostalCodeInput}
             />
-
           </div>
         </div>
-      </Card>
+      </RootComponent>
     );
   }
 }
@@ -236,6 +236,8 @@ ContactForm.defaultProps = {
   withCountryFlag: true,
   renderInput: () => null,
   FooterComponent: () => null,
+  // eslint-disable-next-line react/prop-types
+  RootComponent: ({ children, ...cardProps }) => (<Card {...cardProps}>{children}</Card>),
 };
 
 ContactForm.propTypes = {
@@ -269,6 +271,7 @@ ContactForm.propTypes = {
   withCountryFlag: PropTypes.bool,
   renderInput: PropTypes.func,
   FooterComponent: PropTypes.func,
+  RootComponent: PropTypes.func,
 };
 
 export default ContactForm;
