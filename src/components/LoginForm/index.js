@@ -25,7 +25,7 @@ const LoginForm = ({
   <Card {...cardProps} className={[s.card, className].join(' ')} contentClassName={[s.contentCard, contentClassName].join(' ')}>
     <InputLabel
       className={[s.input, emailInputClassName].join('')}
-      inputClassName={typeof errorLogin !== 'undefined' && errorLogin !== '' ? s.inputError : undefined}
+      hasError={!!errors.email || (typeof errorLogin !== 'undefined' && errorLogin !== '')}
       label={texts.email}
       mandatory
       type="email"
@@ -36,7 +36,7 @@ const LoginForm = ({
     />
     <InputLabel
       className={[s.input, passwordInputClassName].join('')}
-      inputClassName={typeof errorLogin !== 'undefined' && errorLogin !== '' ? s.inputError : undefined}
+      hasError={!!errors.password || (typeof errorLogin !== 'undefined' && errorLogin !== '')}
       label={texts.password}
       mandatory
       type="password"
@@ -45,7 +45,7 @@ const LoginForm = ({
       onChange={onChangePassword}
       error={errors.password}
     />
-    {typeof errorLogin !== 'undefined' && <div className={s.error}>{errorLogin}</div>}
+    {typeof errorLogin !== 'undefined' && errorLogin !== '' && <div className={s.error}>{errorLogin}</div>}
     <LinkUnderlined onClick={onSubmit} className={[s.button, buttonClassName].join(' ')} fetching={fetching}>
       <span>{texts.submitButton}</span>
     </LinkUnderlined>
