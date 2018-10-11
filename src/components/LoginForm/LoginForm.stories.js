@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import backgrounds from '@storybook/addon-backgrounds';
 import centered from '@storybook/addon-centered';
-import { withKnobs, object, boolean } from '@storybook/addon-knobs';
+import { withKnobs, object, boolean, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import LoginForm from './';
@@ -28,6 +28,7 @@ storiesOf('LoginForm', module)
         password: '',
       }),
       fetching: boolean('Fetching'),
+      errorLogin: text('Error login', undefined),
     };
 
     return (
