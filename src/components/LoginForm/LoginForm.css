@@ -17,3 +17,11 @@
 .button {
   margin: var(--marginSmall) 0;
 }
+
+.error {
+  color: var(--red);
+}
+
+.inputError {
+  border-color: var(--red);
+}
