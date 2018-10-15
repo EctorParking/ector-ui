@@ -20,6 +20,7 @@
   background-color: var(--lightGrey);
   justify-content: center;
   padding: var(--marginMedium);
+  text-align: center;
 }
 
 .footer {

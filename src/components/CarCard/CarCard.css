@@ -33,6 +33,7 @@
 .pendingDeletion {
   background-color: var(--lightGrey);
   justify-content: center;
+  padding: var(--marginMedium);
 }
 .pendingModification {
   padding: var(--marginMedium);
