@@ -11,7 +11,7 @@ import { Card } from '..';
 class PaymentMethodCard extends React.Component {
   renderFooter = (footerProps) => {
     const {
-      texts, onClick, selected, FooterComponent,
+      texts, onClick, selected, FooterComponent, testid,
     } = this.props;
 
     if (typeof FooterComponent !== 'undefined' && !FooterComponent) {
@@ -25,6 +25,7 @@ class PaymentMethodCard extends React.Component {
         texts={texts}
         onClick={onClick}
         selected={selected}
+        testid={testid}
       />
     );
   };
@@ -88,6 +89,7 @@ PaymentMethodCard.defaultProps = {
   className: undefined,
   FooterComponent: undefined,
   contentClassName: undefined,
+  testid: '',
 };
 
 PaymentMethodCard.propTypes = {
@@ -105,6 +107,7 @@ PaymentMethodCard.propTypes = {
   className: PropTypes.string,
   FooterComponent: PropTypes.func,
   contentClassName: PropTypes.string,
+  testid: PropTypes.string,
 };
 
 export default PaymentMethodCard;

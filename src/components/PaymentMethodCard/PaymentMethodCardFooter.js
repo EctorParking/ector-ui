@@ -5,14 +5,14 @@ import { LinkUnderlined } from '..';
 import PaymentMethodTextsType from './PaymentmethodTextsType';
 
 const PaymentMethodCardFooter = ({
-  className, selected, texts, onClick,
+  className, selected, texts, onClick, testid,
 }) => (
   <div className={[s.container, className].join(' ')}>
     {
       selected ? (
         <i className={`icon-checkmark ${s.checkIcon}`} />
       ) : (
-        <LinkUnderlined onClick={onClick}>
+        <LinkUnderlined onClick={onClick} testid={`${testid}Button`}>
           <strong>{texts.select}</strong>
         </LinkUnderlined>
       )
@@ -22,6 +22,7 @@ const PaymentMethodCardFooter = ({
 
 PaymentMethodCardFooter.defaultProps = {
   className: undefined,
+  testid: '',
 };
 
 PaymentMethodCardFooter.propTypes = {
@@ -29,6 +30,7 @@ PaymentMethodCardFooter.propTypes = {
   selected: PropTypes.bool.isRequired,
   texts: PaymentMethodTextsType.isRequired,
   onClick: PropTypes.func.isRequired,
+  testid: PropTypes.string,
 };
 
 export default PaymentMethodCardFooter;
