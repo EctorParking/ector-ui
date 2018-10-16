@@ -20,6 +20,7 @@ const LoginForm = ({
   buttonClassName,
   fetching,
   errorLogin,
+  buttonTestid,
   ...cardProps
 }) => (
   <Card {...cardProps} className={[s.card, className].join(' ')} contentClassName={[s.contentCard, contentClassName].join(' ')}>
@@ -46,7 +47,7 @@ const LoginForm = ({
       error={errors.password}
     />
     {typeof errorLogin !== 'undefined' && errorLogin !== '' && <div className={s.error}>{errorLogin}</div>}
-    <LinkUnderlined onClick={onSubmit} className={[s.button, buttonClassName].join(' ')} fetching={fetching}>
+    <LinkUnderlined onClick={onSubmit} className={[s.button, buttonClassName].join(' ')} fetching={fetching} testid={buttonTestid}>
       <span>{texts.submitButton}</span>
     </LinkUnderlined>
   </Card>
@@ -61,6 +62,7 @@ LoginForm.defaultProps = {
   buttonClassName: undefined,
   fetching: false,
   errorLogin: undefined,
+  buttonTestid: undefined,
 };
 
 LoginForm.propTypes = {
@@ -77,6 +79,7 @@ LoginForm.propTypes = {
   contentClassName: PropTypes.string,
   buttonClassName: PropTypes.string,
   fetching: PropTypes.bool,
+  buttonTestid: PropTypes.string,
 };
 
 export default LoginForm;
