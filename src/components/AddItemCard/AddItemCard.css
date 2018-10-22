@@ -10,8 +10,8 @@
   width: 280px;
 
   &:hover {
-    background-color: var(--yellow);
-  }
+     background-color: var(--yellow);
+   }
 }
 .addItemButton.forPaymentMethod {
   flex: 0 0 185px;
@@ -21,7 +21,7 @@
   background-color: var(--white);
   display: flex;
   flex-direction: column;
-  padding: var(--marginSmall) 25px var(--marginSmall) var(--marginMedium);
+  padding: var(--marginSmall) var(--marginSmall) var(--marginSmall) var(--marginSmall) !important;
 }
 
 .addItemButtonPlus {
@@ -39,6 +39,10 @@
 .addItemButtonLink {
   justify-self: flex-end;
   margin-bottom: var(--marginSmall);
+}
+
+.text {
+  white-space: nowrap;
 }
 
 .linkCenter {

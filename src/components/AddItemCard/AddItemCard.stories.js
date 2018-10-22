@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import backgrounds from '@storybook/addon-backgrounds';
 import centered from '@storybook/addon-centered';
-import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import { withKnobs, text, boolean, selectV2 } from '@storybook/addon-knobs';
 import AddItemCard from './';
 
 storiesOf('AddItemCard', module)
@@ -16,9 +16,8 @@ storiesOf('AddItemCard', module)
   .add('with knobs', () => {
     const props = {
       label: text('Label', 'Label'),
-      loading: boolean('Loading', false),
-      center: boolean('Center', false),
-      small: boolean('Small', false),
+      isPending: boolean('isPending', false),
+      loaderSize: selectV2('loaderSize', ['xSmall', 'small', 'medium', 'large'], 'small'),
     };
 
     return <AddItemCard {...props} />;
