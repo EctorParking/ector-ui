@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import backgrounds from '@storybook/addon-backgrounds';
 import { action } from '@storybook/addon-actions';
 import centered from '@storybook/addon-centered';
-import { withKnobs, select, object } from '@storybook/addon-knobs/react';
+import { withKnobs, select, object, boolean } from '@storybook/addon-knobs/react';
 import frFlag from '../../images/flags/fr.svg';
 import gbFlag from '../../images/flags/gb.svg';
 import esFlag from '../../images/flags/es.svg';
@@ -30,6 +30,7 @@ storiesOf('Select', module)
     const props = {
       options: object('Options', ['France', 'Great Britain']),
       value: select('Value', ['France', 'Great Britain']),
+      disabled: boolean('Disabled', false),
     };
 
     return (
