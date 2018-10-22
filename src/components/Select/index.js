@@ -15,7 +15,7 @@ const Select = (props) => {
   const optionRenderer = renderOption || renderSelectOption;
 
   return (
-    <div className={[s.select, className].join(' ')}>
+    <div className={[s.select, selectProps.disabled ? s.disabled : undefined, className].join(' ')}>
       <select value={value} {...selectProps}>
         { options.map(optionRenderer) }
       </select>
@@ -36,6 +36,7 @@ Select.defaultProps = {
   children: null,
   className: '',
   renderOption: null,
+  disabled: false,
 };
 
 Select.propTypes = {
@@ -44,6 +45,7 @@ Select.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   renderOption: PropTypes.func,
+  disabled: PropTypes.bool,
 };
 
 export default Select;
