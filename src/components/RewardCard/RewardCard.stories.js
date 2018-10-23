@@ -4,8 +4,6 @@ import { action } from '@storybook/addon-actions';
 import backgrounds from '@storybook/addon-backgrounds';
 import centered from '@storybook/addon-centered';
 import { withKnobs, boolean, text } from '@storybook/addon-knobs';
-import { Label } from '..';
-
 import Card from './';
 
 
@@ -25,7 +23,7 @@ storiesOf('RewardCard', module)
     };
 
     return (
-      <Card {...props}>
+      <Card {...props} headerImage="../../images/poolRewardLarge.png">
                 Content
       </Card>
     );
@@ -36,7 +34,7 @@ storiesOf('RewardCard', module)
     };
 
     return (
-      <Card {...props} LabelComponent={labelProps => <Label label="label" logo="star" color="green" {...labelProps} />}>
+      <Card {...props} headerImage="../../images/flyingBlueRewardLarge.png">
                 Content
       </Card>
     );
