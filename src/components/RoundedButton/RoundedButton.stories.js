@@ -2,7 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import backgrounds from '@storybook/addon-backgrounds';
 import centered from '@storybook/addon-centered';
-import { withKnobs } from '@storybook/addon-knobs';
+import { withKnobs, text } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
 
 import RoundedButton from './';
 
@@ -15,6 +16,12 @@ storiesOf('RoundedButton', module)
   .addDecorator(centered)
   .addDecorator(withKnobs)
 
-  .add('with knobs', () => (
-    <RoundedButton onClick={() => { console.log('clicked'); }} text="Choisir" />
-  ));
+  .add('with knobs', () => {
+    const props = {
+      text: text('Text', 'Choisir'),
+      color: text('Color', '#ffcd02'),
+      onClick: action('clicked'),
+    };
+
+    return (<RoundedButton {...props} />);
+  });
