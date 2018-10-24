@@ -1,0 +1,29 @@
+@import '../../style/variable.css';
+
+.card {
+  padding: var(--noMargin);
+  max-width: 17rem;
+  max-height: 100%;
+  border-radius: 1rem;
+  background-color: var(--seventhColor);
+  box-shadow: 0px 0px 38px -2px rgba(0, 0, 0, 0.15);
+}
+
+
+.content {
+  display: block;
+  margin: 0;
+  padding: 0 var(--marginMedium);
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: var(--marginXSmall);
+}
+
+.footerButton {
+  color: var(--secondColor);
+  border-color: var(--secondColor);
+}

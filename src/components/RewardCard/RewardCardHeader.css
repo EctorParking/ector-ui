@@ -1,0 +1,10 @@
+@import '../../style/variable.css';
+
+.headerContainer {
+  border-radius: 1rem;
+  background-color: var(--seventhColor);
+}
+
+.image {
+  width: 100%;
+}
