@@ -12,8 +12,9 @@
 
 .content {
   display: block;
-  margin: 0;
+  margin: 0 0 var(--marginXSmall);
   padding: 0 var(--marginMedium);
+
 }
 
 .footer {
