@@ -5,7 +5,7 @@ import s from './RewardCardHeader.css';
 const RewardCardHeader = ({
   headerImage,
 }) => (
-  <div>
+  <div className={s.headerContainer}>
     <img src={headerImage} className={s.image} alt="Reward" />
   </div>
 );
