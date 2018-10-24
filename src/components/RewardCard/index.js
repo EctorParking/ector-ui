@@ -12,19 +12,23 @@ const RewardCard = ({
   rewardText,
   rewardTooltip,
   footerButtonText,
-  footerButtonColor,
   footerOnClick,
+  prefixTestId,
+  footerButtonClassName,
+  ...cardProps
 }) => {
   const header = <RewardCardHeader headerImage={headerImage} />;
   const footer = (
     <RewardCardFooter
       onClick={footerOnClick}
       buttonText={footerButtonText}
-      buttonColor={footerButtonColor}
+      buttonClassName={footerButtonClassName}
+      prefixTestid={prefixTestId}
     />);
 
   return (
     <Card
+      {...cardProps}
       className={s.card}
       HeaderChildren={header}
       FooterChildren={footer}
@@ -46,12 +50,14 @@ RewardCard.propTypes = {
   rewardText: PropTypes.string.isRequired,
   rewardTooltip: PropTypes.string.isRequired,
   footerButtonText: PropTypes.string.isRequired,
-  footerButtonColor: PropTypes.string,
   footerOnClick: PropTypes.func.isRequired,
+  prefixTestId: PropTypes.string,
+  footerButtonClassName: PropTypes.string,
 };
 
 RewardCard.defaultProps = {
-  footerButtonColor: '#ffcd02',
+  prefixTestId: '',
+  footerButtonClassName: '',
 };
 
 

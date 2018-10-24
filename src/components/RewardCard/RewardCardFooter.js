@@ -5,22 +5,26 @@ import RoundedButton from '../RoundedButton';
 
 const RewardCardFooter = ({
   buttonText,
-  buttonColor,
   onClick,
+  prefixTestid,
+  buttonClassName,
 }) => (
   <div className={s.footerContainer}>
-    <RoundedButton onClick={onClick} color={buttonColor} text={buttonText} />
+    <RoundedButton onClick={onClick} text={buttonText} testid={`${prefixTestid}RewardCardFooterButton`} className={buttonClassName} />
   </div>
 );
 
 RewardCardFooter.propTypes = {
   buttonText: PropTypes.string.isRequired,
-  onClick: PropTypes.string.isRequired,
-  buttonColor: PropTypes.string,
+  onClick: PropTypes.func,
+  prefixTestid: PropTypes.string,
+  buttonClassName: PropTypes.string,
 };
 
 RewardCardFooter.defaultProps = {
-  buttonColor: '#ffcd02',
+  prefixTestid: '',
+  buttonClassName: '',
+  onClick: () => {},
 };
 
 

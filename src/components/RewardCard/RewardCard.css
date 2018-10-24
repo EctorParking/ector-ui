@@ -22,3 +22,8 @@
   align-items: center;
   padding-bottom: var(--marginXSmall);
 }
+
+.footerButton {
+  color: var(--secondColor);
+  border-color: var(--secondColor);
+}
