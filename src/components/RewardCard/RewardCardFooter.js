@@ -13,7 +13,7 @@ const RewardCardFooter = ({
 }) => (
   <div className={s.footerContainer}>
     {isSelected ?
-      (<p className={s.selected}>{selectedIcon}</p>) :
+      (<span className={s.selected}>{selectedIcon}</span>) :
       (<RoundedButton onClick={onClick} text={buttonText} testid={`${prefixTestid}RewardCardFooterButton`} className={buttonClassName} />
       )}
   </div>
