@@ -16,6 +16,8 @@ const RewardCard = ({
   footerOnClick,
   prefixTestId,
   footerButtonClassName,
+  isSelected,
+  selectedIcon,
   ...cardProps
 }) => {
   const header = <RewardCardHeader headerImage={headerImage} />;
@@ -25,6 +27,8 @@ const RewardCard = ({
       buttonText={footerButtonText}
       buttonClassName={footerButtonClassName}
       prefixTestid={prefixTestId}
+      isSelected={isSelected}
+      selectedIcon={selectedIcon}
     />);
 
   return (
@@ -55,6 +59,8 @@ RewardCard.propTypes = {
   prefixTestId: PropTypes.string,
   footerButtonClassName: PropTypes.string,
   rewardTooltipIcon: PropTypes.string,
+  isSelected: PropTypes.bool,
+  selectedIcon: PropTypes.string,
 };
 
 RewardCard.defaultProps = {
@@ -62,6 +68,8 @@ RewardCard.defaultProps = {
   footerButtonClassName: '',
   rewardTooltip: null,
   rewardTooltipIcon: 'icon-ec-info',
+  isSelected: false,
+  selectedIcon: '\u2713',
 };
 
 

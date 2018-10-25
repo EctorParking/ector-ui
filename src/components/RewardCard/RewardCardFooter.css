@@ -1,3 +1,16 @@
+@import '../../style/variable.css';
+
 .footerContainer {
   display: inline-block;
+}
+
+.selected {
+  border-radius: 100%;
+  color: var(--seventhColor);
+  background-color: var(--secondColor);
+  width: 27px;
+  height: 27px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
