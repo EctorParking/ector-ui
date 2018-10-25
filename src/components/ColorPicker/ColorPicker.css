@@ -24,7 +24,7 @@
 
 .transparent:before,
 .transparent:after {
-  background-color: #ccc;
+  background-color: var(--red);
   content: '';
   height: 1px;
   position: absolute;
