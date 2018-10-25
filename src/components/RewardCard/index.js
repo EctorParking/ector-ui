@@ -11,6 +11,7 @@ const RewardCard = ({
   rewardValue,
   rewardText,
   rewardTooltip,
+  rewardTooltipIcon,
   footerButtonText,
   footerOnClick,
   prefixTestId,
@@ -48,16 +49,19 @@ RewardCard.propTypes = {
   headerImage: PropTypes.string.isRequired,
   rewardValue: PropTypes.string.isRequired,
   rewardText: PropTypes.string.isRequired,
-  rewardTooltip: PropTypes.string.isRequired,
+  rewardTooltip: PropTypes.string,
   footerButtonText: PropTypes.string.isRequired,
   footerOnClick: PropTypes.func.isRequired,
   prefixTestId: PropTypes.string,
   footerButtonClassName: PropTypes.string,
+  rewardTooltipIcon: PropTypes.string,
 };
 
 RewardCard.defaultProps = {
   prefixTestId: '',
   footerButtonClassName: '',
+  rewardTooltip: null,
+  rewardTooltipIcon: 'icon-ec-info',
 };
 
 
