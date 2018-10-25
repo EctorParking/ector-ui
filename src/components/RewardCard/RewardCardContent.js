@@ -13,7 +13,9 @@ const RewardCardContent = ({
     <span className={s.rewardValue}>{rewardValue}</span>
     <span className={s.rewardText}>
       {rewardText}
-      <Tooltip className={s.tooltip} text={rewardTooltip} iconClassName={text('Icon', 'icon-ec-info')} />
+      { rewardTooltip &&
+        (<Tooltip className={s.tooltip} text={rewardTooltip} iconClassName={text('Icon', 'icon-ec-info')} />)
+      }
     </span>
   </div>
 );
@@ -21,7 +23,12 @@ const RewardCardContent = ({
 RewardCardContent.propTypes = {
   rewardValue: PropTypes.string.isRequired,
   rewardText: PropTypes.string.isRequired,
-  rewardTooltip: PropTypes.string.isRequired,
+  rewardTooltip: PropTypes.string,
 };
+
+RewardCardContent.defaultProps = {
+  rewardTooltip: null,
+};
+
 
 export default RewardCardContent;

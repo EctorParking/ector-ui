@@ -48,7 +48,7 @@ RewardCard.propTypes = {
   headerImage: PropTypes.string.isRequired,
   rewardValue: PropTypes.string.isRequired,
   rewardText: PropTypes.string.isRequired,
-  rewardTooltip: PropTypes.string.isRequired,
+  rewardTooltip: PropTypes.string,
   footerButtonText: PropTypes.string.isRequired,
   footerOnClick: PropTypes.func.isRequired,
   prefixTestId: PropTypes.string,
@@ -58,6 +58,7 @@ RewardCard.propTypes = {
 RewardCard.defaultProps = {
   prefixTestId: '',
   footerButtonClassName: '',
+  rewardTooltip: null,
 };
 
 
