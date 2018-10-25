@@ -2,8 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import backgrounds from '@storybook/addon-backgrounds';
 import centered from '@storybook/addon-centered';
-import { action } from '@storybook/addon-actions';
-import { withKnobs, text, select } from '@storybook/addon-knobs';
+import { withKnobs, text, select, boolean } from '@storybook/addon-knobs';
 import RewardCard from './';
 import s from './RewardCard.css';
 
@@ -15,6 +14,7 @@ const options = [
   '../../images/poolRewardLarge.png',
   '../../images/flyingBlueRewardLarge.png',
 ];
+const selectedIcon = '\u2713';
 
 storiesOf('RewardCard', module)
 
@@ -26,13 +26,15 @@ storiesOf('RewardCard', module)
 
   .add('with knobs', () => {
     const props = {
+      isSelected: boolean('Selected', false),
       headerImage: select('Header image', options, options[0], ''),
       rewardText: text('Text', rewardText),
       rewardTooltip: text('Tooltip', tooltip),
       rewardValue: text('Reward value', rewardValue),
       footerButtonText: text('Button text', footerButtonText),
-      footerOnClick: action('Button clicked'),
       footerButtonClassName: s.footerButton,
+      footerOnClick: () => {},
+      selectedIcon: text('Select icon', selectedIcon),
     };
 
     return (<RewardCard {...props} />);
