@@ -11,7 +11,6 @@ import RewardCardTextTypes from './RewardCardTextTypes';
 const RewardCard = ({
   headerImage,
   rewardValue,
-  rewardTooltip,
   rewardTooltipIcon,
   footerOnClick,
   prefixTestId,
@@ -50,7 +49,6 @@ const RewardCard = ({
     >
       <RewardCardContent
         texts={texts}
-        rewardTooltip={rewardTooltip}
         rewardValue={rewardValue}
         isConnected={isConnected}
         isSelected={isSelected}
@@ -75,7 +73,6 @@ RewardCard.propTypes = {
   loginOnChangePassword: PropTypes.func.isRequired,
   loginOnChangeEmail: PropTypes.func.isRequired,
   loginOnSubmit: PropTypes.func.isRequired,
-  rewardTooltip: PropTypes.string,
   prefixTestId: PropTypes.string,
   footerButtonClassName: PropTypes.string,
   rewardTooltipIcon: PropTypes.string,
@@ -87,7 +84,6 @@ RewardCard.propTypes = {
 RewardCard.defaultProps = {
   prefixTestId: '',
   footerButtonClassName: '',
-  rewardTooltip: null,
   rewardTooltipIcon: 'icon-ec-info',
   isSelected: false,
   selectedIcon: '\u2713',
