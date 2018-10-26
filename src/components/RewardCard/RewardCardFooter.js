@@ -2,29 +2,32 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import s from './RewardCardFooter.css';
 import RoundedButton from '../RoundedButton';
+import RewardCardTextTypes from './RewardCardTextTypes';
 
 const RewardCardFooter = ({
-  buttonText,
   onClick,
   prefixTestid,
   buttonClassName,
   isSelected,
+  isConnected,
   selectedIcon,
+  texts,
 }) => (
-  <div className={s.footerContainer}>
-    {isSelected ?
-      (<span className={s.selected}>{selectedIcon}</span>) :
-      (<RoundedButton onClick={onClick} text={buttonText} testid={`${prefixTestid}RewardCardFooterButton`} className={buttonClassName} />
-      )}
+  <div>
+    {isConnected && isSelected ?
+      (<span className={s.selected}>{selectedIcon}</span>)
+      : (<RoundedButton onClick={onClick} text={texts.footerButtonText} testid={`${prefixTestid}RewardCardFooterButton`} className={buttonClassName} />)
+    }
   </div>
 );
 
 RewardCardFooter.propTypes = {
-  buttonText: PropTypes.string.isRequired,
+  texts: RewardCardTextTypes.isRequired,
   onClick: PropTypes.func,
   prefixTestid: PropTypes.string,
   buttonClassName: PropTypes.string,
   isSelected: PropTypes.bool,
+  isConnected: PropTypes.bool,
   selectedIcon: PropTypes.string,
 };
 
@@ -33,6 +36,7 @@ RewardCardFooter.defaultProps = {
   buttonClassName: '',
   onClick: () => {},
   isSelected: false,
+  isConnected: false,
   selectedIcon: '\u2713',
 };
 

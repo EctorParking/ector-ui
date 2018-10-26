@@ -21,3 +21,13 @@
   display: inline-block;
   margin-left: var(--marginXSmall);
 }
+
+.rewardLoginForm {
+  width: 100%;
+  text-align: left;
+}
+
+.submitButton {
+  text-align: center;
+  padding-bottom: var(--marginXSmall);
+}
