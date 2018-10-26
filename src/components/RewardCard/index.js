@@ -24,6 +24,7 @@ const RewardCard = ({
   loginFormErrors,
   loginOnSubmit,
   texts,
+  children,
   ...cardProps
 }) => {
   const header = <RewardCardHeader headerImage={headerImage} />;
@@ -47,18 +48,12 @@ const RewardCard = ({
       footerClassName={s.footer}
       contentClassName={s.content}
     >
-      <RewardCardContent
+      { children || (<RewardCardContent
         texts={texts}
         rewardValue={rewardValue}
         isConnected={isConnected}
         isSelected={isSelected}
-        formValues={loginFormValues}
-        formErrors={loginFormErrors}
-        onChangePassword={loginOnChangePassword}
-        onChangeEmail={loginOnChangeEmail}
-        onSubmit={loginOnSubmit}
-        submitButtonClassName={footerButtonClassName}
-      />
+      />)}
     </Card>
   );
 };
@@ -73,6 +68,7 @@ RewardCard.propTypes = {
   loginOnChangePassword: PropTypes.func.isRequired,
   loginOnChangeEmail: PropTypes.func.isRequired,
   loginOnSubmit: PropTypes.func.isRequired,
+  children: PropTypes.node,
   prefixTestId: PropTypes.string,
   footerButtonClassName: PropTypes.string,
   rewardTooltipIcon: PropTypes.string,
@@ -88,6 +84,7 @@ RewardCard.defaultProps = {
   isSelected: false,
   selectedIcon: '\u2713',
   isConnected: false,
+  children: null,
 };
 
 
