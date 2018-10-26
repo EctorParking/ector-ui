@@ -21,9 +21,11 @@ const LoginForm = ({
   fetching,
   errorLogin,
   buttonTestid,
+  RootComponent,
+  SubmitButtonComponent,
   ...cardProps
 }) => (
-  <Card {...cardProps} className={[s.card, className].join(' ')} contentClassName={[s.contentCard, contentClassName].join(' ')}>
+  <RootComponent {...cardProps} className={[s.card, className].join(' ')} contentClassName={[s.contentCard, contentClassName].join(' ')}>
     <InputLabel
       className={[s.input, emailInputClassName].join('')}
       hasError={!!errors.email || (typeof errorLogin !== 'undefined' && errorLogin !== '')}
@@ -47,10 +49,10 @@ const LoginForm = ({
       error={errors.password}
     />
     {typeof errorLogin !== 'undefined' && errorLogin !== '' && <div className={s.error}>{errorLogin}</div>}
-    <LinkUnderlined onClick={onSubmit} className={[s.button, buttonClassName].join(' ')} fetching={fetching} testid={buttonTestid}>
+    <SubmitButtonComponent onClick={onSubmit} className={[s.button, buttonClassName].join(' ')} fetching={fetching} testid={buttonTestid}>
       <span>{texts.submitButton}</span>
-    </LinkUnderlined>
-  </Card>
+    </SubmitButtonComponent>
+  </RootComponent>
 );
 
 LoginForm.defaultProps = {
@@ -63,6 +65,11 @@ LoginForm.defaultProps = {
   fetching: false,
   errorLogin: undefined,
   buttonTestid: undefined,
+  // eslint-disable-next-line react/prop-types
+  RootComponent: ({ children, ...cardProps }) => (<Card {...cardProps}>{children}</Card>),
+  // eslint-disable-next-line react/prop-types
+  SubmitButtonComponent: ({ children, ...buttonProps }) =>
+    (<LinkUnderlined {...buttonProps}>{children}</LinkUnderlined>),
 };
 
 LoginForm.propTypes = {
@@ -80,6 +87,8 @@ LoginForm.propTypes = {
   buttonClassName: PropTypes.string,
   fetching: PropTypes.bool,
   buttonTestid: PropTypes.string,
+  RootComponent: PropTypes.func,
+  SubmitButtonComponent: PropTypes.func,
 };
 
 export default LoginForm;
