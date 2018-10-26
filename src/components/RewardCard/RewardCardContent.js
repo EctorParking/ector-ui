@@ -5,16 +5,17 @@ import Tooltip from '../Tooltip';
 import LoginForm from '../LoginForm';
 import { LoginFormErrorsType, LoginFormValuesType } from '../LoginForm/LoginType';
 import RoundedButton from '../RoundedButton';
+import RewardCardTextTypes from './RewardCardTextTypes';
 
 class RewardCardContent extends Component {
   renderRootComponent = ({ children, ...restOfProps }) => (<div {...restOfProps}>{children}</div>);
   renderSubmitButton = ({ children, ...restOfProps }) => {
-    const { submitText, submitButtonClassName, onSubmit } = this.props;
+    const { texts, submitButtonClassName, onSubmit } = this.props;
     return (
       <div className={s.submitButton}>
         <RoundedButton
           {...restOfProps}
-          text={submitText}
+          text={texts.buttonTextLogin}
           onClick={onSubmit}
           className={submitButtonClassName}
         >
@@ -27,8 +28,6 @@ class RewardCardContent extends Component {
   render() {
     const {
       rewardValue,
-      rewardText,
-      rewardTooltip,
       iconClassName,
       isConnected,
       isSelected,
@@ -37,28 +36,39 @@ class RewardCardContent extends Component {
       onChangePassword,
       onChangeEmail,
       onSubmit,
+      texts,
     } = this.props;
 
     return (
       <div className={s.contentContainer}>
         { !isConnected && isSelected ? (
-          <LoginForm
-            values={formValues}
-            onSubmit={onSubmit}
-            onChangePassword={onChangePassword}
-            errors={formErrors}
-            onChangeEmail={onChangeEmail}
-            RootComponent={this.renderRootComponent}
-            SubmitButtonComponent={this.renderSubmitButton}
-            className={s.rewardLoginForm}
-          />
+          <div>
+            <span>
+              { texts.loginText }
+            </span>
+            <LoginForm
+              values={formValues}
+              onSubmit={onSubmit}
+              onChangePassword={onChangePassword}
+              errors={formErrors}
+              onChangeEmail={onChangeEmail}
+              RootComponent={this.renderRootComponent}
+              SubmitButtonComponent={this.renderSubmitButton}
+              className={s.rewardLoginForm}
+            />
+          </div>
         ) : (
           <div>
             <span className={s.rewardValue}>{rewardValue}</span>
             <span className={s.rewardText}>
-              {rewardText}
-              {rewardTooltip &&
-              (<Tooltip className={s.tooltip} text={rewardTooltip} iconClassName={iconClassName} />)
+              {texts.rewardText}
+              {texts.rewardTooltip &&
+              (
+                <Tooltip
+                  className={s.tooltip}
+                  text={texts.rewardTooltip}
+                  iconClassName={iconClassName}
+                />)
               }
             </span>
           </div>)}
@@ -69,10 +79,8 @@ class RewardCardContent extends Component {
 }
 
 RewardCardContent.propTypes = {
+  texts: RewardCardTextTypes.isRequired,
   rewardValue: PropTypes.string.isRequired,
-  rewardText: PropTypes.string.isRequired,
-  submitText: PropTypes.string.isRequired,
-  rewardTooltip: PropTypes.string,
   iconClassName: PropTypes.string,
   isConnected: PropTypes.bool,
   isSelected: PropTypes.bool,
@@ -85,7 +93,6 @@ RewardCardContent.propTypes = {
 };
 
 RewardCardContent.defaultProps = {
-  rewardTooltip: null,
   iconClassName: 'icon-ec-info',
   isConnected: false,
   isSelected: false,

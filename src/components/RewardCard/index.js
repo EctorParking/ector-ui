@@ -6,15 +6,13 @@ import RewardCardHeader from './RewardCardHeader';
 import RewardCardContent from './RewardCardContent';
 import RewardCardFooter from './RewardCardFooter';
 import { LoginFormErrorsType, LoginFormValuesType } from '../LoginForm/LoginType';
+import RewardCardTextTypes from './RewardCardTextTypes';
 
 const RewardCard = ({
   headerImage,
   rewardValue,
-  rewardText,
   rewardTooltip,
   rewardTooltipIcon,
-  footerButtonText,
-  footerButtonTextLogin,
   footerOnClick,
   prefixTestId,
   footerButtonClassName,
@@ -26,19 +24,19 @@ const RewardCard = ({
   loginOnChangeEmail,
   loginFormErrors,
   loginOnSubmit,
+  texts,
   ...cardProps
 }) => {
   const header = <RewardCardHeader headerImage={headerImage} />;
   const footer =
     (<RewardCardFooter
       onClick={footerOnClick}
-      buttonText={footerButtonText}
       buttonClassName={footerButtonClassName}
       prefixTestid={prefixTestId}
       isSelected={isSelected}
       isConnected={isConnected}
-      buttonTextLogin={footerButtonTextLogin}
       selectedIcon={selectedIcon}
+      texts={texts}
     />);
 
   return (
@@ -51,8 +49,8 @@ const RewardCard = ({
       contentClassName={s.content}
     >
       <RewardCardContent
+        texts={texts}
         rewardTooltip={rewardTooltip}
-        rewardText={rewardText}
         rewardValue={rewardValue}
         isConnected={isConnected}
         isSelected={isSelected}
@@ -61,7 +59,6 @@ const RewardCard = ({
         onChangePassword={loginOnChangePassword}
         onChangeEmail={loginOnChangeEmail}
         onSubmit={loginOnSubmit}
-        submitText={footerButtonTextLogin}
         submitButtonClassName={footerButtonClassName}
       />
     </Card>
@@ -69,11 +66,9 @@ const RewardCard = ({
 };
 
 RewardCard.propTypes = {
+  texts: RewardCardTextTypes.isRequired,
   headerImage: PropTypes.string.isRequired,
   rewardValue: PropTypes.string.isRequired,
-  rewardText: PropTypes.string.isRequired,
-  footerButtonText: PropTypes.string.isRequired,
-  footerButtonTextLogin: PropTypes.string.isRequired,
   footerOnClick: PropTypes.func.isRequired,
   loginFormValues: LoginFormValuesType.isRequired,
   loginFormErrors: LoginFormErrorsType.isRequired,

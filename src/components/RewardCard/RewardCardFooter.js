@@ -1,41 +1,28 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import s from './RewardCardFooter.css';
 import RoundedButton from '../RoundedButton';
+import RewardCardTextTypes from './RewardCardTextTypes';
 
-class RewardCardFooter extends Component {
-  renderFooter = () => {
-    const {
-      buttonText,
-      buttonTextLogin,
-      onClick,
-      prefixTestid,
-      buttonClassName,
-      isSelected,
-      isConnected,
-      selectedIcon,
-    } = this.props;
-
-    if (isConnected && isSelected) {
-      return (<span className={s.selected}>{selectedIcon}</span>);
-    } else if (isSelected && !isConnected) {
-      return (<RoundedButton onClick={onClick} text={buttonTextLogin} testid={`${prefixTestid}RewardCardFooterButton`} className={buttonClassName} />);
+const RewardCardFooter = ({
+  onClick,
+  prefixTestid,
+  buttonClassName,
+  isSelected,
+  isConnected,
+  selectedIcon,
+  texts,
+}) => (
+  <div>
+    {isConnected && isSelected ?
+      (<span className={s.selected}>{selectedIcon}</span>)
+      : (<RoundedButton onClick={onClick} text={texts.footerButtonText} testid={`${prefixTestid}RewardCardFooterButton`} className={buttonClassName} />)
     }
-    return (<RoundedButton onClick={onClick} text={buttonText} testid={`${prefixTestid}RewardCardFooterButton`} className={buttonClassName} />);
-  };
-
-  render() {
-    return (
-      <div>
-        {this.renderFooter()}
-      </div>
-    );
-  }
-}
+  </div>
+);
 
 RewardCardFooter.propTypes = {
-  buttonText: PropTypes.string.isRequired,
-  buttonTextLogin: PropTypes.string.isRequired,
+  texts: RewardCardTextTypes.isRequired,
   onClick: PropTypes.func,
   prefixTestid: PropTypes.string,
   buttonClassName: PropTypes.string,
