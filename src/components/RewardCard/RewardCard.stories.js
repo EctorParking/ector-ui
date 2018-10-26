@@ -43,17 +43,6 @@ storiesOf('RewardCard', module)
       footerButtonClassName: s.footerButton,
       footerOnClick: action('Footer click'),
       selectedIcon: text('Select icon', selectedIcon),
-      loginFormValues: object('Form values', {
-        email: 'jeandupont@gmail.com',
-        password: 'azerty',
-      }),
-      loginFormErrors: object('Form errors', {
-        email: '',
-        password: '',
-      }),
-      loginOnChangePassword: action('On change password'),
-      loginOnChangeEmail: action('On change email'),
-      loginOnSubmit: action('On submit'),
       rewardValue: text('Reward value', rewardValue),
     };
 
