@@ -10,20 +10,18 @@ const RewardCardContent = ({
   texts,
 }) => (
   <div className={s.contentContainer}>
-    <div>
-      <span className={s.rewardValue}>{rewardValue}</span>
-      <span className={s.rewardText}>
-        {texts.rewardText}
-        {texts.rewardTooltip &&
+    <span className={s.rewardValue}>{rewardValue}</span>
+    <span className={s.rewardText}>
+      {texts.rewardText}
+      {texts.rewardTooltip &&
         (
           <Tooltip
             className={s.tooltip}
             text={texts.rewardTooltip}
             iconClassName={iconClassName}
           />)
-        }
-      </span>
-    </div>
+      }
+    </span>
   </div>
 );
 

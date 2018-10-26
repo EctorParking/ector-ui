@@ -5,7 +5,6 @@ import s from './RewardCard.css';
 import RewardCardHeader from './RewardCardHeader';
 import RewardCardContent from './RewardCardContent';
 import RewardCardFooter from './RewardCardFooter';
-import { LoginFormErrorsType, LoginFormValuesType } from '../LoginForm/LoginType';
 import RewardCardTextTypes from './RewardCardTextTypes';
 
 const RewardCard = ({
@@ -18,11 +17,6 @@ const RewardCard = ({
   isSelected,
   selectedIcon,
   isConnected,
-  loginFormValues,
-  loginOnChangePassword,
-  loginOnChangeEmail,
-  loginFormErrors,
-  loginOnSubmit,
   texts,
   children,
   ...cardProps
@@ -63,11 +57,6 @@ RewardCard.propTypes = {
   headerImage: PropTypes.string.isRequired,
   rewardValue: PropTypes.string.isRequired,
   footerOnClick: PropTypes.func.isRequired,
-  loginFormValues: LoginFormValuesType.isRequired,
-  loginFormErrors: LoginFormErrorsType.isRequired,
-  loginOnChangePassword: PropTypes.func.isRequired,
-  loginOnChangeEmail: PropTypes.func.isRequired,
-  loginOnSubmit: PropTypes.func.isRequired,
   children: PropTypes.node,
   prefixTestId: PropTypes.string,
   footerButtonClassName: PropTypes.string,
