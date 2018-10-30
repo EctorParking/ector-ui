@@ -44,6 +44,7 @@ storiesOf('RewardCard', module)
       footerOnClick: action('Footer click'),
       selectedIcon: text('Select icon', selectedIcon),
       rewardValue: text('Reward value', rewardValue),
+      hasExternalCard: boolean('External card', false),
     };
 
     return (<RewardCard {...props} />);
