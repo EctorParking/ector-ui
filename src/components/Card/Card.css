@@ -28,6 +28,7 @@
 }
 .card_content {
   flex: 1;
+  flex-basis: auto;
   background-color: white;
   border-radius: 0.3rem;
   display: flex;
