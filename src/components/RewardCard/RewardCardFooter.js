@@ -13,9 +13,10 @@ const RewardCardFooter = ({
   selectedIcon,
   texts,
   hasExternalCard,
+  isExternalCardUpdatable,
 }) => (
   <div>
-    {isConnected && isSelected && hasExternalCard ?
+    {isConnected && isSelected && hasExternalCard && !isExternalCardUpdatable ?
       (<span className={s.selected}>{selectedIcon}</span>)
       : (<RoundedButton onClick={onClick} text={texts.footerButtonText} testid={`${prefixTestid}RewardCardFooterButton`} className={buttonClassName} />)
     }
@@ -31,6 +32,7 @@ RewardCardFooter.propTypes = {
   isConnected: PropTypes.bool,
   selectedIcon: PropTypes.string,
   hasExternalCard: PropTypes.bool,
+  isExternalCardUpdatable: PropTypes.bool,
 };
 
 RewardCardFooter.defaultProps = {
@@ -41,6 +43,7 @@ RewardCardFooter.defaultProps = {
   isConnected: false,
   selectedIcon: '\u2713',
   hasExternalCard: true,
+  isExternalCardUpdatable: false,
 };
 
 

@@ -36,6 +36,7 @@ const RewardCard = ({
       selectedIcon={selectedIcon}
       texts={texts}
       hasExternalCard={hasExternalCard}
+      isExternalCardUpdatable={isExternalCardUpdatable}
     />);
 
   return (
