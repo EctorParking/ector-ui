@@ -32,6 +32,7 @@ const RewardCard = ({
       isConnected={isConnected}
       selectedIcon={selectedIcon}
       texts={texts}
+      hasExternalCard={hasExternalCard}
     />);
 
   return (
