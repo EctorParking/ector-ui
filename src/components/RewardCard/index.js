@@ -18,6 +18,7 @@ const RewardCard = ({
   selectedIcon,
   isConnected,
   texts,
+  hasExternalCard,
   children,
   ...cardProps
 }) => {
@@ -64,6 +65,7 @@ RewardCard.propTypes = {
   isSelected: PropTypes.bool,
   selectedIcon: PropTypes.string,
   isConnected: PropTypes.bool,
+  hasExternalCard: PropTypes.bool,
 };
 
 RewardCard.defaultProps = {
@@ -74,6 +76,7 @@ RewardCard.defaultProps = {
   selectedIcon: '\u2713',
   isConnected: false,
   children: null,
+  hasExternalCard: true,
 };
 
 
