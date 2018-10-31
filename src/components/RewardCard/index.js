@@ -88,7 +88,7 @@ RewardCard.defaultProps = {
   isConnected: false,
   children: null,
   hasExternalCard: true,
-  isExternalCardUpdatable: false,
+  isExternalCardUpdatable: true,
   editExternalCardClassName: '',
 };
 
