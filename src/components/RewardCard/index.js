@@ -20,6 +20,9 @@ const RewardCard = ({
   texts,
   hasExternalCard,
   children,
+  isExternalCardUpdatable,
+  onClickEditExternalCard,
+  editExternalCardClassName,
   ...cardProps
 }) => {
   const header = <RewardCardHeader headerImage={headerImage} />;
@@ -49,6 +52,9 @@ const RewardCard = ({
         rewardValue={rewardValue}
         isConnected={isConnected}
         isSelected={isSelected}
+        isExternalCardUpdatable={isExternalCardUpdatable}
+        onClickEditExternalCard={onClickEditExternalCard}
+        editExternalCardClassName={editExternalCardClassName}
       />)}
     </Card>
   );
@@ -59,6 +65,7 @@ RewardCard.propTypes = {
   headerImage: PropTypes.string.isRequired,
   rewardValue: PropTypes.string.isRequired,
   footerOnClick: PropTypes.func.isRequired,
+  onClickEditExternalCard: PropTypes.func.isRequired,
   children: PropTypes.node,
   prefixTestId: PropTypes.string,
   footerButtonClassName: PropTypes.string,
@@ -67,6 +74,8 @@ RewardCard.propTypes = {
   selectedIcon: PropTypes.string,
   isConnected: PropTypes.bool,
   hasExternalCard: PropTypes.bool,
+  isExternalCardUpdatable: PropTypes.bool,
+  editExternalCardClassName: PropTypes.string,
 };
 
 RewardCard.defaultProps = {
@@ -78,6 +87,8 @@ RewardCard.defaultProps = {
   isConnected: false,
   children: null,
   hasExternalCard: true,
+  isExternalCardUpdatable: false,
+  editExternalCardClassName: '',
 };
 
 

@@ -6,4 +6,5 @@ export default PropTypes.shape({
   buttonTextLogin: PropTypes.string,
   loginText: PropTypes.string,
   rewardTooltip: PropTypes.string,
+  updateExternalCard: PropTypes.string,
 });

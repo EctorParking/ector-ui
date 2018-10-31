@@ -8,12 +8,24 @@ const RewardCardContent = ({
   rewardValue,
   iconClassName,
   texts,
+  isExternalCardUpdatable,
+  onClickEditExternalCard,
+  editExternalCardClassName,
 }) => (
   <div className={s.contentContainer}>
     <span className={s.rewardValue}>{rewardValue}</span>
     <span className={s.rewardText}>
       {texts.rewardText}
-      {texts.rewardTooltip &&
+      {isExternalCardUpdatable
+      && (
+        <button
+          className={editExternalCardClassName}
+          onClick={onClickEditExternalCard}
+        >
+          {texts.updateExternalCard}
+        </button>
+      )}
+      {texts.rewardTooltip && !isExternalCardUpdatable &&
         (
           <Tooltip
             className={s.tooltip}
@@ -28,11 +40,16 @@ const RewardCardContent = ({
 RewardCardContent.propTypes = {
   texts: RewardCardTextTypes.isRequired,
   rewardValue: PropTypes.string.isRequired,
+  onClickEditExternalCard: PropTypes.func.isRequired,
   iconClassName: PropTypes.string,
+  isExternalCardUpdatable: PropTypes.bool,
+  editExternalCardClassName: PropTypes.string,
 };
 
 RewardCardContent.defaultProps = {
   iconClassName: 'icon-ec-info',
+  isExternalCardUpdatable: false,
+  editExternalCardClassName: '',
 };
 
 
