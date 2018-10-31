@@ -27,11 +27,13 @@
 }
 
 @media (max-width: 768px) {
-  .inputsRow {
-    flex-direction: column;
-  }
   .travelingNumberFromInputLabel, .travelingNumberToInputLabel {
     margin: var(--marginSmall) auto;
   }
 }
 
+@media (--mobile) {
+  .inputsRow {
+    flex-direction: column;
+  }
+}

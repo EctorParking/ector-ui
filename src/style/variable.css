@@ -76,3 +76,7 @@
 
   --maxImageSize: 24px;
 }
+
+@custom-media --tablet (max-width: 768px);
+@custom-media --mobile (max-width: 480px);
+@custom-media --iPhone5 (max-width: 320px);
