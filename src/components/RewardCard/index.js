@@ -76,7 +76,7 @@ RewardCard.defaultProps = {
   selectedIcon: '\u2713',
   isConnected: false,
   children: null,
-  hasExternalCard: false,
+  hasExternalCard: true,
 };
 
 

@@ -40,7 +40,7 @@ RewardCardFooter.defaultProps = {
   isSelected: false,
   isConnected: false,
   selectedIcon: '\u2713',
-  hasExternalCard: false,
+  hasExternalCard: true,
 };
 
 
