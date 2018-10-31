@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import s from './RewardCardFooter.css';
 import RoundedButton from '../RoundedButton';
@@ -15,12 +15,12 @@ const RewardCardFooter = ({
   hasExternalCard,
   isExternalCardUpdatable,
 }) => (
-  <div>
-    {isConnected && isSelected && hasExternalCard && !isExternalCardUpdatable ?
+  <Fragment>
+    {isConnected && isSelected && hasExternalCard && isExternalCardUpdatable ?
       (<span className={s.selected}>{selectedIcon}</span>)
       : (<RoundedButton onClick={onClick} text={texts.footerButtonText} testid={`${prefixTestid}RewardCardFooterButton`} className={buttonClassName} />)
     }
-  </div>
+  </Fragment>
 );
 
 RewardCardFooter.propTypes = {
