@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import s from './RewardCardFooter.css';
 import RoundedButton from '../RoundedButton';
@@ -13,13 +13,14 @@ const RewardCardFooter = ({
   selectedIcon,
   texts,
   hasExternalCard,
+  isExternalCardUpdatable,
 }) => (
-  <div>
-    {isConnected && isSelected && hasExternalCard ?
+  <Fragment>
+    {isConnected && isSelected && hasExternalCard && isExternalCardUpdatable ?
       (<span className={s.selected}>{selectedIcon}</span>)
       : (<RoundedButton onClick={onClick} text={texts.footerButtonText} testid={`${prefixTestid}RewardCardFooterButton`} className={buttonClassName} />)
     }
-  </div>
+  </Fragment>
 );
 
 RewardCardFooter.propTypes = {
@@ -31,6 +32,7 @@ RewardCardFooter.propTypes = {
   isConnected: PropTypes.bool,
   selectedIcon: PropTypes.string,
   hasExternalCard: PropTypes.bool,
+  isExternalCardUpdatable: PropTypes.bool,
 };
 
 RewardCardFooter.defaultProps = {
@@ -41,6 +43,7 @@ RewardCardFooter.defaultProps = {
   isConnected: false,
   selectedIcon: '\u2713',
   hasExternalCard: true,
+  isExternalCardUpdatable: false,
 };
 
 
