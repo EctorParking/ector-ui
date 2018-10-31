@@ -17,7 +17,14 @@ const RewardCardContent = ({
     <span className={s.rewardText}>
       {texts.rewardText}
       {isExternalCardUpdatable
-      && (<button href="#" className={editExternalCardClassName} onClick={onClickEditExternalCard}>{texts.updateExternalCard}</button>)}
+      && (
+        <button
+          className={editExternalCardClassName}
+          onClick={onClickEditExternalCard}
+        >
+          {texts.updateExternalCard}
+        </button>
+      )}
       {texts.rewardTooltip && !isExternalCardUpdatable &&
         (
           <Tooltip
