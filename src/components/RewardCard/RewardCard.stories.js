@@ -36,6 +36,7 @@ storiesOf('RewardCard', module)
         buttonTextLogin: 'Connexion',
         loginText: 'Pour profiter de cette récompense, la connexion est requise',
         rewardTooltip: 'Ceci est un tooltip',
+        updateExternalCard: 'Modifier',
       }),
       isSelected: boolean('Selected', true),
       isConnected: boolean('Connected', false),
@@ -45,6 +46,9 @@ storiesOf('RewardCard', module)
       selectedIcon: text('Select icon', selectedIcon),
       rewardValue: text('Reward value', rewardValue),
       hasExternalCard: boolean('External card', false),
+      isExternalCardUpdatable: boolean('External card updatable', false),
+      onClickEditExternalCard: action('Edit external card'),
+      editExternalCardClassName: '',
     };
 
     return (<RewardCard {...props} />);
