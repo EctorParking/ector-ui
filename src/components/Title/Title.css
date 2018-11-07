@@ -18,3 +18,9 @@
   margin: 0;
   width: var(--titleHrWidth);
 }
+
+@media (--mobile) {
+  .title .element {
+    font-size: var(--fontSizeSubtitle);
+  }
+}
