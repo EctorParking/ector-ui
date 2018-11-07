@@ -17,6 +17,7 @@
 
 .inputContainer {
   flex: 1;
+  flex-basis: auto;
 }
 
 .input {
