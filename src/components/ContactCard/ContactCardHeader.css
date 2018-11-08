@@ -7,10 +7,14 @@
   justify-content: space-between;
   margin-top: -0.75em;
 }
-.editIcon {
+.editIcon, .deleteIcon {
   margin-right: -0.75em;
-  -webkit-text-fill-color: var(--blue);
-  fill: var(--blue);
+}
+.editIcon:before {
+  color: var(--blue);
+}
+.deleteIcon:before {
+  color: var(--melrose);
 }
 .editButton {
   background: none;
