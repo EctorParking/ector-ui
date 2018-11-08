@@ -92,6 +92,7 @@ class PhoneInput extends React.Component {
           value={country.value}
           renderOption={this.renderSelectOption}
           onChange={this.onCountryCodeChange}
+          className={s.phoneInputCountryCode}
         >
           {withFlag && (<img
             src={country.image}
