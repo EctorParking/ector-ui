@@ -6,8 +6,6 @@
   flex-direction: column;
   border-radius: 0.5rem;
   padding: 0.3rem;
-  min-width: 15rem;
-  min-height: 10rem;
   position: relative;
 }
 

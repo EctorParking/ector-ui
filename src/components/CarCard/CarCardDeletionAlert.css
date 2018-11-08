@@ -9,6 +9,7 @@
 .deletionAlert p {
   margin: var(--marginSmall) 0;
   text-align: center;
+  width: 100%;
 }
 .deletionButtons {
   display: flex;
