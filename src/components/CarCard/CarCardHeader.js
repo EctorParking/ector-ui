@@ -38,7 +38,7 @@ const CarCardHeader = ({
         onClick={onDelete}
         id={`${id}Button`}
       >
-        <i className={`icon-bin ${s.editIcon}`} id={`${id}Icon`} />
+        <i className={`icon-bin ${s.deleteIcon}`} id={`${id}Icon`} />
       </button>
     );
   }
