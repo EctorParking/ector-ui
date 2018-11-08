@@ -38,7 +38,7 @@ const ContactCardHeader = ({
         onClick={onDelete}
         id={`${id}Button`}
       >
-        <i className={`icon-bin ${s.editIcon}`} />
+        <i className={`icon-bin ${s.deleteIcon}`} />
       </button>
     );
   }

@@ -1,6 +1,8 @@
 @import '../../style/variable.css';
 
 .subtitle {
+  display: flex;
+  flex-direction: column;
   margin-bottom: var(--marginLarge);
 }
 

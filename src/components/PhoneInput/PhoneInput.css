@@ -4,6 +4,11 @@
   display: flex;
   flex: 1;
 }
+
+.phoneInputCountryCode {
+  flex: 1 0 var(--marginXLarge);
+}
+
 .phoneInput input {
   margin-left: var(--marginSmall);
 }

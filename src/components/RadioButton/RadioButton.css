@@ -31,6 +31,7 @@
   height: 6px;
   left: 4px;
   position: absolute;
+  top: 8px;
   width: 6px;
 }
 .radioButton input[type="radio"]:checked + span:after {
