@@ -41,6 +41,7 @@ storiesOf('RewardCard', module)
       isSelected: boolean('Selected', true),
       isConnected: boolean('Connected', false),
       headerImage: select('Header image', options, options[0], ''),
+      mobileHeaderImage: select('Mobile header image', options, options[1], ''),
       footerButtonClassName: s.footerButton,
       footerOnClick: action('Footer click'),
       selectedIcon: text('Select icon', selectedIcon),
