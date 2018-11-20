@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import backgrounds from '@storybook/addon-backgrounds';
 import centered from '@storybook/addon-centered';
-import { withKnobs, text } from '@storybook/addon-knobs';
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import RoundedButton from './';
@@ -20,6 +20,7 @@ storiesOf('RoundedButton', module)
     const props = {
       text: text('Text', 'Choisir'),
       color: text('Color', '#ffcd02'),
+      fetching: boolean('fetching', false),
       onClick: action('clicked'),
     };
 
