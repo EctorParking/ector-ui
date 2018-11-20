@@ -9,6 +9,7 @@ import RewardCardTextTypes from './RewardCardTextTypes';
 
 const RewardCard = ({
   headerImage,
+  mobileHeaderImage,
   rewardValue,
   rewardTooltipIcon,
   footerOnClick,
@@ -26,7 +27,12 @@ const RewardCard = ({
   fetching,
   ...cardProps
 }) => {
-  const header = <RewardCardHeader headerImage={headerImage} />;
+  const header = (
+    <RewardCardHeader
+      headerImage={headerImage}
+      mobileHeaderImage={mobileHeaderImage}
+    />
+  );
   const footer =
     (<RewardCardFooter
       onClick={footerOnClick}
@@ -66,6 +72,7 @@ const RewardCard = ({
 RewardCard.propTypes = {
   texts: RewardCardTextTypes.isRequired,
   headerImage: PropTypes.string.isRequired,
+  mobileHeaderImage: PropTypes.string,
   rewardValue: PropTypes.string.isRequired,
   footerOnClick: PropTypes.func.isRequired,
   onClickEditExternalCard: PropTypes.func.isRequired,
@@ -83,6 +90,7 @@ RewardCard.propTypes = {
 };
 
 RewardCard.defaultProps = {
+  mobileHeaderImage: '',
   prefixTestId: '',
   footerButtonClassName: '',
   rewardTooltipIcon: 'icon-ec-info',

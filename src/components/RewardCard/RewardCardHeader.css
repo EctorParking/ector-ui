@@ -8,3 +8,21 @@
 .image {
   width: 100%;
 }
+
+.desktopImage {
+  display: block;
+}
+
+.mobileImage {
+  display: none;
+}
+
+@media (--mobile) {
+  .desktopImage {
+    display: none;
+  }
+
+  .mobileImage {
+    display: block;
+  }
+}
