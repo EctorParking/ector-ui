@@ -95,7 +95,7 @@ RewardCard.defaultProps = {
   footerButtonClassName: '',
   rewardTooltipIcon: 'icon-ec-info',
   isSelected: false,
-  selectedIcon: '\u2713',
+  selectedIcon: 'check',
   isConnected: false,
   children: null,
   hasExternalCard: true,

@@ -17,7 +17,6 @@ const options = [
   fbRewardLarge,
   fbRewardSmall,
 ];
-const selectedIcon = '\u2713';
 const rewardValue = '+4.60€';
 
 storiesOf('RewardCard', module)
@@ -44,7 +43,7 @@ storiesOf('RewardCard', module)
       mobileHeaderImage: select('Mobile header image', options, options[1], ''),
       footerButtonClassName: s.footerButton,
       footerOnClick: action('Footer click'),
-      selectedIcon: text('Select icon', selectedIcon),
+      selectedIcon: text('Select icon', 'check'),
       rewardValue: text('Reward value', rewardValue),
       hasExternalCard: boolean('External card', false),
       isExternalCardUpdatable: boolean('External card updatable', false),
