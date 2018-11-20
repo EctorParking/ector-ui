@@ -25,7 +25,7 @@ const RewardCardFooter = ({
           onClick={onClick}
           text={texts.footerButtonText}
           testid={`${prefixTestid}RewardCardFooterButton`}
-          className={buttonClassName}
+          className={!fetching ? buttonClassName : undefined}
           fetching={fetching}
         />
       )
