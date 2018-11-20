@@ -14,11 +14,21 @@ const RewardCardFooter = ({
   texts,
   hasExternalCard,
   isExternalCardUpdatable,
+  fetching,
 }) => (
   <Fragment>
-    {isConnected && isSelected && hasExternalCard && isExternalCardUpdatable ?
-      (<span className={s.selected}>{selectedIcon}</span>)
-      : (<RoundedButton onClick={onClick} text={texts.footerButtonText} testid={`${prefixTestid}RewardCardFooterButton`} className={buttonClassName} />)
+    {isConnected && isSelected && hasExternalCard && isExternalCardUpdatable
+      ? (
+        <span className={s.selected}>{selectedIcon}</span>
+      ) : (
+        <RoundedButton
+          onClick={onClick}
+          text={texts.footerButtonText}
+          testid={`${prefixTestid}RewardCardFooterButton`}
+          className={buttonClassName}
+          fetching={fetching}
+        />
+      )
     }
   </Fragment>
 );
@@ -33,6 +43,7 @@ RewardCardFooter.propTypes = {
   selectedIcon: PropTypes.string,
   hasExternalCard: PropTypes.bool,
   isExternalCardUpdatable: PropTypes.bool,
+  fetching: PropTypes.bool,
 };
 
 RewardCardFooter.defaultProps = {
@@ -44,6 +55,7 @@ RewardCardFooter.defaultProps = {
   selectedIcon: '\u2713',
   hasExternalCard: true,
   isExternalCardUpdatable: true,
+  fetching: false,
 };
 
 
