@@ -23,6 +23,7 @@ const RewardCard = ({
   isExternalCardUpdatable,
   onClickEditExternalCard,
   editExternalCardClassName,
+  fetching,
   ...cardProps
 }) => {
   const header = <RewardCardHeader headerImage={headerImage} />;
@@ -37,6 +38,7 @@ const RewardCard = ({
       texts={texts}
       hasExternalCard={hasExternalCard}
       isExternalCardUpdatable={isExternalCardUpdatable}
+      fetching={fetching}
     />);
 
   return (
@@ -76,6 +78,7 @@ RewardCard.propTypes = {
   isConnected: PropTypes.bool,
   hasExternalCard: PropTypes.bool,
   isExternalCardUpdatable: PropTypes.bool,
+  fetching: PropTypes.bool,
   editExternalCardClassName: PropTypes.string,
 };
 
@@ -89,6 +92,7 @@ RewardCard.defaultProps = {
   children: null,
   hasExternalCard: true,
   isExternalCardUpdatable: true,
+  fetching: false,
   editExternalCardClassName: '',
 };
 

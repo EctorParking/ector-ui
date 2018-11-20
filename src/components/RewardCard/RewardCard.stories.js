@@ -47,6 +47,7 @@ storiesOf('RewardCard', module)
       rewardValue: text('Reward value', rewardValue),
       hasExternalCard: boolean('External card', false),
       isExternalCardUpdatable: boolean('External card updatable', false),
+      fetching: boolean('Fetching', false),
       onClickEditExternalCard: action('Edit external card'),
       editExternalCardClassName: '',
     };
