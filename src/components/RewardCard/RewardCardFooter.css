@@ -1,9 +1,5 @@
 @import '../../style/variable.css';
 
-.footerContainer {
-  display: inline-block;
-}
-
 .selected {
   border-radius: 100%;
   color: var(--seventhColor);

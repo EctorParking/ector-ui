@@ -19,7 +19,7 @@ const RewardCardFooter = ({
   <Fragment>
     {isConnected && isSelected && hasExternalCard && isExternalCardUpdatable
       ? (
-        <span className={s.selected}>{selectedIcon}</span>
+        <i className={`icon-${selectedIcon} ${s.selected}`} />
       ) : (
         <RoundedButton
           onClick={onClick}
