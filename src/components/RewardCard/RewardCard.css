@@ -19,10 +19,10 @@
 }
 
 .content {
-  display: block;
+  display: flex;
   margin: 0 0 var(--marginXSmall);
   padding: 0 var(--marginMedium);
-
+  justify-content: space-evenly;
 }
 
 .footer {
