@@ -25,7 +25,7 @@ const RewardCardContent = ({
           {texts.updateExternalCard}
         </button>
       )}
-      {texts.rewardTooltip && !isExternalCardUpdatable &&
+      {texts.rewardTooltip &&
         (
           <Tooltip
             className={s.tooltip}
