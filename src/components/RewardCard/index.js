@@ -25,6 +25,7 @@ const RewardCard = ({
   onClickEditExternalCard,
   editExternalCardClassName,
   fetching,
+  className,
   ...cardProps
 }) => {
   const header = (
@@ -50,7 +51,7 @@ const RewardCard = ({
   return (
     <Card
       {...cardProps}
-      className={[s.card, isSelected ? s.scaledCard : null].join(' ')}
+      className={[s.card, isSelected ? s.scaledCard : null, className].join(' ')}
       HeaderChildren={header}
       FooterChildren={!isConnected && isSelected ? null : footer}
       footerClassName={s.footer}
@@ -87,6 +88,7 @@ RewardCard.propTypes = {
   isExternalCardUpdatable: PropTypes.bool,
   fetching: PropTypes.bool,
   editExternalCardClassName: PropTypes.string,
+  className: PropTypes.string,
 };
 
 RewardCard.defaultProps = {
@@ -102,6 +104,7 @@ RewardCard.defaultProps = {
   isExternalCardUpdatable: true,
   fetching: false,
   editExternalCardClassName: '',
+  className: undefined,
 };
 
 
