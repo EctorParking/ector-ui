@@ -76,7 +76,7 @@ RewardCard.propTypes = {
   mobileHeaderImage: PropTypes.string,
   rewardValue: PropTypes.string.isRequired,
   footerOnClick: PropTypes.func.isRequired,
-  onClickEditExternalCard: PropTypes.func.isRequired,
+  onClickEditExternalCard: PropTypes.func,
   children: PropTypes.node,
   prefixTestId: PropTypes.string,
   footerButtonClassName: PropTypes.string,
@@ -105,6 +105,7 @@ RewardCard.defaultProps = {
   fetching: false,
   editExternalCardClassName: '',
   className: undefined,
+  onClickEditExternalCard: undefined,
 };
 
 
