@@ -16,7 +16,7 @@ const RewardCardContent = ({
     <span className={s.rewardValue}>{rewardValue}</span>
     <span className={s.rewardText}>
       {texts.rewardText}
-      {isExternalCardUpdatable
+      {isExternalCardUpdatable && texts.updateExternalCard && onClickEditExternalCard
       && (
         <button
           className={editExternalCardClassName}
