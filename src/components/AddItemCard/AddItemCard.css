@@ -7,7 +7,6 @@
   margin-top: 25px;
   margin-right: 25px;
   position: relative;
-  width: 280px;
 
   &:hover {
      background-color: var(--yellow);
