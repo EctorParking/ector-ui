@@ -12,7 +12,7 @@ const AddItemCardButtonPlus = ({
   <button
     type="button"
     onClick={onClick}
-    className={[className, s.addItemButtonPlus].join(' ')}
+    className={[s.addItemButtonPlus, s.smallButtonPlus, className].join(' ')}
   >
     {isPending ? <Loader size={loaderSize} /> : '+'}
   </button>
