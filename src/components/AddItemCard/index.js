@@ -14,7 +14,7 @@ const AddItemCard = ({
   loaderSize,
   buttonClassName,
   linkClassName,
-  contentClassName,
+  isPaymentMethod,
   ...cardProps
 }) => {
   const buttonPlus = (
@@ -35,11 +35,16 @@ const AddItemCard = ({
     />
   );
 
+  const cardClassName = `
+    ${s.addItemButtonContent}
+    ${isPaymentMethod ? s.forPaymentMethod : ''}
+  `;
+
   return (
     <Card
       {...cardProps}
       footerChildren={linkUnderlined}
-      contentClassName={contentClassName || s.addItemButtonContent}
+      contentClassName={cardClassName}
     >
       {children !== null ? children : null}
       {children === null && buttonPlus}
@@ -57,7 +62,7 @@ AddItemCard.propTypes = {
   loaderSize: PropTypes.oneOf(['xSmall', 'small', 'medium', 'large']),
   buttonClassName: PropTypes.string,
   linkClassName: PropTypes.string,
-  contentClassName: PropTypes.string,
+  isPaymentMethod: PropTypes.bool,
 };
 
 AddItemCard.defaultProps = {
@@ -65,11 +70,11 @@ AddItemCard.defaultProps = {
   onClick: () => null,
   label: '',
   isPending: false,
+  isPaymentMethod: false,
   testid: '',
   loaderSize: 'small',
   buttonClassName: undefined,
   linkClassName: undefined,
-  contentClassName: undefined,
 };
 
 export default AddItemCard;

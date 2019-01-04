@@ -16,6 +16,7 @@ storiesOf('AddItemCard', module)
   .add('with knobs', () => {
     const props = {
       label: text('Label', 'Label'),
+      isPaymentMethod: boolean('isPaymentMethod', false),
       isPending: boolean('isPending', false),
       loaderSize: selectV2('loaderSize', ['xSmall', 'small', 'medium', 'large'], 'small'),
     };
