@@ -15,24 +15,29 @@
 }
 .addItemButton.forPaymentMethod {
   flex: 0 0 185px;
+  border-radius: 8px;
+  margin-top: 25px;
+  margin-right: 25px;
+  position: relative;
+  width: 280px;
 }
 
 .addItemButtonContent {
   background-color: var(--white);
   display: flex;
   flex-direction: column;
-  padding: var(--marginSmall) var(--marginSmall) var(--marginSmall) var(--marginSmall) !important;
+  padding: 1rem !important;
 }
 
 .addItemButtonPlus {
   color: var(--lightGrey);
-  font-size: 118px;
+  font-size: 59px;
   font-weight: var(--fontWeightBold);
   line-height: 0.9;
   text-align: center;
 
   &.smallButtonPlus {
-    font-size: 59px;
+    font-size: 20px;
   }
 }
 
