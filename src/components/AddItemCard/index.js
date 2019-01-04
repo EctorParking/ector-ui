@@ -14,6 +14,7 @@ const AddItemCard = ({
   loaderSize,
   buttonClassName,
   linkClassName,
+  contentClassName,
   ...cardProps
 }) => {
   const buttonPlus = (
@@ -38,7 +39,7 @@ const AddItemCard = ({
     <Card
       {...cardProps}
       footerChildren={linkUnderlined}
-      contentClassName={s.addItemButtonContent}
+      contentClassName={contentClassName || s.addItemButtonContent}
     >
       {children !== null ? children : null}
       {children === null && buttonPlus}
@@ -56,6 +57,7 @@ AddItemCard.propTypes = {
   loaderSize: PropTypes.oneOf(['xSmall', 'small', 'medium', 'large']),
   buttonClassName: PropTypes.string,
   linkClassName: PropTypes.string,
+  contentClassName: PropTypes.string,
 };
 
 AddItemCard.defaultProps = {
@@ -67,6 +69,7 @@ AddItemCard.defaultProps = {
   loaderSize: 'small',
   buttonClassName: undefined,
   linkClassName: undefined,
+  contentClassName: undefined,
 };
 
 export default AddItemCard;

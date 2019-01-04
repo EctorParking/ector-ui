@@ -8,19 +8,15 @@ const AddItemCardButtonPlus = ({
   onClick,
   loaderSize,
   className,
-}) => {
-  const buttonPlusClass = [s.addItemButtonPlus];
-
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      className={[className, buttonPlusClass].join(' ')}
-    >
-      {isPending ? <Loader size={loaderSize} /> : '+'}
-    </button>
-  );
-};
+}) => (
+  <button
+    type="button"
+    onClick={onClick}
+    className={[className, s.addItemButtonPlus].join(' ')}
+  >
+    {isPending ? <Loader size={loaderSize} /> : '+'}
+  </button>
+);
 
 AddItemCardButtonPlus.propTypes = {
   isPending: PropTypes.bool,
