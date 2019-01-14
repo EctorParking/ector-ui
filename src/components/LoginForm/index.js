@@ -2,10 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import s from './LoginForm.css';
-import { InputLabel, Card, LinkUnderlined } from '..';
+import { InputLabel, Card, LinkUnderlined, ActionLink } from '..';
 import TextsType, { DefaultTexts } from './LoginFormTextsType';
 import { LoginFormErrorsType, LoginFormValuesType } from './LoginType';
-import ActionLink from '../ActionLink';
 
 const LoginForm = ({
   className,
