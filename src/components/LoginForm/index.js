@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import s from './LoginForm.css';
-import { InputLabel, Card, LinkUnderlined } from '..';
+import { InputLabel, Card, LinkUnderlined, ActionLink } from '..';
 import TextsType, { DefaultTexts } from './LoginFormTextsType';
 import { LoginFormErrorsType, LoginFormValuesType } from './LoginType';
 
@@ -23,6 +23,7 @@ const LoginForm = ({
   buttonTestid,
   RootComponent,
   SubmitButtonComponent,
+  onClickPasswordForgotten,
   ...cardProps
 }) => (
   <RootComponent {...cardProps} className={[s.card, className].join(' ')} contentClassName={[s.contentCard, contentClassName].join(' ')}>
@@ -48,6 +49,15 @@ const LoginForm = ({
       onChange={onChangePassword}
       error={errors.password}
     />
+    {
+      onClickPasswordForgotten && (
+        <ActionLink
+          label={texts.onClickPasswordForgottenLabel}
+          className={s.forgottenPasswordLink}
+          onClick={onClickPasswordForgotten}
+        />
+      )
+    }
     {typeof errorLogin !== 'undefined' && errorLogin !== '' && <div className={s.error}>{errorLogin}</div>}
     <SubmitButtonComponent onClick={onSubmit} className={[s.button, buttonClassName].join(' ')} fetching={fetching} testid={buttonTestid}>
       <span>{texts.submitButton}</span>
@@ -70,6 +80,7 @@ LoginForm.defaultProps = {
   // eslint-disable-next-line react/prop-types
   SubmitButtonComponent: ({ children, ...buttonProps }) =>
     (<LinkUnderlined {...buttonProps}>{children}</LinkUnderlined>),
+  onClickPasswordForgotten: undefined,
 };
 
 LoginForm.propTypes = {
@@ -89,6 +100,7 @@ LoginForm.propTypes = {
   buttonTestid: PropTypes.string,
   RootComponent: PropTypes.func,
   SubmitButtonComponent: PropTypes.func,
+  onClickPasswordForgotten: PropTypes.func,
 };
 
 export default LoginForm;

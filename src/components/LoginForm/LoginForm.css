@@ -25,3 +25,7 @@
 .inputError {
   border-color: var(--red);
 }
+
+.forgottenPasswordLink {
+  align-self: flex-end;
+}
