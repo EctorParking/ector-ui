@@ -15,6 +15,10 @@
   display: flex;
   position: relative;
 }
+.radioButton > span:before,
+.radioButton > span:after {
+  display: block;
+}
 .radioButton > span:before {
   border-radius: 50%;
   border: 2px solid var(--darkMetalGrey);
