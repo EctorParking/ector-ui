@@ -1,6 +1,7 @@
 @import '../../style/variable.css';
 
 .card {
+  display: block;
   padding: var(--noMargin);
   max-width: 17rem;
   max-height: 100%;
@@ -20,7 +21,6 @@
 
 .content {
   display: flex;
-  margin: 0 0 var(--marginXSmall);
   padding: 0 var(--marginMedium);
   justify-content: space-evenly;
 }

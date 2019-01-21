@@ -1,6 +1,7 @@
 @import '../../style/variable.css';
 
 .contentContainer {
+  margin: 0 0 var(--marginXSmall);
   text-align: center;
 }
 
