@@ -12,6 +12,14 @@
   justify-content: space-between;
 }
 
+.columns > div> *  {
+  height: 50px;
+}
+
+.leftColumn {
+  margin-right: var(--marginSmall);
+}
+
 .columns:nth-child(2) {
   margin-left: 20px;
 }
@@ -25,5 +33,5 @@
 }
 
 .inputLabel {
-  margin-top: var(--marginMedium);
+  margin-top: var(--marginLarge);
 }

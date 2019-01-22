@@ -35,3 +35,4 @@ export { default as Tooltip } from './Tooltip';
 export { default as RewardCard } from './RewardCard';
 export { default as RoundedButton } from './RoundedButton';
 export { default as AddItemCard } from './AddItemCard';
+export { default as RegistrationForm } from './RegistrationForm';

@@ -9,7 +9,7 @@ const RegistrationForm = ({
 }) => (
   <RootComponent {...cardProps} className={[s.card, className].join(' ')} contentClassName={[s.contentCard, contentClassName].join(' ')}>
     <div className={s.columns}>
-      <div>
+      <div className={s.leftColumn}>
         <div className={s.flex}>
           <RadioButton className={s.leftRadio} label={texts.firstChoice} value={radioValues.firstChoice} name="gender" />
           <RadioButton label={texts.secondChoice} value={radioValues.secondChoice} name="gender" />
