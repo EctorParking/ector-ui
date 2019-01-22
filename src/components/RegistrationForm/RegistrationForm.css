@@ -1,0 +1,29 @@
+@import '../../style/variable.css';
+
+.columns {
+  display: flex;
+}
+
+.columns > div {
+  flex: 1;
+  border-spacing: var(--marginMedium);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.columns:nth-child(2) {
+  margin-left: 20px;
+}
+
+.flex {
+  display: flex;
+}
+
+.leftRadio {
+  margin-right: var(--marginSmall);
+}
+
+.inputLabel {
+  margin-top: var(--marginMedium);
+}
