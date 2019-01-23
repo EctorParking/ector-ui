@@ -9,3 +9,7 @@
 .genderPicker label:last-child {
   margin-right: 0;
 }
+.error {
+  text-align: left;
+  color: var(--red);
+}
