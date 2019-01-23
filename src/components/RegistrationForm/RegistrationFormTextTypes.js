@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 
 export default PropTypes.shape({
-  firstChoice: PropTypes.string,
-  secondChoice: PropTypes.string,
+  male: PropTypes.string,
+  female: PropTypes.string,
   firstName: PropTypes.string,
   lastName: PropTypes.string,
   postalCode: PropTypes.string,
@@ -14,8 +14,8 @@ export default PropTypes.shape({
 });
 
 const defaultTexts = {
-  firstChoice: 'Mr',
-  secondChoice: 'Mme',
+  male: 'Mr',
+  female: 'Mme',
   firstName: 'Prénom',
   lastName: 'Nom',
   postalCode: 'Code postal',
@@ -27,8 +27,8 @@ const defaultTexts = {
 };
 
 const radioDefaultValues = {
-  firstChoice: 'Mr',
-  secondChoice: 'Mme',
+  male: 'Mr',
+  female: 'Mme',
 };
 
 const OnChangesRegistrationFormType = {

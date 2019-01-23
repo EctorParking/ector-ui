@@ -25,8 +25,8 @@ const RegistrationForm = ({
           <GenderPicker
             className={s.genderPicker}
             genders={[
-              { label: texts.firstChoice, value: radioValues.firstChoice },
-              { label: texts.secondChoice, value: radioValues.secondChoice },
+              { label: texts.male, value: radioValues.male },
+              { label: texts.female, value: radioValues.female },
             ]}
             onSelect={onChanges.gender}
             selected={values.title}
