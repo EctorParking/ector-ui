@@ -9,7 +9,7 @@ export default PropTypes.shape({
   phone: PropTypes.string,
   email: PropTypes.string,
   password: PropTypes.string,
-  confirmPassword: PropTypes.string,
+  passwordConfirmation: PropTypes.string,
   title: PropTypes.string,
 });
 
@@ -22,7 +22,7 @@ const defaultTexts = {
   phone: 'Téléphone mobile',
   email: 'Email',
   password: 'Mot de passe',
-  confirmPassword: 'Confirmation de mot de passe',
+  passwordConfirmation: 'Confirmation de mot de passe',
   title: 'Civilité',
 };
 
@@ -39,7 +39,7 @@ const OnChangesRegistrationFormType = {
   email: PropTypes.func,
   phone: PropTypes.func,
   password: PropTypes.func,
-  confirmPassword: PropTypes.func,
+  passwordConfirmation: PropTypes.func,
 };
 
 const defaultOnChanges = {
@@ -60,7 +60,7 @@ const ValuesType = {
   phone: PropTypes.string,
   email: PropTypes.string,
   password: PropTypes.string,
-  confirmPassword: PropTypes.string,
+  passwordConfirmation: PropTypes.string,
   title: PropTypes.string,
 };
 
@@ -71,7 +71,7 @@ const ErrorsType = {
   phone: PropTypes.string,
   email: PropTypes.string,
   password: PropTypes.string,
-  confirmPassword: PropTypes.string,
+  passwordConfirmation: PropTypes.string,
   title: PropTypes.string,
 };
 
@@ -82,7 +82,7 @@ const defaultValue = {
   phone: '',
   email: '',
   password: '',
-  confirmPassword: '',
+  passwordConfirmation: '',
   title: '',
 };
 
@@ -93,7 +93,7 @@ const defaultErrors = {
   phone: null,
   email: null,
   password: null,
-  confirmPassword: null,
+  passwordConfirmation: null,
   title: null,
 };
 
