@@ -10,18 +10,26 @@ const GenderPicker = ({
   onSelect,
   selected,
   className,
+  error,
 }) => (
-  <div className={[s.genderPicker, className].join(' ')}>
-    {genders.map(gender => (
-      <RadioButton
-        key={gender.value}
-        value={gender.value}
-        label={gender.label}
-        name="gender"
-        checked={gender.value === selected}
-        onSelect={onSelect}
-      />
-    ))}
+  <div>
+    <div className={[s.genderPicker, className].join(' ')}>
+      {genders.map(gender => (
+        <RadioButton
+          key={gender.value}
+          value={gender.value}
+          label={gender.label}
+          name="gender"
+          checked={gender.value === selected}
+          onSelect={onSelect}
+        />
+      ))}
+    </div>
+    {
+      !!error && (
+        <div className={s.error}>{error}</div>
+      )
+    }
   </div>
 );
 
@@ -29,6 +37,7 @@ GenderPicker.defaultProps = {
   selected: '',
   onSelect: () => {},
   className: '',
+  error: null,
 };
 
 GenderPicker.propTypes = {
@@ -36,6 +45,7 @@ GenderPicker.propTypes = {
   genders: PropTypes.arrayOf(GenderType).isRequired,
   onSelect: PropTypes.func,
   className: PropTypes.string,
+  error: PropTypes.string,
 };
 
 export default GenderPicker;

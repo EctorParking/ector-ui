@@ -33,5 +33,13 @@
 }
 
 .inputLabel {
-  margin-top: var(--marginLarge);
+  margin-top: var(--marginMLarge);
+}
+
+.titleRadio {
+  flex-direction: column;
+}
+
+.genderPicker {
+  margin-top: var(--marginSmall);
 }
