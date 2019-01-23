@@ -77,10 +77,10 @@ const RegistrationForm = ({
         />
         <InputLabel
           className={s.inputLabel}
-          label={texts.confirmPassword}
-          onChange={onChanges.confirmPassword}
-          value={values.confirmPassword}
-          error={errors.confirmPassword}
+          label={texts.passwordConfirmation}
+          onChange={onChanges.passwordConfirmation}
+          value={values.passwordConfirmation}
+          error={errors.passwordConfirmation}
           mandatory
         />
       </div>
