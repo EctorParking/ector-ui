@@ -58,7 +58,12 @@ const RegistrationForm = ({
         />
       </div>
       <div>
-        <PhoneInput withFlag={phoneWithFlags} label={texts.phone} mandatory />
+        <PhoneInput
+          withFlag={phoneWithFlags}
+          label={texts.phone}
+          onChange={onChanges.phone}
+          mandatory
+        />
         <InputLabel
           className={s.inputLabel}
           label={texts.email}
@@ -73,6 +78,7 @@ const RegistrationForm = ({
           onChange={onChanges.password}
           value={values.password}
           error={errors.password}
+          type="password"
           mandatory
         />
         <InputLabel
@@ -81,6 +87,7 @@ const RegistrationForm = ({
           onChange={onChanges.passwordConfirmation}
           value={values.passwordConfirmation}
           error={errors.passwordConfirmation}
+          type="password"
           mandatory
         />
       </div>

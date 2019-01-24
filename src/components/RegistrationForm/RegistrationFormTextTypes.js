@@ -50,7 +50,7 @@ const defaultOnChanges = {
   email: () => {},
   phone: () => {},
   password: () => {},
-  confirmPassword: () => {},
+  passwordConfirmation: () => {},
 };
 
 const ValuesType = {
