@@ -32,7 +32,7 @@ const radioDefaultValues = {
 };
 
 const OnChangesRegistrationFormType = {
-  gender: PropTypes.func,
+  title: PropTypes.func,
   firstName: PropTypes.func,
   lastName: PropTypes.func,
   postalCode: PropTypes.func,
@@ -43,7 +43,7 @@ const OnChangesRegistrationFormType = {
 };
 
 const defaultOnChanges = {
-  gender: () => {},
+  title: () => {},
   firstName: () => {},
   lastName: () => {},
   postalCode: () => {},

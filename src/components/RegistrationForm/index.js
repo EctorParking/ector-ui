@@ -28,7 +28,7 @@ const RegistrationForm = ({
               { label: texts.male, value: radioValues.male },
               { label: texts.female, value: radioValues.female },
             ]}
-            onSelect={onChanges.gender}
+            onSelect={onChanges.title}
             selected={values.title}
             error={errors.title}
           />
