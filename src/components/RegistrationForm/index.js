@@ -5,96 +5,124 @@ import s from './RegistrationForm.css';
 import RegistrationFormTextTypes, {
   defaultTexts,
   radioDefaultValues,
-  OnChangesRegistrationFormType,
-  defaultOnChanges,
   ValuesType,
   ErrorsType,
   defaultValue,
   defaultErrors,
 } from './RegistrationFormTextTypes';
 
-const RegistrationForm = ({
-  RootComponent, className, contentClassName,
-  texts, radioValues, phoneWithFlags, onChanges, values, errors, ...cardProps
-}) => (
-  <RootComponent {...cardProps} className={[s.card, className].join(' ')} contentClassName={[s.contentCard, contentClassName].join(' ')}>
-    <div className={s.columns}>
-      <div className={s.leftColumn}>
-        <div className={s.titleRadio}>
-          <label htmlFor="title">{texts.title}</label>
-          <GenderPicker
-            className={s.genderPicker}
-            genders={[
-              { label: texts.male, value: radioValues.male },
-              { label: texts.female, value: radioValues.female },
-            ]}
-            onSelect={onChanges.title}
-            selected={values.title}
-            error={errors.title}
-          />
+class RegistrationForm extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.handleChangeGender = props.onChangeProperty.bind(this, 'title');
+    this.handleChangeFirstName = this.handleChangeProperty.bind(this, 'firstName');
+    this.handleChangeLastName = this.handleChangeProperty.bind(this, 'lastName');
+    this.handleChangeEmail = this.handleChangeProperty.bind(this, 'email');
+    this.handleChangePhone = this.handleChangeProperty.bind(this, 'phone');
+    this.handleChangePostalCode = this.handleChangeProperty.bind(this, 'postalCode');
+    this.handleChangePassword = this.handleChangeProperty.bind(this, 'password');
+    this.handleChangePasswordConfirmation = this.handleChangeProperty.bind(this, 'passwordConfirmation');
+
+    this.genders = [{
+      value: 'male',
+      label: radioDefaultValues.male,
+    }, {
+      value: 'female',
+      label: radioDefaultValues.female,
+    }];
+  }
+
+  handleChangeProperty(field, event) {
+    const { onChangeProperty } = this.props;
+
+    onChangeProperty(field, event.currentTarget.value);
+  }
+
+  render() {
+    const {
+      RootComponent, className, contentClassName,
+      texts, phoneWithFlags, values, errors, ...cardProps
+    } = this.props;
+
+    return (
+      <RootComponent {...cardProps} className={[s.card, className].join(' ')} contentClassName={[s.contentCard, contentClassName].join(' ')}>
+        <div className={s.columns}>
+          <div className={s.leftColumn}>
+            <div className={s.titleRadio}>
+              <label htmlFor="title">{texts.title}</label>
+              <GenderPicker
+                className={s.genderPicker}
+                genders={this.genders}
+                onSelect={this.handleChangeGender}
+                selected={values.title}
+                error={errors.title}
+              />
+            </div>
+            <InputLabel
+              className={s.inputLabel}
+              label={texts.firstName}
+              onChange={this.handleChangeFirstName}
+              value={values.firstName}
+              error={errors.firstName}
+              mandatory
+            />
+            <InputLabel
+              className={s.inputLabel}
+              label={texts.lastName}
+              onChange={this.handleChangeLastName}
+              value={values.lastName}
+              error={errors.lastName}
+              mandatory
+            />
+            <InputLabel
+              className={s.inputLabel}
+              label={texts.postalCode}
+              onChange={this.handleChangePostalCode}
+              value={values.postalCode}
+              error={errors.postalCode}
+            />
+          </div>
+          <div>
+            <PhoneInput
+              withFlag={phoneWithFlags}
+              label={texts.phone}
+              onChange={this.handleChangePhone}
+              value={values.phone}
+              error={errors.phone}
+              mandatory
+            />
+            <InputLabel
+              className={s.inputLabel}
+              label={texts.email}
+              onChange={this.handleChangeEmail}
+              value={values.email}
+              error={errors.email}
+              mandatory
+            />
+            <InputLabel
+              className={s.inputLabel}
+              label={texts.password}
+              onChange={this.handleChangePassword}
+              value={values.password}
+              error={errors.password}
+              type="password"
+              mandatory
+            />
+            <InputLabel
+              className={s.inputLabel}
+              label={texts.passwordConfirmation}
+              onChange={this.handleChangePasswordConfirmation}
+              value={values.passwordConfirmation}
+              error={errors.passwordConfirmation}
+              type="password"
+              mandatory
+            />
+          </div>
         </div>
-        <InputLabel
-          className={s.inputLabel}
-          label={texts.firstName}
-          onChange={onChanges.firstName}
-          value={values.firstName}
-          error={errors.firstName}
-          mandatory
-        />
-        <InputLabel
-          className={s.inputLabel}
-          label={texts.lastName}
-          onChange={onChanges.lastName}
-          value={values.lastName}
-          error={errors.lastName}
-          mandatory
-        />
-        <InputLabel
-          className={s.inputLabel}
-          label={texts.postalCode}
-          onChange={onChanges.postalCode}
-          value={values.postalCode}
-          error={errors.postalCode}
-        />
-      </div>
-      <div>
-        <PhoneInput
-          withFlag={phoneWithFlags}
-          label={texts.phone}
-          onChange={onChanges.phone}
-          value={values.phone}
-          error={errors.phone}
-          mandatory
-        />
-        <InputLabel
-          className={s.inputLabel}
-          label={texts.email}
-          onChange={onChanges.email}
-          value={values.email}
-          error={errors.email}
-          mandatory
-        />
-        <InputLabel
-          className={s.inputLabel}
-          label={texts.password}
-          onChange={onChanges.password}
-          value={values.password}
-          error={errors.password}
-          type="password"
-          mandatory
-        />
-        <InputLabel
-          className={s.inputLabel}
-          label={texts.passwordConfirmation}
-          onChange={onChanges.passwordConfirmation}
-          value={values.passwordConfirmation}
-          error={errors.passwordConfirmation}
-          type="password"
-          mandatory
-        />
-      </div>
-    </div>
-  </RootComponent>);
+      </RootComponent>);
+  }
+}
 
 RegistrationForm.defaultProps = {
   // eslint-disable-next-line react/prop-types
@@ -102,9 +130,8 @@ RegistrationForm.defaultProps = {
   className: undefined,
   contentClassName: undefined,
   texts: defaultTexts,
-  radioValues: radioDefaultValues,
   phoneWithFlags: false,
-  onChanges: defaultOnChanges,
+  onChangeProperty: () => {},
   values: defaultValue,
   errors: defaultErrors,
 };
@@ -114,11 +141,8 @@ RegistrationForm.propTypes = {
   className: PropTypes.string,
   contentClassName: PropTypes.string,
   texts: RegistrationFormTextTypes,
-  radioValues: PropTypes.shape({
-    firstChoice: PropTypes.string,
-  }),
   phoneWithFlags: PropTypes.bool,
-  onChanges: OnChangesRegistrationFormType,
+  onChangeProperty: PropTypes.func,
   values: ValuesType,
   errors: ErrorsType,
 };

@@ -31,28 +31,6 @@ const radioDefaultValues = {
   female: 'Mme',
 };
 
-const OnChangesRegistrationFormType = {
-  title: PropTypes.func,
-  firstName: PropTypes.func,
-  lastName: PropTypes.func,
-  postalCode: PropTypes.func,
-  email: PropTypes.func,
-  phone: PropTypes.func,
-  password: PropTypes.func,
-  passwordConfirmation: PropTypes.func,
-};
-
-const defaultOnChanges = {
-  title: () => {},
-  firstName: () => {},
-  lastName: () => {},
-  postalCode: () => {},
-  email: () => {},
-  phone: () => {},
-  password: () => {},
-  passwordConfirmation: () => {},
-};
-
 const ValuesType = {
   firstName: PropTypes.string,
   lastName: PropTypes.string,
@@ -101,8 +79,6 @@ const defaultErrors = {
 export {
   defaultTexts,
   radioDefaultValues,
-  OnChangesRegistrationFormType,
-  defaultOnChanges,
   ValuesType,
   ErrorsType,
   defaultValue,
