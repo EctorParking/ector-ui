@@ -62,6 +62,7 @@ const RegistrationForm = ({
           withFlag={phoneWithFlags}
           label={texts.phone}
           onChange={onChanges.phone}
+          value={values.phone}
           mandatory
         />
         <InputLabel
