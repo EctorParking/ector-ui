@@ -7,7 +7,7 @@ import RegistrationFormTextTypes, {
   radioDefaultValues,
   ValuesType,
   ErrorsType,
-  defaultValue,
+  defaultValues,
   defaultErrors,
 } from './RegistrationFormTextTypes';
 
@@ -55,7 +55,7 @@ class RegistrationForm extends React.Component {
                 className={s.genderPicker}
                 genders={this.genders}
                 onSelect={this.handleChangeGender}
-                selected={values.title}
+                selected={values.title || ''}
                 error={errors.title}
               />
             </div>
@@ -63,7 +63,7 @@ class RegistrationForm extends React.Component {
               className={s.inputLabel}
               label={texts.firstName}
               onChange={this.handleChangeFirstName}
-              value={values.firstName}
+              value={values.firstName || ''}
               error={errors.firstName}
               mandatory
             />
@@ -71,7 +71,7 @@ class RegistrationForm extends React.Component {
               className={s.inputLabel}
               label={texts.lastName}
               onChange={this.handleChangeLastName}
-              value={values.lastName}
+              value={values.lastName || ''}
               error={errors.lastName}
               mandatory
             />
@@ -79,7 +79,7 @@ class RegistrationForm extends React.Component {
               className={s.inputLabel}
               label={texts.postalCode}
               onChange={this.handleChangePostalCode}
-              value={values.postalCode}
+              value={values.postalCode || ''}
               error={errors.postalCode}
             />
           </div>
@@ -88,7 +88,7 @@ class RegistrationForm extends React.Component {
               withFlag={phoneWithFlags}
               label={texts.phone}
               onChange={this.handleChangePhone}
-              value={values.phone}
+              value={values.phone || ''}
               error={errors.phone}
               mandatory
             />
@@ -96,7 +96,7 @@ class RegistrationForm extends React.Component {
               className={s.inputLabel}
               label={texts.email}
               onChange={this.handleChangeEmail}
-              value={values.email}
+              value={values.email || ''}
               error={errors.email}
               mandatory
             />
@@ -104,7 +104,7 @@ class RegistrationForm extends React.Component {
               className={s.inputLabel}
               label={texts.password}
               onChange={this.handleChangePassword}
-              value={values.password}
+              value={values.password || ''}
               error={errors.password}
               type="password"
               mandatory
@@ -113,7 +113,7 @@ class RegistrationForm extends React.Component {
               className={s.inputLabel}
               label={texts.passwordConfirmation}
               onChange={this.handleChangePasswordConfirmation}
-              value={values.passwordConfirmation}
+              value={values.passwordConfirmation || ''}
               error={errors.passwordConfirmation}
               type="password"
               mandatory
@@ -132,7 +132,7 @@ RegistrationForm.defaultProps = {
   texts: defaultTexts,
   phoneWithFlags: false,
   onChangeProperty: () => {},
-  values: defaultValue,
+  values: defaultValues,
   errors: defaultErrors,
 };
 
