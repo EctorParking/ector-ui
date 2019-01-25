@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types';
 
 export default PropTypes.shape({
-  male: PropTypes.string,
-  female: PropTypes.string,
   firstName: PropTypes.string,
   lastName: PropTypes.string,
   postalCode: PropTypes.string,
@@ -31,7 +29,7 @@ const radioDefaultValues = {
   female: 'Mme',
 };
 
-const ValuesType = {
+const ValuesType = PropTypes.shape({
   firstName: PropTypes.string,
   lastName: PropTypes.string,
   postalCode: PropTypes.string,
@@ -40,9 +38,9 @@ const ValuesType = {
   password: PropTypes.string,
   passwordConfirmation: PropTypes.string,
   title: PropTypes.string,
-};
+});
 
-const ErrorsType = {
+const ErrorsType = PropTypes.shape({
   firstName: PropTypes.string,
   lastName: PropTypes.string,
   postalCode: PropTypes.string,
@@ -51,9 +49,9 @@ const ErrorsType = {
   password: PropTypes.string,
   passwordConfirmation: PropTypes.string,
   title: PropTypes.string,
-};
+});
 
-const defaultValue = {
+const defaultValues = {
   firstName: '',
   lastName: '',
   postalCode: '',
@@ -81,6 +79,6 @@ export {
   radioDefaultValues,
   ValuesType,
   ErrorsType,
-  defaultValue,
+  defaultValues,
   defaultErrors,
 };

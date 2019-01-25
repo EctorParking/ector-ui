@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import backgrounds from '@storybook/addon-backgrounds';
 import centered from '@storybook/addon-centered';
 import { withKnobs, object } from '@storybook/addon-knobs';
+import { defaultValues } from './RegistrationFormTextTypes';
 
 import RegistrationForm from './';
 
@@ -17,6 +18,8 @@ storiesOf('RegistrationForm', module)
   .add('with knobs', () => {
     const props = {
       texts: object('Texts'),
+      values: object('Values', defaultValues),
+      errors: object('Errors'),
     };
 
     return <RegistrationForm {...props} />;
