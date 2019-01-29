@@ -39,10 +39,20 @@ class RegistrationForm extends React.Component {
     onChangeProperty(field, event.currentTarget.value);
   }
 
+  renderLabelFooterPasswordComponent = () => {
+    const { labelFooterPassword } = this.props;
+
+    if (labelFooterPassword) {
+      return (<div className={s.footerLabel}>{labelFooterPassword}</div>);
+    }
+
+    return null;
+  };
+
   render() {
     const {
       RootComponent, className, contentClassName,
-      texts, phoneWithFlags, values, errors, labelFooterPassword,
+      texts, phoneWithFlags, values, errors,
       ...cardProps
     } = this.props;
 
@@ -106,8 +116,8 @@ class RegistrationForm extends React.Component {
               label={texts.password}
               onChange={this.handleChangePassword}
               value={values.password || ''}
-              labelFooter={labelFooterPassword}
               error={errors.password}
+              LabelFooterComponent={this.renderLabelFooterPasswordComponent}
               type="password"
               mandatory
             />

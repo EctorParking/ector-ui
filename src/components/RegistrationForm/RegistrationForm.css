@@ -43,3 +43,13 @@
 .genderPicker {
   margin-top: var(--marginSmall);
 }
+
+.error {
+  text-align: left;
+  color: var(--red);
+}
+
+.footerLabel {
+  font-style: italic;
+  font-size: var(--fontSizeLabel);
+}

@@ -37,8 +37,3 @@
 .mandatory:after {
   content: '*';
 }
-
-.footerLabel {
-  font-style: italic;
-  font-size: var(--fontSizeLabel);
-}
