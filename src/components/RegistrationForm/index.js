@@ -42,7 +42,8 @@ class RegistrationForm extends React.Component {
   render() {
     const {
       RootComponent, className, contentClassName,
-      texts, phoneWithFlags, values, errors, ...cardProps
+      texts, phoneWithFlags, values, errors, labelFooterPassword,
+      ...cardProps
     } = this.props;
 
     return (
@@ -105,6 +106,7 @@ class RegistrationForm extends React.Component {
               label={texts.password}
               onChange={this.handleChangePassword}
               value={values.password || ''}
+              labelFooter={labelFooterPassword}
               error={errors.password}
               type="password"
               mandatory
@@ -134,6 +136,7 @@ RegistrationForm.defaultProps = {
   onChangeProperty: () => {},
   values: defaultValues,
   errors: defaultErrors,
+  labelFooterPassword: 'Minimum 8 caractères',
 };
 
 RegistrationForm.propTypes = {
@@ -145,6 +148,7 @@ RegistrationForm.propTypes = {
   onChangeProperty: PropTypes.func,
   values: ValuesType,
   errors: ErrorsType,
+  labelFooterPassword: PropTypes.string,
 };
 
 export default RegistrationForm;

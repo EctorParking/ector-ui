@@ -19,6 +19,7 @@ const InputLabel = ({
   InputComponent,
   LabelComponent,
   inputContainerClassName,
+  labelFooter,
   ...inputProps
 }) => {
   const labelClassName = mandatory ? s.mandatory : '';
@@ -58,6 +59,11 @@ const InputLabel = ({
             <div className={s.error}>{error}</div>
           )
         }
+        {
+          !error && !!labelFooter && (
+            <div className={s.footerLabel}>{labelFooter}</div>
+          )
+        }
       </div>
     </div>
   );
@@ -76,6 +82,7 @@ InputLabel.defaultProps = {
   LabelComponent: null,
   type: 'text',
   inputContainerClassName: '',
+  labelFooter: '',
 };
 
 InputLabel.propTypes = {
@@ -92,6 +99,7 @@ InputLabel.propTypes = {
   children: PropTypes.node,
   InputComponent: PropTypes.func,
   LabelComponent: PropTypes.func,
+  labelFooter: PropTypes.string,
 };
 
 export default InputLabel;
