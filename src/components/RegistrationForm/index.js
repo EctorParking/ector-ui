@@ -39,10 +39,19 @@ class RegistrationForm extends React.Component {
     onChangeProperty(field, event.currentTarget.value);
   }
 
+  renderLabelFooterPasswordComponent = () => {
+    const { labelFooterPassword } = this.props;
+
+    return labelFooterPassword ?
+      (<div className={s.footerLabel}>{labelFooterPassword}</div>) :
+      null;
+  };
+
   render() {
     const {
       RootComponent, className, contentClassName,
-      texts, phoneWithFlags, values, errors, ...cardProps
+      texts, phoneWithFlags, values, errors,
+      ...cardProps
     } = this.props;
 
     return (
@@ -106,6 +115,7 @@ class RegistrationForm extends React.Component {
               onChange={this.handleChangePassword}
               value={values.password || ''}
               error={errors.password}
+              LabelFooterComponent={this.renderLabelFooterPasswordComponent}
               type="password"
               mandatory
             />
@@ -134,6 +144,7 @@ RegistrationForm.defaultProps = {
   onChangeProperty: () => {},
   values: defaultValues,
   errors: defaultErrors,
+  labelFooterPassword: 'Minimum 8 caractères',
 };
 
 RegistrationForm.propTypes = {
@@ -145,6 +156,7 @@ RegistrationForm.propTypes = {
   onChangeProperty: PropTypes.func,
   values: ValuesType,
   errors: ErrorsType,
+  labelFooterPassword: PropTypes.string,
 };
 
 export default RegistrationForm;
