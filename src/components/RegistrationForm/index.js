@@ -42,11 +42,9 @@ class RegistrationForm extends React.Component {
   renderLabelFooterPasswordComponent = () => {
     const { labelFooterPassword } = this.props;
 
-    if (labelFooterPassword) {
-      return (<div className={s.footerLabel}>{labelFooterPassword}</div>);
-    }
-
-    return null;
+    return labelFooterPassword ?
+      (<div className={s.footerLabel}>{labelFooterPassword}</div>) :
+      null;
   };
 
   render() {
