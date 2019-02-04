@@ -1,9 +1,14 @@
 import PropTypes from 'prop-types';
 
+const FeePropType = PropTypes.oneOf(PropTypes.string, PropTypes.number);
+
 export default PropTypes.shape({
-  initialPrice: PropTypes.number,
-  routingFee: PropTypes.number,
-  parkingFee: PropTypes.number,
-  administrativeFee: PropTypes.number,
-  leftToPay: PropTypes.number,
+  initialPrice: PropTypes.string,
+  routingFee: FeePropType,
+  parkingFee: FeePropType,
+  administrativeFee: FeePropType,
+  countRoutingFee: PropTypes.number,
+  countParkingFee: PropTypes.number,
+  countAdministrativeFee: PropTypes.number,
+  total: PropTypes.string,
 });
