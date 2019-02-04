@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Price } from '..';
 import BookingModificationSummaryRow from './BookingModificationSummaryRow';
 import bookingModificationSummaryTextType, { defaultTexts } from './BookingModificationSummaryTextsType';
 import BookingModificationSummaryPriceType from './BookingModificationSummaryPriceType';
