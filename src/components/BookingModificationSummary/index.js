@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Price } from '..';
 import BookingModificationSummaryRow from './BookingModificationSummaryRow';
 import bookingModificationSummaryTextType, { defaultTexts } from './BookingModificationSummaryTextsType';
 import BookingModificationSummaryPriceType from './BookingModificationSummaryPriceType';
@@ -14,35 +15,38 @@ const BookingModificationSummary = ({ texts, className, bookingModificationSumma
       textClassName={s.bold}
     />
     { (
-      bookingModificationSummaryPrice.parkingFee ||
-      bookingModificationSummaryPrice.routingFee ||
-      bookingModificationSummaryPrice.administrativeFee)
+      +bookingModificationSummaryPrice.parkingFee ||
+      +bookingModificationSummaryPrice.routingFee ||
+      +bookingModificationSummaryPrice.administrativeFee)
       ? (
         <hr className={s.horizontalRule} />
       ) : null
     }
     {
-      bookingModificationSummaryPrice.parkingFee ? (
+      +bookingModificationSummaryPrice.parkingFee ? (
         <BookingModificationSummaryRow
           price={bookingModificationSummaryPrice.parkingFee}
           text={texts.parkingFee}
+          count={bookingModificationSummaryPrice.countParkingFee}
           isExtra
         />
       ) : null
     }
     {
-      bookingModificationSummaryPrice.routingFee ? (
+      +bookingModificationSummaryPrice.routingFee ? (
         <BookingModificationSummaryRow
           price={bookingModificationSummaryPrice.routingFee}
+          count={bookingModificationSummaryPrice.countRoutingFee}
           text={texts.routingFee}
           isExtra
         />
       ) : null
     }
     {
-      bookingModificationSummaryPrice.administrativeFee ? (
+      +bookingModificationSummaryPrice.administrativeFee ? (
         <BookingModificationSummaryRow
           price={bookingModificationSummaryPrice.administrativeFee}
+          count={bookingModificationSummaryPrice.countAdministrativeFee}
           text={texts.administrativeFee}
           isExtra
         />
@@ -50,8 +54,8 @@ const BookingModificationSummary = ({ texts, className, bookingModificationSumma
     }
     <hr className={s.horizontalRule} />
     <BookingModificationSummaryRow
-      price={bookingModificationSummaryPrice.leftToPay}
-      text={texts.leftToPay}
+      price={bookingModificationSummaryPrice.total}
+      text={texts.total}
       textClassName={`${s.bold} ${s.bigText}`}
       priceClassName={s.bigPrice}
 

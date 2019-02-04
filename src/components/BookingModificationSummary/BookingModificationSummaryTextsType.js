@@ -13,7 +13,7 @@ const defaultTexts = {
   routingFee: 'Acheminement',
   parkingFee: 'Durée de stationnement supplémentaire',
   administrativeFee: 'Frais de dossier*',
-  leftToPay: 'Total reste à payer',
+  total: 'Total reste à payer',
 };
 
 export { defaultTexts };
