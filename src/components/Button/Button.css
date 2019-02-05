@@ -48,7 +48,7 @@
 }
 
 .track.fetchingTrack {
-  animation: fetching 3s linear forwards 0.2s;
+  animation: fetching 3s linear forwards;
   opacity: 1;
 }
 

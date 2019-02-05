@@ -4,6 +4,7 @@ import s from './Button.css';
 
 const Button = ({
   animationDuration,
+  fetchingDelay,
   children,
   href,
   type,
@@ -31,7 +32,10 @@ const Button = ({
     <Element {...props}>
       <span
         className={[s.track, fetching ? s.fetchingTrack : ''].join(' ')}
-        style={{ animationDuration: `${animationDuration}s` }}
+        style={{
+          animationDuration: `${animationDuration}s`,
+          animationDelay: fetching ? `${fetchingDelay}s` : '',
+        }}
       />
       <span>{children}</span>
     </Element>
@@ -40,6 +44,7 @@ const Button = ({
 
 Button.defaultProps = {
   animationDuration: 3,
+  fetchingDelay: 0.5,
   href: '#',
   onClick: null,
   type: '',
@@ -51,6 +56,7 @@ Button.defaultProps = {
 
 Button.propTypes = {
   animationDuration: PropTypes.number,
+  fetchingDelay: PropTypes.number,
   href: PropTypes.string,
   onClick: PropTypes.func,
   type: PropTypes.string,
