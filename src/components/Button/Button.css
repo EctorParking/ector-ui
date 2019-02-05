@@ -23,7 +23,7 @@
 
 .button .track {
   animation: outFromFetching 0.2s linear forwards;
-  background-color: #ffc400;
+  background-color: var(--yellow);
   border-radius: var(--borderRadius);
   content: '';
   height: 100%;
@@ -44,7 +44,6 @@
 
 .button.fetching {
   background-color: #ffcd026b;
-  transition-delay: 0.2s;
 }
 
 .track.fetchingTrack {
