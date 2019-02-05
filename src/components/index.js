@@ -4,6 +4,7 @@ export { default as AlternativeTimeCard } from './AlternativeTimeCard';
 export { default as ApplicationCard } from './ApplicationCard';
 export { default as BookingCard } from './BookingCard';
 export { default as BookingSteps } from './BookingSteps';
+export { default as Button } from './Button';
 export { default as BookingModificationSummary } from './BookingModificationSummary';
 export { default as CarCard } from './CarCard';
 export { default as Card } from './Card';
