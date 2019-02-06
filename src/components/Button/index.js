@@ -45,7 +45,7 @@ const Button = ({
 };
 
 Button.defaultProps = {
-  animationDuration: 3,
+  animationDuration: 2,
   fetchingDelay: 0.5,
   href: '#',
   onClick: null,
