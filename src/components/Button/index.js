@@ -8,6 +8,7 @@ const Button = ({
   children,
   href,
   type,
+  title,
   component,
   onClick,
   className,
@@ -24,6 +25,7 @@ const Button = ({
     ...(type ? { type } : {}),
     ...(href ? { to: href } : {}),
     ...(disabled ? { disabled } : {}),
+    title,
   };
 
   const Element = onClick || type !== '' ? 'button' : component;
@@ -60,6 +62,7 @@ Button.propTypes = {
   href: PropTypes.string,
   onClick: PropTypes.func,
   type: PropTypes.string,
+  title: PropTypes.string.isRequired,
   className: PropTypes.string,
   fetching: PropTypes.bool,
   disabled: PropTypes.bool,

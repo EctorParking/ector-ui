@@ -19,6 +19,7 @@ storiesOf('Button', module)
       animationDuration: number('Animation duration', 3),
       fetchingDelay: number('Fetching delay', 0.5),
       children: text('Text', 'Rechercher'),
+      title: text('Title', 'Accessibility title'),
       fetching: boolean('Fetching', false),
       className: text('Class name', ''),
       disabled: boolean('Disabled', false),
