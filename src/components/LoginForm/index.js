@@ -33,7 +33,7 @@ const LoginForm = ({
       label={texts.email}
       mandatory
       type="email"
-      id="LoginFormEmailInput"
+      id="loginFormEmailInput"
       value={values.email}
       onChange={onChangeEmail}
       error={errors.email}
@@ -44,7 +44,7 @@ const LoginForm = ({
       label={texts.password}
       mandatory
       type="password"
-      id="LoginFormPasswordInput"
+      id="loginFormPasswordInput"
       value={values.password}
       onChange={onChangePassword}
       error={errors.password}

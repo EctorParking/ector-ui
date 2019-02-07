@@ -69,7 +69,7 @@ class RegistrationForm extends React.Component {
               />
             </div>
             <InputLabel
-              id="RegistrationFormFirstNameInput"
+              id="registrationFormFirstNameInput"
               className={s.inputLabel}
               label={texts.firstName}
               onChange={this.handleChangeFirstName}
@@ -78,7 +78,7 @@ class RegistrationForm extends React.Component {
               mandatory
             />
             <InputLabel
-              id="RegistrationFormLastNameInput"
+              id="registrationFormLastNameInput"
               className={s.inputLabel}
               label={texts.lastName}
               onChange={this.handleChangeLastName}
@@ -87,7 +87,7 @@ class RegistrationForm extends React.Component {
               mandatory
             />
             <InputLabel
-              id="RegistrationFormPostalCodeInput"
+              id="registrationFormPostalCodeInput"
               className={s.inputLabel}
               label={texts.postalCode}
               onChange={this.handleChangePostalCode}
@@ -97,7 +97,7 @@ class RegistrationForm extends React.Component {
           </div>
           <div>
             <PhoneInput
-              id="RegistrationFormPhoneInput"
+              id="registrationFormPhoneInput"
               withFlag={phoneWithFlags}
               label={texts.phone}
               onChange={this.handleChangePhone}
@@ -106,7 +106,7 @@ class RegistrationForm extends React.Component {
               mandatory
             />
             <InputLabel
-              id="RegistrationFormEmailInput"
+              id="registrationFormEmailInput"
               className={s.inputLabel}
               label={texts.email}
               onChange={this.handleChangeEmail}
@@ -115,7 +115,7 @@ class RegistrationForm extends React.Component {
               mandatory
             />
             <InputLabel
-              id="RegistrationFormPasswordInput"
+              id="registrationFormPasswordInput"
               className={s.inputLabel}
               label={texts.password}
               onChange={this.handleChangePassword}
@@ -126,7 +126,7 @@ class RegistrationForm extends React.Component {
               mandatory
             />
             <InputLabel
-              id="RegistrationFormPasswordConfirmationInput"
+              id="registrationFormPasswordConfirmationInput"
               className={s.inputLabel}
               label={texts.passwordConfirmation}
               onChange={this.handleChangePasswordConfirmation}
