@@ -69,6 +69,7 @@ class RegistrationForm extends React.Component {
               />
             </div>
             <InputLabel
+              id="RegistrationFormFirstNameInput"
               className={s.inputLabel}
               label={texts.firstName}
               onChange={this.handleChangeFirstName}
@@ -77,6 +78,7 @@ class RegistrationForm extends React.Component {
               mandatory
             />
             <InputLabel
+              id="RegistrationFormLastNameInput"
               className={s.inputLabel}
               label={texts.lastName}
               onChange={this.handleChangeLastName}
@@ -85,6 +87,7 @@ class RegistrationForm extends React.Component {
               mandatory
             />
             <InputLabel
+              id="RegistrationFormPostalCodeInput"
               className={s.inputLabel}
               label={texts.postalCode}
               onChange={this.handleChangePostalCode}
@@ -94,6 +97,7 @@ class RegistrationForm extends React.Component {
           </div>
           <div>
             <PhoneInput
+              id="RegistrationFormPhoneInput"
               withFlag={phoneWithFlags}
               label={texts.phone}
               onChange={this.handleChangePhone}
@@ -102,6 +106,7 @@ class RegistrationForm extends React.Component {
               mandatory
             />
             <InputLabel
+              id="RegistrationFormEmailInput"
               className={s.inputLabel}
               label={texts.email}
               onChange={this.handleChangeEmail}
@@ -110,6 +115,7 @@ class RegistrationForm extends React.Component {
               mandatory
             />
             <InputLabel
+              id="RegistrationFormPasswordInput"
               className={s.inputLabel}
               label={texts.password}
               onChange={this.handleChangePassword}
@@ -120,6 +126,7 @@ class RegistrationForm extends React.Component {
               mandatory
             />
             <InputLabel
+              id="RegistrationFormPasswordConfirmationInput"
               className={s.inputLabel}
               label={texts.passwordConfirmation}
               onChange={this.handleChangePasswordConfirmation}
