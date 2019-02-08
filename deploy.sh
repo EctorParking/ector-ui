@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+set -x
+set -e
 
 yarn build:storybook
 aws s3 sync .out s3://ector-storybook/ --acl public-read --delete
