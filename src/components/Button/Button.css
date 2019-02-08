@@ -59,18 +59,18 @@
     }
 
     to {
-      width: 98%;
+      width: 100%;
     }
 }
 
 @keyframes outFromFetching {
     from {
       opacity: 1;
-      width: 98%;
+      width: 100%;
     }
 
     to {
       opacity: 0;
-      width: 98%;
+      width: 100%;
     }
 }
