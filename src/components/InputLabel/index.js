@@ -13,13 +13,13 @@ const InputLabel = ({
   type,
   className,
   inputClassName,
+  errorClassName,
   error,
   left,
   children,
   InputComponent,
   LabelComponent,
   inputContainerClassName,
-  LabelFooterComponent,
   ...inputProps
 }) => {
   const labelClassName = mandatory ? s.mandatory : '';
@@ -55,12 +55,9 @@ const InputLabel = ({
           )
         }
         {
-          LabelFooterComponent !== null && typeof LabelFooterComponent === 'function' && LabelFooterComponent() && !error ? (
-            <LabelFooterComponent />
-          ) : (
-            !!error && (
-              <div className={s.error}>{error}</div>
-            ))
+          !!error && (
+            <div className={[s.error, errorClassName].join(' ')}>{error}</div>
+          )
         }
       </div>
     </div>
@@ -80,7 +77,7 @@ InputLabel.defaultProps = {
   LabelComponent: null,
   type: 'text',
   inputContainerClassName: '',
-  LabelFooterComponent: null,
+  errorClassName: '',
 };
 
 InputLabel.propTypes = {
@@ -97,7 +94,7 @@ InputLabel.propTypes = {
   children: PropTypes.node,
   InputComponent: PropTypes.func,
   LabelComponent: PropTypes.func,
-  LabelFooterComponent: PropTypes.func,
+  errorClassName: PropTypes.string,
 };
 
 export default InputLabel;
