@@ -11,6 +11,7 @@ const Input = ({
   value,
   hasError,
   className,
+  onKeyDown,
   ...restOfProps
 }) => (
   <input
@@ -20,6 +21,7 @@ const Input = ({
     onChange={onChange}
     checked={checked}
     value={value}
+    onKeyDown={onKeyDown}
     {...restOfProps}
   />
 );
@@ -35,6 +37,7 @@ Input.defaultProps = {
   className: '',
   hasError: false,
   type: 'text',
+  onKeyDown: () => {},
 };
 
 Input.propTypes = {
@@ -48,6 +51,7 @@ Input.propTypes = {
   value: PropTypes.string,
   className: PropTypes.string,
   hasError: PropTypes.bool,
+  onKeyDown: PropTypes.func,
 };
 
 

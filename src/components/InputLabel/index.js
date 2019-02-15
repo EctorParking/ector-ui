@@ -21,6 +21,7 @@ const InputLabel = ({
   inputContainerClassName,
   LabelFooterComponent,
   errorClassName,
+  onKeyDown,
   ...inputProps
 }) => {
   const labelClassName = mandatory ? s.mandatory : '';
@@ -51,6 +52,7 @@ const InputLabel = ({
               placeholder={placeholder}
               type={type}
               hasError={!!error}
+              onKeyDown={onKeyDown}
               {...inputProps}
             />
           )
@@ -83,6 +85,7 @@ InputLabel.defaultProps = {
   inputContainerClassName: '',
   LabelFooterComponent: null,
   errorClassName: '',
+  onKeyDown: () => {},
 };
 
 InputLabel.propTypes = {
@@ -101,6 +104,7 @@ InputLabel.propTypes = {
   LabelComponent: PropTypes.func,
   LabelFooterComponent: PropTypes.func,
   errorClassName: PropTypes.string,
+  onKeyDown: PropTypes.func,
 };
 
 export default InputLabel;
