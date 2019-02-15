@@ -24,10 +24,11 @@ const LoginForm = ({
   RootComponent,
   SubmitButtonComponent,
   onClickPasswordForgotten,
+  shouldDisplayEmailField,
   ...cardProps
 }) => (
   <RootComponent {...cardProps} className={[s.card, className].join(' ')} contentClassName={[s.contentCard, contentClassName].join(' ')}>
-    <InputLabel
+    {shouldDisplayEmailField && (<InputLabel
       className={[s.input, emailInputClassName].join('')}
       hasError={!!errors.email || (typeof errorLogin !== 'undefined' && errorLogin !== '')}
       label={texts.email}
@@ -37,7 +38,8 @@ const LoginForm = ({
       value={values.email}
       onChange={onChangeEmail}
       error={errors.email}
-    />
+    />)
+    }
     <InputLabel
       className={[s.input, passwordInputClassName].join('')}
       hasError={!!errors.password || (typeof errorLogin !== 'undefined' && errorLogin !== '')}
@@ -81,6 +83,7 @@ LoginForm.defaultProps = {
   SubmitButtonComponent: ({ children, ...buttonProps }) =>
     (<LinkUnderlined {...buttonProps}>{children}</LinkUnderlined>),
   onClickPasswordForgotten: undefined,
+  shouldDisplayEmailField: true,
 };
 
 LoginForm.propTypes = {
@@ -101,6 +104,7 @@ LoginForm.propTypes = {
   RootComponent: PropTypes.func,
   SubmitButtonComponent: PropTypes.func,
   onClickPasswordForgotten: PropTypes.func,
+  shouldDisplayEmailField: PropTypes.bool,
 };
 
 export default LoginForm;

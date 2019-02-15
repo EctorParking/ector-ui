@@ -29,6 +29,7 @@ storiesOf('LoginForm', module)
       }),
       fetching: boolean('Fetching'),
       errorLogin: text('Error login', undefined),
+      shouldDisplayEmailField: boolean('Display email field'),
     };
 
     return (
