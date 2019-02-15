@@ -50,7 +50,7 @@ class RegistrationForm extends React.Component {
   render() {
     const {
       RootComponent, className, contentClassName,
-      texts, phoneWithFlags, values, errors,
+      texts, phoneWithFlags, values, errors, onKeyDownEmail,
       ...cardProps
     } = this.props;
 
@@ -112,6 +112,7 @@ class RegistrationForm extends React.Component {
               onChange={this.handleChangeEmail}
               value={values.email || ''}
               error={errors.email}
+              onKeyDown={onKeyDownEmail}
               mandatory
             />
             <InputLabel
@@ -151,6 +152,7 @@ RegistrationForm.defaultProps = {
   onChangeProperty: () => {},
   values: defaultValues,
   errors: defaultErrors,
+  onKeyDownEmail: () => {},
   labelFooterPassword: 'Minimum 8 caractères',
 };
 
@@ -164,6 +166,7 @@ RegistrationForm.propTypes = {
   values: ValuesType,
   errors: ErrorsType,
   labelFooterPassword: PropTypes.string,
+  onKeyDownEmail: PropTypes.func,
 };
 
 export default RegistrationForm;
