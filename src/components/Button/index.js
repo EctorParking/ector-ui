@@ -21,7 +21,7 @@ const Button = ({
       fetching ? s.fetching : '',
       className,
     ].join(' '),
-    ...(onClick ? { onClick } : {}),
+    ...(!fetching && onClick ? { onClick } : {}),
     ...(type ? { type } : {}),
     ...(href ? { to: href } : {}),
     ...(disabled ? { disabled } : {}),
