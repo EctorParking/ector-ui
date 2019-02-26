@@ -6,7 +6,7 @@ import { withKnobs, select, text } from '@storybook/addon-knobs';
 
 import Label from './';
 
-const colors = ['deepBlue', 'green', 'red', 'melrose', 'blue'];
+const colors = ['deepBlue', 'green', 'red', 'melrose', 'blue', 'lightGrey', 'metalGrey', 'darkMetalGrey', 'aquaHazeGrey', 'orange'];
 
 storiesOf('Label', module)
 
