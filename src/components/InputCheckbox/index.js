@@ -16,7 +16,7 @@ const InputCheckbox =
 }) => (
   <label
     htmlFor={`${id}`}
-    className={s.input_checkbox}
+    className={`${s.input_checkbox} ${className}`}
   >
 
     { children }
