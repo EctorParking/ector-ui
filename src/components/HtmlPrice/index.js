@@ -8,20 +8,18 @@ const HtmlPrice = ({
   showDecimals,
   className,
 }) => {
-  const sep = `${formatPrice(price, showDecimals)}`.split('.');
+  const priceSplited = `${formatPrice(price, showDecimals)}`.split('.');
 
-  return sep[1] ? (
+  return priceSplited[1] ? (
     <span className={className}>
-      {sep[0]}
+      {priceSplited[0]}
       <small>
-        .{sep[1]}
-        {currency}
+        {`.${priceSplited[1]}${currency}`}
       </small>
     </span>
   ) : (
     <span className={className}>
-      {sep[0]}
-      {currency}
+      {`${priceSplited[0]}${currency}`}
     </span>
   );
 };
