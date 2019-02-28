@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import formatHtmlPrice from '../../Services/Utils';
 
 import s from './ServiceCardFooter.css';
 import LinkUnderline from '../LinkUnderlined';
+import HtmlPrice from '../HtmlPrice';
 
 const ServiceCardFooter = ({
   price,
@@ -15,14 +15,7 @@ const ServiceCardFooter = ({
 }) => (
 
   <div className={s.footerContainer}>
-    <span
-      className={s.price}
-      /* eslint-disable no-undef */
-      // eslint-disable-next-line react/no-danger
-      dangerouslySetInnerHTML={{
-        __html: formatHtmlPrice(price, '€'),
-      }}
-    />
+    <HtmlPrice price={price} className={s.price} />
     {!isSubscribed && (
       <LinkUnderline
         onClick={actionFooter}
