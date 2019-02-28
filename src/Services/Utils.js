@@ -1,7 +1,17 @@
-export default (price, currency) => {
-  const sep = `${price}`.split('.');
+const formatPrice = (
+  price,
+  showDecimals,
+): string => {
+  let countDecimals;
+  if (typeof showDecimals === 'undefined') {
+    countDecimals = !Number.isInteger(Number(price)) ? 2 : 0;
+  } else {
+    countDecimals = showDecimals ? 2 : 0;
+  }
 
-  return sep.length < 2
-    ? `${sep[0]}<small>.00${currency}</small>`
-    : `${sep[0]}<small>.${sep[1]}${currency}</small>`;
+  const displayPrice = price || 0;
+
+  return parseFloat(displayPrice).toFixed(countDecimals);
 };
+
+export default formatPrice;
