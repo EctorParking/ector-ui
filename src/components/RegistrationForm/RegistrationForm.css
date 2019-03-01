@@ -53,3 +53,34 @@
   font-style: italic;
   font-size: var(--fontSizeLabel);
 }
+
+.card {}
+
+.contentCard {}
+
+.emailInputLabel {}
+
+@media (--mobile) {
+  .card {
+    background: transparent;
+    padding: 0;
+  }
+  .contentCard {
+    padding: 0;
+  }
+  .columns {
+    flex-direction: column;
+  }
+  .columns > div > * {
+    height: auto;
+  }
+  .leftColumn {
+    margin: 0 0 var(--marginSmall);
+  }
+  .inputLabel {
+    margin-top: var(--marginSmall);
+  }
+  .emailInputLabel {
+    display: none;
+  }
+}

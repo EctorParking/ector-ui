@@ -54,8 +54,16 @@ class RegistrationForm extends React.Component {
       ...cardProps
     } = this.props;
 
+    const actualCardProps = {
+      ...cardProps,
+      className: [s.card, className].join(' '),
+      contentClassName: [s.contentCard, contentClassName].join(' '),
+    };
+
+    console.log(actualCardProps);
+
     return (
-      <RootComponent {...cardProps} className={[s.card, className].join(' ')} contentClassName={[s.contentCard, contentClassName].join(' ')}>
+      <RootComponent {...actualCardProps}>
         <div className={s.columns}>
           <div className={s.leftColumn}>
             <div className={s.titleRadio}>
@@ -107,7 +115,7 @@ class RegistrationForm extends React.Component {
             />
             <InputLabel
               id="registrationFormEmailInput"
-              className={s.inputLabel}
+              className={[s.inputLabel, s.emailInputLabel].join(' ')}
               label={texts.email}
               onChange={this.handleChangeEmail}
               value={values.email || ''}
