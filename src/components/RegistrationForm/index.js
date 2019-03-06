@@ -10,6 +10,7 @@ import RegistrationFormTextTypes, {
   defaultValues,
   defaultErrors,
 } from './RegistrationFormTextTypes';
+import { CountryPropType, DefaultCountries } from '../PhoneInput/PhoneInputCountries';
 
 class RegistrationForm extends React.Component {
   constructor(props) {
@@ -50,7 +51,7 @@ class RegistrationForm extends React.Component {
   render() {
     const {
       RootComponent, className, contentClassName,
-      texts, phoneWithFlags, values, errors, onKeyDownEmail,
+      texts, phoneWithFlags, values, errors, onKeyDownEmail, countries,
       ...cardProps
     } = this.props;
 
@@ -59,8 +60,6 @@ class RegistrationForm extends React.Component {
       className: [s.card, className].join(' '),
       contentClassName: [s.contentCard, contentClassName].join(' '),
     };
-
-    console.log(actualCardProps);
 
     return (
       <RootComponent {...actualCardProps}>
@@ -111,6 +110,7 @@ class RegistrationForm extends React.Component {
               onChange={this.handleChangePhone}
               value={values.phone || ''}
               error={errors.phone}
+              countries={countries}
               mandatory
             />
             <InputLabel
@@ -162,6 +162,7 @@ RegistrationForm.defaultProps = {
   errors: defaultErrors,
   onKeyDownEmail: () => {},
   labelFooterPassword: 'Minimum 8 caractères',
+  countries: DefaultCountries,
 };
 
 RegistrationForm.propTypes = {
@@ -175,6 +176,7 @@ RegistrationForm.propTypes = {
   errors: ErrorsType,
   labelFooterPassword: PropTypes.string,
   onKeyDownEmail: PropTypes.func,
+  countries: PropTypes.shape(CountryPropType),
 };
 
 export default RegistrationForm;
