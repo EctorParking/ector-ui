@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import s from './InputButton.css';
 
-import Input from '../Input';
-import Button from '../Button';
+import { Input, Button } from '..';
 
 const InputButton = ({
   id,
@@ -43,7 +42,6 @@ const InputButton = ({
 
 
 InputButton.defaultProps = {
-  buttonText: '',
   inputButtonContainerClassName: '',
   helpText: '',
   helpTextClassname: '',
