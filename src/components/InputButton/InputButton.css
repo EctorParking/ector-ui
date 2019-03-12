@@ -26,7 +26,7 @@
   color: var(--red);
 }
 
-@media (min-width: 600px){
+@media (--minMobile){
   .input {
     border-bottom-right-radius: 0;
     border-right: 0;
@@ -38,7 +38,7 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (--maxMobile) {
   .inputButtonContainerClassName {
     display: block;
   }

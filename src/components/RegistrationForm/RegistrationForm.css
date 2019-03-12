@@ -60,7 +60,7 @@
 
 .emailInputLabel {}
 
-@media (--mobile) {
+@media (--maxMobile) {
   .card {
     background: transparent;
     padding: 0;

@@ -78,6 +78,10 @@
   --maxImageSize: 24px;
 }
 
-@custom-media --tablet (max-width: 768px);
-@custom-media --mobile (max-width: 480px);
-@custom-media --iPhone5 (max-width: 320px);
+@custom-media --maxTablet (max-width: 768px);
+@custom-media --maxMobile (max-width: 480px);
+@custom-media --maxIPhone5 (max-width: 320px);
+
+@custom-media --minTablet (min-width: 768px);
+@custom-media --minMobile (min-width: 480px);
+@custom-media --minIPhone5 (min-width: 320px);

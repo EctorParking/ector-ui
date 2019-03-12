@@ -21,7 +21,7 @@
   width: var(--titleHrWidth);
 }
 
-@media (--mobile) {
+@media (--maxMobile) {
   .title .element {
     font-size: var(--fontSizeSubtitle);
   }
