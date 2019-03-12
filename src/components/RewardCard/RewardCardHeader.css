@@ -17,7 +17,7 @@
   display: none;
 }
 
-@media (--mobile) {
+@media (--maxMobile {
   .desktopImage {
     display: none;
   }

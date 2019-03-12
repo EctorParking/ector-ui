@@ -26,13 +26,13 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (--maxTablet) {
   .travelingNumberFromInputLabel, .travelingNumberToInputLabel {
     margin: var(--marginSmall) auto;
   }
 }
 
-@media (--mobile) {
+@media (--maxMobile) {
   .inputsRow {
     flex-direction: column;
   }
