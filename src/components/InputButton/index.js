@@ -8,26 +8,16 @@ import Button from '../Button';
 const InputButton = ({
   id,
   placeholder,
-  buttonTitle,
   buttonText,
   errorClassName,
   inputClassName,
   inputContainerClassName,
   inputButtonContainerClassName,
-  buttonClassName,
   helpText,
   helpTextClassname,
   inputType,
   error,
-  buttonAnimationDuration,
-  buttonFetchingDelay,
-  buttonHref,
-  buttonTo,
-  buttonType,
-  buttonOnClick,
-  buttonFetching,
-  buttonDisabled,
-  buttonComponent,
+  ButtonComponent,
   ...inputProps
 }) =>
   (
@@ -45,29 +35,16 @@ const InputButton = ({
           <div className={[s.error, errorClassName].join(' ')}>{error}</div>
         ) : (<p className={[s.helpTextClassname, helpTextClassname].join(' ')} >{helpText}</p>) }
       </div>
-      <Button
-        title={buttonTitle}
-        className={[s.button, buttonClassName].join(' ')}
-        type={buttonType}
-        animationDuration={buttonAnimationDuration}
-        fetchingDelay={buttonFetchingDelay}
-        href={buttonHref}
-        onClick={buttonOnClick}
-        to={buttonTo}
-        fetching={buttonFetching}
-        disabled={buttonDisabled}
-        component={buttonComponent}
-      >
+      <ButtonComponent className={s.button}>
         {buttonText}
-      </Button>
+      </ButtonComponent>
     </div>
   );
 
 
 InputButton.defaultProps = {
-  buttonTitle: '',
+  buttonText: '',
   inputButtonContainerClassName: '',
-  buttonClassName: '',
   helpText: '',
   helpTextClassname: '',
   id: 'InputButton',
@@ -77,19 +54,10 @@ InputButton.defaultProps = {
   error: null,
   inputType: 'text',
   inputContainerClassName: '',
-  buttonAnimationDuration: 1.5,
-  buttonFetchingDelay: 0.5,
-  buttonHref: '#',
-  buttonOnClick: null,
-  buttonTo: '',
-  buttonType: 'button',
-  buttonFetching: false,
-  buttonDisabled: false,
-  buttonComponent: null,
+  ButtonComponent: props => (<Button {...props} component="button" />),
 };
 
 InputButton.propTypes = {
-  buttonTitle: PropTypes.string,
   id: PropTypes.string,
   buttonText: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
@@ -97,20 +65,11 @@ InputButton.propTypes = {
   inputClassName: PropTypes.string,
   inputContainerClassName: PropTypes.string,
   inputButtonContainerClassName: PropTypes.string,
-  buttonClassName: PropTypes.string,
   helpText: PropTypes.string,
   helpTextClassname: PropTypes.string,
   errorClassName: PropTypes.string,
   error: PropTypes.string,
-  buttonAnimationDuration: PropTypes.number,
-  buttonFetchingDelay: PropTypes.number,
-  buttonHref: PropTypes.string,
-  buttonOnClick: PropTypes.func,
-  buttonTo: PropTypes.string,
-  buttonType: PropTypes.string,
-  buttonFetching: PropTypes.bool,
-  buttonDisabled: PropTypes.bool,
-  buttonComponent: PropTypes.oneOf([PropTypes.string, PropTypes.node]),
+  ButtonComponent: PropTypes.func,
 };
 
 export default InputButton;
