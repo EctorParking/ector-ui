@@ -48,6 +48,7 @@ const Card = ({
   LabelComponent,
   testid,
   FooterComponent,
+  RootComponent,
 }) => {
   const isClickable = typeof onClick === 'function' && !isSelected;
 
@@ -59,7 +60,7 @@ const Card = ({
   `;
 
   return (
-    <div
+    <RootComponent
       role="presentation"
       className={cardClassName}
       onClick={onClick}
@@ -81,7 +82,7 @@ const Card = ({
         />
       }
       <FooterComponent className={`${s.card_footer} ${s.footerComponent}`} />
-    </div>
+    </RootComponent>
   );
 };
 
@@ -96,6 +97,7 @@ Card.defaultProps = {
   testid: '',
   LabelComponent: () => null,
   FooterComponent: () => null,
+  RootComponent: props => <div {...props} />,
 };
 
 Card.propTypes = {
@@ -113,6 +115,7 @@ Card.propTypes = {
   testid: PropTypes.string,
   LabelComponent: PropTypes.func,
   FooterComponent: PropTypes.func,
+  RootComponent: PropTypes.func,
 };
 
 

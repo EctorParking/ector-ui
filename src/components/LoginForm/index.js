@@ -35,7 +35,7 @@ const LoginForm = ({
       mandatory
       type="email"
       id="loginFormEmailInput"
-      value={values.email}
+      value={values.email || ''}
       onChange={onChangeEmail}
       error={errors.email}
     />)
@@ -47,7 +47,7 @@ const LoginForm = ({
       mandatory
       type="password"
       id="loginFormPasswordInput"
-      value={values.password}
+      value={values.password || ''}
       onChange={onChangePassword}
       error={errors.password}
     />
