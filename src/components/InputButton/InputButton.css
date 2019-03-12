@@ -1,0 +1,51 @@
+@import '../../style/variable.css';
+
+
+.inputButtonContainerClassName {
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+}
+.inputContainerClassName {
+  flex: 1;
+}
+.input {
+  width: 100%;
+  margin: 0 auto;
+}
+.input, .button {
+  height: var(--fontSizeTitle);
+}
+.helpTextClassname {
+  color: var(--metalGrey);
+  font-style: italic;
+  margin: 0;
+}
+.error {
+  text-align: left;
+  color: var(--red);
+}
+
+@media (min-width: 600px){
+  .input {
+    border-bottom-right-radius: 0;
+    border-right: 0;
+    border-top-right-radius: 0;
+  }
+  .button {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .inputButtonContainerClassName {
+    display: block;
+  }
+  .inputContainerClassName {
+    margin-bottom: var(--marginMedium);
+  }
+  .button {
+    margin: 0 auto;
+  }
+}
