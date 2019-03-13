@@ -15,6 +15,7 @@ export { default as ContactCard } from './ContactCard';
 export { default as ContactForm } from './ContactForm';
 export { default as GenderPicker } from './GenderPicker';
 export { default as Input } from './Input';
+export { default as InputButton } from './InputButton';
 export { default as InputCheckbox } from './InputCheckbox';
 export { default as InputLabel } from './InputLabel';
 export { default as Label } from './Label';
