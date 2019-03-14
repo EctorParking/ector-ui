@@ -27,45 +27,42 @@ const InputLabel = ({
   const labelClassName = mandatory ? s.mandatory : '';
 
   return (
-    <div className={[s.container, left ? s.left : '', className].join(' ')}>
+    <div className={[left ? s.leftContainer : s.container, className].join(' ')}>
       {
         LabelComponent !== null && typeof LabelComponent === 'function' && LabelComponent() ? (
-          <LabelComponent className={labelClassName} />
+          <LabelComponent className={[left ? s.leftLabel : undefined, labelClassName].join(' ')} />
         ) : (
           <label
             htmlFor={id}
-            className={[labelClassName, s.label].join(' ')}
+            className={[left ? s.leftLabel : undefined, labelClassName].join(' ')}
           >
             {label}
           </label>
         )
       }
-
-      <div className={[s.inputContainer, inputContainerClassName].join(' ')}>
-        {
-          InputComponent !== null && typeof InputComponent === 'function' && InputComponent() ? (
-            <InputComponent />
-          ) : (
-            <Input
-              className={[s.input, inputClassName].join(' ')}
-              id={id}
-              placeholder={placeholder}
-              type={type}
-              hasError={!!error}
-              onKeyDown={onKeyDown}
-              {...inputProps}
-            />
-          )
-        }
-        {
-          LabelFooterComponent !== null && typeof LabelFooterComponent === 'function' && LabelFooterComponent() && !error ? (
-            <LabelFooterComponent />
-          ) : (
-            !!error && (
-              <div className={[s.error, errorClassName].join(' ')}>{error}</div>
-            ))
-        }
-      </div>
+      {
+        InputComponent !== null && typeof InputComponent === 'function' && InputComponent() ? (
+          <InputComponent />
+        ) : (
+          <Input
+            className={[s.input, inputClassName].join(' ')}
+            id={id}
+            placeholder={placeholder}
+            type={type}
+            hasError={!!error}
+            onKeyDown={onKeyDown}
+            {...inputProps}
+          />
+        )
+      }
+      {
+        LabelFooterComponent !== null && typeof LabelFooterComponent === 'function' && LabelFooterComponent() && !error ? (
+          <LabelFooterComponent className={left ? s.leftText : undefined} />
+        ) : (
+          !!error && (
+            <div className={[s.error, left ? s.leftText : undefined, errorClassName].join(' ')}>{error}</div>
+          ))
+      }
     </div>
   );
 };
