@@ -5,24 +5,20 @@
   flex-direction: column;
 }
 
-.container.left {
-  flex-direction: row;
+.leftContainer {
+  display: grid;
+  grid-template-columns: 10em auto;
   align-items: center;
-  &>.label {
-     margin-right: 1em;
-     width: 10em;
-     max-width: none;
-  }
 }
 
-.inputContainer {
-  flex: 1;
-  flex-basis: auto;
+.leftLabel {
+  padding-right: 1em;
 }
 
 .input {
   display: block;
   width: 100%;
+  margin-top: 0;
 }
 
 .error {
@@ -36,4 +32,8 @@
 
 .mandatory:after {
   content: '*';
+}
+
+.leftText {
+  grid-column-start: 2;
 }
