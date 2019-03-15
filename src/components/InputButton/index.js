@@ -8,15 +8,13 @@ const InputButton = ({
   id,
   placeholder,
   buttonText,
-  errorClassName,
   inputClassName,
   inputContainerClassName,
   inputButtonContainerClassName,
-  helpText,
-  helpTextClassname,
   inputType,
-  error,
+  hasError,
   ButtonComponent,
+  SubTextComponent,
   ...inputProps
 }) =>
   (
@@ -27,12 +25,10 @@ const InputButton = ({
           className={[s.input, inputClassName].join(' ')}
           id={id}
           type={inputType}
-          hasError={!!error}
+          hasError={hasError}
           {...inputProps}
         />
-        {error ? (
-          <div className={[s.error, errorClassName].join(' ')}>{error}</div>
-        ) : (<p className={[s.helpTextClassname, helpTextClassname].join(' ')} >{helpText}</p>) }
+        <SubTextComponent />
       </div>
       <ButtonComponent className={s.button}>
         {buttonText}
@@ -43,16 +39,14 @@ const InputButton = ({
 
 InputButton.defaultProps = {
   inputButtonContainerClassName: '',
-  helpText: '',
-  helpTextClassname: '',
   id: 'InputButton',
   placeholder: '',
   inputClassName: '',
-  errorClassName: '',
-  error: null,
+  hasError: false,
   inputType: 'text',
   inputContainerClassName: '',
-  ButtonComponent: props => (<Button {...props} component="button" />),
+  ButtonComponent: props => (<Button {...props} component="button" title="button" />),
+  SubTextComponent: () => null,
 };
 
 InputButton.propTypes = {
@@ -63,11 +57,9 @@ InputButton.propTypes = {
   inputClassName: PropTypes.string,
   inputContainerClassName: PropTypes.string,
   inputButtonContainerClassName: PropTypes.string,
-  helpText: PropTypes.string,
-  helpTextClassname: PropTypes.string,
-  errorClassName: PropTypes.string,
-  error: PropTypes.string,
+  hasError: PropTypes.bool,
   ButtonComponent: PropTypes.func,
+  SubTextComponent: PropTypes.func,
 };
 
 export default InputButton;
