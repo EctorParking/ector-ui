@@ -1,16 +1,18 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import backgrounds from '@storybook/addon-backgrounds';
+
 import { action } from '@storybook/addon-actions';
 import centered from '@storybook/addon-centered';
-import { withKnobs, select, object, boolean } from '@storybook/addon-knobs/react';
+import {
+  withKnobs, select, object, boolean,
+} from '@storybook/addon-knobs/react';
 import frFlag from '../../images/flags/fr.svg';
 import gbFlag from '../../images/flags/gb.svg';
 import esFlag from '../../images/flags/es.svg';
 import deFlag from '../../images/flags/de.svg';
 import s from '../PhoneInput/PhoneInput.css';
 
-import Select from './';
+import Select from '.';
 
 const renderSelectOption = option => (
   <option key={option.value} value={option.value}>
@@ -20,9 +22,11 @@ const renderSelectOption = option => (
 
 storiesOf('Select', module)
 
-  .addDecorator(backgrounds([
-    { name: 'header', value: 'white', default: true },
-  ]))
+  .addParameters({
+    backgrounds: [
+      { name: 'header', value: 'white', default: true },
+    ],
+  })
   .addDecorator(withKnobs)
   .addDecorator(centered)
 

@@ -1,18 +1,20 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import backgrounds from '@storybook/addon-backgrounds';
+
 import centered from '@storybook/addon-centered';
 import { withKnobs, object, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { DefaultTexts } from './ContactFormTextsType';
 
-import ContactForm from './';
+import ContactForm from '.';
 
 storiesOf('ContactForm', module)
 
-  .addDecorator(backgrounds([
-    { name: 'header', value: 'white', default: true },
-  ]))
+  .addParameters({
+    backgrounds: [
+      { name: 'header', value: 'white', default: true },
+    ],
+  })
   .addDecorator(centered)
   .addDecorator(withKnobs)
 

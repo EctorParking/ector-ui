@@ -1,10 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import backgrounds from '@storybook/addon-backgrounds';
+
 import centered from '@storybook/addon-centered';
-import { withKnobs, text, select, boolean, object } from '@storybook/addon-knobs';
+import {
+  withKnobs, text, select, boolean, object,
+} from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import RewardCard from './';
+import RewardCard from '.';
 import s from './RewardCard.css';
 import poolRewardLarge from '../../images/poolRewardLarge.png';
 import poolRewardSmall from '../../images/poolRewardSmall.png';
@@ -21,9 +23,11 @@ const rewardValue = '+4.60€';
 
 storiesOf('RewardCard', module)
 
-  .addDecorator(backgrounds([
-    { name: 'header', value: 'white', default: true },
-  ]))
+  .addParameters({
+    backgrounds: [
+      { name: 'header', value: 'white', default: true },
+    ],
+  })
   .addDecorator(centered)
   .addDecorator(withKnobs)
 

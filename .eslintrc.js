@@ -6,15 +6,15 @@ module.exports = {
     rules: {
 
         "react/jsx-filename-extension": [
-            1, 
+            1,
             { "extensions": [".js", ".jsx"] }
         ],
 
         // Airbnb linter warnings fix
         "func-names": [
-            'error', 
+            'error',
             'never'
-        ], 
+        ],
 
         'no-unused-vars': [
             'error',
@@ -24,6 +24,8 @@ module.exports = {
         ],
 
         "no-console": 0,
+        "import/no-extraneous-dependencies": 0,
+        "react/button-has-type": 0,
 
         // Indent with 4 spaces
         "indent": ["error", 2],

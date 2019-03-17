@@ -29,7 +29,11 @@ const PaymentMethodCardContentRead = ({ paymentMethod, texts }) => (
       &#183;&#183;&#183;&#183;&nbsp;&#183;&#183;&#183;&#183;&nbsp;&#183;&#183;&#183;&#183;&nbsp;
       {paymentMethod.last4digits}
     </span>
-    <span className={s.content}>{texts.expireAt}&nbsp;:&nbsp;{paymentMethod.expireAt}</span>
+    <span className={s.content}>
+      {texts.expireAt}
+&nbsp;:&nbsp;
+      {paymentMethod.expireAt}
+    </span>
   </Fragment>
 );
 

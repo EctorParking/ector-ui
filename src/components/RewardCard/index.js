@@ -34,8 +34,8 @@ const RewardCard = ({
       mobileHeaderImage={mobileHeaderImage}
     />
   );
-  const footer =
-    (<RewardCardFooter
+  const footer = (
+    <RewardCardFooter
       onClick={footerOnClick}
       buttonClassName={footerButtonClassName}
       prefixTestid={prefixTestId}
@@ -46,7 +46,8 @@ const RewardCard = ({
       hasExternalCard={hasExternalCard}
       isExternalCardUpdatable={isExternalCardUpdatable}
       fetching={fetching}
-    />);
+    />
+  );
 
   return (
     <Card
@@ -57,15 +58,17 @@ const RewardCard = ({
       footerClassName={s.footer}
       contentClassName={s.content}
     >
-      { children || (<RewardCardContent
-        texts={texts}
-        rewardValue={rewardValue}
-        isConnected={isConnected}
-        isSelected={isSelected}
-        isExternalCardUpdatable={isExternalCardUpdatable}
-        onClickEditExternalCard={onClickEditExternalCard}
-        editExternalCardClassName={editExternalCardClassName}
-      />)}
+      { children || (
+        <RewardCardContent
+          texts={texts}
+          rewardValue={rewardValue}
+          isConnected={isConnected}
+          isSelected={isSelected}
+          isExternalCardUpdatable={isExternalCardUpdatable}
+          onClickEditExternalCard={onClickEditExternalCard}
+          editExternalCardClassName={editExternalCardClassName}
+        />
+      )}
     </Card>
   );
 };

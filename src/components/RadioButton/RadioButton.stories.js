@@ -1,16 +1,18 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import backgrounds from '@storybook/addon-backgrounds';
+
 import { action } from '@storybook/addon-actions';
 import centered from '@storybook/addon-centered';
 
-import RadioButton from './';
+import RadioButton from '.';
 
 storiesOf('RadioButton', module)
 
-  .addDecorator(backgrounds([
-    { name: 'header', value: 'white', default: true },
-  ]))
+  .addParameters({
+    backgrounds: [
+      { name: 'header', value: 'white', default: true },
+    ],
+  })
   .addDecorator(centered)
 
   .add('normal', () => (

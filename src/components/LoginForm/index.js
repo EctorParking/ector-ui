@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import s from './LoginForm.css';
-import { InputLabel, Card, LinkUnderlined, ActionLink } from '..';
+import {
+  InputLabel, Card, LinkUnderlined, ActionLink,
+} from '..';
 import TextsType, { DefaultTexts } from './LoginFormTextsType';
 import { LoginFormErrorsType, LoginFormValuesType } from './LoginType';
 
@@ -28,17 +30,19 @@ const LoginForm = ({
   ...cardProps
 }) => (
   <RootComponent {...cardProps} className={[s.card, className].join(' ')} contentClassName={[s.contentCard, contentClassName].join(' ')}>
-    {shouldDisplayEmailField && (<InputLabel
-      className={[s.input, emailInputClassName].join('')}
-      hasError={!!errors.email || (typeof errorLogin !== 'undefined' && errorLogin !== '')}
-      label={texts.email}
-      mandatory
-      type="email"
-      id="loginFormEmailInput"
-      value={values.email || ''}
-      onChange={onChangeEmail}
-      error={errors.email}
-    />)
+    {shouldDisplayEmailField && (
+      <InputLabel
+        className={[s.input, emailInputClassName].join('')}
+        hasError={!!errors.email || (typeof errorLogin !== 'undefined' && errorLogin !== '')}
+        label={texts.email}
+        mandatory
+        type="email"
+        id="loginFormEmailInput"
+        value={values.email || ''}
+        onChange={onChangeEmail}
+        error={errors.email}
+      />
+    )
     }
     <InputLabel
       className={[s.input, passwordInputClassName].join('')}
@@ -79,9 +83,8 @@ LoginForm.defaultProps = {
   buttonTestid: undefined,
   // eslint-disable-next-line react/prop-types
   RootComponent: ({ children, ...cardProps }) => (<Card {...cardProps}>{children}</Card>),
-  // eslint-disable-next-line react/prop-types
-  SubmitButtonComponent: ({ children, ...buttonProps }) =>
-    (<LinkUnderlined {...buttonProps}>{children}</LinkUnderlined>),
+  // eslint-disable-next-line
+  SubmitButtonComponent: ({ children, ...buttonProps }) => (<LinkUnderlined {...buttonProps}>{children}</LinkUnderlined>),
   onClickPasswordForgotten: undefined,
   shouldDisplayEmailField: true,
 };

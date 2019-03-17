@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card, InputLabel, GenderPicker, PhoneInput } from '..';
+import {
+  Card, InputLabel, GenderPicker, PhoneInput,
+} from '..';
 import s from './RegistrationForm.css';
 import RegistrationFormTextTypes, {
   defaultTexts,
@@ -43,9 +45,9 @@ class RegistrationForm extends React.Component {
   renderLabelFooterPasswordComponent = () => {
     const { labelFooterPassword } = this.props;
 
-    return labelFooterPassword ?
-      (<div className={s.footerLabel}>{labelFooterPassword}</div>) :
-      null;
+    return labelFooterPassword
+      ? (<div className={s.footerLabel}>{labelFooterPassword}</div>)
+      : null;
   };
 
   render() {
@@ -146,7 +148,8 @@ class RegistrationForm extends React.Component {
             />
           </div>
         </div>
-      </RootComponent>);
+      </RootComponent>
+    );
   }
 }
 

@@ -1,11 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import backgrounds from '@storybook/addon-backgrounds';
-import centered from '@storybook/addon-centered';
-import { withKnobs, object, select, text } from '@storybook/addon-knobs';
 
-import PricingSummary from './';
+import centered from '@storybook/addon-centered';
+import {
+  withKnobs, object, select, text,
+} from '@storybook/addon-knobs';
+
+import PricingSummary from '.';
 import { defaultTexts } from './PricingSummaryTextsType';
 
 const options = [
@@ -16,9 +18,11 @@ const options = [
 
 storiesOf('PricingSummary', module)
 
-  .addDecorator(backgrounds([
-    { name: 'header', value: 'white', default: true },
-  ]))
+  .addParameters({
+    backgrounds: [
+      { name: 'header', value: 'white', default: true },
+    ],
+  })
   .addDecorator(centered)
   .addDecorator(withKnobs)
 

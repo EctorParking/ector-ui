@@ -1,10 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import backgrounds from '@storybook/addon-backgrounds';
 import centered from '@storybook/addon-centered';
 import { withKnobs, text, object } from '@storybook/addon-knobs';
 
-import BookingCard from './';
+import BookingCard from '.';
 import ActionLink from '../ActionLink';
 import LinkUnderlined from '../LinkUnderlined';
 import { defaultTexts as defaultBookingStepsTexts } from '../BookingSteps/BookingStepsTextsType';
@@ -25,9 +24,11 @@ const rightAction = <LinkUnderlined onClick={() => {}}>Télécharger la facture<
 
 storiesOf('BookingCard', module)
 
-  .addDecorator(backgrounds([
-    { name: 'header', value: 'white', default: true },
-  ]))
+  .addParameters({
+    backgrounds: [
+      { name: 'header', value: 'white', default: true },
+    ],
+  })
   .addDecorator(centered)
   .addDecorator(withKnobs)
 

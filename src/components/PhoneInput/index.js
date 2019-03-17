@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Select, InputLabel, Input } from '../';
+import { Select, InputLabel, Input } from '..';
 import { DefaultCountries, CountryPropType } from './PhoneInputCountries';
 import s from './PhoneInput.css';
 
@@ -94,11 +94,12 @@ class PhoneInput extends React.Component {
           onChange={this.onCountryCodeChange}
           className={s.phoneInputCountryCode}
         >
-          {withFlag && (<img
-            src={country.image}
-            className={s.selectImage}
-            alt={country.label}
-          />
+          {withFlag && (
+            <img
+              src={country.image}
+              className={s.selectImage}
+              alt={country.label}
+            />
           )}
           <span>
             {country.label}

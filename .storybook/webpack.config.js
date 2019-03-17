@@ -1,17 +1,17 @@
 const path = require("path");
 
-module.exports = (storybookBaseConfig, configType) => {
+module.exports = async ({config: storybookBaseConfig}, configType) => {
   // configType has a value of 'DEVELOPMENT' or 'PRODUCTION'
   // You can change the configuration based on that.
   // 'PRODUCTION' is used when building the static version of storybook.
 
   // Make whatever fine-grained changes you need
-  storybookBaseConfig.module.rules.push({
+  storybookBaseConfig.module.rules = [{
       test: /\.css$/,
       loaders: [
         'style-loader',
         {
-          loader: require.resolve('css-loader'),
+          loader: 'css-loader',
           options: {
             url: false,
             importLoaders: 1,
@@ -36,23 +36,33 @@ module.exports = (storybookBaseConfig, configType) => {
     {
       test: /\.js$/,
       exclude: /node_modules/,
-      loaders: [
-        {
-          loader: 'babel-loader',
-          options: {
-            presets: ['env', 'stage-2'],
-          },
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: [
+            [
+              '@babel/preset-env',
+              {
+                useBuiltIns: 'usage',
+                targets: {
+                  chrome: '58',
+                  ie: '11',
+                },
+              },
+            ],
+            '@babel/preset-react',
+          ],
+          plugins:
+            [
+              '@babel/plugin-syntax-dynamic-import',
+              '@babel/plugin-transform-flow-strip-types',
+              '@babel/plugin-proposal-class-properties',
+            ],
+
         },
-        {
-          loader: 'eslint-loader',
-          options: {
-            emitError: true,
-            failOnError: true
-          },
-        },
-      ],
+      },
     },
-  );
+  ];
 
   // Return the altered config
   return storybookBaseConfig;

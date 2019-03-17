@@ -16,25 +16,24 @@ const InputButton = ({
   ButtonComponent,
   SubTextComponent,
   ...inputProps
-}) =>
-  (
-    <div className={[s.inputButtonContainerClassName, inputButtonContainerClassName].join(' ')}>
-      <div className={[s.inputContainerClassName, inputContainerClassName].join(' ')}>
-        <Input
-          placeholder={placeholder}
-          className={[s.input, inputClassName].join(' ')}
-          id={id}
-          type={inputType}
-          hasError={hasError}
-          {...inputProps}
-        />
-        <SubTextComponent />
-      </div>
-      <ButtonComponent className={s.button}>
-        {buttonText}
-      </ButtonComponent>
+}) => (
+  <div className={[s.inputButtonContainerClassName, inputButtonContainerClassName].join(' ')}>
+    <div className={[s.inputContainerClassName, inputContainerClassName].join(' ')}>
+      <Input
+        placeholder={placeholder}
+        className={[s.input, inputClassName].join(' ')}
+        id={id}
+        type={inputType}
+        hasError={hasError}
+        {...inputProps}
+      />
+      <SubTextComponent />
     </div>
-  );
+    <ButtonComponent className={s.button}>
+      {buttonText}
+    </ButtonComponent>
+  </div>
+);
 
 
 InputButton.defaultProps = {

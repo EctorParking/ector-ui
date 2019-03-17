@@ -9,7 +9,9 @@ const BookingModificationSummaryRow = ({
   <div className={`${s.summaryRow} ${className}`}>
     <p className={`${s.summaryRowText} ${textClassName}`}>{`${text}${count > 1 ? `(x${count})` : ''}`}</p>
     <p className={`${s.summaryRowPrice} ${priceClassName}`}>
-      {isExtra ? '+' : ''}{parseFloat(price).toFixed(2)}€
+      {isExtra ? '+' : ''}
+      {parseFloat(price).toFixed(2)}
+€
     </p>
   </div>
 );

@@ -14,9 +14,9 @@ const BookingModificationSummary = ({ texts, className, bookingModificationSumma
       textClassName={s.bold}
     />
     { (
-      +bookingModificationSummaryPrice.parkingFee ||
-      +bookingModificationSummaryPrice.routingFee ||
-      +bookingModificationSummaryPrice.administrativeFee)
+      +bookingModificationSummaryPrice.parkingFee
+      || +bookingModificationSummaryPrice.routingFee
+      || +bookingModificationSummaryPrice.administrativeFee)
       ? (
         <hr className={s.horizontalRule} />
       ) : null

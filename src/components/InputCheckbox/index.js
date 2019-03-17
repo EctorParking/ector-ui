@@ -5,8 +5,7 @@ import s from './InputCheckbox.css';
 
 import Input from '../Input';
 
-const InputCheckbox =
-({
+const InputCheckbox = ({
   id,
   children,
   onChange,

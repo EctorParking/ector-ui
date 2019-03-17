@@ -1,19 +1,21 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import backgrounds from '@storybook/addon-backgrounds';
+
 import centered from '@storybook/addon-centered';
 
-import TitleStep from './';
+import TitleStep from '.';
 
 import s from './TitleStep.css';
 
 
 storiesOf('Title.Step', module)
 
-  .addDecorator(backgrounds([
-    { name: 'header', value: '#163457', default: true },
-  ]))
+  .addParameters({
+    backgrounds: [
+      { name: 'header', value: '#163457', default: true },
+    ],
+  })
   .addDecorator(centered)
 
   .add('full presentation', () => (

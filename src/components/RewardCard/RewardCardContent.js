@@ -25,13 +25,14 @@ const RewardCardContent = ({
           {texts.updateExternalCard}
         </button>
       )}
-      {texts.rewardTooltip &&
-        (
+      {texts.rewardTooltip
+        && (
           <Tooltip
             className={s.tooltip}
             text={texts.rewardTooltip}
             iconClassName={iconClassName}
-          />)
+          />
+        )
       }
     </span>
   </div>
