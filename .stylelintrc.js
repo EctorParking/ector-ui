@@ -1,4 +1,7 @@
 module.exports = {
+  ignoreFiles:[
+    'node_modules/normalize.css/normalize.css'
+  ],
     rules: {
         'color-hex-case': 'lower',
         'color-hex-length': 'short',

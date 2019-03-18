@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import backgrounds from '@storybook/addon-backgrounds';
+
 import centered from '@storybook/addon-centered';
 import { withKnobs, object, boolean } from '@storybook/addon-knobs/react';
 
@@ -8,9 +8,11 @@ import PaymentMethodCard from '.';
 import { DefaultTexts } from './PaymentmethodTextsType';
 
 storiesOf('PaymentMethodCard', module)
-  .addDecorator(backgrounds([
-    { name: 'header', value: 'white', default: true },
-  ]))
+  .addParameters({
+    backgrounds: [
+      { name: 'header', value: 'white', default: true },
+    ],
+  })
   .addDecorator(centered)
   .addDecorator(withKnobs)
 

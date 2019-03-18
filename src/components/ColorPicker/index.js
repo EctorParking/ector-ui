@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Colors, { ColorPropsType } from './Colors';
 
 import s from './ColorPicker.css';
-import { Tooltip } from '../';
+import { Tooltip } from '..';
 
 class ColorPicker extends PureComponent {
   renderColorBadge = (color, index) => {

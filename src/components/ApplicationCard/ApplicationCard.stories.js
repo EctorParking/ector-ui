@@ -1,10 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import backgrounds from '@storybook/addon-backgrounds';
+
 import centered from '@storybook/addon-centered';
 import { withKnobs, text, object } from '@storybook/addon-knobs';
 
-import ApplicationCard from './';
+import ApplicationCard from '.';
 
 const urls = {
   googlePlay: 'http://www.google.fr',
@@ -13,9 +13,11 @@ const urls = {
 
 storiesOf('ApplicationCard', module)
 
-  .addDecorator(backgrounds([
-    { name: 'header', value: 'white', default: true },
-  ]))
+  .addParameters({
+    backgrounds: [
+      { name: 'header', value: 'white', default: true },
+    ],
+  })
   .addDecorator(centered)
   .addDecorator(withKnobs)
 

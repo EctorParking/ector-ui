@@ -1,18 +1,22 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import backgrounds from '@storybook/addon-backgrounds';
+
 import centered from '@storybook/addon-centered';
-import { withKnobs, object, boolean, text } from '@storybook/addon-knobs';
+import {
+  withKnobs, object, boolean, text,
+} from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
-import LoginForm from './';
+import LoginForm from '.';
 import { DefaultTexts } from './LoginFormTextsType';
 
 storiesOf('LoginForm', module)
 
-  .addDecorator(backgrounds([
-    { name: 'header', value: 'white', default: true },
-  ]))
+  .addParameters({
+    backgrounds: [
+      { name: 'header', value: 'white', default: true },
+    ],
+  })
   .addDecorator(centered)
   .addDecorator(withKnobs)
 

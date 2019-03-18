@@ -1,18 +1,20 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import backgrounds from '@storybook/addon-backgrounds';
+
 import centered from '@storybook/addon-centered';
 import { withKnobs, object, boolean } from '@storybook/addon-knobs/react';
 
 import { DefaultTexts } from './CarCardTextsType';
 
-import CarCard from './';
+import CarCard from '.';
 
 storiesOf('CarCard', module)
-  .addDecorator(backgrounds([
-    { name: 'header', value: 'white', default: true },
-  ]))
+  .addParameters({
+    backgrounds: [
+      { name: 'header', value: 'white', default: true },
+    ],
+  })
   .addDecorator(centered)
   .addDecorator(withKnobs)
   .add('With Knobs', () => {

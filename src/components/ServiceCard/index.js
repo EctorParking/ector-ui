@@ -21,13 +21,15 @@ const ServiceCard = ({
   return (
     <div className={cardClassName}>
       {
-        labelColor !== '' && labelLogo !== '' && labelText !== '' &&
-        <Label
-          logo={labelLogo}
-          label={labelText}
-          color={labelColor}
-          className={s.labelContainer}
-        />
+        labelColor !== '' && labelLogo !== '' && labelText !== ''
+        && (
+          <Label
+            logo={labelLogo}
+            label={labelText}
+            color={labelColor}
+            className={s.labelContainer}
+          />
+        )
       }
       <ServiceCardBody
         image={image}

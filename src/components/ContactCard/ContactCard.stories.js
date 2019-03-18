@@ -1,16 +1,17 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import backgrounds from '@storybook/addon-backgrounds';
+
 import centered from '@storybook/addon-centered';
 import { withKnobs, object, boolean } from '@storybook/addon-knobs/react';
 
-import { defaultTexts } from './ContactCardTextsType';
-import ContactCard from './';
+import ContactCard from '.';
 
 storiesOf('ContactCard', module)
-  .addDecorator(backgrounds([
-    { name: 'header', value: 'white', default: true },
-  ]))
+  .addParameters({
+    backgrounds: [
+      { name: 'header', value: 'white', default: true },
+    ],
+  })
   .addDecorator(centered)
   .addDecorator(withKnobs)
 
@@ -31,7 +32,7 @@ storiesOf('ContactCard', module)
         email: '',
         phone: '',
       }),
-      texts: object('Texts', defaultTexts),
+      texts: object('Texts'),
       editable: boolean('Editable', false),
       deletable: boolean('Deletable', false),
       pendingModification: boolean('Pending modification', false),

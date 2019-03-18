@@ -1,17 +1,19 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import backgrounds from '@storybook/addon-backgrounds';
+
 import centered from '@storybook/addon-centered';
 import { withKnobs, text, object } from '@storybook/addon-knobs';
 
-import BookingSteps from './';
+import BookingSteps from '.';
 import { defaultTexts } from './BookingStepsTextsType';
 
 storiesOf('BookingSteps', module)
 
-  .addDecorator(backgrounds([
-    { name: 'header', value: 'white', default: true },
-  ]))
+  .addParameters({
+    backgrounds: [
+      { name: 'header', value: 'white', default: true },
+    ],
+  })
   .addDecorator(centered)
   .addDecorator(withKnobs)
 

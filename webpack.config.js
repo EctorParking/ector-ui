@@ -1,5 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
   entry: path.resolve(__dirname, './src/components/index.js'),
@@ -10,6 +11,7 @@ module.exports = {
     libraryTarget: 'umd',
     globalObject: 'this',
   },
+  mode: 'production',
   devtool: false,
   module: {
     rules: [
@@ -21,7 +23,26 @@ module.exports = {
         ],
         loader: 'babel-loader',
         options: {
-          presets: ['env', 'stage-2'],
+          presets: [
+            [
+              '@babel/preset-env',
+              {
+                useBuiltIns: 'usage',
+                targets: {
+                  chrome: '58',
+                  ie: '11',
+                },
+              },
+            ],
+            '@babel/preset-react',
+          ],
+          plugins:
+            [
+              '@babel/plugin-syntax-dynamic-import',
+              '@babel/plugin-transform-flow-strip-types',
+              '@babel/plugin-proposal-class-properties',
+            ],
+
         },
       },
       {
@@ -41,10 +62,6 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              minimize: { autoprefixer: false },
-              discardComments: {
-                removeAll: true,
-              },
               importLoaders: 1,
               modules: true,
               localIdentName: '[hash:base64]',
@@ -57,6 +74,12 @@ module.exports = {
         include: path.resolve(__dirname, './'),
       },
     ],
+  },
+  optimization: {
+    minimizer: [
+      new OptimizeCSSAssetsPlugin({}),
+    ],
+    minimize: true,
   },
   plugins: [
     new MiniCssExtractPlugin({

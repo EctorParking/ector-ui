@@ -1,7 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
-import { Card, CardTitle, InputLabel, ActionLink } from '../';
+import {
+  Card, CardTitle, InputLabel, ActionLink,
+} from '..';
 import TextsType, { DefaultTexts } from './CardTravelInformationTextsType';
 
 import s from './CardTravelInformation.css';
@@ -28,8 +30,16 @@ class CardTravelInformation extends Component {
     }
     return (
       <Fragment>
-        <div>{texts.travelingNumberTo}&nbsp;:&nbsp;{values.travelingNumberTo || texts.blank}</div>
-        <div>{texts.returnFlightCompany}&nbsp;:&nbsp;{values.returnFlightCompany}</div>
+        <div>
+          {texts.travelingNumberTo}
+&nbsp;:&nbsp;
+          {values.travelingNumberTo || texts.blank}
+        </div>
+        <div>
+          {texts.returnFlightCompany}
+&nbsp;:&nbsp;
+          {values.returnFlightCompany}
+        </div>
         <div>
           {texts.returnFlightOrigin}
           &nbsp;:&nbsp;
@@ -51,8 +61,9 @@ class CardTravelInformation extends Component {
       travelingNumberFromClassName,
       ...cardProps
     } = this.props;
-    const hasFilledReturnFlightCompany =
-      values.returnFlightCompany !== null && values.returnFlightCompany.length > 0;
+
+    const hasFilledReturnFlightCompany = values.returnFlightCompany !== null
+      && values.returnFlightCompany.length > 0;
 
     return (
       <Card {...cardProps}>

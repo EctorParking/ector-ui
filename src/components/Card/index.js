@@ -66,20 +66,24 @@ const Card = ({
       onClick={onClick}
       testid={testid}
     >
-      { HeaderChildren &&
-        <CardHeader
-          HeaderChildren={HeaderChildren}
-        />
+      { HeaderChildren
+        && (
+          <CardHeader
+            HeaderChildren={HeaderChildren}
+          />
+        )
       }
       <LabelComponent className={s.label} />
       <div className={`${s.card_content} ${contentClassName}`}>
         { children }
       </div>
-      { FooterChildren &&
-        <CardFooter
-          className={footerClassName}
-          FooterChildren={FooterChildren}
-        />
+      { FooterChildren
+        && (
+          <CardFooter
+            className={footerClassName}
+            FooterChildren={FooterChildren}
+          />
+        )
       }
       <FooterComponent className={`${s.card_footer} ${s.footerComponent}`} />
     </RootComponent>

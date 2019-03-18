@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import s from './ContactForm.css';
 import TextsType, { DefaultTexts } from './ContactFormTextsType';
-import { Card, GenderPicker, LinkUnderlined, CardTitle, InputLabel, PhoneInput } from '../';
+import {
+  Card, GenderPicker, LinkUnderlined, CardTitle, InputLabel, PhoneInput,
+} from '..';
 import { CountryPropType } from '../PhoneInput/PhoneInputCountries';
 
 class ContactForm extends React.Component {
@@ -59,7 +61,7 @@ class ContactForm extends React.Component {
 
     if (FooterComponent === null) {
       return null;
-    } else if (typeof FooterComponent === 'function' && FooterComponent(footerProps)) {
+    } if (typeof FooterComponent === 'function' && FooterComponent(footerProps)) {
       return FooterComponent(footerProps);
     }
     return (
