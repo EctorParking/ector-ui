@@ -15,10 +15,20 @@ const getZoneSuggestionsFromValue = (zoneSuggestions, value) => zoneSuggestions.
     ...zone,
     disabled: value.length > 0,
   };
-  if (zone.name.toLowerCase() === value.toLowerCase()) {
+  if (zone.name.toLowerCase().includes(value.toLowerCase())) {
     ret.disabled = false;
   }
   return ret;
+}).sort((zoneSuggestionA, zoneSuggestionB) => {
+  if (zoneSuggestionA.disabled && zoneSuggestionB.disabled) {
+    return 0;
+  } if (zoneSuggestionA.disabled) {
+    return 1;
+  } else if (zoneSuggestionB.disabled) {
+    return -1;
+  } else {
+    return 0;
+  }
 });
 
 class ZonePicker extends React.PureComponent {
