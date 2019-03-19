@@ -41,3 +41,4 @@ export { default as RegistrationForm } from './RegistrationForm';
 export { default as HtmlPrice } from './HtmlPrice';
 export { default as Picker } from './Picker';
 export { default as Arrow } from './Arrow';
+export { default as PickerSuggestions } from './PickerSuggestions';

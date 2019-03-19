@@ -1,0 +1,33 @@
+@import '../../style/variable.css';
+
+.container {
+  height: 0;
+  position: absolute;
+  width: 150%;
+  top: 3.5rem;
+  left: -25%;
+  border-radius: var(--borderRadius);
+  &.visible {
+    height: 150px;
+    min-height: 150px;
+    background-color: var(--white);
+    box-shadow: 0 0 15px 2px var(--darkMetalGrey);
+  }
+}
+
+.arrowContainer {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  left: -5px;
+  top: -15px;
+}
+
+.arrow {
+  color: transparent;
+  &.visible {
+     color: var(--white);
+     text-shadow: 0 -5px 15px var(--darkMetalGrey);
+  }
+}
