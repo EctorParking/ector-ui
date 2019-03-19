@@ -1,5 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
+import levenshtein from 'fast-levenshtein';
 import {
   Picker,
   PickerSuggestions,
@@ -14,21 +15,19 @@ const getZoneSuggestionsFromValue = (zoneSuggestions, value) => zoneSuggestions.
   const ret = {
     ...zone,
     disabled: value.length > 0,
+    similarity: 1,
   };
   if (zone.name.toLowerCase().includes(value.toLowerCase())) {
     ret.disabled = false;
+    ret.similarity = levenshtein.get(zone.name, value, { useCollator: true })/
+      zone.name.length;
   }
   return ret;
 }).sort((zoneSuggestionA, zoneSuggestionB) => {
-  if (zoneSuggestionA.disabled && zoneSuggestionB.disabled) {
-    return 0;
-  } if (zoneSuggestionA.disabled) {
-    return 1;
-  } else if (zoneSuggestionB.disabled) {
-    return -1;
-  } else {
-    return 0;
+  if(zoneSuggestionA.similarity === zoneSuggestionB.similarity) {
+    return 0
   }
+  return zoneSuggestionA.similarity > zoneSuggestionB.similarity ? 1 : -1;
 });
 
 class ZonePicker extends React.PureComponent {
