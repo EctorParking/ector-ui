@@ -39,3 +39,4 @@ export { default as RoundedButton } from './RoundedButton';
 export { default as AddItemCard } from './AddItemCard';
 export { default as RegistrationForm } from './RegistrationForm';
 export { default as HtmlPrice } from './HtmlPrice';
+export { default as Picker } from './Picker';
