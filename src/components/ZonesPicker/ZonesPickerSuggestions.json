@@ -1,0 +1,25 @@
+[{
+  "name": "Paris Orly",
+  "code": "ORY"
+}, {
+  "name": "Paris CDG",
+  "code": "CDG"
+}, {
+  "name": "Lyon",
+  "code": "ADL"
+}, {
+  "name": "Marseille",
+  "code": "MAR"
+}, {
+  "name": "Marseille2",
+  "code": "MAR2"
+}, {
+  "name": "Marseille3",
+  "code": "MAR3"
+}, {
+  "name": "Marseille4",
+  "code": "MAR4"
+}, {
+  "name": "Marseille5",
+  "code": "MAR5"
+}]

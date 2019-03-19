@@ -1,0 +1,62 @@
+@import '../../style/variable.css';
+
+.suggestionsContainer {
+  position: relative;
+  height: 75%;
+  display: flex;
+  flex-direction: row;
+}
+
+.suggestions {
+  overflow-x: scroll;
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  padding: 5px 10px;
+  &.visible {
+    display: flex;
+   }
+}
+
+.splittedSuggestions:before {
+  content: "";
+  background-color: var(--aquaHazeGrey);
+  height: 75%;
+  width: 1px;
+  position: absolute;
+  margin: 10px 0 0 -15px;
+}
+
+.suggestionAction {
+  display: none;
+  padding-left: 15px;
+  height: 25%;
+  background-color: var(--lightGrey);
+}
+
+.suggestionActionVisible {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.input::placeholder {
+  color: var(--darkGrey);
+}
+
+.inputContainer {
+  position: relative;
+}
+
+.inputAction {
+  cursor: pointer;
+  height: 8px;
+  position: absolute;
+  right: 0;
+  top: 10px;
+  font-size: 2rem;
+  color: var(--darkGrey);
+  &.hidden {
+    display: none;
+  }
+}
