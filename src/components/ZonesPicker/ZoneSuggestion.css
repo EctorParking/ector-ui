@@ -3,12 +3,6 @@
 .zone {
   padding-left: 15px;
   cursor: pointer;
-  /*&.disabled {*/
-    /*cursor: default;*/
-    /*&:hover {*/
-       /*font-weight: normal;*/
-     /*}*/
-  /*}*/
 }
 
 .selected, .hovered:hover {
