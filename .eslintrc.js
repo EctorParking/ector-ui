@@ -40,7 +40,9 @@ module.exports = {
           "required": {
             "some": [ "nesting", "id" ]
           },
-        }]
+        }],
+
+        "react/require-default-props": [1, { forbidDefaultForRequired: true }],
     },
 
     parser: 'babel-eslint',
