@@ -1,4 +1,4 @@
-@import '../../style/variable.css';
+@import '../../style/variable.global.css';
 
 .tooltipContainer {
     font-size: var(--iconFontSize);

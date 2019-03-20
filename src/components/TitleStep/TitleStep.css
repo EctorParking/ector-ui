@@ -2,7 +2,7 @@
 * This element has to be wrapped in a .steps div to increment the counter
 */
 
-@import '../../style/variable.css';
+@import '../../style/variable.global.css';
 
 .steps {
   display: flex;
