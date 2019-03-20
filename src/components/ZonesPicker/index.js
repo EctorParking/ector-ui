@@ -27,7 +27,7 @@ const getZoneSuggestionsFromValue = (zoneSuggestions, value) => zoneSuggestions.
       zone.name.toLowerCase(),
       value.toLowerCase(),
       { useCollator: true },
-    );
+    ) / zone.name.length;
   }
   return zoneSuggestion;
 }).sort((zoneSuggestionA, zoneSuggestionB) => {
