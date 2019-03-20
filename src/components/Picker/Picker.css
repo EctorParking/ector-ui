@@ -8,7 +8,7 @@
   border-radius: var(--inputBorderRadius);
   display: block;
   height: 2.5rem;
-  padding: 0 0.7rem;
+  padding: 0;
   margin-top: 0.25rem;
   box-shadow: 0 0 15px 2px var(--darkMetalGrey);
 }
@@ -19,7 +19,7 @@
   margin-top: 0;
 }
 
-.splittedPickerInput {
+.splitPickerInput {
   border-left: 1px solid var(--aquaHazeGrey);
   border-radius: 0;
   padding-left: 0.7rem;
@@ -28,7 +28,7 @@
   }
 }
 
-.splittedContainer {
+.splitContainer {
   display: flex;
   flex-direction: row;
 }

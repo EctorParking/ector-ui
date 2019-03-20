@@ -36,24 +36,27 @@ class Picker extends React.PureComponent {
 
   render() {
     const {
-      split, SuggestionsComponent, InputComponent, firstValue, secondValue,
+      split,
+      SuggestionsComponent,
+      FirstInputComponent,
+      SecondInputComponent,
+      firstValue,
+      secondValue,
     } = this.props;
     const { suggestionsVisible } = this.state;
 
     return (
-      <div className={[s.container, split ? s.splittedContainer : undefined].join(' ')} ref={this.containerRef}>
-        <InputComponent
+      <div className={[s.container, split ? s.splitContainer : undefined].join(' ')} ref={this.containerRef}>
+        <FirstInputComponent
           value={firstValue}
-          position={Picker.firstInput}
           className={s.pickerInput}
           onFocus={this.handleFocus}
         />
         {
           split && (
-            <InputComponent
+            <SecondInputComponent
               value={secondValue}
-              position={Picker.secondInput}
-              className={[s.pickerInput, s.splittedPickerInput].join(' ')}
+              className={[s.pickerInput, s.splitPickerInput].join(' ')}
               onFocus={this.handleFocus}
             />
           )
@@ -64,16 +67,11 @@ class Picker extends React.PureComponent {
   }
 }
 
-const DefaultInputComponent = ({ position, ...props }) => <Input {...props} />;
-
-DefaultInputComponent.propTypes = {
-  position: PropTypes.oneOf([Picker.firstInput, Picker.secondInput]).isRequired,
-};
-
 Picker.defaultProps = {
   split: false,
   SuggestionsComponent: props => <PickerSuggestions {...props} />,
-  InputComponent: DefaultInputComponent,
+  FirstInputComponent: props => <Input {...props} />,
+  SecondInputComponent: props => <Input {...props} />,
   firstValue: '',
   secondValue: '',
 };
@@ -81,13 +79,10 @@ Picker.defaultProps = {
 Picker.propTypes = {
   split: PropTypes.bool,
   SuggestionsComponent: PropTypes.func,
-  InputComponent: PropTypes.func,
+  FirstInputComponent: PropTypes.func,
+  SecondInputComponent: PropTypes.func,
   firstValue: PropTypes.string,
   secondValue: PropTypes.string,
 };
-
-Picker.firstInput = 'first';
-
-Picker.secondInput = 'second';
 
 export default Picker;
