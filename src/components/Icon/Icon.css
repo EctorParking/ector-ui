@@ -1,0 +1,12 @@
+@import '../../style/variable.css';
+
+.withBackground {
+  position: absolute;
+  z-index: 2;
+}
+
+.background {
+  position: absolute;
+  z-index: 1;
+  height: 1.3rem;
+}
