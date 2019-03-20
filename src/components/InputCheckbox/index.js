@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 
 import s from './InputCheckbox.css';
 
-import Input from '../Input';
-
 const InputCheckbox = ({
   id,
   children,
@@ -20,7 +18,7 @@ const InputCheckbox = ({
 
     { children }
 
-    <Input
+    <input
       type="checkbox"
       id={`${id}`}
       onChange={onChange}

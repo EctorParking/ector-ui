@@ -12,18 +12,25 @@ const Input = ({
   hasError,
   className,
   onKeyDown,
+  LeftComponent,
+  RightComponent,
   ...restOfProps
 }) => (
-  <input
-    className={[s.input, hasError ? s.inputWithError : '', className].join(' ')}
-    onFocus={onFocus}
-    onBlur={onBlur}
-    onChange={onChange}
-    checked={checked}
-    value={value}
-    onKeyDown={onKeyDown}
-    {...restOfProps}
-  />
+  <div className={s.container}>
+    <LeftComponent className={s.inputPrepend} />
+    <input
+      className={[s.input, hasError ? s.inputWithError : '', className].join(' ')}
+      onFocus={onFocus}
+      onBlur={onBlur}
+      onChange={onChange}
+      checked={checked}
+      value={value}
+      onKeyDown={onKeyDown}
+      {...restOfProps}
+    />
+    <RightComponent className={s.inputAppend} />
+  </div>
+
 );
 
 Input.defaultProps = {
@@ -38,6 +45,8 @@ Input.defaultProps = {
   hasError: false,
   type: 'text',
   onKeyDown: () => {},
+  LeftComponent: () => null,
+  RightComponent: () => null,
 };
 
 Input.propTypes = {
@@ -52,6 +61,8 @@ Input.propTypes = {
   className: PropTypes.string,
   hasError: PropTypes.bool,
   onKeyDown: PropTypes.func,
+  LeftComponent: PropTypes.func,
+  RightComponent: PropTypes.func,
 };
 
 
