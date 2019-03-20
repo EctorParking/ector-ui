@@ -12,8 +12,8 @@ class ZonePickerStory extends React.PureComponent {
     toZoneSuggestions: Suggestions,
   };
 
-  handleZoneSelect = (zone, inputPosition) => {
-    if (inputPosition === 'first') {
+  handleZoneSelect = (zone, zoneType) => {
+    if (zoneType === ZonesPicker.fromZone) {
       this.setState({
         fromZone: zone,
         toZoneSuggestions: Suggestions.filter(suggestion => (
@@ -35,8 +35,8 @@ class ZonePickerStory extends React.PureComponent {
     return (
       <ZonesPicker
         onSelect={this.handleZoneSelect}
-        fromZone={fromZone.name}
-        toZone={toZone.name}
+        fromZone={fromZone}
+        toZone={toZone}
         fromZoneSuggestions={fromZoneSuggestions}
         toZoneSuggestions={toZoneSuggestions}
       />

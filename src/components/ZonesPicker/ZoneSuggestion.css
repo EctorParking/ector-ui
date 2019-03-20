@@ -1,7 +1,7 @@
 @import '../../style/variable.css';
 
-.zone {
-  padding-left: 15px;
+.zoneName {
+  padding-left: 25px;
   cursor: pointer;
 }
 
@@ -11,4 +11,12 @@
 
 .disabled {
   color: var(--lightGrey);
+}
+
+.icon {
+  color: var(--deepBlue);
+}
+
+.trainIcon {
+  margin-left: 3px;
 }

@@ -8,6 +8,7 @@
 }
 
 .suggestions {
+  position: relative;
   overflow-x: scroll;
   display: none;
   flex-direction: column;
@@ -18,13 +19,13 @@
    }
 }
 
-.splittedSuggestions:before {
+.splitSuggestions:before {
   content: "";
   background-color: var(--aquaHazeGrey);
   height: 75%;
   width: 1px;
   position: absolute;
-  margin: 10px 0 0 -15px;
+  margin: 10px 0 0 -10px;
 }
 
 .suggestionAction {
@@ -40,23 +41,28 @@
   align-items: center;
 }
 
-.input::placeholder {
-  color: var(--darkGrey);
+.input {
+  padding-left: 42px;
 }
 
-.inputContainer {
-  position: relative;
+.input::placeholder {
+  color: var(--darkGrey);
+  font-style: italic;
+}
+
+.inputImgIcon {
+  height: 20px;
+}
+
+.inputIcon {
+  font-size: 1.2rem;
+  color: var(--deepBlue);
+}
+
+.stationIcon {
+  margin-left: 2px;
 }
 
 .inputAction {
   cursor: pointer;
-  height: 8px;
-  position: absolute;
-  right: 0;
-  top: 10px;
-  font-size: 2rem;
-  color: var(--darkGrey);
-  &.hidden {
-    display: none;
-  }
 }
