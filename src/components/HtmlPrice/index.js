@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import formatPrice from '../../Services/Utils';
+import { formatPrice } from '../../Services';
 
 const HtmlPrice = ({
   price,

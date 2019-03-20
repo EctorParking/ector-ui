@@ -1,0 +1,35 @@
+@import '../../style/variable.css';
+
+.arrow {
+  width: 0;
+  height: 0;
+  border: 5px solid;
+}
+
+.topArrow {
+  border-top: none;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: var(--white);
+}
+
+.bottomArrow {
+  border-bottom: none;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-color: var(--white);
+}
+
+.rightArrow {
+  border-right: none;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: var(--white);
+}
+
+.leftArrow {
+  border-left: none;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-right-color: var(--white);
+}

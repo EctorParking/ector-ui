@@ -39,3 +39,8 @@ export { default as RoundedButton } from './RoundedButton';
 export { default as AddItemCard } from './AddItemCard';
 export { default as RegistrationForm } from './RegistrationForm';
 export { default as HtmlPrice } from './HtmlPrice';
+export { default as Picker } from './Picker';
+export { default as Arrow } from './Arrow';
+export { default as PickerSuggestions } from './PickerSuggestions';
+export { default as ZonesPicker } from './ZonesPicker';
+export { default as Icon } from './Icon';

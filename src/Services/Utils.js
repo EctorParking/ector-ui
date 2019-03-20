@@ -1,7 +1,4 @@
-const formatPrice = (
-  price,
-  showDecimals,
-): string => {
+export const formatPrice = (price, showDecimals) => {
   let countDecimals;
   if (typeof showDecimals === 'undefined') {
     countDecimals = !Number.isInteger(Number(price)) ? 2 : 0;
@@ -14,4 +11,4 @@ const formatPrice = (
   return parseFloat(displayPrice).toFixed(countDecimals);
 };
 
-export default formatPrice;
+export const ucfirst = value => `${value[0].toUpperCase()}${value.slice(1)}`;

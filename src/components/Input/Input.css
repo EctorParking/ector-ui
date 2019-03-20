@@ -1,5 +1,9 @@
 @import '../../style/variable.css';
 
+.container {
+  position: relative;
+}
+
 .input {
   box-sizing: border-box;
   color: var(--deepBlue);
@@ -24,4 +28,22 @@
 
 .inputWithError {
   border-color: var(--red) !important;
+}
+
+.inputPrepend {
+  height: 8px;
+  position: absolute;
+  left: 5px;
+  top: 10px;
+  font-size: 2rem;
+  color: var(--darkGrey);
+}
+
+.inputAppend {
+  height: 8px;
+  position: absolute;
+  right: 5px;
+  top: 10px;
+  font-size: 2rem;
+  color: var(--darkGrey);
 }

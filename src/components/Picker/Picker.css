@@ -1,0 +1,45 @@
+@import '../../style/variable.css';
+
+.container {
+  position: relative;
+  box-sizing: border-box;
+  color: var(--deepBlue);
+  border: none;
+  border-radius: var(--inputBorderRadius);
+  display: block;
+  height: 2.5rem;
+  padding: 0;
+  margin-top: 0.25rem;
+  box-shadow: 0 0 15px 2px var(--darkMetalGrey);
+}
+
+.pickerInput {
+  padding: 0;
+  border: none;
+  margin-top: 0;
+}
+
+.splitPickerInput {
+  border-left: 1px solid var(--aquaHazeGrey);
+  border-radius: 0;
+  padding-left: 0.7rem;
+  &:focus {
+    border-color: var(--aquaHazeGrey);
+  }
+}
+
+.splitContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.suggestionsContainer {
+  min-height: 150px;
+  background-color: black;
+  position: absolute;
+  width: 150%;
+  top: 3.5rem;
+  left: -25%;
+  border-radius: var(--borderRadius);
+  border-width: 1px;
+}

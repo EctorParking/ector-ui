@@ -1,0 +1,22 @@
+@import '../../style/variable.css';
+
+.zoneName {
+  padding-left: 25px;
+  cursor: pointer;
+}
+
+.selected, .hovered:hover {
+  font-weight: bold;
+}
+
+.disabled {
+  color: var(--lightGrey);
+}
+
+.icon {
+  color: var(--deepBlue);
+}
+
+.trainIcon {
+  margin-left: 3px;
+}
