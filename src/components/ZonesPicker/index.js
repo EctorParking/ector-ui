@@ -1,6 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import levenshtein from 'fast-levenshtein';
+import Levenshtein from 'fast-levenshtein';
 import {
   Picker,
   PickerSuggestions,
@@ -10,22 +10,22 @@ import {
 import ZoneSuggestion from './ZoneSuggestion';
 import s from './ZonesPicker.css';
 import Suggestions from './ZonesPickerSuggestions';
+import { DefaultTexts, TextsType } from './ZonePickerTexts';
 
 const getZoneSuggestionsFromValue = (zoneSuggestions, value) => zoneSuggestions.map((zone) => {
-  const ret = {
+  const zoneSuggestion = {
     ...zone,
     disabled: value.length > 0,
     similarity: 1,
   };
   if (zone.name.toLowerCase().includes(value.toLowerCase())) {
-    ret.disabled = false;
-    ret.similarity = levenshtein.get(zone.name, value, { useCollator: true })/
-      zone.name.length;
+    zoneSuggestion.disabled = false;
+    zoneSuggestion.similarity = Levenshtein.get(zone.name, value, { useCollator: true });
   }
-  return ret;
+  return zoneSuggestion;
 }).sort((zoneSuggestionA, zoneSuggestionB) => {
-  if(zoneSuggestionA.similarity === zoneSuggestionB.similarity) {
-    return 0
+  if (zoneSuggestionA.similarity === zoneSuggestionB.similarity) {
+    return 0;
   }
   return zoneSuggestionA.similarity > zoneSuggestionB.similarity ? 1 : -1;
 });
@@ -38,8 +38,6 @@ class ZonePicker extends React.PureComponent {
       fromZoneSuggestions,
       toZoneSuggestions,
     } = nextProps;
-    console.log('get dervied state', nextProps, prevState);
-
     if (!fromZoneProp.length && !toZoneProp.length) {
       return {
         ...prevState,
@@ -59,7 +57,7 @@ class ZonePicker extends React.PureComponent {
         ? toZone
         : prevState.toZoneValue,
     };
-    console.log('new state::', toZone, fromZone);
+
     return {
       ...newState,
       fromZoneSuggestions: getZoneSuggestionsFromValue(fromZoneSuggestions, newState.fromZoneValue),
@@ -103,7 +101,7 @@ class ZonePicker extends React.PureComponent {
     if (shouldClosePicker) {
       this.picker.current.handleClickOutside({});
     }
-    this.setState(() => newState);
+    this.setState(newState);
     onSelect(zone, suggestionColumnPosition);
   };
 
@@ -111,18 +109,19 @@ class ZonePicker extends React.PureComponent {
     const { currentTarget: { value } } = event;
 
     if (inputPosition === 'first') {
-      this.setState(() => ({ fromZoneValue: value }));
+      this.setState({ fromZoneValue: value });
     } else {
-      this.setState(() => ({ toZoneValue: value }));
+      this.setState({ toZoneValue: value });
     }
   };
 
   handleZoneReset = (inputPosition) => {
     const { onSelect } = this.props;
+
     if (inputPosition === 'first') {
       this.setState(prevState => ({ fromZoneValue: '', toZoneValue: prevState.split ? prevState.toZoneValue : '' }));
     } else {
-      this.setState(() => ({ toZoneValue: '' }));
+      this.setState({ toZoneValue: '' });
     }
     onSelect({}, inputPosition);
   };
@@ -140,14 +139,24 @@ class ZonePicker extends React.PureComponent {
     });
   };
 
-  renderInputComponent = ({ className, position: inputPosition, ...inputProps }) => (
-    <div className={s.inputContainer}>
-      <Input {...inputProps} onChange={e => this.handleZoneChange(e, inputPosition)} placeholder="Aéroport ou gare..." className={[s.input, className].join(' ')} autocomplete="off" />
-      <span role="presentation" className={[s.inputAction, inputProps.value.length === 0 ? s.hidden : undefined].join(' ')} onClick={() => this.handleZoneReset(inputPosition)}>
+  renderInputComponent = ({ className, position: inputPosition, ...inputProps }) => {
+    const { texts } = this.props;
+
+    return (
+      <div className={s.inputContainer}>
+        <Input
+          {...inputProps}
+          onChange={e => this.handleZoneChange(e, inputPosition)}
+          placeholder={texts.inputPlaceholder}
+          className={[s.input, className].join(' ')}
+          autocomplete="off"
+        />
+        <span role="presentation" className={[s.inputAction, inputProps.value.length === 0 ? s.hidden : undefined].join(' ')} onClick={() => this.handleZoneReset(inputPosition)}>
           &times;
-      </span>
-    </div>
-  );
+        </span>
+      </div>
+    );
+  };
 
   renderZoneSuggestion = (zone) => {
     const { split } = this.state;
@@ -163,21 +172,18 @@ class ZonePicker extends React.PureComponent {
     );
   };
 
-  renderSplitZoneSuggestion = (zone) => {
-    const { split } = this.state;
-
-    return (
-      <ZoneSuggestion
-        name={zone.name}
-        key={zone.code}
-        split={split}
-        onClick={() => this.handleZoneClick(zone, 'second')}
-        disabled={zone.disabled}
-      />
-    );
-  };
+  renderSplitZoneSuggestion = zone => (
+    <ZoneSuggestion
+      name={zone.name}
+      key={zone.code}
+      split
+      onClick={() => this.handleZoneClick(zone, 'second')}
+      disabled={zone.disabled}
+    />
+  );
 
   renderSuggestionsComponent = ({ visible, ...rest }) => {
+    const { texts } = this.props;
     const { split, fromZoneSuggestions, toZoneSuggestions } = this.state;
 
     return (
@@ -192,7 +198,7 @@ class ZonePicker extends React.PureComponent {
         </div>
         <div className={[s.suggestionAction, visible ? s.suggestionActionVisible : undefined].join(' ')}>
           <InputCheckbox onChange={this.handleSplitSuggestions} checked={split}>
-              Lieu de retour différent
+            {texts.suggestionCheckboxLabel}
           </InputCheckbox>
         </div>
       </PickerSuggestions>
@@ -221,6 +227,7 @@ ZonePicker.defaultProps = {
   toZone: '',
   fromZoneSuggestions: Suggestions,
   toZoneSuggestions: Suggestions,
+  texts: DefaultTexts,
 };
 
 const ZoneType = PropTypes.shape({
@@ -234,6 +241,7 @@ ZonePicker.propTypes = {
   onSelect: PropTypes.func,
   fromZone: PropTypes.string,
   toZone: PropTypes.string,
+  texts: TextsType,
 };
 
 export default ZonePicker;
