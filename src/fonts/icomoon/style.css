@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?dq4rly');
-  src:  url('fonts/icomoon.eot?dq4rly#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?dq4rly') format('truetype'),
-    url('fonts/icomoon.woff?dq4rly') format('woff'),
-    url('fonts/icomoon.svg?dq4rly#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?v1c01f');
+  src:  url('fonts/icomoon.eot?v1c01f#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?v1c01f') format('truetype'),
+    url('fonts/icomoon.woff?v1c01f') format('woff'),
+    url('fonts/icomoon.svg?v1c01f#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,6 +24,13 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-ec-station:before {
+  content: "\e91f";
+}
+.icon-ec-calendar:before {
+  content: "\e968";
+  color: #bfc4d4;
+}
 .icon-ec-status:before {
   content: "\e966";
   color: #fff;
@@ -338,9 +345,6 @@
 .icon-ec-securise:before {
   content: "\e91e";
   color: #fff;
-}
-.icon-ec-station:before {
-  content: "\e91f";
 }
 .icon-bolt:before {
   content: "\f0e7";
