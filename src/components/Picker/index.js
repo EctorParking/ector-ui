@@ -44,7 +44,7 @@ class Picker extends React.PureComponent {
       <div className={[s.container, split ? s.splittedContainer : undefined].join(' ')} ref={this.containerRef}>
         <InputComponent
           value={firstValue}
-          position="first"
+          position={Picker.firstInput}
           className={s.pickerInput}
           onFocus={this.handleFocus}
         />
@@ -52,7 +52,7 @@ class Picker extends React.PureComponent {
           split && (
             <InputComponent
               value={secondValue}
-              position="second"
+              position={Picker.secondInput}
               className={[s.pickerInput, s.splittedPickerInput].join(' ')}
               onFocus={this.handleFocus}
             />
@@ -67,7 +67,7 @@ class Picker extends React.PureComponent {
 const DefaultInputComponent = ({ position, ...props }) => <Input {...props} />;
 
 DefaultInputComponent.propTypes = {
-  position: PropTypes.oneOf(['first', 'second']).isRequired,
+  position: PropTypes.oneOf([Picker.firstInput, Picker.secondInput]).isRequired,
 };
 
 Picker.defaultProps = {
@@ -85,5 +85,9 @@ Picker.propTypes = {
   firstValue: PropTypes.string,
   secondValue: PropTypes.string,
 };
+
+Picker.firstInput = 'first';
+
+Picker.secondInput = 'second';
 
 export default Picker;

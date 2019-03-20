@@ -85,13 +85,13 @@ class ZonePicker extends React.PureComponent {
     const newState = {};
     let shouldClosePicker = false;
 
-    if (suggestionColumnPosition === 'first') {
+    if (suggestionColumnPosition === Picker.firstInput) {
       newState.fromZoneValue = zone.name;
       if (!split) {
         newState.toZoneValue = zone.name;
         shouldClosePicker = true;
       }
-    } else if (suggestionColumnPosition === 'second') {
+    } else if (suggestionColumnPosition === Picker.secondInput) {
       shouldClosePicker = (
         fromZoneValue
         && fromZoneSuggestions.findIndex(suggestion => suggestion.name === fromZoneValue) >= 0
@@ -108,7 +108,7 @@ class ZonePicker extends React.PureComponent {
   handleZoneChange = (event, inputPosition) => {
     const { currentTarget: { value } } = event;
 
-    if (inputPosition === 'first') {
+    if (inputPosition === Picker.firstInput) {
       this.setState({ fromZoneValue: value });
     } else {
       this.setState({ toZoneValue: value });
@@ -118,7 +118,7 @@ class ZonePicker extends React.PureComponent {
   handleZoneReset = (inputPosition) => {
     const { onSelect } = this.props;
 
-    if (inputPosition === 'first') {
+    if (inputPosition === Picker.firstInput) {
       this.setState(prevState => ({ fromZoneValue: '', toZoneValue: prevState.split ? prevState.toZoneValue : '' }));
     } else {
       this.setState({ toZoneValue: '' });
@@ -131,7 +131,7 @@ class ZonePicker extends React.PureComponent {
       const { onSelect } = this.props;
       const toZoneValue = prevState.split ? prevState.toZoneValue : '';
 
-      onSelect(toZoneValue, 'second');
+      onSelect(toZoneValue, Picker.secondInput);
       return ({
         split: !prevState.split,
         toZoneValue,
@@ -166,7 +166,7 @@ class ZonePicker extends React.PureComponent {
         name={zone.name}
         key={zone.code}
         split={split}
-        onClick={() => this.handleZoneClick(zone, 'first')}
+        onClick={() => this.handleZoneClick(zone, Picker.firstInput)}
         disabled={zone.disabled}
       />
     );
@@ -177,7 +177,7 @@ class ZonePicker extends React.PureComponent {
       name={zone.name}
       key={zone.code}
       split
-      onClick={() => this.handleZoneClick(zone, 'second')}
+      onClick={() => this.handleZoneClick(zone, Picker.secondInput)}
       disabled={zone.disabled}
     />
   );
