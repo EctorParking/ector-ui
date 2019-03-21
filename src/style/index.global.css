@@ -1,4 +1,5 @@
-@import './font.css';
+@import './font.global.css';
+@import '../icomoon/icomoon.global.css';
 @import '../../node_modules/normalize.css/normalize.css';
 
 /**

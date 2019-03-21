@@ -4,16 +4,18 @@ module.exports = async ({config: storybookBaseConfig}, configType) => {
   // configType has a value of 'DEVELOPMENT' or 'PRODUCTION'
   // You can change the configuration based on that.
   // 'PRODUCTION' is used when building the static version of storybook.
-
+  storybookBaseConfig.entry = [
+    ...storybookBaseConfig.entry,
+    path.resolve(__dirname, '../src/icomoon/icomoon.global.css')
+  ];
   // Make whatever fine-grained changes you need
   storybookBaseConfig.module.rules = [{
-      test: /\.css$/,
+      test: /^((?!\.global).)*\.css$/,
       loaders: [
         'style-loader',
         {
           loader: 'css-loader',
           options: {
-            url: false,
             importLoaders: 1,
             modules: true,
             localIdentName: '[name]__[local]___[hash:base64:5]',
@@ -24,6 +26,18 @@ module.exports = async ({config: storybookBaseConfig}, configType) => {
         }
       ],
       include: path.resolve(__dirname, "../")
+    },
+    {
+      test: /\.global\.css$/,
+      loaders: [
+        'style-loader',
+        {
+          loader: 'css-loader',
+        },
+        {
+          loader: 'postcss-loader'
+        }
+      ]
     },
     {
       test: /\.(png|jpg|jpeg|gif|svg|ico|woff|woff2|eot|ttf)$/,

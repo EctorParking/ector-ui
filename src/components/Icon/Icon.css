@@ -1,4 +1,4 @@
-@import '../../style/variable.css';
+@import '../../style/variable.global.css';
 
 .withBackground {
   position: absolute;

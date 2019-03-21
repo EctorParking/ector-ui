@@ -1,4 +1,4 @@
-@import './index.css';
+@import './index.global.css';
 
 :root {
   --iconFontSize: 2em;
