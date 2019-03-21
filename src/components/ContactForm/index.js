@@ -12,8 +12,8 @@ class ContactForm extends React.Component {
     super(props);
 
     this.handleChangeGender = props.onChangeProperty.bind(this, 'title');
-    this.handleChangeFirstName = this.handleChangeProperty.bind(this, 'firstname');
-    this.handleChangeLastName = this.handleChangeProperty.bind(this, 'lastname');
+    this.handleChangeFirstName = this.handleChangeProperty.bind(this, 'firstName');
+    this.handleChangeLastName = this.handleChangeProperty.bind(this, 'lastName');
     this.handleChangeEmail = this.handleChangeProperty.bind(this, 'email');
     this.handleChangePhone = this.handleChangeProperty.bind(this, 'phone');
     this.handleChangePostalCode = this.handleChangeProperty.bind(this, 'postalCode');
@@ -127,8 +127,8 @@ class ContactForm extends React.Component {
               onFocus={onInputFocus}
               onBlur={onInputBlur}
               onChange={this.handleChangeFirstName}
-              value={values.firstname || ''}
-              error={errors.firstname}
+              value={values.firstName || ''}
+              error={errors.firstName}
               label={firstName}
               mandatory
               className={s.contactFormInput}
@@ -145,8 +145,8 @@ class ContactForm extends React.Component {
               onFocus={onInputFocus}
               onBlur={onInputBlur}
               onChange={this.handleChangeLastName}
-              value={values.lastname || ''}
-              error={errors.lastname}
+              value={values.lastName || ''}
+              error={errors.lastName}
               className={s.contactFormInput}
               InputComponent={this.renderLastNameInput}
             />
@@ -212,16 +212,16 @@ ContactForm.defaultProps = {
   onChangeProperty: () => {},
   values: {
     gender: null,
-    firstname: null,
-    lastname: null,
+    firstName: null,
+    lastName: null,
     email: null,
     phone: null,
     postalCode: null,
   },
   errors: {
     gender: null,
-    firstname: null,
-    lastname: null,
+    firstName: null,
+    lastName: null,
     email: null,
     phone: null,
     postalCode: null,
@@ -247,16 +247,16 @@ ContactForm.propTypes = {
   onChangeProperty: PropTypes.func,
   values: PropTypes.shape({
     title: PropTypes.oneOf(['male', 'female', null, '']),
-    firstname: PropTypes.string,
-    lastname: PropTypes.string,
+    firstName: PropTypes.string,
+    lastName: PropTypes.string,
     email: PropTypes.string,
     phoneNumber: PropTypes.string,
     postalCode: PropTypes.string,
   }),
   errors: PropTypes.shape({
     title: PropTypes.string,
-    firstname: PropTypes.string,
-    lastname: PropTypes.string,
+    firstName: PropTypes.string,
+    lastName: PropTypes.string,
     email: PropTypes.string,
     phoneNumber: PropTypes.string,
     postalCode: PropTypes.string,

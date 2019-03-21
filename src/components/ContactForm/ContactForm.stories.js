@@ -22,16 +22,16 @@ storiesOf('ContactForm', module)
     const props = {
       texts: object('Textes', DefaultTexts),
       values: object('Values', {
-        firstname: '',
-        lastname: '',
+        firstName: '',
+        lastName: '',
         email: '',
         title: '',
         phone: '',
         postalCode: '',
       }),
       errors: object('Errors', {
-        firstname: '',
-        lastname: '',
+        firstName: '',
+        lastName: '',
         email: '',
         title: '',
         phone: '',
