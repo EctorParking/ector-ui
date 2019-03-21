@@ -15,7 +15,7 @@ const ContactCardHeader = ({
   onDelete,
   id,
 }) => {
-  const { firstname, lastname } = contact;
+  const { firstName, lastName } = contact;
 
   let button = null;
 
@@ -45,7 +45,7 @@ const ContactCardHeader = ({
 
   return (
     <span className={s.name} id={id}>
-      {`${firstname} ${lastname}`}
+      {`${firstName} ${lastName}`}
 
       {button}
     </span>

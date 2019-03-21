@@ -18,8 +18,8 @@ storiesOf('ContactCard', module)
   .add('with knobs', () => {
     const props = {
       contact: object('Contact', {
-        firstname: 'Jean',
-        lastname: 'Dupont',
+        firstName: 'Jean',
+        lastName: 'Dupont',
         email: 'jeandupont@gmail.com',
         phone: '+33 6 12 15 32 54',
         title: 'male',
