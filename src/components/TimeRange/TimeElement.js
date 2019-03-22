@@ -8,14 +8,14 @@ const TimeElement = ({
   className, value, selected, onSelect,
 }) => (
   // eslint-disable-next-line jsx-a11y/role-supports-aria-props
-  <span
+  <div
     className={[selected ? s.selected : undefined, className].join(' ')}
     role="presentation"
     onClick={onSelect}
     aria-selected={selected}
   >
     <TimeNumber value={value} />
-  </span>
+  </div>
 );
 
 TimeElement.propTypes = {
