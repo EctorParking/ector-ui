@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 import { Arrow } from '..';
 import s from './PickerSuggestions.css';
 
-const PickerSuggestions = ({ visible, children, ...rest }) => (
-  <div className={[s.container, visible ? s.visible : undefined].join(' ')} {...rest}>
+const PickerSuggestions = ({
+  visible, children, className, ArrowComponent, ...rest
+}) => (
+  <div className={[s.container, visible ? s.visible : undefined, className].join(' ')} {...rest}>
     <div className={s.arrowContainer}>
-      <Arrow position="top" className={[s.arrow, visible ? s.visible : undefined].join(' ')} />
+      <ArrowComponent position="top" className={[s.arrow, visible ? s.visible : undefined].join(' ')} />
     </div>
     {children}
   </div>
@@ -15,11 +17,15 @@ const PickerSuggestions = ({ visible, children, ...rest }) => (
 PickerSuggestions.defaultProps = {
   visible: true,
   children: null,
+  className: undefined,
+  ArrowComponent: props => <Arrow {...props} />,
 };
 
 PickerSuggestions.propTypes = {
   visible: PropTypes.bool,
   children: PropTypes.arrayOf(PropTypes.element),
+  className: PropTypes.string,
+  ArrowComponent: PropTypes.func,
 };
 
 export default PickerSuggestions;
