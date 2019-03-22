@@ -23,7 +23,7 @@ PickerSuggestions.defaultProps = {
 
 PickerSuggestions.propTypes = {
   visible: PropTypes.bool,
-  children: PropTypes.arrayOf(PropTypes.element),
+  children: PropTypes.any, // eslint-disable-line
   className: PropTypes.string,
   ArrowComponent: PropTypes.func,
 };

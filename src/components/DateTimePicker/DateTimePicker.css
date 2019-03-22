@@ -1,3 +1,5 @@
+@import '../../style/variable.global.css';
+
 .calendar {
   position: relative;
   width: 100%;
@@ -25,7 +27,7 @@
 }
 
 .suggestionsArrow {
-  margin-left: -22px;
+  margin-left: -19px;
 }
 
 .picker {
@@ -46,10 +48,28 @@
   padding-left: 30px;
 }
 
+.timePickerInputContainer::before {
+  content: '';
+  background-color: var(--aquaHazeGrey);
+  height: 50%;
+  top: 25%;
+  position: absolute;
+  width: 2px;
+}
+
 .timeSuggestions {
   height: 100%;
   display: flex;
   flex-direction: row;
+}
+
+.timeSuggestionsContainer:nth-child(1) {
+  width: 300px;
+  min-width: 300px;
+}
+
+.timeSuggestionsContainer {
+  width: 100%;
 }
 
 .inputIcon {
@@ -64,4 +84,13 @@
 
 .month {
   color: var(--deepBlue);
+}
+
+.hr {
+  height: 70%;
+  width: 1px;
+  position: absolute;
+  left: 300px;
+  background-color: var(--aquaHazeGrey);
+  top: 15%;
 }

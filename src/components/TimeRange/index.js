@@ -66,13 +66,15 @@ class TimeRange extends React.PureComponent {
 
   renderHour = (hour) => {
     const { hour: selectedHour } = this.props;
+    const isSelected = +selectedHour === +hour;
 
     return (
       <TimeElement
         key={`h-${hour}`}
         className={s.hour}
         value={hour}
-        selected={+selectedHour === +hour}
+        selected={isSelected}
+        disabled={!isSelected && typeof selectedHour !== 'undefined'}
         onSelect={this.handleHourSelect}
       />
     );
@@ -80,13 +82,15 @@ class TimeRange extends React.PureComponent {
 
   renderMinutes = (minutes) => {
     const { minutes: selectedMinutes } = this.props;
+    const isSelected = +minutes === +selectedMinutes;
 
     return (
       <TimeElement
         key={`m-${minutes}`}
         className={s.minute}
         value={minutes}
-        selected={+minutes === +selectedMinutes}
+        selected={isSelected}
+        disabled={!isSelected && typeof selectedMinutes !== 'undefined'}
         onSelect={this.handleMinutesSelect}
       />
     );
@@ -110,7 +114,7 @@ TimeRange.minutes = 'minutes';
 TimeRange.hour = 'hour';
 
 TimeRange.defaultProps = {
-  startHour: 1,
+  startHour: 7,
   endHour: 24,
   minutesInterval: 1,
   onSelect: () => null,

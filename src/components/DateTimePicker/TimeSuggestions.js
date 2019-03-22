@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import moment from 'moment';
 import { TimeRange } from '..';
 import s from './TimeSuggestions.css';
 
 const TimeSuggestions = ({
-  className, texts, onSelect, startTime, endTime,
+  className, texts, onSelect, startMinutes, startHour, endMinutes, endHour, containerClassName,
 }) => {
   const onSelectStartTime = (timeUnits, value) => onSelect(
     TimeSuggestions.startTime,
@@ -20,7 +19,7 @@ const TimeSuggestions = ({
 
   return (
     <div className={[s.container, className].join(' ')}>
-      <div className={s.timeContainer}>
+      <div className={[s.timeContainer, containerClassName].join(' ')}>
         <div className={s.timeDescription}>
           <span className={s.timeDescriptionTitle}>{texts.fromTimeTitle}</span>
           <span>{texts.fromTimeFirstDescription}</span>
@@ -28,12 +27,12 @@ const TimeSuggestions = ({
         </div>
         <TimeRange
           onSelect={onSelectStartTime}
-          hour={startTime ? startTime.format('HH') : undefined}
-          minutes={startTime ? startTime.format('mm') : undefined}
+          hour={startHour}
+          minutes={startMinutes}
           minutesInterval={5}
         />
       </div>
-      <div className={s.timeContainer}>
+      <div className={[s.timeContainer, containerClassName].join(' ')}>
         <div className={s.timeDescription}>
           <span className={s.timeDescriptionTitle}>{texts.toTimeTitle}</span>
           <span>{texts.toTimeFirstDescription}</span>
@@ -41,8 +40,8 @@ const TimeSuggestions = ({
         </div>
         <TimeRange
           onSelect={onSelectEndTime}
-          hour={endTime ? endTime.format('HH') : undefined}
-          minutes={endTime ? endTime.format('mm') : undefined}
+          hour={endHour}
+          minutes={endMinutes}
           minutesInterval={5}
         />
       </div>
@@ -53,7 +52,6 @@ const TimeSuggestions = ({
 TimeSuggestions.defaultProps = {
   className: undefined,
   onSelect: () => null,
-  startTime: undefined,
   texts: {
     fromTimeTitle: 'Départ',
     fromTimeFirstDescription: 'Heure d\'arrivée',
@@ -62,14 +60,21 @@ TimeSuggestions.defaultProps = {
     toTimeFirstDescription: 'Heure d\'arrivée',
     toTimeSecondDescription: 'au dépose minute',
   },
-  endTime: undefined,
+  startMinutes: undefined,
+  startHour: undefined,
+  endMinutes: undefined,
+  endHour: undefined,
+  containerClassName: undefined,
 };
 
 TimeSuggestions.propTypes = {
   className: PropTypes.string,
+  containerClassName: PropTypes.string,
   onSelect: PropTypes.func,
-  startTime: PropTypes.instanceOf(moment),
-  endTime: PropTypes.instanceOf(moment),
+  startMinutes: PropTypes.string,
+  startHour: PropTypes.string,
+  endMinutes: PropTypes.string,
+  endHour: PropTypes.string,
   texts: PropTypes.shape({
     fromTimeTitle: PropTypes.string,
     fromTimeFirstDescription: PropTypes.string,
