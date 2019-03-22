@@ -6,11 +6,13 @@ module.exports = async ({config: storybookBaseConfig}, configType) => {
   // 'PRODUCTION' is used when building the static version of storybook.
   storybookBaseConfig.entry = [
     ...storybookBaseConfig.entry,
-    path.resolve(__dirname, '../src/icomoon/icomoon.global.css')
+    path.resolve(__dirname, '../src/style/variable.global.css'),
+    path.resolve(__dirname, '../node_modules/react-dates/lib/css/_datepicker.css'),
   ];
   // Make whatever fine-grained changes you need
   storybookBaseConfig.module.rules = [{
       test: /^((?!\.global).)*\.css$/,
+      exclude: /node_modules/,
       loaders: [
         'style-loader',
         {
@@ -29,6 +31,20 @@ module.exports = async ({config: storybookBaseConfig}, configType) => {
     },
     {
       test: /\.global\.css$/,
+      exclude: /node_modules/,
+      loaders: [
+        'style-loader',
+        {
+          loader: 'css-loader',
+        },
+        {
+          loader: 'postcss-loader'
+        }
+      ]
+    },
+    {
+      test: /\.css$/,
+      include: /node_modules/,
       loaders: [
         'style-loader',
         {
