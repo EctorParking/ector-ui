@@ -46,3 +46,4 @@ export { default as Arrow } from './Arrow';
 export { default as PickerSuggestions } from './PickerSuggestions';
 export { default as ZonesPicker } from './ZonesPicker';
 export { default as Icon } from './Icon';
+export { default as TimeRange } from './TimeRange';
