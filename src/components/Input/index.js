@@ -14,9 +14,10 @@ const Input = ({
   onKeyDown,
   LeftComponent,
   RightComponent,
+  containerClassName,
   ...restOfProps
 }) => (
-  <div className={s.container}>
+  <div className={[s.container, containerClassName].join(' ')}>
     <LeftComponent className={s.inputPrepend} />
     <input
       className={[s.input, hasError ? s.inputWithError : '', className].join(' ')}
@@ -47,6 +48,7 @@ Input.defaultProps = {
   onKeyDown: () => {},
   LeftComponent: () => null,
   RightComponent: () => null,
+  containerClassName: undefined,
 };
 
 Input.propTypes = {
@@ -63,6 +65,7 @@ Input.propTypes = {
   onKeyDown: PropTypes.func,
   LeftComponent: PropTypes.func,
   RightComponent: PropTypes.func,
+  containerClassName: PropTypes.string,
 };
 
 

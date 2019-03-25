@@ -42,11 +42,12 @@ class Picker extends React.PureComponent {
       SecondInputComponent,
       firstValue,
       secondValue,
+      className,
     } = this.props;
     const { suggestionsVisible } = this.state;
 
     return (
-      <div className={[s.container, split ? s.splitContainer : undefined].join(' ')} ref={this.containerRef}>
+      <div className={[s.container, split ? s.splitContainer : undefined, className].join(' ')} ref={this.containerRef}>
         <FirstInputComponent
           value={firstValue}
           className={s.pickerInput}
@@ -74,6 +75,7 @@ Picker.defaultProps = {
   SecondInputComponent: props => <Input {...props} />,
   firstValue: '',
   secondValue: '',
+  className: undefined,
 };
 
 Picker.propTypes = {
@@ -83,6 +85,7 @@ Picker.propTypes = {
   SecondInputComponent: PropTypes.func,
   firstValue: PropTypes.string,
   secondValue: PropTypes.string,
+  className: PropTypes.string,
 };
 
 export default Picker;

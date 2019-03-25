@@ -10,7 +10,9 @@
   "peerDependencies": {
     "normalize.css": "^8.x",
     "prop-types": "^15.x",
-    "react": "^16.x"
+    "react": "^16.x",
+    "moment": "^2.x",
+    "react-dates": "^20.x"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
@@ -57,14 +59,16 @@
   },
   "dependencies": {
     "fast-levenshtein": "^2.0.6",
+    "moment": "^2.24.0",
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
+    "react-dates": "^20.1.0",
     "react-dom": "^16.2.0",
     "wordwrap": "^1.0.0"
   },
   "browserslist": "last 2 versions",
   "name": "ector-ui",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "scope": "ectorparking",
   "description": "Ector's react components",
   "main": "dist/ector-ui.js",

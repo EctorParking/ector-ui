@@ -1,0 +1,96 @@
+@import '../../style/variable.global.css';
+
+.calendar {
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+
+.calendarArrow {
+  display: none;
+}
+
+.datePickerPopper {
+  transform: none !important;
+  width: 100%;
+  margin-top: 0 !important;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.pickerSuggestions {
+  height: 275px !important;
+  width: 620px !important;
+  left: -50px;
+}
+
+.suggestionsArrow {
+  margin-left: -19px;
+}
+
+.picker {
+  width: 500px;
+}
+
+.datePickerInput {
+  padding-left: 30px;
+}
+
+.fixedWidthDateInput {
+  max-width: 150px;
+}
+
+.timePickerInput {
+  border: none !important;
+  max-width: 100px;
+  padding-left: 30px;
+}
+
+.timePickerInputContainer::before {
+  content: '';
+  background-color: var(--aquaHazeGrey);
+  height: 50%;
+  top: 25%;
+  position: absolute;
+  width: 2px;
+}
+
+.timeSuggestions {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.timeSuggestionsContainer:nth-child(1) {
+  width: 300px;
+  min-width: 300px;
+}
+
+.timeSuggestionsContainer {
+  width: 100%;
+}
+
+.inputIcon {
+  font-size: 1.2rem;
+}
+
+.splitInputContainer {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+}
+
+.month {
+  color: var(--deepBlue);
+}
+
+.hr {
+  height: 70%;
+  width: 1px;
+  position: absolute;
+  left: 300px;
+  background-color: var(--aquaHazeGrey);
+  top: 15%;
+}

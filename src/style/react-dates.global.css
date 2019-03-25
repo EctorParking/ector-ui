@@ -1,0 +1,34 @@
+.CalendarDay__default {
+  border-color: transparent !important;
+}
+
+.DayPicker {
+  border-radius: var(--borderRadius);
+}
+
+.CalendarDay__selected_span {
+  background: var(--lightYellow) !important;
+  color: var(--deepBlue) !important;
+  border-color: var(--white) !important;
+}
+
+.CalendarDay__selected {
+  background: var(--yellow) !important;
+  color: var(--deepBlue) !important;
+}
+
+.CalendarDay__hovered_span {
+  color: var(--deepBlue) !important;
+  background: var(--lightYellow) !important;
+  border-color: var(--white) !important;
+}
+
+.CalendarDay__blocked_calendar, .CalendarDay__blocked_calendar:active, .CalendarDay__blocked_calendar:hover {
+  background-color: transparent !important;
+  border: transparent !important;
+  color: var(--lightGrey) !important;
+}
+
+.CalendarDay__selected_start, .CalendarDay__selected_end {
+  font-weight: bolder;
+}
