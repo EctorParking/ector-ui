@@ -9,6 +9,7 @@ const RideSummary = ({ texts, className }) => (
     <p className={s.rideSummaryTitle}>{texts.title}</p>
     <p className={s.rideSummaryText}>{texts.date}</p>
     <p className={s.rideSummaryText}>{texts.spot}</p>
+    <p className={s.rideSummaryText}>{texts.travelingNumber}</p>
   </div>
 );
 
