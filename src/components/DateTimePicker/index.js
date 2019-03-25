@@ -1,4 +1,5 @@
 import * as React from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 import 'react-dates/initialize';
 import { DayPickerRangeController } from 'react-dates';
@@ -95,6 +96,7 @@ class DateTimePicker extends React.PureComponent {
           {...inputProps}
           onFocus={this.handleStartDateFocus}
           className={[s.datePickerInput, showTimeInputs ? s.fixedWidthDateInput : undefined, inputClassName].join(' ')}
+          containerClassName={s.inputContainer}
           value={startDate ? startDate.format('ddd DD/MM/YYYY') : ''}
           LeftComponent={this.renderDateInputLeftElement}
         />
@@ -124,6 +126,7 @@ class DateTimePicker extends React.PureComponent {
         <Input
           {...inputProps}
           className={[s.datePickerInput, showTimeInputs ? s.fixedWidthDateInput : undefined, inputClassName].join(' ')}
+          containerClassName={s.inputContainer}
           onFocus={this.handleEndDateFocus}
           value={endDate ? endDate.format('ddd DD/MM/YYYY') : ''}
           LeftComponent={this.renderDateInputLeftElement}
@@ -216,6 +219,7 @@ class DateTimePicker extends React.PureComponent {
     const extraData = {
       visiblePicker, startDate, endDate, startMinutes, endMinutes, startHour, endHour,
     };
+    const { error } = this.props;
 
     return (
       <Picker
@@ -226,9 +230,18 @@ class DateTimePicker extends React.PureComponent {
         SecondInputComponent={this.renderEndDateTimeInputComponent}
         SuggestionsComponent={this.renderSuggestionsComponent}
         className={s.picker}
+        error={error}
       />
     );
   }
 }
+
+DateTimePicker.propTypes = {
+  error: PropTypes.string,
+};
+
+DateTimePicker.defaultProps = {
+  error: '',
+};
 
 export default DateTimePicker;

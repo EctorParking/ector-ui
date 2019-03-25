@@ -5,6 +5,27 @@
   height: 75%;
   display: flex;
   flex-direction: row;
+
+  &:before, &:after {
+    content: '';
+    height: var(--marginMedium);
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+  }
+
+  &:before {
+    background: linear-gradient(to bottom, var(--white), transparent);
+    border-top-left-radius: var(--marginXSmall);
+    border-top-right-radius: var(--marginXSmall);
+    top: 0;
+  }
+
+  &:after {
+    background: linear-gradient(to top, var(--white), transparent);
+    bottom: 0;
+  }
 }
 
 .suggestions {
@@ -33,8 +54,12 @@
   align-items: center;
 }
 
+.inputContainer {
+  padding: 0 35px 0 15px;
+}
+
 .input {
-  padding-left: 42px;
+  margin-right: 25px;
 }
 
 .input::placeholder {
@@ -47,8 +72,26 @@
 }
 
 .inputIcon {
-  font-size: 1.2rem;
   color: var(--deepBlue);
+  font-size: 1.2rem;
+}
+
+.leftInputIcon {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  left: var(--marginSmall);
+  top: 0;
+  width: var(--marginLarge);
+}
+
+.leftInputIcon + input {
+  box-sizing: border-box;
+  margin: 0 0 0 25px;
+}
+
+.rightInputIcon {
+  right: var(--marginSmall);
 }
 
 .stationIcon {

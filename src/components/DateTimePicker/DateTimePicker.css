@@ -23,7 +23,12 @@
 .pickerSuggestions {
   height: 275px !important;
   width: 620px !important;
-  left: -50px;
+  margin-left: -300px;
+  left: 50%;
+
+  &:before {
+    display: none;
+  }
 }
 
 .suggestionsArrow {
@@ -31,11 +36,12 @@
 }
 
 .picker {
-  width: 500px;
+  box-sizing: border-box;
+  height: auto;
 }
 
 .datePickerInput {
-  padding-left: 30px;
+  padding-left: var(--marginMLarge);
 }
 
 .fixedWidthDateInput {
@@ -45,15 +51,20 @@
 .timePickerInput {
   border: none !important;
   max-width: 100px;
-  padding-left: 30px;
+  padding-left: var(--marginMLarge);
+}
+
+.timePickerInputContainer {
+  margin-left: var(--marginSmall);
 }
 
 .timePickerInputContainer::before {
+  background-color: var(--splitBorderColor);
   content: '';
-  background-color: var(--aquaHazeGrey);
-  height: 50%;
-  top: 25%;
+  height: var(--marginMedium);
+  margin-top: calc(var(--marginSmall) * -1);
   position: absolute;
+  top: 50%;
   width: 2px;
 }
 
@@ -74,12 +85,21 @@
 
 .inputIcon {
   font-size: 1.2rem;
+  left: var(--marginSmall);
+}
+
+.inputContainer {
+  padding: 0;
 }
 
 .splitInputContainer {
   display: flex;
   flex-direction: row;
   width: 50%;
+
+  &:first-child {
+    border-right: 1px solid var(--splitBorderColor);
+  }
 }
 
 .month {
@@ -91,6 +111,6 @@
   width: 1px;
   position: absolute;
   left: 300px;
-  background-color: var(--aquaHazeGrey);
+  background-color: var(--splitBorderColor);
   top: 15%;
 }

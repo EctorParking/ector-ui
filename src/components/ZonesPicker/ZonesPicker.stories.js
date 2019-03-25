@@ -1,6 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
+import { withKnobs, text } from '@storybook/addon-knobs';
 import ZonesPicker from '.';
 import Suggestions from './ZonesPickerSuggestions';
 
@@ -31,6 +33,7 @@ class ZonePickerStory extends React.PureComponent {
     const {
       fromZone, toZone, fromZoneSuggestions, toZoneSuggestions,
     } = this.state;
+    const { error } = this.props;
 
     return (
       <ZonesPicker
@@ -39,10 +42,19 @@ class ZonePickerStory extends React.PureComponent {
         toZone={toZone}
         fromZoneSuggestions={fromZoneSuggestions}
         toZoneSuggestions={toZoneSuggestions}
+        error={error}
       />
     );
   }
 }
+
+ZonePickerStory.propTypes = {
+  error: PropTypes.string,
+};
+
+ZonePickerStory.defaultProps = {
+  error: '',
+};
 
 storiesOf('ZonesPicker', module)
 
@@ -52,5 +64,12 @@ storiesOf('ZonesPicker', module)
     ],
   })
   .addDecorator(centered)
+  .addDecorator(withKnobs)
 
-  .add('Basic', () => <ZonePickerStory />);
+  .add('with knobs', () => {
+    const props = {
+      error: text('Error', ''),
+    };
+
+    return <ZonePickerStory {...props} />;
+  });

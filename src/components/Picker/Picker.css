@@ -5,33 +5,38 @@
   box-sizing: border-box;
   color: var(--deepBlue);
   border: none;
-  border-radius: var(--inputBorderRadius);
+  border-radius: var(--marginXSmall);
   display: block;
-  height: 2.5rem;
+  height: var(--marginXLarge);
   padding: 0;
-  margin-top: 0.25rem;
+}
+
+.shadowWrapper {
+  background-color: var(--white);
+  border-radius: var(--marginXSmall);
   box-shadow: 0 0 15px 2px var(--darkMetalGrey);
+  display: flex;
+  position: relative;
+  z-index: 2;
+}
+
+.pickerInputContainer {
+  display: flex;
+  padding: 0 35px 0 15px;
+  z-index: 2;
 }
 
 .pickerInput {
+  border-radius: var(--marginXSmall);
+  height: var(--marginXLarge);
   padding: 0;
   border: none;
   margin-top: 0;
   font-size: 15px;
 }
 
-.splitPickerInput {
+.splitPickerInputContainer {
   border-left: 1px solid var(--splitBorderColor);
-  border-radius: 0;
-  padding-left: 0.7rem;
-  &:focus {
-    border-color: var(--splitBorderColor);
-  }
-}
-
-.splitContainer {
-  display: flex;
-  flex-direction: row;
 }
 
 .suggestionsContainer {
@@ -43,4 +48,26 @@
   left: -25%;
   border-radius: var(--borderRadius);
   border-width: 1px;
+}
+
+.error {
+  background-color: var(--red);
+  border-top-left-radius: var(--borderRadius);
+  border-top-right-radius: var(--borderRadius);
+  box-sizing: border-box;
+  color: var(--white);
+  height: 45px;
+  left: 0;
+  opacity: 0;
+  padding: var(--marginSmall);
+  position: absolute;
+  top: 0;
+  transform: none;
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  width: 100%;
+}
+
+.errorVisible {
+  opacity: 1;
+  transform: translateY(-40px);
 }

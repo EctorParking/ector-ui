@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
+import { withKnobs, text } from '@storybook/addon-knobs';
 import DateTimePicker from '.';
 
 storiesOf('DateTimePicker', module)
@@ -11,5 +12,12 @@ storiesOf('DateTimePicker', module)
     ],
   })
   .addDecorator(centered)
+  .addDecorator(withKnobs)
 
-  .add('Basic', () => <DateTimePicker />);
+  .add('with knobs', () => {
+    const props = {
+      error: text('Error', ''),
+    };
+
+    return <DateTimePicker {...props} />;
+  });

@@ -43,25 +43,33 @@ class Picker extends React.PureComponent {
       firstValue,
       secondValue,
       className,
+      error,
     } = this.props;
     const { suggestionsVisible } = this.state;
 
     return (
-      <div className={[s.container, split ? s.splitContainer : undefined, className].join(' ')} ref={this.containerRef}>
-        <FirstInputComponent
-          value={firstValue}
-          className={s.pickerInput}
-          onFocus={this.handleFocus}
-        />
-        {
-          split && (
-            <SecondInputComponent
-              value={secondValue}
-              className={[s.pickerInput, s.splitPickerInput].join(' ')}
-              onFocus={this.handleFocus}
-            />
-          )
-        }
+      <div className={[s.container, className].join(' ')} ref={this.containerRef}>
+        <div className={[s.error, error !== '' ? s.errorVisible : undefined].join(' ')}>
+          {error}
+        </div>
+        <div className={s.shadowWrapper}>
+          <FirstInputComponent
+            value={firstValue}
+            className={s.pickerInput}
+            containerClassName={s.pickerInputContainer}
+            onFocus={this.handleFocus}
+          />
+          {
+            split && (
+              <SecondInputComponent
+                value={secondValue}
+                className={s.pickerInput}
+                containerClassName={[s.pickerInputContainer, s.splitPickerInputContainer].join(' ')}
+                onFocus={this.handleFocus}
+              />
+            )
+          }
+        </div>
         <SuggestionsComponent visible={suggestionsVisible} split={split} />
       </div>
     );
@@ -76,6 +84,7 @@ Picker.defaultProps = {
   firstValue: '',
   secondValue: '',
   className: undefined,
+  error: '',
 };
 
 Picker.propTypes = {
@@ -86,6 +95,7 @@ Picker.propTypes = {
   firstValue: PropTypes.string,
   secondValue: PropTypes.string,
   className: PropTypes.string,
+  error: PropTypes.string,
 };
 
 export default Picker;

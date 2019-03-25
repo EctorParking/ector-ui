@@ -31,19 +31,23 @@
 }
 
 .inputPrepend {
-  height: 8px;
-  position: absolute;
-  left: 5px;
-  top: 10px;
-  font-size: 2rem;
+  align-items: center;
   color: var(--darkGrey);
+  display: flex;
+  font-size: 2rem;
+  height: 100%;
+  left: 5px;
+  position: absolute;
+  top: 0;
 }
 
 .inputAppend {
-  height: 8px;
+  align-items: center;
+  color: var(--darkGrey);
+  display: flex;
+  font-size: 2rem;
+  height: 100%;
   position: absolute;
   right: 5px;
-  top: 10px;
-  font-size: 2rem;
-  color: var(--darkGrey);
+  top: 0;
 }

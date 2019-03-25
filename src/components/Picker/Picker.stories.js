@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
+import { withKnobs, text } from '@storybook/addon-knobs';
 import Picker from '.';
 
 storiesOf('Picker', module)
@@ -11,7 +12,12 @@ storiesOf('Picker', module)
     ],
   })
   .addDecorator(centered)
+  .addDecorator(withKnobs)
 
-  .add('Basic', () => (
-    <Picker />
-  ));
+  .add('with knobs', () => {
+    const props = {
+      error: text('Error', ''),
+    };
+
+    return <Picker {...props} />;
+  });

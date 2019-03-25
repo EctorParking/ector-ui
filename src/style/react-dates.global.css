@@ -23,12 +23,15 @@
   border-color: var(--white) !important;
 }
 
-.CalendarDay__blocked_calendar, .CalendarDay__blocked_calendar:active, .CalendarDay__blocked_calendar:hover {
+.CalendarDay__blocked_calendar,
+.CalendarDay__blocked_calendar:active,
+.CalendarDay__blocked_calendar:hover {
   background-color: transparent !important;
   border: transparent !important;
   color: var(--lightGrey) !important;
 }
 
-.CalendarDay__selected_start, .CalendarDay__selected_end {
+.CalendarDay__selected_start,
+.CalendarDay__selected_end {
   font-weight: bolder;
 }
