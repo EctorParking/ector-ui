@@ -30,6 +30,7 @@
   --melrose: var(--fifthColor);
   --green: var(--sixthColor);
   --white: var(--seventhColor);
+  --splitBorderColor: rgba(191, 196, 212, 0.52);
 
   --bpDesktop: var(--containerWidth);
   --bpTablet: var(--containerWidth);

@@ -62,7 +62,7 @@ class Picker extends React.PureComponent {
             />
           )
         }
-        <SuggestionsComponent visible={suggestionsVisible} />
+        <SuggestionsComponent visible={suggestionsVisible} split={split} />
       </div>
     );
   }

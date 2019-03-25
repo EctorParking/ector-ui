@@ -21,11 +21,11 @@
 }
 
 .splitPickerInput {
-  border-left: 1px solid var(--aquaHazeGrey);
+  border-left: 1px solid var(--splitBorderColor);
   border-radius: 0;
   padding-left: 0.7rem;
   &:focus {
-    border-color: var(--aquaHazeGrey);
+    border-color: var(--splitBorderColor);
   }
 }
 
