@@ -2,6 +2,11 @@
 
 .suggestion {
   cursor: pointer;
+  margin-bottom: var(--marginSmall);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .zoneName {
@@ -18,6 +23,10 @@
 }
 
 .icon {
+  margin-right: var(--marginSmall);
+}
+
+.activeIcon {
   color: var(--deepBlue);
 }
 

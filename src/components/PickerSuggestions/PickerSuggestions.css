@@ -4,7 +4,7 @@
   background-color: var(--white);
   border-radius: var(--marginXSmall);
   box-shadow: 0 0 15px 2px var(--darkMetalGrey);
-  height: 150px;
+  height: var(--pickerSuggestionsHeight);
   left: -25%;
   min-height: 150px;
   opacity: 0;

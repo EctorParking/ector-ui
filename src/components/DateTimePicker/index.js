@@ -8,6 +8,7 @@ import {
 } from '..';
 import s from './DateTimePicker.css';
 import TimeSuggestions from './TimeSuggestions';
+import iconClock from '../../images/clock.svg';
 
 const now = moment();
 
@@ -79,11 +80,11 @@ class DateTimePicker extends React.PureComponent {
     });
   }
 
-  renderMonthElement = ({ month }) => <div className={s.month}>{month.format('MMMM')}</div>;
+  renderMonthElement = ({ month }) => <div className={s.month}>{month.format('MMMM YYYY')}</div>;
 
   renderDateInputLeftElement = ({ className, ...props }) => <Icon {...props} className={[s.inputIcon, className].join(' ')} name="ec-calendar" />;
 
-  renderTimeInputLeftElement = ({ className, ...props }) => <Icon {...props} className={[s.inputIcon, className].join(' ')} name="ec-clock" />;
+  renderTimeInputLeftElement = ({ className, ...props }) => <Icon {...props} className={[s.inputIcon, className].join(' ')} src={iconClock} />;
 
   renderStartDateTimeInputComponent = ({ className: inputClassName, ...inputProps }) => {
     const {

@@ -79,6 +79,7 @@
   --bpMobileIPhoneFive: 320px;
 
   --maxImageSize: 24px;
+  --pickerSuggestionsHeight: 275px;
 }
 
 @custom-media --maxTablet (max-width: 768px);

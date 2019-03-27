@@ -10,3 +10,7 @@
   z-index: 1;
   height: 1.3rem;
 }
+
+.withBackground.left {
+  margin-left: var(--marginSmall);
+}

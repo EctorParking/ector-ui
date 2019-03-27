@@ -24,8 +24,9 @@ const ZoneSuggestion = ({
   >
     <Icon
       name={ZoneTypesToIconName[value.type]}
-      variant={disabled ? 'white' : 'blue'}
-      className={disabled ? s.disabled : s.icon}
+      variant={disabled ? 'grey' : 'blue'}
+      position="left"
+      className={[s.icon, disabled ? s.disabled : s.activeIcon].join(' ')}
       IconComponent={IconComponent}
     />
     <span className={s.zoneName}>{value.name}</span>

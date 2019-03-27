@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import bgWhite from '../../images/watercolor_blanc.png';
+import bgGrey from '../../images/watercolor_gris.png';
 import bgBlue from '../../images/watercolor_bleu.png';
 import bgYellow from '../../images/watercolor_jaune.png';
 import bgMelrose from '../../images/watercolor_violet.png';
@@ -9,6 +10,7 @@ import s from './Icon.css';
 const Backgrounds = {
   none: 'none',
   white: 'white',
+  grey: 'grey',
   melrose: 'melrose',
   yellow: 'yellow',
   blue: 'blue',
@@ -17,10 +19,13 @@ const Backgrounds = {
 const BackgroundImages = {
   [Backgrounds.none]: undefined,
   [Backgrounds.white]: bgWhite,
+  [Backgrounds.grey]: bgGrey,
   [Backgrounds.yellow]: bgYellow,
   [Backgrounds.blue]: bgBlue,
   [Backgrounds.melrose]: bgMelrose,
 };
+
+const Positions = ['left', 'right', 'top', 'bottom'];
 
 const IconComponent = ({
   src, name, children, className,
@@ -53,7 +58,7 @@ IconComponent.propTypes = {
 };
 
 const Icon = ({
-  variant, src, name, children, IconComponent: Component, ...containerProps
+  variant, position, src, name, children, IconComponent: Component, ...containerProps
 }) => {
   const hasBackground = !!BackgroundImages[variant];
 
@@ -63,7 +68,14 @@ const Icon = ({
         ? (<img src={BackgroundImages[variant]} alt="icon background" className={s.background} />)
         : null
       }
-      <Component src={src} name={name} className={hasBackground ? s.withBackground : undefined}>
+      <Component
+        src={src}
+        name={name}
+        className={[
+          hasBackground ? s.withBackground : undefined,
+          position ? s[position] : undefined,
+        ].join(' ')}
+      >
         {children}
       </Component>
     </span>
@@ -75,6 +87,7 @@ Icon.defaultProps = {
   name: undefined,
   className: undefined,
   variant: Backgrounds.none,
+  position: null,
   children: null,
   IconComponent,
 };
@@ -84,6 +97,7 @@ Icon.propTypes = {
   name: PropTypes.string,
   className: PropTypes.string,
   variant: PropTypes.oneOf(Object.keys(Backgrounds)),
+  position: PropTypes.oneOfType([null, PropTypes.oneOf(Positions)]),
   children: PropTypes.arrayOf(PropTypes.element),
   IconComponent: PropTypes.func,
 };

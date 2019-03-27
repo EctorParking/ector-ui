@@ -1,15 +1,43 @@
+.TimeRange__hours {
+  padding: 15px 5px;
+}
+
 .CalendarDay__default {
   border-color: transparent !important;
+  color: var(--deepBlue) !important;
+}
+
+.CalendarDay__default:not(.CalendarDay__selected):hover {
+  background: var(--lightYellow) !important;
+  border-color: var(--lightYellow) !important;
+}
+
+.CalendarDay__selected_start {
+  border-top-left-radius: var(--marginXSmall);
+  border-bottom-left-radius: var(--marginXSmall);
+}
+
+.CalendarDay__selected_end {
+  border-top-right-radius: var(--marginXSmall);
+  border-bottom-right-radius: var(--marginXSmall);
+}
+
+.DayPickerNavigation_button__default {
+  outline: none;
 }
 
 .DayPicker {
   border-radius: var(--borderRadius);
 }
 
+.DayPicker_weekHeader_li {
+  color: var(--metalGrey) !important;
+}
+
 .CalendarDay__selected_span {
   background: var(--lightYellow) !important;
   color: var(--deepBlue) !important;
-  border-color: var(--white) !important;
+  border-color: var(--lightYellow) !important;
 }
 
 .CalendarDay__selected {
@@ -28,7 +56,7 @@
 .CalendarDay__blocked_calendar:hover {
   background-color: transparent !important;
   border: transparent !important;
-  color: var(--lightGrey) !important;
+  color: var(--darkGrey) !important;
 }
 
 .CalendarDay__selected_start,

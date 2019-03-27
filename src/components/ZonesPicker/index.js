@@ -14,6 +14,7 @@ import s from './ZonesPicker.css';
 import Suggestions from './ZonesPickerSuggestions';
 import { DefaultTexts, TextsType } from './ZonePickerTexts';
 import iconSearch from '../../images/search.svg';
+import iconClear from '../../images/clear.svg';
 
 const getZoneSuggestionsFromValue = (zoneSuggestions, value) => zoneSuggestions.map((zone) => {
   const zoneSuggestion = {
@@ -191,12 +192,11 @@ class ZonesPicker extends React.PureComponent {
     }
     return (
       <Icon
+        src={iconClear}
         role="presentation"
         className={[s.inputAction, s.rightInputIcon, className].join(' ')}
         onClick={this.handleFromZoneReset}
-      >
-        &times;
-      </Icon>
+      />
     );
   };
 
@@ -248,9 +248,12 @@ class ZonesPicker extends React.PureComponent {
       );
     }
     return (
-      <Icon role="presentation" className={[s.inputAction, s.rightInputIcon, className].join(' ')} onClick={this.handleToZoneReset}>
-        &times;
-      </Icon>
+      <Icon
+        src={iconClear}
+        role="presentation"
+        className={[s.inputAction, s.rightInputIcon, className].join(' ')}
+        onClick={this.handleToZoneReset}
+      />
     );
   };
 
