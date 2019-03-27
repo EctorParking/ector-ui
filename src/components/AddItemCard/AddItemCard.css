@@ -51,7 +51,7 @@
   justify-content: center !important;
 }
 
-@media (max-width: var(--bpMobile)) {
+@media (--maxMobile) {
   .addItemButton {
     margin-right: 0;
   }
