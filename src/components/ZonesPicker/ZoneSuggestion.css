@@ -1,16 +1,20 @@
 @import '../../style/variable.global.css';
 
-.zoneName {
-  padding-left: 25px;
+.suggestion {
   cursor: pointer;
 }
 
-.selected, .hovered:hover {
+.zoneName {
+  padding-left: 25px;
+}
+
+.selected, .hovered:not(.disabled):hover {
   font-weight: bold;
 }
 
 .disabled {
   color: var(--lightGrey);
+  cursor: not-allowed;
 }
 
 .icon {

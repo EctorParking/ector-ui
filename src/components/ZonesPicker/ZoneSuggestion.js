@@ -18,7 +18,7 @@ const ZoneSuggestion = ({
 }) => (
   <span
     role="presentation"
-    className={[split ? undefined : s.hovered, selected ? s.selected : undefined, disabled ? s.disabled : undefined].join(' ')}
+    className={[s.suggestion, split ? undefined : s.hovered, selected ? s.selected : undefined, disabled ? s.disabled : undefined].join(' ')}
     onClick={onClick}
     {...rest}
   >
