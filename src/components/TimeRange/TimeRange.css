@@ -16,8 +16,9 @@
 .hour, .minute {
   min-width: 20px;
   padding: 5px 10px;
+  text-align: center;
   &:hover, &.selected {
-    border-radius: var(--borderRadius);
+    border-radius: var(--marginXSmall);
     cursor: pointer;
     font-weight: bolder;
   }
@@ -28,6 +29,6 @@
      background-color: var(--yellow);
   }
   &.disabled {
-    color: var(--lightGrey);
+    color: var(--darkGrey);
   }
 }

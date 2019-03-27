@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52 (66869) - http://www.bohemiancoding.com/sketch -->
+    <title>clock</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="filters" transform="translate(-883.000000, -18.000000)" stroke="#BFC4D4">
+            <g transform="translate(1.000000, 0.000000)" id="date">
+                <g transform="translate(509.103631, 0.010000)">
+                    <g id="retour" transform="translate(237.396369, 15.000000)">
+                        <g id="clock" transform="translate(136.896369, 4.000000)">
+                            <g>
+                                <circle id="Oval" cx="6.76489258" cy="6.76489258" r="6.76489258"></circle>
+                                <path d="M6.76489258,2.3962294 L6.76489258,6.76489258 L6.76489258,2.3962294 Z M9.71221665,8.96526185 L6.76489258,6.76489258 L9.71221665,8.96526185 Z" id="Combined-Shape" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

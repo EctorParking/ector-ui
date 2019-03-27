@@ -21,7 +21,6 @@
 }
 
 .pickerSuggestions {
-  height: 275px !important;
   width: 620px !important;
   margin-left: -300px;
   left: 50%;
@@ -45,13 +44,13 @@
 }
 
 .fixedWidthDateInput {
-  max-width: 150px;
+  max-width: 160px;
 }
 
 .timePickerInput {
   border: none !important;
   max-width: 100px;
-  padding-left: var(--marginMLarge);
+  padding-left: calc(var(--marginLarge) + var(--marginXSmall));
 }
 
 .timePickerInputContainer {
@@ -65,13 +64,36 @@
   margin-top: calc(var(--marginSmall) * -1);
   position: absolute;
   top: 50%;
-  width: 2px;
+  width: 1px;
 }
 
 .timeSuggestions {
   height: 100%;
   display: flex;
   flex-direction: row;
+  position: relative;
+
+  &:before, &:after {
+    content: '';
+    height: var(--marginMedium);
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+  }
+
+  &:before {
+    background: linear-gradient(to bottom, var(--white), rgba(255, 255, 255, 0.1));
+    border-top-left-radius: var(--marginXSmall);
+    border-top-right-radius: var(--marginXSmall);
+    top: 0;
+  }
+
+  &:after {
+    background: linear-gradient(to top, var(--white), rgba(255, 255, 255, 0.1));
+    bottom: 0;
+  }
 }
 
 .timeSuggestionsContainer:nth-child(1) {
@@ -107,10 +129,10 @@
 }
 
 .hr {
-  height: 70%;
+  height: 85%;
   width: 1px;
   position: absolute;
   left: 300px;
   background-color: var(--splitBorderColor);
-  top: 15%;
+  top: 7.5%;
 }
