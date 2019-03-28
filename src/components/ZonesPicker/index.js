@@ -346,6 +346,7 @@ ZonesPicker.defaultProps = {
   fromZoneSuggestions: Suggestions,
   toZoneSuggestions: Suggestions,
   texts: DefaultTexts,
+  className: undefined,
   error: '',
 };
 
@@ -356,6 +357,7 @@ ZonesPicker.propTypes = {
   fromZone: ZoneType,
   toZone: ZoneType,
   texts: TextsType,
+  className: PropTypes.string,
   error: PropTypes.string,
 };
 
