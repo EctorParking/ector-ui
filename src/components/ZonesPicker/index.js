@@ -209,7 +209,7 @@ class ZonesPicker extends React.PureComponent {
         onChange={this.handleFromZoneChange}
         placeholder={texts.inputPlaceholder}
         className={[s.input, className].join(' ')}
-        autocomplete="off"
+        autoComplete="off"
         LeftComponent={this.renderFromInputLeftComponent}
         RightComponent={this.renderFromInputRightComponent}
       />

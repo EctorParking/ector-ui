@@ -23,6 +23,7 @@
 .pickerInputContainer {
   display: flex;
   padding: 0 35px 0 15px;
+  width: 100%;
   z-index: 2;
 }
 

@@ -40,7 +40,13 @@
 }
 
 .datePickerInput {
+  background: none;
   padding-left: var(--marginMLarge);
+}
+
+.datePickerInput::placeholder {
+  color: var(--darkGrey);
+  font-style: italic;
 }
 
 .fixedWidthDateInput {
@@ -51,6 +57,11 @@
   border: none !important;
   max-width: 100px;
   padding-left: calc(var(--marginLarge) + var(--marginXSmall));
+}
+
+.timePickerInput::placeholder {
+  color: var(--darkGrey);
+  font-style: italic;
 }
 
 .timePickerInputContainer {
