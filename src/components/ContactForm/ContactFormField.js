@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import s from './ContactFormField.css';
+import s from './ContactFormField.module.css';
 
 const ContactFormField = ({ children, label, mandatory }) => (
   <label

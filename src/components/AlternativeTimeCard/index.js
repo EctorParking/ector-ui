@@ -5,7 +5,7 @@ import AlternativeTimeCardFooter from './AlternativeTimeCardFooter';
 import AlternativeTimeCardTextsType from './AlternativeTimeCardTextsType';
 import AlternativeTimeCardAlternativeType from './AlternativeTimeCardAlternativeType';
 
-import s from './AlternativeTimeCard.css';
+import s from './AlternativeTimeCard.module.css';
 
 const AlternativeTimeCard = ({
   texts,

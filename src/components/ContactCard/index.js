@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Card from '../Card';
-import s from './ContactCard.css';
+import s from './ContactCard.module.css';
 import ContactType, { ContactFormValuesType, ContactFormErrorsType } from './ContactType';
 import TextsType, { DefaultTexts } from './ContactCardTextsType';
 import ContactCardDeletionAlert from './ContactCardDeletionAlert';

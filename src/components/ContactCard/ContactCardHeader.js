@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import s from './ContactCardHeader.css';
+import s from './ContactCardHeader.module.css';
 import ContactType from './ContactType';
 import ContactCardTextsType from './ContactCardTextsType';
 

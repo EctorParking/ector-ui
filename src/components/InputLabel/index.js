@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import s from './InputLabel.css';
+import s from './InputLabel.module.css';
 
 import Input from '../Input';
 

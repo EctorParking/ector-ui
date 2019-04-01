@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ApplicationCardUrlsType from './ApplicationCardUrlsType';
-import playStoreImg from '../../images/PlayStore.svg';
-import appStoreImg from '../../images/AppStore.svg';
-import phoneImg from '../../images/phone.png';
+import playStoreImg from '../../assets/images/PlayStore.svg';
+import appStoreImg from '../../assets/images/AppStore.svg';
+import phoneImg from '../../assets/images/phone.png';
 
-import s from './ApplicationCard.css';
+import s from './ApplicationCard.module.css';
 
 const ApplicationCard = ({
   title,

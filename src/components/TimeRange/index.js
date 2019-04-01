@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import s from './TimeRange.css';
+import s from './TimeRange.module.css';
 import TimeElement from './TimeElement';
 
 const getHoursRange = (start, end) => Array.from(Array(end).keys()).slice(start);

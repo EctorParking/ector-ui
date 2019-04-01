@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import s from './PaymentMethodCard.css';
+import s from './PaymentMethodCard.module.css';
 import TextsType, { DefaultTexts } from './PaymentmethodTextsType';
 import PaymentMethodType from './PaymentMethodType';
 import PaymentMethodCardContent from './PaymentMethodCardContent';

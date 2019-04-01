@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import s from './InputCheckbox.css';
+import s from './InputCheckbox.module.css';
 
 const InputCheckbox = ({
   id,

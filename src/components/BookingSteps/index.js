@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import BookingStepsTextsType from './BookingStepsTextsType';
 
-import s from './BookingSteps.css';
+import s from './BookingSteps.module.css';
 
 const BookingSteps = ({
   fromSpot,

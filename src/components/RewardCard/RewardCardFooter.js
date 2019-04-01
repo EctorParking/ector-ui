@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import s from './RewardCardFooter.css';
+import s from './RewardCardFooter.module.css';
 import RoundedButton from '../RoundedButton';
 import RewardCardTextTypes from './RewardCardTextTypes';
 

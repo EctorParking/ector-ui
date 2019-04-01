@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ContactType from './ContactType';
-import s from './ContactCardContentRead.css';
+import s from './ContactCardContentRead.module.css';
 
 const ContactCardContentRead = ({ contact, id }) => {
   const { email, phone } = contact;

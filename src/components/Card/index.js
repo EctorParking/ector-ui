@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import s from './Card.css';
+import s from './Card.module.css';
 
 const CardFooter = ({ className, FooterChildren }) => (
 

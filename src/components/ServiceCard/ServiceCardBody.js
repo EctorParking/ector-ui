@@ -2,7 +2,7 @@ import React from 'react';
 import wordwrap from 'wordwrap';
 import PropTypes from 'prop-types';
 
-import s from './ServiceCardBody.css';
+import s from './ServiceCardBody.module.css';
 
 const ServiceCardBody = ({
   image,

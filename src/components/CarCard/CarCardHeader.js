@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import s from './CarCardHeader.css';
+import s from './CarCardHeader.module.css';
 import CarType from './CarType';
 import TextsType, { DefaultTexts } from './CarCardTextsType';
 

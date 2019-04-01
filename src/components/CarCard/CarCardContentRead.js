@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CarType from './CarType';
-import s from './CarCardContentRead.css';
+import s from './CarCardContentRead.module.css';
 
 const CarCardContentRead = ({ car, id }) => {
   const { numberPlate } = car;

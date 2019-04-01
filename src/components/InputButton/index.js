@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import s from './InputButton.css';
+import s from './InputButton.module.css';
 
 import { Input, Button } from '..';
 

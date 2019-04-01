@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import s from './TitleStep.css';
+import s from './TitleStep.module.css';
 
 const TitleStep = ({
   Active,

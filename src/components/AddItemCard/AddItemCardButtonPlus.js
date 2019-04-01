@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import s from './AddItemCard.css';
+import s from './AddItemCard.module.css';
 import Loader from '../Loader';
 
 const AddItemCardButtonPlus = ({

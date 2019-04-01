@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import s from './Picker.css';
+import s from './Picker.module.css';
 import { Input, PickerSuggestions } from '..';
 
 class Picker extends React.PureComponent {

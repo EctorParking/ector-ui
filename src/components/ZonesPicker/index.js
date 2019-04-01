@@ -10,11 +10,11 @@ import {
 } from '..';
 import { Type as ZoneType, ZoneTypesToIconName, ZoneTypes } from './ZoneType';
 import ZoneSuggestion from './ZoneSuggestion';
-import s from './ZonesPicker.css';
-import Suggestions from './ZonesPickerSuggestions';
+import s from './ZonesPicker.module.css';
+import Suggestions from './ZonesPickerSuggestions.json';
 import { DefaultTexts, TextsType } from './ZonePickerTexts';
-import iconSearch from '../../images/search.svg';
-import iconClear from '../../images/clear.svg';
+import iconSearch from '../../assets/images/search.svg';
+import iconClear from '../../assets/images/clear.svg';
 
 const getZoneSuggestionsFromValue = (zoneSuggestions, value) => zoneSuggestions.map((zone) => {
   const zoneSuggestion = {

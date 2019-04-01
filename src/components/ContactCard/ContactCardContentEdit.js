@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ContactFormValuesType, ContactFormErrorsType } from './ContactType';
 import { InputLabel } from '..';
-import s from './ContactCardContentEdit.css';
+import s from './ContactCardContentEdit.module.css';
 
 const ContactCardContentEdit = ({
   onChangeEmail, onChangePhoneNumber, values, errors, id,

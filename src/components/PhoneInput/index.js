@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Select, InputLabel, Input } from '..';
 import { DefaultCountries, CountryPropType } from './PhoneInputCountries';
-import s from './PhoneInput.css';
+import s from './PhoneInput.module.css';
 
 class PhoneInput extends React.Component {
   constructor(props) {

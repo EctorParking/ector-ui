@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PricingSummaryOptionType from './PricingSummaryOptionType';
 
-import s from './PricingSummaryOption.css';
+import s from './PricingSummaryOption.module.css';
 
 const PricingSummaryOption = ({
   currency,

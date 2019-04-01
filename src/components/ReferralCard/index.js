@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ReferralCardTextsType, { defaultTexts } from './ReferralCardTextsType';
 
-import s from './ReferralCard.css';
+import s from './ReferralCard.module.css';
 
 const ReferralCard = ({ texts, className }) => (
   <div className={`${s.referralCard} ${className}`}>

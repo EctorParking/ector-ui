@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import PaymentMethodTextsType from './PaymentmethodTextsType';
-import s from './PaymentmethodCardContentDelete.css';
+import s from './PaymentmethodCardContentDelete.module.css';
 import { LinkUnderlined } from '..';
 
 const PaymentmethodCardContentDelete = ({ texts, onConfirmDeletion, onCancelDeletion }) => (

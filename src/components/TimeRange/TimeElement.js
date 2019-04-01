@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import s from './TimeRange.css';
+import s from './TimeRange.module.css';
 
 const TimeNumber = ({ value }) => (value < 10 ? `0${value}` : value.toString());
 

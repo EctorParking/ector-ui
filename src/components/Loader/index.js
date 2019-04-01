@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import s from './Loader.css';
+import s from './Loader.module.css';
 
 const Loader = ({
   size,

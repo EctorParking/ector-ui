@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {
   Card, InputLabel, GenderPicker, PhoneInput,
 } from '..';
-import s from './RegistrationForm.css';
+import s from './RegistrationForm.module.css';
 import RegistrationFormTextTypes, {
   defaultTexts,
   radioDefaultValues,

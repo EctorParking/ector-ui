@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
-import frFlag from '../../images/flags/fr.svg';
-import gbFlag from '../../images/flags/gb.svg';
-import esFlag from '../../images/flags/es.svg';
-import deFlag from '../../images/flags/de.svg';
+import frFlag from '../../assets/images/flags/fr.svg';
+import gbFlag from '../../assets/images/flags/gb.svg';
+import esFlag from '../../assets/images/flags/es.svg';
+import deFlag from '../../assets/images/flags/de.svg';
 
 export const DefaultCountries = [
   { value: 'fr', label: '+33', image: frFlag },

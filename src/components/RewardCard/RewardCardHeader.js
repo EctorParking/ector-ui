@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import s from './RewardCardHeader.css';
+import s from './RewardCardHeader.module.css';
 
 const RewardCardHeader = ({
   headerImage,

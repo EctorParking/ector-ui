@@ -6,11 +6,11 @@ import centered from '@storybook/addon-centered';
 import {
   withKnobs, select, object, boolean,
 } from '@storybook/addon-knobs/react';
-import frFlag from '../../images/flags/fr.svg';
-import gbFlag from '../../images/flags/gb.svg';
-import esFlag from '../../images/flags/es.svg';
-import deFlag from '../../images/flags/de.svg';
-import s from '../PhoneInput/PhoneInput.css';
+import frFlag from '../../assets/images/flags/fr.svg';
+import gbFlag from '../../assets/images/flags/gb.svg';
+import esFlag from '../../assets/images/flags/es.svg';
+import deFlag from '../../assets/images/flags/de.svg';
+import s from '../PhoneInput/PhoneInput.module.css';
 
 import Select from '.';
 

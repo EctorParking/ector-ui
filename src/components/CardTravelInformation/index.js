@@ -6,7 +6,7 @@ import {
 } from '..';
 import TextsType, { DefaultTexts } from './CardTravelInformationTextsType';
 
-import s from './CardTravelInformation.css';
+import s from './CardTravelInformation.module.css';
 
 class CardTravelInformation extends Component {
   constructor(props) {

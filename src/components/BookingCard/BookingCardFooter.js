@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import s from './BookingCardFooter.css';
+import s from './BookingCardFooter.module.css';
 
 const renderLeftAction = (leftAction, index) => {
   const ActionElement = () => leftAction;

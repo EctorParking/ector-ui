@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import LinkUnderlined from '../LinkUnderlined';
-import s from './CarCardFooter.css';
+import s from './CarCardFooter.module.css';
 import TextsType, { DefaultTexts } from './CarCardTextsType';
-import carImage from '../../images/voiture-01-trois-quart-grise.svg';
+import carImage from '../../assets/images/voiture-01-trois-quart-grise.svg';
 
 const CarCardFooter = ({
   texts, mode, onClick, onSubmit, id,

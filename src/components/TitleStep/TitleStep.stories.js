@@ -6,7 +6,7 @@ import centered from '@storybook/addon-centered';
 
 import TitleStep from '.';
 
-import s from './TitleStep.css';
+import s from './TitleStep.module.css';
 
 
 storiesOf('Title.Step', module)

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import s from './Title.css';
+import s from './Title.module.css';
 
 const Title = ({
   label, className, htmlElement, testid,

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import s from './Tooltip.css';
+import s from './Tooltip.module.css';
 
 const Tooltip = ({
   iconClassName,

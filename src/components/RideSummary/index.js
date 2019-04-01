@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import RideSummaryTextType, { defaultTexts } from './RideSummaryTextsType';
 
-import s from './RideSummary.css';
+import s from './RideSummary.module.css';
 
 const RideSummary = ({ texts, className }) => (
   <div className={`${s.rideSummary} ${className}`}>

@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Colors, { ColorPropsType } from './Colors';
 
-import s from './ColorPicker.css';
+import s from './ColorPicker.module.css';
 import { Tooltip } from '..';
 
 class ColorPicker extends PureComponent {
