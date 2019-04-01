@@ -6,8 +6,8 @@ module.exports = async ({config: storybookBaseConfig}, configType) => {
   // 'PRODUCTION' is used when building the static version of storybook.
   storybookBaseConfig.entry = [
     ...storybookBaseConfig.entry,
-    path.resolve(__dirname, '../src/style/variable.global.css'),
-    path.resolve(__dirname, '../node_modules/react-dates/lib/css/_datepicker.css'),
+    path.resolve(__dirname, '../src/initialize.js'),
+    path.resolve(__dirname, '../src/index.js'),
   ];
   // Make whatever fine-grained changes you need
   storybookBaseConfig.module.rules = [{
@@ -24,7 +24,12 @@ module.exports = async ({config: storybookBaseConfig}, configType) => {
           },
         },
         {
-          loader: 'postcss-loader'
+          loader: 'postcss-loader',
+          options: {
+            config: {
+              path: path.resolve(__dirname, '../'),
+            }
+          }
         }
       ],
       include: path.resolve(__dirname, "../")
