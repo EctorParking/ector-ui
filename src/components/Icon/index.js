@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import bgWhite from '../../images/watercolor_blanc.png';
-import bgGrey from '../../images/watercolor_gris.png';
-import bgBlue from '../../images/watercolor_bleu.png';
-import bgYellow from '../../images/watercolor_jaune.png';
-import bgMelrose from '../../images/watercolor_violet.png';
-import s from './Icon.css';
+import bgWhite from '../../assets/images/watercolor_blanc.png';
+import bgGrey from '../../assets/images/watercolor_gris.png';
+import bgBlue from '../../assets/images/watercolor_bleu.png';
+import bgYellow from '../../assets/images/watercolor_jaune.png';
+import bgMelrose from '../../assets/images/watercolor_violet.png';
+import s from './Icon.module.css';
 
 const Backgrounds = {
   none: 'none',

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import s from './PaymentMethodCardFooter.css';
+import s from './PaymentMethodCardFooter.module.css';
 import { LinkUnderlined } from '..';
 import PaymentMethodTextsType from './PaymentmethodTextsType';
 

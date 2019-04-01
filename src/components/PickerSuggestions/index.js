@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Arrow } from '..';
-import s from './PickerSuggestions.css';
+import s from './PickerSuggestions.module.css';
 
 const PickerSuggestions = ({
   visible, children, className, ArrowComponent, split, ...rest

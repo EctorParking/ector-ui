@@ -1,11 +1,11 @@
 /* stylelint-disable */
 @font-face {
   font-family: 'icomoon';
-  src:  url('icomoon.eot?v1c01f');
-  src:  url('icomoon.eot?v1c01f#iefix') format('embedded-opentype'),
-    url('icomoon.ttf?v1c01f') format('truetype'),
-    url('icomoon.woff?v1c01f') format('woff'),
-    url('icomoon.svg?v1c01f#icomoon') format('svg');
+  src:  url('../assets/icomoon/icomoon.eot?v1c01f');
+  src:  url('../assets/icomoon/icomoon.eot?v1c01f#iefix') format('embedded-opentype'),
+    url('../assets/icomoon/icomoon.ttf?v1c01f') format('truetype'),
+    url('../assets/icomoon/icomoon.woff?v1c01f') format('woff'),
+    url('../assets/icomoon/icomoon.svg?v1c01f#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }

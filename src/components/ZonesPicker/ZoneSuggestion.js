@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Icon } from '..';
 import { Type as ZoneType, ZoneTypesToIconName, ZoneTypes } from './ZoneType';
-import s from './ZoneSuggestion.css';
+import s from './ZoneSuggestion.module.css';
 
 const IconComponent = ({ name, className: iconClassName }) => (
   <i className={[`icon icon-${name}`, iconClassName, name === ZoneTypesToIconName[ZoneTypes.station] ? s.trainIcon : undefined].join(' ')} />

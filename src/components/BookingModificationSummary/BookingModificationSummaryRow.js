@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import s from './BookingModificationSummaryRow.css';
+import s from './BookingModificationSummaryRow.module.css';
 
 const BookingModificationSummaryRow = ({
   text, price, isExtra, className, textClassName, priceClassName, count,

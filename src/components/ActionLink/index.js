@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import s from './ActionLink.css';
+import s from './ActionLink.module.css';
 
 const ActionLink = ({
   icon, label, onClick, className, id, type,

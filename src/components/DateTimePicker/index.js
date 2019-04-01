@@ -1,16 +1,15 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import 'react-dates/initialize';
 import { DayPickerRangeController } from 'react-dates';
 import {
   Picker, Input, PickerSuggestions, Arrow, Icon, TimeRange,
 } from '..';
-import s from './DateTimePicker.css';
+import s from './DateTimePicker.module.css';
 import { DefaultTexts, TextsType } from './DateTimePickerTexts';
 import TimeSuggestions from './TimeSuggestions';
-import iconCalendar from '../../images/calendar.svg';
-import iconClock from '../../images/clock.svg';
+import iconCalendar from '../../assets/images/calendar.svg';
+import iconClock from '../../assets/images/clock.svg';
 
 const now = moment();
 

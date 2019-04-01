@@ -1,27 +1,27 @@
 @import '../../style/variable.global.css';
 
 .cardContent {
-    box-sizing: border-box;
-    background-color: var(--white);
-    height: 197px;
-    padding: var(--marginSmall);
+  box-sizing: border-box;
+  background-color: var(--white);
+  height: 197px;
+  padding: var(--marginSmall);
 }
 
 .title {
-    color: var(--blue);
-    font-weight: var(--fontWeightLight);
-    font-size: var(--fontSizeSubtitle);
-    box-sizing: content-box;
-    margin: 0 20px 0 0;
+  color: var(--blue);
+  font-weight: var(--fontWeightLight);
+  font-size: var(--fontSizeSubtitle);
+  box-sizing: content-box;
+  margin: 0 20px 0 0;
 }
 
 .description {
-    color: var(--deepBlue);
+  color: var(--deepBlue);
 }
 
 .icon{
-    height: 45px;
-    width: 45px;
+  height: 45px;
+  width: 45px;
 }
 
 .knowMore {

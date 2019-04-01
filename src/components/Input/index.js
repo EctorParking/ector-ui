@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import s from './Input.css';
+import s from './Input.module.css';
 
 const Input = ({
   onFocus,

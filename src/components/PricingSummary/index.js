@@ -4,7 +4,7 @@ import PricingSummaryTextsType, { defaultTexts } from './PricingSummaryTextsType
 import PricingSummaryOptionType from './PricingSummaryOptionType';
 import PricingSummaryOption from './PricingSummaryOption';
 
-import s from './PricingSummary.css';
+import s from './PricingSummary.module.css';
 
 const PricingSummary = ({
   currency,

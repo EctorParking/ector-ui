@@ -1,5 +1,3 @@
-import './locale';
-
 export { default as ActionLink } from './ActionLink';
 export { default as Alert } from './Alert';
 export { default as AlternativeTimeCard } from './AlternativeTimeCard';

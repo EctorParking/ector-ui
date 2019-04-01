@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import s from './ServiceCard.css';
+import s from './ServiceCard.module.css';
 import ServiceCardBody from './ServiceCardBody';
 import ServiceCardFooter from './ServiceCardFooter';
 import Label from '../Label';

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import s from './AddItemCard.css';
+import s from './AddItemCard.module.css';
 import Card from '../Card';
 import AddItemCardFooter from './AddItemCardFooter';
 import AddItemCardButtonPlus from './AddItemCardButtonPlus';

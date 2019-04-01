@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Card from '../Card';
-import s from './CarCard.css';
+import s from './CarCard.module.css';
 import CarType from './CarType';
 import TextsType, { DefaultTexts } from './CarCardTextsType';
 import CarCardDeletionAlert from './CarCardDeletionAlert';

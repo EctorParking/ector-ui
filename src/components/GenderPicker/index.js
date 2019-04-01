@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import GenderType from './GenderType';
 import RadioButton from '../RadioButton';
 
-import s from './GenderPicker.css';
+import s from './GenderPicker.module.css';
 
 const GenderPicker = ({
   genders,

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import s from './RoundedButton.css';
+import s from './RoundedButton.module.css';
 
 const RoundedButton = ({
   text,

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import s from './ContactForm.css';
+import s from './ContactForm.module.css';
 import TextsType, { DefaultTexts } from './ContactFormTextsType';
 import {
   Card, GenderPicker, LinkUnderlined, CardTitle, InputLabel, PhoneInput,

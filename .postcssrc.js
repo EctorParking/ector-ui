@@ -5,8 +5,10 @@ module.exports = {
                 require("stylelint")
             ]
         }),
-        require("postcss-cssnext"),
-        require("postcss-url"),
-        require("postcss-reporter")({ clearReportedMessages: true })
+        require("postcss-cssnext")(),
+        require("postcss-reporter")({ clearReportedMessages: true }),
+        require("postcss-url")({
+            url: 'inline',
+        }),
     ],
 };

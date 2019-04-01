@@ -6,7 +6,7 @@ import PricingSummaryOptionType from '../PricingSummary/PricingSummaryOptionType
 import PricingSummaryTextsType from '../PricingSummary/PricingSummaryTextsType';
 import BookingCardFooter from './BookingCardFooter';
 
-import s from './BookingCard.css';
+import s from './BookingCard.module.css';
 
 const BookingCard = ({
   fromSpot,

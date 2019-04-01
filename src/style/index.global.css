@@ -1,7 +1,4 @@
-@import './react-dates.global.css';
-@import './font.global.css';
-@import '../icomoon/icomoon.global.css';
-@import '../../node_modules/normalize.css/normalize.css';
+@import 'variable.global.css';
 
 /**
 ** Those commented lines, specially margin: 0, breaks style of components.

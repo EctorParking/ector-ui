@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react';
 import PaymentMethodType from './PaymentMethodType';
 import PaymentMethodTextsType from './PaymentmethodTextsType';
-import iconVisa from '../../images/visa.svg';
-import iconAmerican from '../../images/amercan-express.svg';
-import iconCb from '../../images/cb.svg';
-import iconMastercard from '../../images/mastercard.svg';
-import s from './PaymentMethodCardContentRead.css';
+import iconVisa from '../../assets/images/visa.svg';
+import iconAmerican from '../../assets/images/amercan-express.svg';
+import iconCb from '../../assets/images/cb.svg';
+import iconMastercard from '../../assets/images/mastercard.svg';
+import s from './PaymentMethodCardContentRead.module.css';
 
 const creditCardBrandIcons = {
   visa: iconVisa,

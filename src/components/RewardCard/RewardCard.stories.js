@@ -7,11 +7,11 @@ import {
 } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import RewardCard from '.';
-import s from './RewardCard.css';
-import poolRewardLarge from '../../images/poolRewardLarge.png';
-import poolRewardSmall from '../../images/poolRewardSmall.png';
-import fbRewardLarge from '../../images/flyingBlueRewardLarge.png';
-import fbRewardSmall from '../../images/flyingBlueRewardSmall.png';
+import s from './RewardCard.module.css';
+import poolRewardLarge from '../../assets/images/poolRewardLarge.png';
+import poolRewardSmall from '../../assets/images/poolRewardSmall.png';
+import fbRewardLarge from '../../assets/images/flyingBlueRewardLarge.png';
+import fbRewardSmall from '../../assets/images/flyingBlueRewardSmall.png';
 
 const options = [
   poolRewardLarge,

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CarType from './CarType';
 import { Input } from '..';
-import s from './CarCardContentEdit.css';
+import s from './CarCardContentEdit.module.css';
 
 const CarCardContentEdit = ({
   car, onChangeNumberPlate, onChangeColor, id,

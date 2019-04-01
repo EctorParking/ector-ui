@@ -4,7 +4,7 @@ import BookingModificationSummaryRow from './BookingModificationSummaryRow';
 import bookingModificationSummaryTextType, { defaultTexts } from './BookingModificationSummaryTextsType';
 import BookingModificationSummaryPriceType from './BookingModificationSummaryPriceType';
 
-import s from './BookingModificationSummary.css';
+import s from './BookingModificationSummary.module.css';
 
 const BookingModificationSummary = ({ texts, className, bookingModificationSummaryPrice }) => (
   <div className={`${s.bookingModificationSummaryContainer} ${className}`}>

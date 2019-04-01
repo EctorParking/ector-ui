@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import s from './Subtitle.css';
+import s from './Subtitle.module.css';
 
 const Subtitle = ({ label, className }) => (
   <div className={`${s.subtitle} ${className}`}>

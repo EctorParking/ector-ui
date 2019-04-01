@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import s from './RewardCardContent.css';
+import s from './RewardCardContent.module.css';
 import Tooltip from '../Tooltip';
 import RewardCardTextTypes from './RewardCardTextTypes';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { TimeRange } from '..';
-import s from './TimeSuggestions.css';
+import s from './TimeSuggestions.module.css';
 
 const TimeSuggestions = ({
   className, texts, onSelect, startMinutes, startHour, endMinutes, endHour, containerClassName,

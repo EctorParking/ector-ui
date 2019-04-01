@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import s from './LoginForm.css';
+import s from './LoginForm.module.css';
 import {
   InputLabel, Card, LinkUnderlined, ActionLink,
 } from '..';

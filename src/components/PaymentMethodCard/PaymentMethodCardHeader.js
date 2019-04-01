@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import s from './PaymentMethodCardHeader.css';
+import s from './PaymentMethodCardHeader.module.css';
 import PaymentMethodCardTextsType from './PaymentmethodTextsType';
 
 const PaymentMethodCardHeader = ({

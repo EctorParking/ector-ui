@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import LinkUnderlined from '../LinkUnderlined';
 import TextsType, { DefaultTexts } from './ContactCardTextsType';
-import s from './ContactCardDeletionAlert.css';
+import s from './ContactCardDeletionAlert.module.css';
 
 const ContactCardDeletionAlert = ({
   texts, onConfirm, onCancel, id,

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import s from './ServiceCardFooter.css';
+import s from './ServiceCardFooter.module.css';
 import LinkUnderline from '../LinkUnderlined';
 import HtmlPrice from '../HtmlPrice';
 

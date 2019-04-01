@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
 
 import InputButton from '.';
-import s from './InputButton.css';
+import s from './InputButton.module.css';
 
 storiesOf('InputButton', module)
 

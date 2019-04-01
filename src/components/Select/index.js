@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SelectValueType from './SelectValueType';
 
-import s from './Select.css';
+import s from './Select.module.css';
 
 const renderSelectOption = option => (
   <option value={option} key={option}>{option}</option>
