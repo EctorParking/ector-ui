@@ -32,6 +32,7 @@
 
 /* Create a custom checkbox */
 .checkmark {
+  background-color: var(--white);
   box-sizing: border-box;
   position: absolute;
   top: 0;

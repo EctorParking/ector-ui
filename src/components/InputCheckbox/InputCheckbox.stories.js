@@ -11,6 +11,7 @@ storiesOf('Input.Checkbox', module)
   .addParameters({
     backgrounds: [
       { name: 'header', value: 'white', default: true },
+      { name: 'red', value: 'red', default: false },
     ],
   })
   .addDecorator(centered)
