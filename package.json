@@ -19,7 +19,8 @@
     "build": "rimraf dist/* && rollup -c",
     "start": "rimraf dist/* && rollup -c -w",
     "start:storybook": "start-storybook -p 6006 -c .storybook watch-css -s ./src",
-    "build:storybook": "build-storybook -c .storybook -o .out"
+    "build:storybook": "build-storybook -c .storybook -o .out",
+    "lint": "eslint ./src --ext .js"
   },
   "peerDependencies": {
     "fast-levenshtein": "^2.0.6",
