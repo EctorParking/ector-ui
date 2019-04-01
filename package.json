@@ -31,6 +31,9 @@
     "react-dates": "^20.1.0",
     "react-dom": "^15.0.0 || ^16.0.0"
   },
+  "dependencies": {
+    "react-dates": "^20.1.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.3.4",
     "@babel/plugin-external-helpers": "^7.2.0",
@@ -71,7 +74,6 @@
     "postcss-url": "^8.0.0",
     "prop-types": "^15.5.4",
     "react": "^16.4.1",
-    "react-dates": "^20.1.0",
     "react-dom": "^16.4.1",
     "react-scripts": "^1.1.4",
     "rimraf": "^2.6.3",
