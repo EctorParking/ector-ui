@@ -6,7 +6,9 @@ Ector parking storybook components
 - `yarn`
 
 ## Development
-- `yarn start` and then go to `localhost:9001`
+- `yarn start:storybook` and then go to `localhost:6006` to have storybook live preview
+- `yarn start` and `yarn link` to build locally ector-ui. Use the components in another React project with `yarn link ector-ui`.
+
 
 
 ## Deployment
@@ -14,4 +16,4 @@ Ector parking storybook components
 
 ## Integration as a component library
 - `yarn add https://github.com/EctorParking/ector-ui`
-- Add the line `@import '~ector-ui'` at the top of your main css module
+- Add the line `@import 'ector-ui'` at the top of your main css module
