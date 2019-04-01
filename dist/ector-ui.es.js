@@ -1,16 +1,9 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
-require('react-dates/initialize');
-var moment = _interopDefault(require('moment'));
-var React = require('react');
-var React__default = _interopDefault(React);
-var PropTypes = _interopDefault(require('prop-types'));
-var Levenshtein = _interopDefault(require('fast-levenshtein'));
-var reactDates = require('react-dates');
+import 'react-dates/initialize';
+import moment from 'moment';
+import React__default, { Fragment, Component, PureComponent, createElement, createRef } from 'react';
+import PropTypes from 'prop-types';
+import Levenshtein from 'fast-levenshtein';
+import { DayPickerRangeController } from 'react-dates';
 
 moment.locale('FR');
 moment.updateLocale('FR', {
@@ -1558,7 +1551,7 @@ function (_Component) {
         return null;
       }
 
-      return React__default.createElement(React.Fragment, null, React__default.createElement("div", null, texts.travelingNumberTo, "\xA0:\xA0", values.travelingNumberTo || texts.blank), React__default.createElement("div", null, texts.returnFlightCompany, "\xA0:\xA0", values.returnFlightCompany), React__default.createElement("div", null, texts.returnFlightOrigin, "\xA0:\xA0", values.returnFlightOrigin || texts.blank));
+      return React__default.createElement(Fragment, null, React__default.createElement("div", null, texts.travelingNumberTo, "\xA0:\xA0", values.travelingNumberTo || texts.blank), React__default.createElement("div", null, texts.returnFlightCompany, "\xA0:\xA0", values.returnFlightCompany), React__default.createElement("div", null, texts.returnFlightOrigin, "\xA0:\xA0", values.returnFlightOrigin || texts.blank));
     });
 
     _this.handleChangeTravelingNumberFrom = _this.handleChange.bind(_assertThisInitialized(_this), 'travelingNumberFrom');
@@ -1623,7 +1616,7 @@ function (_Component) {
   }]);
 
   return CardTravelInformation;
-}(React.Component);
+}(Component);
 
 CardTravelInformation.defaultProps = {
   texts: DefaultTexts$1,
@@ -1774,7 +1767,7 @@ function (_PureComponent) {
   }]);
 
   return ColorPicker;
-}(React.PureComponent);
+}(PureComponent);
 
 ColorPicker.defaultProps = {
   colorsList: Colors,
@@ -3235,7 +3228,7 @@ var creditCardBrandIcons = {
 var PaymentMethodCardContentRead = function PaymentMethodCardContentRead(_ref) {
   var paymentMethod = _ref.paymentMethod,
       texts = _ref.texts;
-  return React__default.createElement(React.Fragment, null, paymentMethod.type === 'card' && React__default.createElement("img", {
+  return React__default.createElement(Fragment, null, paymentMethod.type === 'card' && React__default.createElement("img", {
     className: s$C.brandIcon,
     src: creditCardBrandIcons[paymentMethod.brand],
     alt: paymentMethod.brand
@@ -4408,7 +4401,7 @@ var RewardCardFooter = function RewardCardFooter(_ref) {
       hasExternalCard = _ref.hasExternalCard,
       isExternalCardUpdatable = _ref.isExternalCardUpdatable,
       fetching = _ref.fetching;
-  return React__default.createElement(React.Fragment, null, isConnected && isSelected && hasExternalCard && isExternalCardUpdatable ? React__default.createElement("i", {
+  return React__default.createElement(Fragment, null, isConnected && isSelected && hasExternalCard && isExternalCardUpdatable ? React__default.createElement("i", {
     className: "icon-".concat(selectedIcon, " ").concat(s$W.selected)
   }) : React__default.createElement(RoundedButton, {
     onClick: onClick,
@@ -5376,7 +5369,7 @@ function (_React$PureComponent) {
         className = [className, s$11.stationIcon].join(' ');
       }
 
-      return React.createElement("i", {
+      return createElement("i", {
         className: className
       });
     });
@@ -5389,7 +5382,7 @@ function (_React$PureComponent) {
         return null;
       }
 
-      return React.createElement(Icon, {
+      return createElement(Icon, {
         IconComponent: _this.renderFromInputLeftIconComponent,
         name: ZoneTypesToIconName[fromZone.type],
         variant: "blue",
@@ -5402,13 +5395,13 @@ function (_React$PureComponent) {
       var fromZoneValue = _this.state.fromZoneValue;
 
       if (fromZoneValue.length === 0) {
-        return React.createElement(Icon, {
+        return createElement(Icon, {
           src: iconSearch,
           className: [s$11.inputIcon, s$11.rightInputIcon, className].join(' ')
         });
       }
 
-      return React.createElement(Icon, {
+      return createElement(Icon, {
         src: iconClear,
         role: "presentation",
         className: [s$11.inputAction, s$11.rightInputIcon, className].join(' '),
@@ -5421,7 +5414,7 @@ function (_React$PureComponent) {
           inputProps = _objectWithoutProperties(_ref4, ["className"]);
 
       var texts = _this.props.texts;
-      return React.createElement(Input, _extends({}, inputProps, {
+      return createElement(Input, _extends({}, inputProps, {
         onChange: _this.handleFromZoneChange,
         placeholder: texts.inputPlaceholder,
         className: [s$11.input, className].join(' '),
@@ -5440,7 +5433,7 @@ function (_React$PureComponent) {
         className = [className, s$11.stationIcon].join(' ');
       }
 
-      return React.createElement("i", {
+      return createElement("i", {
         className: className
       });
     });
@@ -5453,7 +5446,7 @@ function (_React$PureComponent) {
         return null;
       }
 
-      return React.createElement(Icon, {
+      return createElement(Icon, {
         IconComponent: _this.renderToInputLeftIconComponent,
         name: ZoneTypesToIconName[toZone.type],
         variant: "blue",
@@ -5466,13 +5459,13 @@ function (_React$PureComponent) {
       var toZoneValue = _this.state.toZoneValue;
 
       if (toZoneValue.length === 0) {
-        return React.createElement(Icon, {
+        return createElement(Icon, {
           src: iconSearch,
           className: [s$11.inputIcon, s$11.rightInputIcon, className].join(' ')
         });
       }
 
-      return React.createElement(Icon, {
+      return createElement(Icon, {
         src: iconClear,
         role: "presentation",
         className: [s$11.inputAction, s$11.rightInputIcon, className].join(' '),
@@ -5485,7 +5478,7 @@ function (_React$PureComponent) {
           inputProps = _objectWithoutProperties(_ref8, ["className"]);
 
       var texts = _this.props.texts;
-      return React.createElement(Input, _extends({}, inputProps, {
+      return createElement(Input, _extends({}, inputProps, {
         onChange: _this.handleToZoneChange,
         placeholder: texts.inputPlaceholder,
         className: [s$11.input, className].join(' '),
@@ -5497,7 +5490,7 @@ function (_React$PureComponent) {
 
     _defineProperty(_assertThisInitialized(_this), "renderFromZoneSuggestion", function (zone) {
       var split = _this.state.split;
-      return React.createElement(ZoneSuggestion, {
+      return createElement(ZoneSuggestion, {
         value: zone,
         key: zone.code,
         split: split,
@@ -5509,7 +5502,7 @@ function (_React$PureComponent) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "renderToZoneSuggestion", function (zone) {
-      return React.createElement(ZoneSuggestion, {
+      return createElement(ZoneSuggestion, {
         value: zone,
         key: zone.code,
         split: true,
@@ -5529,23 +5522,23 @@ function (_React$PureComponent) {
           split = _this$state2.split,
           fromZoneSuggestions = _this$state2.fromZoneSuggestions,
           toZoneSuggestions = _this$state2.toZoneSuggestions;
-      return React.createElement(PickerSuggestions, _extends({
+      return createElement(PickerSuggestions, _extends({
         visible: visible
-      }, rest), React.createElement("div", {
+      }, rest), createElement("div", {
         className: s$11.suggestionsContainer
-      }, React.createElement("div", {
+      }, createElement("div", {
         className: [s$11.suggestions, visible ? s$11.visible : undefined].join(' ')
-      }, fromZoneSuggestions.map(_this.renderFromZoneSuggestion)), React.createElement("div", {
+      }, fromZoneSuggestions.map(_this.renderFromZoneSuggestion)), createElement("div", {
         className: [s$11.suggestions, s$11.splitSuggestions, visible && split ? s$11.visible : undefined].join(' ')
-      }, toZoneSuggestions.map(_this.renderToZoneSuggestion))), React.createElement("div", {
+      }, toZoneSuggestions.map(_this.renderToZoneSuggestion))), createElement("div", {
         className: [s$11.suggestionAction, visible ? s$11.suggestionActionVisible : undefined].join(' ')
-      }, React.createElement(InputCheckbox, {
+      }, createElement(InputCheckbox, {
         onChange: _this.handleSplitSuggestions,
         checked: split
       }, texts.suggestionCheckboxLabel)));
     });
 
-    _this.picker = React.createRef();
+    _this.picker = createRef();
     return _this;
   }
 
@@ -5557,7 +5550,7 @@ function (_React$PureComponent) {
           fromZoneValue = _this$state3.fromZoneValue,
           toZoneValue = _this$state3.toZoneValue;
       var error = this.props.error;
-      return React.createElement(Picker, {
+      return createElement(Picker, {
         ref: this.picker,
         split: split,
         FirstInputComponent: this.renderFromInputComponent,
@@ -5571,7 +5564,7 @@ function (_React$PureComponent) {
   }]);
 
   return ZonesPicker;
-}(React.PureComponent);
+}(PureComponent);
 
 ZonesPicker.defaultProps = {
   onSelect: function onSelect() {
@@ -5875,7 +5868,7 @@ function (_React$PureComponent) {
 
     _defineProperty(_assertThisInitialized(_this), "renderMonthElement", function (_ref2) {
       var month = _ref2.month;
-      return React.createElement("div", {
+      return createElement("div", {
         className: s$13.month
       }, month.format('MMMM YYYY'));
     });
@@ -5884,7 +5877,7 @@ function (_React$PureComponent) {
       var className = _ref3.className,
           props = _objectWithoutProperties(_ref3, ["className"]);
 
-      return React.createElement(Icon, _extends({}, props, {
+      return createElement(Icon, _extends({}, props, {
         className: [s$13.inputIcon, className].join(' '),
         src: iconCalendar
       }));
@@ -5894,7 +5887,7 @@ function (_React$PureComponent) {
       var className = _ref4.className,
           props = _objectWithoutProperties(_ref4, ["className"]);
 
-      return React.createElement(Icon, _extends({}, props, {
+      return createElement(Icon, _extends({}, props, {
         className: [s$13.inputIcon, className].join(' '),
         src: iconClock
       }));
@@ -5910,16 +5903,16 @@ function (_React$PureComponent) {
           startMinutes = _this$state.startMinutes,
           startHour = _this$state.startHour;
       var texts = _this.props.texts;
-      return React.createElement("div", {
+      return createElement("div", {
         className: s$13.splitInputContainer
-      }, React.createElement(Input, _extends({}, inputProps, {
+      }, createElement(Input, _extends({}, inputProps, {
         onFocus: _this.handleStartDateFocus,
         className: [s$13.datePickerInput, showTimeInputs ? s$13.fixedWidthDateInput : undefined, inputClassName].join(' '),
         containerClassName: s$13.inputContainer,
         value: startDate ? startDate.format('ddd DD/MM/YYYY') : '',
         placeholder: texts.startPlaceholder,
         LeftComponent: _this.renderDateInputLeftElement
-      })), showTimeInputs && React.createElement(Input, _extends({}, inputProps, {
+      })), showTimeInputs && createElement(Input, _extends({}, inputProps, {
         onFocus: _this.handleTimeFocus,
         containerClassName: s$13.timePickerInputContainer,
         className: [s$13.timePickerInput, inputClassName].join(' '),
@@ -5939,16 +5932,16 @@ function (_React$PureComponent) {
           endHour = _this$state2.endHour,
           endMinutes = _this$state2.endMinutes;
       var texts = _this.props.texts;
-      return React.createElement("div", {
+      return createElement("div", {
         className: s$13.splitInputContainer
-      }, React.createElement(Input, _extends({}, inputProps, {
+      }, createElement(Input, _extends({}, inputProps, {
         className: [s$13.datePickerInput, showTimeInputs ? s$13.fixedWidthDateInput : undefined, inputClassName].join(' '),
         containerClassName: s$13.inputContainer,
         onFocus: _this.handleEndDateFocus,
         value: endDate ? endDate.format('ddd DD/MM/YYYY') : '',
         placeholder: texts.endPlaceholder,
         LeftComponent: _this.renderDateInputLeftElement
-      })), showTimeInputs && React.createElement(Input, _extends({}, inputProps, {
+      })), showTimeInputs && createElement(Input, _extends({}, inputProps, {
         containerClassName: s$13.timePickerInputContainer,
         className: [s$13.timePickerInput, inputClassName].join(' '),
         onFocus: _this.handleTimeFocus,
@@ -5962,7 +5955,7 @@ function (_React$PureComponent) {
       var className = _ref7.className,
           props = _objectWithoutProperties(_ref7, ["className"]);
 
-      return React.createElement(Arrow, _extends({}, props, {
+      return createElement(Arrow, _extends({}, props, {
         className: [s$13.suggestionsArrow, className].join(' ')
       }));
     });
@@ -5981,11 +5974,11 @@ function (_React$PureComponent) {
           startMinutes = _this$state3.startMinutes,
           endHour = _this$state3.endHour,
           endMinutes = _this$state3.endMinutes;
-      return React.createElement(PickerSuggestions, _extends({}, rest, {
+      return createElement(PickerSuggestions, _extends({}, rest, {
         visible: visible,
         className: [s$13.pickerSuggestions, className].join(' '),
         ArrowComponent: _this.renderPickerSuggestionsArrow
-      }), visible && visiblePicker === DateTimePicker.datePicker && React.createElement(reactDates.DayPickerRangeController, {
+      }), visible && visiblePicker === DateTimePicker.datePicker && createElement(DayPickerRangeController, {
         verticalBorderSpacing: 1,
         horizontalMonthPadding: 25,
         firstDayOfWeek: 1,
@@ -6000,9 +5993,9 @@ function (_React$PureComponent) {
         focusedInput: focusedDateInput,
         renderMonthElement: _this.renderMonthElement,
         isDayBlocked: _this.isDayBlocked
-      }), visible && React.createElement("div", {
+      }), visible && createElement("div", {
         className: s$13.hr
-      }), visible && visiblePicker === DateTimePicker.timePicker && React.createElement(TimeSuggestions, {
+      }), visible && visiblePicker === DateTimePicker.timePicker && createElement(TimeSuggestions, {
         className: s$13.timeSuggestions,
         containerClassName: s$13.timeSuggestionsContainer,
         onSelect: _this.handleTimeSelect,
@@ -6013,7 +6006,7 @@ function (_React$PureComponent) {
       }));
     });
 
-    _this.ectorPicker = React.createRef();
+    _this.ectorPicker = createRef();
     _this.handleStartDateFocus = _this.handleDateFocus.bind(_assertThisInitialized(_this), DateTimePicker.startDate);
     _this.handleEndDateFocus = _this.handleDateFocus.bind(_assertThisInitialized(_this), DateTimePicker.endDate);
     _this.state = {
@@ -6062,7 +6055,7 @@ function (_React$PureComponent) {
       var _this$props = this.props,
           error = _this$props.error,
           className = _this$props.className;
-      return React.createElement(Picker, {
+      return createElement(Picker, {
         ref: this.ectorPicker,
         split: true,
         extraData: extraData,
@@ -6076,7 +6069,7 @@ function (_React$PureComponent) {
   }]);
 
   return DateTimePicker;
-}(React.PureComponent);
+}(PureComponent);
 
 _defineProperty(DateTimePicker, "startDate", 'startDate');
 
@@ -6320,53 +6313,6 @@ TimeRange.propTypes = {
 
 var index = './components';
 
-exports.ActionLink = ActionLink;
-exports.AddItemCard = AddItemCard;
-exports.Alert = Alert;
-exports.AlternativeTimeCard = AlternativeTimeCard;
-exports.ApplicationCard = ApplicationCard;
-exports.Arrow = Arrow;
-exports.BookingCard = BookingCard;
-exports.BookingModificationSummary = BookingModificationSummary;
-exports.BookingSteps = BookingSteps;
-exports.Button = Button;
-exports.CarCard = CarCard;
-exports.Card = Card;
-exports.CardTitle = CardTitle;
-exports.CardTravelInformation = CardTravelInformation;
-exports.ColorPicker = ColorPicker;
-exports.ContactCard = ContactCard;
-exports.ContactForm = ContactForm;
-exports.DateTimePicker = DateTimePicker;
-exports.GenderPicker = GenderPicker;
-exports.HtmlPrice = HtmlPrice;
-exports.Icon = Icon;
-exports.Input = Input;
-exports.InputButton = InputButton;
-exports.InputCheckbox = InputCheckbox;
-exports.InputLabel = InputLabel;
-exports.Label = Label;
-exports.LinkUnderlined = LinkUnderlined;
-exports.Loader = Loader;
-exports.LoginForm = LoginForm;
-exports.PaymentMethodCard = PaymentMethodCard;
-exports.PhoneInput = PhoneInput;
-exports.Picker = Picker;
-exports.PickerSuggestions = PickerSuggestions;
-exports.PricingSummary = PricingSummary;
-exports.RadioButton = RadioButton;
-exports.ReferralCard = ReferralCard;
-exports.RegistrationForm = RegistrationForm;
-exports.RewardCard = RewardCard;
-exports.RideSummary = RideSummary;
-exports.RoundedButton = RoundedButton;
-exports.Select = Select;
-exports.ServiceCard = ServiceCard;
-exports.Subtitle = Subtitle;
-exports.TimeRange = TimeRange;
-exports.Title = Title;
-exports.TitleStep = TitleStep;
-exports.Tooltip = Tooltip;
-exports.ZonesPicker = ZonesPicker;
-exports.default = index;
-//# sourceMappingURL=ector-ui.js.map
+export default index;
+export { ActionLink, AddItemCard, Alert, AlternativeTimeCard, ApplicationCard, Arrow, BookingCard, BookingModificationSummary, BookingSteps, Button, CarCard, Card, CardTitle, CardTravelInformation, ColorPicker, ContactCard, ContactForm, DateTimePicker, GenderPicker, HtmlPrice, Icon, Input, InputButton, InputCheckbox, InputLabel, Label, LinkUnderlined, Loader, LoginForm, PaymentMethodCard, PhoneInput, Picker, PickerSuggestions, PricingSummary, RadioButton, ReferralCard, RegistrationForm, RewardCard, RideSummary, RoundedButton, Select, ServiceCard, Subtitle, TimeRange, Title, TitleStep, Tooltip, ZonesPicker };
+//# sourceMappingURL=ector-ui.es.js.map
