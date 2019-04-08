@@ -2,8 +2,9 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import centered from '@storybook/addon-centered';
-import { withKnobs, text, select } from '@storybook/addon-knobs';
-import { actions } from '@storybook/addon-actions';
+import {
+  withKnobs, text, select, boolean,
+} from '@storybook/addon-knobs';
 
 import FlightInformationForm from '.';
 
@@ -50,7 +51,14 @@ storiesOf('FlightInformationForm', module)
       travelingNumberTo: text('N° de vol retour', ''),
       returnFlightCompany: text('Compagnie aérienne', ''),
       returnFlightOrigin: text('Ville de provenance', ''),
+      shouldDisplayReturnFlightInformation: boolean('Voir champs additionnels', false),
+      toSpotType: select('Type du retour', ['station', 'airport'], 'airport'),
     };
 
-    return <FlightInformationForm onChange={(field, value) => console.log(field, value)} {...props} />;
+    return (
+      <FlightInformationForm
+        onChange={(field, value) => console.log(field, value)}
+        {...props}
+      />
+    );
   });

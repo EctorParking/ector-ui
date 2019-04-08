@@ -45,6 +45,10 @@
     color: var(--metalGrey);
 }
 
+.actionLink {
+    margin-top: var(--marginXSmall);
+}
+
 @media (--maxMobile) {
     .card {
         background: transparent;
