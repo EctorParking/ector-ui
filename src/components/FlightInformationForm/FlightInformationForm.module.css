@@ -1,0 +1,56 @@
+@import '../../style/variable.global.css';
+
+.card {
+    width: 640px;
+}
+
+.contentCard {}
+
+.formContainer {
+    margin-top: var(--marginMedium);
+}
+
+.title {
+    margin: 0;
+    font-weight: var(--fontWeightLight);
+    color: var(--blue);
+}
+
+.firstColumn {
+    padding-right: var(--marginMedium);
+}
+
+.secondColumn {
+    padding-left: var(--marginMedium);
+}
+
+.halfWidth {
+    width: 50%;
+}
+
+.row {
+    margin-top: var(--marginSmall);
+    display: flex;
+}
+
+.input {
+    flex: 1;
+}
+
+.select {
+    margin-top: 0;
+}
+
+.defaultOption {
+    color: var(--metalGrey);
+}
+
+@media (--maxMobile) {
+    .card {
+        background: transparent;
+        padding: 0;
+    }
+    .contentCard {
+        padding: 0;
+    }
+}
