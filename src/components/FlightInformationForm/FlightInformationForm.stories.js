@@ -45,6 +45,7 @@ storiesOf('FlightInformationForm', module)
       toSpotsAvailable: select("Zone d'arrivée", spotsOptions, spotsOptions.plusieursSpots),
       fromSpot: select('Terminal aller', spotOptions, spotOptions.default),
       toSpot: select('Terminal retout', spotOptions, spotOptions.default),
+      airlines: [{ value: 'AF', label: 'Air France' }, { value: 'U2', label: 'EasyJet' }, { value: '3B', label: 'Job Air' }],
       travelingNumberTo: text('N° de vol retour', ''),
       returnFlightCompany: text('Compagnie aérienne', ''),
       returnFlightOrigin: text('Ville de provenance', ''),

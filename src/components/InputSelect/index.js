@@ -28,14 +28,22 @@ const ectorStyles = {
     fontWeight: isSelected || isFocused ? 'bold' : undefined,
     backgroundColor: '#fefefe',
   }),
+  control: styles => ({
+    ...styles,
+    borderWidth: 2,
+  }),
 };
 
-const InputSelect = ({ options, classname, ...props }) => (
+const InputSelect = ({
+  options, classname, onChange, value, ...props
+}) => (
   <Select
     className={[s.select, classname].join(' ')}
     options={options}
     theme={ectorTheme}
     styles={ectorStyles}
+    value={value}
+    onChange={onChange}
     {...props}
   />
 );
@@ -43,14 +51,20 @@ const InputSelect = ({ options, classname, ...props }) => (
 InputSelect.defaultProps = {
   options: [],
   classname: undefined,
+  value: undefined,
 };
 
 InputSelect.propTypes = {
-  options: PropTypes.arrayOf({
+  options: PropTypes.arrayOf(PropTypes.shape({
+    value: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+  })),
+  value: PropTypes.shape({
     value: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
   }),
   classname: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default InputSelect;

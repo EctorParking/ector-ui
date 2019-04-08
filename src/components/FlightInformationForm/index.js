@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {
   Card,
   InputLabel,
-  Select,
+  InputSelect,
 } from '..';
 import s from './FlightInformationForm.module.css';
 import { SpotType } from './SpotType';
@@ -17,16 +17,6 @@ class FlightInformationForm extends React.Component {
     this.renderToZoneTerminal = this.renderTerminalSelect.bind(this, 'to');
   }
 
-  renderOption = (option) => {
-    const { texts } = this.props;
-
-    return (
-      <option value={option.code}>
-        {`${texts.spot} ${option.shortName}`}
-      </option>
-    );
-  };
-
   renderTerminalSelect = (fromOrTo) => {
     const {
       [`${fromOrTo}SpotsAvailable`]: spots,
@@ -35,11 +25,27 @@ class FlightInformationForm extends React.Component {
     } = this.props;
 
     return (
-      <Select
-        options={spots}
-        value={selectedSpot ? `${texts.spot} ${selectedSpot.shortName}` : texts.placeholderSpot}
-        className={[s.select, selectedSpot ? undefined : s.defaultOption].join(' ')}
-        renderOption={this.renderOption}
+      <InputSelect
+        options={spots.map(spot => ({ value: spot.code, label: `${texts.spot} ${spot.shortName}` }))}
+        value={selectedSpot ? { value: selectedSpot.code, label: `${texts.spot} ${selectedSpot.shortName}` } : undefined}
+        placeholder={texts.placeholderSpot}
+        isClearable
+      />
+    );
+  };
+
+  renderAirlinesSelect = () => {
+    const {
+      airlines,
+      texts,
+    } = this.props;
+
+    return (
+      <InputSelect
+        options={airlines}
+        placeholder={texts.returnFlightCompanyPlaceholder}
+        isClearable
+        isSearchable
       />
     );
   };
@@ -101,9 +107,9 @@ class FlightInformationForm extends React.Component {
           <div className={s.row}>
             <InputLabel
               label={texts.returnFlightCompanyLabel}
-              placeholder={texts.returnFlightCompanyPlaceholder}
               value={returnFlightCompany}
               className={[s.input, s.firstColumn].join(' ')}
+              InputComponent={this.renderAirlinesSelect}
             />
             <InputLabel
               label={texts.returnFlightOriginLabel}
@@ -125,6 +131,7 @@ FlightInformationForm.defaultProps = {
   contentClassName: undefined,
   returnFlightCompany: undefined,
   returnFlightOrigin: undefined,
+  airlines: [],
   texts: DefaultTexts,
 };
 
@@ -139,6 +146,10 @@ FlightInformationForm.propTypes = {
   travelingNumberTo: PropTypes.string.isRequired,
   returnFlightCompany: PropTypes.string,
   returnFlightOrigin: PropTypes.string,
+  airlines: PropTypes.arrayOf(PropTypes.shape({
+    value: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+  })),
   texts: TextsType,
 };
 
