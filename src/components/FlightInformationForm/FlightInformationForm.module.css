@@ -7,7 +7,7 @@
 .contentCard {}
 
 .formContainer {
-    margin-top: var(--marginMedium);
+    margin-bottom: var(--marginMedium);
 }
 
 .title {
