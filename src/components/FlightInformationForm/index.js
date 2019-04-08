@@ -15,7 +15,24 @@ class FlightInformationForm extends React.Component {
 
     this.renderFromZoneTerminal = this.renderTerminalSelect.bind(this, 'from');
     this.renderToZoneTerminal = this.renderTerminalSelect.bind(this, 'to');
+    this.onChangeTravelingNumberTo = this.onChange.bind(this, 'travelingNumberTo');
+    this.onChangeReturnFlightOrigin = this.onChange.bind(this, 'returnFlightOrigin');
+    this.onChangeReturnFlightCompany = this.onChangeSelect.bind(this, 'returnFlightCompany');
+    this.onChangeFromSpot = this.onChangeSelect.bind(this, 'fromSpot');
+    this.onChangeToSpot = this.onChangeSelect.bind(this, 'toSpot');
   }
+
+  onChange = (field, event) => {
+    const { onChange } = this.props;
+
+    onChange(field, event.currentTarget.value);
+  };
+
+  onChangeSelect = (field, option) => {
+    const { onChange } = this.props;
+
+    onChange(field, option.value);
+  };
 
   renderTerminalSelect = (fromOrTo) => {
     const {
@@ -29,6 +46,7 @@ class FlightInformationForm extends React.Component {
         options={spots.map(spot => ({ value: spot.code, label: `${texts.spot} ${spot.shortName}` }))}
         value={selectedSpot ? { value: selectedSpot.code, label: `${texts.spot} ${selectedSpot.shortName}` } : undefined}
         placeholder={texts.placeholderSpot}
+        onChange={fromOrTo === 'from' ? this.onChangeFromSpot : this.onChangeToSpot}
         isClearable
       />
     );
@@ -44,6 +62,7 @@ class FlightInformationForm extends React.Component {
       <InputSelect
         options={airlines}
         placeholder={texts.returnFlightCompanyPlaceholder}
+        onChange={this.onChangeReturnFlightCompany}
         isClearable
         isSearchable
       />
@@ -94,6 +113,7 @@ class FlightInformationForm extends React.Component {
               value={travelingNumberTo}
               mandatory
               className={[s.input, s.firstColumn].join(' ')}
+              onChange={this.onChangeTravelingNumberTo}
             />
             {toSpotsAvailable.length > 1 && (
               <InputLabel
@@ -115,6 +135,7 @@ class FlightInformationForm extends React.Component {
               label={texts.returnFlightOriginLabel}
               placeholder={texts.returnFlightOriginPlaceholder}
               value={returnFlightOrigin}
+              onChange={this.onChangeReturnFlightOrigin}
               className={[s.input, s.secondColumn].join(' ')}
             />
           </div>
@@ -151,6 +172,7 @@ FlightInformationForm.propTypes = {
     label: PropTypes.string.isRequired,
   })),
   texts: TextsType,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default FlightInformationForm;

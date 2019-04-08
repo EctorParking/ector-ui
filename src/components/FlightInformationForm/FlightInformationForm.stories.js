@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import centered from '@storybook/addon-centered';
 import { withKnobs, text, select } from '@storybook/addon-knobs';
+import { actions } from '@storybook/addon-actions';
 
 import FlightInformationForm from '.';
 
@@ -51,5 +52,5 @@ storiesOf('FlightInformationForm', module)
       returnFlightOrigin: text('Ville de provenance', ''),
     };
 
-    return <FlightInformationForm {...props} />;
+    return <FlightInformationForm onChange={(field, value) => console.log(field, value)} {...props} />;
   });
