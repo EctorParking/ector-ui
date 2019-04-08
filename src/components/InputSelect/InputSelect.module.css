@@ -1,0 +1,5 @@
+@import '../../style/variable.global.css';
+
+.select {
+  width: 200px;
+}

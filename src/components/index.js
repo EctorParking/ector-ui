@@ -47,3 +47,4 @@ export { default as Icon } from './Icon';
 export { default as DateTimePicker } from './DateTimePicker';
 export { default as TimeRange } from './TimeRange';
 export { default as FlightInformationForm } from './FlightInformationForm';
+export { default as InputSelect } from './InputSelect';
