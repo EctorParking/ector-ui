@@ -6,7 +6,8 @@ import {
   Select,
 } from '..';
 import s from './FlightInformationForm.module.css';
-import { ZoneType, SpotType } from './SpotAndZoneType';
+import { SpotType } from './SpotType';
+import { TextsType, DefaultTexts } from './FlightInformationFormTexts';
 
 class FlightInformationForm extends React.Component {
   constructor(props) {
@@ -16,22 +17,28 @@ class FlightInformationForm extends React.Component {
     this.renderToZoneTerminal = this.renderTerminalSelect.bind(this, 'to');
   }
 
-  renderOption = option => (
-    <option value={option.code} className={s.defaultOption}>
-      Terminal
-      {' '}
-      {option.shortName}
-    </option>
-  );
+  renderOption = (option) => {
+    const { texts } = this.props;
+
+    return (
+      <option value={option.code}>
+        {`${texts.spot} ${option.shortName}`}
+      </option>
+    );
+  };
 
   renderTerminalSelect = (fromOrTo) => {
-    const { [`${fromOrTo}Zone`]: { spots }, [`${fromOrTo}Spot`]: selectedSpot } = this.props;
+    const {
+      [`${fromOrTo}SpotsAvailable`]: spots,
+      [`${fromOrTo}Spot`]: selectedSpot,
+      texts,
+    } = this.props;
 
     return (
       <Select
         options={spots}
-        value={selectedSpot ? `Terminal ${selectedSpot.shortName}` : 'Choisir un terminal'}
-        className={s.select}
+        value={selectedSpot ? `${texts.spot} ${selectedSpot.shortName}` : texts.placeholderSpot}
+        className={[s.select, selectedSpot ? undefined : s.defaultOption].join(' ')}
         renderOption={this.renderOption}
       />
     );
@@ -40,12 +47,14 @@ class FlightInformationForm extends React.Component {
   render() {
     const {
       RootComponent,
-      fromZone,
+      fromSpotsAvailable,
+      toSpotsAvailable,
       travelingNumberTo,
       returnFlightCompany,
       returnFlightOrigin,
       className,
       contentClassName,
+      texts,
       ...cardProps
     } = this.props;
 
@@ -57,12 +66,12 @@ class FlightInformationForm extends React.Component {
 
     return (
       <RootComponent {...actualCardProps}>
-        {fromZone.spots.length > 1 && (
+        {fromSpotsAvailable.length > 1 && (
           <div className={s.formContainer}>
-            <h2 className={s.title}>Aller</h2>
+            <h2 className={s.title}>{texts.inTitle}</h2>
             <div className={[s.row, s.halfWidth].join(' ')}>
               <InputLabel
-                label="Terminal"
+                label={texts.spot}
                 mandatory
                 InputComponent={this.renderFromZoneTerminal}
                 className={[s.input, s.firstColumn].join(' ')}
@@ -71,32 +80,34 @@ class FlightInformationForm extends React.Component {
           </div>
         )}
         <>
-          <h2 className={s.title}>Retour</h2>
-          <div className={s.row}>
+          {fromSpotsAvailable.length > 1 && (<h2 className={s.title}>{texts.outTitle}</h2>)}
+          <div className={[s.row, toSpotsAvailable.length <= 1 ? s.halfWidth : undefined].join(' ')}>
             <InputLabel
-              label="N° de vol"
-              placeholder="Ex: AFR123"
+              label={texts.travelingNumberToLabel}
+              placeholder={texts.travelingNumberToPlaceholder}
               value={travelingNumberTo}
               mandatory
               className={[s.input, s.firstColumn].join(' ')}
             />
-            <InputLabel
-              label="Terminal"
-              mandatory
-              InputComponent={this.renderToZoneTerminal}
-              className={[s.input, s.secondColumn].join(' ')}
-            />
+            {toSpotsAvailable.length > 1 && (
+              <InputLabel
+                label={texts.spot}
+                mandatory
+                InputComponent={this.renderToZoneTerminal}
+                className={[s.input, s.secondColumn].join(' ')}
+              />
+            )}
           </div>
           <div className={s.row}>
             <InputLabel
-              label="Compagnie aérienne"
-              placeholder="Ex: Air France"
+              label={texts.returnFlightCompanyLabel}
+              placeholder={texts.returnFlightCompanyPlaceholder}
               value={returnFlightCompany}
               className={[s.input, s.firstColumn].join(' ')}
             />
             <InputLabel
-              label="Ville de provenance"
-              placeholder="Ex: Londres"
+              label={texts.returnFlightOriginLabel}
+              placeholder={texts.returnFlightOriginPlaceholder}
               value={returnFlightOrigin}
               className={[s.input, s.secondColumn].join(' ')}
             />
@@ -114,19 +125,21 @@ FlightInformationForm.defaultProps = {
   contentClassName: undefined,
   returnFlightCompany: undefined,
   returnFlightOrigin: undefined,
+  texts: DefaultTexts,
 };
 
 FlightInformationForm.propTypes = {
   RootComponent: PropTypes.func,
   className: PropTypes.string,
   contentClassName: PropTypes.string,
-  fromZone: ZoneType.isRequired,
-  toZone: ZoneType.isRequired,
+  fromSpotsAvailable: PropTypes.arrayOf(SpotType).isRequired,
+  toSpotsAvailable: PropTypes.arrayOf(SpotType).isRequired,
   fromSpot: SpotType.isRequired,
   toSpot: SpotType.isRequired,
   travelingNumberTo: PropTypes.string.isRequired,
   returnFlightCompany: PropTypes.string,
   returnFlightOrigin: PropTypes.string,
+  texts: TextsType,
 };
 
 export default FlightInformationForm;

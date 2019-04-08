@@ -10,10 +10,3 @@ export const SpotType = PropTypes.shape({
   code: PropTypes.string.isRequired,
   type: PropTypes.oneOf(Object.keys(ZoneTypes)).isRequired,
 });
-
-export const ZoneType = PropTypes.shape({
-  name: PropTypes.string.isRequired,
-  code: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(Object.keys(ZoneTypes)).isRequired,
-  spots: PropTypes.arrayOf(SpotType).isRequired,
-});
