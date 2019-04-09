@@ -28,15 +28,15 @@ class FlightInformationForm extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { shouldDisplayReturnFlightInformation } = this.props;
+    const { shouldDisplayReturnFlightInformation: should } = this.props;
     const {
-      shouldDisplayReturnFlightInformation: oldShouldDisplayReturnFlightInformation,
+      shouldDisplayReturnFlightInformation: oldShould,
     } = prevProps;
 
-    if (oldShouldDisplayReturnFlightInformation !== shouldDisplayReturnFlightInformation
-      && shouldDisplayReturnFlightInformation
+    if (oldShould !== should
+      && should
     ) {
-      this.setState({ shouldDisplayReturnFlightInformation });
+      this.setState({ shouldDisplayReturnFlightInformation: should });
     }
   }
 

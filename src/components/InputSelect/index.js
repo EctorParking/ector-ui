@@ -2,31 +2,32 @@ import React from 'react';
 import Select from 'react-select';
 import PropTypes from 'prop-types';
 import s from './InputSelect.module.css';
+import Colors from '../../style/variable.global.css';
 
 const ectorTheme = theme => ({
   ...theme,
   colors: {
     ...theme.colors,
-    primary: '#ffcd02',
-    primary25: '#fefefe',
-    primary50: '#fefefe',
-    neutral20: '#d5d6d7',
-    neutral30: '#d5d6d7',
-    neutral40: '#d5d6d7',
-    neutral50: '#d5d6d7',
-    neutral60: '#163457',
-    neutral70: '#163457',
-    neutral80: '#163457',
-    neutral90: '#163457',
+    primary: Colors.yellow,
+    primary25: Colors.white,
+    primary50: Colors.white,
+    neutral20: Colors.metalGrey,
+    neutral30: Colors.metalGrey,
+    neutral40: Colors.metalGrey,
+    neutral50: Colors.metalGrey,
+    neutral60: Colors.deepBlue,
+    neutral70: Colors.deepBlue,
+    neutral80: Colors.deepBlue,
+    neutral90: Colors.deepBlue,
   },
 });
 
 const ectorStyles = {
   option: (styles, { isSelected, isFocused }) => ({
     ...styles,
-    color: '#163457',
+    color: Colors.deepBlue,
     fontWeight: isSelected || isFocused ? 'bold' : undefined,
-    backgroundColor: '#fefefe',
+    backgroundColor: Colors.white,
   }),
   control: styles => ({
     ...styles,

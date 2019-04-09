@@ -87,3 +87,17 @@
 @custom-media --minTablet (min-width: 768px);
 @custom-media --minMobile (min-width: 480px);
 @custom-media --minIPhone5 (min-width: 320px);
+
+@value deepBlue: #163457;
+@value yellow: #ffcd02;
+@value grey: #4b4b50;
+@value blue: #32a0c5;
+@value melrose: #9ca3ff;
+@value green: #59c871;
+@value white: #fefefe;
+@value metalGrey: #d5d6d7;
+@value aquaHazeGrey: #9eb3c2;
+@value darkGrey: #939baa;
+@value lightGrey: #eceff6;
+@value red: #ff5757;
+@value orange: #f39c12;
