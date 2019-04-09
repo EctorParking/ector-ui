@@ -1,0 +1,9 @@
+@import '../../style/variable.global.css';
+
+.select {
+  width: 100%;
+}
+
+.defaultClassName {
+  width: 200px;
+}
