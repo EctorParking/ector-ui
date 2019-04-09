@@ -2,7 +2,9 @@ import PropTypes from 'prop-types';
 
 export const TextsType = PropTypes.shape({
   placeholderSpot: PropTypes.string,
-  spot: PropTypes.string,
+  spotAirport: PropTypes.string,
+  spotTrain: PropTypes.string,
+  spotLabelAirport: PropTypes.string,
   inTitle: PropTypes.string,
   outTitle: PropTypes.string,
   travelingNumberToLabel: PropTypes.string,
@@ -14,11 +16,16 @@ export const TextsType = PropTypes.shape({
   returnFlightCompanyLabel: PropTypes.string,
   returnFlightCompanyPlaceholder: PropTypes.string,
   unknown: PropTypes.string,
+  spotLabelUnknown: PropTypes.string,
+  switchMandatoryAirportDescription: PropTypes.string,
+  switchMandatoryStationDescription: PropTypes.string,
 });
 
 export const DefaultTexts = {
-  placeholderSpot: 'Choisir un terminal',
-  spot: 'Terminal',
+  placeholderSpot: 'Choisir un lieu de rendez-vous',
+  spotAirport: 'Terminal',
+  spotTrain: 'Gare',
+  spotLabelAirport: 'Terminal (lieu de rendez-vous)',
   inTitle: 'Aller',
   outTitle: 'Retour',
   travelingNumberToLabel: 'N° de vol',
@@ -30,4 +37,7 @@ export const DefaultTexts = {
   returnFlightCompanyLabel: 'Compagnie aérienne',
   returnFlightCompanyPlaceholder: 'Ex: Air France',
   unknown: 'Je ne le connais pas',
+  spotLabelUnknown: 'Lieu de rendez-vous',
+  switchMandatoryAirportDescription: 'Si vous ne connaissez pas votre numéro de vol, veuillez indiquer la compagnie aérienne et la ville de provenance de votre dernier vol.',
+  switchMandatoryStationDescription: 'Si vous ne connaissez pas votre numéro de train, veuillez indiquer la ville de provenance de votre dernier train.',
 };

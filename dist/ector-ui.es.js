@@ -6321,8 +6321,8 @@ TimeRange.propTypes = {
   hour: PropTypes$1.string
 };
 
-var css$16 = ".FlightInformationForm-module_card__3HVvP {\n    width: 640px;\n}\n\n.FlightInformationForm-module_contentCard__2iuCz {}\n\n.FlightInformationForm-module_formContainer__38_9v {\n    margin-bottom: 20px;\n}\n\n.FlightInformationForm-module_title__3yTDe {\n    margin: 0;\n    font-weight: 300;\n    color: #32a0c5;\n}\n\n.FlightInformationForm-module_firstColumn__3dXcq {\n    padding-right: 20px;\n}\n\n.FlightInformationForm-module_secondColumn__1tg-R {\n    padding-left: 20px;\n}\n\n.FlightInformationForm-module_halfWidth__3iWMs {\n    width: 50%;\n}\n\n.FlightInformationForm-module_row__2j-tW {\n    margin-top: 10px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n}\n\n.FlightInformationForm-module_input__1QJpa {\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n}\n\n.FlightInformationForm-module_select__1KZ8b {\n    margin-top: 0;\n}\n\n.FlightInformationForm-module_defaultOption__MJRT6 {\n    color: #d5d6d7;\n}\n\n.FlightInformationForm-module_actionLink__nzpW1 {\n    margin-top: 5px;\n}\n\n@media (max-width: 480px) {\n    .FlightInformationForm-module_card__3HVvP {\n        background: transparent;\n        padding: 0;\n    }\n    .FlightInformationForm-module_contentCard__2iuCz {\n        padding: 0;\n    }\n}\n";
-var s$16 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","card":"FlightInformationForm-module_card__3HVvP","contentCard":"FlightInformationForm-module_contentCard__2iuCz","formContainer":"FlightInformationForm-module_formContainer__38_9v","title":"FlightInformationForm-module_title__3yTDe","firstColumn":"FlightInformationForm-module_firstColumn__3dXcq","secondColumn":"FlightInformationForm-module_secondColumn__1tg-R","halfWidth":"FlightInformationForm-module_halfWidth__3iWMs","row":"FlightInformationForm-module_row__2j-tW","input":"FlightInformationForm-module_input__1QJpa","select":"FlightInformationForm-module_select__1KZ8b","defaultOption":"FlightInformationForm-module_defaultOption__MJRT6","actionLink":"FlightInformationForm-module_actionLink__nzpW1"};
+var css$16 = ".FlightInformationForm-module_card__3HVvP {\n    width: 650px;\n}\n\n.FlightInformationForm-module_contentCard__2iuCz {}\n\n.FlightInformationForm-module_formContainer__38_9v {\n    margin-bottom: 20px;\n}\n\n.FlightInformationForm-module_title__3yTDe {\n    margin: 0;\n    font-weight: 300;\n    color: #32a0c5;\n}\n\n.FlightInformationForm-module_firstColumn__3dXcq {\n    padding-right: 20px;\n}\n\n.FlightInformationForm-module_secondColumn__1tg-R {\n    padding-left: 20px;\n}\n\n.FlightInformationForm-module_halfWidth__3iWMs {\n    width: 50%;\n}\n\n.FlightInformationForm-module_row__2j-tW {\n    margin-top: 10px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n}\n\n.FlightInformationForm-module_input__1QJpa {\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n}\n\n.FlightInformationForm-module_select__1KZ8b {\n    margin-top: 0;\n}\n\n.FlightInformationForm-module_defaultOption__MJRT6 {\n    color: #d5d6d7;\n}\n\n.FlightInformationForm-module_actionLink__nzpW1 {\n    margin-top: 5px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: end;\n        -ms-flex-pack: end;\n            justify-content: flex-end;\n}\n\n.FlightInformationForm-module_description__38HJs {\n    margin-top: 10px;\n}\n\n@media (max-width: 480px) {\n    .FlightInformationForm-module_card__3HVvP {\n        background: transparent;\n        padding: 0;\n    }\n    .FlightInformationForm-module_contentCard__2iuCz {\n        padding: 0;\n    }\n}\n";
+var s$16 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","card":"FlightInformationForm-module_card__3HVvP","contentCard":"FlightInformationForm-module_contentCard__2iuCz","formContainer":"FlightInformationForm-module_formContainer__38_9v","title":"FlightInformationForm-module_title__3yTDe","firstColumn":"FlightInformationForm-module_firstColumn__3dXcq","secondColumn":"FlightInformationForm-module_secondColumn__1tg-R","halfWidth":"FlightInformationForm-module_halfWidth__3iWMs","row":"FlightInformationForm-module_row__2j-tW","input":"FlightInformationForm-module_input__1QJpa","select":"FlightInformationForm-module_select__1KZ8b","defaultOption":"FlightInformationForm-module_defaultOption__MJRT6","actionLink":"FlightInformationForm-module_actionLink__nzpW1","description":"FlightInformationForm-module_description__38HJs"};
 styleInject(css$16);
 
 var ZoneTypes$1 = {
@@ -6337,7 +6337,9 @@ var SpotType = PropTypes$1.shape({
 
 var TextsType$8 = PropTypes$1.shape({
   placeholderSpot: PropTypes$1.string,
-  spot: PropTypes$1.string,
+  spotAirport: PropTypes$1.string,
+  spotTrain: PropTypes$1.string,
+  spotLabelAirport: PropTypes$1.string,
   inTitle: PropTypes$1.string,
   outTitle: PropTypes$1.string,
   travelingNumberToLabel: PropTypes$1.string,
@@ -6348,11 +6350,16 @@ var TextsType$8 = PropTypes$1.shape({
   returnFlightOriginPlaceholder: PropTypes$1.string,
   returnFlightCompanyLabel: PropTypes$1.string,
   returnFlightCompanyPlaceholder: PropTypes$1.string,
-  unknown: PropTypes$1.string
+  unknown: PropTypes$1.string,
+  spotLabelUnknown: PropTypes$1.string,
+  switchMandatoryAirportDescription: PropTypes$1.string,
+  switchMandatoryStationDescription: PropTypes$1.string
 });
 var DefaultTexts$8 = {
-  placeholderSpot: 'Choisir un terminal',
-  spot: 'Terminal',
+  placeholderSpot: 'Choisir un lieu de rendez-vous',
+  spotAirport: 'Terminal',
+  spotTrain: 'Gare',
+  spotLabelAirport: 'Terminal (lieu de rendez-vous)',
   inTitle: 'Aller',
   outTitle: 'Retour',
   travelingNumberToLabel: 'N° de vol',
@@ -6363,7 +6370,10 @@ var DefaultTexts$8 = {
   returnFlightOriginPlaceholder: 'Ex: Londres',
   returnFlightCompanyLabel: 'Compagnie aérienne',
   returnFlightCompanyPlaceholder: 'Ex: Air France',
-  unknown: 'Je ne le connais pas'
+  unknown: 'Je ne le connais pas',
+  spotLabelUnknown: 'Lieu de rendez-vous',
+  switchMandatoryAirportDescription: 'Si vous ne connaissez pas votre numéro de vol, veuillez indiquer la compagnie aérienne et la ville de provenance de votre dernier vol.',
+  switchMandatoryStationDescription: 'Si vous ne connaissez pas votre numéro de train, veuillez indiquer la ville de provenance de votre dernier train.'
 };
 
 var FlightInformationForm =
@@ -6383,40 +6393,54 @@ function (_React$Component) {
       onChange(field, event.currentTarget.value);
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onChangeSelect", function (field, option) {
-      var onChange = _this.props.onChange;
-      onChange(field, option.value);
+    _defineProperty(_assertThisInitialized(_this), "onChangeSelect", function (field, option, _ref) {
+      var action = _ref.action;
+      var _this$props = _this.props,
+          onChange = _this$props.onChange,
+          onClear = _this$props.onClear;
+
+      if (action === 'clear') {
+        onClear(field);
+      } else {
+        onChange(field, option.value);
+      }
     });
 
     _defineProperty(_assertThisInitialized(_this), "renderTerminalSelect", function (fromOrTo) {
-      var _this$props = _this.props,
-          spots = _this$props["".concat(fromOrTo, "SpotsAvailable")],
-          selectedSpot = _this$props["".concat(fromOrTo, "Spot")],
-          texts = _this$props.texts;
+      var _this$props2 = _this.props,
+          spots = _this$props2["".concat(fromOrTo, "SpotsAvailable")],
+          selectedSpot = _this$props2["".concat(fromOrTo, "Spot")],
+          texts = _this$props2.texts;
 
       return React__default.createElement(InputSelect, {
         options: spots.map(function (spot) {
           return {
-            value: spot.code,
-            label: "".concat(texts.spot, " ").concat(spot.shortName)
+            value: spot,
+            label: "".concat(spot.type === 'airport' ? texts.spotAirport : texts.spotTrain, " ").concat(spot.shortName)
           };
         }),
         value: selectedSpot ? {
-          value: selectedSpot.code,
-          label: "".concat(texts.spot, " ").concat(selectedSpot.shortName)
-        } : undefined,
+          value: selectedSpot,
+          label: "".concat(selectedSpot.type === 'airport' ? texts.spotAirport : texts.spotTrain, " ").concat(selectedSpot.shortName)
+        } : null,
         placeholder: texts.placeholderSpot,
         onChange: fromOrTo === 'from' ? _this.onChangeFromSpot : _this.onChangeToSpot,
+        isSearchable: false,
         isClearable: true
       });
     });
 
     _defineProperty(_assertThisInitialized(_this), "renderAirlinesSelect", function () {
-      var _this$props2 = _this.props,
-          airlines = _this$props2.airlines,
-          texts = _this$props2.texts;
+      var _this$props3 = _this.props,
+          airlines = _this$props3.airlines,
+          returnFlightCompany = _this$props3.returnFlightCompany,
+          texts = _this$props3.texts;
+      var selectedAirline = airlines.find(function (airline) {
+        return airline.name === returnFlightCompany;
+      });
       return React__default.createElement(InputSelect, {
         options: airlines,
+        value: selectedAirline,
         placeholder: texts.returnFlightCompanyPlaceholder,
         onChange: _this.onChangeReturnFlightCompany,
         isClearable: true,
@@ -6428,6 +6452,16 @@ function (_React$Component) {
       return _this.setState({
         shouldDisplayReturnFlightInformation: true
       });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "getLabelSpot", function (spot) {
+      var texts = _this.props.texts;
+
+      if (!spot) {
+        return texts.spotLabelUnknown;
+      }
+
+      return spot.type === 'airport' ? texts.spotLabelAirport : texts.spotLabelUnknown;
     });
 
     _this.renderFromZoneTerminal = _this.renderTerminalSelect.bind(_assertThisInitialized(_this), 'from');
@@ -6458,18 +6492,19 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this$props3 = this.props,
-          RootComponent = _this$props3.RootComponent,
-          fromSpotsAvailable = _this$props3.fromSpotsAvailable,
-          toSpotsAvailable = _this$props3.toSpotsAvailable,
-          toSpotType = _this$props3.toSpotType,
-          travelingNumberTo = _this$props3.travelingNumberTo,
-          returnFlightCompany = _this$props3.returnFlightCompany,
-          returnFlightOrigin = _this$props3.returnFlightOrigin,
-          className = _this$props3.className,
-          contentClassName = _this$props3.contentClassName,
-          texts = _this$props3.texts,
-          cardProps = _objectWithoutProperties(_this$props3, ["RootComponent", "fromSpotsAvailable", "toSpotsAvailable", "toSpotType", "travelingNumberTo", "returnFlightCompany", "returnFlightOrigin", "className", "contentClassName", "texts"]);
+      var _this$props4 = this.props,
+          RootComponent = _this$props4.RootComponent,
+          fromSpotsAvailable = _this$props4.fromSpotsAvailable,
+          toSpotsAvailable = _this$props4.toSpotsAvailable,
+          fromSpot = _this$props4.fromSpot,
+          toSpot = _this$props4.toSpot,
+          travelingNumberTo = _this$props4.travelingNumberTo,
+          returnFlightCompany = _this$props4.returnFlightCompany,
+          returnFlightOrigin = _this$props4.returnFlightOrigin,
+          className = _this$props4.className,
+          contentClassName = _this$props4.contentClassName,
+          texts = _this$props4.texts,
+          cardProps = _objectWithoutProperties(_this$props4, ["RootComponent", "fromSpotsAvailable", "toSpotsAvailable", "fromSpot", "toSpot", "travelingNumberTo", "returnFlightCompany", "returnFlightOrigin", "className", "contentClassName", "texts"]);
 
       var shouldDisplayReturnFlightInformation = this.state.shouldDisplayReturnFlightInformation;
 
@@ -6485,44 +6520,46 @@ function (_React$Component) {
       }, texts.inTitle), React__default.createElement("div", {
         className: [s$16.row, s$16.halfWidth].join(' ')
       }, React__default.createElement(InputLabel, {
-        label: texts.spot,
+        label: this.getLabelSpot(fromSpot),
         mandatory: true,
         InputComponent: this.renderFromZoneTerminal,
         className: [s$16.input, s$16.firstColumn].join(' ')
       }))), React__default.createElement(React__default.Fragment, null, fromSpotsAvailable.length > 1 && React__default.createElement("h2", {
         className: s$16.title
       }, texts.outTitle), React__default.createElement("div", {
-        className: [s$16.row, toSpotsAvailable.length <= 1 ? s$16.halfWidth : undefined].join(' ')
-      }, React__default.createElement(InputLabel, {
-        label: toSpotType === 'airport' ? texts.travelingNumberToLabel : texts.travelingNumberToLabelTrain,
-        placeholder: toSpotType === 'airport' ? texts.travelingNumberToPlaceholder : texts.travelingNumberToPlaceholderTrain,
-        value: travelingNumberTo,
-        mandatory: !shouldDisplayReturnFlightInformation,
-        className: [s$16.input, s$16.firstColumn].join(' '),
-        onChange: this.onChangeTravelingNumberTo
-      }), toSpotsAvailable.length > 1 && React__default.createElement(InputLabel, {
-        label: texts.spot,
+        className: [s$16.row, toSpotsAvailable.length <= 1 || !toSpot ? s$16.halfWidth : undefined].join(' ')
+      }, toSpotsAvailable.length > 1 && React__default.createElement(InputLabel, {
+        label: this.getLabelSpot(toSpot),
         mandatory: true,
         InputComponent: this.renderToZoneTerminal,
-        className: [s$16.input, s$16.secondColumn].join(' ')
-      })), toSpotType === 'airport' && !shouldDisplayReturnFlightInformation && React__default.createElement(ActionLink, {
+        className: [s$16.input, s$16.firstColumn].join(' ')
+      }), toSpot && React__default.createElement(InputLabel, {
+        label: toSpot.type === 'airport' ? texts.travelingNumberToLabel : texts.travelingNumberToLabelTrain,
+        placeholder: toSpot.type === 'airport' ? texts.travelingNumberToPlaceholder : texts.travelingNumberToPlaceholderTrain,
+        value: travelingNumberTo,
+        mandatory: !shouldDisplayReturnFlightInformation,
+        className: [s$16.input, toSpotsAvailable.length > 1 ? s$16.secondColumn : s$16.firstColumn].join(' '),
+        onChange: this.onChangeTravelingNumberTo
+      })), toSpot && !shouldDisplayReturnFlightInformation && React__default.createElement(ActionLink, {
         label: texts.unknown,
         className: s$16.actionLink,
         onClick: this.showExtraFields
-      }), toSpotType === 'airport' && shouldDisplayReturnFlightInformation && React__default.createElement("div", {
-        className: s$16.row
+      }), toSpot && shouldDisplayReturnFlightInformation && React__default.createElement("div", {
+        className: s$16.description
+      }, React__default.createElement("span", null, toSpot.type === 'airport' ? texts.switchMandatoryAirportDescription : texts.switchMandatoryStationDescription)), toSpot && React__default.createElement("div", {
+        className: [s$16.row, toSpot.type === 'station' ? s$16.halfWidth : undefined].join(' ')
       }, React__default.createElement(InputLabel, {
-        label: texts.returnFlightCompanyLabel,
-        value: returnFlightCompany,
-        className: [s$16.input, s$16.firstColumn].join(' '),
-        InputComponent: this.renderAirlinesSelect,
-        mandatory: shouldDisplayReturnFlightInformation
-      }), React__default.createElement(InputLabel, {
         label: texts.returnFlightOriginLabel,
         placeholder: texts.returnFlightOriginPlaceholder,
         value: returnFlightOrigin,
         onChange: this.onChangeReturnFlightOrigin,
+        className: [s$16.input, s$16.firstColumn].join(' '),
+        mandatory: shouldDisplayReturnFlightInformation
+      }), toSpot.type === 'airport' && React__default.createElement(InputLabel, {
+        label: texts.returnFlightCompanyLabel,
+        value: returnFlightCompany,
         className: [s$16.input, s$16.secondColumn].join(' '),
+        InputComponent: this.renderAirlinesSelect,
         mandatory: shouldDisplayReturnFlightInformation
       }))));
     }
@@ -6533,9 +6570,9 @@ function (_React$Component) {
 
 FlightInformationForm.defaultProps = {
   // eslint-disable-next-line react/prop-types
-  RootComponent: function RootComponent(_ref) {
-    var children = _ref.children,
-        cardProps = _objectWithoutProperties(_ref, ["children"]);
+  RootComponent: function RootComponent(_ref2) {
+    var children = _ref2.children,
+        cardProps = _objectWithoutProperties(_ref2, ["children"]);
 
     return React__default.createElement(Card, cardProps, children);
   },
@@ -6564,8 +6601,8 @@ FlightInformationForm.propTypes = {
   })),
   texts: TextsType$8,
   onChange: PropTypes$1.func.isRequired,
-  shouldDisplayReturnFlightInformation: PropTypes$1.bool,
-  toSpotType: PropTypes$1.oneOf(['station', 'airport']).isRequired
+  onClear: PropTypes$1.func.isRequired,
+  shouldDisplayReturnFlightInformation: PropTypes$1.bool
 };
 
 var shallowEqual = function shallowEqual(newValue, oldValue) {
@@ -7932,7 +7969,7 @@ var performanceNow = createCommonjsModule(function (module) {
 
 }).call(commonjsGlobal);
 
-
+//# sourceMappingURL=performance-now.js.map
 });
 
 var root = typeof window === 'undefined' ? commonjsGlobal : window
