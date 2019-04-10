@@ -11,6 +11,14 @@ const Title = ({
   </div>
 );
 
+export const NewTitle = ({
+  label, className, htmlElement, testid,
+}) => (
+  <div className={`${s.newTitle} ${className}`} testid={testid}>
+    {React.createElement(htmlElement, { className: s.element }, label)}
+  </div>
+);
+
 Title.defaultProps = {
   className: '',
   htmlElement: 'h1',
@@ -18,6 +26,19 @@ Title.defaultProps = {
 };
 
 Title.propTypes = {
+  label: PropTypes.string.isRequired,
+  className: PropTypes.string,
+  htmlElement: PropTypes.string,
+  testid: PropTypes.string,
+};
+
+NewTitle.defaultProps = {
+  className: '',
+  htmlElement: 'h1',
+  testid: '',
+};
+
+NewTitle.propTypes = {
   label: PropTypes.string.isRequired,
   className: PropTypes.string,
   htmlElement: PropTypes.string,

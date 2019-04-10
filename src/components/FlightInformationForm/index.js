@@ -46,10 +46,14 @@ class FlightInformationForm extends React.Component {
     onChange(field, event.currentTarget.value);
   };
 
-  onChangeSelect = (field, option) => {
-    const { onChange } = this.props;
+  onChangeSelect = (field, option, { action }) => {
+    const { onChange, onClear } = this.props;
 
-    onChange(field, option.value);
+    if (action === 'clear') {
+      onClear(field);
+    } else {
+      onChange(field, option.value);
+    }
   };
 
   renderTerminalSelect = (fromOrTo) => {
@@ -61,10 +65,11 @@ class FlightInformationForm extends React.Component {
 
     return (
       <InputSelect
-        options={spots.map(spot => ({ value: spot.code, label: `${texts.spot} ${spot.shortName}` }))}
-        value={selectedSpot ? { value: selectedSpot.code, label: `${texts.spot} ${selectedSpot.shortName}` } : undefined}
+        options={spots.map(spot => ({ value: spot, label: `${spot.type === 'airport' ? texts.spotAirport : texts.spotTrain} ${spot.shortName}` }))}
+        value={selectedSpot ? { value: selectedSpot, label: `${selectedSpot.type === 'airport' ? texts.spotAirport : texts.spotTrain} ${selectedSpot.shortName}` } : null}
         placeholder={texts.placeholderSpot}
         onChange={fromOrTo === 'from' ? this.onChangeFromSpot : this.onChangeToSpot}
+        isSearchable={false}
         isClearable
       />
     );
@@ -73,12 +78,15 @@ class FlightInformationForm extends React.Component {
   renderAirlinesSelect = () => {
     const {
       airlines,
+      returnFlightCompany,
       texts,
     } = this.props;
+    const selectedAirline = airlines.find(airline => airline.name === returnFlightCompany);
 
     return (
       <InputSelect
         options={airlines}
+        value={selectedAirline}
         placeholder={texts.returnFlightCompanyPlaceholder}
         onChange={this.onChangeReturnFlightCompany}
         isClearable
@@ -89,12 +97,23 @@ class FlightInformationForm extends React.Component {
 
   showExtraFields = () => this.setState({ shouldDisplayReturnFlightInformation: true });
 
+  getLabelSpot = (spot) => {
+    const { texts } = this.props;
+
+    if (!spot) {
+      return texts.spotLabelUnknown;
+    }
+
+    return spot.type === 'airport' ? texts.spotLabelAirport : texts.spotLabelUnknown;
+  };
+
   render() {
     const {
       RootComponent,
       fromSpotsAvailable,
       toSpotsAvailable,
-      toSpotType,
+      fromSpot,
+      toSpot,
       travelingNumberTo,
       returnFlightCompany,
       returnFlightOrigin,
@@ -117,7 +136,7 @@ class FlightInformationForm extends React.Component {
             <h2 className={s.title}>{texts.inTitle}</h2>
             <div className={[s.row, s.halfWidth].join(' ')}>
               <InputLabel
-                label={texts.spot}
+                label={this.getLabelSpot(fromSpot)}
                 mandatory
                 InputComponent={this.renderFromZoneTerminal}
                 className={[s.input, s.firstColumn].join(' ')}
@@ -127,48 +146,62 @@ class FlightInformationForm extends React.Component {
         )}
         <>
           {fromSpotsAvailable.length > 1 && (<h2 className={s.title}>{texts.outTitle}</h2>)}
-          <div className={[s.row, toSpotsAvailable.length <= 1 ? s.halfWidth : undefined].join(' ')}>
-            <InputLabel
-              label={toSpotType === 'airport' ? texts.travelingNumberToLabel : texts.travelingNumberToLabelTrain}
-              placeholder={toSpotType === 'airport' ? texts.travelingNumberToPlaceholder : texts.travelingNumberToPlaceholderTrain}
-              value={travelingNumberTo}
-              mandatory={!shouldDisplayReturnFlightInformation}
-              className={[s.input, s.firstColumn].join(' ')}
-              onChange={this.onChangeTravelingNumberTo}
-            />
+          <div className={[
+            s.row,
+            toSpotsAvailable.length <= 1 || !toSpot ? s.halfWidth : undefined,
+            fromSpotsAvailable.length <= 1 ? s.noMargin : undefined,
+          ].join(' ')}
+          >
             {toSpotsAvailable.length > 1 && (
               <InputLabel
-                label={texts.spot}
+                label={this.getLabelSpot(toSpot)}
                 mandatory
                 InputComponent={this.renderToZoneTerminal}
-                className={[s.input, s.secondColumn].join(' ')}
+                className={[s.input, s.firstColumn].join(' ')}
+              />
+            )}
+            {toSpot && (
+              <InputLabel
+                label={toSpot.type === 'airport' ? texts.travelingNumberToLabel : texts.travelingNumberToLabelTrain}
+                placeholder={toSpot.type === 'airport' ? texts.travelingNumberToPlaceholder : texts.travelingNumberToPlaceholderTrain}
+                value={travelingNumberTo}
+                mandatory={!shouldDisplayReturnFlightInformation}
+                className={[s.input, toSpotsAvailable.length > 1 ? s.secondColumn : s.firstColumn].join(' ')}
+                onChange={this.onChangeTravelingNumberTo}
               />
             )}
           </div>
-          {toSpotType === 'airport' && !shouldDisplayReturnFlightInformation && (
+          {toSpot && !shouldDisplayReturnFlightInformation && (
             <ActionLink
               label={texts.unknown}
               className={s.actionLink}
               onClick={this.showExtraFields}
             />
           )}
-          {toSpotType === 'airport' && shouldDisplayReturnFlightInformation && (
-            <div className={s.row}>
-              <InputLabel
-                label={texts.returnFlightCompanyLabel}
-                value={returnFlightCompany}
-                className={[s.input, s.firstColumn].join(' ')}
-                InputComponent={this.renderAirlinesSelect}
-                mandatory={shouldDisplayReturnFlightInformation}
-              />
+          {toSpot && shouldDisplayReturnFlightInformation && (
+            <div className={s.description}>
+              <span>{toSpot.type === 'airport' ? texts.switchMandatoryAirportDescription : texts.switchMandatoryStationDescription}</span>
+            </div>
+          )}
+          {toSpot && (
+            <div className={[s.row, toSpot.type === 'station' ? s.halfWidth : undefined].join(' ')}>
               <InputLabel
                 label={texts.returnFlightOriginLabel}
                 placeholder={texts.returnFlightOriginPlaceholder}
                 value={returnFlightOrigin}
                 onChange={this.onChangeReturnFlightOrigin}
-                className={[s.input, s.secondColumn].join(' ')}
+                className={[s.input, s.firstColumn].join(' ')}
                 mandatory={shouldDisplayReturnFlightInformation}
               />
+              {toSpot.type === 'airport' && (
+                <InputLabel
+                  label={texts.returnFlightCompanyLabel}
+                  value={returnFlightCompany}
+                  className={[s.input, s.secondColumn].join(' ')}
+                  InputComponent={this.renderAirlinesSelect}
+                  mandatory={shouldDisplayReturnFlightInformation}
+                />
+              )}
             </div>
           )}
         </>
@@ -206,8 +239,8 @@ FlightInformationForm.propTypes = {
   })),
   texts: TextsType,
   onChange: PropTypes.func.isRequired,
+  onClear: PropTypes.func.isRequired,
   shouldDisplayReturnFlightInformation: PropTypes.bool,
-  toSpotType: PropTypes.oneOf(['station', 'airport']).isRequired,
 };
 
 export default FlightInformationForm;
