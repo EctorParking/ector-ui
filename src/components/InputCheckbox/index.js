@@ -9,6 +9,7 @@ const InputCheckbox = ({
   onChange,
   checked,
   className,
+  checkmarkClassName,
   ...restOfProps
 }) => (
   <label
@@ -25,7 +26,7 @@ const InputCheckbox = ({
       checked={checked}
       {...restOfProps}
     />
-    <span className={s.checkmark} />
+    <span className={[s.checkmark, checkmarkClassName].join(' ')} />
 
   </label>
 );
@@ -35,6 +36,7 @@ InputCheckbox.defaultProps = {
   onChange: () => {},
   checked: false,
   className: '',
+  checkmarkClassName: undefined,
 };
 
 InputCheckbox.propTypes = {
@@ -43,6 +45,7 @@ InputCheckbox.propTypes = {
   onChange: PropTypes.func,
   checked: PropTypes.bool,
   className: PropTypes.string,
+  checkmarkClassName: PropTypes.string,
 };
 
 export default InputCheckbox;

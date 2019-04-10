@@ -307,7 +307,7 @@ class ZonesPicker extends React.PureComponent {
           <div className={[s.suggestions, visible ? s.visible : undefined].join(' ')}>
             {fromZoneSuggestions.map(this.renderFromZoneSuggestion)}
           </div>
-          <div className={[s.suggestions, s.splitSuggestions, visible && split ? s.visible : undefined].join(' ')}>
+          <div className={[s.suggestions, visible && split ? s.visible : undefined].join(' ')}>
             {toZoneSuggestions.map(this.renderToZoneSuggestion)}
           </div>
         </div>

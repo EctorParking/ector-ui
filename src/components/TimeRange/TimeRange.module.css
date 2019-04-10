@@ -11,6 +11,9 @@
   overflow: scroll;
   position: relative;
   padding: 0 5px;
+  &::-webkit-scrollbar {
+     display: none;
+  }
 }
 
 .hour, .minute {
@@ -20,7 +23,7 @@
   &:hover, &.selected {
     border-radius: var(--marginXSmall);
     cursor: pointer;
-    font-weight: bolder;
+    font-weight: bold;
   }
   &:hover {
      background-color: var(--lightYellow);

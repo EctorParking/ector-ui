@@ -41,7 +41,42 @@ class DateTimePicker extends React.PureComponent {
     };
   }
 
+  static getDerivedStateFromProps(props, state) {
+    const {
+      startDate: propStartDate,
+      endDate: propEndDate,
+    } = props;
+    let {
+      startDate, endDate, startMinutes, endMinutes, startHour, endHour,
+    } = state;
+
+    if (!startDate && propStartDate) {
+      startDate = moment(propStartDate);
+    }
+    if (!endDate && propEndDate) {
+      endDate = moment(propEndDate);
+    }
+    if (!startMinutes && !startHour && propStartDate) {
+      startMinutes = propStartDate.minutes();
+      startHour = propStartDate.hours();
+    }
+    if (!endMinutes && !endHour && propEndDate) {
+      endMinutes = propEndDate.minutes();
+      endHour = propEndDate.hours();
+    }
+    return {
+      startDate,
+      endDate,
+      startMinutes,
+      startHour,
+      endMinutes,
+      endHour,
+    };
+  }
+
   handleDateChange = ({ startDate, endDate }) => {
+    const { onStartDateChange, onEndDateChange } = this.props;
+
     this.setState(prevState => ({
       startDate,
       endDate,
@@ -53,9 +88,16 @@ class DateTimePicker extends React.PureComponent {
         : prevState.visiblePicker,
       showTimeInputs: !!(endDate || prevState.endDate),
     }));
+    if (onStartDateChange) {
+      onStartDateChange(startDate);
+    }
+    if (onEndDateChange) {
+      onEndDateChange(endDate);
+    }
   };
 
   handleTimeSelect = (type, units, value) => {
+    const { onStartTimeChange, onEndTimeChange } = this.props;
     const unitsToStateVariable = {
       [TimeRange.minutes]: type === TimeSuggestions.startTime ? 'startMinutes' : 'endMinutes',
       [TimeRange.hour]: type === TimeSuggestions.startTime ? 'startHour' : 'endHour',
@@ -64,6 +106,11 @@ class DateTimePicker extends React.PureComponent {
     this.setState({
       [unitsToStateVariable[units]]: value,
     });
+    if (type === TimeSuggestions.startTime) {
+      onStartTimeChange(units, value);
+    } else {
+      onEndTimeChange(units, value);
+    }
   };
 
   isDayBlocked = day => day.isBefore(now);
@@ -248,6 +295,12 @@ DateTimePicker.propTypes = {
   error: PropTypes.string,
   className: PropTypes.string,
   texts: TextsType,
+  startDate: PropTypes.instanceOf(moment),
+  endDate: PropTypes.instanceOf(moment),
+  onStartDateChange: PropTypes.func,
+  onEndDateChange: PropTypes.func,
+  onStartTimeChange: PropTypes.func,
+  onEndTimeChange: PropTypes.func,
 };
 
 DateTimePicker.defaultProps = {

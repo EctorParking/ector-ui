@@ -14,7 +14,7 @@
 .shadowWrapper {
   background-color: var(--white);
   border-radius: var(--marginXSmall);
-  box-shadow: 0 0 15px 2px var(--darkMetalGrey);
+  box-shadow: var(--pickerBoxShadow);
   display: flex;
   position: relative;
   z-index: 2;

@@ -21,9 +21,10 @@
 }
 
 .pickerSuggestions {
-  width: 620px !important;
+  width: 610px !important;
   margin-left: -300px;
   left: 50%;
+  height: 230px !important;
 
   &:before {
     display: none;
@@ -31,7 +32,7 @@
 }
 
 .suggestionsArrow {
-  margin-left: -19px;
+  margin-left: -9px;
 }
 
 .picker {
@@ -50,13 +51,17 @@
 }
 
 .fixedWidthDateInput {
+  min-width: 160px;
+  width: 160px;
   max-width: 160px;
 }
 
 .timePickerInput {
   border: none !important;
+  border-radius: 0;
   max-width: 100px;
   padding-left: calc(var(--marginLarge) + var(--marginXSmall));
+  margin-right: 1px;
 }
 
 .timePickerInput::placeholder {
@@ -104,6 +109,8 @@
   &:after {
     background: linear-gradient(to top, var(--white), rgba(255, 255, 255, 0.1));
     bottom: 0;
+    border-bottom-left-radius: var(--marginXSmall);
+    border-bottom-right-radius: var(--marginXSmall);
   }
 }
 
