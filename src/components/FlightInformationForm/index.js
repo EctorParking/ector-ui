@@ -174,7 +174,7 @@ class FlightInformationForm extends React.Component {
           {toSpot && !shouldDisplayReturnFlightInformation && (
             <ActionLink
               label={texts.unknown}
-              className={s.actionLink}
+              className={[s.actionLink, toSpotsAvailable.length <= 1 ? s.flexStart : s.flexEnd].join(' ')}
               onClick={this.showExtraFields}
             />
           )}
