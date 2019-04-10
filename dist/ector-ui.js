@@ -285,8 +285,24 @@ function _slicedToArray(arr, i) {
   return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();
 }
 
+function _toConsumableArray(arr) {
+  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
+}
+
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) {
+    for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) arr2[i] = arr[i];
+
+    return arr2;
+  }
+}
+
 function _arrayWithHoles(arr) {
   if (Array.isArray(arr)) return arr;
+}
+
+function _iterableToArray(iter) {
+  if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
 }
 
 function _iterableToArrayLimit(arr, i) {
@@ -313,6 +329,10 @@ function _iterableToArrayLimit(arr, i) {
   }
 
   return _arr;
+}
+
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance");
 }
 
 function _nonIterableRest() {
@@ -5124,9 +5144,10 @@ PickerSuggestions.propTypes = {
 var _ZoneTypesToIconName;
 var ZoneTypes = {
   airport: 'airport',
-  station: 'station'
+  station: 'station',
+  mixed: 'mixed'
 };
-var ZoneTypesToIconName = (_ZoneTypesToIconName = {}, _defineProperty(_ZoneTypesToIconName, ZoneTypes.airport, 'ec-plane'), _defineProperty(_ZoneTypesToIconName, ZoneTypes.station, 'ec-station'), _ZoneTypesToIconName);
+var ZoneTypesToIconName = (_ZoneTypesToIconName = {}, _defineProperty(_ZoneTypesToIconName, ZoneTypes.airport, 'ec-plane'), _defineProperty(_ZoneTypesToIconName, ZoneTypes.station, 'ec-station'), _defineProperty(_ZoneTypesToIconName, ZoneTypes.mixed, 'ec-station'), _ZoneTypesToIconName);
 var Type = PropTypes$1.shape({
   name: PropTypes$1.string.isRequired,
   code: PropTypes$1.string.isRequired,
@@ -5570,7 +5591,7 @@ function (_React$PureComponent) {
       }, React.createElement("div", {
         className: [s$11.suggestions, visible ? s$11.visible : undefined].join(' ')
       }, fromZoneSuggestions.map(_this.renderFromZoneSuggestion)), React.createElement("div", {
-        className: [s$11.suggestions, s$11.splitSuggestions, visible && split ? s$11.visible : undefined].join(' ')
+        className: [s$11.suggestions, visible && split ? s$11.visible : undefined].join(' ')
       }, toZoneSuggestions.map(_this.renderToZoneSuggestion))), React.createElement("div", {
         className: [s$11.suggestionAction, visible ? s$11.suggestionActionVisible : undefined].join(' ')
       }, React.createElement(InputCheckbox, {
@@ -10352,11 +10373,11 @@ function _possibleConstructorReturn$1(self, call) {
   return _assertThisInitialized$1(self);
 }
 
-function _toConsumableArray(arr) {
-  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
+function _toConsumableArray$1(arr) {
+  return _arrayWithoutHoles$1(arr) || _iterableToArray$1(arr) || _nonIterableSpread$1();
 }
 
-function _arrayWithoutHoles(arr) {
+function _arrayWithoutHoles$1(arr) {
   if (Array.isArray(arr)) {
     for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) arr2[i] = arr[i];
 
@@ -10364,11 +10385,11 @@ function _arrayWithoutHoles(arr) {
   }
 }
 
-function _iterableToArray(iter) {
+function _iterableToArray$1(iter) {
   if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
 }
 
-function _nonIterableSpread() {
+function _nonIterableSpread$1() {
   throw new TypeError("Invalid attempt to spread non-iterable instance");
 }
 
@@ -13099,7 +13120,7 @@ function (_Component) {
           });
         } else {
           if (!_this.isOptionDisabled(newValue, selectValue)) {
-            _this.setValue([].concat(_toConsumableArray(selectValue), [newValue]), 'select-option', newValue);
+            _this.setValue([].concat(_toConsumableArray$1(selectValue), [newValue]), 'select-option', newValue);
 
             _this.announceAriaLiveSelection({
               event: 'select-option',
@@ -15111,7 +15132,7 @@ var makeCreatableSelect = function makeCreatableSelect(SelectComponent) {
             };
 
             if (isMulti) {
-              onChange([].concat(_toConsumableArray(cleanValue(value)), [newOptionData]), newActionMeta);
+              onChange([].concat(_toConsumableArray$1(cleanValue(value)), [newOptionData]), newActionMeta);
             } else {
               onChange(newOptionData, newActionMeta);
             }
@@ -15152,7 +15173,7 @@ var makeCreatableSelect = function makeCreatableSelect(SelectComponent) {
 
         this.setState({
           newOption: newOption,
-          options: (allowCreateWhileLoading || !isLoading) && newOption ? createOptionPosition === 'first' ? [newOption].concat(_toConsumableArray(options)) : [].concat(_toConsumableArray(options), [newOption]) : options
+          options: (allowCreateWhileLoading || !isLoading) && newOption ? createOptionPosition === 'first' ? [newOption].concat(_toConsumableArray$1(options)) : [].concat(_toConsumableArray$1(options), [newOption]) : options
         });
       }
     }, {
@@ -15512,6 +15533,54 @@ InputSelect.propTypes = {
   onChange: PropTypes$1.func.isRequired
 };
 
+var css$1a = ".RatingStars-module_activeStar__2uwd9:before {\n  color: attr(data-color) !important;\n}\n\n.RatingStars-module_inactiveStar__DyEZH:before {\n  color: rgb(206, 206, 206) !important;\n}\n\n.RatingStars-module_container__3pCeB {\n  position: relative;\n}\n\n.RatingStars-module_activeStars__1LEHa {\n  position: absolute;\n  top: 0;\n  overflow: hidden;\n}\n";
+var s$18 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","activeStar":"RatingStars-module_activeStar__2uwd9","inactiveStar":"RatingStars-module_inactiveStar__DyEZH","container":"RatingStars-module_container__3pCeB","activeStars":"RatingStars-module_activeStars__1LEHa"};
+styleInject(css$1a);
+
+var stars = _toConsumableArray(Array(5).keys());
+
+var RatingStars = function RatingStars(props) {
+  var value = props.value,
+      className = props.className,
+      activeColor = props.activeColor,
+      inactiveColor = props.inactiveColor;
+  return React__default.createElement("div", {
+    className: [s$18.container, className].join(' ')
+  }, stars.map(function () {
+    return React__default.createElement("span", {
+      style: {
+        color: inactiveColor
+      },
+      className: ['icon icon-ec-google-star', s$18.inactiveStar].join(' ')
+    });
+  }), React__default.createElement("div", {
+    className: s$18.activeStars,
+    style: {
+      width: "".concat(value * 20, "%")
+    }
+  }, stars.map(function () {
+    return React__default.createElement("span", {
+      style: {
+        color: activeColor
+      },
+      className: ['icon icon-ec-google-star', s$18.activeStar].join(' ')
+    });
+  })));
+};
+
+RatingStars.defaultProps = {
+  value: 4,
+  className: undefined,
+  activeColor: Colors$1.yellow,
+  inactiveColor: Colors$1.metalGrey
+};
+RatingStars.propTypes = {
+  value: PropTypes$1.number,
+  className: PropTypes$1.string,
+  activeColor: PropTypes$1.string,
+  inactiveColor: PropTypes$1.string
+};
+
 var index$2 = './components';
 
 exports.ActionLink = ActionLink;
@@ -15552,6 +15621,7 @@ exports.Picker = Picker;
 exports.PickerSuggestions = PickerSuggestions;
 exports.PricingSummary = PricingSummary;
 exports.RadioButton = RadioButton;
+exports.RatingStars = RatingStars;
 exports.ReferralCard = ReferralCard;
 exports.RegistrationForm = RegistrationForm;
 exports.RewardCard = RewardCard;
