@@ -14,22 +14,8 @@ class TimeRange extends React.PureComponent {
     super(props);
     const { startHour, endHour, minutesInterval } = props;
 
-    this.minutesContainer = React.createRef();
-    this.hoursContainer = React.createRef();
     this.minutesRange = getMinutesRange(minutesInterval);
     this.hoursRange = getHoursRange(startHour, endHour);
-  }
-
-  componentDidUpdate(prevProps) {
-    const { hour: prevHour, minutes: prevMinutes } = prevProps;
-    const { hour: currentHour, minutes: currentMinutes } = this.props;
-
-    if (prevHour !== currentHour) {
-      this.focusSelectedHour();
-    }
-    if (prevMinutes !== currentMinutes) {
-      this.focusSelectedMinutes();
-    }
   }
 
   handleHourSelect = (event) => {
@@ -42,26 +28,6 @@ class TimeRange extends React.PureComponent {
     const { onSelect } = this.props;
 
     onSelect(TimeRange.minutes, event.currentTarget.innerHTML);
-  };
-
-  focusSelectedHour = () => {
-    // eslint-disable-next-line
-    for(const child of this.hoursContainer.current.children) {
-      const isSelected = child.getAttribute('aria-selected');
-      if (isSelected) {
-        break;
-      }
-    }
-  };
-
-  focusSelectedMinutes = () => {
-    // eslint-disable-next-line
-    for(const child of this.minutesContainer.current.children) {
-      const isSelected = child.getAttribute('aria-selected');
-      if (isSelected) {
-        break;
-      }
-    }
   };
 
   renderHour = (hour) => {
@@ -99,10 +65,10 @@ class TimeRange extends React.PureComponent {
   render() {
     return (
       <div className={s.container}>
-        <div className={s.hours} ref={this.hoursContainer}>
+        <div className={s.hours}>
           {this.hoursRange.map(this.renderHour)}
         </div>
-        <div className={s.minutes} ref={this.minutesContainer}>
+        <div className={s.minutes}>
           {this.minutesRange.map(this.renderMinutes)}
         </div>
       </div>

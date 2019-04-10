@@ -23,7 +23,7 @@
   &:hover, &.selected {
     border-radius: var(--marginXSmall);
     cursor: pointer;
-    font-weight: bolder;
+    font-weight: bold;
   }
   &:hover {
      background-color: var(--lightYellow);

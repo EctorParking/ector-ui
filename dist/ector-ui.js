@@ -5144,10 +5144,9 @@ PickerSuggestions.propTypes = {
 var _ZoneTypesToIconName;
 var ZoneTypes = {
   airport: 'airport',
-  station: 'station',
-  mixed: 'mixed'
+  station: 'station'
 };
-var ZoneTypesToIconName = (_ZoneTypesToIconName = {}, _defineProperty(_ZoneTypesToIconName, ZoneTypes.airport, 'ec-plane'), _defineProperty(_ZoneTypesToIconName, ZoneTypes.station, 'ec-station'), _defineProperty(_ZoneTypesToIconName, ZoneTypes.mixed, 'ec-station'), _ZoneTypesToIconName);
+var ZoneTypesToIconName = (_ZoneTypesToIconName = {}, _defineProperty(_ZoneTypesToIconName, ZoneTypes.airport, 'ec-plane'), _defineProperty(_ZoneTypesToIconName, ZoneTypes.station, 'ec-station'), _ZoneTypesToIconName);
 var Type = PropTypes$1.shape({
   name: PropTypes$1.string.isRequired,
   code: PropTypes$1.string.isRequired,
@@ -6220,7 +6219,7 @@ DateTimePicker.defaultProps = {
   texts: DefaultTexts$7
 };
 
-var css$15 = ".TimeRange-module_container__qP7nK {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  height: 100%;\n}\n\n.TimeRange-module_hours__9eQEI, .TimeRange-module_minutes__1mA4X {\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  overflow: scroll;\n  position: relative;\n  padding: 0 5px\n}\n\n.TimeRange-module_hours__9eQEI::-webkit-scrollbar, .TimeRange-module_minutes__1mA4X::-webkit-scrollbar {\n  display: none;\n}\n\n.TimeRange-module_hour__XiHg6, .TimeRange-module_minute__32J9f {\n  min-width: 20px;\n  padding: 5px 10px;\n  text-align: center\n}\n\n.TimeRange-module_hour__XiHg6:hover, .TimeRange-module_hour__XiHg6.TimeRange-module_selected__1EEqQ, .TimeRange-module_minute__32J9f:hover, .TimeRange-module_minute__32J9f.TimeRange-module_selected__1EEqQ {\n  border-radius: 5px;\n  cursor: pointer;\n  font-weight: bolder;\n}\n\n.TimeRange-module_hour__XiHg6:hover, .TimeRange-module_minute__32J9f:hover {\n  background-color: rgb(255, 245, 204);\n}\n\n.TimeRange-module_hour__XiHg6.TimeRange-module_selected__1EEqQ, .TimeRange-module_minute__32J9f.TimeRange-module_selected__1EEqQ {\n  background-color: #ffcd02;\n}\n\n.TimeRange-module_hour__XiHg6.TimeRange-module_disabled__TxWjV, .TimeRange-module_minute__32J9f.TimeRange-module_disabled__TxWjV {\n  color: #939baa;\n}\n";
+var css$15 = ".TimeRange-module_container__qP7nK {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  height: 100%;\n}\n\n.TimeRange-module_hours__9eQEI, .TimeRange-module_minutes__1mA4X {\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  overflow: scroll;\n  position: relative;\n  padding: 0 5px\n}\n\n.TimeRange-module_hours__9eQEI::-webkit-scrollbar, .TimeRange-module_minutes__1mA4X::-webkit-scrollbar {\n  display: none;\n}\n\n.TimeRange-module_hour__XiHg6, .TimeRange-module_minute__32J9f {\n  min-width: 20px;\n  padding: 5px 10px;\n  text-align: center\n}\n\n.TimeRange-module_hour__XiHg6:hover, .TimeRange-module_hour__XiHg6.TimeRange-module_selected__1EEqQ, .TimeRange-module_minute__32J9f:hover, .TimeRange-module_minute__32J9f.TimeRange-module_selected__1EEqQ {\n  border-radius: 5px;\n  cursor: pointer;\n  font-weight: bold;\n}\n\n.TimeRange-module_hour__XiHg6:hover, .TimeRange-module_minute__32J9f:hover {\n  background-color: rgb(255, 245, 204);\n}\n\n.TimeRange-module_hour__XiHg6.TimeRange-module_selected__1EEqQ, .TimeRange-module_minute__32J9f.TimeRange-module_selected__1EEqQ {\n  background-color: #ffcd02;\n}\n\n.TimeRange-module_hour__XiHg6.TimeRange-module_disabled__TxWjV, .TimeRange-module_minute__32J9f.TimeRange-module_disabled__TxWjV {\n  color: #939baa;\n}\n";
 var s$15 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","container":"TimeRange-module_container__qP7nK","hours":"TimeRange-module_hours__9eQEI","minutes":"TimeRange-module_minutes__1mA4X","hour":"TimeRange-module_hour__XiHg6","minute":"TimeRange-module_minute__32J9f","selected":"TimeRange-module_selected__1EEqQ","disabled":"TimeRange-module_disabled__TxWjV"};
 styleInject(css$15);
 
@@ -6287,68 +6286,6 @@ function (_React$PureComponent) {
       onSelect(TimeRange.minutes, event.currentTarget.innerHTML);
     });
 
-    _defineProperty(_assertThisInitialized(_this), "focusSelectedHour", function () {
-      // eslint-disable-next-line
-      var _iteratorNormalCompletion = true;
-      var _didIteratorError = false;
-      var _iteratorError = undefined;
-
-      try {
-        for (var _iterator = _this.hoursContainer.current.children[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-          var child = _step.value;
-          var isSelected = child.getAttribute('aria-selected');
-
-          if (isSelected) {
-            break;
-          }
-        }
-      } catch (err) {
-        _didIteratorError = true;
-        _iteratorError = err;
-      } finally {
-        try {
-          if (!_iteratorNormalCompletion && _iterator.return != null) {
-            _iterator.return();
-          }
-        } finally {
-          if (_didIteratorError) {
-            throw _iteratorError;
-          }
-        }
-      }
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "focusSelectedMinutes", function () {
-      // eslint-disable-next-line
-      var _iteratorNormalCompletion2 = true;
-      var _didIteratorError2 = false;
-      var _iteratorError2 = undefined;
-
-      try {
-        for (var _iterator2 = _this.minutesContainer.current.children[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-          var child = _step2.value;
-          var isSelected = child.getAttribute('aria-selected');
-
-          if (isSelected) {
-            break;
-          }
-        }
-      } catch (err) {
-        _didIteratorError2 = true;
-        _iteratorError2 = err;
-      } finally {
-        try {
-          if (!_iteratorNormalCompletion2 && _iterator2.return != null) {
-            _iterator2.return();
-          }
-        } finally {
-          if (_didIteratorError2) {
-            throw _iteratorError2;
-          }
-        }
-      }
-    });
-
     _defineProperty(_assertThisInitialized(_this), "renderHour", function (hour) {
       var selectedHour = _this.props.hour;
       var isSelected = +selectedHour === +hour;
@@ -6378,41 +6315,20 @@ function (_React$PureComponent) {
     var startHour = props.startHour,
         endHour = props.endHour,
         minutesInterval = props.minutesInterval;
-    _this.minutesContainer = React__default.createRef();
-    _this.hoursContainer = React__default.createRef();
     _this.minutesRange = getMinutesRange(minutesInterval);
     _this.hoursRange = getHoursRange(startHour, endHour);
     return _this;
   }
 
   _createClass(TimeRange, [{
-    key: "componentDidUpdate",
-    value: function componentDidUpdate(prevProps) {
-      var prevHour = prevProps.hour,
-          prevMinutes = prevProps.minutes;
-      var _this$props = this.props,
-          currentHour = _this$props.hour,
-          currentMinutes = _this$props.minutes;
-
-      if (prevHour !== currentHour) {
-        this.focusSelectedHour();
-      }
-
-      if (prevMinutes !== currentMinutes) {
-        this.focusSelectedMinutes();
-      }
-    }
-  }, {
     key: "render",
     value: function render() {
       return React__default.createElement("div", {
         className: s$15.container
       }, React__default.createElement("div", {
-        className: s$15.hours,
-        ref: this.hoursContainer
+        className: s$15.hours
       }, this.hoursRange.map(this.renderHour)), React__default.createElement("div", {
-        className: s$15.minutes,
-        ref: this.minutesContainer
+        className: s$15.minutes
       }, this.minutesRange.map(this.renderMinutes)));
     }
   }]);
@@ -15533,8 +15449,8 @@ InputSelect.propTypes = {
   onChange: PropTypes$1.func.isRequired
 };
 
-var css$1a = ".RatingStars-module_activeStar__2uwd9:before {\n  color: attr(data-color) !important;\n}\n\n.RatingStars-module_inactiveStar__DyEZH:before {\n  color: rgb(206, 206, 206) !important;\n}\n\n.RatingStars-module_container__3pCeB {\n  position: relative;\n}\n\n.RatingStars-module_activeStars__1LEHa {\n  position: absolute;\n  top: 0;\n  overflow: hidden;\n}\n";
-var s$18 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","activeStar":"RatingStars-module_activeStar__2uwd9","inactiveStar":"RatingStars-module_inactiveStar__DyEZH","container":"RatingStars-module_container__3pCeB","activeStars":"RatingStars-module_activeStars__1LEHa"};
+var css$1a = ".RatingStars-module_container__3pCeB {\n  position: relative;\n}\n\n.RatingStars-module_activeStars__1LEHa {\n  position: absolute;\n  top: 0;\n  overflow: hidden;\n}\n";
+var s$18 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","container":"RatingStars-module_container__3pCeB","activeStars":"RatingStars-module_activeStars__1LEHa"};
 styleInject(css$1a);
 
 var stars = _toConsumableArray(Array(5).keys());
