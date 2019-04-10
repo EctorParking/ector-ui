@@ -61,10 +61,29 @@
 
 @media (--maxMobile) {
     .card {
-        background: transparent;
-        padding: 0;
+        width: 100%;
     }
     .contentCard {
+        padding: var(--marginMedium);
+    }
+    .halfWidth, .input {
+        width: 100%;
+    }
+    .input {
+        flex: none;
+        margin-top: var(--marginXSmall);
+    }
+    .row {
+        margin: 0;
+        flex-wrap: wrap;
+    }
+    .firstColumn, .secondColumn {
         padding: 0;
+    }
+    .title {
+        font-size: var(--fontSizeSubtitle);
+    }
+    .description {
+        margin: calc(var(--marginSmall) + var(--marginXSmall)) 0;
     }
 }
