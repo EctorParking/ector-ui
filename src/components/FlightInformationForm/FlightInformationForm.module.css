@@ -33,6 +33,10 @@
     display: flex;
 }
 
+.noMargin {
+    margin: 0;
+}
+
 .input {
     flex: 1;
 }

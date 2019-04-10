@@ -146,7 +146,12 @@ class FlightInformationForm extends React.Component {
         )}
         <>
           {fromSpotsAvailable.length > 1 && (<h2 className={s.title}>{texts.outTitle}</h2>)}
-          <div className={[s.row, toSpotsAvailable.length <= 1 || !toSpot ? s.halfWidth : undefined].join(' ')}>
+          <div className={[
+            s.row,
+            toSpotsAvailable.length <= 1 || !toSpot ? s.halfWidth : undefined,
+            fromSpotsAvailable.length <= 1 ? s.noMargin : undefined,
+          ].join(' ')}
+          >
             {toSpotsAvailable.length > 1 && (
               <InputLabel
                 label={this.getLabelSpot(toSpot)}
