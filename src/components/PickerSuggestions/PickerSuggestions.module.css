@@ -3,9 +3,9 @@
 .container {
   background-color: var(--white);
   border-radius: var(--marginXSmall);
-  box-shadow: 0 0 15px 2px var(--darkMetalGrey);
+  box-shadow: var(--pickerBoxShadow);
   height: var(--pickerSuggestionsHeight);
-  left: -25%;
+  left: -10%;
   min-height: 150px;
   opacity: 0;
   pointer-events: none;
@@ -13,7 +13,7 @@
   top: 65px;
   transform: translateY(calc(var(--marginXLarge) * -1));
   transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
-  width: 150%;
+  width: 120%;
 
   &.visible {
     opacity: 1;

@@ -11,6 +11,9 @@
   overflow: scroll;
   position: relative;
   padding: 0 5px;
+  &::-webkit-scrollbar {
+     display: none;
+  }
 }
 
 .hour, .minute {
