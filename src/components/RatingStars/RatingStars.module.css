@@ -1,13 +1,5 @@
 @import '../../style/variable.global.css';
 
-.activeStar:before {
-  color: var(--yellow) !important;
-}
-
-.inactiveStar:before {
-  color: var(--darkMetalGrey) !important;
-}
-
 .container {
   position: relative;
 }
