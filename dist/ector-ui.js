@@ -4188,8 +4188,8 @@ Subtitle.propTypes = {
   className: PropTypes$1.string
 };
 
-var css$Q = ".Title-module_title__gpPet {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  margin-bottom: 30px;\n}\n\n.Title-module_title__gpPet .Title-module_element__1EYDR {\n  color: #163457;\n  font-size: 40px;\n  font-weight: 500;\n  line-height: 1;\n  margin: 0 0 10px;\n}\n\n.Title-module_title__gpPet .Title-module_horizontalRule__1wwO9 {\n  border: 0;\n  border-top: 2px solid #32a0c5;\n  margin: 0;\n  width: 50px;\n}\n\n@media (max-width: 480px) {\n  .Title-module_title__gpPet .Title-module_element__1EYDR {\n    font-size: 22px;\n  }\n}\n";
-var s$Q = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","title":"Title-module_title__gpPet","element":"Title-module_element__1EYDR","horizontalRule":"Title-module_horizontalRule__1wwO9"};
+var css$Q = ".Title-module_title__gpPet, .Title-module_newTitle__3v8No {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  margin-bottom: 30px;\n}\n\n.Title-module_title__gpPet .Title-module_element__1EYDR {\n  color: #163457;\n  font-size: 40px;\n  font-weight: 500;\n  line-height: 1;\n  margin: 0 0 10px;\n}\n\n.Title-module_newTitle__3v8No .Title-module_element__1EYDR {\n  color: #32a0c5;\n  font-size: 30px;\n  font-weight: 700;\n  line-height: 1;\n  margin: 0 0 10px;\n}\n\n.Title-module_title__gpPet .Title-module_horizontalRule__1wwO9 {\n  border: 0;\n  border-top: 2px solid #32a0c5;\n  margin: 0;\n  width: 50px;\n}\n\n@media (max-width: 480px) {\n  .Title-module_title__gpPet .Title-module_element__1EYDR, .Title-module_newTitle__3v8No .Title-module_element__1EYDR {\n    font-size: 22px;\n  }\n}\n";
+var s$Q = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","title":"Title-module_title__gpPet","newTitle":"Title-module_newTitle__3v8No","element":"Title-module_element__1EYDR","horizontalRule":"Title-module_horizontalRule__1wwO9"};
 styleInject(css$Q);
 
 var Title = function Title(_ref) {
@@ -4207,12 +4207,35 @@ var Title = function Title(_ref) {
   }));
 };
 
+var NewTitle = function NewTitle(_ref2) {
+  var label = _ref2.label,
+      className = _ref2.className,
+      htmlElement = _ref2.htmlElement,
+      testid = _ref2.testid;
+  return React__default.createElement("div", {
+    className: "".concat(s$Q.newTitle, " ").concat(className),
+    testid: testid
+  }, React__default.createElement(htmlElement, {
+    className: s$Q.element
+  }, label));
+};
 Title.defaultProps = {
   className: '',
   htmlElement: 'h1',
   testid: ''
 };
 Title.propTypes = {
+  label: PropTypes$1.string.isRequired,
+  className: PropTypes$1.string,
+  htmlElement: PropTypes$1.string,
+  testid: PropTypes$1.string
+};
+NewTitle.defaultProps = {
+  className: '',
+  htmlElement: 'h1',
+  testid: ''
+};
+NewTitle.propTypes = {
   label: PropTypes$1.string.isRequired,
   className: PropTypes$1.string,
   htmlElement: PropTypes$1.string,
@@ -15454,6 +15477,7 @@ exports.Label = Label;
 exports.LinkUnderlined = LinkUnderlined;
 exports.Loader = Loader;
 exports.LoginForm = LoginForm;
+exports.NewTitle = NewTitle;
 exports.PaymentMethodCard = PaymentMethodCard;
 exports.PhoneInput = PhoneInput;
 exports.Picker = Picker;
