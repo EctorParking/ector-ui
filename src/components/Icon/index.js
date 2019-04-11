@@ -58,14 +58,21 @@ IconComponent.propTypes = {
 };
 
 const Icon = ({
-  variant, position, src, name, children, IconComponent: Component, ...containerProps
+  variant,
+  position,
+  src,
+  name,
+  children,
+  backgroundClassName,
+  IconComponent: Component,
+  ...containerProps
 }) => {
   const hasBackground = !!BackgroundImages[variant];
 
   return (
     <span {...containerProps}>
       {hasBackground
-        ? (<img src={BackgroundImages[variant]} alt="icon background" className={s.background} />)
+        ? (<img src={BackgroundImages[variant]} alt="icon background" className={[s.background, backgroundClassName].join(' ')} />)
         : null
       }
       <Component
@@ -86,6 +93,7 @@ Icon.defaultProps = {
   src: undefined,
   name: undefined,
   className: undefined,
+  backgroundClassName: undefined,
   variant: Backgrounds.none,
   position: null,
   children: null,
@@ -96,6 +104,7 @@ Icon.propTypes = {
   src: PropTypes.string,
   name: PropTypes.string,
   className: PropTypes.string,
+  backgroundClassName: PropTypes.string,
   variant: PropTypes.oneOf(Object.keys(Backgrounds)),
   position: PropTypes.oneOfType([null, PropTypes.oneOf(Positions)]),
   children: PropTypes.arrayOf(PropTypes.element),
