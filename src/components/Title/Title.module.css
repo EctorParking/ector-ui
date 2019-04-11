@@ -17,7 +17,7 @@
 .newTitle .element {
   color: var(--blue);
   font-size: var(--fontSizeNewTitle);
-  font-weight: var(--fontWeightRegular);
+  font-weight: var(--fontWeightBold);
   line-height: 1;
   margin: 0 0 var(--marginSmall);
 }
