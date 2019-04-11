@@ -19,6 +19,7 @@ export const TextsType = PropTypes.shape({
   spotLabelUnknown: PropTypes.string,
   switchMandatoryAirportDescription: PropTypes.string,
   switchMandatoryStationDescription: PropTypes.string,
+  noResult: PropTypes.string,
 });
 
 export const DefaultTexts = {
@@ -40,4 +41,5 @@ export const DefaultTexts = {
   spotLabelUnknown: 'Lieu de rendez-vous',
   switchMandatoryAirportDescription: 'Si vous ne connaissez pas votre numéro de vol, veuillez indiquer la compagnie aérienne et la ville de provenance de votre dernier vol.',
   switchMandatoryStationDescription: 'Si vous ne connaissez pas votre numéro de train, veuillez indiquer la ville de provenance de votre dernier train.',
+  noResult: 'Pas de résultats',
 };
