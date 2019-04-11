@@ -91,6 +91,7 @@ class FlightInformationForm extends React.Component {
         onChange={this.onChangeReturnFlightCompany}
         isClearable
         isSearchable
+        noOptionsMessage={() => texts.noResult}
       />
     );
   };
@@ -148,7 +149,7 @@ class FlightInformationForm extends React.Component {
           {fromSpotsAvailable.length > 1 && (<h2 className={s.title}>{texts.outTitle}</h2>)}
           <div className={[
             s.row,
-            toSpotsAvailable.length <= 1 || !toSpot ? s.halfWidth : undefined,
+            !toSpot || (toSpotsAvailable.length <= 1 && toSpot.type !== 'station') ? s.halfWidth : undefined,
             fromSpotsAvailable.length <= 1 ? s.noMargin : undefined,
           ].join(' ')}
           >
@@ -168,6 +169,18 @@ class FlightInformationForm extends React.Component {
                 mandatory={!shouldDisplayReturnFlightInformation}
                 className={[s.input, toSpotsAvailable.length > 1 ? s.secondColumn : s.firstColumn].join(' ')}
                 onChange={this.onChangeTravelingNumberTo}
+                autoComplete="off"
+              />
+            )}
+            {toSpotsAvailable.length <= 1 && toSpot && toSpot.type === 'station' && (
+              <InputLabel
+                label={texts.returnFlightOriginLabel}
+                placeholder={texts.returnFlightOriginPlaceholder}
+                value={returnFlightOrigin}
+                onChange={this.onChangeReturnFlightOrigin}
+                className={[s.input, s.firstColumn].join(' ')}
+                mandatory={shouldDisplayReturnFlightInformation}
+                autoComplete="off"
               />
             )}
           </div>
@@ -183,7 +196,7 @@ class FlightInformationForm extends React.Component {
               <span>{toSpot.type === 'airport' ? texts.switchMandatoryAirportDescription : texts.switchMandatoryStationDescription}</span>
             </div>
           )}
-          {toSpot && (
+          {toSpot && toSpotsAvailable.length > 1 && (
             <div className={[s.row, toSpot.type === 'station' ? s.halfWidth : undefined].join(' ')}>
               <InputLabel
                 label={texts.returnFlightOriginLabel}
@@ -192,6 +205,7 @@ class FlightInformationForm extends React.Component {
                 onChange={this.onChangeReturnFlightOrigin}
                 className={[s.input, s.firstColumn].join(' ')}
                 mandatory={shouldDisplayReturnFlightInformation}
+                autoComplete="off"
               />
               {toSpot.type === 'airport' && (
                 <InputLabel

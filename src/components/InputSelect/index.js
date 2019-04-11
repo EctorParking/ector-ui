@@ -32,6 +32,12 @@ const ectorStyles = {
   control: styles => ({
     ...styles,
     borderWidth: 2,
+    boxShadow: 'none',
+  }),
+  placeholder: styles => ({
+    ...styles,
+    opacity: 0.8,
+    fontWeight: 500,
   }),
 };
 
