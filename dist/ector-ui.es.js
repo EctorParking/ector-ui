@@ -4203,7 +4203,7 @@ Subtitle.propTypes = {
   className: PropTypes$1.string
 };
 
-var css$Q = ".Title-module_title__gpPet, .Title-module_newTitle__3v8No {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  margin-bottom: 30px;\n}\n\n.Title-module_title__gpPet .Title-module_element__1EYDR {\n  color: #163457;\n  font-size: 40px;\n  font-weight: 500;\n  line-height: 1;\n  margin: 0 0 10px;\n}\n\n.Title-module_newTitle__3v8No .Title-module_element__1EYDR {\n  color: #32a0c5;\n  font-size: 30px;\n  font-weight: 700;\n  line-height: 1;\n  margin: 0 0 10px;\n}\n\n.Title-module_title__gpPet .Title-module_horizontalRule__1wwO9 {\n  border: 0;\n  border-top: 2px solid #32a0c5;\n  margin: 0;\n  width: 50px;\n}\n\n@media (max-width: 480px) {\n  .Title-module_title__gpPet .Title-module_element__1EYDR, .Title-module_newTitle__3v8No .Title-module_element__1EYDR {\n    font-size: 22px;\n  }\n}\n";
+var css$Q = ".Title-module_title__gpPet, .Title-module_newTitle__3v8No {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  margin-bottom: 30px;\n}\n\n.Title-module_title__gpPet .Title-module_element__1EYDR {\n  color: #163457;\n  font-size: 40px;\n  font-weight: 500;\n  line-height: 1;\n  margin: 0 0 10px;\n}\n\n.Title-module_newTitle__3v8No .Title-module_element__1EYDR {\n  color: #32a0c5;\n  font-size: 30px;\n  font-weight: 500;\n  line-height: 1;\n  margin: 0 0 10px;\n}\n\n.Title-module_title__gpPet .Title-module_horizontalRule__1wwO9 {\n  border: 0;\n  border-top: 2px solid #32a0c5;\n  margin: 0;\n  width: 50px;\n}\n\n@media (max-width: 480px) {\n  .Title-module_title__gpPet .Title-module_element__1EYDR, .Title-module_newTitle__3v8No .Title-module_element__1EYDR {\n    font-size: 22px;\n  }\n}\n";
 var s$Q = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","title":"Title-module_title__gpPet","newTitle":"Title-module_newTitle__3v8No","element":"Title-module_element__1EYDR","horizontalRule":"Title-module_horizontalRule__1wwO9"};
 styleInject(css$Q);
 
@@ -5715,14 +5715,15 @@ var Icon = function Icon(_ref2) {
       src = _ref2.src,
       name = _ref2.name,
       children = _ref2.children,
+      backgroundClassName = _ref2.backgroundClassName,
       Component = _ref2.IconComponent,
-      containerProps = _objectWithoutProperties(_ref2, ["variant", "position", "src", "name", "children", "IconComponent"]);
+      containerProps = _objectWithoutProperties(_ref2, ["variant", "position", "src", "name", "children", "backgroundClassName", "IconComponent"]);
 
   var hasBackground = !!BackgroundImages[variant];
   return React__default.createElement("span", containerProps, hasBackground ? React__default.createElement("img", {
     src: BackgroundImages[variant],
     alt: "icon background",
-    className: s$12.background
+    className: [s$12.background, backgroundClassName].join(' ')
   }) : null, React__default.createElement(Component, {
     src: src,
     name: name,
@@ -5734,6 +5735,7 @@ Icon.defaultProps = {
   src: undefined,
   name: undefined,
   className: undefined,
+  backgroundClassName: undefined,
   variant: Backgrounds.none,
   position: null,
   children: null,
@@ -5743,6 +5745,7 @@ Icon.propTypes = {
   src: PropTypes$1.string,
   name: PropTypes$1.string,
   className: PropTypes$1.string,
+  backgroundClassName: PropTypes$1.string,
   variant: PropTypes$1.oneOf(Object.keys(Backgrounds)),
   position: PropTypes$1.oneOfType([null, PropTypes$1.oneOf(Positions)]),
   children: PropTypes$1.arrayOf(PropTypes$1.element),
@@ -6351,8 +6354,8 @@ TimeRange.propTypes = {
   hour: PropTypes$1.string
 };
 
-var css$16 = ".FlightInformationForm-module_card__3HVvP {\n    width: 650px;\n}\n\n.FlightInformationForm-module_contentCard__2iuCz {}\n\n.FlightInformationForm-module_formContainer__38_9v {\n    margin-bottom: 20px;\n}\n\n.FlightInformationForm-module_title__3yTDe {\n    margin: 0;\n    font-weight: 300;\n    color: #32a0c5;\n}\n\n.FlightInformationForm-module_firstColumn__3dXcq {\n    padding-right: 20px;\n}\n\n.FlightInformationForm-module_secondColumn__1tg-R {\n    padding-left: 20px;\n}\n\n.FlightInformationForm-module_halfWidth__3iWMs {\n    width: 50%;\n}\n\n.FlightInformationForm-module_row__2j-tW {\n    margin-top: 10px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n}\n\n.FlightInformationForm-module_noMargin__DF7_J {\n    margin: 0;\n}\n\n.FlightInformationForm-module_input__1QJpa {\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n}\n\n.FlightInformationForm-module_select__1KZ8b {\n    margin-top: 0;\n}\n\n.FlightInformationForm-module_defaultOption__MJRT6 {\n    color: #d5d6d7;\n}\n\n.FlightInformationForm-module_actionLink__nzpW1 {\n    margin-top: 5px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: end;\n        -ms-flex-pack: end;\n            justify-content: flex-end;\n}\n\n.FlightInformationForm-module_description__38HJs {\n    margin-top: 10px;\n}\n\n@media (max-width: 480px) {\n    .FlightInformationForm-module_card__3HVvP {\n        background: transparent;\n        padding: 0;\n    }\n    .FlightInformationForm-module_contentCard__2iuCz {\n        padding: 0;\n    }\n}\n";
-var s$16 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","card":"FlightInformationForm-module_card__3HVvP","contentCard":"FlightInformationForm-module_contentCard__2iuCz","formContainer":"FlightInformationForm-module_formContainer__38_9v","title":"FlightInformationForm-module_title__3yTDe","firstColumn":"FlightInformationForm-module_firstColumn__3dXcq","secondColumn":"FlightInformationForm-module_secondColumn__1tg-R","halfWidth":"FlightInformationForm-module_halfWidth__3iWMs","row":"FlightInformationForm-module_row__2j-tW","noMargin":"FlightInformationForm-module_noMargin__DF7_J","input":"FlightInformationForm-module_input__1QJpa","select":"FlightInformationForm-module_select__1KZ8b","defaultOption":"FlightInformationForm-module_defaultOption__MJRT6","actionLink":"FlightInformationForm-module_actionLink__nzpW1","description":"FlightInformationForm-module_description__38HJs"};
+var css$16 = ".FlightInformationForm-module_card__3HVvP {\n    width: 650px;\n}\n\n.FlightInformationForm-module_contentCard__2iuCz {}\n\n.FlightInformationForm-module_formContainer__38_9v {\n    margin-bottom: 20px;\n}\n\n.FlightInformationForm-module_title__3yTDe {\n    margin: 0;\n    font-weight: 300;\n    color: #32a0c5;\n}\n\n.FlightInformationForm-module_firstColumn__3dXcq {\n    padding-right: 20px;\n}\n\n.FlightInformationForm-module_secondColumn__1tg-R {\n    padding-left: 20px;\n}\n\n.FlightInformationForm-module_halfWidth__3iWMs {\n    width: 50%;\n}\n\n.FlightInformationForm-module_row__2j-tW {\n    margin-top: 10px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n}\n\n.FlightInformationForm-module_noMargin__DF7_J {\n    margin: 0;\n}\n\n.FlightInformationForm-module_input__1QJpa {\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n}\n\n.FlightInformationForm-module_select__1KZ8b {\n    margin-top: 0;\n}\n\n.FlightInformationForm-module_defaultOption__MJRT6 {\n    color: #d5d6d7;\n}\n\n.FlightInformationForm-module_actionLink__nzpW1 {\n    margin-top: 5px;\n}\n\n.FlightInformationForm-module_flexStart__3he4R {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: start;\n        -ms-flex-pack: start;\n            justify-content: flex-start;\n}\n\n.FlightInformationForm-module_flexEnd__f47Mt {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: end;\n        -ms-flex-pack: end;\n            justify-content: flex-end;\n}\n\n.FlightInformationForm-module_description__38HJs {\n    margin-top: 10px;\n}\n\n@media (max-width: 480px) {\n    .FlightInformationForm-module_card__3HVvP {\n        width: 100%;\n    }\n    .FlightInformationForm-module_contentCard__2iuCz {\n        padding: 20px;\n    }\n    .FlightInformationForm-module_halfWidth__3iWMs, .FlightInformationForm-module_input__1QJpa {\n        width: 100%;\n    }\n    .FlightInformationForm-module_input__1QJpa {\n        -webkit-box-flex: 0;\n            -ms-flex: none;\n                flex: none;\n        margin-top: 5px;\n    }\n    .FlightInformationForm-module_row__2j-tW {\n        margin: 0;\n        -ms-flex-wrap: wrap;\n            flex-wrap: wrap;\n    }\n    .FlightInformationForm-module_firstColumn__3dXcq, .FlightInformationForm-module_secondColumn__1tg-R {\n        padding: 0;\n    }\n    .FlightInformationForm-module_title__3yTDe {\n        font-size: 22px;\n    }\n    .FlightInformationForm-module_description__38HJs {\n        margin: 15px 0;\n    }\n}\n";
+var s$16 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","card":"FlightInformationForm-module_card__3HVvP","contentCard":"FlightInformationForm-module_contentCard__2iuCz","formContainer":"FlightInformationForm-module_formContainer__38_9v","title":"FlightInformationForm-module_title__3yTDe","firstColumn":"FlightInformationForm-module_firstColumn__3dXcq","secondColumn":"FlightInformationForm-module_secondColumn__1tg-R","halfWidth":"FlightInformationForm-module_halfWidth__3iWMs","row":"FlightInformationForm-module_row__2j-tW","noMargin":"FlightInformationForm-module_noMargin__DF7_J","input":"FlightInformationForm-module_input__1QJpa","select":"FlightInformationForm-module_select__1KZ8b","defaultOption":"FlightInformationForm-module_defaultOption__MJRT6","actionLink":"FlightInformationForm-module_actionLink__nzpW1","flexStart":"FlightInformationForm-module_flexStart__3he4R","flexEnd":"FlightInformationForm-module_flexEnd__f47Mt","description":"FlightInformationForm-module_description__38HJs"};
 styleInject(css$16);
 
 var ZoneTypes$1 = {
@@ -6572,7 +6575,7 @@ function (_React$Component) {
         onChange: this.onChangeTravelingNumberTo
       })), toSpot && !shouldDisplayReturnFlightInformation && React__default.createElement(ActionLink, {
         label: texts.unknown,
-        className: s$16.actionLink,
+        className: [s$16.actionLink, toSpotsAvailable.length <= 1 ? s$16.flexStart : s$16.flexEnd].join(' '),
         onClick: this.showExtraFields
       }), toSpot && shouldDisplayReturnFlightInformation && React__default.createElement("div", {
         className: s$16.description

@@ -24,6 +24,12 @@ storiesOf('FlightInformationForm', module)
       CDG: {
         shortName: 'T1',
         code: 'CDG1',
+        type: 'airport',
+      },
+      GDL: {
+        shortName: 'de Lyon',
+        code: 'GDL',
+        type: 'station',
       },
     };
     const spotsOptions = {
