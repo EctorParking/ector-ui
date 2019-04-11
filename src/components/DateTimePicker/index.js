@@ -57,12 +57,14 @@ class DateTimePicker extends React.PureComponent {
       endDate = moment(propEndDate);
     }
     if (!startMinutes && !startHour && propStartDate) {
-      startMinutes = propStartDate.minutes();
-      startHour = propStartDate.hours();
+      startDate = moment(propStartDate);
+      startMinutes = startDate.minutes();
+      startHour = startDate.hours();
     }
     if (!endMinutes && !endHour && propEndDate) {
-      endMinutes = propEndDate.minutes();
-      endHour = propEndDate.hours();
+      endDate = moment(propEndDate);
+      endMinutes = endDate.minutes();
+      endHour = endDate.hours();
     }
     return {
       startDate,
