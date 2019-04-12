@@ -8,6 +8,7 @@ import {
 import s from './DateTimePicker.module.css';
 import { DefaultTexts, TextsType } from './DateTimePickerTexts';
 import TimeSuggestions from './TimeSuggestions';
+import { TimeNumber } from '../TimeRange';
 import iconCalendar from '../../assets/images/calendar.svg';
 import iconClock from '../../assets/images/clock.svg';
 
@@ -47,7 +48,7 @@ class DateTimePicker extends React.PureComponent {
       endDate: propEndDate,
     } = props;
     let {
-      startDate, endDate, startMinutes, endMinutes, startHour, endHour,
+      startDate, endDate, startMinutes, endMinutes, startHour, endHour, showTimeInputs,
     } = state;
 
     if (!startDate && propStartDate) {
@@ -60,13 +61,16 @@ class DateTimePicker extends React.PureComponent {
       startDate = moment(propStartDate);
       startMinutes = startDate.minutes();
       startHour = startDate.hours();
+      showTimeInputs = true;
     }
     if (!endMinutes && !endHour && propEndDate) {
       endDate = moment(propEndDate);
       endMinutes = endDate.minutes();
       endHour = endDate.hours();
+      showTimeInputs = true;
     }
     return {
+      showTimeInputs,
       startDate,
       endDate,
       startMinutes,
@@ -117,6 +121,15 @@ class DateTimePicker extends React.PureComponent {
 
   isDayBlocked = day => day.isBefore(now);
 
+  isDayHighlighted = (day) => {
+    const { startDate, endDate } = this.state;
+
+    if (!startDate || !endDate) {
+      return false;
+    }
+    return day.isBetween(startDate, endDate) && !day.isSame(startDate, 'day');
+  };
+
   handleTimeFocus = () => {
     this.ectorPicker.current.handleFocus();
     this.setState({ visiblePicker: DateTimePicker.timePicker });
@@ -160,7 +173,7 @@ class DateTimePicker extends React.PureComponent {
               onFocus={this.handleTimeFocus}
               containerClassName={s.timePickerInputContainer}
               className={[s.timePickerInput, inputClassName].join(' ')}
-              value={startHour ? `${startHour}h${startMinutes || ''}` : ''}
+              value={startHour ? `${startHour}h${TimeNumber({ value: startMinutes })}` : ''}
               placeholder={texts.timePlaceholder}
               LeftComponent={this.renderTimeInputLeftElement}
             />
@@ -194,7 +207,7 @@ class DateTimePicker extends React.PureComponent {
               containerClassName={s.timePickerInputContainer}
               className={[s.timePickerInput, inputClassName].join(' ')}
               onFocus={this.handleTimeFocus}
-              value={endHour ? `${endHour}h${endMinutes || ''}` : ''}
+              value={endHour ? `${endHour}h${TimeNumber({ value: endMinutes })}` : ''}
               placeholder={texts.timePlaceholder}
               LeftComponent={this.renderTimeInputLeftElement}
             />
@@ -244,6 +257,7 @@ class DateTimePicker extends React.PureComponent {
               focusedInput={focusedDateInput}
               renderMonthElement={this.renderMonthElement}
               isDayBlocked={this.isDayBlocked}
+              isDayHighlighted={this.isDayHighlighted}
             />
           )
         }
@@ -297,8 +311,8 @@ DateTimePicker.propTypes = {
   error: PropTypes.string,
   className: PropTypes.string,
   texts: TextsType,
-  startDate: PropTypes.instanceOf(moment),
-  endDate: PropTypes.instanceOf(moment),
+  startDate: PropTypes.string,
+  endDate: PropTypes.string,
   onStartDateChange: PropTypes.func,
   onEndDateChange: PropTypes.func,
   onStartTimeChange: PropTypes.func,
