@@ -5648,7 +5648,9 @@ ZonesPicker.defaultProps = {
   texts: DefaultTexts$6,
   className: undefined,
   error: '',
-  onSplitSuggestions: undefined
+  onSplitSuggestions: function onSplitSuggestions() {
+    return null;
+  }
 };
 ZonesPicker.propTypes = {
   fromZoneSuggestions: PropTypes$1.arrayOf(Type),

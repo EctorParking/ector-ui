@@ -340,7 +340,7 @@ ZonesPicker.defaultProps = {
   texts: DefaultTexts,
   className: undefined,
   error: '',
-  onSplitSuggestions: undefined,
+  onSplitSuggestions: () => null,
 };
 
 ZonesPicker.propTypes = {
