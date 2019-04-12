@@ -59,7 +59,8 @@ class FlightInformationForm extends React.Component {
   renderTerminalSelect = (fromOrTo) => {
     const {
       [`${fromOrTo}SpotsAvailable`]: spots,
-      [`${fromOrTo}Spot`]: selectedSpot,
+      values: { [`${fromOrTo}Spot`]: selectedSpot },
+      errors: { [`${fromOrTo}Spot`]: selectedSpotError },
       texts,
     } = this.props;
 
@@ -71,6 +72,7 @@ class FlightInformationForm extends React.Component {
         onChange={fromOrTo === 'from' ? this.onChangeFromSpot : this.onChangeToSpot}
         isSearchable={false}
         isClearable
+        error={selectedSpotError}
       />
     );
   };
@@ -78,9 +80,11 @@ class FlightInformationForm extends React.Component {
   renderAirlinesSelect = () => {
     const {
       airlines,
-      returnFlightCompany,
+      values: { returnFlightCompany },
+      errors: { returnFlightCompany: returnFlightCompanyError },
       texts,
     } = this.props;
+    const { shouldDisplayReturnFlightInformation } = this.state;
     const selectedAirline = airlines.find(airline => airline.name === returnFlightCompany);
 
     return (
@@ -92,6 +96,7 @@ class FlightInformationForm extends React.Component {
         isClearable
         isSearchable
         noOptionsMessage={() => texts.noResult}
+        error={shouldDisplayReturnFlightInformation ? returnFlightCompanyError : null}
       />
     );
   };
@@ -113,11 +118,14 @@ class FlightInformationForm extends React.Component {
       RootComponent,
       fromSpotsAvailable,
       toSpotsAvailable,
-      fromSpot,
-      toSpot,
-      travelingNumberTo,
-      returnFlightCompany,
-      returnFlightOrigin,
+      values: {
+        fromSpot,
+        toSpot,
+        travelingNumberTo,
+        returnFlightCompany,
+        returnFlightOrigin,
+      },
+      errors,
       className,
       contentClassName,
       texts,
@@ -138,9 +146,11 @@ class FlightInformationForm extends React.Component {
             <div className={[s.row, s.halfWidth].join(' ')}>
               <InputLabel
                 label={this.getLabelSpot(fromSpot)}
+                value={fromSpot}
                 mandatory
                 InputComponent={this.renderFromZoneTerminal}
                 className={[s.input, s.firstColumn].join(' ')}
+                error={errors.fromSpot}
               />
             </div>
           </div>
@@ -156,9 +166,11 @@ class FlightInformationForm extends React.Component {
             {toSpotsAvailable.length > 1 && (
               <InputLabel
                 label={this.getLabelSpot(toSpot)}
+                value={toSpot}
                 mandatory
                 InputComponent={this.renderToZoneTerminal}
                 className={[s.input, s.firstColumn].join(' ')}
+                error={errors.toSpot}
               />
             )}
             {toSpot && (
@@ -170,6 +182,7 @@ class FlightInformationForm extends React.Component {
                 className={[s.input, toSpotsAvailable.length > 1 ? s.secondColumn : s.firstColumn].join(' ')}
                 onChange={this.onChangeTravelingNumberTo}
                 autoComplete="off"
+                error={!shouldDisplayReturnFlightInformation ? errors.travelingNumberTo : null}
               />
             )}
             {toSpotsAvailable.length <= 1 && toSpot && toSpot.type === 'station' && (
@@ -181,6 +194,7 @@ class FlightInformationForm extends React.Component {
                 className={[s.input, s.firstColumn].join(' ')}
                 mandatory={shouldDisplayReturnFlightInformation}
                 autoComplete="off"
+                error={shouldDisplayReturnFlightInformation ? errors.returnFlightOrigin : null}
               />
             )}
           </div>
@@ -206,6 +220,7 @@ class FlightInformationForm extends React.Component {
                 className={[s.input, s.firstColumn].join(' ')}
                 mandatory={shouldDisplayReturnFlightInformation}
                 autoComplete="off"
+                error={shouldDisplayReturnFlightInformation ? errors.returnFlightOrigin : null}
               />
               {toSpot.type === 'airport' && (
                 <InputLabel
@@ -214,6 +229,7 @@ class FlightInformationForm extends React.Component {
                   className={[s.input, s.secondColumn].join(' ')}
                   InputComponent={this.renderAirlinesSelect}
                   mandatory={shouldDisplayReturnFlightInformation}
+                  error={shouldDisplayReturnFlightInformation ? errors.returnFlightCompany : null}
                 />
               )}
             </div>
@@ -229,8 +245,6 @@ FlightInformationForm.defaultProps = {
   RootComponent: ({ children, ...cardProps }) => (<Card {...cardProps}>{children}</Card>),
   className: undefined,
   contentClassName: undefined,
-  returnFlightCompany: undefined,
-  returnFlightOrigin: undefined,
   airlines: [],
   texts: DefaultTexts,
   shouldDisplayReturnFlightInformation: false,
@@ -242,11 +256,20 @@ FlightInformationForm.propTypes = {
   contentClassName: PropTypes.string,
   fromSpotsAvailable: PropTypes.arrayOf(SpotType).isRequired,
   toSpotsAvailable: PropTypes.arrayOf(SpotType).isRequired,
-  fromSpot: SpotType.isRequired,
-  toSpot: SpotType.isRequired,
-  travelingNumberTo: PropTypes.string.isRequired,
-  returnFlightCompany: PropTypes.string,
-  returnFlightOrigin: PropTypes.string,
+  values: PropTypes.shape({
+    fromSpot: SpotType.isRequired,
+    toSpot: SpotType.isRequired,
+    travelingNumberTo: PropTypes.string.isRequired,
+    returnFlightCompany: PropTypes.string,
+    returnFlightOrigin: PropTypes.string,
+  }).isRequired,
+  errors: PropTypes.shape({
+    fromSpot: PropTypes.string,
+    toSpot: PropTypes.string,
+    travelingNumberTo: PropTypes.string,
+    returnFlightCompany: PropTypes.string,
+    returnFlightOrigin: PropTypes.string,
+  }).isRequired,
   airlines: PropTypes.arrayOf(PropTypes.shape({
     value: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,

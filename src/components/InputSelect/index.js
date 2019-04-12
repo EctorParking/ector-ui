@@ -22,43 +22,50 @@ const ectorTheme = theme => ({
   },
 });
 
-const ectorStyles = {
-  option: (styles, { isSelected, isFocused }) => ({
-    ...styles,
-    color: Colors.deepBlue,
-    fontWeight: isSelected || isFocused ? 'bold' : undefined,
-    backgroundColor: Colors.white,
-  }),
-  control: styles => ({
-    ...styles,
-    borderWidth: 2,
-    boxShadow: 'none',
-  }),
-  placeholder: styles => ({
-    ...styles,
-    opacity: 0.8,
-    fontWeight: 500,
-  }),
-};
-
 const InputSelect = ({
-  options, classname, onChange, value, ...props
-}) => (
-  <Select
-    className={[s.select, classname].join(' ')}
-    options={options}
-    theme={ectorTheme}
-    styles={ectorStyles}
-    value={value}
-    onChange={onChange}
-    {...props}
-  />
-);
+  options, classname, onChange, value, error, ...props
+}) => {
+  const ectorStyles = {
+    option: (styles, { isSelected, isFocused }) => ({
+      ...styles,
+      color: Colors.deepBlue,
+      fontWeight: isSelected || isFocused ? 'bold' : undefined,
+      backgroundColor: Colors.white,
+    }),
+    control: styles => ({
+      ...styles,
+      borderColor: error ? Colors.red : styles.borderColor,
+      borderWidth: 2,
+      boxShadow: 'none',
+      '&:hover': {
+        borderColor: error ? Colors.red : styles.borderColor,
+      },
+    }),
+    placeholder: styles => ({
+      ...styles,
+      opacity: 0.8,
+      fontWeight: 500,
+    }),
+  };
+
+  return (
+    <Select
+      className={[s.select, classname].join(' ')}
+      options={options}
+      theme={ectorTheme}
+      styles={ectorStyles}
+      value={value}
+      onChange={onChange}
+      {...props}
+    />
+  );
+};
 
 InputSelect.defaultProps = {
   options: [],
   classname: undefined,
   value: undefined,
+  error: null,
 };
 
 InputSelect.propTypes = {
@@ -70,6 +77,7 @@ InputSelect.propTypes = {
     value: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
   }),
+  error: PropTypes.string,
   classname: PropTypes.string,
   onChange: PropTypes.func.isRequired,
 };
