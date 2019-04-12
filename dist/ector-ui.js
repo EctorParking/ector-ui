@@ -8118,7 +8118,7 @@ var performanceNow = createCommonjsModule(function (module) {
 
 }).call(commonjsGlobal);
 
-
+//# sourceMappingURL=performance-now.js.map
 });
 
 var root = typeof window === 'undefined' ? commonjsGlobal : window
@@ -15623,6 +15623,24 @@ RatingStars.propTypes = {
   inactiveColor: PropTypes$1.string
 };
 
+var css$1b = ".Header-module_container__2FRMu {\n\n}";
+var s$19 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","container":"Header-module_container__2FRMu"};
+styleInject(css$1b);
+
+var GenderPicker$1 = function GenderPicker(_ref) {
+  var className = _ref.className;
+  return React__default.createElement("div", {
+    className: [s$19.container, className].join(' ')
+  });
+};
+
+GenderPicker$1.defaultProps = {
+  className: undefined
+};
+GenderPicker$1.propTypes = {
+  className: PropTypes$1.string
+};
+
 var index$2 = './components';
 
 exports.ActionLink = ActionLink;
@@ -15645,6 +15663,7 @@ exports.ContactForm = ContactForm;
 exports.DateTimePicker = DateTimePicker;
 exports.FlightInformationForm = FlightInformationForm;
 exports.GenderPicker = GenderPicker;
+exports.Header = GenderPicker$1;
 exports.HtmlPrice = HtmlPrice;
 exports.Icon = Icon;
 exports.Input = Input;
