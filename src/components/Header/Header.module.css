@@ -1,5 +1,15 @@
 @import '../../style/variable.global.css';
 
-.container {
+.wrapper {
+  width: 100%;
+  height: var(--headerHeight);
+  position: fixed;
+  z-index: 1;
+}
 
+.container {
+  max-width: var(--containerWidth);
+  width: 100%;
+  margin: auto;
+  display: flex;
 }

@@ -6487,7 +6487,7 @@ var DefaultTexts$8 = {
   spotLabelUnknown: 'Lieu de rendez-vous',
   switchMandatoryAirportDescription: 'Si vous ne connaissez pas votre numéro de vol, veuillez indiquer la compagnie aérienne et la ville de provenance de votre dernier vol.',
   switchMandatoryStationDescription: 'Si vous ne connaissez pas votre numéro de train, veuillez indiquer la ville de provenance de votre dernier train.',
-  noResult: 'Pas de résultats'
+  noResult: 'Aucun résultat'
 };
 
 var FlightInformationForm =
@@ -15623,22 +15623,38 @@ RatingStars.propTypes = {
   inactiveColor: PropTypes$1.string
 };
 
-var css$1b = ".Header-module_container__2FRMu {\n\n}";
-var s$19 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","container":"Header-module_container__2FRMu"};
+var css$1b = ".Header-module_wrapper__3Yuwe {\n  width: 100%;\n  height: 80px;\n  position: fixed;\n  z-index: 1;\n}\n\n.Header-module_container__2FRMu {\n  max-width: 1232px;\n  width: 100%;\n  margin: auto;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}";
+var s$19 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","wrapper":"Header-module_wrapper__3Yuwe","container":"Header-module_container__2FRMu"};
 styleInject(css$1b);
 
-var GenderPicker$1 = function GenderPicker(_ref) {
-  var className = _ref.className;
+var Header = function Header(_ref) {
+  var wrapperClassName = _ref.wrapperClassName,
+      containerClassName = _ref.containerClassName,
+      children = _ref.children,
+      imageUrl = _ref.imageUrl,
+      onClick = _ref.onClick;
   return React__default.createElement("div", {
-    className: [s$19.container, className].join(' ')
-  });
+    className: [s$19.wrapper, wrapperClassName].join(' ')
+  }, React__default.createElement("div", {
+    className: [s$19.container, containerClassName].join(' ')
+  }, React__default.createElement("button", {
+    onClick: onClick
+  }, React__default.createElement("img", {
+    src: imageUrl,
+    alt: "logo"
+  })), children));
 };
 
-GenderPicker$1.defaultProps = {
-  className: undefined
+Header.defaultProps = {
+  wrapperClassName: undefined,
+  containerClassName: undefined
 };
-GenderPicker$1.propTypes = {
-  className: PropTypes$1.string
+Header.propTypes = {
+  children: PropTypes$1.node.isRequired,
+  wrapperClassName: PropTypes$1.string,
+  containerClassName: PropTypes$1.string,
+  imageUrl: PropTypes$1.string.isRequired,
+  onClick: PropTypes$1.func.isRequired
 };
 
 var index$2 = './components';
@@ -15663,7 +15679,7 @@ exports.ContactForm = ContactForm;
 exports.DateTimePicker = DateTimePicker;
 exports.FlightInformationForm = FlightInformationForm;
 exports.GenderPicker = GenderPicker;
-exports.Header = GenderPicker$1;
+exports.Header = Header;
 exports.HtmlPrice = HtmlPrice;
 exports.Icon = Icon;
 exports.Input = Input;

@@ -3,18 +3,34 @@ import PropTypes from 'prop-types';
 
 import s from './Header.module.css';
 
-const GenderPicker = ({ className }) => (
-  <div className={[s.container, className].join(' ')}>
-
+const Header = ({
+  wrapperClassName,
+  containerClassName,
+  children,
+  imageUrl,
+  onClick,
+}) => (
+  <div className={[s.wrapper, wrapperClassName].join(' ')}>
+    <div className={[s.container, containerClassName].join(' ')}>
+      <button onClick={onClick}>
+        <img src={imageUrl} alt="logo" />
+      </button>
+      {children}
+    </div>
   </div>
 );
 
-GenderPicker.defaultProps = {
-  className: undefined,
+Header.defaultProps = {
+  wrapperClassName: undefined,
+  containerClassName: undefined,
 };
 
-GenderPicker.propTypes = {
-  className: PropTypes.string,
+Header.propTypes = {
+  children: PropTypes.node.isRequired,
+  wrapperClassName: PropTypes.string,
+  containerClassName: PropTypes.string,
+  imageUrl: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
-export default GenderPicker;
+export default Header;
