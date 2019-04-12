@@ -4,8 +4,19 @@ import { Icon } from '..';
 import { Type as ZoneType, ZoneTypesToIconName, ZoneTypes } from './ZoneType';
 import s from './ZoneSuggestion.module.css';
 
+const iconNameToMarginClassName = {
+  [ZoneTypesToIconName[ZoneTypes.station]]: s.trainIcon,
+  [ZoneTypesToIconName[ZoneTypes.airport]]: s.airportIcon,
+  [ZoneTypesToIconName[ZoneTypes.mixed]]: s.mixedIcon,
+};
+
 const IconComponent = ({ name, className: iconClassName }) => (
-  <i className={[`icon icon-${name}`, iconClassName, name === ZoneTypesToIconName[ZoneTypes.station] ? s.trainIcon : undefined].join(' ')} />
+  <i className={[
+    iconNameToMarginClassName[name],
+    `icon icon-${name}`,
+    iconClassName,
+  ].join(' ')}
+  />
 );
 
 IconComponent.propTypes = {
@@ -19,10 +30,11 @@ const ZoneSuggestion = ({
   <span
     role="presentation"
     className={[s.suggestion, split ? undefined : s.hovered, selected ? s.selected : undefined, disabled ? s.disabled : undefined].join(' ')}
-    onClick={onClick}
+    onClick={disabled ? undefined : onClick}
     {...rest}
   >
     <Icon
+      type={value.type}
       name={ZoneTypesToIconName[value.type]}
       variant={disabled ? 'grey' : 'blue'}
       position="left"

@@ -98,3 +98,4 @@ TimeRange.propTypes = {
 };
 
 export default TimeRange;
+export { TimeNumber } from './TimeElement';
