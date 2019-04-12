@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 export const ZoneTypes = {
   airport: 'airport',
   station: 'station',
+  mixed: 'mixed',
 };
 
 export const ZoneTypesToIconName = {
-  [ZoneTypes.airport]: 'ec-plane',
+  [ZoneTypes.airport]: 'ec-airport',
   [ZoneTypes.station]: 'ec-station',
+  [ZoneTypes.mixed]: 'ec-airport-station',
 };
 
 export const Type = PropTypes.shape({

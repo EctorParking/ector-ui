@@ -31,5 +31,14 @@
 }
 
 .trainIcon {
-  margin-left: 3px;
+  margin-left: 5px !important;
+}
+
+.mixedIcon {
+  font-size: 19px;
+  margin-left: 0 !important;
+}
+
+.airportIcon {
+  margin-left: 2px !important;
 }
