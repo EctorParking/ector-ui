@@ -70,7 +70,7 @@
   transform: none;
   transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
   width: 100%;
-  font-size: 14px;
+  font-size: var(--fontSizeMedium);
   font-weight: var(--fontWeightBold);
 }
 
