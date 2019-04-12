@@ -6476,7 +6476,8 @@ function (_React$Component) {
     _defineProperty(_assertThisInitialized(_this), "renderTerminalSelect", function (fromOrTo) {
       var _this$props2 = _this.props,
           spots = _this$props2["".concat(fromOrTo, "SpotsAvailable")],
-          selectedSpot = _this$props2["".concat(fromOrTo, "Spot")],
+          selectedSpot = _this$props2.values["".concat(fromOrTo, "Spot")],
+          selectedSpotError = _this$props2.errors["".concat(fromOrTo, "Spot")],
           texts = _this$props2.texts;
 
       return React__default.createElement(InputSelect, {
@@ -6493,15 +6494,18 @@ function (_React$Component) {
         placeholder: texts.placeholderSpot,
         onChange: fromOrTo === 'from' ? _this.onChangeFromSpot : _this.onChangeToSpot,
         isSearchable: false,
-        isClearable: true
+        isClearable: true,
+        error: selectedSpotError
       });
     });
 
     _defineProperty(_assertThisInitialized(_this), "renderAirlinesSelect", function () {
       var _this$props3 = _this.props,
           airlines = _this$props3.airlines,
-          returnFlightCompany = _this$props3.returnFlightCompany,
+          returnFlightCompany = _this$props3.values.returnFlightCompany,
+          returnFlightCompanyError = _this$props3.errors.returnFlightCompany,
           texts = _this$props3.texts;
+      var shouldDisplayReturnFlightInformation = _this.state.shouldDisplayReturnFlightInformation;
       var selectedAirline = airlines.find(function (airline) {
         return airline.name === returnFlightCompany;
       });
@@ -6514,7 +6518,8 @@ function (_React$Component) {
         isSearchable: true,
         noOptionsMessage: function noOptionsMessage() {
           return texts.noResult;
-        }
+        },
+        error: shouldDisplayReturnFlightInformation ? returnFlightCompanyError : null
       });
     });
 
@@ -6566,15 +6571,17 @@ function (_React$Component) {
           RootComponent = _this$props4.RootComponent,
           fromSpotsAvailable = _this$props4.fromSpotsAvailable,
           toSpotsAvailable = _this$props4.toSpotsAvailable,
-          fromSpot = _this$props4.fromSpot,
-          toSpot = _this$props4.toSpot,
-          travelingNumberTo = _this$props4.travelingNumberTo,
-          returnFlightCompany = _this$props4.returnFlightCompany,
-          returnFlightOrigin = _this$props4.returnFlightOrigin,
+          _this$props4$values = _this$props4.values,
+          fromSpot = _this$props4$values.fromSpot,
+          toSpot = _this$props4$values.toSpot,
+          travelingNumberTo = _this$props4$values.travelingNumberTo,
+          returnFlightCompany = _this$props4$values.returnFlightCompany,
+          returnFlightOrigin = _this$props4$values.returnFlightOrigin,
+          errors = _this$props4.errors,
           className = _this$props4.className,
           contentClassName = _this$props4.contentClassName,
           texts = _this$props4.texts,
-          cardProps = _objectWithoutProperties(_this$props4, ["RootComponent", "fromSpotsAvailable", "toSpotsAvailable", "fromSpot", "toSpot", "travelingNumberTo", "returnFlightCompany", "returnFlightOrigin", "className", "contentClassName", "texts"]);
+          cardProps = _objectWithoutProperties(_this$props4, ["RootComponent", "fromSpotsAvailable", "toSpotsAvailable", "values", "errors", "className", "contentClassName", "texts"]);
 
       var shouldDisplayReturnFlightInformation = this.state.shouldDisplayReturnFlightInformation;
 
@@ -6591,18 +6598,22 @@ function (_React$Component) {
         className: [s$16.row, s$16.halfWidth].join(' ')
       }, React__default.createElement(InputLabel, {
         label: this.getLabelSpot(fromSpot),
+        value: fromSpot,
         mandatory: true,
         InputComponent: this.renderFromZoneTerminal,
-        className: [s$16.input, s$16.firstColumn].join(' ')
+        className: [s$16.input, s$16.firstColumn].join(' '),
+        error: errors.fromSpot
       }))), React__default.createElement(React__default.Fragment, null, fromSpotsAvailable.length > 1 && React__default.createElement("h2", {
         className: s$16.title
       }, texts.outTitle), React__default.createElement("div", {
         className: [s$16.row, !toSpot || toSpotsAvailable.length <= 1 && toSpot.type !== 'station' ? s$16.halfWidth : undefined, fromSpotsAvailable.length <= 1 ? s$16.noMargin : undefined].join(' ')
       }, toSpotsAvailable.length > 1 && React__default.createElement(InputLabel, {
         label: this.getLabelSpot(toSpot),
+        value: toSpot,
         mandatory: true,
         InputComponent: this.renderToZoneTerminal,
-        className: [s$16.input, s$16.firstColumn].join(' ')
+        className: [s$16.input, s$16.firstColumn].join(' '),
+        error: errors.toSpot
       }), toSpot && React__default.createElement(InputLabel, {
         label: toSpot.type === 'airport' ? texts.travelingNumberToLabel : texts.travelingNumberToLabelTrain,
         placeholder: toSpot.type === 'airport' ? texts.travelingNumberToPlaceholder : texts.travelingNumberToPlaceholderTrain,
@@ -6610,7 +6621,8 @@ function (_React$Component) {
         mandatory: !shouldDisplayReturnFlightInformation,
         className: [s$16.input, toSpotsAvailable.length > 1 ? s$16.secondColumn : s$16.firstColumn].join(' '),
         onChange: this.onChangeTravelingNumberTo,
-        autoComplete: "off"
+        autoComplete: "off",
+        error: !shouldDisplayReturnFlightInformation ? errors.travelingNumberTo : null
       }), toSpotsAvailable.length <= 1 && toSpot && toSpot.type === 'station' && React__default.createElement(InputLabel, {
         label: texts.returnFlightOriginLabel,
         placeholder: texts.returnFlightOriginPlaceholder,
@@ -6618,7 +6630,8 @@ function (_React$Component) {
         onChange: this.onChangeReturnFlightOrigin,
         className: [s$16.input, s$16.firstColumn].join(' '),
         mandatory: shouldDisplayReturnFlightInformation,
-        autoComplete: "off"
+        autoComplete: "off",
+        error: shouldDisplayReturnFlightInformation ? errors.returnFlightOrigin : null
       })), toSpot && !shouldDisplayReturnFlightInformation && React__default.createElement(ActionLink, {
         label: texts.unknown,
         className: [s$16.actionLink, toSpotsAvailable.length <= 1 ? s$16.flexStart : s$16.flexEnd].join(' '),
@@ -6634,13 +6647,15 @@ function (_React$Component) {
         onChange: this.onChangeReturnFlightOrigin,
         className: [s$16.input, s$16.firstColumn].join(' '),
         mandatory: shouldDisplayReturnFlightInformation,
-        autoComplete: "off"
+        autoComplete: "off",
+        error: shouldDisplayReturnFlightInformation ? errors.returnFlightOrigin : null
       }), toSpot.type === 'airport' && React__default.createElement(InputLabel, {
         label: texts.returnFlightCompanyLabel,
         value: returnFlightCompany,
         className: [s$16.input, s$16.secondColumn].join(' '),
         InputComponent: this.renderAirlinesSelect,
-        mandatory: shouldDisplayReturnFlightInformation
+        mandatory: shouldDisplayReturnFlightInformation,
+        error: shouldDisplayReturnFlightInformation ? errors.returnFlightCompany : null
       }))));
     }
   }]);
@@ -6658,8 +6673,6 @@ FlightInformationForm.defaultProps = {
   },
   className: undefined,
   contentClassName: undefined,
-  returnFlightCompany: undefined,
-  returnFlightOrigin: undefined,
   airlines: [],
   texts: DefaultTexts$8,
   shouldDisplayReturnFlightInformation: false
@@ -6670,11 +6683,20 @@ FlightInformationForm.propTypes = {
   contentClassName: PropTypes$1.string,
   fromSpotsAvailable: PropTypes$1.arrayOf(SpotType).isRequired,
   toSpotsAvailable: PropTypes$1.arrayOf(SpotType).isRequired,
-  fromSpot: SpotType.isRequired,
-  toSpot: SpotType.isRequired,
-  travelingNumberTo: PropTypes$1.string.isRequired,
-  returnFlightCompany: PropTypes$1.string,
-  returnFlightOrigin: PropTypes$1.string,
+  values: PropTypes$1.shape({
+    fromSpot: SpotType.isRequired,
+    toSpot: SpotType.isRequired,
+    travelingNumberTo: PropTypes$1.string.isRequired,
+    returnFlightCompany: PropTypes$1.string,
+    returnFlightOrigin: PropTypes$1.string
+  }).isRequired,
+  errors: PropTypes$1.shape({
+    fromSpot: PropTypes$1.string,
+    toSpot: PropTypes$1.string,
+    travelingNumberTo: PropTypes$1.string,
+    returnFlightCompany: PropTypes$1.string,
+    returnFlightOrigin: PropTypes$1.string
+  }).isRequired,
   airlines: PropTypes$1.arrayOf(PropTypes$1.shape({
     value: PropTypes$1.string.isRequired,
     label: PropTypes$1.string.isRequired
@@ -8049,7 +8071,7 @@ var performanceNow = createCommonjsModule(function (module) {
 
 }).call(commonjsGlobal);
 
-
+//# sourceMappingURL=performance-now.js.map
 });
 
 var root = typeof window === 'undefined' ? commonjsGlobal : window
@@ -15441,37 +15463,41 @@ var ectorTheme = function ectorTheme(theme) {
   });
 };
 
-var ectorStyles = {
-  option: function option(styles, _ref) {
-    var isSelected = _ref.isSelected,
-        isFocused = _ref.isFocused;
-    return _objectSpread({}, styles, {
-      color: Colors$1.deepBlue,
-      fontWeight: isSelected || isFocused ? 'bold' : undefined,
-      backgroundColor: Colors$1.white
-    });
-  },
-  control: function control(styles) {
-    return _objectSpread({}, styles, {
-      borderWidth: 2,
-      boxShadow: 'none'
-    });
-  },
-  placeholder: function placeholder(styles) {
-    return _objectSpread({}, styles, {
-      opacity: 0.8,
-      fontWeight: 500
-    });
-  }
-};
+var InputSelect = function InputSelect(_ref) {
+  var options = _ref.options,
+      classname = _ref.classname,
+      onChange = _ref.onChange,
+      value = _ref.value,
+      error = _ref.error,
+      props = _objectWithoutProperties(_ref, ["options", "classname", "onChange", "value", "error"]);
 
-var InputSelect = function InputSelect(_ref2) {
-  var options = _ref2.options,
-      classname = _ref2.classname,
-      onChange = _ref2.onChange,
-      value = _ref2.value,
-      props = _objectWithoutProperties(_ref2, ["options", "classname", "onChange", "value"]);
-
+  var ectorStyles = {
+    option: function option(styles, _ref2) {
+      var isSelected = _ref2.isSelected,
+          isFocused = _ref2.isFocused;
+      return _objectSpread({}, styles, {
+        color: Colors$1.deepBlue,
+        fontWeight: isSelected || isFocused ? 'bold' : undefined,
+        backgroundColor: Colors$1.white
+      });
+    },
+    control: function control(styles) {
+      return _objectSpread({}, styles, {
+        borderColor: error ? Colors$1.red : styles.borderColor,
+        borderWidth: 2,
+        boxShadow: 'none',
+        '&:hover': {
+          borderColor: error ? Colors$1.red : styles.borderColor
+        }
+      });
+    },
+    placeholder: function placeholder(styles) {
+      return _objectSpread({}, styles, {
+        opacity: 0.8,
+        fontWeight: 500
+      });
+    }
+  };
   return React__default.createElement(index$1$1, _extends({
     className: [s$17.select, classname].join(' '),
     options: options,
@@ -15485,7 +15511,8 @@ var InputSelect = function InputSelect(_ref2) {
 InputSelect.defaultProps = {
   options: [],
   classname: undefined,
-  value: undefined
+  value: undefined,
+  error: null
 };
 InputSelect.propTypes = {
   options: PropTypes$1.arrayOf(PropTypes$1.shape({
@@ -15496,6 +15523,7 @@ InputSelect.propTypes = {
     value: PropTypes$1.string.isRequired,
     label: PropTypes$1.string.isRequired
   }),
+  error: PropTypes$1.string,
   classname: PropTypes$1.string,
   onChange: PropTypes$1.func.isRequired
 };
