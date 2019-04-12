@@ -12,4 +12,52 @@
   width: 100%;
   margin: auto;
   display: flex;
+  align-items: center;
+}
+
+.menuItemsContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 410px;
+  position: relative;
+}
+
+.menuItemContainer {
+  display: flex;
+  align-items: center;
+}
+
+.visible, .menuItemContainer:hover, .suggestion:hover {
+  font-weight: var(--fontWeightBold);
+}
+
+.menuItemLinkIcon {
+  height: 20px;
+  margin-right: 10px;
+  width: 20px;
+}
+
+.menuItemText {
+  color: var(--deepBlue);
+  margin-left: var(--marginSmall);
+}
+
+.suggestions {
+  width: 180px;
+  height: auto;
+  padding: var(--marginMedium);
+  min-height: 0;
+  left: 0;
+  top: calc(100% + 11px);
+}
+
+.helpSuggestions {
+  display: flex;
+  flex-direction: column;
+}
+
+.suggestion {
+  margin: var(--marginSmall) 0;
+  color: var(--deepBlue);
+  align-self: flex-start;
 }

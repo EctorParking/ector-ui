@@ -15623,38 +15623,155 @@ RatingStars.propTypes = {
   inactiveColor: PropTypes$1.string
 };
 
-var css$1b = ".Header-module_wrapper__3Yuwe {\n  width: 100%;\n  height: 80px;\n  position: fixed;\n  z-index: 1;\n}\n\n.Header-module_container__2FRMu {\n  max-width: 1232px;\n  width: 100%;\n  margin: auto;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}";
-var s$19 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","wrapper":"Header-module_wrapper__3Yuwe","container":"Header-module_container__2FRMu"};
+var css$1b = ".Header-module_wrapper__3Yuwe {\n  width: 100%;\n  height: 80px;\n  position: fixed;\n  z-index: 1;\n}\n\n.Header-module_container__2FRMu {\n  max-width: 1232px;\n  width: 100%;\n  margin: auto;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.Header-module_menuItemsContainer__2hK2f {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  width: 410px;\n  position: relative;\n}\n\n.Header-module_menuItemContainer__3AND5 {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.Header-module_visible__sHCWg, .Header-module_menuItemContainer__3AND5:hover, .Header-module_suggestion__3LyBf:hover {\n  font-weight: 700;\n}\n\n.Header-module_menuItemLinkIcon__15Cmp {\n  height: 20px;\n  margin-right: 10px;\n  width: 20px;\n}\n\n.Header-module_menuItemText__2n_In {\n  color: #163457;\n  margin-left: 10px;\n}\n\n.Header-module_suggestions__SwEEy {\n  width: 180px;\n  height: auto;\n  padding: 20px;\n  min-height: 0;\n  left: 0;\n  top: calc(100% + 11px);\n}\n\n.Header-module_helpSuggestions__K31H9 {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n\n.Header-module_suggestion__3LyBf {\n  margin: 10px 0;\n  color: #163457;\n  -ms-flex-item-align: start;\n      align-self: flex-start;\n}\n";
+var s$19 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","wrapper":"Header-module_wrapper__3Yuwe","container":"Header-module_container__2FRMu","menuItemsContainer":"Header-module_menuItemsContainer__2hK2f","menuItemContainer":"Header-module_menuItemContainer__3AND5","visible":"Header-module_visible__sHCWg","suggestion":"Header-module_suggestion__3LyBf","menuItemLinkIcon":"Header-module_menuItemLinkIcon__15Cmp","menuItemText":"Header-module_menuItemText__2n_In","suggestions":"Header-module_suggestions__SwEEy","helpSuggestions":"Header-module_helpSuggestions__K31H9"};
 styleInject(css$1b);
 
+var DefaultRightComponent =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(DefaultRightComponent, _React$Component);
+
+  function DefaultRightComponent(props) {
+    var _this;
+
+    _classCallCheck(this, DefaultRightComponent);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(DefaultRightComponent).call(this, props));
+
+    _defineProperty(_assertThisInitialized(_this), "handleClick", function (e) {
+      if (_this.helpButton.current.contains(e.target)) {
+        return _this.setState({
+          visible: true
+        });
+      }
+
+      return _this.setState({
+        visible: false
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onHover", function (field) {
+      _this.setState(_defineProperty({}, field, true));
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onLeave", function (field) {
+      _this.setState(_defineProperty({}, field, false));
+    });
+
+    _this.helpButton = React__default.createRef();
+    _this.state = {
+      visible: false,
+      isMouseHoverHelpButton: false,
+      isMouseHoverConnexionButton: false
+    };
+    _this.onHoverConnexion = _this.onHover.bind(_assertThisInitialized(_this), 'isMouseHoverConnexionButton');
+    _this.onHoverHelp = _this.onHover.bind(_assertThisInitialized(_this), 'isMouseHoverHelpButton');
+    _this.onLeaveConnexion = _this.onLeave.bind(_assertThisInitialized(_this), 'isMouseHoverConnexionButton');
+    _this.onLeaveHelp = _this.onLeave.bind(_assertThisInitialized(_this), 'isMouseHoverHelpButton');
+    return _this;
+  }
+
+  _createClass(DefaultRightComponent, [{
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      document.addEventListener('mousedown', this.handleClick, false);
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      document.removeEventListener('mousedown', this.handleClick, false);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$state = this.state,
+          visible = _this$state.visible,
+          isMouseHoverHelpButton = _this$state.isMouseHoverHelpButton,
+          isMouseHoverConnexionButton = _this$state.isMouseHoverConnexionButton;
+      return React__default.createElement("div", {
+        className: s$19.menuItemsContainer
+      }, React__default.createElement("button", {
+        className: [s$19.menuItemContainer, visible ? s$19.visible : undefined].join(' '),
+        ref: this.helpButton,
+        onMouseEnter: this.onHoverHelp,
+        onMouseLeave: this.onLeaveHelp
+      }, React__default.createElement(Icon, {
+        src: "https://cdn.ectorparking.com/images/5ca2919a41b0f.svg",
+        className: s$19.menuItemLinkIcon,
+        variant: visible || isMouseHoverHelpButton ? 'yellow' : 'white',
+        position: "right"
+      }), React__default.createElement("span", {
+        className: s$19.menuItemText
+      }, "Besoin d'aide ?")), React__default.createElement(PickerSuggestions, {
+        visible: visible,
+        className: s$19.suggestions
+      }, React__default.createElement("div", {
+        className: s$19.helpSuggestions
+      }, React__default.createElement("button", {
+        onClick: function onClick() {
+          return console.log('questions fréquentes');
+        },
+        className: s$19.suggestion
+      }, "Questions fr\xE9quentes"), React__default.createElement("button", {
+        onClick: function onClick() {
+          return console.log('Service Client');
+        },
+        className: s$19.suggestion
+      }, "Service client"))), React__default.createElement("button", {
+        className: s$19.menuItemContainer,
+        onMouseEnter: this.onHoverConnexion,
+        onMouseLeave: this.onLeaveConnexion
+      }, React__default.createElement(Icon, {
+        src: "https://cdn.ectorparking.com/images/5ca291a60c49b.svg",
+        className: s$19.menuItemLinkIcon,
+        variant: isMouseHoverConnexionButton ? 'yellow' : 'white',
+        position: "right"
+      }), React__default.createElement("span", {
+        className: s$19.menuItemText
+      }, "Connexion")));
+    }
+  }]);
+
+  return DefaultRightComponent;
+}(React__default.Component);
+
+DefaultRightComponent.defaultProps = {};
+DefaultRightComponent.propTypes = {};
+
 var Header = function Header(_ref) {
-  var wrapperClassName = _ref.wrapperClassName,
+  var className = _ref.className,
       containerClassName = _ref.containerClassName,
-      children = _ref.children,
-      imageUrl = _ref.imageUrl,
-      onClick = _ref.onClick;
+      LogoComponent = _ref.LogoComponent,
+      MiddleComponent = _ref.MiddleComponent,
+      RightComponent = _ref.RightComponent;
   return React__default.createElement("div", {
-    className: [s$19.wrapper, wrapperClassName].join(' ')
+    className: [s$19.wrapper, className].join(' ')
   }, React__default.createElement("div", {
     className: [s$19.container, containerClassName].join(' ')
-  }, React__default.createElement("button", {
-    onClick: onClick
-  }, React__default.createElement("img", {
-    src: imageUrl,
-    alt: "logo"
-  })), children));
+  }, React__default.createElement(LogoComponent, null), React__default.createElement(MiddleComponent, null), React__default.createElement(RightComponent, null)));
 };
 
 Header.defaultProps = {
-  wrapperClassName: undefined,
-  containerClassName: undefined
+  className: undefined,
+  containerClassName: undefined,
+  LogoComponent: function LogoComponent(props) {
+    return React__default.createElement("button", props, React__default.createElement("img", {
+      src: "https://cdn.ectorparking.com/images/5ca29581d66b5.svg",
+      alt: "logo"
+    }));
+  },
+  MiddleComponent: function MiddleComponent() {
+    return null;
+  },
+  RightComponent: DefaultRightComponent
 };
 Header.propTypes = {
-  children: PropTypes$1.node.isRequired,
-  wrapperClassName: PropTypes$1.string,
-  containerClassName: PropTypes$1.string,
-  imageUrl: PropTypes$1.string.isRequired,
-  onClick: PropTypes$1.func.isRequired
+  LogoComponent: PropTypes$1.func,
+  MiddleComponent: PropTypes$1.func,
+  RightComponent: PropTypes$1.func,
+  className: PropTypes$1.string,
+  containerClassName: PropTypes$1.string
 };
 
 var index$2 = './components';
