@@ -36,6 +36,10 @@
   font-size: 15px;
 }
 
+.inputError {
+  color: var(--magenta);
+}
+
 .splitPickerInputContainer {
   border-left: 1px solid var(--splitBorderColor);
 }
@@ -52,7 +56,7 @@
 }
 
 .error {
-  background-color: var(--red);
+  background-color: var(--magenta);
   border-top-left-radius: var(--borderRadius);
   border-top-right-radius: var(--borderRadius);
   box-sizing: border-box;

@@ -46,16 +46,17 @@ class Picker extends React.PureComponent {
       error,
     } = this.props;
     const { suggestionsVisible } = this.state;
+    const hasError = error && error !== '';
 
     return (
       <div className={[s.container, className].join(' ')} ref={this.containerRef}>
-        <div className={[s.error, error !== '' ? s.errorVisible : undefined].join(' ')}>
+        <div className={[s.error, hasError ? s.errorVisible : undefined].join(' ')}>
           {error}
         </div>
         <div className={s.shadowWrapper}>
           <FirstInputComponent
             value={firstValue}
-            className={s.pickerInput}
+            className={[s.pickerInput, hasError ? s.inputError : undefined].join(' ')}
             containerClassName={s.pickerInputContainer}
             onFocus={this.handleFocus}
           />
@@ -63,7 +64,7 @@ class Picker extends React.PureComponent {
             split && (
               <SecondInputComponent
                 value={secondValue}
-                className={s.pickerInput}
+                className={[s.pickerInput, hasError ? s.inputError : undefined].join(' ')}
                 containerClassName={[s.pickerInputContainer, s.splitPickerInputContainer].join(' ')}
                 onFocus={this.handleFocus}
               />
@@ -84,7 +85,7 @@ Picker.defaultProps = {
   firstValue: '',
   secondValue: '',
   className: undefined,
-  error: '',
+  error: undefined,
 };
 
 Picker.propTypes = {
