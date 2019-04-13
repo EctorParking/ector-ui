@@ -15,9 +15,5 @@ storiesOf('Header', module)
   .addDecorator(withKnobs)
 
   .add('with knobs', () => {
-    const props = {
-      imageUrl: text('Logo', 'https://cdn.ectorparking.com/images/5ca29581d66b5.svg'),
-    };
-
-    return <Header {...props} />;
+    return <Header />;
   });

@@ -51,3 +51,4 @@ export { default as InputSelect } from './InputSelect';
 export { default as RatingStars } from './RatingStars';
 export { default as Header } from './Header';
 export { default as MenuButton } from './MenuButton';
+export { default as TextIcon } from './TextIcon';

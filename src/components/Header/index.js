@@ -1,32 +1,24 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { Icon, MenuButton } from '..';
+import { MenuButton, TextIcon } from '..';
 
 import s from './Header.module.css';
 
 const DefaultRightComponent = () => {
   const renderHelpButton = ({ isActive }) => (
-    <Fragment>
-      <Icon
-        src="https://cdn.ectorparking.com/images/5ca2919a41b0f.svg"
-        className={s.menuItemLinkIcon}
-        variant={isActive ? 'yellow' : 'white'}
-        position="right"
-      />
-      <span className={s.menuItemText}>Besoin d'aide ?</span>
-    </Fragment>
+    <TextIcon
+      imageUrl="https://cdn.ectorparking.com/images/5ca2919a41b0f.svg"
+      variant={isActive ? 'yellow' : 'white'}
+      position="right"
+    >
+      Besoin d'aide ?
+    </TextIcon>
   );
 
   const renderConnectionButton = ({ isActive }) => (
-    <Fragment>
-      <Icon
-        src="https://cdn.ectorparking.com/images/5ca291a60c49b.svg"
-        className={s.menuItemLinkIcon}
-        variant={isActive ? 'yellow' : 'white'}
-        position="right"
-      />
-      <span className={s.menuItemText}>Connexion</span>
-    </Fragment>
+    <TextIcon imageUrl="https://cdn.ectorparking.com/images/5ca291a60c49b.svg" variant={isActive ? 'yellow' : 'white'}>
+      Connexion
+    </TextIcon>
   );
 
   const renderSuggestions = () => (
@@ -44,9 +36,23 @@ const DefaultRightComponent = () => {
   );
 };
 
-DefaultRightComponent.defaultProps = {};
+const DefaultMiddleComponent = () => {
+  const renderBusinessButton = ({ isActive }) => (
+    <TextIcon
+      imageUrl="https://cdn.ectorparking.com/images/5ca29156f2bf9.svg"
+      variant={isActive ? 'yellow' : 'melrose'}
+      position="right"
+    >
+      Ector Business
+    </TextIcon>
+  );
 
-DefaultRightComponent.propTypes = {};
+  return (
+    <div className={s.menuItemsContainer}>
+      <MenuButton LabelComponent={renderBusinessButton} />
+    </div>
+  );
+};
 
 const Header = ({
   className,
@@ -70,7 +76,7 @@ Header.defaultProps = {
       <img src="https://cdn.ectorparking.com/images/5ca29581d66b5.svg" alt="logo" />
     </button>
   ),
-  MiddleComponent: () => null,
+  MiddleComponent: DefaultMiddleComponent,
   RightComponent: DefaultRightComponent,
 };
 
