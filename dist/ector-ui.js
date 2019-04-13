@@ -15627,124 +15627,66 @@ var css$1b = ".Header-module_wrapper__3Yuwe {\n  width: 100%;\n  height: 80px;\n
 var s$19 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","wrapper":"Header-module_wrapper__3Yuwe","container":"Header-module_container__2FRMu","menuItemsContainer":"Header-module_menuItemsContainer__2hK2f","menuItemContainer":"Header-module_menuItemContainer__3AND5","visible":"Header-module_visible__sHCWg","suggestion":"Header-module_suggestion__3LyBf","menuItemLinkIcon":"Header-module_menuItemLinkIcon__15Cmp","menuItemText":"Header-module_menuItemText__2n_In","suggestions":"Header-module_suggestions__SwEEy","helpSuggestions":"Header-module_helpSuggestions__K31H9"};
 styleInject(css$1b);
 
-var DefaultRightComponent =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(DefaultRightComponent, _React$Component);
+var DefaultRightComponent = function DefaultRightComponent() {
+  var renderHelpButton = function renderHelpButton(_ref) {
+    var isActive = _ref.isActive;
+    return React__default.createElement(React.Fragment, null, React__default.createElement(Icon, {
+      src: "https://cdn.ectorparking.com/images/5ca2919a41b0f.svg",
+      className: s$19.menuItemLinkIcon,
+      variant: isActive ? 'yellow' : 'white',
+      position: "right"
+    }), React__default.createElement("span", {
+      className: s$19.menuItemText
+    }, "Besoin d'aide ?"));
+  };
 
-  function DefaultRightComponent(props) {
-    var _this;
+  var renderConnectionButton = function renderConnectionButton(_ref2) {
+    var isActive = _ref2.isActive;
+    return React__default.createElement(React.Fragment, null, React__default.createElement(Icon, {
+      src: "https://cdn.ectorparking.com/images/5ca291a60c49b.svg",
+      className: s$19.menuItemLinkIcon,
+      variant: isActive ? 'yellow' : 'white',
+      position: "right"
+    }), React__default.createElement("span", {
+      className: s$19.menuItemText
+    }, "Connexion"));
+  };
 
-    _classCallCheck(this, DefaultRightComponent);
+  var renderSuggestions = function renderSuggestions() {
+    return React__default.createElement("div", {
+      className: s$19.helpSuggestions
+    }, React__default.createElement("button", {
+      onClick: function onClick() {
+        return console.log('questions fréquentes');
+      },
+      className: s$19.suggestion
+    }, "Questions fr\xE9quentes"), React__default.createElement("button", {
+      onClick: function onClick() {
+        return console.log('Service Client');
+      },
+      className: s$19.suggestion
+    }, "Service client"));
+  };
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(DefaultRightComponent).call(this, props));
-
-    _defineProperty(_assertThisInitialized(_this), "handleClick", function (e) {
-      if (_this.helpButton.current.contains(e.target)) {
-        return _this.setState({
-          visible: true
-        });
-      }
-
-      return _this.setState({
-        visible: false
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onHover", function (field) {
-      _this.setState(_defineProperty({}, field, true));
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onLeave", function (field) {
-      _this.setState(_defineProperty({}, field, false));
-    });
-
-    _this.helpButton = React__default.createRef();
-    _this.state = {
-      visible: false,
-      isMouseHoverHelpButton: false,
-      isMouseHoverConnexionButton: false
-    };
-    _this.onHoverConnexion = _this.onHover.bind(_assertThisInitialized(_this), 'isMouseHoverConnexionButton');
-    _this.onHoverHelp = _this.onHover.bind(_assertThisInitialized(_this), 'isMouseHoverHelpButton');
-    _this.onLeaveConnexion = _this.onLeave.bind(_assertThisInitialized(_this), 'isMouseHoverConnexionButton');
-    _this.onLeaveHelp = _this.onLeave.bind(_assertThisInitialized(_this), 'isMouseHoverHelpButton');
-    return _this;
-  }
-
-  _createClass(DefaultRightComponent, [{
-    key: "componentWillMount",
-    value: function componentWillMount() {
-      document.addEventListener('mousedown', this.handleClick, false);
-    }
-  }, {
-    key: "componentWillUnmount",
-    value: function componentWillUnmount() {
-      document.removeEventListener('mousedown', this.handleClick, false);
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this$state = this.state,
-          visible = _this$state.visible,
-          isMouseHoverHelpButton = _this$state.isMouseHoverHelpButton,
-          isMouseHoverConnexionButton = _this$state.isMouseHoverConnexionButton;
-      return React__default.createElement("div", {
-        className: s$19.menuItemsContainer
-      }, React__default.createElement("button", {
-        className: [s$19.menuItemContainer, visible ? s$19.visible : undefined].join(' '),
-        ref: this.helpButton,
-        onMouseEnter: this.onHoverHelp,
-        onMouseLeave: this.onLeaveHelp
-      }, React__default.createElement(Icon, {
-        src: "https://cdn.ectorparking.com/images/5ca2919a41b0f.svg",
-        className: s$19.menuItemLinkIcon,
-        variant: visible || isMouseHoverHelpButton ? 'yellow' : 'white',
-        position: "right"
-      }), React__default.createElement("span", {
-        className: s$19.menuItemText
-      }, "Besoin d'aide ?")), React__default.createElement(PickerSuggestions, {
-        visible: visible,
-        className: s$19.suggestions
-      }, React__default.createElement("div", {
-        className: s$19.helpSuggestions
-      }, React__default.createElement("button", {
-        onClick: function onClick() {
-          return console.log('questions fréquentes');
-        },
-        className: s$19.suggestion
-      }, "Questions fr\xE9quentes"), React__default.createElement("button", {
-        onClick: function onClick() {
-          return console.log('Service Client');
-        },
-        className: s$19.suggestion
-      }, "Service client"))), React__default.createElement("button", {
-        className: s$19.menuItemContainer,
-        onMouseEnter: this.onHoverConnexion,
-        onMouseLeave: this.onLeaveConnexion
-      }, React__default.createElement(Icon, {
-        src: "https://cdn.ectorparking.com/images/5ca291a60c49b.svg",
-        className: s$19.menuItemLinkIcon,
-        variant: isMouseHoverConnexionButton ? 'yellow' : 'white',
-        position: "right"
-      }), React__default.createElement("span", {
-        className: s$19.menuItemText
-      }, "Connexion")));
-    }
-  }]);
-
-  return DefaultRightComponent;
-}(React__default.Component);
+  return React__default.createElement("div", {
+    className: s$19.menuItemsContainer
+  }, React__default.createElement(MenuButton, {
+    LabelComponent: renderHelpButton,
+    SuggestionsComponent: renderSuggestions
+  }), React__default.createElement(MenuButton, {
+    LabelComponent: renderConnectionButton
+  }));
+};
 
 DefaultRightComponent.defaultProps = {};
 DefaultRightComponent.propTypes = {};
 
-var Header = function Header(_ref) {
-  var className = _ref.className,
-      containerClassName = _ref.containerClassName,
-      LogoComponent = _ref.LogoComponent,
-      MiddleComponent = _ref.MiddleComponent,
-      RightComponent = _ref.RightComponent;
+var Header = function Header(_ref3) {
+  var className = _ref3.className,
+      containerClassName = _ref3.containerClassName,
+      LogoComponent = _ref3.LogoComponent,
+      MiddleComponent = _ref3.MiddleComponent,
+      RightComponent = _ref3.RightComponent;
   return React__default.createElement("div", {
     className: [s$19.wrapper, className].join(' ')
   }, React__default.createElement("div", {
@@ -15772,6 +15714,117 @@ Header.propTypes = {
   RightComponent: PropTypes$1.func,
   className: PropTypes$1.string,
   containerClassName: PropTypes$1.string
+};
+
+var css$1c = ".MenuButton-module_container__3f-Es {\n  position: relative;\n}\n\n.MenuButton-module_button__2FZz3 {\n  color: #163457;\n}\n\n.MenuButton-module_button__2FZz3:hover {\n  font-weight: 700;\n}\n\n.MenuButton-module_suggestions__3pzou {\n  top: calc(100% + 11px);\n  min-height: 0;\n  height: auto;\n}";
+var s$1a = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","container":"MenuButton-module_container__3f-Es","button":"MenuButton-module_button__2FZz3","suggestions":"MenuButton-module_suggestions__3pzou"};
+styleInject(css$1c);
+
+var MenuButton =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(MenuButton, _React$Component);
+
+  function MenuButton(props) {
+    var _this;
+
+    _classCallCheck(this, MenuButton);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(MenuButton).call(this, props));
+
+    _defineProperty(_assertThisInitialized(_this), "handleClick", function (e) {
+      var onClick = _this.props.onClick;
+
+      if (_this.button.current.contains(e.target)) {
+        _this.setState({
+          visible: true
+        });
+
+        return onClick();
+      }
+
+      return _this.setState({
+        visible: false
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onHover", function () {
+      _this.setState({
+        isMouseHover: true
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onLeave", function () {
+      _this.setState({
+        isMouseHover: false
+      });
+    });
+
+    _this.button = React__default.createRef();
+    _this.state = {
+      visible: false,
+      isMouseHover: false
+    };
+    return _this;
+  }
+
+  _createClass(MenuButton, [{
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      document.addEventListener('mousedown', this.handleClick, false);
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      document.removeEventListener('mousedown', this.handleClick, false);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          LabelComponent = _this$props.LabelComponent,
+          SuggestionsComponent = _this$props.SuggestionsComponent,
+          className = _this$props.className,
+          buttonClassName = _this$props.buttonClassName,
+          suggestionsClassName = _this$props.suggestionsClassName;
+      var _this$state = this.state,
+          visible = _this$state.visible,
+          isMouseHover = _this$state.isMouseHover;
+      return React__default.createElement("div", {
+        className: [s$1a.container, className].join(' ')
+      }, React__default.createElement("button", {
+        className: [s$1a.button, buttonClassName].join(' '),
+        ref: this.button,
+        onMouseEnter: this.onHover,
+        onMouseLeave: this.onLeave
+      }, React__default.createElement(LabelComponent, {
+        isActive: !!SuggestionsComponent && visible || isMouseHover
+      })), SuggestionsComponent && React__default.createElement(PickerSuggestions, {
+        visible: visible,
+        className: [s$1a.suggestions, suggestionsClassName].join(' ')
+      }, React__default.createElement(SuggestionsComponent, null)));
+    }
+  }]);
+
+  return MenuButton;
+}(React__default.Component);
+
+MenuButton.defaultProps = {
+  className: undefined,
+  buttonClassName: undefined,
+  suggestionsClassName: undefined,
+  SuggestionsComponent: null,
+  onClick: function onClick() {
+    return null;
+  }
+};
+MenuButton.propTypes = {
+  LabelComponent: PropTypes$1.func.isRequired,
+  SuggestionsComponent: PropTypes$1.func,
+  onClick: PropTypes$1.func,
+  className: PropTypes$1.string,
+  buttonClassName: PropTypes$1.string,
+  suggestionsClassName: PropTypes$1.string
 };
 
 var index$2 = './components';
@@ -15808,6 +15861,7 @@ exports.Label = Label;
 exports.LinkUnderlined = LinkUnderlined;
 exports.Loader = Loader;
 exports.LoginForm = LoginForm;
+exports.MenuButton = MenuButton;
 exports.PaymentMethodCard = PaymentMethodCard;
 exports.PhoneInput = PhoneInput;
 exports.Picker = Picker;

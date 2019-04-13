@@ -4034,10 +4034,11 @@ var css$O = ".ServiceCardFooter-module_footerContainer__3xZao {\n    -webkit-box
 var s$O = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","footerContainer":"ServiceCardFooter-module_footerContainer__3xZao","price":"ServiceCardFooter-module_price__1o6fm","deleteButton":"ServiceCardFooter-module_deleteButton__W6dqf"};
 styleInject(css$O);
 
-var formatPrice = function formatPrice(price, showDecimals) {
+var formatPrice = function formatPrice(price) {
+  var showDecimals = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
   var countDecimals;
 
-  if (typeof showDecimals === 'undefined') {
+  if (!showDecimals) {
     countDecimals = !Number.isInteger(Number(price)) ? 2 : 0;
   } else {
     countDecimals = showDecimals ? 2 : 0;
@@ -4051,24 +4052,48 @@ var HtmlPrice = function HtmlPrice(_ref) {
   var price = _ref.price,
       currency = _ref.currency,
       showDecimals = _ref.showDecimals,
-      className = _ref.className;
-  var priceSplited = "".concat(formatPrice(price, showDecimals)).split('.');
-  return priceSplited[1] ? React__default.createElement("span", {
+      className = _ref.className,
+      separator = _ref.separator,
+      PriceAppendComponent = _ref.PriceAppendComponent,
+      appendix = _ref.appendix;
+  var splitPrice = "".concat(formatPrice(price, showDecimals)).split('.');
+  return splitPrice[1] ? React__default.createElement("span", {
     className: className
-  }, priceSplited[0], React__default.createElement("small", null, ".".concat(priceSplited[1]).concat(currency))) : React__default.createElement("span", {
+  }, "".concat(splitPrice[0]).concat(separator), React__default.createElement(PriceAppendComponent, {
+    value: splitPrice[1],
+    currency: currency,
+    appendix: appendix
+  })) : React__default.createElement("span", {
     className: className
-  }, "".concat(priceSplited[0]).concat(currency));
+  }, "".concat(splitPrice[0]).concat(currency));
 };
 
+var PriceAppendDefaultComponent = function PriceAppendDefaultComponent(_ref2) {
+  var value = _ref2.value,
+      currency = _ref2.currency;
+  return React__default.createElement("small", null, "".concat(value).concat(currency));
+};
+
+PriceAppendDefaultComponent.propTypes = {
+  value: PropTypes$1.string.isRequired,
+  currency: PropTypes$1.string.isRequired
+};
 HtmlPrice.defaultProps = {
   currency: '€',
-  className: ''
+  className: undefined,
+  showDecimals: false,
+  separator: '.',
+  appendix: '',
+  PriceAppendComponent: PriceAppendDefaultComponent
 };
 HtmlPrice.propTypes = {
   price: PropTypes$1.string.isRequired,
-  showDecimals: PropTypes$1.bool.isRequired,
+  showDecimals: PropTypes$1.bool,
   currency: PropTypes$1.string,
-  className: PropTypes$1.string
+  className: PropTypes$1.string,
+  separator: PropTypes$1.string,
+  appendix: PropTypes$1.string,
+  PriceAppendComponent: PropTypes$1.func
 };
 
 var ServiceCardFooter = function ServiceCardFooter(_ref) {
@@ -4203,58 +4228,54 @@ Subtitle.propTypes = {
   className: PropTypes$1.string
 };
 
-var css$Q = ".Title-module_title__gpPet, .Title-module_newTitle__3v8No {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  margin-bottom: 30px;\n}\n\n.Title-module_title__gpPet .Title-module_element__1EYDR {\n  color: #163457;\n  font-size: 40px;\n  font-weight: 500;\n  line-height: 1;\n  margin: 0 0 10px;\n}\n\n.Title-module_newTitle__3v8No .Title-module_element__1EYDR {\n  color: #32a0c5;\n  font-size: 30px;\n  font-weight: 700;\n  line-height: 1;\n  margin: 0 0 10px;\n}\n\n.Title-module_title__gpPet .Title-module_horizontalRule__1wwO9 {\n  border: 0;\n  border-top: 2px solid #32a0c5;\n  margin: 0;\n  width: 50px;\n}\n\n@media (max-width: 480px) {\n  .Title-module_title__gpPet .Title-module_element__1EYDR, .Title-module_newTitle__3v8No .Title-module_element__1EYDR {\n    font-size: 22px;\n  }\n}\n";
-var s$Q = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","title":"Title-module_title__gpPet","newTitle":"Title-module_newTitle__3v8No","element":"Title-module_element__1EYDR","horizontalRule":"Title-module_horizontalRule__1wwO9"};
+var css$Q = ".Title-module_title__gpPet {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  margin-bottom: 30px;\n}\n\n.Title-module_title__gpPet .Title-module_element__1EYDR {\n  color: #163457;\n  font-size: 40px;\n  font-weight: 500;\n  line-height: 1;\n  margin: 0 0 10px;\n}\n\n.Title-module_newTitle__3v8No {\n  color: #32a0c5;\n  font-size: 30px;\n  font-weight: 700;\n  line-height: 1;\n  margin: 0;\n}\n\n.Title-module_title__gpPet .Title-module_horizontalRule__1wwO9 {\n  border: 0;\n  border-top: 2px solid #32a0c5;\n  margin: 0;\n  width: 50px;\n}\n\n@media (max-width: 480px) {\n  .Title-module_title__gpPet .Title-module_element__1EYDR, .Title-module_newTitle__3v8No {\n    font-size: 22px;\n  }\n}\n";
+var s$Q = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","title":"Title-module_title__gpPet","element":"Title-module_element__1EYDR","newTitle":"Title-module_newTitle__3v8No","horizontalRule":"Title-module_horizontalRule__1wwO9"};
 styleInject(css$Q);
+
+var TitleVariants = {
+  underlined: 'underlined',
+  none: 'none'
+};
 
 var Title = function Title(_ref) {
   var label = _ref.label,
       className = _ref.className,
       htmlElement = _ref.htmlElement,
-      testid = _ref.testid;
-  return React__default.createElement("div", {
-    className: "".concat(s$Q.title, " ").concat(className),
-    testid: testid
-  }, React__default.createElement(htmlElement, {
-    className: s$Q.element
-  }, label), React__default.createElement("hr", {
-    className: s$Q.horizontalRule
-  }));
+      testid = _ref.testid,
+      variant = _ref.variant;
+
+  if (variant === TitleVariants.underlined) {
+    return React__default.createElement("div", {
+      className: "".concat(s$Q.title, " ").concat(className),
+      testid: testid
+    }, React__default.createElement(htmlElement, {
+      className: s$Q.element
+    }, label), React__default.createElement("hr", {
+      className: s$Q.horizontalRule
+    }));
+  }
+
+  if (variant === TitleVariants.none) {
+    return React__default.createElement(htmlElement, {
+      className: [s$Q.newTitle, className].join(' ')
+    }, label, testid);
+  }
+
+  return null;
 };
 
-var NewTitle = function NewTitle(_ref2) {
-  var label = _ref2.label,
-      className = _ref2.className,
-      htmlElement = _ref2.htmlElement,
-      testid = _ref2.testid;
-  return React__default.createElement("div", {
-    className: "".concat(s$Q.newTitle, " ").concat(className),
-    testid: testid
-  }, React__default.createElement(htmlElement, {
-    className: s$Q.element
-  }, label));
-};
 Title.defaultProps = {
   className: '',
   htmlElement: 'h1',
-  testid: ''
+  testid: '',
+  variant: TitleVariants.underlined
 };
 Title.propTypes = {
   label: PropTypes$1.string.isRequired,
   className: PropTypes$1.string,
   htmlElement: PropTypes$1.string,
-  testid: PropTypes$1.string
-};
-NewTitle.defaultProps = {
-  className: '',
-  htmlElement: 'h1',
-  testid: ''
-};
-NewTitle.propTypes = {
-  label: PropTypes$1.string.isRequired,
-  className: PropTypes$1.string,
-  htmlElement: PropTypes$1.string,
-  testid: PropTypes$1.string
+  testid: PropTypes$1.string,
+  variant: PropTypes$1.oneOf(Object.keys(TitleVariants))
 };
 
 var css$R = "/**\n* This element has to be wrapped in a .steps div to increment the counter\n*/\n\n.TitleStep-module_steps__1Ryhp {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  counter-reset: steps;\n}\n\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0:before,\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0 + .TitleStep-module_step_button__1xXOY:before,\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0 + .TitleStep-module_step_button__1xXOY + .TitleStep-module_step_button__1xXOY:before {\n  content: counter(steps);\n}\n\n.TitleStep-module_step_button__1xXOY {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  color: #9eb3c2;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 17.6px;\n  font-size: 17.6px;\n  font-size: 1.1rem;\n  margin-right: 48px;\n  margin-right: 48px;\n  margin-right: 3rem;\n  position: relative;\n  background-color: transparent;\n  border: 0;\n  counter-increment: steps;\n  cursor: pointer;\n  font-weight: 300;\n  -webkit-transition: all 0.3s ease-in-out;\n  transition: all 0.3s ease-in-out;\n  opacity: 1\n}\n\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0 {\n  color: #ffcd02;\n  cursor: default;\n}\n\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0:before {\n  background-color: #fefefe;\n}\n\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0:after {\n  border-right: 2px solid #fefefe;\n  content: '';\n  height: 35px;\n  left: 19px;\n  position: absolute;\n  top: 26px;\n}\n\n.TitleStep-module_step_button__1xXOY.TitleStep-module_done__1vIiB:before {\n  content: '\\2713';\n}\n\n.TitleStep-module_step_button__1xXOY:before {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  background-color: #9eb3c2;\n  border-radius: 50%;\n  color: #163457;\n  content: '7';\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 13px;\n  font-weight: bold;\n  height: 25px;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  margin-right: 10px;\n  width: 25px;\n}\n\n.TitleStep-module_step_button__1xXOY:before, .TitleStep-module_step_button__1xXOY:after {\n  -webkit-transition: all 0.3s ease-in-out;\n  transition: all 0.3s ease-in-out;\n}\n\n.TitleStep-module_step_button__1xXOY:hover {\n  color: #fefefe;\n}\n\n.TitleStep-module_step_button__1xXOY:hover:before, .TitleStep-module_step_button__1xXOY:hover:after {\n  background-color: #fefefe;\n}\n\n.TitleStep-module_step_button__1xXOY:hover:active {\n  -webkit-transition: all 0s ease-in-out;\n  transition: all 0s ease-in-out;\n  opacity: 0.6;\n}\n";
@@ -5293,18 +5314,18 @@ function (_React$PureComponent) {
       var fromZoneValue = prevState.fromZoneValue,
           toZoneValue = prevState.toZoneValue;
 
-      if (!fromZoneValue && fromZoneProp) {
+      if (!fromZoneValue && fromZoneProp && fromZoneSuggestions.length) {
         var fromZone = fromZoneSuggestions.find(function (suggestion) {
           return suggestion.name === fromZoneProp.name;
         });
-        fromZoneValue = fromZone.name;
+        fromZoneValue = fromZone ? fromZone.name : '';
       }
 
-      if (!toZoneValue && toZoneProp) {
+      if (!toZoneValue && toZoneProp && toZoneSuggestions.length) {
         var toZone = toZoneSuggestions.find(function (suggestion) {
           return suggestion.name === toZoneProp.name;
         });
-        toZoneValue = toZone.name;
+        toZoneValue = toZone ? toZone.name : '';
       }
 
       return {
@@ -5717,7 +5738,8 @@ IconComponent$1.propTypes = {
   src: PropTypes$1.string,
   name: PropTypes$1.string,
   className: PropTypes$1.string,
-  children: PropTypes$1.arrayOf(PropTypes$1.element)
+  separator: PropTypes$1.string,
+  children: PropTypes$1.oneOfType([PropTypes$1.arrayOf(PropTypes$1.node), PropTypes$1.node]).isRequired
 };
 
 var Icon = function Icon(_ref2) {
@@ -5728,9 +5750,10 @@ var Icon = function Icon(_ref2) {
       children = _ref2.children,
       backgroundClassName = _ref2.backgroundClassName,
       Component = _ref2.IconComponent,
-      containerProps = _objectWithoutProperties(_ref2, ["variant", "position", "src", "name", "children", "backgroundClassName", "IconComponent"]);
+      iconClassName = _ref2.iconClassName,
+      containerProps = _objectWithoutProperties(_ref2, ["variant", "position", "src", "name", "children", "backgroundClassName", "IconComponent", "iconClassName"]);
 
-  var hasBackground = !!BackgroundImages[variant];
+  var hasBackground = typeof BackgroundImages[variant] !== 'undefined';
   return React__default.createElement("span", containerProps, hasBackground ? React__default.createElement("img", {
     src: BackgroundImages[variant],
     alt: "icon background",
@@ -5738,7 +5761,7 @@ var Icon = function Icon(_ref2) {
   }) : null, React__default.createElement(Component, {
     src: src,
     name: name,
-    className: [hasBackground ? s$12.withBackground : undefined, position ? s$12[position] : undefined].join(' ')
+    className: [hasBackground ? s$12.withBackground : undefined, position ? s$12[position] : undefined, iconClassName].join(' ')
   }, children));
 };
 
@@ -5750,7 +5773,8 @@ Icon.defaultProps = {
   variant: Backgrounds.none,
   position: null,
   children: null,
-  IconComponent: IconComponent$1
+  IconComponent: IconComponent$1,
+  iconClassName: undefined
 };
 Icon.propTypes = {
   src: PropTypes$1.string,
@@ -5760,7 +5784,8 @@ Icon.propTypes = {
   variant: PropTypes$1.oneOf(Object.keys(Backgrounds)),
   position: PropTypes$1.oneOfType([null, PropTypes$1.oneOf(Positions)]),
   children: PropTypes$1.arrayOf(PropTypes$1.element),
-  IconComponent: PropTypes$1.func
+  IconComponent: PropTypes$1.func,
+  iconClassName: PropTypes$1.string
 };
 
 var css$13 = ".DateTimePicker-module_calendar__1m3vk {\n  position: relative;\n  width: 100%;\n  height: 300px;\n}\n\n.DateTimePicker-module_calendarArrow__SvtwN {\n  display: none;\n}\n\n.DateTimePicker-module_datePickerPopper__2V2oe {\n  -webkit-transform: none !important;\n          transform: none !important;\n  width: 100%;\n  margin-top: 0 !important;\n}\n\n.DateTimePicker-module_hidden__OvFBm {\n  display: none !important;\n}\n\n.DateTimePicker-module_pickerSuggestions__38iqg {\n  width: 610px !important;\n  margin-left: -300px;\n  left: 50%;\n  height: 230px !important\n}\n\n.DateTimePicker-module_pickerSuggestions__38iqg:before {\n  display: none;\n}\n\n.DateTimePicker-module_suggestionsArrow__2RcKh {\n  margin-left: -9px;\n}\n\n.DateTimePicker-module_picker__3d7nO {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  height: auto;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP {\n  background: none;\n  padding-left: 40px;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.datePickerInput::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.datePickerInput::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_fixedWidthDateInput__3lrKo {\n  min-width: 160px;\n  width: 160px;\n  max-width: 160px;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU {\n  border: none !important;\n  border-radius: 0;\n  max-width: 100px;\n  padding-left: 35px;\n  margin-right: 1px;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.timePickerInput::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.timePickerInput::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInputContainer__ROeTv {\n  margin-left: 10px;\n}\n\n.DateTimePicker-module_timePickerInputContainer__ROeTv::before {\n  background-color: rgba(191, 196, 212, .52);\n  content: '';\n  height: 20px;\n  margin-top: -10px;\n  position: absolute;\n  top: 50%;\n  width: 1px;\n}\n\n.DateTimePicker-module_timeSuggestions__3aCiQ {\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  position: relative\n}\n\n.DateTimePicker-module_timeSuggestions__3aCiQ:before, .DateTimePicker-module_timeSuggestions__3aCiQ:after {\n  content: '';\n  height: 20px;\n  left: 0;\n  pointer-events: none;\n  position: absolute;\n  width: 100%;\n  z-index: 3;\n}\n\n.DateTimePicker-module_timeSuggestions__3aCiQ:before {\n  background: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(rgba(255, 255, 255, .1)));\n  background: linear-gradient(to bottom, #fefefe, rgba(255, 255, 255, .1));\n  border-top-left-radius: 5px;\n  border-top-right-radius: 5px;\n  top: 0;\n}\n\n.DateTimePicker-module_timeSuggestions__3aCiQ:after {\n  background: -webkit-gradient(linear, left bottom, left top, from(#fefefe), to(rgba(255, 255, 255, .1)));\n  background: linear-gradient(to top, #fefefe, rgba(255, 255, 255, .1));\n  bottom: 0;\n  border-bottom-left-radius: 5px;\n  border-bottom-right-radius: 5px;\n}\n\n.DateTimePicker-module_timeSuggestionsContainer__3Pe8K:nth-child(1) {\n  width: 300px;\n  min-width: 300px;\n}\n\n.DateTimePicker-module_timeSuggestionsContainer__3Pe8K {\n  width: 100%;\n}\n\n.DateTimePicker-module_inputIcon__178Nw {\n  font-size: 19.2px;\n  font-size: 19.2px;\n  font-size: 1.2rem;\n  left: 10px;\n}\n\n.DateTimePicker-module_inputContainer__1FIAJ {\n  padding: 0;\n}\n\n.DateTimePicker-module_splitInputContainer__1fsjs {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  width: 50%\n}\n\n.DateTimePicker-module_splitInputContainer__1fsjs:first-child {\n  border-right: 1px solid rgba(191, 196, 212, .52);\n}\n\n.DateTimePicker-module_month__2AwNj {\n  color: #163457;\n}\n\n.DateTimePicker-module_hr__1p2EJ {\n  height: 85%;\n  width: 1px;\n  position: absolute;\n  left: 300px;\n  background-color: rgba(191, 196, 212, .52);\n  top: 7.5%;\n}\n";
@@ -6383,7 +6408,21 @@ DateTimePicker.propTypes = {
 DateTimePicker.defaultProps = {
   error: '',
   className: undefined,
-  texts: DefaultTexts$7
+  texts: DefaultTexts$7,
+  startDate: undefined,
+  endDate: undefined,
+  onStartDateChange: function onStartDateChange() {
+    return null;
+  },
+  onEndDateChange: function onEndDateChange() {
+    return null;
+  },
+  onStartTimeChange: function onStartTimeChange() {
+    return null;
+  },
+  onEndTimeChange: function onEndTimeChange() {
+    return null;
+  }
 };
 
 var css$16 = ".FlightInformationForm-module_card__3HVvP {\n    width: 650px;\n}\n\n.FlightInformationForm-module_contentCard__2iuCz {}\n\n.FlightInformationForm-module_formContainer__38_9v {\n    margin-bottom: 20px;\n}\n\n.FlightInformationForm-module_title__3yTDe {\n    margin: 0;\n    font-weight: 300;\n    color: #32a0c5;\n}\n\n.FlightInformationForm-module_firstColumn__3dXcq {\n    padding-right: 20px;\n}\n\n.FlightInformationForm-module_secondColumn__1tg-R {\n    padding-left: 20px;\n}\n\n.FlightInformationForm-module_halfWidth__3iWMs {\n    width: 50%;\n}\n\n.FlightInformationForm-module_row__2j-tW {\n    margin-top: 10px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n}\n\n.FlightInformationForm-module_noMargin__DF7_J {\n    margin: 0;\n}\n\n.FlightInformationForm-module_input__1QJpa {\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n}\n\n.FlightInformationForm-module_select__1KZ8b {\n    margin-top: 0;\n}\n\n.FlightInformationForm-module_defaultOption__MJRT6 {\n    color: #d5d6d7;\n}\n\n.FlightInformationForm-module_actionLink__nzpW1 {\n    margin-top: 5px;\n}\n\n.FlightInformationForm-module_flexStart__3he4R {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: start;\n        -ms-flex-pack: start;\n            justify-content: flex-start;\n}\n\n.FlightInformationForm-module_flexEnd__f47Mt {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: end;\n        -ms-flex-pack: end;\n            justify-content: flex-end;\n}\n\n.FlightInformationForm-module_description__38HJs {\n    margin-top: 10px;\n}\n\n@media (max-width: 480px) {\n    .FlightInformationForm-module_card__3HVvP {\n        width: 100%;\n    }\n    .FlightInformationForm-module_contentCard__2iuCz {\n        padding: 20px;\n    }\n    .FlightInformationForm-module_halfWidth__3iWMs, .FlightInformationForm-module_input__1QJpa {\n        width: 100%;\n    }\n    .FlightInformationForm-module_input__1QJpa {\n        -webkit-box-flex: 0;\n            -ms-flex: none;\n                flex: none;\n        margin-top: 5px;\n    }\n    .FlightInformationForm-module_row__2j-tW {\n        margin: 0;\n        -ms-flex-wrap: wrap;\n            flex-wrap: wrap;\n    }\n    .FlightInformationForm-module_firstColumn__3dXcq, .FlightInformationForm-module_secondColumn__1tg-R {\n        padding: 0;\n    }\n    .FlightInformationForm-module_title__3yTDe {\n        font-size: 22px;\n    }\n    .FlightInformationForm-module_description__38HJs {\n        margin: 15px 0;\n    }\n}\n";
@@ -15580,124 +15619,66 @@ var css$1b = ".Header-module_wrapper__3Yuwe {\n  width: 100%;\n  height: 80px;\n
 var s$19 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","wrapper":"Header-module_wrapper__3Yuwe","container":"Header-module_container__2FRMu","menuItemsContainer":"Header-module_menuItemsContainer__2hK2f","menuItemContainer":"Header-module_menuItemContainer__3AND5","visible":"Header-module_visible__sHCWg","suggestion":"Header-module_suggestion__3LyBf","menuItemLinkIcon":"Header-module_menuItemLinkIcon__15Cmp","menuItemText":"Header-module_menuItemText__2n_In","suggestions":"Header-module_suggestions__SwEEy","helpSuggestions":"Header-module_helpSuggestions__K31H9"};
 styleInject(css$1b);
 
-var DefaultRightComponent =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(DefaultRightComponent, _React$Component);
+var DefaultRightComponent = function DefaultRightComponent() {
+  var renderHelpButton = function renderHelpButton(_ref) {
+    var isActive = _ref.isActive;
+    return React__default.createElement(Fragment, null, React__default.createElement(Icon, {
+      src: "https://cdn.ectorparking.com/images/5ca2919a41b0f.svg",
+      className: s$19.menuItemLinkIcon,
+      variant: isActive ? 'yellow' : 'white',
+      position: "right"
+    }), React__default.createElement("span", {
+      className: s$19.menuItemText
+    }, "Besoin d'aide ?"));
+  };
 
-  function DefaultRightComponent(props) {
-    var _this;
+  var renderConnectionButton = function renderConnectionButton(_ref2) {
+    var isActive = _ref2.isActive;
+    return React__default.createElement(Fragment, null, React__default.createElement(Icon, {
+      src: "https://cdn.ectorparking.com/images/5ca291a60c49b.svg",
+      className: s$19.menuItemLinkIcon,
+      variant: isActive ? 'yellow' : 'white',
+      position: "right"
+    }), React__default.createElement("span", {
+      className: s$19.menuItemText
+    }, "Connexion"));
+  };
 
-    _classCallCheck(this, DefaultRightComponent);
+  var renderSuggestions = function renderSuggestions() {
+    return React__default.createElement("div", {
+      className: s$19.helpSuggestions
+    }, React__default.createElement("button", {
+      onClick: function onClick() {
+        return console.log('questions fréquentes');
+      },
+      className: s$19.suggestion
+    }, "Questions fr\xE9quentes"), React__default.createElement("button", {
+      onClick: function onClick() {
+        return console.log('Service Client');
+      },
+      className: s$19.suggestion
+    }, "Service client"));
+  };
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(DefaultRightComponent).call(this, props));
-
-    _defineProperty(_assertThisInitialized(_this), "handleClick", function (e) {
-      if (_this.helpButton.current.contains(e.target)) {
-        return _this.setState({
-          visible: true
-        });
-      }
-
-      return _this.setState({
-        visible: false
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onHover", function (field) {
-      _this.setState(_defineProperty({}, field, true));
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onLeave", function (field) {
-      _this.setState(_defineProperty({}, field, false));
-    });
-
-    _this.helpButton = React__default.createRef();
-    _this.state = {
-      visible: false,
-      isMouseHoverHelpButton: false,
-      isMouseHoverConnexionButton: false
-    };
-    _this.onHoverConnexion = _this.onHover.bind(_assertThisInitialized(_this), 'isMouseHoverConnexionButton');
-    _this.onHoverHelp = _this.onHover.bind(_assertThisInitialized(_this), 'isMouseHoverHelpButton');
-    _this.onLeaveConnexion = _this.onLeave.bind(_assertThisInitialized(_this), 'isMouseHoverConnexionButton');
-    _this.onLeaveHelp = _this.onLeave.bind(_assertThisInitialized(_this), 'isMouseHoverHelpButton');
-    return _this;
-  }
-
-  _createClass(DefaultRightComponent, [{
-    key: "componentWillMount",
-    value: function componentWillMount() {
-      document.addEventListener('mousedown', this.handleClick, false);
-    }
-  }, {
-    key: "componentWillUnmount",
-    value: function componentWillUnmount() {
-      document.removeEventListener('mousedown', this.handleClick, false);
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this$state = this.state,
-          visible = _this$state.visible,
-          isMouseHoverHelpButton = _this$state.isMouseHoverHelpButton,
-          isMouseHoverConnexionButton = _this$state.isMouseHoverConnexionButton;
-      return React__default.createElement("div", {
-        className: s$19.menuItemsContainer
-      }, React__default.createElement("button", {
-        className: [s$19.menuItemContainer, visible ? s$19.visible : undefined].join(' '),
-        ref: this.helpButton,
-        onMouseEnter: this.onHoverHelp,
-        onMouseLeave: this.onLeaveHelp
-      }, React__default.createElement(Icon, {
-        src: "https://cdn.ectorparking.com/images/5ca2919a41b0f.svg",
-        className: s$19.menuItemLinkIcon,
-        variant: visible || isMouseHoverHelpButton ? 'yellow' : 'white',
-        position: "right"
-      }), React__default.createElement("span", {
-        className: s$19.menuItemText
-      }, "Besoin d'aide ?")), React__default.createElement(PickerSuggestions, {
-        visible: visible,
-        className: s$19.suggestions
-      }, React__default.createElement("div", {
-        className: s$19.helpSuggestions
-      }, React__default.createElement("button", {
-        onClick: function onClick() {
-          return console.log('questions fréquentes');
-        },
-        className: s$19.suggestion
-      }, "Questions fr\xE9quentes"), React__default.createElement("button", {
-        onClick: function onClick() {
-          return console.log('Service Client');
-        },
-        className: s$19.suggestion
-      }, "Service client"))), React__default.createElement("button", {
-        className: s$19.menuItemContainer,
-        onMouseEnter: this.onHoverConnexion,
-        onMouseLeave: this.onLeaveConnexion
-      }, React__default.createElement(Icon, {
-        src: "https://cdn.ectorparking.com/images/5ca291a60c49b.svg",
-        className: s$19.menuItemLinkIcon,
-        variant: isMouseHoverConnexionButton ? 'yellow' : 'white',
-        position: "right"
-      }), React__default.createElement("span", {
-        className: s$19.menuItemText
-      }, "Connexion")));
-    }
-  }]);
-
-  return DefaultRightComponent;
-}(React__default.Component);
+  return React__default.createElement("div", {
+    className: s$19.menuItemsContainer
+  }, React__default.createElement(MenuButton, {
+    LabelComponent: renderHelpButton,
+    SuggestionsComponent: renderSuggestions
+  }), React__default.createElement(MenuButton, {
+    LabelComponent: renderConnectionButton
+  }));
+};
 
 DefaultRightComponent.defaultProps = {};
 DefaultRightComponent.propTypes = {};
 
-var Header = function Header(_ref) {
-  var className = _ref.className,
-      containerClassName = _ref.containerClassName,
-      LogoComponent = _ref.LogoComponent,
-      MiddleComponent = _ref.MiddleComponent,
-      RightComponent = _ref.RightComponent;
+var Header = function Header(_ref3) {
+  var className = _ref3.className,
+      containerClassName = _ref3.containerClassName,
+      LogoComponent = _ref3.LogoComponent,
+      MiddleComponent = _ref3.MiddleComponent,
+      RightComponent = _ref3.RightComponent;
   return React__default.createElement("div", {
     className: [s$19.wrapper, className].join(' ')
   }, React__default.createElement("div", {
@@ -15727,8 +15708,119 @@ Header.propTypes = {
   containerClassName: PropTypes$1.string
 };
 
+var css$1c = ".MenuButton-module_container__3f-Es {\n  position: relative;\n}\n\n.MenuButton-module_button__2FZz3 {\n  color: #163457;\n}\n\n.MenuButton-module_button__2FZz3:hover {\n  font-weight: 700;\n}\n\n.MenuButton-module_suggestions__3pzou {\n  top: calc(100% + 11px);\n  min-height: 0;\n  height: auto;\n}";
+var s$1a = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","container":"MenuButton-module_container__3f-Es","button":"MenuButton-module_button__2FZz3","suggestions":"MenuButton-module_suggestions__3pzou"};
+styleInject(css$1c);
+
+var MenuButton =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(MenuButton, _React$Component);
+
+  function MenuButton(props) {
+    var _this;
+
+    _classCallCheck(this, MenuButton);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(MenuButton).call(this, props));
+
+    _defineProperty(_assertThisInitialized(_this), "handleClick", function (e) {
+      var onClick = _this.props.onClick;
+
+      if (_this.button.current.contains(e.target)) {
+        _this.setState({
+          visible: true
+        });
+
+        return onClick();
+      }
+
+      return _this.setState({
+        visible: false
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onHover", function () {
+      _this.setState({
+        isMouseHover: true
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onLeave", function () {
+      _this.setState({
+        isMouseHover: false
+      });
+    });
+
+    _this.button = React__default.createRef();
+    _this.state = {
+      visible: false,
+      isMouseHover: false
+    };
+    return _this;
+  }
+
+  _createClass(MenuButton, [{
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      document.addEventListener('mousedown', this.handleClick, false);
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      document.removeEventListener('mousedown', this.handleClick, false);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          LabelComponent = _this$props.LabelComponent,
+          SuggestionsComponent = _this$props.SuggestionsComponent,
+          className = _this$props.className,
+          buttonClassName = _this$props.buttonClassName,
+          suggestionsClassName = _this$props.suggestionsClassName;
+      var _this$state = this.state,
+          visible = _this$state.visible,
+          isMouseHover = _this$state.isMouseHover;
+      return React__default.createElement("div", {
+        className: [s$1a.container, className].join(' ')
+      }, React__default.createElement("button", {
+        className: [s$1a.button, buttonClassName].join(' '),
+        ref: this.button,
+        onMouseEnter: this.onHover,
+        onMouseLeave: this.onLeave
+      }, React__default.createElement(LabelComponent, {
+        isActive: !!SuggestionsComponent && visible || isMouseHover
+      })), SuggestionsComponent && React__default.createElement(PickerSuggestions, {
+        visible: visible,
+        className: [s$1a.suggestions, suggestionsClassName].join(' ')
+      }, React__default.createElement(SuggestionsComponent, null)));
+    }
+  }]);
+
+  return MenuButton;
+}(React__default.Component);
+
+MenuButton.defaultProps = {
+  className: undefined,
+  buttonClassName: undefined,
+  suggestionsClassName: undefined,
+  SuggestionsComponent: null,
+  onClick: function onClick() {
+    return null;
+  }
+};
+MenuButton.propTypes = {
+  LabelComponent: PropTypes$1.func.isRequired,
+  SuggestionsComponent: PropTypes$1.func,
+  onClick: PropTypes$1.func,
+  className: PropTypes$1.string,
+  buttonClassName: PropTypes$1.string,
+  suggestionsClassName: PropTypes$1.string
+};
+
 var index$2 = './components';
 
 export default index$2;
-export { ActionLink, AddItemCard, Alert, AlternativeTimeCard, ApplicationCard, Arrow, BookingCard, BookingModificationSummary, BookingSteps, Button, CarCard, Card, CardTitle, CardTravelInformation, ColorPicker, ContactCard, ContactForm, DateTimePicker, FlightInformationForm, GenderPicker, Header, HtmlPrice, Icon, Input, InputButton, InputCheckbox, InputLabel, InputSelect, Label, LinkUnderlined, Loader, LoginForm, NewTitle, PaymentMethodCard, PhoneInput, Picker, PickerSuggestions, PricingSummary, RadioButton, RatingStars, ReferralCard, RegistrationForm, RewardCard, RideSummary, RoundedButton, Select, ServiceCard, Subtitle, TimeRange, Title, TitleStep, Tooltip, ZonesPicker };
+export { ActionLink, AddItemCard, Alert, AlternativeTimeCard, ApplicationCard, Arrow, BookingCard, BookingModificationSummary, BookingSteps, Button, CarCard, Card, CardTitle, CardTravelInformation, ColorPicker, ContactCard, ContactForm, DateTimePicker, FlightInformationForm, GenderPicker, Header, HtmlPrice, Icon, Input, InputButton, InputCheckbox, InputLabel, InputSelect, Label, LinkUnderlined, Loader, LoginForm, MenuButton, PaymentMethodCard, PhoneInput, Picker, PickerSuggestions, PricingSummary, RadioButton, RatingStars, ReferralCard, RegistrationForm, RewardCard, RideSummary, RoundedButton, Select, ServiceCard, Subtitle, TimeRange, Title, TitleStep, Tooltip, ZonesPicker };
 //# sourceMappingURL=ector-ui.es.js.map

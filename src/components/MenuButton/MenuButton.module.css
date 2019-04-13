@@ -1,0 +1,19 @@
+@import '../../style/variable.global.css';
+
+.container {
+  position: relative;
+}
+
+.button {
+  color: var(--deepBlue);
+}
+
+.button:hover {
+  font-weight: var(--fontWeightBold);
+}
+
+.suggestions {
+  top: calc(100% + 11px);
+  min-height: 0;
+  height: auto;
+}
