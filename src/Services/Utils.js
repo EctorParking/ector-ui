@@ -1,6 +1,6 @@
-export const formatPrice = (price, showDecimals) => {
+export const formatPrice = (price, showDecimals = false) => {
   let countDecimals;
-  if (typeof showDecimals === 'undefined') {
+  if (!showDecimals) {
     countDecimals = !Number.isInteger(Number(price)) ? 2 : 0;
   } else {
     countDecimals = showDecimals ? 2 : 0;
