@@ -4034,10 +4034,11 @@ var css$O = ".ServiceCardFooter-module_footerContainer__3xZao {\n    -webkit-box
 var s$O = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","footerContainer":"ServiceCardFooter-module_footerContainer__3xZao","price":"ServiceCardFooter-module_price__1o6fm","deleteButton":"ServiceCardFooter-module_deleteButton__W6dqf"};
 styleInject(css$O);
 
-var formatPrice = function formatPrice(price, showDecimals) {
+var formatPrice = function formatPrice(price) {
+  var showDecimals = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
   var countDecimals;
 
-  if (typeof showDecimals === 'undefined') {
+  if (!showDecimals) {
     countDecimals = !Number.isInteger(Number(price)) ? 2 : 0;
   } else {
     countDecimals = showDecimals ? 2 : 0;
@@ -4051,24 +4052,42 @@ var HtmlPrice = function HtmlPrice(_ref) {
   var price = _ref.price,
       currency = _ref.currency,
       showDecimals = _ref.showDecimals,
-      className = _ref.className;
-  var priceSplited = "".concat(formatPrice(price, showDecimals)).split('.');
-  return priceSplited[1] ? React__default.createElement("span", {
+      className = _ref.className,
+      separator = _ref.separator,
+      PriceAppendComponent = _ref.PriceAppendComponent,
+      appendix = _ref.appendix;
+  var splitPrice = "".concat(formatPrice(price, showDecimals)).split('.');
+  return splitPrice[1] ? React__default.createElement("span", {
     className: className
-  }, priceSplited[0], React__default.createElement("small", null, ".".concat(priceSplited[1]).concat(currency))) : React__default.createElement("span", {
+  }, "".concat(splitPrice[0]).concat(separator), React__default.createElement(PriceAppendComponent, {
+    value: splitPrice[1],
+    currency: currency,
+    appendix: appendix
+  })) : React__default.createElement("span", {
     className: className
-  }, "".concat(priceSplited[0]).concat(currency));
+  }, "".concat(splitPrice[0]).concat(currency));
 };
 
 HtmlPrice.defaultProps = {
   currency: '€',
-  className: ''
+  className: undefined,
+  showDecimals: false,
+  separator: '.',
+  appendix: '',
+  PriceAppendComponent: function PriceAppendComponent(_ref2) {
+    var value = _ref2.value,
+        currency = _ref2.currency;
+    return React__default.createElement("small", null, "".concat(value).concat(currency));
+  }
 };
 HtmlPrice.propTypes = {
   price: PropTypes$1.string.isRequired,
-  showDecimals: PropTypes$1.bool.isRequired,
+  showDecimals: PropTypes$1.bool,
   currency: PropTypes$1.string,
-  className: PropTypes$1.string
+  className: PropTypes$1.string,
+  separator: PropTypes$1.string,
+  appendix: PropTypes$1.string,
+  PriceAppendComponent: PropTypes$1.func
 };
 
 var ServiceCardFooter = function ServiceCardFooter(_ref) {
@@ -4203,58 +4222,54 @@ Subtitle.propTypes = {
   className: PropTypes$1.string
 };
 
-var css$Q = ".Title-module_title__gpPet, .Title-module_newTitle__3v8No {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  margin-bottom: 30px;\n}\n\n.Title-module_title__gpPet .Title-module_element__1EYDR {\n  color: #163457;\n  font-size: 40px;\n  font-weight: 500;\n  line-height: 1;\n  margin: 0 0 10px;\n}\n\n.Title-module_newTitle__3v8No .Title-module_element__1EYDR {\n  color: #32a0c5;\n  font-size: 30px;\n  font-weight: 700;\n  line-height: 1;\n  margin: 0 0 10px;\n}\n\n.Title-module_title__gpPet .Title-module_horizontalRule__1wwO9 {\n  border: 0;\n  border-top: 2px solid #32a0c5;\n  margin: 0;\n  width: 50px;\n}\n\n@media (max-width: 480px) {\n  .Title-module_title__gpPet .Title-module_element__1EYDR, .Title-module_newTitle__3v8No .Title-module_element__1EYDR {\n    font-size: 22px;\n  }\n}\n";
-var s$Q = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","title":"Title-module_title__gpPet","newTitle":"Title-module_newTitle__3v8No","element":"Title-module_element__1EYDR","horizontalRule":"Title-module_horizontalRule__1wwO9"};
+var css$Q = ".Title-module_title__gpPet {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  margin-bottom: 30px;\n}\n\n.Title-module_title__gpPet .Title-module_element__1EYDR {\n  color: #163457;\n  font-size: 40px;\n  font-weight: 500;\n  line-height: 1;\n  margin: 0 0 10px;\n}\n\n.Title-module_newTitle__3v8No {\n  color: #32a0c5;\n  font-size: 30px;\n  font-weight: 700;\n  line-height: 1;\n  margin: 0;\n}\n\n.Title-module_title__gpPet .Title-module_horizontalRule__1wwO9 {\n  border: 0;\n  border-top: 2px solid #32a0c5;\n  margin: 0;\n  width: 50px;\n}\n\n@media (max-width: 480px) {\n  .Title-module_title__gpPet .Title-module_element__1EYDR, .Title-module_newTitle__3v8No {\n    font-size: 22px;\n  }\n}\n";
+var s$Q = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","title":"Title-module_title__gpPet","element":"Title-module_element__1EYDR","newTitle":"Title-module_newTitle__3v8No","horizontalRule":"Title-module_horizontalRule__1wwO9"};
 styleInject(css$Q);
+
+var TitleVariants = {
+  underlined: 'underlined',
+  none: 'none'
+};
 
 var Title = function Title(_ref) {
   var label = _ref.label,
       className = _ref.className,
       htmlElement = _ref.htmlElement,
-      testid = _ref.testid;
-  return React__default.createElement("div", {
-    className: "".concat(s$Q.title, " ").concat(className),
-    testid: testid
-  }, React__default.createElement(htmlElement, {
-    className: s$Q.element
-  }, label), React__default.createElement("hr", {
-    className: s$Q.horizontalRule
-  }));
+      testid = _ref.testid,
+      variant = _ref.variant;
+
+  if (variant === TitleVariants.underlined) {
+    return React__default.createElement("div", {
+      className: "".concat(s$Q.title, " ").concat(className),
+      testid: testid
+    }, React__default.createElement(htmlElement, {
+      className: s$Q.element
+    }, label), React__default.createElement("hr", {
+      className: s$Q.horizontalRule
+    }));
+  }
+
+  if (variant === TitleVariants.none) {
+    return React__default.createElement(htmlElement, {
+      className: [s$Q.newTitle, className].join(' ')
+    }, label, testid);
+  }
+
+  return null;
 };
 
-var NewTitle = function NewTitle(_ref2) {
-  var label = _ref2.label,
-      className = _ref2.className,
-      htmlElement = _ref2.htmlElement,
-      testid = _ref2.testid;
-  return React__default.createElement("div", {
-    className: "".concat(s$Q.newTitle, " ").concat(className),
-    testid: testid
-  }, React__default.createElement(htmlElement, {
-    className: s$Q.element
-  }, label));
-};
 Title.defaultProps = {
   className: '',
   htmlElement: 'h1',
-  testid: ''
+  testid: '',
+  variant: TitleVariants.underlined
 };
 Title.propTypes = {
   label: PropTypes$1.string.isRequired,
   className: PropTypes$1.string,
   htmlElement: PropTypes$1.string,
-  testid: PropTypes$1.string
-};
-NewTitle.defaultProps = {
-  className: '',
-  htmlElement: 'h1',
-  testid: ''
-};
-NewTitle.propTypes = {
-  label: PropTypes$1.string.isRequired,
-  className: PropTypes$1.string,
-  htmlElement: PropTypes$1.string,
-  testid: PropTypes$1.string
+  testid: PropTypes$1.string,
+  variant: PropTypes$1.oneOf(Object.keys(TitleVariants))
 };
 
 var css$R = "/**\n* This element has to be wrapped in a .steps div to increment the counter\n*/\n\n.TitleStep-module_steps__1Ryhp {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  counter-reset: steps;\n}\n\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0:before,\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0 + .TitleStep-module_step_button__1xXOY:before,\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0 + .TitleStep-module_step_button__1xXOY + .TitleStep-module_step_button__1xXOY:before {\n  content: counter(steps);\n}\n\n.TitleStep-module_step_button__1xXOY {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  color: #9eb3c2;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 17.6px;\n  font-size: 17.6px;\n  font-size: 1.1rem;\n  margin-right: 48px;\n  margin-right: 48px;\n  margin-right: 3rem;\n  position: relative;\n  background-color: transparent;\n  border: 0;\n  counter-increment: steps;\n  cursor: pointer;\n  font-weight: 300;\n  -webkit-transition: all 0.3s ease-in-out;\n  transition: all 0.3s ease-in-out;\n  opacity: 1\n}\n\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0 {\n  color: #ffcd02;\n  cursor: default;\n}\n\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0:before {\n  background-color: #fefefe;\n}\n\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0:after {\n  border-right: 2px solid #fefefe;\n  content: '';\n  height: 35px;\n  left: 19px;\n  position: absolute;\n  top: 26px;\n}\n\n.TitleStep-module_step_button__1xXOY.TitleStep-module_done__1vIiB:before {\n  content: '\\2713';\n}\n\n.TitleStep-module_step_button__1xXOY:before {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  background-color: #9eb3c2;\n  border-radius: 50%;\n  color: #163457;\n  content: '7';\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 13px;\n  font-weight: bold;\n  height: 25px;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  margin-right: 10px;\n  width: 25px;\n}\n\n.TitleStep-module_step_button__1xXOY:before, .TitleStep-module_step_button__1xXOY:after {\n  -webkit-transition: all 0.3s ease-in-out;\n  transition: all 0.3s ease-in-out;\n}\n\n.TitleStep-module_step_button__1xXOY:hover {\n  color: #fefefe;\n}\n\n.TitleStep-module_step_button__1xXOY:hover:before, .TitleStep-module_step_button__1xXOY:hover:after {\n  background-color: #fefefe;\n}\n\n.TitleStep-module_step_button__1xXOY:hover:active {\n  -webkit-transition: all 0s ease-in-out;\n  transition: all 0s ease-in-out;\n  opacity: 0.6;\n}\n";
@@ -5717,7 +5732,8 @@ IconComponent$1.propTypes = {
   src: PropTypes$1.string,
   name: PropTypes$1.string,
   className: PropTypes$1.string,
-  children: PropTypes$1.arrayOf(PropTypes$1.element)
+  separator: PropTypes$1.string,
+  children: PropTypes$1.oneOfType([PropTypes$1.arrayOf(PropTypes$1.node), PropTypes$1.node]).isRequired
 };
 
 var Icon = function Icon(_ref2) {
@@ -5728,9 +5744,10 @@ var Icon = function Icon(_ref2) {
       children = _ref2.children,
       backgroundClassName = _ref2.backgroundClassName,
       Component = _ref2.IconComponent,
-      containerProps = _objectWithoutProperties(_ref2, ["variant", "position", "src", "name", "children", "backgroundClassName", "IconComponent"]);
+      iconClassName = _ref2.iconClassName,
+      containerProps = _objectWithoutProperties(_ref2, ["variant", "position", "src", "name", "children", "backgroundClassName", "IconComponent", "iconClassName"]);
 
-  var hasBackground = !!BackgroundImages[variant];
+  var hasBackground = typeof BackgroundImages[variant] !== 'undefined';
   return React__default.createElement("span", containerProps, hasBackground ? React__default.createElement("img", {
     src: BackgroundImages[variant],
     alt: "icon background",
@@ -5738,7 +5755,7 @@ var Icon = function Icon(_ref2) {
   }) : null, React__default.createElement(Component, {
     src: src,
     name: name,
-    className: [hasBackground ? s$12.withBackground : undefined, position ? s$12[position] : undefined].join(' ')
+    className: [hasBackground ? s$12.withBackground : undefined, position ? s$12[position] : undefined, iconClassName].join(' ')
   }, children));
 };
 
@@ -5750,7 +5767,8 @@ Icon.defaultProps = {
   variant: Backgrounds.none,
   position: null,
   children: null,
-  IconComponent: IconComponent$1
+  IconComponent: IconComponent$1,
+  iconClassName: undefined
 };
 Icon.propTypes = {
   src: PropTypes$1.string,
@@ -5760,7 +5778,8 @@ Icon.propTypes = {
   variant: PropTypes$1.oneOf(Object.keys(Backgrounds)),
   position: PropTypes$1.oneOfType([null, PropTypes$1.oneOf(Positions)]),
   children: PropTypes$1.arrayOf(PropTypes$1.element),
-  IconComponent: PropTypes$1.func
+  IconComponent: PropTypes$1.func,
+  iconClassName: PropTypes$1.string
 };
 
 var css$13 = ".DateTimePicker-module_calendar__1m3vk {\n  position: relative;\n  width: 100%;\n  height: 300px;\n}\n\n.DateTimePicker-module_calendarArrow__SvtwN {\n  display: none;\n}\n\n.DateTimePicker-module_datePickerPopper__2V2oe {\n  -webkit-transform: none !important;\n          transform: none !important;\n  width: 100%;\n  margin-top: 0 !important;\n}\n\n.DateTimePicker-module_hidden__OvFBm {\n  display: none !important;\n}\n\n.DateTimePicker-module_pickerSuggestions__38iqg {\n  width: 610px !important;\n  margin-left: -300px;\n  left: 50%;\n  height: 230px !important\n}\n\n.DateTimePicker-module_pickerSuggestions__38iqg:before {\n  display: none;\n}\n\n.DateTimePicker-module_suggestionsArrow__2RcKh {\n  margin-left: -9px;\n}\n\n.DateTimePicker-module_picker__3d7nO {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  height: auto;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP {\n  background: none;\n  padding-left: 40px;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.datePickerInput::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.datePickerInput::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_fixedWidthDateInput__3lrKo {\n  min-width: 160px;\n  width: 160px;\n  max-width: 160px;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU {\n  border: none !important;\n  border-radius: 0;\n  max-width: 100px;\n  padding-left: 35px;\n  margin-right: 1px;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.timePickerInput::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.timePickerInput::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInputContainer__ROeTv {\n  margin-left: 10px;\n}\n\n.DateTimePicker-module_timePickerInputContainer__ROeTv::before {\n  background-color: rgba(191, 196, 212, .52);\n  content: '';\n  height: 20px;\n  margin-top: -10px;\n  position: absolute;\n  top: 50%;\n  width: 1px;\n}\n\n.DateTimePicker-module_timeSuggestions__3aCiQ {\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  position: relative\n}\n\n.DateTimePicker-module_timeSuggestions__3aCiQ:before, .DateTimePicker-module_timeSuggestions__3aCiQ:after {\n  content: '';\n  height: 20px;\n  left: 0;\n  pointer-events: none;\n  position: absolute;\n  width: 100%;\n  z-index: 3;\n}\n\n.DateTimePicker-module_timeSuggestions__3aCiQ:before {\n  background: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(rgba(255, 255, 255, .1)));\n  background: linear-gradient(to bottom, #fefefe, rgba(255, 255, 255, .1));\n  border-top-left-radius: 5px;\n  border-top-right-radius: 5px;\n  top: 0;\n}\n\n.DateTimePicker-module_timeSuggestions__3aCiQ:after {\n  background: -webkit-gradient(linear, left bottom, left top, from(#fefefe), to(rgba(255, 255, 255, .1)));\n  background: linear-gradient(to top, #fefefe, rgba(255, 255, 255, .1));\n  bottom: 0;\n  border-bottom-left-radius: 5px;\n  border-bottom-right-radius: 5px;\n}\n\n.DateTimePicker-module_timeSuggestionsContainer__3Pe8K:nth-child(1) {\n  width: 300px;\n  min-width: 300px;\n}\n\n.DateTimePicker-module_timeSuggestionsContainer__3Pe8K {\n  width: 100%;\n}\n\n.DateTimePicker-module_inputIcon__178Nw {\n  font-size: 19.2px;\n  font-size: 19.2px;\n  font-size: 1.2rem;\n  left: 10px;\n}\n\n.DateTimePicker-module_inputContainer__1FIAJ {\n  padding: 0;\n}\n\n.DateTimePicker-module_splitInputContainer__1fsjs {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  width: 50%\n}\n\n.DateTimePicker-module_splitInputContainer__1fsjs:first-child {\n  border-right: 1px solid rgba(191, 196, 212, .52);\n}\n\n.DateTimePicker-module_month__2AwNj {\n  color: #163457;\n}\n\n.DateTimePicker-module_hr__1p2EJ {\n  height: 85%;\n  width: 1px;\n  position: absolute;\n  left: 300px;\n  background-color: rgba(191, 196, 212, .52);\n  top: 7.5%;\n}\n";
@@ -15579,5 +15598,5 @@ RatingStars.propTypes = {
 var index$2 = './components';
 
 export default index$2;
-export { ActionLink, AddItemCard, Alert, AlternativeTimeCard, ApplicationCard, Arrow, BookingCard, BookingModificationSummary, BookingSteps, Button, CarCard, Card, CardTitle, CardTravelInformation, ColorPicker, ContactCard, ContactForm, DateTimePicker, FlightInformationForm, GenderPicker, HtmlPrice, Icon, Input, InputButton, InputCheckbox, InputLabel, InputSelect, Label, LinkUnderlined, Loader, LoginForm, NewTitle, PaymentMethodCard, PhoneInput, Picker, PickerSuggestions, PricingSummary, RadioButton, RatingStars, ReferralCard, RegistrationForm, RewardCard, RideSummary, RoundedButton, Select, ServiceCard, Subtitle, TimeRange, Title, TitleStep, Tooltip, ZonesPicker };
+export { ActionLink, AddItemCard, Alert, AlternativeTimeCard, ApplicationCard, Arrow, BookingCard, BookingModificationSummary, BookingSteps, Button, CarCard, Card, CardTitle, CardTravelInformation, ColorPicker, ContactCard, ContactForm, DateTimePicker, FlightInformationForm, GenderPicker, HtmlPrice, Icon, Input, InputButton, InputCheckbox, InputLabel, InputSelect, Label, LinkUnderlined, Loader, LoginForm, PaymentMethodCard, PhoneInput, Picker, PickerSuggestions, PricingSummary, RadioButton, RatingStars, ReferralCard, RegistrationForm, RewardCard, RideSummary, RoundedButton, Select, ServiceCard, Subtitle, TimeRange, Title, TitleStep, Tooltip, ZonesPicker };
 //# sourceMappingURL=ector-ui.es.js.map
