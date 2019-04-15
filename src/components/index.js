@@ -31,7 +31,7 @@ export { default as RideSummary } from './RideSummary';
 export { default as Select } from './Select';
 export { default as ServiceCard } from './ServiceCard';
 export { default as Subtitle } from './Subtitle';
-export { default as Title, NewTitle } from './Title';
+export { default as Title } from './Title';
 export { default as TitleStep } from './TitleStep';
 export { default as Tooltip } from './Tooltip';
 export { default as RewardCard } from './RewardCard';

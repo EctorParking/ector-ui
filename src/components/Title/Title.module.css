@@ -1,6 +1,6 @@
 @import '../../style/variable.global.css';
 
-.title, .newTitle {
+.title {
   display: flex;
   flex-direction: column;
   margin-bottom: var(--marginLarge);
@@ -14,12 +14,12 @@
   margin: 0 0 var(--marginSmall);
 }
 
-.newTitle .element {
+.newTitle {
   color: var(--blue);
   font-size: var(--fontSizeNewTitle);
   font-weight: var(--fontWeightBold);
   line-height: 1;
-  margin: 0 0 var(--marginSmall);
+  margin: 0;
 }
 
 .title .horizontalRule {
@@ -30,7 +30,7 @@
 }
 
 @media (--maxMobile) {
-  .title .element, .newTitle .element {
+  .title .element, .newTitle {
     font-size: var(--fontSizeSubtitle);
   }
 }

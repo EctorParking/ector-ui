@@ -8,8 +8,8 @@ import Suggestions from './ZonesPickerSuggestions';
 
 class ZonePickerStory extends React.PureComponent {
   state = {
-    fromZone: {},
-    toZone: {},
+    fromZone: null,
+    toZone: null,
     fromZoneSuggestions: Suggestions,
     toZoneSuggestions: Suggestions,
   };

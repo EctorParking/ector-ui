@@ -323,6 +323,12 @@ DateTimePicker.defaultProps = {
   error: '',
   className: undefined,
   texts: DefaultTexts,
+  startDate: undefined,
+  endDate: undefined,
+  onStartDateChange: () => null,
+  onEndDateChange: () => null,
+  onStartTimeChange: () => null,
+  onEndTimeChange: () => null,
 };
 
 export default DateTimePicker;

@@ -48,16 +48,16 @@ class ZonesPicker extends React.PureComponent {
     } = nextProps;
     let { fromZoneValue, toZoneValue } = prevState;
 
-    if (!fromZoneValue && fromZoneProp) {
+    if (!fromZoneValue && fromZoneProp && fromZoneSuggestions.length) {
       const fromZone = fromZoneSuggestions.find(
         suggestion => suggestion.name === fromZoneProp.name,
       );
-      fromZoneValue = fromZone.name;
+      fromZoneValue = fromZone ? fromZone.name : '';
     }
 
-    if (!toZoneValue && toZoneProp) {
+    if (!toZoneValue && toZoneProp && toZoneSuggestions.length) {
       const toZone = toZoneSuggestions.find(suggestion => suggestion.name === toZoneProp.name);
-      toZoneValue = toZone.name;
+      toZoneValue = toZone ? toZone.name : '';
     }
 
     return {

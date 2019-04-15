@@ -7,33 +7,48 @@ const HtmlPrice = ({
   currency,
   showDecimals,
   className,
+  separator,
+  PriceAppendComponent,
+  appendix,
 }) => {
-  const priceSplited = `${formatPrice(price, showDecimals)}`.split('.');
+  const splitPrice = `${formatPrice(price, showDecimals)}`.split('.');
 
-  return priceSplited[1] ? (
+  return splitPrice[1] ? (
     <span className={className}>
-      {priceSplited[0]}
-      <small>
-        {`.${priceSplited[1]}${currency}`}
-      </small>
+      {`${splitPrice[0]}${separator}`}
+      <PriceAppendComponent value={splitPrice[1]} currency={currency} appendix={appendix} />
     </span>
   ) : (
     <span className={className}>
-      {`${priceSplited[0]}${currency}`}
+      {`${splitPrice[0]}${currency}`}
     </span>
   );
 };
 
+const PriceAppendDefaultComponent = ({ value, currency }) => <small>{`${value}${currency}`}</small>;
+
+PriceAppendDefaultComponent.propTypes = {
+  value: PropTypes.string.isRequired,
+  currency: PropTypes.string.isRequired,
+};
+
 HtmlPrice.defaultProps = {
   currency: '€',
-  className: '',
+  className: undefined,
+  showDecimals: false,
+  separator: '.',
+  appendix: '',
+  PriceAppendComponent: PriceAppendDefaultComponent,
 };
 
 HtmlPrice.propTypes = {
   price: PropTypes.string.isRequired,
-  showDecimals: PropTypes.bool.isRequired,
+  showDecimals: PropTypes.bool,
   currency: PropTypes.string,
   className: PropTypes.string,
+  separator: PropTypes.string,
+  appendix: PropTypes.string,
+  PriceAppendComponent: PropTypes.func,
 };
 
 export default HtmlPrice;
