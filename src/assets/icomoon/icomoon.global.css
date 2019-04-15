@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?bzth71');
-  src:  url('fonts/icomoon.eot?bzth71#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?bzth71') format('truetype'),
-    url('fonts/icomoon.woff?bzth71') format('woff'),
-    url('fonts/icomoon.svg?bzth71#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?ui3449');
+  src:  url('fonts/icomoon.eot?ui3449#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?ui3449') format('truetype'),
+    url('fonts/icomoon.woff?ui3449') format('woff'),
+    url('fonts/icomoon.svg?ui3449#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,6 +24,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-ec-adaptability:before {
+  content: "\e96b";
+}
+.icon-ec-economic:before {
+  content: "\e96d";
+}
+.icon-ec-security:before {
+  content: "\e96f";
+}
 .icon-ec-airport-station:before {
   content: "\e969";
 }
