@@ -4076,17 +4076,23 @@ var HtmlPrice = function HtmlPrice(_ref) {
   }, "".concat(splitPrice[0]).concat(currency));
 };
 
+var PriceAppendDefaultComponent = function PriceAppendDefaultComponent(_ref2) {
+  var value = _ref2.value,
+      currency = _ref2.currency;
+  return React__default.createElement("small", null, "".concat(value).concat(currency));
+};
+
+PriceAppendDefaultComponent.propTypes = {
+  value: PropTypes$1.string.isRequired,
+  currency: PropTypes$1.string.isRequired
+};
 HtmlPrice.defaultProps = {
   currency: '€',
   className: undefined,
   showDecimals: false,
   separator: '.',
   appendix: '',
-  PriceAppendComponent: function PriceAppendComponent(_ref2) {
-    var value = _ref2.value,
-        currency = _ref2.currency;
-    return React__default.createElement("small", null, "".concat(value).concat(currency));
-  }
+  PriceAppendComponent: PriceAppendDefaultComponent
 };
 HtmlPrice.propTypes = {
   price: PropTypes$1.string.isRequired,
@@ -5316,18 +5322,18 @@ function (_React$PureComponent) {
       var fromZoneValue = prevState.fromZoneValue,
           toZoneValue = prevState.toZoneValue;
 
-      if (!fromZoneValue && fromZoneProp) {
+      if (!fromZoneValue && fromZoneProp && fromZoneSuggestions.length) {
         var fromZone = fromZoneSuggestions.find(function (suggestion) {
           return suggestion.name === fromZoneProp.name;
         });
-        fromZoneValue = fromZone.name;
+        fromZoneValue = fromZone ? fromZone.name : '';
       }
 
-      if (!toZoneValue && toZoneProp) {
+      if (!toZoneValue && toZoneProp && toZoneSuggestions.length) {
         var toZone = toZoneSuggestions.find(function (suggestion) {
           return suggestion.name === toZoneProp.name;
         });
-        toZoneValue = toZone.name;
+        toZoneValue = toZone ? toZone.name : '';
       }
 
       return {
@@ -6410,7 +6416,21 @@ DateTimePicker.propTypes = {
 DateTimePicker.defaultProps = {
   error: '',
   className: undefined,
-  texts: DefaultTexts$7
+  texts: DefaultTexts$7,
+  startDate: undefined,
+  endDate: undefined,
+  onStartDateChange: function onStartDateChange() {
+    return null;
+  },
+  onEndDateChange: function onEndDateChange() {
+    return null;
+  },
+  onStartTimeChange: function onStartTimeChange() {
+    return null;
+  },
+  onEndTimeChange: function onEndTimeChange() {
+    return null;
+  }
 };
 
 var css$16 = ".FlightInformationForm-module_card__3HVvP {\n    width: 650px;\n}\n\n.FlightInformationForm-module_contentCard__2iuCz {}\n\n.FlightInformationForm-module_formContainer__38_9v {\n    margin-bottom: 20px;\n}\n\n.FlightInformationForm-module_title__3yTDe {\n    margin: 0;\n    font-weight: 300;\n    color: #32a0c5;\n}\n\n.FlightInformationForm-module_firstColumn__3dXcq {\n    padding-right: 20px;\n}\n\n.FlightInformationForm-module_secondColumn__1tg-R {\n    padding-left: 20px;\n}\n\n.FlightInformationForm-module_halfWidth__3iWMs {\n    width: 50%;\n}\n\n.FlightInformationForm-module_row__2j-tW {\n    margin-top: 10px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n}\n\n.FlightInformationForm-module_noMargin__DF7_J {\n    margin: 0;\n}\n\n.FlightInformationForm-module_input__1QJpa {\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n}\n\n.FlightInformationForm-module_select__1KZ8b {\n    margin-top: 0;\n}\n\n.FlightInformationForm-module_defaultOption__MJRT6 {\n    color: #d5d6d7;\n}\n\n.FlightInformationForm-module_actionLink__nzpW1 {\n    margin-top: 5px;\n}\n\n.FlightInformationForm-module_flexStart__3he4R {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: start;\n        -ms-flex-pack: start;\n            justify-content: flex-start;\n}\n\n.FlightInformationForm-module_flexEnd__f47Mt {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: end;\n        -ms-flex-pack: end;\n            justify-content: flex-end;\n}\n\n.FlightInformationForm-module_description__38HJs {\n    margin-top: 10px;\n}\n\n@media (max-width: 480px) {\n    .FlightInformationForm-module_card__3HVvP {\n        width: 100%;\n    }\n    .FlightInformationForm-module_contentCard__2iuCz {\n        padding: 20px;\n    }\n    .FlightInformationForm-module_halfWidth__3iWMs, .FlightInformationForm-module_input__1QJpa {\n        width: 100%;\n    }\n    .FlightInformationForm-module_input__1QJpa {\n        -webkit-box-flex: 0;\n            -ms-flex: none;\n                flex: none;\n        margin-top: 5px;\n    }\n    .FlightInformationForm-module_row__2j-tW {\n        margin: 0;\n        -ms-flex-wrap: wrap;\n            flex-wrap: wrap;\n    }\n    .FlightInformationForm-module_firstColumn__3dXcq, .FlightInformationForm-module_secondColumn__1tg-R {\n        padding: 0;\n    }\n    .FlightInformationForm-module_title__3yTDe {\n        font-size: 22px;\n    }\n    .FlightInformationForm-module_description__38HJs {\n        margin: 15px 0;\n    }\n}\n";
