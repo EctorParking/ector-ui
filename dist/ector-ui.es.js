@@ -15615,7 +15615,7 @@ RatingStars.propTypes = {
   inactiveColor: PropTypes$1.string
 };
 
-var css$1b = ".Header-module_wrapper__3Yuwe {\n  width: 100%;\n  height: 60px;\n  position: fixed;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  z-index: 5;\n}\n\n.Header-module_container__2FRMu {\n  max-width: 1232px;\n  width: 100%;\n  margin: auto;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.Header-module_menuItemsContainer__2hK2f {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: space-evenly;\n      -ms-flex-pack: space-evenly;\n          justify-content: space-evenly;\n  width: 410px;\n  position: relative;\n}\n\n.Header-module_middleMenuItemsContainer__11RHW {\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n\n.Header-module_menuItemContainer__3AND5 {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.Header-module_visible__sHCWg, .Header-module_menuItemContainer__3AND5:hover, .Header-module_suggestion__3LyBf:hover {\n  font-weight: 700;\n}\n\n.Header-module_menuItemLinkIcon__15Cmp {\n  height: 20px;\n  margin-right: 10px;\n  width: 20px;\n}\n\n.Header-module_menuItemText__2n_In {\n  color: #163457;\n  margin-left: 10px;\n}\n\n.Header-module_suggestions__SwEEy {\n  width: 180px;\n  height: auto;\n  padding: 20px;\n  min-height: 0;\n  left: 0;\n  top: calc(100% + 11px);\n}\n\n.Header-module_helpSuggestions__K31H9 {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n\n.Header-module_suggestion__3LyBf {\n  margin: 10px 0;\n  color: #163457;\n  -ms-flex-item-align: start;\n      align-self: flex-start;\n}\n";
+var css$1b = ".Header-module_wrapper__3Yuwe {\n  width: 100%;\n  height: 60px;\n  position: fixed;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  z-index: 5;\n}\n\n.Header-module_container__2FRMu {\n  max-width: 1232px;\n  width: 100%;\n  margin: 0 auto;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.Header-module_menuItemsContainer__2hK2f {\n  width: 410px;\n  height: 100%;\n  position: relative;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: space-evenly;\n      -ms-flex-pack: space-evenly;\n          justify-content: space-evenly;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.Header-module_middleMenuItemsContainer__11RHW {\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n\n.Header-module_menuItemContainer__3AND5 {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.Header-module_visible__sHCWg, .Header-module_menuItemContainer__3AND5:hover, .Header-module_suggestion__3LyBf:hover {\n  font-weight: 700;\n}\n\n.Header-module_menuItemLinkIcon__15Cmp {\n  height: 20px;\n  margin-right: 10px;\n  width: 20px;\n}\n\n.Header-module_menuItemText__2n_In {\n  color: #163457;\n  margin-left: 10px;\n}\n\n.Header-module_suggestions__SwEEy {\n  width: 180px;\n  height: auto;\n  padding: 20px;\n  min-height: 0;\n  left: 0;\n  top: calc(100% + 11px);\n}\n\n.Header-module_helpSuggestions__K31H9 {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n\n.Header-module_suggestion__3LyBf {\n  margin: 10px 0;\n  color: #163457;\n  -ms-flex-item-align: start;\n      align-self: flex-start;\n}\n";
 var s$19 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","wrapper":"Header-module_wrapper__3Yuwe","container":"Header-module_container__2FRMu","menuItemsContainer":"Header-module_menuItemsContainer__2hK2f","middleMenuItemsContainer":"Header-module_middleMenuItemsContainer__11RHW","menuItemContainer":"Header-module_menuItemContainer__3AND5","visible":"Header-module_visible__sHCWg","suggestion":"Header-module_suggestion__3LyBf","menuItemLinkIcon":"Header-module_menuItemLinkIcon__15Cmp","menuItemText":"Header-module_menuItemText__2n_In","suggestions":"Header-module_suggestions__SwEEy","helpSuggestions":"Header-module_helpSuggestions__K31H9"};
 styleInject(css$1b);
 
@@ -15636,7 +15636,8 @@ var DefaultTexts$9 = {
 
 var DefaultRightComponent = function DefaultRightComponent(_ref) {
   var onClicks = _ref.onClicks,
-      texts = _ref.texts;
+      texts = _ref.texts,
+      className = _ref.className;
 
   var renderHelpButton = function renderHelpButton(_ref2) {
     var isActive = _ref2.isActive;
@@ -15668,7 +15669,7 @@ var DefaultRightComponent = function DefaultRightComponent(_ref) {
   };
 
   return React__default.createElement("div", {
-    className: s$19.menuItemsContainer
+    className: [s$19.menuItemsContainer, className].join(' ')
   }, React__default.createElement(MenuButton, {
     LabelComponent: renderHelpButton,
     SuggestionsComponent: renderSuggestions
@@ -15680,7 +15681,8 @@ var DefaultRightComponent = function DefaultRightComponent(_ref) {
 
 DefaultRightComponent.defaultProps = {
   onClicks: {},
-  texts: DefaultTexts$9
+  texts: DefaultTexts$9,
+  className: undefined
 };
 DefaultRightComponent.propTypes = {
   onClicks: PropTypes$1.shape({
@@ -15690,12 +15692,14 @@ DefaultRightComponent.propTypes = {
     customerService: PropTypes$1.func,
     business: PropTypes$1.func
   }),
-  texts: TextsType$9
+  texts: TextsType$9,
+  className: PropTypes$1.string
 };
 
 var DefaultMiddleComponent = function DefaultMiddleComponent(_ref4) {
   var onClicks = _ref4.onClicks,
-      texts = _ref4.texts;
+      texts = _ref4.texts,
+      className = _ref4.className;
 
   var renderBusinessButton = function renderBusinessButton(_ref5) {
     var isActive = _ref5.isActive;
@@ -15707,7 +15711,7 @@ var DefaultMiddleComponent = function DefaultMiddleComponent(_ref4) {
   };
 
   return React__default.createElement("div", {
-    className: s$19.middleMenuItemsContainer
+    className: [s$19.middleMenuItemsContainer, className].join(' ')
   }, React__default.createElement(MenuButton, {
     LabelComponent: renderBusinessButton,
     onClick: onClicks.business
@@ -15716,7 +15720,8 @@ var DefaultMiddleComponent = function DefaultMiddleComponent(_ref4) {
 
 DefaultMiddleComponent.defaultProps = {
   onClicks: {},
-  texts: DefaultTexts$9
+  texts: DefaultTexts$9,
+  className: undefined
 };
 DefaultMiddleComponent.propTypes = {
   onClicks: PropTypes$1.shape({
@@ -15726,12 +15731,16 @@ DefaultMiddleComponent.propTypes = {
     customerService: PropTypes$1.func,
     business: PropTypes$1.func
   }),
-  texts: TextsType$9
+  texts: TextsType$9,
+  className: PropTypes$1.string
 };
 
 var Header = function Header(_ref6) {
   var className = _ref6.className,
       containerClassName = _ref6.containerClassName,
+      logoClassName = _ref6.logoClassName,
+      middleComponentClassName = _ref6.middleComponentClassName,
+      rightComponentClassName = _ref6.rightComponentClassName,
       LogoComponent = _ref6.LogoComponent,
       MiddleComponent = _ref6.MiddleComponent,
       RightComponent = _ref6.RightComponent,
@@ -15742,19 +15751,25 @@ var Header = function Header(_ref6) {
   }, React__default.createElement("div", {
     className: [s$19.container, containerClassName].join(' ')
   }, React__default.createElement(LogoComponent, {
-    onClick: onClicks.logo
+    onClick: onClicks.logo,
+    className: logoClassName
   }), React__default.createElement(MiddleComponent, {
     onClicks: onClicks,
-    texts: texts
+    texts: texts,
+    className: middleComponentClassName
   }), React__default.createElement(RightComponent, {
     onClicks: onClicks,
-    texts: texts
+    texts: texts,
+    className: rightComponentClassName
   })));
 };
 
 Header.defaultProps = {
   className: undefined,
   containerClassName: undefined,
+  logoClassName: undefined,
+  middleComponentClassName: undefined,
+  rightComponentClassName: undefined,
   LogoComponent: function LogoComponent(props) {
     return React__default.createElement("button", props, React__default.createElement("img", {
       src: "https://cdn.ectorparking.com/images/5ca29581d66b5.svg",
@@ -15779,10 +15794,13 @@ Header.propTypes = {
   }),
   className: PropTypes$1.string,
   containerClassName: PropTypes$1.string,
+  logoClassName: PropTypes$1.string,
+  middleComponentClassName: PropTypes$1.string,
+  rightComponentClassName: PropTypes$1.string,
   texts: TextsType$9
 };
 
-var css$1c = ".MenuButton-module_container__3f-Es {\n  position: relative;\n}\n\n.MenuButton-module_button__2FZz3 {\n  color: #163457;\n}\n\n.MenuButton-module_button__2FZz3:hover {\n  font-weight: 700;\n}\n\n.MenuButton-module_suggestions__3pzou {\n  top: calc(100% + 11px);\n  min-height: 0;\n  height: auto;\n}";
+var css$1c = ".MenuButton-module_container__3f-Es {\n  position: relative;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.MenuButton-module_button__2FZz3 {\n  color: #163457;\n  padding: 0;\n}\n\n.MenuButton-module_button__2FZz3:hover {\n  font-weight: 700;\n}\n\n.MenuButton-module_suggestions__3pzou {\n  top: calc(100% + 11px);\n  width: 220px;\n  padding: 20px;\n  left: -25%;\n  min-height: 0;\n  height: auto;\n}\n";
 var s$1a = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","container":"MenuButton-module_container__3f-Es","button":"MenuButton-module_button__2FZz3","suggestions":"MenuButton-module_suggestions__3pzou"};
 styleInject(css$1c);
 
@@ -15898,7 +15916,7 @@ MenuButton.propTypes = {
   suggestionsClassName: PropTypes$1.string
 };
 
-var css$1d = ".TextIcon-module_container__3uZXq {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.TextIcon-module_icon__3DoI9 {\n  height: 2em;\n  width: 2em;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.TextIcon-module_text__1v24r {}";
+var css$1d = ".TextIcon-module_container__3uZXq {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.TextIcon-module_icon__3DoI9 {\n  height: 2em;\n  width: 2em;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.TextIcon-module_text__1v24r {}";
 var s$1b = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","container":"TextIcon-module_container__3uZXq","icon":"TextIcon-module_icon__3DoI9","text":"TextIcon-module_text__1v24r"};
 styleInject(css$1d);
 

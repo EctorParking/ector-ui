@@ -5,7 +5,7 @@ import { MenuButton, TextIcon } from '..';
 import s from './Header.module.css';
 import TextsType, { DefaultTexts } from './HeaderTextsType';
 
-const DefaultRightComponent = ({ onClicks, texts }) => {
+const DefaultRightComponent = ({ onClicks, texts, className }) => {
   const renderHelpButton = ({ isActive }) => (
     <TextIcon
       imageUrl="https://cdn.ectorparking.com/images/5ca2919a41b0f.svg"
@@ -32,7 +32,7 @@ const DefaultRightComponent = ({ onClicks, texts }) => {
   );
 
   return (
-    <div className={s.menuItemsContainer}>
+    <div className={[s.menuItemsContainer, className].join(' ')}>
       <MenuButton LabelComponent={renderHelpButton} SuggestionsComponent={renderSuggestions} />
       <MenuButton LabelComponent={renderConnectionButton} onClick={onClicks.login} />
     </div>
@@ -42,6 +42,7 @@ const DefaultRightComponent = ({ onClicks, texts }) => {
 DefaultRightComponent.defaultProps = {
   onClicks: {},
   texts: DefaultTexts,
+  className: undefined,
 };
 
 DefaultRightComponent.propTypes = {
@@ -53,9 +54,10 @@ DefaultRightComponent.propTypes = {
     business: PropTypes.func,
   }),
   texts: TextsType,
+  className: PropTypes.string,
 };
 
-const DefaultMiddleComponent = ({ onClicks, texts }) => {
+const DefaultMiddleComponent = ({ onClicks, texts, className }) => {
   const renderBusinessButton = ({ isActive }) => (
     <TextIcon
       imageUrl="https://cdn.ectorparking.com/images/5ca29156f2bf9.svg"
@@ -67,7 +69,7 @@ const DefaultMiddleComponent = ({ onClicks, texts }) => {
   );
 
   return (
-    <div className={s.middleMenuItemsContainer}>
+    <div className={[s.middleMenuItemsContainer, className].join(' ')}>
       <MenuButton LabelComponent={renderBusinessButton} onClick={onClicks.business} />
     </div>
   );
@@ -76,6 +78,7 @@ const DefaultMiddleComponent = ({ onClicks, texts }) => {
 DefaultMiddleComponent.defaultProps = {
   onClicks: {},
   texts: DefaultTexts,
+  className: undefined,
 };
 
 DefaultMiddleComponent.propTypes = {
@@ -87,11 +90,15 @@ DefaultMiddleComponent.propTypes = {
     business: PropTypes.func,
   }),
   texts: TextsType,
+  className: PropTypes.string,
 };
 
 const Header = ({
   className,
   containerClassName,
+  logoClassName,
+  middleComponentClassName,
+  rightComponentClassName,
   LogoComponent,
   MiddleComponent,
   RightComponent,
@@ -100,9 +107,9 @@ const Header = ({
 }) => (
   <div className={[s.wrapper, className].join(' ')}>
     <div className={[s.container, containerClassName].join(' ')}>
-      <LogoComponent onClick={onClicks.logo} />
-      <MiddleComponent onClicks={onClicks} texts={texts} />
-      <RightComponent onClicks={onClicks} texts={texts} />
+      <LogoComponent onClick={onClicks.logo} className={logoClassName} />
+      <MiddleComponent onClicks={onClicks} texts={texts} className={middleComponentClassName} />
+      <RightComponent onClicks={onClicks} texts={texts} className={rightComponentClassName} />
     </div>
   </div>
 );
@@ -110,6 +117,9 @@ const Header = ({
 Header.defaultProps = {
   className: undefined,
   containerClassName: undefined,
+  logoClassName: undefined,
+  middleComponentClassName: undefined,
+  rightComponentClassName: undefined,
   LogoComponent: props => (
     <button {...props}>
       <img src="https://cdn.ectorparking.com/images/5ca29581d66b5.svg" alt="logo" />
@@ -134,6 +144,9 @@ Header.propTypes = {
   }),
   className: PropTypes.string,
   containerClassName: PropTypes.string,
+  logoClassName: PropTypes.string,
+  middleComponentClassName: PropTypes.string,
+  rightComponentClassName: PropTypes.string,
   texts: TextsType,
 };
 

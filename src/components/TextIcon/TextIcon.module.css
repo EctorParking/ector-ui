@@ -10,7 +10,6 @@
   height: var(--iconFontSize);
   width: var(--iconFontSize);
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
