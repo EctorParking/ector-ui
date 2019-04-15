@@ -25,13 +25,20 @@ const HtmlPrice = ({
   );
 };
 
+const PriceAppendDefaultComponent = ({ value, currency }) => <small>{`${value}${currency}`}</small>;
+
+PriceAppendDefaultComponent.propTypes = {
+  value: PropTypes.string.isRequired,
+  currency: PropTypes.string.isRequired,
+};
+
 HtmlPrice.defaultProps = {
   currency: '€',
   className: undefined,
   showDecimals: false,
   separator: '.',
   appendix: '',
-  PriceAppendComponent: ({ value, currency }) => <small>{`${value}${currency}`}</small>,
+  PriceAppendComponent: PriceAppendDefaultComponent,
 };
 
 HtmlPrice.propTypes = {
