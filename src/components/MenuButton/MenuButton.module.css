@@ -15,10 +15,11 @@
 }
 
 .suggestions {
-  top: calc(100% + 11px);
+  top: 100%;
   width: 220px;
   padding: var(--marginMedium);
-  left: -25%;
+  margin-top: var(--marginMedium);
+  left: calc(50% - 130px);
   min-height: 0;
   height: auto;
 }
