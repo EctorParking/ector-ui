@@ -4,35 +4,39 @@ import { PickerSuggestions } from '..';
 
 import s from './MenuButton.module.css';
 
-class MenuButton extends React.Component {
+class MenuButton extends React.PureComponent {
   constructor(props) {
     super(props);
 
-    this.button = React.createRef();
+    this.containerRef = React.createRef();
     this.state = {
       visible: false,
       isMouseHover: false,
     };
   }
 
-  componentWillMount() {
-    document.addEventListener('mousedown', this.handleClick, false);
+  componentDidMount() {
+    // eslint-disable-next-line no-undef
+    document.addEventListener('mousedown', this.handleClickOutside);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('mousedown', this.handleClick, false);
+    // eslint-disable-next-line no-undef
+    document.removeEventListener('mousedown', this.handleClickOutside);
   }
 
-  handleClick = (e) => {
+  handleClickOutside = (e) => {
+    if (this.containerRef.current && !this.containerRef.current.contains(e.target)) {
+      this.setState({ visible: false });
+    }
+  };
+
+  handleClick = () => {
     const { onClick } = this.props;
 
-    if (this.button.current.contains(e.target)) {
-      this.setState({ visible: true });
+    this.setState({ visible: true });
 
-      return onClick();
-    }
-
-    return this.setState({ visible: false });
+    onClick();
   };
 
   onHover = () => {
@@ -50,10 +54,13 @@ class MenuButton extends React.Component {
     const { visible, isMouseHover } = this.state;
 
     return (
-      <div className={[s.container, className].join((' '))}>
+      <div
+        className={[s.container, className].join((' '))}
+        ref={this.containerRef}
+      >
         <button
           className={[s.button, buttonClassName].join(' ')}
-          ref={this.button}
+          onClick={this.handleClick}
           onMouseEnter={this.onHover}
           onMouseLeave={this.onLeave}
         >

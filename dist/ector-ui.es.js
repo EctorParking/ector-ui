@@ -15615,47 +15615,38 @@ RatingStars.propTypes = {
   inactiveColor: PropTypes$1.string
 };
 
-var css$1b = ".Header-module_wrapper__3Yuwe {\n  width: 100%;\n  height: 80px;\n  position: fixed;\n  z-index: 1;\n}\n\n.Header-module_container__2FRMu {\n  max-width: 1232px;\n  width: 100%;\n  margin: auto;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.Header-module_menuItemsContainer__2hK2f {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  width: 410px;\n  position: relative;\n}\n\n.Header-module_menuItemContainer__3AND5 {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.Header-module_visible__sHCWg, .Header-module_menuItemContainer__3AND5:hover, .Header-module_suggestion__3LyBf:hover {\n  font-weight: 700;\n}\n\n.Header-module_menuItemLinkIcon__15Cmp {\n  height: 20px;\n  margin-right: 10px;\n  width: 20px;\n}\n\n.Header-module_menuItemText__2n_In {\n  color: #163457;\n  margin-left: 10px;\n}\n\n.Header-module_suggestions__SwEEy {\n  width: 180px;\n  height: auto;\n  padding: 20px;\n  min-height: 0;\n  left: 0;\n  top: calc(100% + 11px);\n}\n\n.Header-module_helpSuggestions__K31H9 {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n\n.Header-module_suggestion__3LyBf {\n  margin: 10px 0;\n  color: #163457;\n  -ms-flex-item-align: start;\n      align-self: flex-start;\n}\n";
-var s$19 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","wrapper":"Header-module_wrapper__3Yuwe","container":"Header-module_container__2FRMu","menuItemsContainer":"Header-module_menuItemsContainer__2hK2f","menuItemContainer":"Header-module_menuItemContainer__3AND5","visible":"Header-module_visible__sHCWg","suggestion":"Header-module_suggestion__3LyBf","menuItemLinkIcon":"Header-module_menuItemLinkIcon__15Cmp","menuItemText":"Header-module_menuItemText__2n_In","suggestions":"Header-module_suggestions__SwEEy","helpSuggestions":"Header-module_helpSuggestions__K31H9"};
+var css$1b = ".Header-module_wrapper__3Yuwe {\n  width: 100%;\n  height: 60px;\n  position: fixed;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  z-index: 5;\n}\n\n.Header-module_container__2FRMu {\n  max-width: 1232px;\n  width: 100%;\n  margin: auto;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.Header-module_menuItemsContainer__2hK2f {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: space-evenly;\n      -ms-flex-pack: space-evenly;\n          justify-content: space-evenly;\n  width: 410px;\n  position: relative;\n}\n\n.Header-module_middleMenuItemsContainer__11RHW {\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n\n.Header-module_menuItemContainer__3AND5 {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.Header-module_visible__sHCWg, .Header-module_menuItemContainer__3AND5:hover, .Header-module_suggestion__3LyBf:hover {\n  font-weight: 700;\n}\n\n.Header-module_menuItemLinkIcon__15Cmp {\n  height: 20px;\n  margin-right: 10px;\n  width: 20px;\n}\n\n.Header-module_menuItemText__2n_In {\n  color: #163457;\n  margin-left: 10px;\n}\n\n.Header-module_suggestions__SwEEy {\n  width: 180px;\n  height: auto;\n  padding: 20px;\n  min-height: 0;\n  left: 0;\n  top: calc(100% + 11px);\n}\n\n.Header-module_helpSuggestions__K31H9 {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n\n.Header-module_suggestion__3LyBf {\n  margin: 10px 0;\n  color: #163457;\n  -ms-flex-item-align: start;\n      align-self: flex-start;\n}\n";
+var s$19 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","wrapper":"Header-module_wrapper__3Yuwe","container":"Header-module_container__2FRMu","menuItemsContainer":"Header-module_menuItemsContainer__2hK2f","middleMenuItemsContainer":"Header-module_middleMenuItemsContainer__11RHW","menuItemContainer":"Header-module_menuItemContainer__3AND5","visible":"Header-module_visible__sHCWg","suggestion":"Header-module_suggestion__3LyBf","menuItemLinkIcon":"Header-module_menuItemLinkIcon__15Cmp","menuItemText":"Header-module_menuItemText__2n_In","suggestions":"Header-module_suggestions__SwEEy","helpSuggestions":"Header-module_helpSuggestions__K31H9"};
 styleInject(css$1b);
 
-var DefaultRightComponent = function DefaultRightComponent() {
-  var renderHelpButton = function renderHelpButton(_ref) {
-    var isActive = _ref.isActive;
-    return React__default.createElement(Fragment, null, React__default.createElement(Icon, {
-      src: "https://cdn.ectorparking.com/images/5ca2919a41b0f.svg",
-      className: s$19.menuItemLinkIcon,
+var DefaultRightComponent = function DefaultRightComponent(_ref) {
+  var onClicks = _ref.onClicks;
+
+  var renderHelpButton = function renderHelpButton(_ref2) {
+    var isActive = _ref2.isActive;
+    return React__default.createElement(TextIcon, {
+      imageUrl: "https://cdn.ectorparking.com/images/5ca2919a41b0f.svg",
       variant: isActive ? 'yellow' : 'white',
       position: "right"
-    }), React__default.createElement("span", {
-      className: s$19.menuItemText
-    }, "Besoin d'aide ?"));
+    }, "Besoin d'aide ?");
   };
 
-  var renderConnectionButton = function renderConnectionButton(_ref2) {
-    var isActive = _ref2.isActive;
-    return React__default.createElement(Fragment, null, React__default.createElement(Icon, {
-      src: "https://cdn.ectorparking.com/images/5ca291a60c49b.svg",
-      className: s$19.menuItemLinkIcon,
-      variant: isActive ? 'yellow' : 'white',
-      position: "right"
-    }), React__default.createElement("span", {
-      className: s$19.menuItemText
-    }, "Connexion"));
+  var renderConnectionButton = function renderConnectionButton(_ref3) {
+    var isActive = _ref3.isActive;
+    return React__default.createElement(TextIcon, {
+      imageUrl: "https://cdn.ectorparking.com/images/5ca291a60c49b.svg",
+      variant: isActive ? 'yellow' : 'white'
+    }, "Connexion");
   };
 
   var renderSuggestions = function renderSuggestions() {
     return React__default.createElement("div", {
       className: s$19.helpSuggestions
     }, React__default.createElement("button", {
-      onClick: function onClick() {
-        return console.log('questions fréquentes');
-      },
+      onClick: onClicks.faq,
       className: s$19.suggestion
     }, "Questions fr\xE9quentes"), React__default.createElement("button", {
-      onClick: function onClick() {
-        return console.log('Service Client');
-      },
+      onClick: onClicks.customerService,
       className: s$19.suggestion
     }, "Service client"));
   };
@@ -15666,24 +15657,75 @@ var DefaultRightComponent = function DefaultRightComponent() {
     LabelComponent: renderHelpButton,
     SuggestionsComponent: renderSuggestions
   }), React__default.createElement(MenuButton, {
-    LabelComponent: renderConnectionButton
+    LabelComponent: renderConnectionButton,
+    onClick: onClicks.login
   }));
 };
 
-DefaultRightComponent.defaultProps = {};
-DefaultRightComponent.propTypes = {};
+DefaultRightComponent.defaultProps = {
+  onClicks: {}
+};
+DefaultRightComponent.propTypes = {
+  onClicks: PropTypes$1.shape({
+    logo: PropTypes$1.func,
+    login: PropTypes$1.func,
+    faq: PropTypes$1.func,
+    customerService: PropTypes$1.func,
+    business: PropTypes$1.func
+  })
+};
 
-var Header = function Header(_ref3) {
-  var className = _ref3.className,
-      containerClassName = _ref3.containerClassName,
-      LogoComponent = _ref3.LogoComponent,
-      MiddleComponent = _ref3.MiddleComponent,
-      RightComponent = _ref3.RightComponent;
+var DefaultMiddleComponent = function DefaultMiddleComponent(_ref4) {
+  var onClicks = _ref4.onClicks;
+
+  var renderBusinessButton = function renderBusinessButton(_ref5) {
+    var isActive = _ref5.isActive;
+    return React__default.createElement(TextIcon, {
+      imageUrl: "https://cdn.ectorparking.com/images/5ca29156f2bf9.svg",
+      variant: isActive ? 'yellow' : 'melrose',
+      position: "right"
+    }, "Ector Business");
+  };
+
+  return React__default.createElement("div", {
+    className: s$19.middleMenuItemsContainer
+  }, React__default.createElement(MenuButton, {
+    LabelComponent: renderBusinessButton,
+    onClick: onClicks.business
+  }));
+};
+
+DefaultMiddleComponent.defaultProps = {
+  onClicks: {}
+};
+DefaultMiddleComponent.propTypes = {
+  onClicks: PropTypes$1.shape({
+    logo: PropTypes$1.func,
+    login: PropTypes$1.func,
+    faq: PropTypes$1.func,
+    customerService: PropTypes$1.func,
+    business: PropTypes$1.func
+  })
+};
+
+var Header = function Header(_ref6) {
+  var className = _ref6.className,
+      containerClassName = _ref6.containerClassName,
+      LogoComponent = _ref6.LogoComponent,
+      MiddleComponent = _ref6.MiddleComponent,
+      RightComponent = _ref6.RightComponent,
+      onClicks = _ref6.onClicks;
   return React__default.createElement("div", {
     className: [s$19.wrapper, className].join(' ')
   }, React__default.createElement("div", {
     className: [s$19.container, containerClassName].join(' ')
-  }, React__default.createElement(LogoComponent, null), React__default.createElement(MiddleComponent, null), React__default.createElement(RightComponent, null)));
+  }, React__default.createElement(LogoComponent, {
+    onClick: onClicks.logo
+  }), React__default.createElement(MiddleComponent, {
+    onClicks: onClicks
+  }), React__default.createElement(RightComponent, {
+    onClicks: onClicks
+  })));
 };
 
 Header.defaultProps = {
@@ -15695,15 +15737,21 @@ Header.defaultProps = {
       alt: "logo"
     }));
   },
-  MiddleComponent: function MiddleComponent() {
-    return null;
-  },
-  RightComponent: DefaultRightComponent
+  MiddleComponent: DefaultMiddleComponent,
+  RightComponent: DefaultRightComponent,
+  onClicks: {}
 };
 Header.propTypes = {
   LogoComponent: PropTypes$1.func,
   MiddleComponent: PropTypes$1.func,
   RightComponent: PropTypes$1.func,
+  onClicks: PropTypes$1.shape({
+    logo: PropTypes$1.func,
+    login: PropTypes$1.func,
+    faq: PropTypes$1.func,
+    customerService: PropTypes$1.func,
+    business: PropTypes$1.func
+  }),
   className: PropTypes$1.string,
   containerClassName: PropTypes$1.string
 };
@@ -15714,8 +15762,8 @@ styleInject(css$1c);
 
 var MenuButton =
 /*#__PURE__*/
-function (_React$Component) {
-  _inherits(MenuButton, _React$Component);
+function (_React$PureComponent) {
+  _inherits(MenuButton, _React$PureComponent);
 
   function MenuButton(props) {
     var _this;
@@ -15724,20 +15772,22 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(MenuButton).call(this, props));
 
-    _defineProperty(_assertThisInitialized(_this), "handleClick", function (e) {
+    _defineProperty(_assertThisInitialized(_this), "handleClickOutside", function (e) {
+      if (_this.containerRef.current && !_this.containerRef.current.contains(e.target)) {
+        _this.setState({
+          visible: false
+        });
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "handleClick", function () {
       var onClick = _this.props.onClick;
 
-      if (_this.button.current.contains(e.target)) {
-        _this.setState({
-          visible: true
-        });
-
-        return onClick();
-      }
-
-      return _this.setState({
-        visible: false
+      _this.setState({
+        visible: true
       });
+
+      onClick();
     });
 
     _defineProperty(_assertThisInitialized(_this), "onHover", function () {
@@ -15752,7 +15802,7 @@ function (_React$Component) {
       });
     });
 
-    _this.button = React__default.createRef();
+    _this.containerRef = React__default.createRef();
     _this.state = {
       visible: false,
       isMouseHover: false
@@ -15761,14 +15811,16 @@ function (_React$Component) {
   }
 
   _createClass(MenuButton, [{
-    key: "componentWillMount",
-    value: function componentWillMount() {
-      document.addEventListener('mousedown', this.handleClick, false);
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      // eslint-disable-next-line no-undef
+      document.addEventListener('mousedown', this.handleClickOutside);
     }
   }, {
     key: "componentWillUnmount",
     value: function componentWillUnmount() {
-      document.removeEventListener('mousedown', this.handleClick, false);
+      // eslint-disable-next-line no-undef
+      document.removeEventListener('mousedown', this.handleClickOutside);
     }
   }, {
     key: "render",
@@ -15783,10 +15835,11 @@ function (_React$Component) {
           visible = _this$state.visible,
           isMouseHover = _this$state.isMouseHover;
       return React__default.createElement("div", {
-        className: [s$1a.container, className].join(' ')
+        className: [s$1a.container, className].join(' '),
+        ref: this.containerRef
       }, React__default.createElement("button", {
         className: [s$1a.button, buttonClassName].join(' '),
-        ref: this.button,
+        onClick: this.handleClick,
         onMouseEnter: this.onHover,
         onMouseLeave: this.onLeave
       }, React__default.createElement(LabelComponent, {
@@ -15799,7 +15852,7 @@ function (_React$Component) {
   }]);
 
   return MenuButton;
-}(React__default.Component);
+}(React__default.PureComponent);
 
 MenuButton.defaultProps = {
   className: undefined,
@@ -15819,8 +15872,38 @@ MenuButton.propTypes = {
   suggestionsClassName: PropTypes$1.string
 };
 
+var css$1d = ".TextIcon-module_container__3uZXq {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.TextIcon-module_icon__3DoI9 {\n  height: 2em;\n  width: 2em;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.TextIcon-module_text__1v24r {}";
+var s$1b = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","container":"TextIcon-module_container__3uZXq","icon":"TextIcon-module_icon__3DoI9","text":"TextIcon-module_text__1v24r"};
+styleInject(css$1d);
+
+var TextIcon = function TextIcon(_ref) {
+  var children = _ref.children,
+      imageUrl = _ref.imageUrl,
+      className = _ref.className,
+      iconClassName = _ref.iconClassName,
+      iconProps = _objectWithoutProperties(_ref, ["children", "imageUrl", "className", "iconClassName"]);
+
+  return React__default.createElement("div", {
+    className: [s$1b.container, className].join(' ')
+  }, React__default.createElement(Icon, _extends({
+    src: imageUrl,
+    className: [s$1b.icon, iconClassName].join(' ')
+  }, iconProps)), children);
+};
+
+TextIcon.defaultProps = {
+  className: undefined,
+  iconClassName: undefined
+};
+TextIcon.propTypes = {
+  children: PropTypes$1.node.isRequired,
+  imageUrl: PropTypes$1.string.isRequired,
+  className: PropTypes$1.string,
+  iconClassName: PropTypes$1.string
+};
+
 var index$2 = './components';
 
 export default index$2;
-export { ActionLink, AddItemCard, Alert, AlternativeTimeCard, ApplicationCard, Arrow, BookingCard, BookingModificationSummary, BookingSteps, Button, CarCard, Card, CardTitle, CardTravelInformation, ColorPicker, ContactCard, ContactForm, DateTimePicker, FlightInformationForm, GenderPicker, Header, HtmlPrice, Icon, Input, InputButton, InputCheckbox, InputLabel, InputSelect, Label, LinkUnderlined, Loader, LoginForm, MenuButton, PaymentMethodCard, PhoneInput, Picker, PickerSuggestions, PricingSummary, RadioButton, RatingStars, ReferralCard, RegistrationForm, RewardCard, RideSummary, RoundedButton, Select, ServiceCard, Subtitle, TimeRange, Title, TitleStep, Tooltip, ZonesPicker };
+export { ActionLink, AddItemCard, Alert, AlternativeTimeCard, ApplicationCard, Arrow, BookingCard, BookingModificationSummary, BookingSteps, Button, CarCard, Card, CardTitle, CardTravelInformation, ColorPicker, ContactCard, ContactForm, DateTimePicker, FlightInformationForm, GenderPicker, Header, HtmlPrice, Icon, Input, InputButton, InputCheckbox, InputLabel, InputSelect, Label, LinkUnderlined, Loader, LoginForm, MenuButton, PaymentMethodCard, PhoneInput, Picker, PickerSuggestions, PricingSummary, RadioButton, RatingStars, ReferralCard, RegistrationForm, RewardCard, RideSummary, RoundedButton, Select, ServiceCard, Subtitle, TextIcon, TimeRange, Title, TitleStep, Tooltip, ZonesPicker };
 //# sourceMappingURL=ector-ui.es.js.map
