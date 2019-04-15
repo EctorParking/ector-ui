@@ -15627,8 +15627,24 @@ var css$1b = ".Header-module_wrapper__3Yuwe {\n  width: 100%;\n  height: 60px;\n
 var s$19 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","wrapper":"Header-module_wrapper__3Yuwe","container":"Header-module_container__2FRMu","menuItemsContainer":"Header-module_menuItemsContainer__2hK2f","middleMenuItemsContainer":"Header-module_middleMenuItemsContainer__11RHW","menuItemContainer":"Header-module_menuItemContainer__3AND5","visible":"Header-module_visible__sHCWg","suggestion":"Header-module_suggestion__3LyBf","menuItemLinkIcon":"Header-module_menuItemLinkIcon__15Cmp","menuItemText":"Header-module_menuItemText__2n_In","suggestions":"Header-module_suggestions__SwEEy","helpSuggestions":"Header-module_helpSuggestions__K31H9"};
 styleInject(css$1b);
 
+var TextsType$9 = PropTypes$1.shape({
+  business: PropTypes$1.string,
+  needHelp: PropTypes$1.string,
+  login: PropTypes$1.string,
+  faq: PropTypes$1.string,
+  customerService: PropTypes$1.string
+});
+var DefaultTexts$9 = {
+  business: 'Ector Business',
+  needHelp: "Besoin d'aides ?",
+  login: 'Connexion',
+  faq: 'Questions fréquentes',
+  customerService: 'Service client'
+};
+
 var DefaultRightComponent = function DefaultRightComponent(_ref) {
-  var onClicks = _ref.onClicks;
+  var onClicks = _ref.onClicks,
+      texts = _ref.texts;
 
   var renderHelpButton = function renderHelpButton(_ref2) {
     var isActive = _ref2.isActive;
@@ -15636,7 +15652,7 @@ var DefaultRightComponent = function DefaultRightComponent(_ref) {
       imageUrl: "https://cdn.ectorparking.com/images/5ca2919a41b0f.svg",
       variant: isActive ? 'yellow' : 'white',
       position: "right"
-    }, "Besoin d'aide ?");
+    }, texts.needHelp);
   };
 
   var renderConnectionButton = function renderConnectionButton(_ref3) {
@@ -15644,7 +15660,7 @@ var DefaultRightComponent = function DefaultRightComponent(_ref) {
     return React__default.createElement(TextIcon, {
       imageUrl: "https://cdn.ectorparking.com/images/5ca291a60c49b.svg",
       variant: isActive ? 'yellow' : 'white'
-    }, "Connexion");
+    }, texts.login);
   };
 
   var renderSuggestions = function renderSuggestions() {
@@ -15653,10 +15669,10 @@ var DefaultRightComponent = function DefaultRightComponent(_ref) {
     }, React__default.createElement("button", {
       onClick: onClicks.faq,
       className: s$19.suggestion
-    }, "Questions fr\xE9quentes"), React__default.createElement("button", {
+    }, texts.faq), React__default.createElement("button", {
       onClick: onClicks.customerService,
       className: s$19.suggestion
-    }, "Service client"));
+    }, texts.customerService));
   };
 
   return React__default.createElement("div", {
@@ -15671,7 +15687,8 @@ var DefaultRightComponent = function DefaultRightComponent(_ref) {
 };
 
 DefaultRightComponent.defaultProps = {
-  onClicks: {}
+  onClicks: {},
+  texts: DefaultTexts$9
 };
 DefaultRightComponent.propTypes = {
   onClicks: PropTypes$1.shape({
@@ -15680,11 +15697,13 @@ DefaultRightComponent.propTypes = {
     faq: PropTypes$1.func,
     customerService: PropTypes$1.func,
     business: PropTypes$1.func
-  })
+  }),
+  texts: TextsType$9
 };
 
 var DefaultMiddleComponent = function DefaultMiddleComponent(_ref4) {
-  var onClicks = _ref4.onClicks;
+  var onClicks = _ref4.onClicks,
+      texts = _ref4.texts;
 
   var renderBusinessButton = function renderBusinessButton(_ref5) {
     var isActive = _ref5.isActive;
@@ -15692,7 +15711,7 @@ var DefaultMiddleComponent = function DefaultMiddleComponent(_ref4) {
       imageUrl: "https://cdn.ectorparking.com/images/5ca29156f2bf9.svg",
       variant: isActive ? 'yellow' : 'melrose',
       position: "right"
-    }, "Ector Business");
+    }, texts.business);
   };
 
   return React__default.createElement("div", {
@@ -15704,7 +15723,8 @@ var DefaultMiddleComponent = function DefaultMiddleComponent(_ref4) {
 };
 
 DefaultMiddleComponent.defaultProps = {
-  onClicks: {}
+  onClicks: {},
+  texts: DefaultTexts$9
 };
 DefaultMiddleComponent.propTypes = {
   onClicks: PropTypes$1.shape({
@@ -15713,7 +15733,8 @@ DefaultMiddleComponent.propTypes = {
     faq: PropTypes$1.func,
     customerService: PropTypes$1.func,
     business: PropTypes$1.func
-  })
+  }),
+  texts: TextsType$9
 };
 
 var Header = function Header(_ref6) {
@@ -15722,7 +15743,8 @@ var Header = function Header(_ref6) {
       LogoComponent = _ref6.LogoComponent,
       MiddleComponent = _ref6.MiddleComponent,
       RightComponent = _ref6.RightComponent,
-      onClicks = _ref6.onClicks;
+      onClicks = _ref6.onClicks,
+      texts = _ref6.texts;
   return React__default.createElement("div", {
     className: [s$19.wrapper, className].join(' ')
   }, React__default.createElement("div", {
@@ -15730,9 +15752,11 @@ var Header = function Header(_ref6) {
   }, React__default.createElement(LogoComponent, {
     onClick: onClicks.logo
   }), React__default.createElement(MiddleComponent, {
-    onClicks: onClicks
+    onClicks: onClicks,
+    texts: texts
   }), React__default.createElement(RightComponent, {
-    onClicks: onClicks
+    onClicks: onClicks,
+    texts: texts
   })));
 };
 
@@ -15747,7 +15771,8 @@ Header.defaultProps = {
   },
   MiddleComponent: DefaultMiddleComponent,
   RightComponent: DefaultRightComponent,
-  onClicks: {}
+  onClicks: {},
+  texts: DefaultTexts$9
 };
 Header.propTypes = {
   LogoComponent: PropTypes$1.func,
@@ -15761,7 +15786,8 @@ Header.propTypes = {
     business: PropTypes$1.func
   }),
   className: PropTypes$1.string,
-  containerClassName: PropTypes$1.string
+  containerClassName: PropTypes$1.string,
+  texts: TextsType$9
 };
 
 var css$1c = ".MenuButton-module_container__3f-Es {\n  position: relative;\n}\n\n.MenuButton-module_button__2FZz3 {\n  color: #163457;\n}\n\n.MenuButton-module_button__2FZz3:hover {\n  font-weight: 700;\n}\n\n.MenuButton-module_suggestions__3pzou {\n  top: calc(100% + 11px);\n  min-height: 0;\n  height: auto;\n}";

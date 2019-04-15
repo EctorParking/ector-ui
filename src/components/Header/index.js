@@ -3,28 +3,31 @@ import PropTypes from 'prop-types';
 import { MenuButton, TextIcon } from '..';
 
 import s from './Header.module.css';
+import TextsType, { DefaultTexts } from './HeaderTextsType';
 
-const DefaultRightComponent = ({ onClicks }) => {
+const DefaultRightComponent = ({ onClicks, texts }) => {
   const renderHelpButton = ({ isActive }) => (
     <TextIcon
       imageUrl="https://cdn.ectorparking.com/images/5ca2919a41b0f.svg"
       variant={isActive ? 'yellow' : 'white'}
       position="right"
     >
-      Besoin d'aide ?
+      {texts.needHelp}
     </TextIcon>
   );
 
   const renderConnectionButton = ({ isActive }) => (
     <TextIcon imageUrl="https://cdn.ectorparking.com/images/5ca291a60c49b.svg" variant={isActive ? 'yellow' : 'white'}>
-      Connexion
+      {texts.login}
     </TextIcon>
   );
 
   const renderSuggestions = () => (
     <div className={s.helpSuggestions}>
-      <button onClick={onClicks.faq} className={s.suggestion}>Questions fréquentes</button>
-      <button onClick={onClicks.customerService} className={s.suggestion}>Service client</button>
+      <button onClick={onClicks.faq} className={s.suggestion}>{texts.faq}</button>
+      <button onClick={onClicks.customerService} className={s.suggestion}>
+        {texts.customerService}
+      </button>
     </div>
   );
 
@@ -38,6 +41,7 @@ const DefaultRightComponent = ({ onClicks }) => {
 
 DefaultRightComponent.defaultProps = {
   onClicks: {},
+  texts: DefaultTexts,
 };
 
 DefaultRightComponent.propTypes = {
@@ -48,16 +52,17 @@ DefaultRightComponent.propTypes = {
     customerService: PropTypes.func,
     business: PropTypes.func,
   }),
+  texts: TextsType,
 };
 
-const DefaultMiddleComponent = ({ onClicks }) => {
+const DefaultMiddleComponent = ({ onClicks, texts }) => {
   const renderBusinessButton = ({ isActive }) => (
     <TextIcon
       imageUrl="https://cdn.ectorparking.com/images/5ca29156f2bf9.svg"
       variant={isActive ? 'yellow' : 'melrose'}
       position="right"
     >
-      Ector Business
+      {texts.business}
     </TextIcon>
   );
 
@@ -70,6 +75,7 @@ const DefaultMiddleComponent = ({ onClicks }) => {
 
 DefaultMiddleComponent.defaultProps = {
   onClicks: {},
+  texts: DefaultTexts,
 };
 
 DefaultMiddleComponent.propTypes = {
@@ -80,6 +86,7 @@ DefaultMiddleComponent.propTypes = {
     customerService: PropTypes.func,
     business: PropTypes.func,
   }),
+  texts: TextsType,
 };
 
 const Header = ({
@@ -89,12 +96,13 @@ const Header = ({
   MiddleComponent,
   RightComponent,
   onClicks,
+  texts,
 }) => (
   <div className={[s.wrapper, className].join(' ')}>
     <div className={[s.container, containerClassName].join(' ')}>
       <LogoComponent onClick={onClicks.logo} />
-      <MiddleComponent onClicks={onClicks} />
-      <RightComponent onClicks={onClicks} />
+      <MiddleComponent onClicks={onClicks} texts={texts} />
+      <RightComponent onClicks={onClicks} texts={texts} />
     </div>
   </div>
 );
@@ -110,6 +118,7 @@ Header.defaultProps = {
   MiddleComponent: DefaultMiddleComponent,
   RightComponent: DefaultRightComponent,
   onClicks: {},
+  texts: DefaultTexts,
 };
 
 Header.propTypes = {
@@ -125,6 +134,7 @@ Header.propTypes = {
   }),
   className: PropTypes.string,
   containerClassName: PropTypes.string,
+  texts: TextsType,
 };
 
 export default Header;
