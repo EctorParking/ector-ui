@@ -1,0 +1,16 @@
+@import '../../style/variable.global.css';
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  height: var(--iconFontSize);
+  width: var(--iconFontSize);
+  display: flex;
+  align-items: center;
+}
+
+.text {}

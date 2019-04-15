@@ -1,0 +1,72 @@
+@import '../../style/variable.global.css';
+
+.wrapper {
+  width: 100%;
+  height: var(--headerHeight);
+  position: fixed;
+  display: flex;
+  z-index: 5;
+}
+
+.container {
+  max-width: var(--containerWidth);
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.menuItemsContainer {
+  width: 410px;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.middleMenuItemsContainer {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.menuItemContainer {
+  display: flex;
+  align-items: center;
+}
+
+.visible, .menuItemContainer:hover, .suggestion:hover {
+  font-weight: var(--fontWeightBold);
+}
+
+.menuItemLinkIcon {
+  height: 20px;
+  margin-right: 10px;
+  width: 20px;
+}
+
+.menuItemText {
+  color: var(--deepBlue);
+  margin-left: var(--marginSmall);
+}
+
+.suggestions {
+  width: 180px;
+  height: auto;
+  padding: var(--marginMedium);
+  min-height: 0;
+  left: 0;
+  top: calc(100% + 11px);
+}
+
+.helpSuggestions {
+  display: flex;
+  flex-direction: column;
+}
+
+.suggestion {
+  margin: var(--marginSmall) 0;
+  color: var(--deepBlue);
+  align-self: flex-start;
+}

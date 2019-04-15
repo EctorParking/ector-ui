@@ -1,0 +1,25 @@
+@import '../../style/variable.global.css';
+
+.container {
+  position: relative;
+  display: flex;
+}
+
+.button {
+  color: var(--deepBlue);
+  padding: 0;
+}
+
+.button:hover {
+  font-weight: var(--fontWeightBold);
+}
+
+.suggestions {
+  top: 100%;
+  width: 220px;
+  padding: var(--marginMedium);
+  margin-top: var(--marginMedium);
+  left: calc(50% - 130px);
+  min-height: 0;
+  height: auto;
+}
