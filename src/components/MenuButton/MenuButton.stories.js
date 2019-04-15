@@ -15,7 +15,7 @@ storiesOf('Button.MenuButton', module)
 
   .add('with knobs', () => {
     const props = {
-      LabelComponent: () => (<span>Besoin d'aide ?</span>),
+      LabelComponent: () => (<span>Connexion</span>),
       SuggestionsComponent: () => (
         <div>
           <button>Questions fréquentes</button>

@@ -22,6 +22,14 @@ const DefaultRightComponent = ({ onClicks, texts, className }) => {
     </TextIcon>
   );
 
+  renderHelpButton.propTypes = {
+    isActive: PropTypes.bool.isRequired,
+  };
+
+  renderConnectionButton.propTypes = {
+    isActive: PropTypes.bool.isRequired,
+  };
+
   const renderSuggestions = () => (
     <div className={s.helpSuggestions}>
       <button onClick={onClicks.faq} className={s.suggestion}>{texts.faq}</button>
@@ -67,6 +75,10 @@ const DefaultMiddleComponent = ({ onClicks, texts, className }) => {
       {texts.business}
     </TextIcon>
   );
+
+  renderBusinessButton.propTypes = {
+    isActive: PropTypes.bool.isRequired,
+  };
 
   return (
     <div className={[s.middleMenuItemsContainer, className].join(' ')}>

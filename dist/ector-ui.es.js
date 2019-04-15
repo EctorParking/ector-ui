@@ -15656,6 +15656,13 @@ var DefaultRightComponent = function DefaultRightComponent(_ref) {
     }, texts.login);
   };
 
+  renderHelpButton.propTypes = {
+    isActive: PropTypes$1.bool.isRequired
+  };
+  renderConnectionButton.propTypes = {
+    isActive: PropTypes$1.bool.isRequired
+  };
+
   var renderSuggestions = function renderSuggestions() {
     return React__default.createElement("div", {
       className: s$19.helpSuggestions
@@ -15710,6 +15717,9 @@ var DefaultMiddleComponent = function DefaultMiddleComponent(_ref4) {
     }, texts.business);
   };
 
+  renderBusinessButton.propTypes = {
+    isActive: PropTypes$1.bool.isRequired
+  };
   return React__default.createElement("div", {
     className: [s$19.middleMenuItemsContainer, className].join(' ')
   }, React__default.createElement(MenuButton, {
