@@ -51,14 +51,17 @@ storiesOf('FlightInformationForm', module)
     const props = {
       fromSpotsAvailable: select('Zone de départ', spotsOptions, spotsOptions.plusieursSpots),
       toSpotsAvailable: select("Zone d'arrivée", spotsOptions, spotsOptions.plusieursSpots),
-      fromSpot: select('Terminal aller', spotOptions, spotOptions.default),
-      toSpot: select('Terminal retout', spotOptions, spotOptions.default),
+      values: {
+        fromSpot: select('Terminal aller', spotOptions, spotOptions.default),
+        toSpot: select('Terminal retout', spotOptions, spotOptions.default),
+        travelingNumberTo: text('N° de vol retour', ''),
+        returnFlightCompany: text('Compagnie aérienne', ''),
+        returnFlightOrigin: text('Ville de provenance', ''),
+      },
       airlines: [{ value: 'AF', label: 'Air France' }, { value: 'U2', label: 'EasyJet' }, { value: '3B', label: 'Job Air' }],
-      travelingNumberTo: text('N° de vol retour', ''),
-      returnFlightCompany: text('Compagnie aérienne', ''),
-      returnFlightOrigin: text('Ville de provenance', ''),
       shouldDisplayReturnFlightInformation: boolean('Voir champs additionnels', false),
       toSpotType: select('Type du retour', ['station', 'airport'], 'airport'),
+      errors: {},
     };
 
     return (
