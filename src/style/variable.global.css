@@ -84,8 +84,9 @@
   --pickerBoxShadow: 0 4px 8px 2px rgba(0, 0, 0, 0.5);
 }
 
-@custom-media --maxTablet (max-width: 768px);
+@custom-media --maxTablet (max-width: 825px);
 @custom-media --maxMobile (max-width: 480px);
+@custom-media --maxPurchaseCanalMinWidth (max-width: 1130px);
 @custom-media --maxIPhone5 (max-width: 320px);
 
 @custom-media --minTablet (min-width: 768px);

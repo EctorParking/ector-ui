@@ -67,6 +67,39 @@
     margin-top: var(--marginSmall);
 }
 
+@media (--maxPurchaseCanalMinWidth) {
+    .card {
+        width: min-content;
+    }
+    .input {
+        min-width: 275px;
+        max-width: 275px;
+        margin: var(--marginXSmall) var(--marginSmall) 0 var(--marginSmall);
+    }
+    .firstColumn, .secondColumn {
+        padding: 0;
+    }
+    .actionLink {
+        margin-right: var(--marginSmall);
+    }
+    .title {
+        margin-left: var(--marginSmall);
+    }
+    .row {
+        flex-wrap: wrap;
+    }
+}
+
+@media (--maxTablet) {
+    .card {
+        width: 100%;
+    }
+    .input {
+        max-width: none;
+    }
+
+}
+
 @media (--maxMobile) {
     .card {
         width: 100%;
@@ -79,7 +112,10 @@
     }
     .input {
         flex: none;
-        margin-top: var(--marginXSmall);
+        margin: var(--marginXSmall) 0 0 0;
+    }
+    .title, .actionLink {
+        margin: 0;
     }
     .row {
         margin: 0;
