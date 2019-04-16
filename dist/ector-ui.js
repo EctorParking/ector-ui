@@ -4316,7 +4316,7 @@ TitleStep.propTypes = {
   className: PropTypes$1.string
 };
 
-var css$S = ".Tooltip-module_tooltipContainer__15s8H {\n    font-size: 2em;\n    text-align: center;\n    position: relative\n}\n\n.Tooltip-module_tooltipContainer__15s8H:hover>.Tooltip-module_tooltipText__1buoM {\n    visibility: visible;\n}\n\n.Tooltip-module_tooltipContainer__15s8H > i {\n    font-size: 16px;\n}\n\n.Tooltip-module_tooltipContainer__15s8H > i:before {\n    color: #163457 !important;\n}\n\n.Tooltip-module_tooltipText__1buoM {\n    visibility: hidden;\n    display: block;\n    position: absolute;\n    z-index: 1;\n    padding: 5px;\n    border-radius: 8px;\n    text-align: center;\n    background-color: #163457;\n    color: #fefefe;\n    font-size: 16px;\n}\n\n.Tooltip-module_right__1nw9g {\n    -webkit-transform: translateY(-50%);\n            transform: translateY(-50%);\n    left: 24px;\n    top: 12px;\n}\n\n.Tooltip-module_left__3nypM {\n    -webkit-transform: translateY(-50%) translateX(-100%);\n            transform: translateY(-50%) translateX(-100%);\n    top: 12px;\n    left: -8px;\n}\n\n.Tooltip-module_bottom__2SGDR {\n    -webkit-transform: translateX(-50%);\n            transform: translateX(-50%);\n    left: 8px;\n    top: 30px;\n}\n\n.Tooltip-module_top__239MH {\n    -webkit-transform: translateX(-50%) translateY(-100%);\n            transform: translateX(-50%) translateY(-100%);\n    left: 8px;\n    top: -8px;\n}\n\n.Tooltip-module_xSmall__p7rPd {\n    width: 100px;\n}\n\n.Tooltip-module_small__1IS1m {\n    width: 200px;\n}\n\n.Tooltip-module_medium__hRcmQ {\n    width: 400px;\n}\n\n.Tooltip-module_large__paGda {\n    width: 600px;\n\n}\n";
+var css$S = ".Tooltip-module_tooltipContainer__15s8H {\n    font-size: 2em;\n    text-align: center;\n    position: relative\n}\n\n.Tooltip-module_tooltipContainer__15s8H:hover>.Tooltip-module_tooltipText__1buoM {\n    visibility: visible;\n}\n\n.Tooltip-module_tooltipContainer__15s8H > i {\n    font-size: 16px;\n}\n\n.Tooltip-module_tooltipContainer__15s8H > i:before {\n    color: #163457 !important;\n}\n\n.Tooltip-module_tooltipText__1buoM {\n    visibility: hidden;\n    display: block;\n    position: absolute;\n    z-index: 1;\n    padding: 5px;\n    border-radius: 8px;\n    text-align: center;\n    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .25);\n            box-shadow: 0 0 10px rgba(0, 0, 0, .25);\n    background-color: #fefefe;\n    color: #163457;\n    font-size: 16px;\n}\n\n.Tooltip-module_tooltipText__1buoM:after {\n    border: solid transparent;\n    content: \" \";\n    height: 0;\n    width: 0;\n    position: absolute;\n    pointer-events: none;\n    border-color: transparent;\n    border-width: 8px;\n}\n\n.Tooltip-module_right__1nw9g {\n    -webkit-transform: translateY(-50%);\n            transform: translateY(-50%);\n    left: 30px;\n    top: 12px;\n}\n\n.Tooltip-module_tooltipText__1buoM.Tooltip-module_right__1nw9g:after {\n    right: 100%;\n    top: 50%;\n    margin-top: -8px;\n    border-right-color: #fefefe;\n}\n\n.Tooltip-module_left__3nypM {\n    -webkit-transform: translateY(-50%) translateX(-100%);\n            transform: translateY(-50%) translateX(-100%);\n    top: 12px;\n    left: -15px;\n}\n\n.Tooltip-module_tooltipText__1buoM.Tooltip-module_left__3nypM:after {\n    left: 100%;\n    top: 50%;\n    margin-top: -8px;\n    border-left-color: #fefefe;\n}\n\n.Tooltip-module_bottom__2SGDR {\n    -webkit-transform: translateX(-50%);\n            transform: translateX(-50%);\n    left: 8px;\n    top: 35px;\n}\n\n.Tooltip-module_tooltipText__1buoM.Tooltip-module_bottom__2SGDR:after {\n    bottom: 100%;\n    left: 50%;\n    margin-left: -8px;\n    border-bottom-color: #fefefe;\n}\n\n.Tooltip-module_top__239MH {\n    -webkit-transform: translateX(-50%) translateY(-100%);\n            transform: translateX(-50%) translateY(-100%);\n    left: 8px;\n    top: -8px;\n}\n\n.Tooltip-module_tooltipText__1buoM.Tooltip-module_top__239MH:after {\n    top: 100%;\n    left: 50%;\n    margin-left: -8px;\n    border-top-color: #fefefe;\n}\n\n.Tooltip-module_xSmall__p7rPd {\n    width: 100px;\n}\n\n.Tooltip-module_small__1IS1m {\n    width: 200px;\n}\n\n.Tooltip-module_medium__hRcmQ {\n    width: 400px;\n}\n\n.Tooltip-module_large__paGda {\n    width: 600px;\n\n}\n";
 var s$S = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","tooltipContainer":"Tooltip-module_tooltipContainer__15s8H","tooltipText":"Tooltip-module_tooltipText__1buoM","right":"Tooltip-module_right__1nw9g","left":"Tooltip-module_left__3nypM","bottom":"Tooltip-module_bottom__2SGDR","top":"Tooltip-module_top__239MH","xSmall":"Tooltip-module_xSmall__p7rPd","small":"Tooltip-module_small__1IS1m","medium":"Tooltip-module_medium__hRcmQ","large":"Tooltip-module_large__paGda"};
 styleInject(css$S);
 
@@ -8118,7 +8118,7 @@ var performanceNow = createCommonjsModule(function (module) {
 
 }).call(commonjsGlobal);
 
-//# sourceMappingURL=performance-now.js.map
+
 });
 
 var root = typeof window === 'undefined' ? commonjsGlobal : window
@@ -15623,6 +15623,65 @@ RatingStars.propTypes = {
   inactiveColor: PropTypes$1.string
 };
 
+var _ref$8 =
+/*#__PURE__*/
+React__default.createElement("g", {
+  transform: "translate(1 1)",
+  fill: "none",
+  fillRule: "evenodd"
+}, React__default.createElement("path", {
+  d: "M7.884 10.06v-.12c0-.744.144-1.176.864-1.656l.564-.372c.468-.312.672-.624.672-1.128 0-.576-.384-.936-.936-.936-.672 0-1.164.372-1.164 1.248h-1.92c0-1.524.996-2.712 3.144-2.712 1.656 0 2.82.816 2.82 2.316 0 1.044-.564 1.632-1.188 2.1l-.492.36c-.36.276-.468.444-.468.756v.144H7.884zm.948 3.048a1.237 1.237 0 0 1-1.248-1.236c0-.672.54-1.224 1.248-1.224.696 0 1.248.552 1.248 1.224 0 .672-.552 1.236-1.248 1.236z",
+  fill: "#153457"
+}), React__default.createElement("circle", {
+  stroke: "#153457",
+  strokeWidth: 1.5,
+  fillRule: "nonzero",
+  cx: 9,
+  cy: 9,
+  r: 9
+}));
+
+var faqIcon = "data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20width%3D%2220px%22%20height%3D%2220px%22%20viewBox%3D%220%200%2020%2020%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%20%20%20%20%20%20%20%20%3Ctitle%3EGroup%3C%2Ftitle%3E%20%20%20%20%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%20%20%20%20%3Cg%20id%3D%22Symbols%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%20%20%20%20%20%20%20%20%3Cg%20id%3D%22help%22%20transform%3D%22translate%28-7.000000%2C%20-5.000000%29%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20id%3D%22Group%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20transform%3D%22translate%288.000000%2C%206.000000%29%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M7.884%2C10.06%20L7.884%2C9.94%20C7.884%2C9.196%208.028%2C8.764%208.748%2C8.284%20L9.312%2C7.912%20C9.78%2C7.6%209.984%2C7.288%209.984%2C6.784%20C9.984%2C6.208%209.6%2C5.848%209.048%2C5.848%20C8.376%2C5.848%207.884%2C6.22%207.884%2C7.096%20L5.964%2C7.096%20C5.964%2C5.572%206.96%2C4.384%209.108%2C4.384%20C10.764%2C4.384%2011.928%2C5.2%2011.928%2C6.7%20C11.928%2C7.744%2011.364%2C8.332%2010.74%2C8.8%20L10.248%2C9.16%20C9.888%2C9.436%209.78%2C9.604%209.78%2C9.916%20L9.78%2C10.06%20L7.884%2C10.06%20Z%20M8.832%2C13.108%20C8.124%2C13.108%207.584%2C12.544%207.584%2C11.872%20C7.584%2C11.2%208.124%2C10.648%208.832%2C10.648%20C9.528%2C10.648%2010.08%2C11.2%2010.08%2C11.872%20C10.08%2C12.544%209.528%2C13.108%208.832%2C13.108%20Z%22%20id%3D%22%3F%22%20fill%3D%22%23153457%22%3E%3C%2Fpath%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ccircle%20id%3D%22Oval%22%20stroke%3D%22%23153457%22%20stroke-width%3D%221.5%22%20fill-rule%3D%22nonzero%22%20cx%3D%229%22%20cy%3D%229%22%20r%3D%229%22%3E%3C%2Fcircle%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E";
+
+var _ref$9 =
+/*#__PURE__*/
+React__default.createElement("g", {
+  fillRule: "nonzero",
+  fill: "none"
+}, React__default.createElement("path", {
+  d: "M3.007 20.266h14.65a2.442 2.442 0 0 0 2.441-2.441V7.245a2.442 2.442 0 0 0-2.442-2.442h-3.255V3.175A2.442 2.442 0 0 0 11.96.734H8.704a2.442 2.442 0 0 0-2.441 2.441v1.628H3.007A2.442 2.442 0 0 0 .566 7.245v10.58a2.442 2.442 0 0 0 2.441 2.441zM7.89 3.176c0-.45.365-.814.814-.814h3.256c.45 0 .813.364.813.813v1.628H7.89V3.175zM3.007 6.43h14.65c.449 0 .813.364.813.814v10.241a1 1 0 0 1-1 1H3.194a1 1 0 0 1-1-1V7.245c0-.45.364-.814.813-.814z",
+  fill: "#153457"
+}), React__default.createElement("path", {
+  fill: "#163457",
+  d: "M8 10.727H1.74v.549H8zM18.748 10.727H12v.549h6.748z"
+}), React__default.createElement("path", {
+  d: "M8.832 9h3a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-3a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1zm.5 1.5v1h2v-1h-2z",
+  fill: "#153457"
+}));
+
+var businessIcon = "data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20width%3D%2221px%22%20height%3D%2221px%22%20viewBox%3D%220%200%2021%2021%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%20%20%20%20%20%20%20%20%3Ctitle%3EGroup%3C%2Ftitle%3E%20%20%20%20%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%20%20%20%20%3Cg%20id%3D%22Symbols%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%20%20%20%20%20%20%20%20%3Cg%20id%3D%22business%22%20transform%3D%22translate%28-3.000000%2C%20-3.000000%29%22%20fill-rule%3D%22nonzero%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20id%3D%22icon%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20id%3D%22Group%22%20transform%3D%22translate%283.565863%2C%203.733942%29%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M2.44151458%2C19.5321166%20L17.090602%2C19.5321166%20C18.4390133%2C19.5321166%2019.5321166%2C18.4390133%2019.5321166%2C17.090602%20L19.5321166%2C6.51070554%20C19.5321166%2C5.16229427%2018.4390133%2C4.06919096%2017.090602%2C4.06919096%20L13.8352493%2C4.06919096%20L13.8352493%2C2.44151458%20C13.8352493%2C1.09310331%2012.742146%2C9.035419e-17%2011.3937347%2C0%20L8.13838193%2C0%20C6.78997066%2C-9.035419e-17%205.69686735%2C1.09310331%205.69686735%2C2.44151458%20L5.69686735%2C4.06919096%20L2.44151458%2C4.06919096%20C1.09310331%2C4.06919096%209.66518829e-13%2C5.16229427%209.66338121e-13%2C6.51070554%20L9.66338121e-13%2C17.090602%20C9.66518829e-13%2C18.4390133%201.09310331%2C19.5321166%202.44151458%2C19.5321166%20Z%20M7.32454373%2C2.44151458%20C7.32454373%2C1.99204416%207.6889115%2C1.62767639%208.13838193%2C1.62767639%20L11.3937347%2C1.62767639%20C11.8432051%2C1.62767639%2012.2075729%2C1.99204416%2012.2075729%2C2.44151458%20L12.2075729%2C4.06919096%20L7.32454373%2C4.06919096%20L7.32454373%2C2.44151458%20Z%20M2.44151458%2C5.69686735%20L17.090602%2C5.69686735%20C17.5400725%2C5.69686735%2017.9044402%2C6.06123512%2017.9044402%2C6.51070554%20L17.9044402%2C16.7524805%20C17.9044402%2C17.3047652%2017.456725%2C17.7524805%2016.9044402%2C17.7524805%20L2.62767639%2C17.7524805%20C2.07539164%2C17.7524805%201.62767639%2C17.3047652%201.62767639%2C16.7524805%20L1.62767639%2C6.51070554%20C1.62767639%2C6.06123512%201.99204416%2C5.69686735%202.44151458%2C5.69686735%20Z%22%20id%3D%22Shape%22%20fill%3D%22%23153457%22%3E%3C%2Fpath%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cpolygon%20id%3D%22Rectangle-5%22%20fill%3D%22%23163457%22%20transform%3D%22translate%284.304010%2C%2010.267345%29%20scale%28-1%2C%201%29%20translate%28-4.304010%2C%20-10.267345%29%20%22%20points%3D%221.1738831%209.99307634%207.434137%209.99307634%207.434137%2010.5416139%201.1738831%2010.5416139%22%3E%3C%2Fpolygon%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cpolygon%20id%3D%22Rectangle-5%22%20fill%3D%22%23163457%22%20transform%3D%22translate%2814.808283%2C%2010.267345%29%20scale%28-1%2C%201%29%20translate%28-14.808283%2C%20-10.267345%29%20%22%20points%3D%2211.434137%209.99307634%2018.182428%209.99307634%2018.182428%2010.5416139%2011.434137%2010.5416139%22%3E%3C%2Fpolygon%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M8.26605831%2C8.26605831%20L11.2660583%2C8.26605831%20C11.8183431%2C8.26605831%2012.2660583%2C8.71377356%2012.2660583%2C9.26605831%20L12.2660583%2C11.2660583%20C12.2660583%2C11.8183431%2011.8183431%2C12.2660583%2011.2660583%2C12.2660583%20L8.26605831%2C12.2660583%20C7.71377356%2C12.2660583%207.26605831%2C11.8183431%207.26605831%2C11.2660583%20L7.26605831%2C9.26605831%20C7.26605831%2C8.71377356%207.71377356%2C8.26605831%208.26605831%2C8.26605831%20Z%20M8.76605831%2C9.76605831%20L8.76605831%2C10.7660583%20L10.7660583%2C10.7660583%20L10.7660583%2C9.76605831%20L8.76605831%2C9.76605831%20Z%22%20id%3D%22Combined-Shape%22%20fill%3D%22%23153457%22%3E%3C%2Fpath%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E";
+
+var _ref$a =
+/*#__PURE__*/
+React__default.createElement("g", {
+  transform: "translate(1 1)",
+  fillRule: "nonzero",
+  fill: "none"
+}, React__default.createElement("circle", {
+  stroke: "#153457",
+  strokeWidth: 1.5,
+  cx: 9,
+  cy: 9,
+  r: 9
+}), React__default.createElement("path", {
+  d: "M9 12.999a3.874 3.874 0 0 1-2.868-1.161.5.5 0 1 1 .736-.676c.567.558 1.337.86 2.132.837a2.917 2.917 0 0 0 2.132-.837.5.5 0 0 1 .736.676A3.873 3.873 0 0 1 9 12.998zM5 7a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm7 1a1 1 0 1 1 0-2 1 1 0 0 1 0 2z",
+  fill: "#153457"
+}));
+
+var headIcon = "data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20width%3D%2220px%22%20height%3D%2220px%22%20viewBox%3D%220%200%2020%2020%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%20%20%20%20%20%20%20%20%3Ctitle%3EGroup%3C%2Ftitle%3E%20%20%20%20%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%20%20%20%20%3Cg%20id%3D%22Symbols%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%20%20%20%20%20%20%20%20%3Cg%20id%3D%22connect%22%20transform%3D%22translate%28-5.000000%2C%20-5.000000%29%22%20fill-rule%3D%22nonzero%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20id%3D%22Group%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20transform%3D%22translate%286.000000%2C%206.000000%29%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ccircle%20id%3D%22Oval%22%20stroke%3D%22%23153457%22%20stroke-width%3D%221.5%22%20cx%3D%229%22%20cy%3D%229%22%20r%3D%229%22%3E%3C%2Fcircle%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M9.00004992%2C12.9986693%20C7.92412857%2C13.0267946%206.88502652%2C12.6062468%206.13189953%2C11.8378723%20C5.94500976%2C11.6346888%205.95832853%2C11.3185745%206.16164902%2C11.1318106%20C6.36496951%2C10.9450468%206.68129704%2C10.9583566%206.86818681%2C11.1615401%20C7.43466303%2C11.719776%208.20480373%2C12.0224416%209.00004999%2C11.9993606%20C9.79525826%2C12.0224148%2010.565363%2C11.719751%2011.1318132%2C11.1615401%20C11.318703%2C10.9583566%2011.6350305%2C10.9450468%2011.838351%2C11.1318106%20C12.0416715%2C11.3185745%2012.0549902%2C11.6346888%2011.8681005%2C11.8378723%20C11.1150424%2C12.6063727%2010.0759413%2C13.0268498%209.00004992%2C12.9986693%20Z%22%20id%3D%22Path%22%20fill%3D%22%23153457%22%3E%3C%2Fpath%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M5%2C6.99999985%20C4.99999992%2C6.447715%205.447715%2C6%206%2C6%20C6.552285%2C5.99999992%207%2C6.447715%207%2C7%20C7.00000008%2C7.552285%206.552285%2C8%206%2C8%20C5.44771504%2C8.00000011%205.00000004%2C7.552285%205.00000004%2C7%20Z%20M12%2C8%20C11.447715%2C7.99999998%2011%2C7.552285%2011%2C7%20C11%2C6.447715%2011.447715%2C6%2012%2C6%20C12.552285%2C6.00000002%2013%2C6.447715%2013%2C7%20C13%2C7.55228496%2012.552285%2C7.99999996%2012%2C7.99999996%20Z%22%20id%3D%22Combined-Shape%22%20fill%3D%22%23153457%22%3E%3C%2Fpath%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E";
+
+var logoEctor = "data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20width%3D%22101px%22%20height%3D%2223px%22%20viewBox%3D%220%200%20101%2023%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%20%20%20%20%20%20%20%20%3Ctitle%3Elogo-ector.svg%3C%2Ftitle%3E%20%20%20%20%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%20%20%20%20%3Cg%20id%3D%22Homepage%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%20%20%20%20%20%20%20%20%3Cg%20id%3D%2200_home%22%20transform%3D%22translate%28-116.000000%2C%20-29.000000%29%22%20fill%3D%22%23163457%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20id%3D%22hero%22%20transform%3D%22translate%28-4.000000%2C%20-2.000000%29%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20id%3D%22logo-ector%22%20transform%3D%22translate%28120.000000%2C%2031.000000%29%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M0%2C0%20L0%2C10.0396825%20L16.9367016%2C10.0396825%20L16.9367016%2C8.0863642%20L2.1094771%2C8.0863642%20L2.1094771%2C1.95259968%20L16.9367016%2C1.95259968%20L16.9367016%2C0%20L0%2C0%20Z%20M0%2C11.9764717%20L0%2C22.0161542%20L16.9367016%2C22.0161542%20L16.9367016%2C20.0628359%20L2.1094771%2C20.0628359%20L2.1094771%2C13.9290714%20L16.9367016%2C13.9290714%20L16.9367016%2C11.975753%20L0%2C11.975753%20L0%2C11.9764717%20Z%20M93.7488872%2C13.1371079%20L88.3903139%2C13.1371079%20L88.3903139%2C2.42907137%20L93.7481709%2C2.42907137%20C96.8769301%2C2.42907137%2098.8589074%2C4.88617048%2098.8589074%2C7.78524559%20C98.8589074%2C10.6843207%2096.8769301%2C13.1407012%2093.7481709%2C13.1407012%20L93.7488872%2C13.1371079%20Z%20M86.2844183%2C22.5249656%20L88.3903139%2C22.5249656%20L88.3903139%2C15.0918635%20L93.7173704%2C15.0918635%20L98.3324335%2C22.5264029%20L100.782149%2C22.5264029%20L95.919249%2C14.7454693%20C98.9948223%2C13.8545729%20101.082211%2C10.9915754%20100.997036%2C7.78093363%20C101.053209%2C5.83219557%20100.308847%2C3.94590255%2098.9383071%2C2.56389965%20C97.5677677%2C1.18189676%2095.6914589%2C0.425598364%2093.7488872%2C0.47215973%20L86.2844183%2C0.47215973%20L86.2844183%2C22.5249656%20Z%20M70.7824477%2C21.0445257%20C65.2075545%2C21.0445257%2061.8288097%2C16.4451006%2061.8288097%2C11.4985627%20C61.8288097%2C6.55202475%2065.2054057%2C1.95331834%2070.7824477%2C1.95331834%20C76.3265403%2C1.95331834%2079.7360856%2C6.55274341%2079.7360856%2C11.4985627%20C79.7360856%2C16.444382%2076.3286892%2C21.0445257%2070.7824477%2C21.0445257%20L70.7824477%2C21.0445257%20Z%20M70.7824477%2C22.997844%20C77.7204427%2C22.997844%2081.9329502%2C17.4526622%2081.9329502%2C11.4992813%20C81.9329502%2C5.54590051%2077.7175775%2C0%2070.7824477%2C0%20C63.8473179%2C0%2059.6319451%2C5.54446319%2059.6319451%2C11.4985627%20C59.6319451%2C17.4526622%2063.8444527%2C22.9971254%2070.7824477%2C22.9971254%20L70.7824477%2C22.997844%20Z%20M50.1074232%2C22.524247%20L52.2133188%2C22.524247%20L52.2133188%2C2.42547807%20L58.098366%2C2.42547807%20L58.098366%2C0.47215973%20L44.2839771%2C0.47215973%20L44.2839771%2C2.42547807%20L50.1074232%2C2.42547807%20L50.1074232%2C22.5249656%20L50.1074232%2C22.524247%20Z%20M39.7777901%2C16.0347457%20C38.5680484%2C19.0978274%2035.5969039%2C21.0916257%2032.3133213%2C21.043807%20C26.3351563%2C21.043807%2022.8969593%2C16.6333896%2022.8969593%2C11.4669416%20C22.8969593%2C6.5204037%2026.2112379%2C1.95259968%2031.9100494%2C1.95259968%20C36.3703937%2C1.95259968%2039.0958811%2C4.53618298%2039.9017085%2C7.90669916%20L42.100722%2C7.90669916%20C41.2332935%2C3.46466067%2037.7950966%2C0.00143732033%2031.662929%2C0.00143732033%20C24.8796529%2C0.00143732033%2020.7294626%2C5.51499813%2020.7294626%2C11.4690976%20C20.7294626%2C17.6438258%2025.0035712%2C23%2032.0654846%2C23%20C37.1139038%2C23%2040.9238558%2C19.9751594%2042.100722%2C16.0369016%20L39.7777901%2C16.0369016%20L39.7777901%2C16.0347457%20Z%22%20id%3D%22logo-ector.svg%22%3E%3C%2Fpath%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E";
+
 var css$1b = ".Header-module_wrapper__3Yuwe {\n  width: 100%;\n  height: 60px;\n  position: fixed;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  z-index: 5;\n}\n\n.Header-module_container__2FRMu {\n  max-width: 1232px;\n  width: 100%;\n  margin: 0 auto;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.Header-module_menuItemsContainer__2hK2f {\n  width: 410px;\n  height: 100%;\n  position: relative;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: space-evenly;\n      -ms-flex-pack: space-evenly;\n          justify-content: space-evenly;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.Header-module_middleMenuItemsContainer__11RHW {\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n\n.Header-module_menuItemContainer__3AND5 {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.Header-module_visible__sHCWg, .Header-module_menuItemContainer__3AND5:hover, .Header-module_suggestion__3LyBf:hover {\n  font-weight: 700;\n}\n\n.Header-module_menuItemLinkIcon__15Cmp {\n  height: 20px;\n  margin-right: 10px;\n  width: 20px;\n}\n\n.Header-module_menuItemText__2n_In {\n  color: #163457;\n  margin-left: 10px;\n}\n\n.Header-module_suggestions__SwEEy {\n  width: 180px;\n  height: auto;\n  padding: 20px;\n  min-height: 0;\n  left: 0;\n  top: calc(100% + 11px);\n}\n\n.Header-module_helpSuggestions__K31H9 {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n\n.Header-module_suggestion__3LyBf {\n  margin: 10px 0;\n  color: #163457;\n  -ms-flex-item-align: start;\n      align-self: flex-start;\n}\n";
 var s$19 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","wrapper":"Header-module_wrapper__3Yuwe","container":"Header-module_container__2FRMu","menuItemsContainer":"Header-module_menuItemsContainer__2hK2f","middleMenuItemsContainer":"Header-module_middleMenuItemsContainer__11RHW","menuItemContainer":"Header-module_menuItemContainer__3AND5","visible":"Header-module_visible__sHCWg","suggestion":"Header-module_suggestion__3LyBf","menuItemLinkIcon":"Header-module_menuItemLinkIcon__15Cmp","menuItemText":"Header-module_menuItemText__2n_In","suggestions":"Header-module_suggestions__SwEEy","helpSuggestions":"Header-module_helpSuggestions__K31H9"};
 styleInject(css$1b);
@@ -15643,14 +15702,13 @@ var DefaultTexts$9 = {
 };
 
 var DefaultRightComponent = function DefaultRightComponent(_ref) {
-  var onClicks = _ref.onClicks,
-      texts = _ref.texts,
+  var texts = _ref.texts,
       className = _ref.className;
 
   var renderHelpButton = function renderHelpButton(_ref2) {
     var isActive = _ref2.isActive;
     return React__default.createElement(TextIcon, {
-      imageUrl: "https://cdn.ectorparking.com/images/5ca2919a41b0f.svg",
+      imageUrl: faqIcon,
       variant: isActive ? 'yellow' : 'white',
       position: "right"
     }, texts.needHelp);
@@ -15659,7 +15717,7 @@ var DefaultRightComponent = function DefaultRightComponent(_ref) {
   var renderConnectionButton = function renderConnectionButton(_ref3) {
     var isActive = _ref3.isActive;
     return React__default.createElement(TextIcon, {
-      imageUrl: "https://cdn.ectorparking.com/images/5ca291a60c49b.svg",
+      imageUrl: headIcon,
       variant: isActive ? 'yellow' : 'white'
     }, texts.login);
   };
@@ -15675,10 +15733,8 @@ var DefaultRightComponent = function DefaultRightComponent(_ref) {
     return React__default.createElement("div", {
       className: s$19.helpSuggestions
     }, React__default.createElement("button", {
-      onClick: onClicks.faq,
       className: s$19.suggestion
     }, texts.faq), React__default.createElement("button", {
-      onClick: onClicks.customerService,
       className: s$19.suggestion
     }, texts.customerService));
   };
@@ -15689,37 +15745,27 @@ var DefaultRightComponent = function DefaultRightComponent(_ref) {
     LabelComponent: renderHelpButton,
     SuggestionsComponent: renderSuggestions
   }), React__default.createElement(MenuButton, {
-    LabelComponent: renderConnectionButton,
-    onClick: onClicks.login
+    LabelComponent: renderConnectionButton
   }));
 };
 
 DefaultRightComponent.defaultProps = {
-  onClicks: {},
   texts: DefaultTexts$9,
   className: undefined
 };
 DefaultRightComponent.propTypes = {
-  onClicks: PropTypes$1.shape({
-    logo: PropTypes$1.func,
-    login: PropTypes$1.func,
-    faq: PropTypes$1.func,
-    customerService: PropTypes$1.func,
-    business: PropTypes$1.func
-  }),
   texts: TextsType$9,
   className: PropTypes$1.string
 };
 
 var DefaultMiddleComponent = function DefaultMiddleComponent(_ref4) {
-  var onClicks = _ref4.onClicks,
-      texts = _ref4.texts,
+  var texts = _ref4.texts,
       className = _ref4.className;
 
   var renderBusinessButton = function renderBusinessButton(_ref5) {
     var isActive = _ref5.isActive;
     return React__default.createElement(TextIcon, {
-      imageUrl: "https://cdn.ectorparking.com/images/5ca29156f2bf9.svg",
+      imageUrl: businessIcon,
       variant: isActive ? 'yellow' : 'melrose',
       position: "right"
     }, texts.business);
@@ -15731,24 +15777,15 @@ var DefaultMiddleComponent = function DefaultMiddleComponent(_ref4) {
   return React__default.createElement("div", {
     className: [s$19.middleMenuItemsContainer, className].join(' ')
   }, React__default.createElement(MenuButton, {
-    LabelComponent: renderBusinessButton,
-    onClick: onClicks.business
+    LabelComponent: renderBusinessButton
   }));
 };
 
 DefaultMiddleComponent.defaultProps = {
-  onClicks: {},
   texts: DefaultTexts$9,
   className: undefined
 };
 DefaultMiddleComponent.propTypes = {
-  onClicks: PropTypes$1.shape({
-    logo: PropTypes$1.func,
-    login: PropTypes$1.func,
-    faq: PropTypes$1.func,
-    customerService: PropTypes$1.func,
-    business: PropTypes$1.func
-  }),
   texts: TextsType$9,
   className: PropTypes$1.string
 };
@@ -15762,21 +15799,19 @@ var Header = function Header(_ref6) {
       LogoComponent = _ref6.LogoComponent,
       MiddleComponent = _ref6.MiddleComponent,
       RightComponent = _ref6.RightComponent,
-      onClicks = _ref6.onClicks,
-      texts = _ref6.texts;
+      texts = _ref6.texts,
+      onClickLogo = _ref6.onClickLogo;
   return React__default.createElement("div", {
     className: [s$19.wrapper, className].join(' ')
   }, React__default.createElement("div", {
     className: [s$19.container, containerClassName].join(' ')
   }, React__default.createElement(LogoComponent, {
-    onClick: onClicks.logo,
-    className: logoClassName
+    className: logoClassName,
+    onClick: onClickLogo
   }), React__default.createElement(MiddleComponent, {
-    onClicks: onClicks,
     texts: texts,
     className: middleComponentClassName
   }), React__default.createElement(RightComponent, {
-    onClicks: onClicks,
     texts: texts,
     className: rightComponentClassName
   })));
@@ -15790,32 +15825,28 @@ Header.defaultProps = {
   rightComponentClassName: undefined,
   LogoComponent: function LogoComponent(props) {
     return React__default.createElement("button", props, React__default.createElement("img", {
-      src: "https://cdn.ectorparking.com/images/5ca29581d66b5.svg",
+      src: logoEctor,
       alt: "logo"
     }));
   },
   MiddleComponent: DefaultMiddleComponent,
   RightComponent: DefaultRightComponent,
-  onClicks: {},
-  texts: DefaultTexts$9
+  texts: DefaultTexts$9,
+  onClickLogo: function onClickLogo() {
+    return null;
+  }
 };
 Header.propTypes = {
   LogoComponent: PropTypes$1.func,
   MiddleComponent: PropTypes$1.func,
   RightComponent: PropTypes$1.func,
-  onClicks: PropTypes$1.shape({
-    logo: PropTypes$1.func,
-    login: PropTypes$1.func,
-    faq: PropTypes$1.func,
-    customerService: PropTypes$1.func,
-    business: PropTypes$1.func
-  }),
   className: PropTypes$1.string,
   containerClassName: PropTypes$1.string,
   logoClassName: PropTypes$1.string,
   middleComponentClassName: PropTypes$1.string,
   rightComponentClassName: PropTypes$1.string,
-  texts: TextsType$9
+  texts: TextsType$9,
+  onClickLogo: PropTypes$1.func
 };
 
 var css$1c = ".MenuButton-module_container__3f-Es {\n  position: relative;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.MenuButton-module_button__2FZz3 {\n  color: #163457;\n  padding: 0;\n}\n\n.MenuButton-module_button__2FZz3:hover {\n  font-weight: 700;\n}\n\n.MenuButton-module_suggestions__3pzou {\n  top: 100%;\n  width: 220px;\n  padding: 20px;\n  margin-top: 20px;\n  left: calc(50% - 130px);\n  min-height: 0;\n  height: auto;\n}\n";
