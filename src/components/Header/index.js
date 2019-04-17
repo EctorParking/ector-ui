@@ -5,7 +5,6 @@ import faqIcon from '../../assets/images/faqIcon.svg';
 import businessIcon from '../../assets/images/businessIcon.svg';
 import headIcon from '../../assets/images/headIcon.svg';
 import logoEctor from '../../assets/images/logoEctor.svg';
-
 import s from './Header.module.css';
 import TextsType, { DefaultTexts } from './HeaderTextsType';
 
@@ -78,7 +77,7 @@ const DefaultMiddleComponent = ({ texts, className }) => {
 
   return (
     <div className={[s.middleMenuItemsContainer, className].join(' ')}>
-      <MenuButton LabelComponent={renderBusinessButton} />
+      <MenuButton LabelComponent={renderBusinessButton} onClick={() => window.open('https://business.ectorparking.com', '_blank')}/>
     </div>
   );
 };

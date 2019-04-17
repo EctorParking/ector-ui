@@ -49,7 +49,7 @@ class Picker extends React.PureComponent {
     const hasError = error && error !== '';
 
     return (
-      <div className={[s.container, className].join(' ')} ref={this.containerRef}>
+      <div className={[s.container, suggestionsVisible ? s.active : undefined, className].join(' ')} ref={this.containerRef}>
         <div className={[s.error, hasError ? s.errorVisible : undefined].join(' ')}>
           {error}
         </div>

@@ -80,20 +80,26 @@ class DateTimePicker extends React.PureComponent {
     };
   }
 
-  handleDateChange = ({ startDate, endDate }) => {
+  handleDateChange = ({ startDate, endDate: datePickerEndDate }) => {
     const { onStartDateChange, onEndDateChange } = this.props;
+    let endDate = datePickerEndDate;
 
-    this.setState(prevState => ({
-      startDate,
-      endDate,
-      focusedDateInput: prevState.focusedDateInput === DateTimePicker.startDate && startDate
-        ? DateTimePicker.endDate
-        : DateTimePicker.startDate,
-      visiblePicker: prevState.visiblePicker === DateTimePicker.datePicker && endDate && startDate
-        ? DateTimePicker.timePicker
-        : prevState.visiblePicker,
-      showTimeInputs: !!(endDate || prevState.endDate),
-    }));
+    this.setState((prevState) => {
+      if (startDate && prevState.endDate && prevState.endDate.isBefore(startDate)) {
+        endDate = undefined;
+      }
+      return ({
+        startDate,
+        endDate,
+        focusedDateInput: prevState.focusedDateInput === DateTimePicker.startDate && startDate
+          ? DateTimePicker.endDate
+          : DateTimePicker.startDate,
+        visiblePicker: prevState.visiblePicker === DateTimePicker.datePicker && endDate && startDate
+          ? DateTimePicker.timePicker
+          : prevState.visiblePicker,
+        showTimeInputs: !!(endDate || prevState.endDate),
+      });
+    });
     if (onStartDateChange) {
       onStartDateChange(startDate);
     }

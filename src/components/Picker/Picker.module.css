@@ -9,6 +9,10 @@
   display: block;
   height: var(--marginXLarge);
   padding: 0;
+  z-index: 1;
+  &.active {
+    z-index: 4;
+  }
 }
 
 .shadowWrapper {

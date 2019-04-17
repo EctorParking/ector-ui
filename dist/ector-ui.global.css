@@ -2868,6 +2868,11 @@
   display: block;
   height: 50px;
   padding: 0;
+  z-index: 1
+}
+
+.Picker-module_container__3AVzP.Picker-module_active__2IBbO {
+  z-index: 4;
 }
 
 .Picker-module_shadowWrapper__1yU5l {
@@ -3300,7 +3305,7 @@
 
 .DateTimePicker-module_timePickerInput__1vkhU {
   border: none !important;
-  border-radius: 0;
+  border-radius: 8px;
   max-width: 100px;
   padding-left: 35px;
   margin-right: 1px;
@@ -3329,10 +3334,6 @@
 .DateTimePicker-module_timePickerInput__1vkhU::placeholder {
   color: #939baa;
   font-style: italic;
-}
-
-.DateTimePicker-module_timePickerInputContainer__ROeTv {
-  margin-left: 10px;
 }
 
 .DateTimePicker-module_timePickerInputContainer__ROeTv::before {

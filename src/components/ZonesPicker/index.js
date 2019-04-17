@@ -139,10 +139,7 @@ class ZonesPicker extends React.PureComponent {
     const { onSplitSuggestions } = this.props;
 
     this.setState((prevState) => {
-      const { onSelect } = this.props;
-
       onSplitSuggestions(!prevState.split);
-      onSelect(undefined, ZonesPicker.toZone);
       return ({
         split: !prevState.split,
         toZoneValue: '',
