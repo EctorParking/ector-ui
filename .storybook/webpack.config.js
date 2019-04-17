@@ -6,6 +6,7 @@ module.exports = async ({config: storybookBaseConfig}, configType) => {
   // 'PRODUCTION' is used when building the static version of storybook.
   storybookBaseConfig.entry = [
     ...storybookBaseConfig.entry,
+    path.resolve(__dirname, '../node_modules/normalize.css/normalize.css'),
     path.resolve(__dirname, '../src/initialize.js'),
     path.resolve(__dirname, '../src/index.js'),
   ];

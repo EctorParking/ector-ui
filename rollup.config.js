@@ -7,60 +7,152 @@ import json from 'rollup-plugin-json';
 import progress from 'rollup-plugin-progress';
 import svgr from '@svgr/rollup';
 import url from 'rollup-plugin-url';
+import os from 'os';
+import path from 'path';
 import pkg from './package.json';
 
-export default [{
-  input: 'src/initialize.js',
-  output: [{
-    file: 'dist/initialize.js',
-    format: 'cjs',
-  }],
-  plugins: [
-    progress(),
-    resolve(),
-    postcss({
-      minimize: true,
-      modules: false,
-      inject: false,
-      extract: pkg.style,
-    }),
-  ],
-}, {
-  input: 'src/index.js',
-  output: [
-    {
-      file: pkg.main,
-      format: 'cjs',
-      sourcemap: true,
-      exports: 'named',
+const config = [
+  {
+    input: 'src/initialize.js',
+    output: [
+      {
+        file: 'dist/initialize.css',
+        format: 'es',
+      },
+    ],
+    plugins: [
+      progress(),
+      external(),
+      svgr(),
+      postcss({
+        minimize: false,
+        modules: true,
+        extract: true,
+      }),
+      url(),
+      babel({
+        exclude: 'node_modules/**',
+        plugins: ['@babel/plugin-proposal-class-properties'],
+      }),
+      resolve(),
+      commonjs(),
+      json({
+        include: ['src/**'],
+        exclude: ['node_modules/**', 'src/icomoon'],
+        compact: true,
+        preferConst: true,
+      }),
+    ],
+    watch: {
+      exclude: '*',
     },
-    {
-      file: pkg.module,
-      format: 'es',
-      sourcemap: true,
-      exports: 'named',
+  },
+  {
+    input: 'src/index.js',
+    output: [
+      {
+        file: pkg.style,
+        format: 'es',
+      },
+    ],
+    plugins: [
+      progress(),
+      external(),
+      svgr(),
+      postcss({
+        minimize: false,
+        modules: true,
+        extract: true,
+      }),
+      url(),
+      babel({
+        exclude: 'node_modules/**',
+        plugins: ['@babel/plugin-proposal-class-properties'],
+      }),
+      resolve(),
+      commonjs(),
+      json({
+        include: ['src/**'],
+        exclude: ['node_modules/**', 'src/icomoon'],
+        compact: true,
+        preferConst: true,
+      }),
+    ],
+    watch: {
+      exclude: '*',
     },
-  ],
-  plugins: [
-    progress(),
-    external(),
-    svgr(),
-    postcss({
-      minimize: false,
-      modules: true,
-    }),
-    url(),
-    babel({
-      exclude: 'node_modules/**',
-      plugins: ['@babel/plugin-proposal-class-properties'],
-    }),
-    resolve(),
-    commonjs(),
-    json({
-      include: ['src/**'],
-      exclude: ['node_modules/**', 'src/icomoon'],
-      compact: true,
-      preferConst: true,
-    }),
-  ],
-}];
+  },
+  {
+    input: 'src/index.js',
+    output: [
+      {
+        file: pkg.main,
+        format: 'cjs',
+        sourcemap: true,
+        exports: 'named',
+      },
+      {
+        file: pkg.module,
+        format: 'es',
+        sourcemap: true,
+        exports: 'named',
+      },
+    ],
+    plugins: [
+      progress(),
+      external(),
+      svgr(),
+      postcss({
+        minimize: false,
+        modules: true,
+      }),
+      url(),
+      babel({
+        exclude: 'node_modules/**',
+        plugins: ['@babel/plugin-proposal-class-properties'],
+      }),
+      resolve(),
+      commonjs(),
+      json({
+        include: ['src/**'],
+        exclude: ['node_modules/**', 'src/icomoon'],
+        compact: true,
+        preferConst: true,
+      }),
+    ],
+  },
+];
+
+// if (process.env.BUILD === 'production') {
+//   config.unshift({
+//     input: path.resolve('src/index.js'),
+//     output: {
+//       file: '/tmp/bulk.js',
+//       format: 'system',
+//     },
+//     plugins: [
+//       progress(),
+//       external(),
+//       svgr(),
+//       postcss({
+//         minimize: false,
+//         extract: 'dist/library.css',
+//       }),
+//       url(),
+//       babel({
+//         exclude: 'node_modules/**',
+//         plugins: ['@babel/plugin-proposal-class-properties'],
+//       }),
+//       resolve(),
+//       commonjs(),
+//       json({
+//         include: ['src/**'],
+//         exclude: ['node_modules/**', 'src/icomoon'],
+//         compact: true,
+//         preferConst: true,
+//       }),
+//     ],
+//   });
+// }
+
+export default config;

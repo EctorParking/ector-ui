@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": "EctorParking/ector-ui.git",
   "main": "dist/ector-ui.js",
-  "style": "dist/ector-ui.css",
+  "style": "dist/ector-ui.global.css",
   "module": "dist/ector-ui.es.js",
   "jsnext:main": "dist/ector-ui.es.js",
   "engines": {
@@ -16,8 +16,8 @@
   "scripts": {
     "test": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
-    "build": "rimraf dist/* && rollup -c",
-    "start": "rimraf dist/* && rollup -c -w",
+    "build": "rimraf dist/* && rollup -c --environment BUILD:production",
+    "start": "rimraf dist/* && rollup -c -w --environment BUILD:development",
     "start:storybook": "start-storybook -p 6006 -c .storybook watch-css -s ./src",
     "build:storybook": "build-storybook -c .storybook -o .out",
     "lint": "eslint ./src --ext .js"
@@ -25,11 +25,11 @@
   "peerDependencies": {
     "fast-levenshtein": "^2.0.6",
     "moment": "^2.24.0",
-    "normalize.css": "^8.0.1",
+    "normalize.css": "8.0.1",
     "prop-types": "^15.5.4",
-    "react": "^15.0.0 || ^16.0.0",
+    "react": ">16.4.0",
     "react-dates": "^20.1.0",
-    "react-dom": "^15.0.0 || ^16.0.0"
+    "react-dom": ">16.4.0"
   },
   "dependencies": {
     "react-dates": "^20.1.0",

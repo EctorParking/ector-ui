@@ -4,24 +4,14 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-require('react-dates/initialize');
-var moment = _interopDefault(require('moment'));
 var React = require('react');
 var React__default = _interopDefault(React);
 var PropTypes$1 = _interopDefault(require('prop-types'));
 var Levenshtein = _interopDefault(require('fast-levenshtein'));
+var moment = _interopDefault(require('moment'));
 var reactDates = require('react-dates');
 var reactDom = require('react-dom');
 var reactDom__default = _interopDefault(reactDom);
-
-moment.locale('FR');
-moment.updateLocale('FR', {
-  months: 'Janvier_Février_Mars_Avril_Mai_Juin_Juillet_Août_Septembre_Octobre_Novembre_Décembre'.split('_'),
-  monthsShort: 'Janv._Févr._Mars_Avr._Mai_Juin_Juil._Août_Sept._Oct._Nov._Déc.'.split('_'),
-  weekdays: 'Dimanche_Lundi_Mardi_Mercredi_Jeudi_Vendredi_Samedi'.split('_'),
-  weekdaysShort: 'Dim._Lun._Mar._Mer._Jeu._Ven._Sam.'.split('_'),
-  weekdaysMin: 'Di_Lu_Ma_Me_Je_Ve_Sa'.split('_')
-});
 
 function styleInject(css, ref) {
   if ( ref === void 0 ) ref = {};
@@ -3909,6 +3899,10 @@ function unwrapExports (x) {
 
 function createCommonjsModule(fn, module) {
 	return module = { exports: {} }, fn(module, module.exports), module.exports;
+}
+
+function getCjsExportFromNamespace (n) {
+	return n && n.default || n;
 }
 
 var wordwrap_1 = createCommonjsModule(function (module) {
@@ -8717,6 +8711,8 @@ unwrapExports(PropTypes);
 var PropTypes_1 = PropTypes.classNamesShape;
 var PropTypes_2 = PropTypes.timeoutsShape;
 
+var _reactLifecyclesCompat = getCjsExportFromNamespace(reactLifecyclesCompat_es);
+
 var Transition_1 = createCommonjsModule(function (module, exports) {
 
 exports.__esModule = true;
@@ -9322,7 +9318,7 @@ Transition.ENTERING = 2;
 Transition.ENTERED = 3;
 Transition.EXITING = 4;
 
-var _default = (0, reactLifecyclesCompat_es.polyfill)(Transition);
+var _default = (0, _reactLifecyclesCompat.polyfill)(Transition);
 
 exports.default = _default;
 });
@@ -10043,7 +10039,7 @@ TransitionGroup.propTypes = process.env.NODE_ENV !== "production" ? {
 } : {};
 TransitionGroup.defaultProps = defaultProps;
 
-var _default = (0, reactLifecyclesCompat_es.polyfill)(TransitionGroup);
+var _default = (0, _reactLifecyclesCompat.polyfill)(TransitionGroup);
 
 exports.default = _default;
 module.exports = exports["default"];
