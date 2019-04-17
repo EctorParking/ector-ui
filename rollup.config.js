@@ -25,8 +25,8 @@ const config = [
       external(),
       svgr(),
       postcss({
-        minimize: false,
-        modules: true,
+        minimize: true,
+        modules: false,
         extract: true,
       }),
       url(),

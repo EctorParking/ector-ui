@@ -1,9 +1,19 @@
+import 'react-dates/initialize';
+import moment from 'moment';
 import React__default, { Fragment, Component, PureComponent, createElement, createRef } from 'react';
 import PropTypes$1 from 'prop-types';
 import Levenshtein from 'fast-levenshtein';
-import moment from 'moment';
 import { DayPickerRangeController } from 'react-dates';
 import reactDom, { createPortal, findDOMNode } from 'react-dom';
+
+moment.locale('FR');
+moment.updateLocale('FR', {
+  months: 'Janvier_Février_Mars_Avril_Mai_Juin_Juillet_Août_Septembre_Octobre_Novembre_Décembre'.split('_'),
+  monthsShort: 'Janv._Févr._Mars_Avr._Mai_Juin_Juil._Août_Sept._Oct._Nov._Déc.'.split('_'),
+  weekdays: 'Dimanche_Lundi_Mardi_Mercredi_Jeudi_Vendredi_Samedi'.split('_'),
+  weekdaysShort: 'Dim._Lun._Mar._Mer._Jeu._Ven._Sam.'.split('_'),
+  weekdaysMin: 'Di_Lu_Ma_Me_Je_Ve_Sa'.split('_')
+});
 
 function styleInject(css, ref) {
   if ( ref === void 0 ) ref = {};
@@ -2916,8 +2926,8 @@ InputLabel.propTypes = {
   onKeyDown: PropTypes$1.func
 };
 
-var css$y = ".Label-module_labelContainer__22ERg {\n    border-radius: 3px;\n    color: #fefefe;\n    font-size: 11px;\n    padding: 0 5px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n\n.Label-module_text__147Rh {\n    padding: 0 5px;\n    font-weight: 500;\n    letter-spacing: 1px;\n}\n\n.Label-module_deepBlue__3TrYV {\n    background-color: #163457;\n}\n\n.Label-module_green__nYXKb {\n    background-color: #59c871;\n}\n\n.Label-module_red__3mvqV {\n    background-color: #ff5757;\n}\n\n.Label-module_melrose__2BUjT {\n    background-color: #9ca3ff;\n}\n\n.Label-module_blue__1dBeq {\n    background-color: #32a0c5;\n}\n\n.Label-module_lightGrey__13k9A {\n    background-color: #eceff6;\n}\n\n.Label-module_metalGrey__1giIv {\n    background-color: #d5d6d7;\n}\n\n.Label-module_darkMetalGrey__GhZE1 {\n    background-color: rgb(206, 206, 206);\n}\n\n.Label-module_aquaHazeGrey__22AvE {\n    background-color: #9eb3c2;\n}\n\n.Label-module_orange__2AKhU {\n    background-color: #f39c12;\n}\n";
-var s$y = {"deepBlue":"Label-module_deepBlue__3TrYV","yellow":"#ffcd02","grey":"#4b4b50","blue":"Label-module_blue__1dBeq","melrose":"Label-module_melrose__2BUjT","green":"Label-module_green__nYXKb","white":"#fefefe","metalGrey":"Label-module_metalGrey__1giIv","lightMetalGrey":"#dededf","aquaHazeGrey":"Label-module_aquaHazeGrey__22AvE","darkGrey":"#939baa","lightGrey":"Label-module_lightGrey__13k9A","red":"Label-module_red__3mvqV","orange":"Label-module_orange__2AKhU","labelContainer":"Label-module_labelContainer__22ERg","text":"Label-module_text__147Rh","darkMetalGrey":"Label-module_darkMetalGrey__GhZE1"};
+var css$y = ".Label-module_labelContainer__22ERg {\n    border-radius: 3px;\n    color: #fefefe;\n    font-size: 11px;\n    padding: 0 5px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n\n.Label-module_text__147Rh {\n    padding: 0 5px;\n    font-weight: 500;\n    letter-spacing: 1px;\n}\n\n.#163457 {\n    background-color: #163457;\n}\n\n.#59c871 {\n    background-color: #59c871;\n}\n\n.#Label-module_ff5757__3zzqR {\n    background-color: #ff5757;\n}\n\n.#9ca3ff {\n    background-color: #9ca3ff;\n}\n\n.#32a0c5 {\n    background-color: #32a0c5;\n}\n\n.#Label-module_eceff6__DhEeF {\n    background-color: #eceff6;\n}\n\n.#Label-module_d5d6d7__3lCvv {\n    background-color: #d5d6d7;\n}\n\n.Label-module_darkMetalGrey__GhZE1 {\n    background-color: rgb(206, 206, 206);\n}\n\n.#9eb3c2 {\n    background-color: #9eb3c2;\n}\n\n.#Label-module_f39c12__15Jn6 {\n    background-color: #f39c12;\n}\n";
+var s$y = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","labelContainer":"Label-module_labelContainer__22ERg","text":"Label-module_text__147Rh","ff5757":"Label-module_ff5757__3zzqR","eceff6":"Label-module_eceff6__DhEeF","d5d6d7":"Label-module_d5d6d7__3lCvv","darkMetalGrey":"Label-module_darkMetalGrey__GhZE1","f39c12":"Label-module_f39c12__15Jn6"};
 styleInject(css$y);
 
 var Label = function Label(_ref) {

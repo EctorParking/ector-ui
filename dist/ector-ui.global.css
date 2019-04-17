@@ -916,7 +916,7 @@
   float: right;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 825px) {
   .CardTravelInformation-module_travelingNumberFromInputLabel__2Yk1d, .CardTravelInformation-module_travelingNumberToInputLabel__1_lTU {
     margin: 10px auto;
   }
@@ -1578,31 +1578,31 @@
     letter-spacing: 1px;
 }
 
-.Label-module_deepBlue__3TrYV {
+.#163457 {
     background-color: #163457;
 }
 
-.Label-module_green__nYXKb {
+.#59c871 {
     background-color: #59c871;
 }
 
-.Label-module_red__3mvqV {
+.#Label-module_ff5757__3zzqR {
     background-color: #ff5757;
 }
 
-.Label-module_melrose__2BUjT {
+.#9ca3ff {
     background-color: #9ca3ff;
 }
 
-.Label-module_blue__1dBeq {
+.#32a0c5 {
     background-color: #32a0c5;
 }
 
-.Label-module_lightGrey__13k9A {
+.#Label-module_eceff6__DhEeF {
     background-color: #eceff6;
 }
 
-.Label-module_metalGrey__1giIv {
+.#Label-module_d5d6d7__3lCvv {
     background-color: #d5d6d7;
 }
 
@@ -1610,11 +1610,11 @@
     background-color: rgb(206, 206, 206);
 }
 
-.Label-module_aquaHazeGrey__22AvE {
+.#9eb3c2 {
     background-color: #9eb3c2;
 }
 
-.Label-module_orange__2AKhU {
+.#Label-module_f39c12__15Jn6 {
     background-color: #f39c12;
 }
 
@@ -3568,6 +3568,42 @@
     margin-top: 10px;
 }
 
+@media (max-width: 1130px) {
+    .FlightInformationForm-module_card__3HVvP {
+        width: -webkit-min-content;
+        width: -moz-min-content;
+        width: min-content;
+    }
+    .FlightInformationForm-module_input__1QJpa {
+        min-width: 275px;
+        max-width: 275px;
+        margin: 5px 10px 0 10px;
+    }
+    .FlightInformationForm-module_firstColumn__3dXcq, .FlightInformationForm-module_secondColumn__1tg-R {
+        padding: 0;
+    }
+    .FlightInformationForm-module_actionLink__nzpW1 {
+        margin-right: 10px;
+    }
+    .FlightInformationForm-module_title__3yTDe {
+        margin-left: 10px;
+    }
+    .FlightInformationForm-module_row__2j-tW {
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 825px) {
+    .FlightInformationForm-module_card__3HVvP {
+        width: 100%;
+    }
+    .FlightInformationForm-module_input__1QJpa {
+        max-width: none;
+    }
+
+}
+
 @media (max-width: 480px) {
     .FlightInformationForm-module_card__3HVvP {
         width: 100%;
@@ -3582,7 +3618,10 @@
         -webkit-box-flex: 0;
             -ms-flex: none;
                 flex: none;
-        margin-top: 5px;
+        margin: 5px 0 0 0;
+    }
+    .FlightInformationForm-module_title__3yTDe, .FlightInformationForm-module_actionLink__nzpW1 {
+        margin: 0;
     }
     .FlightInformationForm-module_row__2j-tW {
         margin: 0;
@@ -3619,3 +3658,153 @@
   top: 0;
   overflow: hidden;
 }
+
+.Header-module_wrapper__3Yuwe {
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 5;
+}
+
+.Header-module_container__2FRMu {
+  max-width: 1232px;
+  width: 100%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Header-module_menuItemsContainer__2hK2f {
+  width: 410px;
+  height: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Header-module_middleMenuItemsContainer__11RHW {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.Header-module_menuItemContainer__3AND5 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Header-module_visible__sHCWg, .Header-module_menuItemContainer__3AND5:hover, .Header-module_suggestion__3LyBf:hover {
+  font-weight: 700;
+}
+
+.Header-module_menuItemLinkIcon__15Cmp {
+  height: 20px;
+  margin-right: 10px;
+  width: 20px;
+}
+
+.Header-module_menuItemText__2n_In {
+  color: #163457;
+  margin-left: 10px;
+}
+
+.Header-module_suggestions__SwEEy {
+  width: 180px;
+  height: auto;
+  padding: 20px;
+  min-height: 0;
+  left: 0;
+  top: calc(100% + 11px);
+}
+
+.Header-module_helpSuggestions__K31H9 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.Header-module_suggestion__3LyBf {
+  margin: 10px 0;
+  color: #163457;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.MenuButton-module_container__3f-Es {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.MenuButton-module_button__2FZz3 {
+  color: #163457;
+  padding: 0;
+}
+
+.MenuButton-module_button__2FZz3:hover {
+  font-weight: 700;
+}
+
+.MenuButton-module_suggestions__3pzou {
+  top: 100%;
+  width: 220px;
+  padding: 20px;
+  margin-top: 20px;
+  left: calc(50% - 130px);
+  min-height: 0;
+  height: auto;
+}
+
+.TextIcon-module_container__3uZXq {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.TextIcon-module_icon__3DoI9 {
+  height: 2em;
+  width: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.TextIcon-module_text__1v24r {}

@@ -5,6 +5,7 @@ module.exports = {
                 require("stylelint")
             ]
         }),
+        require("postcss-icss-values")(),
         require("postcss-cssnext")(),
         require("postcss-reporter")({ clearReportedMessages: true }),
         require("postcss-url")({

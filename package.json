@@ -70,6 +70,7 @@
     "normalize.css": "^8.0.1",
     "postcss-cssnext": "^3.1.0",
     "postcss-global-import": "^1.0.6",
+    "postcss-icss-values": "^2.0.2",
     "postcss-import": "^12.0.1",
     "postcss-reporter": "^6.0.1",
     "postcss-url": "^8.0.0",

@@ -3,7 +3,6 @@ import './style/index.global.css';
 import 'react-dates/lib/css/_datepicker.css';
 import './style/react-dates.global.css';
 import './assets/icomoon/icomoon.global.css';
-import 'react-dates/initialize';
-import './locale';
+
 
 export default {};
