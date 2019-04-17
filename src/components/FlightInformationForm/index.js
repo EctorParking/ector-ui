@@ -210,23 +210,25 @@ class FlightInformationForm extends React.Component {
               <span>{toSpot.type === 'airport' ? texts.switchMandatoryAirportDescription : texts.switchMandatoryStationDescription}</span>
             </div>
           )}
-          {toSpot && toSpotsAvailable.length > 1 && (
+          {toSpot && (
             <div className={[s.row, toSpot.type === 'station' ? s.halfWidth : undefined].join(' ')}>
-              <InputLabel
-                label={texts.returnFlightOriginLabel}
-                placeholder={texts.returnFlightOriginPlaceholder}
-                value={returnFlightOrigin}
-                onChange={this.onChangeReturnFlightOrigin}
-                className={[s.input, s.firstColumn].join(' ')}
-                mandatory={shouldDisplayReturnFlightInformation}
-                autoComplete="off"
-                error={shouldDisplayReturnFlightInformation ? errors.returnFlightOrigin : null}
-              />
+              {toSpot.type !== 'station' && (
+                <InputLabel
+                  label={texts.returnFlightOriginLabel}
+                  placeholder={texts.returnFlightOriginPlaceholder}
+                  value={returnFlightOrigin}
+                  onChange={this.onChangeReturnFlightOrigin}
+                  className={[s.input, s.firstColumn].join(' ')}
+                  mandatory={shouldDisplayReturnFlightInformation}
+                  autoComplete="off"
+                  error={shouldDisplayReturnFlightInformation ? errors.returnFlightOrigin : null}
+                />
+              )}
               {toSpot.type === 'airport' && (
                 <InputLabel
                   label={texts.returnFlightCompanyLabel}
                   value={returnFlightCompany}
-                  className={[s.input, s.secondColumn].join(' ')}
+                  className={[s.input, toSpotsAvailable.length > 1 ? s.secondColumn : s.firstColumn].join(' ')}
                   InputComponent={this.renderAirlinesSelect}
                   mandatory={shouldDisplayReturnFlightInformation}
                   error={shouldDisplayReturnFlightInformation ? errors.returnFlightCompany : null}
