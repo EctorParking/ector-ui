@@ -6,9 +6,6 @@
   margin: 0 auto;
   width: 100%;
 }
-.inputContainerClassName {
-  flex: 1;
-}
 .input {
   width: 100%;
   margin: 0 auto;
@@ -24,6 +21,28 @@
 .error {
   text-align: left;
   color: var(--red);
+}
+.iconContainer {
+  align-items: center;
+  border: 2px solid var(--metalGrey);
+  border-left: 0;
+  border-bottom-right-radius: var(--inputBorderRadius);
+  border-top-right-radius: var(--inputBorderRadius);
+  box-sizing: border-box;
+  display: flex;
+  height: var(--marginMLarge);
+}
+.iconContainer:empty {
+  display: none;
+}
+.iconContainerFocussed {
+  border-color: var(--yellow);
+  border-right: 0;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.icon {
+  margin: 0 var(--marginSmall);
 }
 
 @media (--minMobile){

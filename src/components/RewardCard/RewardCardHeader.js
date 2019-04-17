@@ -1,32 +1,46 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Tooltip from '../Tooltip';
+import RadioButton from '../RadioButton';
+import RewardCardTextTypes from './RewardCardTextTypes';
 import s from './RewardCardHeader.module.css';
 
 const RewardCardHeader = ({
-  headerImage,
-  mobileHeaderImage,
+  texts,
+  isSelected,
+  onRadioButtonChange,
+  name,
+  rewardValue,
+  rewardTooltipIcon,
 }) => (
-  <div className={s.headerContainer}>
-    <img
-      src={headerImage}
-      className={[s.image, s.desktopImage].join(' ')}
-      alt="Reward"
+  <div className={s.header}>
+    <RadioButton
+      label=" "
+      checked={isSelected}
+      onSelect={onRadioButtonChange}
+      name={name}
     />
-    <img
-      src={mobileHeaderImage}
-      className={[s.image, s.mobileImage].join(' ')}
-      alt="Reward"
-    />
+
+    <span className={s.text}>
+      <strong className={s.rewardValue}>{rewardValue}</strong>
+      {texts.rewardText}
+
+      <Tooltip
+        className={s.tooltip}
+        iconClassName={rewardTooltipIcon}
+        text={texts.rewardTooltip}
+      />
+    </span>
   </div>
 );
 
 RewardCardHeader.propTypes = {
-  headerImage: PropTypes.string.isRequired,
-  mobileHeaderImage: PropTypes.string,
-};
-
-RewardCardHeader.defaultProps = {
-  mobileHeaderImage: '',
+  name: PropTypes.string.isRequired,
+  texts: RewardCardTextTypes.isRequired,
+  isSelected: PropTypes.bool.isRequired,
+  onRadioButtonChange: PropTypes.func.isRequired,
+  rewardValue: PropTypes.string.isRequired,
+  rewardTooltipIcon: PropTypes.string.isRequired,
 };
 
 export default RewardCardHeader;

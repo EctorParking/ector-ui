@@ -2748,8 +2748,8 @@ Input.propTypes = {
   containerClassName: PropTypes$1.string
 };
 
-var css$v = ".InputButton-module_inputButtonContainerClassName__2OzTt {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  margin: 0 auto;\n  width: 100%;\n}\n\n.InputButton-module_inputContainerClassName__2wy9a {\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n}\n\n.InputButton-module_input__3lwQJ {\n  width: 100%;\n  margin: 0 auto;\n}\n\n.InputButton-module_input__3lwQJ, .InputButton-module_button__3YbuH {\n  height: 40px;\n}\n\n.InputButton-module_helpTextClassname__3BmMr {\n  color: #d5d6d7;\n  font-style: italic;\n  margin: 0;\n}\n\n.InputButton-module_error__3au5y {\n  text-align: left;\n  color: #ff5757;\n}\n\n@media (min-width: 480px){\n  .InputButton-module_input__3lwQJ {\n    border-bottom-right-radius: 0;\n    border-right: 0;\n    border-top-right-radius: 0;\n  }\n  .InputButton-module_button__3YbuH {\n    border-bottom-left-radius: 0;\n    border-top-left-radius: 0;\n  }\n}\n\n@media (max-width: 480px) {\n  .InputButton-module_inputButtonContainerClassName__2OzTt {\n    display: block;\n  }\n  .InputButton-module_inputContainerClassName__2wy9a {\n    margin-bottom: 20px;\n  }\n  .InputButton-module_button__3YbuH {\n    margin: 0 auto;\n  }\n}\n";
-var s$v = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","inputButtonContainerClassName":"InputButton-module_inputButtonContainerClassName__2OzTt","inputContainerClassName":"InputButton-module_inputContainerClassName__2wy9a","input":"InputButton-module_input__3lwQJ","button":"InputButton-module_button__3YbuH","helpTextClassname":"InputButton-module_helpTextClassname__3BmMr","error":"InputButton-module_error__3au5y"};
+var css$v = ".InputButton-module_inputButtonContainerClassName__2OzTt {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  margin: 0 auto;\n  width: 100%;\n}\n\n.InputButton-module_input__3lwQJ {\n  width: 100%;\n  margin: 0 auto;\n}\n\n.InputButton-module_input__3lwQJ, .InputButton-module_button__3YbuH {\n  height: 40px;\n}\n\n.InputButton-module_helpTextClassname__3BmMr {\n  color: #d5d6d7;\n  font-style: italic;\n  margin: 0;\n}\n\n.InputButton-module_error__3au5y {\n  text-align: left;\n  color: #ff5757;\n}\n\n.InputButton-module_iconContainer__2PZ0_ {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  border: 2px solid #d5d6d7;\n  border-left: 0;\n  border-bottom-right-radius: 3px;\n  border-top-right-radius: 3px;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: 40px;\n}\n\n.InputButton-module_iconContainer__2PZ0_:empty {\n  display: none;\n}\n\n.InputButton-module_iconContainerFocussed__2QI9x {\n  border-color: #ffcd02;\n  border-right: 0;\n  border-bottom-right-radius: 0;\n  border-top-right-radius: 0;\n}\n\n.InputButton-module_icon__3usZ5 {\n  margin: 0 10px;\n}\n\n@media (min-width: 480px){\n  .InputButton-module_input__3lwQJ {\n    border-bottom-right-radius: 0;\n    border-right: 0;\n    border-top-right-radius: 0;\n  }\n  .InputButton-module_button__3YbuH {\n    border-bottom-left-radius: 0;\n    border-top-left-radius: 0;\n  }\n}\n\n@media (max-width: 480px) {\n  .InputButton-module_inputButtonContainerClassName__2OzTt {\n    display: block;\n  }\n  .InputButton-module_inputContainerClassName__2wy9a {\n    margin-bottom: 20px;\n  }\n  .InputButton-module_button__3YbuH {\n    margin: 0 auto;\n  }\n}\n";
+var s$v = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","inputButtonContainerClassName":"InputButton-module_inputButtonContainerClassName__2OzTt","input":"InputButton-module_input__3lwQJ","button":"InputButton-module_button__3YbuH","helpTextClassname":"InputButton-module_helpTextClassname__3BmMr","error":"InputButton-module_error__3au5y","iconContainer":"InputButton-module_iconContainer__2PZ0_","iconContainerFocussed":"InputButton-module_iconContainerFocussed__2QI9x","icon":"InputButton-module_icon__3usZ5","inputContainerClassName":"InputButton-module_inputContainerClassName__2wy9a"};
 styleInject(css$v);
 
 var InputButton = function InputButton(_ref) {
@@ -2761,21 +2761,28 @@ var InputButton = function InputButton(_ref) {
       inputButtonContainerClassName = _ref.inputButtonContainerClassName,
       inputType = _ref.inputType,
       hasError = _ref.hasError,
+      buttonVisible = _ref.buttonVisible,
+      iconContainerClassName = _ref.iconContainerClassName,
+      IconComponent = _ref.IconComponent,
       ButtonComponent = _ref.ButtonComponent,
       SubTextComponent = _ref.SubTextComponent,
-      inputProps = _objectWithoutProperties(_ref, ["id", "placeholder", "buttonText", "inputClassName", "inputContainerClassName", "inputButtonContainerClassName", "inputType", "hasError", "ButtonComponent", "SubTextComponent"]);
+      inputProps = _objectWithoutProperties(_ref, ["id", "placeholder", "buttonText", "inputClassName", "inputContainerClassName", "inputButtonContainerClassName", "inputType", "hasError", "buttonVisible", "iconContainerClassName", "IconComponent", "ButtonComponent", "SubTextComponent"]);
 
   return React__default.createElement("div", {
     className: [s$v.inputButtonContainerClassName, inputButtonContainerClassName].join(' ')
   }, React__default.createElement("div", {
-    className: [s$v.inputContainerClassName, inputContainerClassName].join(' ')
+    className: inputContainerClassName
   }, React__default.createElement(Input, _extends({
     placeholder: placeholder,
-    className: [s$v.input, inputClassName].join(' '),
+    className: [buttonVisible ? s$v.input : undefined, inputClassName].join(' '),
     id: id,
     type: inputType,
     hasError: hasError
-  }, inputProps)), React__default.createElement(SubTextComponent, null)), React__default.createElement(ButtonComponent, {
+  }, inputProps)), React__default.createElement(SubTextComponent, null)), React__default.createElement("div", {
+    className: [s$v.iconContainer, buttonVisible ? s$v.iconContainerFocussed : undefined].join(' ')
+  }, React__default.createElement(IconComponent, {
+    className: s$v.icon
+  })), buttonVisible && React__default.createElement(ButtonComponent, {
     className: s$v.button
   }, buttonText));
 };
@@ -2786,8 +2793,12 @@ InputButton.defaultProps = {
   placeholder: '',
   inputClassName: '',
   hasError: false,
+  buttonVisible: true,
   inputType: 'text',
   inputContainerClassName: '',
+  IconComponent: function IconComponent() {
+    return null;
+  },
   ButtonComponent: function ButtonComponent(props) {
     return React__default.createElement(Button, _extends({}, props, {
       component: "button",
@@ -2807,6 +2818,8 @@ InputButton.propTypes = {
   inputContainerClassName: PropTypes$1.string,
   inputButtonContainerClassName: PropTypes$1.string,
   hasError: PropTypes$1.bool,
+  buttonVisible: PropTypes$1.bool,
+  IconComponent: PropTypes$1.func,
   ButtonComponent: PropTypes$1.func,
   SubTextComponent: PropTypes$1.func
 };
@@ -4360,8 +4373,8 @@ Tooltip.propTypes = {
   IconComponent: PropTypes$1.func
 };
 
-var css$T = ".RewardCard-module_card__1Znmy {\n  display: block;\n  padding: 0;\n  max-width: 272px;\n  max-width: 272px;\n  max-width: 17rem;\n  max-height: 100%;\n  border-radius: 1rem;\n  background-color: #fefefe;\n  -webkit-box-shadow: 0px 0px 38px -2px rgba(0, 0, 0, .15);\n          box-shadow: 0px 0px 38px -2px rgba(0, 0, 0, .15);\n  -webkit-transition: all 0.4s ease-in-out;\n  transition: all 0.4s ease-in-out;\n}\n\n.RewardCard-module_card__1Znmy:hover{\n  -webkit-transform: scale(1.09);\n          transform: scale(1.09);\n}\n\n.RewardCard-module_scaledCard__1-sNY {\n  -webkit-transform: scale(1.09);\n          transform: scale(1.09);\n}\n\n.RewardCard-module_content__2QTte {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: 0 20px;\n  -webkit-box-pack: space-evenly;\n      -ms-flex-pack: space-evenly;\n          justify-content: space-evenly;\n}\n\n.RewardCard-module_footer__UGXDV {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding-bottom: 5px;\n}\n\n.RewardCard-module_footerButton__319wl {\n  color: #ffcd02;\n  border-color: #ffcd02;\n}\n";
-var s$T = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","card":"RewardCard-module_card__1Znmy","scaledCard":"RewardCard-module_scaledCard__1-sNY","content":"RewardCard-module_content__2QTte","footer":"RewardCard-module_footer__UGXDV","footerButton":"RewardCard-module_footerButton__319wl"};
+var css$T = ".RewardCard-module_card__1Znmy {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: 0;\n  max-height: 100%;\n  border-radius: 8px;\n  background-color: #fefefe;\n  -webkit-box-shadow: 0px 0px 38px -2px rgba(0, 0, 0, .15);\n          box-shadow: 0px 0px 38px -2px rgba(0, 0, 0, .15);\n}\n\n.RewardCard-module_left__3Vghj {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n\n.RewardCard-module_header__1Ir_6 {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: 10px;\n}\n\n.RewardCard-module_text__3Q5l1 {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n}\n\n.RewardCard-module_tooltip__1d1fF {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  margin-left: 10px;\n}\n\n.RewardCard-module_rewardValue__1X8Xt:after {\n  content: '\\A0';\n}\n\n.RewardCard-module_image__1fOt3 {\n  border-top-right-radius: 8px;\n  border-bottom-right-radius: 8px;\n  display: block;\n  width: 30px;\n}\n\n.RewardCard-module_imageBig__RYB5l {\n  width: 62px;\n}\n\n.RewardCard-module_content__2QTte {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  padding: 10px;\n}\n";
+var s$T = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","card":"RewardCard-module_card__1Znmy","left":"RewardCard-module_left__3Vghj","header":"RewardCard-module_header__1Ir_6","text":"RewardCard-module_text__3Q5l1","tooltip":"RewardCard-module_tooltip__1d1fF","rewardValue":"RewardCard-module_rewardValue__1X8Xt","image":"RewardCard-module_image__1fOt3","imageBig":"RewardCard-module_imageBig__RYB5l","content":"RewardCard-module_content__2QTte"};
 styleInject(css$T);
 
 var css$U = ".RewardCardHeader-module_headerContainer__3wgBg {\n  border-radius: 1rem;\n  background-color: #fefefe;\n}\n\n.RewardCardHeader-module_image__3zQb9 {\n  width: 100%;\n}\n\n.RewardCardHeader-module_desktopImage__1v4Vb {\n  display: block;\n}\n\n.RewardCardHeader-module_mobileImage__2FL62 {\n  display: none;\n}\n\n@media (max-width: 480px) {\n  .RewardCardHeader-module_desktopImage__1v4Vb {\n    display: none;\n  }\n\n  .RewardCardHeader-module_mobileImage__2FL62 {\n    display: block;\n  }\n}\n";
@@ -4523,11 +4536,11 @@ RewardCardFooter.defaultProps = {
 };
 
 var RewardCard = function RewardCard(_ref) {
-  var headerImage = _ref.headerImage,
-      mobileHeaderImage = _ref.mobileHeaderImage,
+  var name = _ref.name,
+      image = _ref.image,
       rewardValue = _ref.rewardValue,
       rewardTooltipIcon = _ref.rewardTooltipIcon,
-      footerOnClick = _ref.footerOnClick,
+      onRadioButtonChange = _ref.onRadioButtonChange,
       prefixTestId = _ref.prefixTestId,
       footerButtonClassName = _ref.footerButtonClassName,
       isSelected = _ref.isSelected,
@@ -4541,51 +4554,47 @@ var RewardCard = function RewardCard(_ref) {
       editExternalCardClassName = _ref.editExternalCardClassName,
       fetching = _ref.fetching,
       className = _ref.className,
-      cardProps = _objectWithoutProperties(_ref, ["headerImage", "mobileHeaderImage", "rewardValue", "rewardTooltipIcon", "footerOnClick", "prefixTestId", "footerButtonClassName", "isSelected", "selectedIcon", "isConnected", "texts", "hasExternalCard", "children", "isExternalCardUpdatable", "onClickEditExternalCard", "editExternalCardClassName", "fetching", "className"]);
+      cardProps = _objectWithoutProperties(_ref, ["name", "image", "rewardValue", "rewardTooltipIcon", "onRadioButtonChange", "prefixTestId", "footerButtonClassName", "isSelected", "selectedIcon", "isConnected", "texts", "hasExternalCard", "children", "isExternalCardUpdatable", "onClickEditExternalCard", "editExternalCardClassName", "fetching", "className"]);
 
-  var header = React__default.createElement(RewardCardHeader, {
-    headerImage: headerImage,
-    mobileHeaderImage: mobileHeaderImage
-  });
-  var footer = React__default.createElement(RewardCardFooter, {
-    onClick: footerOnClick,
-    buttonClassName: footerButtonClassName,
-    prefixTestid: prefixTestId,
-    isSelected: isSelected,
-    isConnected: isConnected,
-    selectedIcon: selectedIcon,
-    texts: texts,
-    hasExternalCard: hasExternalCard,
-    isExternalCardUpdatable: isExternalCardUpdatable,
-    fetching: fetching
-  });
-  return React__default.createElement(Card, _extends({}, cardProps, {
-    className: [s$T.card, isSelected ? s$T.scaledCard : null, className].join(' '),
-    HeaderChildren: header,
-    FooterChildren: !isConnected && isSelected ? null : footer,
-    footerClassName: s$T.footer,
-    contentClassName: s$T.content
-  }), children || React__default.createElement(RewardCardContent, {
-    texts: texts,
-    rewardValue: rewardValue,
-    isConnected: isConnected,
-    isSelected: isSelected,
-    isExternalCardUpdatable: isExternalCardUpdatable,
-    onClickEditExternalCard: onClickEditExternalCard,
-    editExternalCardClassName: editExternalCardClassName
-  }));
+  return React__default.createElement("div", {
+    className: s$T.card
+  }, React__default.createElement("div", {
+    className: s$T.left
+  }, React__default.createElement("div", {
+    className: s$T.header
+  }, React__default.createElement(RadioButton, {
+    label: "\xA0",
+    checked: isSelected,
+    onSelect: onRadioButtonChange,
+    name: name
+  }), React__default.createElement("span", {
+    className: s$T.text
+  }, React__default.createElement("strong", {
+    className: s$T.rewardValue
+  }, rewardValue), texts.rewardText, React__default.createElement(Tooltip, {
+    className: s$T.tooltip,
+    iconClassName: rewardTooltipIcon,
+    text: texts.rewardTooltip
+  }))), isSelected && React__default.createElement("div", {
+    className: s$T.content
+  }, children)), React__default.createElement("div", {
+    className: s$T.imageContainer
+  }, React__default.createElement("img", {
+    src: image,
+    className: [s$T.image, isSelected ? s$T.imageBig : undefined].join(' '),
+    alt: "Reward image"
+  })));
 };
 
 RewardCard.propTypes = {
+  name: PropTypes$1.string.isRequired,
   texts: RewardCardTextTypes.isRequired,
-  headerImage: PropTypes$1.string.isRequired,
-  mobileHeaderImage: PropTypes$1.string,
+  image: PropTypes$1.string.isRequired,
   rewardValue: PropTypes$1.string.isRequired,
-  footerOnClick: PropTypes$1.func.isRequired,
+  onRadioButtonChange: PropTypes$1.func.isRequired,
   onClickEditExternalCard: PropTypes$1.func,
   children: PropTypes$1.node,
   prefixTestId: PropTypes$1.string,
-  footerButtonClassName: PropTypes$1.string,
   rewardTooltipIcon: PropTypes$1.string,
   isSelected: PropTypes$1.bool,
   selectedIcon: PropTypes$1.string,
@@ -4597,7 +4606,6 @@ RewardCard.propTypes = {
   className: PropTypes$1.string
 };
 RewardCard.defaultProps = {
-  mobileHeaderImage: '',
   prefixTestId: '',
   footerButtonClassName: '',
   rewardTooltipIcon: 'icon-ec-info',

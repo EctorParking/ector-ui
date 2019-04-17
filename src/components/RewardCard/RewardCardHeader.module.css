@@ -1,28 +1,25 @@
 @import '../../style/variable.global.css';
 
-.headerContainer {
-  border-radius: 1rem;
-  background-color: var(--seventhColor);
+.header {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  height: var(--marginXLarge);
+  padding: var(--marginSmall);
 }
 
-.image {
-  width: 100%;
+.text {
+  align-items: center;
+  display: flex;
+  flex: 1;
 }
 
-.desktopImage {
-  display: block;
+.tooltip {
+  align-items: center;
+  display: flex;
+  margin-left: var(--marginSmall);
 }
 
-.mobileImage {
-  display: none;
-}
-
-@media (--maxMobile) {
-  .desktopImage {
-    display: none;
-  }
-
-  .mobileImage {
-    display: block;
-  }
+.rewardValue:after {
+  content: ' ';
 }

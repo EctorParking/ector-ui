@@ -1,20 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Card from '../Card';
 import s from './RewardCard.module.css';
 import RewardCardHeader from './RewardCardHeader';
 import RewardCardContent from './RewardCardContent';
-import RewardCardFooter from './RewardCardFooter';
 import RewardCardTextTypes from './RewardCardTextTypes';
 
 const RewardCard = ({
-  headerImage,
-  mobileHeaderImage,
+  name,
+  image,
   rewardValue,
   rewardTooltipIcon,
-  footerOnClick,
+  onRadioButtonChange,
   prefixTestId,
-  footerButtonClassName,
   isSelected,
   selectedIcon,
   isConnected,
@@ -27,62 +24,43 @@ const RewardCard = ({
   fetching,
   className,
   ...cardProps
-}) => {
-  const header = (
-    <RewardCardHeader
-      headerImage={headerImage}
-      mobileHeaderImage={mobileHeaderImage}
-    />
-  );
-  const footer = (
-    <RewardCardFooter
-      onClick={footerOnClick}
-      buttonClassName={footerButtonClassName}
-      prefixTestid={prefixTestId}
-      isSelected={isSelected}
-      isConnected={isConnected}
-      selectedIcon={selectedIcon}
-      texts={texts}
-      hasExternalCard={hasExternalCard}
-      isExternalCardUpdatable={isExternalCardUpdatable}
-      fetching={fetching}
-    />
-  );
+}) => (
+  <div className={s.card}>
+    <div className={s.left}>
+      <RewardCardHeader
+        texts={texts}
+        isSelected={isSelected}
+        onRadioButtonChange={onRadioButtonChange}
+        name={name}
+        rewardValue={rewardValue}
+        rewardTooltipIcon={rewardTooltipIcon}
+      />
 
-  return (
-    <Card
-      {...cardProps}
-      className={[s.card, isSelected ? s.scaledCard : null, className].join(' ')}
-      HeaderChildren={header}
-      FooterChildren={!isConnected && isSelected ? null : footer}
-      footerClassName={s.footer}
-      contentClassName={s.content}
-    >
-      { children || (
-        <RewardCardContent
-          texts={texts}
-          rewardValue={rewardValue}
-          isConnected={isConnected}
-          isSelected={isSelected}
-          isExternalCardUpdatable={isExternalCardUpdatable}
-          onClickEditExternalCard={onClickEditExternalCard}
-          editExternalCardClassName={editExternalCardClassName}
-        />
+      {isSelected && (
+        <RewardCardContent>
+          {children}
+        </RewardCardContent>
       )}
-    </Card>
-  );
-};
+    </div>
+    <div className={s.imageContainer}>
+      <img
+        src={image}
+        className={[s.image, isSelected ? s.imageBig : undefined].join(' ')}
+        alt=""
+      />
+    </div>
+  </div>
+);
 
 RewardCard.propTypes = {
+  name: PropTypes.string.isRequired,
   texts: RewardCardTextTypes.isRequired,
-  headerImage: PropTypes.string.isRequired,
-  mobileHeaderImage: PropTypes.string,
+  image: PropTypes.string.isRequired,
   rewardValue: PropTypes.string.isRequired,
-  footerOnClick: PropTypes.func.isRequired,
+  onRadioButtonChange: PropTypes.func.isRequired,
   onClickEditExternalCard: PropTypes.func,
   children: PropTypes.node,
   prefixTestId: PropTypes.string,
-  footerButtonClassName: PropTypes.string,
   rewardTooltipIcon: PropTypes.string,
   isSelected: PropTypes.bool,
   selectedIcon: PropTypes.string,
@@ -95,9 +73,7 @@ RewardCard.propTypes = {
 };
 
 RewardCard.defaultProps = {
-  mobileHeaderImage: '',
   prefixTestId: '',
-  footerButtonClassName: '',
   rewardTooltipIcon: 'icon-ec-info',
   isSelected: false,
   selectedIcon: 'check',
