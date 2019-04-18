@@ -75,9 +75,12 @@ const DefaultMiddleComponent = ({ texts, className }) => {
     isActive: PropTypes.bool.isRequired,
   };
 
+  // eslint-disable-next-line
+  const onClick = () => window.open('https://business.ectorparking.com', '_blank');
+
   return (
     <div className={[s.middleMenuItemsContainer, className].join(' ')}>
-      <MenuButton LabelComponent={renderBusinessButton} onClick={() => window.open('https://business.ectorparking.com', '_blank')}/>
+      <MenuButton LabelComponent={renderBusinessButton} onClick={onClick} />
     </div>
   );
 };
