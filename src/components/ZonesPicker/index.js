@@ -185,14 +185,15 @@ class ZonesPicker extends React.PureComponent {
 
     if (fromZoneValue.length === 0) {
       return (
-        <Icon src={iconSearch} className={[s.inputIcon, s.rightInputIcon, className].join(' ')} />
+        <Icon src={iconSearch} className={[s.inputIcon, s.rightInputIconContainer, className].join(' ')} iconClassName={s.rightInputIcon} />
       );
     }
     return (
       <Icon
         src={iconClear}
         role="presentation"
-        className={[s.inputAction, s.rightInputIcon, className].join(' ')}
+        className={[s.inputAction, s.rightInputIconContainer, className].join(' ')}
+        iconClassName={s.rightInputIcon}
         onClick={this.handleFromZoneReset}
       />
     );
@@ -242,14 +243,15 @@ class ZonesPicker extends React.PureComponent {
 
     if (toZoneValue.length === 0) {
       return (
-        <Icon src={iconSearch} className={[s.inputIcon, s.rightInputIcon, className].join(' ')} />
+        <Icon src={iconSearch} className={[s.inputIcon, s.rightInputIconContainer, className].join(' ')} iconClassName={s.rightInputIcon} />
       );
     }
     return (
       <Icon
         src={iconClear}
         role="presentation"
-        className={[s.inputAction, s.rightInputIcon, className].join(' ')}
+        className={[s.inputAction, s.rightInputIconContainer, className].join(' ')}
+        iconClassName={s.rightInputIcon}
         onClick={this.handleToZoneReset}
       />
     );

@@ -5155,7 +5155,6 @@ ZoneSuggestion.defaultProps = {
   className: undefined,
   selected: false,
   disabled: false,
-  split: false,
   onClick: function onClick() {
     return null;
   }
@@ -5163,14 +5162,13 @@ ZoneSuggestion.defaultProps = {
 ZoneSuggestion.propTypes = {
   value: Type.isRequired,
   onClick: PropTypes$1.func,
-  split: PropTypes$1.bool,
   selected: PropTypes$1.bool,
   disabled: PropTypes$1.bool,
   className: PropTypes$1.string
 };
 
-var css$10 = ".ZonesPicker-module_suggestionsContainer__j1KTO {\n  position: relative;\n  height: 85%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row\n}\n\n.ZonesPicker-module_suggestionsContainer__j1KTO:before, .ZonesPicker-module_suggestionsContainer__j1KTO:after {\n  content: '';\n  height: 20px;\n  left: 0;\n  pointer-events: none;\n  position: absolute;\n  width: 100%;\n  z-index: 3;\n}\n\n.ZonesPicker-module_suggestionsContainer__j1KTO:before {\n  background: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(rgba(255, 255, 255, .1)));\n  background: linear-gradient(to bottom, #fefefe, rgba(255, 255, 255, .1));\n  border-top-left-radius: 5px;\n  border-top-right-radius: 5px;\n  top: 0;\n}\n\n.ZonesPicker-module_suggestionsContainer__j1KTO:after {\n  background: -webkit-gradient(linear, left bottom, left top, from(#fefefe), to(rgba(255, 255, 255, .1)));\n  background: linear-gradient(to top, #fefefe, rgba(255, 255, 255, .1));\n  bottom: 0;\n}\n\n.ZonesPicker-module_suggestions__19igb {\n  position: relative;\n  overflow-x: scroll;\n  display: none;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  width: 100%;\n  padding: 15px\n}\n\n.ZonesPicker-module_suggestions__19igb.ZonesPicker-module_visible__3Tlgg {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.ZonesPicker-module_suggestionAction__29BOq {\n  border-bottom-left-radius: 8px;\n  border-bottom-right-radius: 8px;\n  padding-left: 15px;\n  height: 15%;\n  background-color: #eceff6;\n}\n\n.ZonesPicker-module_suggestionActionVisible__1bpa0 {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.ZonesPicker-module_inputContainer__17GCF {\n  padding: 0 35px 0 15px;\n}\n\n.ZonesPicker-module_input__1qXay {\n  margin-right: 25px;\n}\n\n.ZonesPicker-module_input__1qXay::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.ZonesPicker-module_input__1qXay::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.input::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.input::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.ZonesPicker-module_input__1qXay::placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.ZonesPicker-module_inputImgIcon__2U4u7 {\n  height: 20px;\n}\n\n.ZonesPicker-module_inputIcon__lD2sz {\n  color: #163457;\n  font-size: 19.2px;\n  font-size: 19.2px;\n  font-size: 1.2rem;\n}\n\n.ZonesPicker-module_leftInputIcon__3Azxc {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: 100%;\n  left: 10px;\n  top: 0;\n  width: 30px;\n}\n\n.ZonesPicker-module_leftInputIcon__3Azxc + input {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  margin: 0 0 0 25px;\n}\n\n.ZonesPicker-module_rightInputIcon__WQQ5r {\n  right: 10px;\n}\n\n.ZonesPicker-module_stationIcon__36JCs {\n  margin-left: 2px;\n}\n\n.ZonesPicker-module_inputAction__qyPpy {\n  cursor: pointer;\n}\n\n.ZonesPicker-module_toZoneSuggestion__23gxS:hover {\n  font-weight: bold;\n}\n";
-var s$10 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","suggestionsContainer":"ZonesPicker-module_suggestionsContainer__j1KTO","suggestions":"ZonesPicker-module_suggestions__19igb","visible":"ZonesPicker-module_visible__3Tlgg","suggestionAction":"ZonesPicker-module_suggestionAction__29BOq","suggestionActionVisible":"ZonesPicker-module_suggestionActionVisible__1bpa0","inputContainer":"ZonesPicker-module_inputContainer__17GCF","input":"ZonesPicker-module_input__1qXay","inputImgIcon":"ZonesPicker-module_inputImgIcon__2U4u7","inputIcon":"ZonesPicker-module_inputIcon__lD2sz","leftInputIcon":"ZonesPicker-module_leftInputIcon__3Azxc","rightInputIcon":"ZonesPicker-module_rightInputIcon__WQQ5r","stationIcon":"ZonesPicker-module_stationIcon__36JCs","inputAction":"ZonesPicker-module_inputAction__qyPpy","toZoneSuggestion":"ZonesPicker-module_toZoneSuggestion__23gxS"};
+var css$10 = ".ZonesPicker-module_suggestionsContainer__j1KTO {\n  position: relative;\n  height: 85%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row\n}\n\n.ZonesPicker-module_suggestionsContainer__j1KTO:before, .ZonesPicker-module_suggestionsContainer__j1KTO:after {\n  content: '';\n  height: 20px;\n  left: 0;\n  pointer-events: none;\n  position: absolute;\n  width: 100%;\n  z-index: 3;\n}\n\n.ZonesPicker-module_suggestionsContainer__j1KTO:before {\n  background: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(rgba(255, 255, 255, .1)));\n  background: linear-gradient(to bottom, #fefefe, rgba(255, 255, 255, .1));\n  border-top-left-radius: 5px;\n  border-top-right-radius: 5px;\n  top: 0;\n}\n\n.ZonesPicker-module_suggestionsContainer__j1KTO:after {\n  background: -webkit-gradient(linear, left bottom, left top, from(#fefefe), to(rgba(255, 255, 255, .1)));\n  background: linear-gradient(to top, #fefefe, rgba(255, 255, 255, .1));\n  bottom: 0;\n}\n\n.ZonesPicker-module_suggestions__19igb {\n  position: relative;\n  overflow-x: scroll;\n  display: none;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  width: 100%;\n  padding: 15px\n}\n\n.ZonesPicker-module_suggestions__19igb.ZonesPicker-module_visible__3Tlgg {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.ZonesPicker-module_suggestionAction__29BOq {\n  border-bottom-left-radius: 8px;\n  border-bottom-right-radius: 8px;\n  padding-left: 15px;\n  height: 15%;\n  background-color: #eceff6;\n}\n\n.ZonesPicker-module_suggestionActionVisible__1bpa0 {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.ZonesPicker-module_inputContainer__17GCF {\n  padding: 0 35px 0 15px;\n}\n\n.ZonesPicker-module_input__1qXay {\n  margin-right: 25px;\n}\n\n.ZonesPicker-module_input__1qXay::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.ZonesPicker-module_input__1qXay::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.input::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.input::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.ZonesPicker-module_input__1qXay::placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.ZonesPicker-module_inputImgIcon__2U4u7 {\n  height: 20px;\n}\n\n.ZonesPicker-module_inputIcon__lD2sz {\n  color: #163457;\n  font-size: 19.2px;\n  font-size: 19.2px;\n  font-size: 1.2rem;\n}\n\n.ZonesPicker-module_leftInputIcon__3Azxc {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: 100%;\n  left: 10px;\n  top: 0;\n  width: 30px;\n}\n\n.ZonesPicker-module_leftInputIcon__3Azxc + input {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  margin: 0 0 0 25px;\n}\n\n.ZonesPicker-module_rightInputIconContainer__1A3Zs {\n  right: 10px;\n}\n\n.ZonesPicker-module_rightInputIcon__WQQ5r {\n  height: 15px;\n  width: 15px;\n}\n\n.ZonesPicker-module_stationIcon__36JCs {\n  margin-left: 2px;\n}\n\n.ZonesPicker-module_inputAction__qyPpy {\n  cursor: pointer;\n}\n\n.ZonesPicker-module_toZoneSuggestion__23gxS:hover {\n  font-weight: bold;\n}\n";
+var s$10 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","suggestionsContainer":"ZonesPicker-module_suggestionsContainer__j1KTO","suggestions":"ZonesPicker-module_suggestions__19igb","visible":"ZonesPicker-module_visible__3Tlgg","suggestionAction":"ZonesPicker-module_suggestionAction__29BOq","suggestionActionVisible":"ZonesPicker-module_suggestionActionVisible__1bpa0","inputContainer":"ZonesPicker-module_inputContainer__17GCF","input":"ZonesPicker-module_input__1qXay","inputImgIcon":"ZonesPicker-module_inputImgIcon__2U4u7","inputIcon":"ZonesPicker-module_inputIcon__lD2sz","leftInputIcon":"ZonesPicker-module_leftInputIcon__3Azxc","rightInputIconContainer":"ZonesPicker-module_rightInputIconContainer__1A3Zs","rightInputIcon":"ZonesPicker-module_rightInputIcon__WQQ5r","stationIcon":"ZonesPicker-module_stationIcon__36JCs","inputAction":"ZonesPicker-module_inputAction__qyPpy","toZoneSuggestion":"ZonesPicker-module_toZoneSuggestion__23gxS"};
 styleInject(css$10);
 
 var Suggestions = [{name:"Paris Orly",code:"ORY",type:"airport"},{name:"Paris CDG",code:"CDG",type:"airport"},{name:"Lyon",code:"ADL",type:"airport"},{name:"Gare de Lyon",code:"GDL",type:"station"},{name:"Marseille",code:"MAR",type:"airport"},{name:"Marseille2",code:"MAR2",type:"airport"},{name:"Marseille3",code:"MAR3",type:"airport"},{name:"Marseille4",code:"MAR4",type:"airport"},{name:"Marseille5",code:"MAR5",type:"airport"}];
@@ -5426,14 +5424,16 @@ function (_React$PureComponent) {
       if (fromZoneValue.length === 0) {
         return createElement(Icon, {
           src: iconSearch,
-          className: [s$10.inputIcon, s$10.rightInputIcon, className].join(' ')
+          className: [s$10.inputIcon, s$10.rightInputIconContainer, className].join(' '),
+          iconClassName: s$10.rightInputIcon
         });
       }
 
       return createElement(Icon, {
         src: iconClear,
         role: "presentation",
-        className: [s$10.inputAction, s$10.rightInputIcon, className].join(' '),
+        className: [s$10.inputAction, s$10.rightInputIconContainer, className].join(' '),
+        iconClassName: s$10.rightInputIcon,
         onClick: _this.handleFromZoneReset
       });
     });
@@ -5490,14 +5490,16 @@ function (_React$PureComponent) {
       if (toZoneValue.length === 0) {
         return createElement(Icon, {
           src: iconSearch,
-          className: [s$10.inputIcon, s$10.rightInputIcon, className].join(' ')
+          className: [s$10.inputIcon, s$10.rightInputIconContainer, className].join(' '),
+          iconClassName: s$10.rightInputIcon
         });
       }
 
       return createElement(Icon, {
         src: iconClear,
         role: "presentation",
-        className: [s$10.inputAction, s$10.rightInputIcon, className].join(' '),
+        className: [s$10.inputAction, s$10.rightInputIconContainer, className].join(' '),
+        iconClassName: s$10.rightInputIcon,
         onClick: _this.handleToZoneReset
       });
     });
@@ -5518,7 +5520,6 @@ function (_React$PureComponent) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "renderFromZoneSuggestion", function (zone) {
-      var split = _this.state.split;
       return createElement(ZoneSuggestion, {
         value: zone,
         key: zone.code,
@@ -5837,144 +5838,6 @@ TimeSuggestions.propTypes = {
 };
 TimeSuggestions.startTime = 'startTime';
 TimeSuggestions.endTime = 'endTime';
-
-var css$14 = ".TimeRange-module_container__qP7nK {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  height: 100%;\n}\n\n.TimeRange-module_hours__9eQEI, .TimeRange-module_minutes__1mA4X {\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  overflow: scroll;\n  position: relative;\n  padding: 0 5px\n}\n\n.TimeRange-module_hours__9eQEI::-webkit-scrollbar, .TimeRange-module_minutes__1mA4X::-webkit-scrollbar {\n  display: none;\n}\n\n.TimeRange-module_hour__XiHg6, .TimeRange-module_minute__32J9f {\n  min-width: 20px;\n  padding: 5px 10px;\n  text-align: center\n}\n\n.TimeRange-module_hour__XiHg6:hover, .TimeRange-module_hour__XiHg6.TimeRange-module_selected__1EEqQ, .TimeRange-module_minute__32J9f:hover, .TimeRange-module_minute__32J9f.TimeRange-module_selected__1EEqQ {\n  border-radius: 5px;\n  cursor: pointer;\n  font-weight: bold;\n}\n\n.TimeRange-module_hour__XiHg6:hover, .TimeRange-module_minute__32J9f:hover {\n  background-color: rgb(255, 245, 204);\n}\n\n.TimeRange-module_hour__XiHg6.TimeRange-module_selected__1EEqQ, .TimeRange-module_minute__32J9f.TimeRange-module_selected__1EEqQ {\n  background-color: #ffcd02;\n}\n\n.TimeRange-module_hour__XiHg6.TimeRange-module_disabled__TxWjV, .TimeRange-module_minute__32J9f.TimeRange-module_disabled__TxWjV {\n  color: #939baa;\n}\n";
-var s$14 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","container":"TimeRange-module_container__qP7nK","hours":"TimeRange-module_hours__9eQEI","minutes":"TimeRange-module_minutes__1mA4X","hour":"TimeRange-module_hour__XiHg6","minute":"TimeRange-module_minute__32J9f","selected":"TimeRange-module_selected__1EEqQ","disabled":"TimeRange-module_disabled__TxWjV"};
-styleInject(css$14);
-
-var TimeNumber = function TimeNumber(_ref) {
-  var value = _ref.value;
-  return value < 10 ? "0".concat(value) : value.toString();
-};
-
-var TimeElement = function TimeElement(_ref2) {
-  var className = _ref2.className,
-      value = _ref2.value,
-      selected = _ref2.selected,
-      onSelect = _ref2.onSelect,
-      disabled = _ref2.disabled;
-  return (// eslint-disable-next-line jsx-a11y/role-supports-aria-props
-    React__default.createElement("div", {
-      className: [selected ? s$14.selected : undefined, disabled ? s$14.disabled : undefined, className].join(' '),
-      role: "presentation",
-      onClick: onSelect,
-      "aria-selected": selected
-    }, React__default.createElement(TimeNumber, {
-      value: value
-    }))
-  );
-};
-
-TimeElement.propTypes = {
-  className: PropTypes$1.string.isRequired,
-  value: PropTypes$1.string.isRequired,
-  selected: PropTypes$1.bool.isRequired,
-  onSelect: PropTypes$1.func.isRequired,
-  disabled: PropTypes$1.bool.isRequired
-};
-
-var getHoursRange = function getHoursRange(start, end) {
-  return Array.from(Array(end).keys()).slice(start);
-};
-
-var getMinutesRange = function getMinutesRange(interval) {
-  return Array.from(Array(60).keys()).filter(function (nbr) {
-    return nbr % interval === 0;
-  });
-};
-
-var TimeRange =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inherits(TimeRange, _React$PureComponent);
-
-  function TimeRange(props) {
-    var _this;
-
-    _classCallCheck(this, TimeRange);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(TimeRange).call(this, props));
-
-    _defineProperty(_assertThisInitialized(_this), "handleHourSelect", function (event) {
-      var onSelect = _this.props.onSelect;
-      onSelect(TimeRange.hour, event.currentTarget.innerHTML);
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "handleMinutesSelect", function (event) {
-      var onSelect = _this.props.onSelect;
-      onSelect(TimeRange.minutes, event.currentTarget.innerHTML);
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "renderHour", function (hour) {
-      var selectedHour = _this.props.hour;
-      var isSelected = +selectedHour === +hour;
-      return React__default.createElement(TimeElement, {
-        key: "h-".concat(hour),
-        className: s$14.hour,
-        value: hour,
-        selected: isSelected,
-        disabled: !isSelected && typeof selectedHour !== 'undefined',
-        onSelect: _this.handleHourSelect
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "renderMinutes", function (minutes) {
-      var selectedMinutes = _this.props.minutes;
-      var isSelected = +minutes === +selectedMinutes;
-      return React__default.createElement(TimeElement, {
-        key: "m-".concat(minutes),
-        className: s$14.minute,
-        value: minutes,
-        selected: isSelected,
-        disabled: !isSelected && typeof selectedMinutes !== 'undefined',
-        onSelect: _this.handleMinutesSelect
-      });
-    });
-
-    var startHour = props.startHour,
-        endHour = props.endHour,
-        minutesInterval = props.minutesInterval;
-    _this.minutesRange = getMinutesRange(minutesInterval);
-    _this.hoursRange = getHoursRange(startHour, endHour);
-    return _this;
-  }
-
-  _createClass(TimeRange, [{
-    key: "render",
-    value: function render() {
-      return React__default.createElement("div", {
-        className: s$14.container
-      }, React__default.createElement("div", {
-        className: s$14.hours
-      }, this.hoursRange.map(this.renderHour)), React__default.createElement("div", {
-        className: s$14.minutes
-      }, this.minutesRange.map(this.renderMinutes)));
-    }
-  }]);
-
-  return TimeRange;
-}(React__default.PureComponent);
-
-TimeRange.minutes = 'minutes';
-TimeRange.hour = 'hour';
-TimeRange.defaultProps = {
-  startHour: 7,
-  endHour: 24,
-  minutesInterval: 1,
-  onSelect: function onSelect() {
-    return null;
-  },
-  hour: undefined,
-  minutes: undefined
-};
-TimeRange.propTypes = {
-  startHour: PropTypes$1.number,
-  endHour: PropTypes$1.number,
-  minutesInterval: PropTypes$1.number,
-  onSelect: PropTypes$1.func,
-  minutes: PropTypes$1.string,
-  hour: PropTypes$1.string
-};
 
 var iconCalendar = "data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20width%3D%2215px%22%20height%3D%2215px%22%20viewBox%3D%220%200%2015%2015%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%20%20%20%20%20%20%20%20%3Ctitle%3Ecalendar%3C%2Ftitle%3E%20%20%20%20%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%20%20%20%20%3Cg%20id%3D%22Symbols%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%20%20%20%20%20%20%20%20%3Cg%20id%3D%22filters%22%20transform%3D%22translate%28-526.000000%2C%20-18.000000%29%22%20fill%3D%22%23BFC4D4%22%20fill-rule%3D%22nonzero%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20transform%3D%22translate%281.000000%2C%200.000000%29%22%20id%3D%22date%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20transform%3D%22translate%28509.103631%2C%200.010000%29%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20id%3D%22aller%22%20transform%3D%22translate%2816.000000%2C%2015.000000%29%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M13.2633063%2C3.875%20L11.7457409%2C3.875%20L11.7457409%2C3.4375%20C11.7457409%2C3.195125%2011.5523597%2C3%2011.3121508%2C3%20C11.0719418%2C3%2010.8785607%2C3.196%2010.8785607%2C3.4375%20L10.8785607%2C3.875%20L3.94111888%2C3.875%20L3.94111888%2C3.4375%20C3.94111888%2C3.195125%203.74687051%2C3%203.50752877%2C3%20C3.26818703%2C3%203.07393866%2C3.196%203.07393866%2C3.4375%20L3.07393866%2C3.875%20L1.55637327%2C3.875%20C0.957151736%2C3.87675%200.474132353%2C4.364125%200.472397993%2C4.96875%20L0.472397993%2C15.90625%20C0.474132353%2C16.510875%200.957151736%2C16.99825%201.55637327%2C17%20L13.2633063%2C17%20C13.8625278%2C16.99825%2014.3455472%2C16.510875%2014.3472815%2C15.90625%20L14.3472815%2C4.96875%20C14.3455472%2C4.364125%2013.8625278%2C3.87675%2013.2633063%2C3.875%20Z%20M5.67547932%2C11.75%20L5.67547932%2C8.25%20L9.14420021%2C8.25%20L9.14420021%2C11.75%20L5.67547932%2C11.75%20Z%20M9.14420021%2C12.625%20L9.14420021%2C16.125%20L5.67547932%2C16.125%20L5.67547932%2C12.625%20L9.14420021%2C12.625%20Z%20M1.33957821%2C8.25%20L4.8082991%2C8.25%20L4.8082991%2C11.75%20L1.33957821%2C11.75%20L1.33957821%2C8.25%20Z%20M10.0113804%2C8.25%20L13.4801013%2C8.25%20L13.4801013%2C11.75%20L10.0113804%2C11.75%20L10.0113804%2C8.25%20Z%20M1.40288237%2C4.81475%20C1.44450702%2C4.7745%201.49653783%2C4.75%201.55637327%2C4.75%20L3.07393866%2C4.75%20L3.07393866%2C5.1875%20C3.07393866%2C5.429%203.26818703%2C5.625%203.50752877%2C5.625%20C3.74687051%2C5.625%203.94111888%2C5.429%203.94111888%2C5.1875%20L3.94111888%2C4.75%20L10.8785607%2C4.75%20L10.8785607%2C5.1875%20C10.8785607%2C5.429%2011.0719418%2C5.625%2011.3121508%2C5.625%20C11.5523597%2C5.625%2011.7457409%2C5.429%2011.7457409%2C5.1875%20L11.7457409%2C4.75%20L13.2633063%2C4.75%20C13.3231417%2C4.75%2013.3751725%2C4.773625%2013.4167972%2C4.81475%20C13.4566875%2C4.85675%2013.4801013%2C4.90925%2013.4801013%2C4.96875%20L13.4801013%2C7.375%20L1.33957821%2C7.375%20L1.33957821%2C4.96875%20C1.33957821%2C4.908375%201.36299208%2C4.85675%201.40288237%2C4.81475%20Z%20M1.40288237%2C16.061125%20C1.36299208%2C16.019125%201.33871103%2C15.966625%201.33871103%2C15.90625%20L1.33871103%2C12.625%20L4.80743192%2C12.625%20L4.80743192%2C16.125%20L1.55550609%2C16.125%20C1.49567065%2C16.125%201.44363984%2C16.101375%201.40288237%2C16.061125%20Z%20M13.4167972%2C16.061125%20C13.3751725%2C16.101375%2013.3231417%2C16.125%2013.2633063%2C16.125%20L10.0113804%2C16.125%20L10.0113804%2C12.625%20L13.4801013%2C12.625%20L13.4801013%2C15.90625%20C13.4801013%2C15.966625%2013.4566875%2C16.019125%2013.4167972%2C16.061125%20Z%22%20id%3D%22calendar%22%3E%3C%2Fpath%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E";
 
@@ -6380,6 +6243,144 @@ DateTimePicker.defaultProps = {
   onEndTimeChange: function onEndTimeChange() {
     return null;
   }
+};
+
+var css$14 = ".TimeRange-module_container__qP7nK {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  height: 100%;\n}\n\n.TimeRange-module_hours__9eQEI, .TimeRange-module_minutes__1mA4X {\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  overflow: scroll;\n  position: relative;\n  padding: 0 5px\n}\n\n.TimeRange-module_hours__9eQEI::-webkit-scrollbar, .TimeRange-module_minutes__1mA4X::-webkit-scrollbar {\n  display: none;\n}\n\n.TimeRange-module_hour__XiHg6, .TimeRange-module_minute__32J9f {\n  min-width: 20px;\n  padding: 5px 10px;\n  text-align: center\n}\n\n.TimeRange-module_hour__XiHg6:hover, .TimeRange-module_hour__XiHg6.TimeRange-module_selected__1EEqQ, .TimeRange-module_minute__32J9f:hover, .TimeRange-module_minute__32J9f.TimeRange-module_selected__1EEqQ {\n  border-radius: 5px;\n  cursor: pointer;\n  font-weight: bold;\n}\n\n.TimeRange-module_hour__XiHg6:hover, .TimeRange-module_minute__32J9f:hover {\n  background-color: rgb(255, 245, 204);\n}\n\n.TimeRange-module_hour__XiHg6.TimeRange-module_selected__1EEqQ, .TimeRange-module_minute__32J9f.TimeRange-module_selected__1EEqQ {\n  background-color: #ffcd02;\n}\n\n.TimeRange-module_hour__XiHg6.TimeRange-module_disabled__TxWjV, .TimeRange-module_minute__32J9f.TimeRange-module_disabled__TxWjV {\n  color: #939baa;\n}\n";
+var s$14 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","container":"TimeRange-module_container__qP7nK","hours":"TimeRange-module_hours__9eQEI","minutes":"TimeRange-module_minutes__1mA4X","hour":"TimeRange-module_hour__XiHg6","minute":"TimeRange-module_minute__32J9f","selected":"TimeRange-module_selected__1EEqQ","disabled":"TimeRange-module_disabled__TxWjV"};
+styleInject(css$14);
+
+var TimeNumber = function TimeNumber(_ref) {
+  var value = _ref.value;
+  return value < 10 ? "0".concat(value) : value.toString();
+};
+
+var TimeElement = function TimeElement(_ref2) {
+  var className = _ref2.className,
+      value = _ref2.value,
+      selected = _ref2.selected,
+      onSelect = _ref2.onSelect,
+      disabled = _ref2.disabled;
+  return (// eslint-disable-next-line jsx-a11y/role-supports-aria-props
+    React__default.createElement("div", {
+      className: [selected ? s$14.selected : undefined, disabled ? s$14.disabled : undefined, className].join(' '),
+      role: "presentation",
+      onClick: onSelect,
+      "aria-selected": selected
+    }, React__default.createElement(TimeNumber, {
+      value: value
+    }))
+  );
+};
+
+TimeElement.propTypes = {
+  className: PropTypes$1.string.isRequired,
+  value: PropTypes$1.string.isRequired,
+  selected: PropTypes$1.bool.isRequired,
+  onSelect: PropTypes$1.func.isRequired,
+  disabled: PropTypes$1.bool.isRequired
+};
+
+var getHoursRange = function getHoursRange(start, end) {
+  return Array.from(Array(end).keys()).slice(start);
+};
+
+var getMinutesRange = function getMinutesRange(interval) {
+  return Array.from(Array(60).keys()).filter(function (nbr) {
+    return nbr % interval === 0;
+  });
+};
+
+var TimeRange =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(TimeRange, _React$PureComponent);
+
+  function TimeRange(props) {
+    var _this;
+
+    _classCallCheck(this, TimeRange);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(TimeRange).call(this, props));
+
+    _defineProperty(_assertThisInitialized(_this), "handleHourSelect", function (event) {
+      var onSelect = _this.props.onSelect;
+      onSelect(TimeRange.hour, event.currentTarget.innerHTML);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "handleMinutesSelect", function (event) {
+      var onSelect = _this.props.onSelect;
+      onSelect(TimeRange.minutes, event.currentTarget.innerHTML);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "renderHour", function (hour) {
+      var selectedHour = _this.props.hour;
+      var isSelected = +selectedHour === +hour;
+      return React__default.createElement(TimeElement, {
+        key: "h-".concat(hour),
+        className: s$14.hour,
+        value: hour,
+        selected: isSelected,
+        disabled: !isSelected && typeof selectedHour !== 'undefined',
+        onSelect: _this.handleHourSelect
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "renderMinutes", function (minutes) {
+      var selectedMinutes = _this.props.minutes;
+      var isSelected = +minutes === +selectedMinutes;
+      return React__default.createElement(TimeElement, {
+        key: "m-".concat(minutes),
+        className: s$14.minute,
+        value: minutes,
+        selected: isSelected,
+        disabled: !isSelected && typeof selectedMinutes !== 'undefined',
+        onSelect: _this.handleMinutesSelect
+      });
+    });
+
+    var startHour = props.startHour,
+        endHour = props.endHour,
+        minutesInterval = props.minutesInterval;
+    _this.minutesRange = getMinutesRange(minutesInterval);
+    _this.hoursRange = getHoursRange(startHour, endHour);
+    return _this;
+  }
+
+  _createClass(TimeRange, [{
+    key: "render",
+    value: function render() {
+      return React__default.createElement("div", {
+        className: s$14.container
+      }, React__default.createElement("div", {
+        className: s$14.hours
+      }, this.hoursRange.map(this.renderHour)), React__default.createElement("div", {
+        className: s$14.minutes
+      }, this.minutesRange.map(this.renderMinutes)));
+    }
+  }]);
+
+  return TimeRange;
+}(React__default.PureComponent);
+
+TimeRange.minutes = 'minutes';
+TimeRange.hour = 'hour';
+TimeRange.defaultProps = {
+  startHour: 7,
+  endHour: 24,
+  minutesInterval: 1,
+  onSelect: function onSelect() {
+    return null;
+  },
+  hour: undefined,
+  minutes: undefined
+};
+TimeRange.propTypes = {
+  startHour: PropTypes$1.number,
+  endHour: PropTypes$1.number,
+  minutesInterval: PropTypes$1.number,
+  onSelect: PropTypes$1.func,
+  minutes: PropTypes$1.string,
+  hour: PropTypes$1.string
 };
 
 var css$15 = ".FlightInformationForm-module_card__3HVvP {\n    width: 650px;\n}\n\n.FlightInformationForm-module_contentCard__2iuCz {}\n\n.FlightInformationForm-module_formContainer__38_9v {\n    margin-bottom: 20px;\n}\n\n.FlightInformationForm-module_title__3yTDe {\n    margin: 0;\n    font-weight: 300;\n    color: #32a0c5;\n}\n\n.FlightInformationForm-module_firstColumn__3dXcq {\n    padding-right: 20px;\n}\n\n.FlightInformationForm-module_secondColumn__1tg-R {\n    padding-left: 20px;\n}\n\n.FlightInformationForm-module_halfWidth__3iWMs {\n    width: 50%;\n}\n\n.FlightInformationForm-module_row__2j-tW {\n    margin-top: 10px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n}\n\n.FlightInformationForm-module_noMargin__DF7_J {\n    margin: 0;\n}\n\n.FlightInformationForm-module_input__1QJpa {\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n}\n\n.FlightInformationForm-module_select__1KZ8b {\n    margin-top: 0;\n}\n\n.FlightInformationForm-module_defaultOption__MJRT6 {\n    color: #d5d6d7;\n}\n\n.FlightInformationForm-module_actionLink__nzpW1 {\n    margin-top: 5px;\n}\n\n.FlightInformationForm-module_flexStart__3he4R {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: start;\n        -ms-flex-pack: start;\n            justify-content: flex-start;\n}\n\n.FlightInformationForm-module_flexEnd__f47Mt {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: end;\n        -ms-flex-pack: end;\n            justify-content: flex-end;\n}\n\n.FlightInformationForm-module_description__38HJs {\n    margin-top: 10px;\n}\n\n@media (max-width: 1130px) {\n    .FlightInformationForm-module_card__3HVvP {\n        width: -webkit-min-content;\n        width: -moz-min-content;\n        width: min-content;\n    }\n    .FlightInformationForm-module_input__1QJpa {\n        min-width: 275px;\n        max-width: 275px;\n        margin: 5px 10px 0 10px;\n    }\n    .FlightInformationForm-module_firstColumn__3dXcq, .FlightInformationForm-module_secondColumn__1tg-R {\n        padding: 0;\n    }\n    .FlightInformationForm-module_actionLink__nzpW1, .FlightInformationForm-module_description__38HJs {\n        margin-right: 10px;\n        margin-left: 10px;\n    }\n    .FlightInformationForm-module_title__3yTDe {\n        margin-left: 10px;\n    }\n    .FlightInformationForm-module_row__2j-tW {\n        -ms-flex-wrap: wrap;\n            flex-wrap: wrap;\n    }\n}\n\n@media (max-width: 825px) {\n    .FlightInformationForm-module_card__3HVvP {\n        width: 100%;\n    }\n    .FlightInformationForm-module_input__1QJpa {\n        max-width: none;\n    }\n\n}\n\n@media (max-width: 480px) {\n    .FlightInformationForm-module_card__3HVvP {\n        width: 100%;\n    }\n    .FlightInformationForm-module_contentCard__2iuCz {\n        padding: 20px;\n    }\n    .FlightInformationForm-module_halfWidth__3iWMs, .FlightInformationForm-module_input__1QJpa {\n        width: 100%;\n    }\n    .FlightInformationForm-module_input__1QJpa {\n        -webkit-box-flex: 0;\n            -ms-flex: none;\n                flex: none;\n        margin: 5px 0 0 0;\n    }\n    .FlightInformationForm-module_title__3yTDe, .FlightInformationForm-module_actionLink__nzpW1 {\n        margin: 0;\n    }\n    .FlightInformationForm-module_row__2j-tW {\n        margin: 0;\n        -ms-flex-wrap: wrap;\n            flex-wrap: wrap;\n    }\n    .FlightInformationForm-module_firstColumn__3dXcq, .FlightInformationForm-module_secondColumn__1tg-R {\n        padding: 0;\n    }\n    .FlightInformationForm-module_title__3yTDe {\n        font-size: 22px;\n    }\n    .FlightInformationForm-module_description__38HJs {\n        margin: 15px 0;\n    }\n}\n";

@@ -3198,8 +3198,13 @@
   margin: 0 0 0 25px;
 }
 
-.ZonesPicker-module_rightInputIcon__WQQ5r {
+.ZonesPicker-module_rightInputIconContainer__1A3Zs {
   right: 10px;
+}
+
+.ZonesPicker-module_rightInputIcon__WQQ5r {
+  height: 15px;
+  width: 15px;
 }
 
 .ZonesPicker-module_stationIcon__36JCs {

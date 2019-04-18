@@ -92,8 +92,13 @@
   margin: 0 0 0 25px;
 }
 
-.rightInputIcon {
+.rightInputIconContainer {
   right: var(--marginSmall);
+}
+
+.rightInputIcon {
+  height: 15px;
+  width: 15px;
 }
 
 .stationIcon {
