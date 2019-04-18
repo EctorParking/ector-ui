@@ -49,14 +49,12 @@ ZoneSuggestion.defaultProps = {
   className: undefined,
   selected: false,
   disabled: false,
-  split: false,
   onClick: () => null,
 };
 
 ZoneSuggestion.propTypes = {
   value: ZoneType.isRequired,
   onClick: PropTypes.func,
-  split: PropTypes.bool,
   selected: PropTypes.bool,
   disabled: PropTypes.bool,
   className: PropTypes.string,

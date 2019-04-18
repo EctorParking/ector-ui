@@ -8,7 +8,6 @@ import {
 import s from './DateTimePicker.module.css';
 import { DefaultTexts, TextsType } from './DateTimePickerTexts';
 import TimeSuggestions from './TimeSuggestions';
-import { TimeNumber } from '../TimeRange';
 import iconCalendar from '../../assets/images/calendar.svg';
 import iconClock from '../../assets/images/clock.svg';
 

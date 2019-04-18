@@ -271,18 +271,14 @@ class ZonesPicker extends React.PureComponent {
     );
   };
 
-  renderFromZoneSuggestion = (zone) => {
-    const { split } = this.state;
-
-    return (
-      <ZoneSuggestion
-        value={zone}
-        key={zone.code}
-        onClick={() => this.handleFromZoneClick(zone)}
-        disabled={zone.disabled}
-      />
-    );
-  };
+  renderFromZoneSuggestion = zone => (
+    <ZoneSuggestion
+      value={zone}
+      key={zone.code}
+      onClick={() => this.handleFromZoneClick(zone)}
+      disabled={zone.disabled}
+    />
+  );
 
   renderToZoneSuggestion = zone => (
     <ZoneSuggestion
