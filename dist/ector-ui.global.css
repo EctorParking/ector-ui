@@ -1606,31 +1606,31 @@
     letter-spacing: 1px;
 }
 
-.#163457 {
+.Label-module_var__zf3AY(\--deepBlue) {
     background-color: #163457;
 }
 
-.#59c871 {
+.Label-module_var__zf3AY(\--green) {
     background-color: #59c871;
 }
 
-.#Label-module_ff5757__3zzqR {
+.Label-module_var__zf3AY(\--red) {
     background-color: #ff5757;
 }
 
-.#9ca3ff {
+.Label-module_var__zf3AY(\--melrose) {
     background-color: #9ca3ff;
 }
 
-.#32a0c5 {
+.Label-module_var__zf3AY(\--blue) {
     background-color: #32a0c5;
 }
 
-.#Label-module_eceff6__DhEeF {
+.Label-module_var__zf3AY(\--lightGrey) {
     background-color: #eceff6;
 }
 
-.#Label-module_d5d6d7__3lCvv {
+.Label-module_var__zf3AY(\--metalGrey) {
     background-color: #d5d6d7;
 }
 
@@ -1638,11 +1638,11 @@
     background-color: rgb(206, 206, 206);
 }
 
-.#9eb3c2 {
+.Label-module_var__zf3AY(\--aquaHazeGrey) {
     background-color: #9eb3c2;
 }
 
-.#Label-module_f39c12__15Jn6 {
+.Label-module_var__zf3AY(\--orange) {
     background-color: #f39c12;
 }
 
@@ -2927,6 +2927,7 @@
 }
 
 .Picker-module_error__3Mp0C {
+  display: inline-table;
   background-color: #c73637;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
@@ -2948,12 +2949,13 @@
   width: 100%;
   font-size: 14px;
   font-weight: 700;
+  word-break: break-all;
 }
 
 .Picker-module_errorVisible__3Fa-X {
   opacity: 1;
-  -webkit-transform: translateY(-40px);
-          transform: translateY(-40px);
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
 }
 
 .PickerSuggestions-module_container__1Oq6m {
@@ -3029,13 +3031,12 @@
   padding-left: 25px;
 }
 
-.ZoneSuggestion-module_selected__2jOH2, .ZoneSuggestion-module_hovered__1ETlf:not(.ZoneSuggestion-module_disabled__1DHUU):hover {
+.ZoneSuggestion-module_selected__2jOH2, .ZoneSuggestion-module_hovered__1ETlf:hover {
   font-weight: bold;
 }
 
 .ZoneSuggestion-module_disabled__1DHUU {
-  color: #eceff6;
-  cursor: not-allowed;
+  color: #939baa;
 }
 
 .ZoneSuggestion-module_icon__2Bikz {
@@ -3061,7 +3062,7 @@
 
 .ZonesPicker-module_suggestionsContainer__j1KTO {
   position: relative;
-  height: 75%;
+  height: 85%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3114,9 +3115,10 @@
 }
 
 .ZonesPicker-module_suggestionAction__29BOq {
-  display: none;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
   padding-left: 15px;
-  height: 25%;
+  height: 15%;
   background-color: #eceff6;
 }
 
@@ -3206,6 +3208,10 @@
 
 .ZonesPicker-module_inputAction__qyPpy {
   cursor: pointer;
+}
+
+.ZonesPicker-module_toZoneSuggestion__23gxS:hover {
+  font-weight: bold;
 }
 
 .Icon-module_withBackground__EomNm {

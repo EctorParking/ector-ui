@@ -60,6 +60,7 @@
 }
 
 .error {
+  display: inline-table;
   background-color: var(--magenta);
   border-top-left-radius: var(--borderRadius);
   border-top-right-radius: var(--borderRadius);
@@ -76,9 +77,10 @@
   width: 100%;
   font-size: var(--fontSizeMedium);
   font-weight: var(--fontWeightBold);
+  word-break: break-all;
 }
 
 .errorVisible {
   opacity: 1;
-  transform: translateY(-40px);
+  transform: translateY(-100%);
 }

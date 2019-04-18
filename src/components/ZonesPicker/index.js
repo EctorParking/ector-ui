@@ -60,6 +60,14 @@ class ZonesPicker extends React.PureComponent {
       toZoneValue = toZone ? toZone.name : '';
     }
 
+    if (!fromZoneProp && fromZoneValue) {
+      fromZoneValue = '';
+    }
+
+    if (!toZoneProp && toZoneValue) {
+      toZoneValue = '';
+    }
+
     return {
       fromZoneValue,
       toZoneValue,
@@ -139,9 +147,11 @@ class ZonesPicker extends React.PureComponent {
     const { onSplitSuggestions } = this.props;
 
     this.setState((prevState) => {
-      onSplitSuggestions(!prevState.split);
+      const split = !prevState.split;
+
+      onSplitSuggestions(split);
       return ({
-        split: !prevState.split,
+        split,
         toZoneValue: '',
       });
     });
@@ -166,7 +176,7 @@ class ZonesPicker extends React.PureComponent {
       return null;
     }
     return (
-      <Icon IconComponent={this.renderFromInputLeftIconComponent} name={ZoneTypesToIconName[fromZone.type]} variant="blue" className={[s.inputIcon, s.leftInputIcon, className].join(' ')} />
+      <Icon IconComponent={this.renderFromInputLeftIconComponent} name={ZoneTypesToIconName[fromZone.type]} variant="yellow" className={[s.inputIcon, s.leftInputIcon, className].join(' ')} />
     );
   };
 
@@ -223,7 +233,7 @@ class ZonesPicker extends React.PureComponent {
       return null;
     }
     return (
-      <Icon IconComponent={this.renderToInputLeftIconComponent} name={ZoneTypesToIconName[toZone.type]} variant="blue" className={[s.inputIcon, s.leftInputIcon, className].join(' ')} />
+      <Icon IconComponent={this.renderToInputLeftIconComponent} name={ZoneTypesToIconName[toZone.type]} variant="yellow" className={[s.inputIcon, s.leftInputIcon, className].join(' ')} />
     );
   };
 
@@ -268,7 +278,6 @@ class ZonesPicker extends React.PureComponent {
       <ZoneSuggestion
         value={zone}
         key={zone.code}
-        split={split}
         onClick={() => this.handleFromZoneClick(zone)}
         disabled={zone.disabled}
       />
@@ -279,9 +288,9 @@ class ZonesPicker extends React.PureComponent {
     <ZoneSuggestion
       value={zone}
       key={zone.code}
-      split
       onClick={() => this.handleToZoneClick(zone)}
       disabled={zone.disabled}
+      className={s.toZoneSuggestion}
     />
   );
 
