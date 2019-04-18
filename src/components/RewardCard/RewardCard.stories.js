@@ -8,16 +8,12 @@ import {
 import { action } from '@storybook/addon-actions';
 import RewardCard from '.';
 import s from './RewardCard.module.css';
-import poolRewardLarge from '../../assets/images/poolRewardLarge.png';
-import poolRewardSmall from '../../assets/images/poolRewardSmall.png';
-import fbRewardLarge from '../../assets/images/flyingBlueRewardLarge.png';
-import fbRewardSmall from '../../assets/images/flyingBlueRewardSmall.png';
+import cashback from '../../assets/images/cashback.png';
+import flyingBlue from '../../assets/images/flyingBlue.png';
 
 const options = [
-  poolRewardLarge,
-  poolRewardSmall,
-  fbRewardLarge,
-  fbRewardSmall,
+  cashback,
+  flyingBlue,
 ];
 const rewardValue = '+4.60€';
 
@@ -33,6 +29,7 @@ storiesOf('RewardCard', module)
 
   .add('with knobs', () => {
     const props = {
+      name: text('Name', 'cashback'),
       texts: object('Texts', {
         rewardText: 'de cagnotte fidélité grâce à votre statut platinum',
         footerButtonText: 'Choisir',
@@ -43,10 +40,9 @@ storiesOf('RewardCard', module)
       }),
       isSelected: boolean('Selected', true),
       isConnected: boolean('Connected', false),
-      headerImage: select('Header image', options, options[0], ''),
-      mobileHeaderImage: select('Mobile header image', options, options[1], ''),
+      onRadioButtonChange: action('Change'),
+      image: select('Image', options, options[0], ''),
       footerButtonClassName: s.footerButton,
-      footerOnClick: action('Footer click'),
       selectedIcon: text('Select icon', 'check'),
       rewardValue: text('Reward value', rewardValue),
       hasExternalCard: boolean('External card', false),

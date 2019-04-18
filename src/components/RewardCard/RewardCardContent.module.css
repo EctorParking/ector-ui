@@ -1,34 +1,8 @@
 @import '../../style/variable.global.css';
 
-.contentContainer {
-  margin: 0 0 var(--marginXSmall);
-  text-align: center;
-}
-
-.rewardValue {
-  display: block;
-  text-align: center;
-  font-size: 30px;
-  font-weight: bold;
-}
-
-.rewardText {
-  display: inline-block;
-  margin-top: var(--marginSmall);
-  line-height: var(--textLineHeight);
-}
-
-.tooltip {
-  display: inline-block;
-  margin-left: var(--marginXSmall);
-}
-
-.rewardLoginForm {
-  width: 100%;
-  text-align: left;
-}
-
-.submitButton {
-  text-align: center;
-  padding-bottom: var(--marginXSmall);
+.content {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: var(--marginSmall);
 }

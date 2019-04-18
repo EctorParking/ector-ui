@@ -13,25 +13,30 @@ const InputButton = ({
   inputButtonContainerClassName,
   inputType,
   hasError,
+  buttonVisible,
+  IconComponent,
   ButtonComponent,
   SubTextComponent,
   ...inputProps
 }) => (
   <div className={[s.inputButtonContainerClassName, inputButtonContainerClassName].join(' ')}>
-    <div className={[s.inputContainerClassName, inputContainerClassName].join(' ')}>
+    <div className={inputContainerClassName}>
       <Input
         placeholder={placeholder}
-        className={[s.input, inputClassName].join(' ')}
+        className={[buttonVisible ? s.input : undefined, inputClassName].join(' ')}
         id={id}
         type={inputType}
         hasError={hasError}
         {...inputProps}
+        RightComponent={({ className }) => <IconComponent className={[className, s.icon].join(' ')} />}
       />
       <SubTextComponent />
     </div>
-    <ButtonComponent className={s.button}>
-      {buttonText}
-    </ButtonComponent>
+    {buttonVisible && (
+      <ButtonComponent className={s.button}>
+        {buttonText}
+      </ButtonComponent>
+    )}
   </div>
 );
 
@@ -42,8 +47,10 @@ InputButton.defaultProps = {
   placeholder: '',
   inputClassName: '',
   hasError: false,
+  buttonVisible: true,
   inputType: 'text',
   inputContainerClassName: '',
+  IconComponent: () => null,
   ButtonComponent: props => (<Button {...props} component="button" title="button" />),
   SubTextComponent: () => null,
 };
@@ -57,6 +64,8 @@ InputButton.propTypes = {
   inputContainerClassName: PropTypes.string,
   inputButtonContainerClassName: PropTypes.string,
   hasError: PropTypes.bool,
+  buttonVisible: PropTypes.bool,
+  IconComponent: PropTypes.func,
   ButtonComponent: PropTypes.func,
   SubTextComponent: PropTypes.func,
 };

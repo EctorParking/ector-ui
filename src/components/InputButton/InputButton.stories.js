@@ -21,6 +21,7 @@ storiesOf('InputButton', module)
       buttonText="Envoyez 20€"
       placeholder="Entrez une adresse mail"
       hasError={false}
+      IconComponent={({ className }) => <span className={className}>€</span>}
       SubTextComponent={() => (<p className={s.helpTextClassname}>Cliquez sur envoyer</p>)}
     />
   ))
