@@ -3623,8 +3623,9 @@
     .FlightInformationForm-module_firstColumn__3dXcq, .FlightInformationForm-module_secondColumn__1tg-R {
         padding: 0;
     }
-    .FlightInformationForm-module_actionLink__nzpW1 {
+    .FlightInformationForm-module_actionLink__nzpW1, .FlightInformationForm-module_description__38HJs {
         margin-right: 10px;
+        margin-left: 10px;
     }
     .FlightInformationForm-module_title__3yTDe {
         margin-left: 10px;
