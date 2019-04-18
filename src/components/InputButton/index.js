@@ -28,16 +28,9 @@ const InputButton = ({
         type={inputType}
         hasError={hasError}
         {...inputProps}
+        RightComponent={({ className }) => <IconComponent className={[className, s.icon].join(' ')} />}
       />
       <SubTextComponent />
-    </div>
-    <div className={[
-      s.iconContainer,
-      buttonVisible ? s.iconContainerFocussed : undefined,
-    ].join(' ')
-    }
-    >
-      <IconComponent className={s.icon} />
     </div>
     {buttonVisible && (
       <ButtonComponent className={s.button}>

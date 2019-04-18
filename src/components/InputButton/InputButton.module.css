@@ -42,6 +42,9 @@
   border-top-right-radius: 0;
 }
 .icon {
+  color: var(--deepBlue);
+  font-size: var(--fontSizeRegular);
+  font-weight: var(--fontWeightRegular);
   margin: 0 var(--marginSmall);
 }
 
