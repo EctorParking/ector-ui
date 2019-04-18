@@ -79,8 +79,9 @@
     .firstColumn, .secondColumn {
         padding: 0;
     }
-    .actionLink {
+    .actionLink, .description {
         margin-right: var(--marginSmall);
+        margin-left: var(--marginSmall);
     }
     .title {
         margin-left: var(--marginSmall);

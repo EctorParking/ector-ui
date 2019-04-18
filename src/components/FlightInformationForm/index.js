@@ -212,7 +212,7 @@ class FlightInformationForm extends React.Component {
           )}
           {toSpot && (
             <div className={[s.row, toSpot.type === 'station' ? s.halfWidth : undefined].join(' ')}>
-              {toSpot.type !== 'station' && (
+              {(toSpot.type !== 'station' || toSpotsAvailable.length > 1) && (
                 <InputLabel
                   label={texts.returnFlightOriginLabel}
                   placeholder={texts.returnFlightOriginPlaceholder}
