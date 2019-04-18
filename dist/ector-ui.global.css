@@ -1366,12 +1366,6 @@
   width: 100%;
 }
 
-.InputButton-module_inputContainerClassName__2wy9a {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-
 .InputButton-module_input__3lwQJ {
   width: 100%;
   margin: 0 auto;
@@ -1390,6 +1384,40 @@
 .InputButton-module_error__3au5y {
   text-align: left;
   color: #ff5757;
+}
+
+.InputButton-module_iconContainer__2PZ0_ {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px solid #d5d6d7;
+  border-left: 0;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40px;
+}
+
+.InputButton-module_iconContainer__2PZ0_:empty {
+  display: none;
+}
+
+.InputButton-module_iconContainerFocussed__2QI9x {
+  border-color: #ffcd02;
+  border-right: 0;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.InputButton-module_icon__3usZ5 {
+  color: #163457;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 10px;
 }
 
 @media (min-width: 480px){
@@ -2493,133 +2521,93 @@
 }
 
 .RewardCard-module_card__1Znmy {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   padding: 0;
-  max-width: 272px;
-  max-width: 272px;
-  max-width: 17rem;
   max-height: 100%;
-  border-radius: 1rem;
+  border-radius: 8px;
   background-color: #fefefe;
   -webkit-box-shadow: 0px 0px 38px -2px rgba(0, 0, 0, .15);
           box-shadow: 0px 0px 38px -2px rgba(0, 0, 0, .15);
-  -webkit-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
 }
 
-.RewardCard-module_card__1Znmy:hover{
-  -webkit-transform: scale(1.09);
-          transform: scale(1.09);
-}
-
-.RewardCard-module_scaledCard__1-sNY {
-  -webkit-transform: scale(1.09);
-          transform: scale(1.09);
-}
-
-.RewardCard-module_content__2QTte {
+.RewardCard-module_left__3Vghj {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 0 20px;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.RewardCard-module_footer__UGXDV {
+.RewardCard-module_image__1fOt3 {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  display: block;
+  height: 50px;
+  width: 30px;
+}
+
+.RewardCard-module_imageBig__RYB5l {
+  height: auto;
+  width: 62px;
+}
+
+.RewardCardHeader-module_header__16x0N {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 50px;
+  padding: 10px;
+}
+
+.RewardCardHeader-module_text__2_Rz0 {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.RewardCardHeader-module_tooltip__26usu {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 10px;
+}
+
+.RewardCardHeader-module_rewardValue__1CNXp:after {
+  content: '\A0';
+}
+
+.RewardCardContent-module_content__2HvzU {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding-bottom: 5px;
-}
-
-.RewardCard-module_footerButton__319wl {
-  color: #ffcd02;
-  border-color: #ffcd02;
-}
-
-.RewardCardHeader-module_headerContainer__3wgBg {
-  border-radius: 1rem;
-  background-color: #fefefe;
-}
-
-.RewardCardHeader-module_image__3zQb9 {
-  width: 100%;
-}
-
-.RewardCardHeader-module_desktopImage__1v4Vb {
-  display: block;
-}
-
-.RewardCardHeader-module_mobileImage__2FL62 {
-  display: none;
-}
-
-@media (max-width: 480px) {
-  .RewardCardHeader-module_desktopImage__1v4Vb {
-    display: none;
-  }
-
-  .RewardCardHeader-module_mobileImage__2FL62 {
-    display: block;
-  }
-}
-
-.RewardCardContent-module_contentContainer__2AlWV {
-  margin: 0 0 5px;
-  text-align: center;
-}
-
-.RewardCardContent-module_rewardValue__A333b {
-  display: block;
-  text-align: center;
-  font-size: 30px;
-  font-weight: bold;
-}
-
-.RewardCardContent-module_rewardText__3565E {
-  display: inline-block;
-  margin-top: 10px;
-  line-height: 17px;
-}
-
-.RewardCardContent-module_tooltip__1BGpd {
-  display: inline-block;
-  margin-left: 5px;
-}
-
-.RewardCardContent-module_rewardLoginForm__3y4NP {
-  width: 100%;
-  text-align: left;
-}
-
-.RewardCardContent-module_submitButton__2RS1K {
-  text-align: center;
-  padding-bottom: 5px;
-}
-
-.RewardCardFooter-module_selected__2ROF6 {
-  border-radius: 100%;
-  color: #fefefe;
-  background-color: #ffcd02;
-  width: 27px;
-  height: 27px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  padding: 10px;
 }
 
 .RoundedButton-module_buttonContainer__1mUSj {
