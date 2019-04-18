@@ -8,7 +8,6 @@ import {
 import s from './DateTimePicker.module.css';
 import { DefaultTexts, TextsType } from './DateTimePickerTexts';
 import TimeSuggestions from './TimeSuggestions';
-import { TimeNumber } from '../TimeRange';
 import iconCalendar from '../../assets/images/calendar.svg';
 import iconClock from '../../assets/images/clock.svg';
 
@@ -80,26 +79,32 @@ class DateTimePicker extends React.PureComponent {
     };
   }
 
-  handleDateChange = ({ startDate, endDate }) => {
+  handleDateChange = ({ startDate, endDate: datePickerEndDate }) => {
     const { onStartDateChange, onEndDateChange } = this.props;
+    const { endDate: stateEndDate, focusedDateInput, visiblePicker } = this.state;
+    let endDate = datePickerEndDate;
 
-    this.setState(prevState => ({
-      startDate,
-      endDate,
-      focusedDateInput: prevState.focusedDateInput === DateTimePicker.startDate && startDate
-        ? DateTimePicker.endDate
-        : DateTimePicker.startDate,
-      visiblePicker: prevState.visiblePicker === DateTimePicker.datePicker && endDate && startDate
-        ? DateTimePicker.timePicker
-        : prevState.visiblePicker,
-      showTimeInputs: !!(endDate || prevState.endDate),
-    }));
+    if (startDate && stateEndDate && stateEndDate.isBefore(startDate)) {
+      endDate = undefined;
+    }
     if (onStartDateChange) {
       onStartDateChange(startDate);
     }
     if (onEndDateChange) {
       onEndDateChange(endDate);
     }
+
+    this.setState({
+      startDate,
+      endDate,
+      focusedDateInput: focusedDateInput === DateTimePicker.startDate && startDate
+        ? DateTimePicker.endDate
+        : DateTimePicker.startDate,
+      visiblePicker: visiblePicker === DateTimePicker.datePicker && endDate && startDate
+        ? DateTimePicker.timePicker
+        : visiblePicker,
+      showTimeInputs: !!(stateEndDate || endDate),
+    });
   };
 
   handleTimeSelect = (type, units, value) => {
@@ -133,6 +138,10 @@ class DateTimePicker extends React.PureComponent {
   handleTimeFocus = () => {
     this.ectorPicker.current.handleFocus();
     this.setState({ visiblePicker: DateTimePicker.timePicker });
+  };
+
+  handleFocusChange = (focusedDateInput) => {
+    this.setState({ focusedDateInput });
   };
 
   handleDateFocus(focusedDateInput) {
@@ -173,7 +182,7 @@ class DateTimePicker extends React.PureComponent {
               onFocus={this.handleTimeFocus}
               containerClassName={s.timePickerInputContainer}
               className={[s.timePickerInput, inputClassName].join(' ')}
-              value={startHour ? `${startHour}h${TimeNumber({ value: startMinutes })}` : ''}
+              value={startHour ? `${startHour}h${startMinutes || ''}` : ''}
               placeholder={texts.timePlaceholder}
               LeftComponent={this.renderTimeInputLeftElement}
             />
@@ -207,7 +216,7 @@ class DateTimePicker extends React.PureComponent {
               containerClassName={s.timePickerInputContainer}
               className={[s.timePickerInput, inputClassName].join(' ')}
               onFocus={this.handleTimeFocus}
-              value={endHour ? `${endHour}h${TimeNumber({ value: endMinutes })}` : ''}
+              value={endHour ? `${endHour}h${endMinutes || ''}` : ''}
               placeholder={texts.timePlaceholder}
               LeftComponent={this.renderTimeInputLeftElement}
             />
@@ -255,6 +264,7 @@ class DateTimePicker extends React.PureComponent {
               transitionDuration={0}
               noBorder
               focusedInput={focusedDateInput}
+              onFocusChange={this.handleFocusChange}
               renderMonthElement={this.renderMonthElement}
               isDayBlocked={this.isDayBlocked}
               isDayHighlighted={this.isDayHighlighted}

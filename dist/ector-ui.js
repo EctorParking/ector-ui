@@ -2949,8 +2949,8 @@ InputLabel.propTypes = {
   onKeyDown: PropTypes$1.func
 };
 
-var css$y = ".Label-module_labelContainer__22ERg {\n    border-radius: 3px;\n    color: #fefefe;\n    font-size: 11px;\n    padding: 0 5px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n\n.Label-module_text__147Rh {\n    padding: 0 5px;\n    font-weight: 500;\n    letter-spacing: 1px;\n}\n\n.#163457 {\n    background-color: #163457;\n}\n\n.#59c871 {\n    background-color: #59c871;\n}\n\n.#Label-module_ff5757__3zzqR {\n    background-color: #ff5757;\n}\n\n.#9ca3ff {\n    background-color: #9ca3ff;\n}\n\n.#32a0c5 {\n    background-color: #32a0c5;\n}\n\n.#Label-module_eceff6__DhEeF {\n    background-color: #eceff6;\n}\n\n.#Label-module_d5d6d7__3lCvv {\n    background-color: #d5d6d7;\n}\n\n.Label-module_darkMetalGrey__GhZE1 {\n    background-color: rgb(206, 206, 206);\n}\n\n.#9eb3c2 {\n    background-color: #9eb3c2;\n}\n\n.#Label-module_f39c12__15Jn6 {\n    background-color: #f39c12;\n}\n";
-var s$y = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","labelContainer":"Label-module_labelContainer__22ERg","text":"Label-module_text__147Rh","ff5757":"Label-module_ff5757__3zzqR","eceff6":"Label-module_eceff6__DhEeF","d5d6d7":"Label-module_d5d6d7__3lCvv","darkMetalGrey":"Label-module_darkMetalGrey__GhZE1","f39c12":"Label-module_f39c12__15Jn6"};
+var css$y = ".Label-module_labelContainer__22ERg {\n    border-radius: 3px;\n    color: #fefefe;\n    font-size: 11px;\n    padding: 0 5px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n\n.Label-module_text__147Rh {\n    padding: 0 5px;\n    font-weight: 500;\n    letter-spacing: 1px;\n}\n\n.Label-module_var__zf3AY(\\--deepBlue) {\n    background-color: #163457;\n}\n\n.Label-module_var__zf3AY(\\--green) {\n    background-color: #59c871;\n}\n\n.Label-module_var__zf3AY(\\--red) {\n    background-color: #ff5757;\n}\n\n.Label-module_var__zf3AY(\\--melrose) {\n    background-color: #9ca3ff;\n}\n\n.Label-module_var__zf3AY(\\--blue) {\n    background-color: #32a0c5;\n}\n\n.Label-module_var__zf3AY(\\--lightGrey) {\n    background-color: #eceff6;\n}\n\n.Label-module_var__zf3AY(\\--metalGrey) {\n    background-color: #d5d6d7;\n}\n\n.Label-module_darkMetalGrey__GhZE1 {\n    background-color: rgb(206, 206, 206);\n}\n\n.Label-module_var__zf3AY(\\--aquaHazeGrey) {\n    background-color: #9eb3c2;\n}\n\n.Label-module_var__zf3AY(\\--orange) {\n    background-color: #f39c12;\n}\n";
+var s$y = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","labelContainer":"Label-module_labelContainer__22ERg","text":"Label-module_text__147Rh","var":"Label-module_var__zf3AY","darkMetalGrey":"Label-module_darkMetalGrey__GhZE1"};
 styleInject(css$y);
 
 var Label = function Label(_ref) {
@@ -4920,8 +4920,8 @@ RegistrationForm.propTypes = {
   countries: PropTypes$1.shape(CountryPropType)
 };
 
-var css$Z = ".Picker-module_container__3AVzP {\n  position: relative;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #163457;\n  border: none;\n  border-radius: 5px;\n  display: block;\n  height: 50px;\n  padding: 0;\n}\n\n.Picker-module_shadowWrapper__1yU5l {\n  background-color: #fefefe;\n  border-radius: 5px;\n  -webkit-box-shadow: 0 4px 8px 2px rgba(0, 0, 0, .5);\n          box-shadow: 0 4px 8px 2px rgba(0, 0, 0, .5);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative;\n  z-index: 2;\n}\n\n.Picker-module_pickerInputContainer__2EiaS {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: 0 35px 0 15px;\n  width: 100%;\n  z-index: 2;\n}\n\n.Picker-module_pickerInput__1P5_a {\n  border-radius: 5px;\n  height: 50px;\n  padding: 0;\n  border: none;\n  margin-top: 0;\n  font-size: 15px;\n}\n\n.Picker-module_inputError__37bTz {\n  color: #c73637;\n}\n\n.Picker-module_splitPickerInputContainer__2QVF3 {\n  border-left: 1px solid rgba(191, 196, 212, .52);\n}\n\n.Picker-module_suggestionsContainer__20x1U {\n  min-height: 150px;\n  background-color: black;\n  position: absolute;\n  width: 150%;\n  top: 56px;\n  top: 56px;\n  top: 3.5rem;\n  left: -25%;\n  border-radius: 8px;\n  border-width: 1px;\n}\n\n.Picker-module_error__3Mp0C {\n  background-color: #c73637;\n  border-top-left-radius: 8px;\n  border-top-right-radius: 8px;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #fefefe;\n  height: 45px;\n  left: 0;\n  opacity: 0;\n  padding: 10px;\n  position: absolute;\n  top: 0;\n  -webkit-transform: none;\n          transform: none;\n  -webkit-transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;\n  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  width: 100%;\n  font-size: 14px;\n  font-weight: 700;\n}\n\n.Picker-module_errorVisible__3Fa-X {\n  opacity: 1;\n  -webkit-transform: translateY(-40px);\n          transform: translateY(-40px);\n}\n";
-var s$Z = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","container":"Picker-module_container__3AVzP","shadowWrapper":"Picker-module_shadowWrapper__1yU5l","pickerInputContainer":"Picker-module_pickerInputContainer__2EiaS","pickerInput":"Picker-module_pickerInput__1P5_a","inputError":"Picker-module_inputError__37bTz","splitPickerInputContainer":"Picker-module_splitPickerInputContainer__2QVF3","suggestionsContainer":"Picker-module_suggestionsContainer__20x1U","error":"Picker-module_error__3Mp0C","errorVisible":"Picker-module_errorVisible__3Fa-X"};
+var css$Z = ".Picker-module_container__3AVzP {\n  position: relative;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #163457;\n  border: none;\n  border-radius: 5px;\n  display: block;\n  height: 50px;\n  padding: 0;\n  z-index: 1\n}\n\n.Picker-module_container__3AVzP.Picker-module_active__2IBbO {\n  z-index: 4;\n}\n\n.Picker-module_shadowWrapper__1yU5l {\n  background-color: #fefefe;\n  border-radius: 5px;\n  -webkit-box-shadow: 0 4px 8px 2px rgba(0, 0, 0, .5);\n          box-shadow: 0 4px 8px 2px rgba(0, 0, 0, .5);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative;\n  z-index: 2;\n}\n\n.Picker-module_pickerInputContainer__2EiaS {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: 0 35px 0 15px;\n  width: 100%;\n  z-index: 2;\n}\n\n.Picker-module_pickerInput__1P5_a {\n  border-radius: 5px;\n  height: 50px;\n  padding: 0;\n  border: none;\n  margin-top: 0;\n  font-size: 15px;\n}\n\n.Picker-module_inputError__37bTz {\n  color: #c73637;\n}\n\n.Picker-module_splitPickerInputContainer__2QVF3 {\n  border-left: 1px solid rgba(191, 196, 212, .52);\n}\n\n.Picker-module_suggestionsContainer__20x1U {\n  min-height: 150px;\n  background-color: black;\n  position: absolute;\n  width: 150%;\n  top: 56px;\n  top: 56px;\n  top: 3.5rem;\n  left: -25%;\n  border-radius: 8px;\n  border-width: 1px;\n}\n\n.Picker-module_error__3Mp0C {\n  display: inline-table;\n  background-color: #c73637;\n  border-top-left-radius: 8px;\n  border-top-right-radius: 8px;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #fefefe;\n  height: 45px;\n  left: 0;\n  opacity: 0;\n  padding: 10px;\n  position: absolute;\n  top: 0;\n  -webkit-transform: none;\n          transform: none;\n  -webkit-transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;\n  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  width: 100%;\n  font-size: 14px;\n  font-weight: 700;\n  word-break: break-all;\n}\n\n.Picker-module_errorVisible__3Fa-X {\n  opacity: 1;\n  -webkit-transform: translateY(-100%);\n          transform: translateY(-100%);\n}\n";
+var s$Z = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","container":"Picker-module_container__3AVzP","active":"Picker-module_active__2IBbO","shadowWrapper":"Picker-module_shadowWrapper__1yU5l","pickerInputContainer":"Picker-module_pickerInputContainer__2EiaS","pickerInput":"Picker-module_pickerInput__1P5_a","inputError":"Picker-module_inputError__37bTz","splitPickerInputContainer":"Picker-module_splitPickerInputContainer__2QVF3","suggestionsContainer":"Picker-module_suggestionsContainer__20x1U","error":"Picker-module_error__3Mp0C","errorVisible":"Picker-module_errorVisible__3Fa-X"};
 styleInject(css$Z);
 
 var Picker =
@@ -4985,7 +4985,7 @@ function (_React$PureComponent) {
       var suggestionsVisible = this.state.suggestionsVisible;
       var hasError = error && error !== '';
       return React__default.createElement("div", {
-        className: [s$Z.container, className].join(' '),
+        className: [s$Z.container, suggestionsVisible ? s$Z.active : undefined, className].join(' '),
         ref: this.containerRef
       }, React__default.createElement("div", {
         className: [s$Z.error, hasError ? s$Z.errorVisible : undefined].join(' ')
@@ -5115,7 +5115,7 @@ var Type = PropTypes$1.shape({
   type: PropTypes$1.oneOf(Object.keys(ZoneTypes)).isRequired
 });
 
-var css$$ = ".ZoneSuggestion-module_suggestion__nCTAf {\n  cursor: pointer;\n  margin-bottom: 10px\n}\n\n.ZoneSuggestion-module_suggestion__nCTAf:last-child {\n  margin-bottom: 0;\n}\n\n.ZoneSuggestion-module_zoneName__2XBZo {\n  padding-left: 25px;\n}\n\n.ZoneSuggestion-module_selected__2jOH2, .ZoneSuggestion-module_hovered__1ETlf:not(.ZoneSuggestion-module_disabled__1DHUU):hover {\n  font-weight: bold;\n}\n\n.ZoneSuggestion-module_disabled__1DHUU {\n  color: #eceff6;\n  cursor: not-allowed;\n}\n\n.ZoneSuggestion-module_icon__2Bikz {\n  margin-right: 10px;\n}\n\n.ZoneSuggestion-module_activeIcon__2XmM8 {\n  color: #163457;\n}\n\n.ZoneSuggestion-module_trainIcon__2zCRZ {\n  margin-left: 5px !important;\n}\n\n.ZoneSuggestion-module_mixedIcon__2-Jvz {\n  font-size: 19px;\n  margin-left: 0 !important;\n}\n\n.ZoneSuggestion-module_airportIcon__1yD1n {\n  margin-left: 2px !important;\n}\n";
+var css$$ = ".ZoneSuggestion-module_suggestion__nCTAf {\n  cursor: pointer;\n  margin-bottom: 10px\n}\n\n.ZoneSuggestion-module_suggestion__nCTAf:last-child {\n  margin-bottom: 0;\n}\n\n.ZoneSuggestion-module_zoneName__2XBZo {\n  padding-left: 25px;\n}\n\n.ZoneSuggestion-module_selected__2jOH2, .ZoneSuggestion-module_hovered__1ETlf:hover {\n  font-weight: bold;\n}\n\n.ZoneSuggestion-module_disabled__1DHUU {\n  color: #939baa;\n}\n\n.ZoneSuggestion-module_icon__2Bikz {\n  margin-right: 10px;\n}\n\n.ZoneSuggestion-module_activeIcon__2XmM8 {\n  color: #163457;\n}\n\n.ZoneSuggestion-module_trainIcon__2zCRZ {\n  margin-left: 5px !important;\n}\n\n.ZoneSuggestion-module_mixedIcon__2-Jvz {\n  font-size: 19px;\n  margin-left: 0 !important;\n}\n\n.ZoneSuggestion-module_airportIcon__1yD1n {\n  margin-left: 2px !important;\n}\n";
 var s$$ = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","suggestion":"ZoneSuggestion-module_suggestion__nCTAf","zoneName":"ZoneSuggestion-module_zoneName__2XBZo","selected":"ZoneSuggestion-module_selected__2jOH2","hovered":"ZoneSuggestion-module_hovered__1ETlf","disabled":"ZoneSuggestion-module_disabled__1DHUU","icon":"ZoneSuggestion-module_icon__2Bikz","activeIcon":"ZoneSuggestion-module_activeIcon__2XmM8","trainIcon":"ZoneSuggestion-module_trainIcon__2zCRZ","mixedIcon":"ZoneSuggestion-module_mixedIcon__2-Jvz","airportIcon":"ZoneSuggestion-module_airportIcon__1yD1n"};
 styleInject(css$$);
 
@@ -5138,15 +5138,15 @@ IconComponent.propTypes = {
 var ZoneSuggestion = function ZoneSuggestion(_ref2) {
   var value = _ref2.value,
       onClick = _ref2.onClick,
-      split = _ref2.split,
       selected = _ref2.selected,
       disabled = _ref2.disabled,
-      rest = _objectWithoutProperties(_ref2, ["value", "onClick", "split", "selected", "disabled"]);
+      className = _ref2.className,
+      rest = _objectWithoutProperties(_ref2, ["value", "onClick", "selected", "disabled", "className"]);
 
   return React__default.createElement("span", _extends({
     role: "presentation",
-    className: [s$$.suggestion, split ? undefined : s$$.hovered, selected ? s$$.selected : undefined, disabled ? s$$.disabled : undefined].join(' '),
-    onClick: disabled ? undefined : onClick
+    className: [s$$.suggestion, selected ? s$$.selected : undefined, disabled ? s$$.disabled : undefined, className].join(' '),
+    onClick: onClick
   }, rest), React__default.createElement(Icon, {
     type: value.type,
     name: ZoneTypesToIconName[value.type],
@@ -5160,9 +5160,9 @@ var ZoneSuggestion = function ZoneSuggestion(_ref2) {
 };
 
 ZoneSuggestion.defaultProps = {
+  className: undefined,
   selected: false,
   disabled: false,
-  split: false,
   onClick: function onClick() {
     return null;
   }
@@ -5170,13 +5170,13 @@ ZoneSuggestion.defaultProps = {
 ZoneSuggestion.propTypes = {
   value: Type.isRequired,
   onClick: PropTypes$1.func,
-  split: PropTypes$1.bool,
   selected: PropTypes$1.bool,
-  disabled: PropTypes$1.bool
+  disabled: PropTypes$1.bool,
+  className: PropTypes$1.string
 };
 
-var css$10 = ".ZonesPicker-module_suggestionsContainer__j1KTO {\n  position: relative;\n  height: 75%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row\n}\n\n.ZonesPicker-module_suggestionsContainer__j1KTO:before, .ZonesPicker-module_suggestionsContainer__j1KTO:after {\n  content: '';\n  height: 20px;\n  left: 0;\n  pointer-events: none;\n  position: absolute;\n  width: 100%;\n  z-index: 3;\n}\n\n.ZonesPicker-module_suggestionsContainer__j1KTO:before {\n  background: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(rgba(255, 255, 255, .1)));\n  background: linear-gradient(to bottom, #fefefe, rgba(255, 255, 255, .1));\n  border-top-left-radius: 5px;\n  border-top-right-radius: 5px;\n  top: 0;\n}\n\n.ZonesPicker-module_suggestionsContainer__j1KTO:after {\n  background: -webkit-gradient(linear, left bottom, left top, from(#fefefe), to(rgba(255, 255, 255, .1)));\n  background: linear-gradient(to top, #fefefe, rgba(255, 255, 255, .1));\n  bottom: 0;\n}\n\n.ZonesPicker-module_suggestions__19igb {\n  position: relative;\n  overflow-x: scroll;\n  display: none;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  width: 100%;\n  padding: 15px\n}\n\n.ZonesPicker-module_suggestions__19igb.ZonesPicker-module_visible__3Tlgg {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.ZonesPicker-module_suggestionAction__29BOq {\n  display: none;\n  padding-left: 15px;\n  height: 25%;\n  background-color: #eceff6;\n}\n\n.ZonesPicker-module_suggestionActionVisible__1bpa0 {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.ZonesPicker-module_inputContainer__17GCF {\n  padding: 0 35px 0 15px;\n}\n\n.ZonesPicker-module_input__1qXay {\n  margin-right: 25px;\n}\n\n.ZonesPicker-module_input__1qXay::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.ZonesPicker-module_input__1qXay::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.input::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.input::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.ZonesPicker-module_input__1qXay::placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.ZonesPicker-module_inputImgIcon__2U4u7 {\n  height: 20px;\n}\n\n.ZonesPicker-module_inputIcon__lD2sz {\n  color: #163457;\n  font-size: 19.2px;\n  font-size: 19.2px;\n  font-size: 1.2rem;\n}\n\n.ZonesPicker-module_leftInputIcon__3Azxc {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: 100%;\n  left: 10px;\n  top: 0;\n  width: 30px;\n}\n\n.ZonesPicker-module_leftInputIcon__3Azxc + input {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  margin: 0 0 0 25px;\n}\n\n.ZonesPicker-module_rightInputIcon__WQQ5r {\n  right: 10px;\n}\n\n.ZonesPicker-module_stationIcon__36JCs {\n  margin-left: 2px;\n}\n\n.ZonesPicker-module_inputAction__qyPpy {\n  cursor: pointer;\n}\n";
-var s$10 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","suggestionsContainer":"ZonesPicker-module_suggestionsContainer__j1KTO","suggestions":"ZonesPicker-module_suggestions__19igb","visible":"ZonesPicker-module_visible__3Tlgg","suggestionAction":"ZonesPicker-module_suggestionAction__29BOq","suggestionActionVisible":"ZonesPicker-module_suggestionActionVisible__1bpa0","inputContainer":"ZonesPicker-module_inputContainer__17GCF","input":"ZonesPicker-module_input__1qXay","inputImgIcon":"ZonesPicker-module_inputImgIcon__2U4u7","inputIcon":"ZonesPicker-module_inputIcon__lD2sz","leftInputIcon":"ZonesPicker-module_leftInputIcon__3Azxc","rightInputIcon":"ZonesPicker-module_rightInputIcon__WQQ5r","stationIcon":"ZonesPicker-module_stationIcon__36JCs","inputAction":"ZonesPicker-module_inputAction__qyPpy"};
+var css$10 = ".ZonesPicker-module_suggestionsContainer__j1KTO {\n  position: relative;\n  height: 85%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row\n}\n\n.ZonesPicker-module_suggestionsContainer__j1KTO:before, .ZonesPicker-module_suggestionsContainer__j1KTO:after {\n  content: '';\n  height: 20px;\n  left: 0;\n  pointer-events: none;\n  position: absolute;\n  width: 100%;\n  z-index: 3;\n}\n\n.ZonesPicker-module_suggestionsContainer__j1KTO:before {\n  background: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(rgba(255, 255, 255, .1)));\n  background: linear-gradient(to bottom, #fefefe, rgba(255, 255, 255, .1));\n  border-top-left-radius: 5px;\n  border-top-right-radius: 5px;\n  top: 0;\n}\n\n.ZonesPicker-module_suggestionsContainer__j1KTO:after {\n  background: -webkit-gradient(linear, left bottom, left top, from(#fefefe), to(rgba(255, 255, 255, .1)));\n  background: linear-gradient(to top, #fefefe, rgba(255, 255, 255, .1));\n  bottom: 0;\n}\n\n.ZonesPicker-module_suggestions__19igb {\n  position: relative;\n  overflow-x: scroll;\n  display: none;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  width: 100%;\n  padding: 15px\n}\n\n.ZonesPicker-module_suggestions__19igb.ZonesPicker-module_visible__3Tlgg {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.ZonesPicker-module_suggestionAction__29BOq {\n  border-bottom-left-radius: 8px;\n  border-bottom-right-radius: 8px;\n  padding-left: 15px;\n  height: 15%;\n  background-color: #eceff6;\n}\n\n.ZonesPicker-module_suggestionActionVisible__1bpa0 {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.ZonesPicker-module_inputContainer__17GCF {\n  padding: 0 35px 0 15px;\n}\n\n.ZonesPicker-module_input__1qXay {\n  margin-right: 25px;\n}\n\n.ZonesPicker-module_input__1qXay::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.ZonesPicker-module_input__1qXay::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.input::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.input::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.ZonesPicker-module_input__1qXay::placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.ZonesPicker-module_inputImgIcon__2U4u7 {\n  height: 20px;\n}\n\n.ZonesPicker-module_inputIcon__lD2sz {\n  color: #163457;\n  font-size: 19.2px;\n  font-size: 19.2px;\n  font-size: 1.2rem;\n}\n\n.ZonesPicker-module_leftInputIcon__3Azxc {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: 100%;\n  left: 10px;\n  top: 0;\n  width: 30px;\n}\n\n.ZonesPicker-module_leftInputIcon__3Azxc + input {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  margin: 0 0 0 25px;\n}\n\n.ZonesPicker-module_rightInputIconContainer__1A3Zs {\n  right: 10px;\n}\n\n.ZonesPicker-module_rightInputIcon__WQQ5r {\n  height: 15px;\n  width: 15px;\n}\n\n.ZonesPicker-module_stationIcon__36JCs {\n  margin-left: 2px;\n}\n\n.ZonesPicker-module_inputAction__qyPpy {\n  cursor: pointer;\n}\n\n.ZonesPicker-module_toZoneSuggestion__23gxS:hover {\n  font-weight: bold;\n}\n";
+var s$10 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","suggestionsContainer":"ZonesPicker-module_suggestionsContainer__j1KTO","suggestions":"ZonesPicker-module_suggestions__19igb","visible":"ZonesPicker-module_visible__3Tlgg","suggestionAction":"ZonesPicker-module_suggestionAction__29BOq","suggestionActionVisible":"ZonesPicker-module_suggestionActionVisible__1bpa0","inputContainer":"ZonesPicker-module_inputContainer__17GCF","input":"ZonesPicker-module_input__1qXay","inputImgIcon":"ZonesPicker-module_inputImgIcon__2U4u7","inputIcon":"ZonesPicker-module_inputIcon__lD2sz","leftInputIcon":"ZonesPicker-module_leftInputIcon__3Azxc","rightInputIconContainer":"ZonesPicker-module_rightInputIconContainer__1A3Zs","rightInputIcon":"ZonesPicker-module_rightInputIcon__WQQ5r","stationIcon":"ZonesPicker-module_stationIcon__36JCs","inputAction":"ZonesPicker-module_inputAction__qyPpy","toZoneSuggestion":"ZonesPicker-module_toZoneSuggestion__23gxS"};
 styleInject(css$10);
 
 var Suggestions = [{name:"Paris Orly",code:"ORY",type:"airport"},{name:"Paris CDG",code:"CDG",type:"airport"},{name:"Lyon",code:"ADL",type:"airport"},{name:"Gare de Lyon",code:"GDL",type:"station"},{name:"Marseille",code:"MAR",type:"airport"},{name:"Marseille2",code:"MAR2",type:"airport"},{name:"Marseille3",code:"MAR3",type:"airport"},{name:"Marseille4",code:"MAR4",type:"airport"},{name:"Marseille5",code:"MAR5",type:"airport"}];
@@ -5273,6 +5273,14 @@ function (_React$PureComponent) {
           return suggestion.name === toZoneProp.name;
         });
         toZoneValue = toZone ? toZone.name : '';
+      }
+
+      if (!fromZoneProp && fromZoneValue) {
+        fromZoneValue = '';
+      }
+
+      if (!toZoneProp && toZoneValue) {
+        toZoneValue = '';
       }
 
       return {
@@ -5378,11 +5386,10 @@ function (_React$PureComponent) {
       var onSplitSuggestions = _this.props.onSplitSuggestions;
 
       _this.setState(function (prevState) {
-        var onSelect = _this.props.onSelect;
-        onSplitSuggestions(!prevState.split);
-        onSelect(undefined, ZonesPicker.toZone);
+        var split = !prevState.split;
+        onSplitSuggestions(split);
         return {
-          split: !prevState.split,
+          split: split,
           toZoneValue: ''
         };
       });
@@ -5413,7 +5420,7 @@ function (_React$PureComponent) {
       return React.createElement(Icon, {
         IconComponent: _this.renderFromInputLeftIconComponent,
         name: ZoneTypesToIconName[fromZone.type],
-        variant: "blue",
+        variant: "yellow",
         className: [s$10.inputIcon, s$10.leftInputIcon, className].join(' ')
       });
     });
@@ -5425,14 +5432,16 @@ function (_React$PureComponent) {
       if (fromZoneValue.length === 0) {
         return React.createElement(Icon, {
           src: iconSearch,
-          className: [s$10.inputIcon, s$10.rightInputIcon, className].join(' ')
+          className: [s$10.inputIcon, s$10.rightInputIconContainer, className].join(' '),
+          iconClassName: s$10.rightInputIcon
         });
       }
 
       return React.createElement(Icon, {
         src: iconClear,
         role: "presentation",
-        className: [s$10.inputAction, s$10.rightInputIcon, className].join(' '),
+        className: [s$10.inputAction, s$10.rightInputIconContainer, className].join(' '),
+        iconClassName: s$10.rightInputIcon,
         onClick: _this.handleFromZoneReset
       });
     });
@@ -5477,7 +5486,7 @@ function (_React$PureComponent) {
       return React.createElement(Icon, {
         IconComponent: _this.renderToInputLeftIconComponent,
         name: ZoneTypesToIconName[toZone.type],
-        variant: "blue",
+        variant: "yellow",
         className: [s$10.inputIcon, s$10.leftInputIcon, className].join(' ')
       });
     });
@@ -5489,14 +5498,16 @@ function (_React$PureComponent) {
       if (toZoneValue.length === 0) {
         return React.createElement(Icon, {
           src: iconSearch,
-          className: [s$10.inputIcon, s$10.rightInputIcon, className].join(' ')
+          className: [s$10.inputIcon, s$10.rightInputIconContainer, className].join(' '),
+          iconClassName: s$10.rightInputIcon
         });
       }
 
       return React.createElement(Icon, {
         src: iconClear,
         role: "presentation",
-        className: [s$10.inputAction, s$10.rightInputIcon, className].join(' '),
+        className: [s$10.inputAction, s$10.rightInputIconContainer, className].join(' '),
+        iconClassName: s$10.rightInputIcon,
         onClick: _this.handleToZoneReset
       });
     });
@@ -5517,11 +5528,9 @@ function (_React$PureComponent) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "renderFromZoneSuggestion", function (zone) {
-      var split = _this.state.split;
       return React.createElement(ZoneSuggestion, {
         value: zone,
         key: zone.code,
-        split: split,
         onClick: function onClick() {
           return _this.handleFromZoneClick(zone);
         },
@@ -5533,11 +5542,11 @@ function (_React$PureComponent) {
       return React.createElement(ZoneSuggestion, {
         value: zone,
         key: zone.code,
-        split: true,
         onClick: function onClick() {
           return _this.handleToZoneClick(zone);
         },
-        disabled: zone.disabled
+        disabled: zone.disabled,
+        className: s$10.toZoneSuggestion
       });
     });
 
@@ -5735,7 +5744,7 @@ Icon.propTypes = {
   iconClassName: PropTypes$1.string
 };
 
-var css$12 = ".DateTimePicker-module_calendar__1m3vk {\n  position: relative;\n  width: 100%;\n  height: 300px;\n}\n\n.DateTimePicker-module_calendarArrow__SvtwN {\n  display: none;\n}\n\n.DateTimePicker-module_datePickerPopper__2V2oe {\n  -webkit-transform: none !important;\n          transform: none !important;\n  width: 100%;\n  margin-top: 0 !important;\n}\n\n.DateTimePicker-module_hidden__OvFBm {\n  display: none !important;\n}\n\n.DateTimePicker-module_pickerSuggestions__38iqg {\n  width: 610px !important;\n  margin-left: -300px;\n  left: 50%;\n  height: 230px !important\n}\n\n.DateTimePicker-module_pickerSuggestions__38iqg:before {\n  display: none;\n}\n\n.DateTimePicker-module_suggestionsArrow__2RcKh {\n  margin-left: -9px;\n}\n\n.DateTimePicker-module_picker__3d7nO {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  height: auto;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP {\n  background: none;\n  padding-left: 40px;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.datePickerInput::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.datePickerInput::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_fixedWidthDateInput__3lrKo {\n  min-width: 160px;\n  width: 160px;\n  max-width: 160px;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU {\n  border: none !important;\n  border-radius: 0;\n  max-width: 100px;\n  padding-left: 35px;\n  margin-right: 1px;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.timePickerInput::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.timePickerInput::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInputContainer__ROeTv {\n  margin-left: 10px;\n}\n\n.DateTimePicker-module_timePickerInputContainer__ROeTv::before {\n  background-color: rgba(191, 196, 212, .52);\n  content: '';\n  height: 20px;\n  margin-top: -10px;\n  position: absolute;\n  top: 50%;\n  width: 1px;\n}\n\n.DateTimePicker-module_timeSuggestions__3aCiQ {\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  position: relative\n}\n\n.DateTimePicker-module_timeSuggestions__3aCiQ:before, .DateTimePicker-module_timeSuggestions__3aCiQ:after {\n  content: '';\n  height: 20px;\n  left: 0;\n  pointer-events: none;\n  position: absolute;\n  width: 100%;\n  z-index: 3;\n}\n\n.DateTimePicker-module_timeSuggestions__3aCiQ:before {\n  background: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(rgba(255, 255, 255, .1)));\n  background: linear-gradient(to bottom, #fefefe, rgba(255, 255, 255, .1));\n  border-top-left-radius: 5px;\n  border-top-right-radius: 5px;\n  top: 0;\n}\n\n.DateTimePicker-module_timeSuggestions__3aCiQ:after {\n  background: -webkit-gradient(linear, left bottom, left top, from(#fefefe), to(rgba(255, 255, 255, .1)));\n  background: linear-gradient(to top, #fefefe, rgba(255, 255, 255, .1));\n  bottom: 0;\n  border-bottom-left-radius: 5px;\n  border-bottom-right-radius: 5px;\n}\n\n.DateTimePicker-module_timeSuggestionsContainer__3Pe8K:nth-child(1) {\n  width: 300px;\n  min-width: 300px;\n}\n\n.DateTimePicker-module_timeSuggestionsContainer__3Pe8K {\n  width: 100%;\n}\n\n.DateTimePicker-module_inputIcon__178Nw {\n  font-size: 19.2px;\n  font-size: 19.2px;\n  font-size: 1.2rem;\n  left: 10px;\n}\n\n.DateTimePicker-module_inputContainer__1FIAJ {\n  padding: 0;\n}\n\n.DateTimePicker-module_splitInputContainer__1fsjs {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  width: 50%\n}\n\n.DateTimePicker-module_splitInputContainer__1fsjs:first-child {\n  border-right: 1px solid rgba(191, 196, 212, .52);\n}\n\n.DateTimePicker-module_month__2AwNj {\n  color: #163457;\n}\n\n.DateTimePicker-module_hr__1p2EJ {\n  height: 85%;\n  width: 1px;\n  position: absolute;\n  left: 300px;\n  background-color: rgba(191, 196, 212, .52);\n  top: 7.5%;\n}\n";
+var css$12 = ".DateTimePicker-module_calendar__1m3vk {\n  position: relative;\n  width: 100%;\n  height: 300px;\n}\n\n.DateTimePicker-module_calendarArrow__SvtwN {\n  display: none;\n}\n\n.DateTimePicker-module_datePickerPopper__2V2oe {\n  -webkit-transform: none !important;\n          transform: none !important;\n  width: 100%;\n  margin-top: 0 !important;\n}\n\n.DateTimePicker-module_hidden__OvFBm {\n  display: none !important;\n}\n\n.DateTimePicker-module_pickerSuggestions__38iqg {\n  width: 610px !important;\n  margin-left: -300px;\n  left: 50%;\n  height: 230px !important\n}\n\n.DateTimePicker-module_pickerSuggestions__38iqg:before {\n  display: none;\n}\n\n.DateTimePicker-module_suggestionsArrow__2RcKh {\n  margin-left: -9px;\n}\n\n.DateTimePicker-module_picker__3d7nO {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  height: auto;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP {\n  background: none;\n  padding-left: 40px;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.datePickerInput::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.datePickerInput::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_fixedWidthDateInput__3lrKo {\n  min-width: 160px;\n  width: 160px;\n  max-width: 160px;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU {\n  border: none !important;\n  border-radius: 8px;\n  max-width: 100px;\n  padding-left: 35px;\n  margin-right: 1px;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.timePickerInput::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.timePickerInput::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInputContainer__ROeTv::before {\n  background-color: rgba(191, 196, 212, .52);\n  content: '';\n  height: 20px;\n  margin-top: -10px;\n  position: absolute;\n  top: 50%;\n  width: 1px;\n}\n\n.DateTimePicker-module_timeSuggestions__3aCiQ {\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  position: relative\n}\n\n.DateTimePicker-module_timeSuggestions__3aCiQ:before, .DateTimePicker-module_timeSuggestions__3aCiQ:after {\n  content: '';\n  height: 20px;\n  left: 0;\n  pointer-events: none;\n  position: absolute;\n  width: 100%;\n  z-index: 3;\n}\n\n.DateTimePicker-module_timeSuggestions__3aCiQ:before {\n  background: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(rgba(255, 255, 255, .1)));\n  background: linear-gradient(to bottom, #fefefe, rgba(255, 255, 255, .1));\n  border-top-left-radius: 5px;\n  border-top-right-radius: 5px;\n  top: 0;\n}\n\n.DateTimePicker-module_timeSuggestions__3aCiQ:after {\n  background: -webkit-gradient(linear, left bottom, left top, from(#fefefe), to(rgba(255, 255, 255, .1)));\n  background: linear-gradient(to top, #fefefe, rgba(255, 255, 255, .1));\n  bottom: 0;\n  border-bottom-left-radius: 5px;\n  border-bottom-right-radius: 5px;\n}\n\n.DateTimePicker-module_timeSuggestionsContainer__3Pe8K:nth-child(1) {\n  width: 300px;\n  min-width: 300px;\n}\n\n.DateTimePicker-module_timeSuggestionsContainer__3Pe8K {\n  width: 100%;\n}\n\n.DateTimePicker-module_inputIcon__178Nw {\n  font-size: 19.2px;\n  font-size: 19.2px;\n  font-size: 1.2rem;\n  left: 10px;\n}\n\n.DateTimePicker-module_inputContainer__1FIAJ {\n  padding: 0;\n}\n\n.DateTimePicker-module_splitInputContainer__1fsjs {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  width: 50%\n}\n\n.DateTimePicker-module_splitInputContainer__1fsjs:first-child {\n  border-right: 1px solid rgba(191, 196, 212, .52);\n}\n\n.DateTimePicker-module_month__2AwNj {\n  color: #163457;\n}\n\n.DateTimePicker-module_hr__1p2EJ {\n  height: 85%;\n  width: 1px;\n  position: absolute;\n  left: 300px;\n  background-color: rgba(191, 196, 212, .52);\n  top: 7.5%;\n}\n";
 var s$12 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","calendar":"DateTimePicker-module_calendar__1m3vk","calendarArrow":"DateTimePicker-module_calendarArrow__SvtwN","datePickerPopper":"DateTimePicker-module_datePickerPopper__2V2oe","hidden":"DateTimePicker-module_hidden__OvFBm","pickerSuggestions":"DateTimePicker-module_pickerSuggestions__38iqg","suggestionsArrow":"DateTimePicker-module_suggestionsArrow__2RcKh","picker":"DateTimePicker-module_picker__3d7nO","datePickerInput":"DateTimePicker-module_datePickerInput__1JwcP","fixedWidthDateInput":"DateTimePicker-module_fixedWidthDateInput__3lrKo","timePickerInput":"DateTimePicker-module_timePickerInput__1vkhU","timePickerInputContainer":"DateTimePicker-module_timePickerInputContainer__ROeTv","timeSuggestions":"DateTimePicker-module_timeSuggestions__3aCiQ","timeSuggestionsContainer":"DateTimePicker-module_timeSuggestionsContainer__3Pe8K","inputIcon":"DateTimePicker-module_inputIcon__178Nw","inputContainer":"DateTimePicker-module_inputContainer__1FIAJ","splitInputContainer":"DateTimePicker-module_splitInputContainer__1fsjs","month":"DateTimePicker-module_month__2AwNj","hr":"DateTimePicker-module_hr__1p2EJ"};
 styleInject(css$12);
 
@@ -5837,6 +5846,412 @@ TimeSuggestions.propTypes = {
 };
 TimeSuggestions.startTime = 'startTime';
 TimeSuggestions.endTime = 'endTime';
+
+var iconCalendar = "data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20width%3D%2215px%22%20height%3D%2215px%22%20viewBox%3D%220%200%2015%2015%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%20%20%20%20%20%20%20%20%3Ctitle%3Ecalendar%3C%2Ftitle%3E%20%20%20%20%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%20%20%20%20%3Cg%20id%3D%22Symbols%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%20%20%20%20%20%20%20%20%3Cg%20id%3D%22filters%22%20transform%3D%22translate%28-526.000000%2C%20-18.000000%29%22%20fill%3D%22%23BFC4D4%22%20fill-rule%3D%22nonzero%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20transform%3D%22translate%281.000000%2C%200.000000%29%22%20id%3D%22date%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20transform%3D%22translate%28509.103631%2C%200.010000%29%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20id%3D%22aller%22%20transform%3D%22translate%2816.000000%2C%2015.000000%29%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M13.2633063%2C3.875%20L11.7457409%2C3.875%20L11.7457409%2C3.4375%20C11.7457409%2C3.195125%2011.5523597%2C3%2011.3121508%2C3%20C11.0719418%2C3%2010.8785607%2C3.196%2010.8785607%2C3.4375%20L10.8785607%2C3.875%20L3.94111888%2C3.875%20L3.94111888%2C3.4375%20C3.94111888%2C3.195125%203.74687051%2C3%203.50752877%2C3%20C3.26818703%2C3%203.07393866%2C3.196%203.07393866%2C3.4375%20L3.07393866%2C3.875%20L1.55637327%2C3.875%20C0.957151736%2C3.87675%200.474132353%2C4.364125%200.472397993%2C4.96875%20L0.472397993%2C15.90625%20C0.474132353%2C16.510875%200.957151736%2C16.99825%201.55637327%2C17%20L13.2633063%2C17%20C13.8625278%2C16.99825%2014.3455472%2C16.510875%2014.3472815%2C15.90625%20L14.3472815%2C4.96875%20C14.3455472%2C4.364125%2013.8625278%2C3.87675%2013.2633063%2C3.875%20Z%20M5.67547932%2C11.75%20L5.67547932%2C8.25%20L9.14420021%2C8.25%20L9.14420021%2C11.75%20L5.67547932%2C11.75%20Z%20M9.14420021%2C12.625%20L9.14420021%2C16.125%20L5.67547932%2C16.125%20L5.67547932%2C12.625%20L9.14420021%2C12.625%20Z%20M1.33957821%2C8.25%20L4.8082991%2C8.25%20L4.8082991%2C11.75%20L1.33957821%2C11.75%20L1.33957821%2C8.25%20Z%20M10.0113804%2C8.25%20L13.4801013%2C8.25%20L13.4801013%2C11.75%20L10.0113804%2C11.75%20L10.0113804%2C8.25%20Z%20M1.40288237%2C4.81475%20C1.44450702%2C4.7745%201.49653783%2C4.75%201.55637327%2C4.75%20L3.07393866%2C4.75%20L3.07393866%2C5.1875%20C3.07393866%2C5.429%203.26818703%2C5.625%203.50752877%2C5.625%20C3.74687051%2C5.625%203.94111888%2C5.429%203.94111888%2C5.1875%20L3.94111888%2C4.75%20L10.8785607%2C4.75%20L10.8785607%2C5.1875%20C10.8785607%2C5.429%2011.0719418%2C5.625%2011.3121508%2C5.625%20C11.5523597%2C5.625%2011.7457409%2C5.429%2011.7457409%2C5.1875%20L11.7457409%2C4.75%20L13.2633063%2C4.75%20C13.3231417%2C4.75%2013.3751725%2C4.773625%2013.4167972%2C4.81475%20C13.4566875%2C4.85675%2013.4801013%2C4.90925%2013.4801013%2C4.96875%20L13.4801013%2C7.375%20L1.33957821%2C7.375%20L1.33957821%2C4.96875%20C1.33957821%2C4.908375%201.36299208%2C4.85675%201.40288237%2C4.81475%20Z%20M1.40288237%2C16.061125%20C1.36299208%2C16.019125%201.33871103%2C15.966625%201.33871103%2C15.90625%20L1.33871103%2C12.625%20L4.80743192%2C12.625%20L4.80743192%2C16.125%20L1.55550609%2C16.125%20C1.49567065%2C16.125%201.44363984%2C16.101375%201.40288237%2C16.061125%20Z%20M13.4167972%2C16.061125%20C13.3751725%2C16.101375%2013.3231417%2C16.125%2013.2633063%2C16.125%20L10.0113804%2C16.125%20L10.0113804%2C12.625%20L13.4801013%2C12.625%20L13.4801013%2C15.90625%20C13.4801013%2C15.966625%2013.4566875%2C16.019125%2013.4167972%2C16.061125%20Z%22%20id%3D%22calendar%22%3E%3C%2Fpath%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E";
+
+var _ref$7 =
+/*#__PURE__*/
+React__default.createElement("g", {
+  transform: "translate(1.396 1.01)",
+  stroke: "#BFC4D4",
+  fill: "none",
+  fillRule: "evenodd"
+}, React__default.createElement("circle", {
+  cx: 6.765,
+  cy: 6.765,
+  r: 6.765
+}), React__default.createElement("path", {
+  d: "M6.765 2.396v4.369-4.369zm2.947 6.57L6.765 6.764l2.947 2.2z",
+  strokeLinecap: "round",
+  strokeLinejoin: "round"
+}));
+
+var iconClock = "data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20width%3D%2216px%22%20height%3D%2216px%22%20viewBox%3D%220%200%2016%2016%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%20%20%20%20%20%20%20%20%3Ctitle%3Eclock%3C%2Ftitle%3E%20%20%20%20%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%20%20%20%20%3Cg%20id%3D%22Symbols%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%20%20%20%20%20%20%20%20%3Cg%20id%3D%22filters%22%20transform%3D%22translate%28-883.000000%2C%20-18.000000%29%22%20stroke%3D%22%23BFC4D4%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20transform%3D%22translate%281.000000%2C%200.000000%29%22%20id%3D%22date%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20transform%3D%22translate%28509.103631%2C%200.010000%29%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20id%3D%22retour%22%20transform%3D%22translate%28237.396369%2C%2015.000000%29%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20id%3D%22clock%22%20transform%3D%22translate%28136.896369%2C%204.000000%29%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ccircle%20id%3D%22Oval%22%20cx%3D%226.76489258%22%20cy%3D%226.76489258%22%20r%3D%226.76489258%22%3E%3C%2Fcircle%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M6.76489258%2C2.3962294%20L6.76489258%2C6.76489258%20L6.76489258%2C2.3962294%20Z%20M9.71221665%2C8.96526185%20L6.76489258%2C6.76489258%20L9.71221665%2C8.96526185%20Z%22%20id%3D%22Combined-Shape%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3C%2Fpath%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E";
+
+var now = moment();
+
+var DateTimePicker =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(DateTimePicker, _React$PureComponent);
+
+  function DateTimePicker() {
+    var _this;
+
+    _classCallCheck(this, DateTimePicker);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(DateTimePicker).call(this));
+
+    _defineProperty(_assertThisInitialized(_this), "handleDateChange", function (_ref) {
+      var startDate = _ref.startDate,
+          datePickerEndDate = _ref.endDate;
+      var _this$props = _this.props,
+          onStartDateChange = _this$props.onStartDateChange,
+          onEndDateChange = _this$props.onEndDateChange;
+      var _this$state = _this.state,
+          stateEndDate = _this$state.endDate,
+          focusedDateInput = _this$state.focusedDateInput,
+          visiblePicker = _this$state.visiblePicker;
+      var endDate = datePickerEndDate;
+
+      if (startDate && stateEndDate && stateEndDate.isBefore(startDate)) {
+        endDate = undefined;
+      }
+
+      if (onStartDateChange) {
+        onStartDateChange(startDate);
+      }
+
+      if (onEndDateChange) {
+        onEndDateChange(endDate);
+      }
+
+      _this.setState({
+        startDate: startDate,
+        endDate: endDate,
+        focusedDateInput: focusedDateInput === DateTimePicker.startDate && startDate ? DateTimePicker.endDate : DateTimePicker.startDate,
+        visiblePicker: visiblePicker === DateTimePicker.datePicker && endDate && startDate ? DateTimePicker.timePicker : visiblePicker,
+        showTimeInputs: !!(stateEndDate || endDate)
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "handleTimeSelect", function (type, units, value) {
+      var _unitsToStateVariable;
+
+      var _this$props2 = _this.props,
+          onStartTimeChange = _this$props2.onStartTimeChange,
+          onEndTimeChange = _this$props2.onEndTimeChange;
+      var unitsToStateVariable = (_unitsToStateVariable = {}, _defineProperty(_unitsToStateVariable, TimeRange.minutes, type === TimeSuggestions.startTime ? 'startMinutes' : 'endMinutes'), _defineProperty(_unitsToStateVariable, TimeRange.hour, type === TimeSuggestions.startTime ? 'startHour' : 'endHour'), _unitsToStateVariable);
+
+      _this.setState(_defineProperty({}, unitsToStateVariable[units], value));
+
+      if (type === TimeSuggestions.startTime) {
+        onStartTimeChange(units, value);
+      } else {
+        onEndTimeChange(units, value);
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "isDayBlocked", function (day) {
+      return day.isBefore(now);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "isDayHighlighted", function (day) {
+      var _this$state2 = _this.state,
+          startDate = _this$state2.startDate,
+          endDate = _this$state2.endDate;
+
+      if (!startDate || !endDate) {
+        return false;
+      }
+
+      return day.isBetween(startDate, endDate) && !day.isSame(startDate, 'day');
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "handleTimeFocus", function () {
+      _this.ectorPicker.current.handleFocus();
+
+      _this.setState({
+        visiblePicker: DateTimePicker.timePicker
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "handleFocusChange", function (focusedDateInput) {
+      _this.setState({
+        focusedDateInput: focusedDateInput
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "renderMonthElement", function (_ref2) {
+      var month = _ref2.month;
+      return React.createElement("div", {
+        className: s$12.month
+      }, month.format('MMMM YYYY'));
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "renderDateInputLeftElement", function (_ref3) {
+      var className = _ref3.className,
+          props = _objectWithoutProperties(_ref3, ["className"]);
+
+      return React.createElement(Icon, _extends({}, props, {
+        className: [s$12.inputIcon, className].join(' '),
+        src: iconCalendar
+      }));
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "renderTimeInputLeftElement", function (_ref4) {
+      var className = _ref4.className,
+          props = _objectWithoutProperties(_ref4, ["className"]);
+
+      return React.createElement(Icon, _extends({}, props, {
+        className: [s$12.inputIcon, className].join(' '),
+        src: iconClock
+      }));
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "renderStartDateTimeInputComponent", function (_ref5) {
+      var inputClassName = _ref5.className,
+          inputProps = _objectWithoutProperties(_ref5, ["className"]);
+
+      var _this$state3 = _this.state,
+          startDate = _this$state3.startDate,
+          showTimeInputs = _this$state3.showTimeInputs,
+          startMinutes = _this$state3.startMinutes,
+          startHour = _this$state3.startHour;
+      var texts = _this.props.texts;
+      return React.createElement("div", {
+        className: s$12.splitInputContainer
+      }, React.createElement(Input, _extends({}, inputProps, {
+        onFocus: _this.handleStartDateFocus,
+        className: [s$12.datePickerInput, showTimeInputs ? s$12.fixedWidthDateInput : undefined, inputClassName].join(' '),
+        containerClassName: s$12.inputContainer,
+        value: startDate ? startDate.format('ddd DD/MM/YYYY') : '',
+        placeholder: texts.startPlaceholder,
+        LeftComponent: _this.renderDateInputLeftElement
+      })), showTimeInputs && React.createElement(Input, _extends({}, inputProps, {
+        onFocus: _this.handleTimeFocus,
+        containerClassName: s$12.timePickerInputContainer,
+        className: [s$12.timePickerInput, inputClassName].join(' '),
+        value: startHour ? "".concat(startHour, "h").concat(startMinutes || '') : '',
+        placeholder: texts.timePlaceholder,
+        LeftComponent: _this.renderTimeInputLeftElement
+      })));
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "renderEndDateTimeInputComponent", function (_ref6) {
+      var inputClassName = _ref6.className,
+          inputProps = _objectWithoutProperties(_ref6, ["className"]);
+
+      var _this$state4 = _this.state,
+          endDate = _this$state4.endDate,
+          showTimeInputs = _this$state4.showTimeInputs,
+          endHour = _this$state4.endHour,
+          endMinutes = _this$state4.endMinutes;
+      var texts = _this.props.texts;
+      return React.createElement("div", {
+        className: s$12.splitInputContainer
+      }, React.createElement(Input, _extends({}, inputProps, {
+        className: [s$12.datePickerInput, showTimeInputs ? s$12.fixedWidthDateInput : undefined, inputClassName].join(' '),
+        containerClassName: s$12.inputContainer,
+        onFocus: _this.handleEndDateFocus,
+        value: endDate ? endDate.format('ddd DD/MM/YYYY') : '',
+        placeholder: texts.endPlaceholder,
+        LeftComponent: _this.renderDateInputLeftElement
+      })), showTimeInputs && React.createElement(Input, _extends({}, inputProps, {
+        containerClassName: s$12.timePickerInputContainer,
+        className: [s$12.timePickerInput, inputClassName].join(' '),
+        onFocus: _this.handleTimeFocus,
+        value: endHour ? "".concat(endHour, "h").concat(endMinutes || '') : '',
+        placeholder: texts.timePlaceholder,
+        LeftComponent: _this.renderTimeInputLeftElement
+      })));
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "renderPickerSuggestionsArrow", function (_ref7) {
+      var className = _ref7.className,
+          props = _objectWithoutProperties(_ref7, ["className"]);
+
+      return React.createElement(Arrow, _extends({}, props, {
+        className: [s$12.suggestionsArrow, className].join(' ')
+      }));
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "renderSuggestionsComponent", function (_ref8) {
+      var visible = _ref8.visible,
+          className = _ref8.className,
+          rest = _objectWithoutProperties(_ref8, ["visible", "className"]);
+
+      var _this$state5 = _this.state,
+          visiblePicker = _this$state5.visiblePicker,
+          startDate = _this$state5.startDate,
+          endDate = _this$state5.endDate,
+          focusedDateInput = _this$state5.focusedDateInput,
+          startHour = _this$state5.startHour,
+          startMinutes = _this$state5.startMinutes,
+          endHour = _this$state5.endHour,
+          endMinutes = _this$state5.endMinutes;
+      return React.createElement(PickerSuggestions, _extends({}, rest, {
+        visible: visible,
+        className: [s$12.pickerSuggestions, className].join(' '),
+        ArrowComponent: _this.renderPickerSuggestionsArrow
+      }), visible && visiblePicker === DateTimePicker.datePicker && React.createElement(reactDates.DayPickerRangeController, {
+        verticalBorderSpacing: 1,
+        horizontalMonthPadding: 25,
+        firstDayOfWeek: 1,
+        daySize: 35,
+        startDate: startDate,
+        endDate: endDate,
+        onDatesChange: _this.handleDateChange,
+        hideKeyboardShortcutsPanel: true,
+        numberOfMonths: 2,
+        transitionDuration: 0,
+        noBorder: true,
+        focusedInput: focusedDateInput,
+        onFocusChange: _this.handleFocusChange,
+        renderMonthElement: _this.renderMonthElement,
+        isDayBlocked: _this.isDayBlocked,
+        isDayHighlighted: _this.isDayHighlighted
+      }), visible && React.createElement("div", {
+        className: s$12.hr
+      }), visible && visiblePicker === DateTimePicker.timePicker && React.createElement(TimeSuggestions, {
+        className: s$12.timeSuggestions,
+        containerClassName: s$12.timeSuggestionsContainer,
+        onSelect: _this.handleTimeSelect,
+        startMinutes: startMinutes,
+        startHour: startHour,
+        endMinutes: endMinutes,
+        endHour: endHour
+      }));
+    });
+
+    _this.ectorPicker = React.createRef();
+    _this.handleStartDateFocus = _this.handleDateFocus.bind(_assertThisInitialized(_this), DateTimePicker.startDate);
+    _this.handleEndDateFocus = _this.handleDateFocus.bind(_assertThisInitialized(_this), DateTimePicker.endDate);
+    _this.state = {
+      startDate: undefined,
+      endDate: undefined,
+      startHour: undefined,
+      startMinutes: undefined,
+      endHour: undefined,
+      endMinutes: undefined,
+      focusedDateInput: DateTimePicker.startDate,
+      visiblePicker: DateTimePicker.datePicker,
+      showTimeInputs: false
+    };
+    return _this;
+  }
+
+  _createClass(DateTimePicker, [{
+    key: "handleDateFocus",
+    value: function handleDateFocus(focusedDateInput) {
+      this.ectorPicker.current.handleFocus();
+      this.setState({
+        visiblePicker: DateTimePicker.datePicker,
+        focusedDateInput: focusedDateInput
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$state6 = this.state,
+          startDate = _this$state6.startDate,
+          endDate = _this$state6.endDate,
+          visiblePicker = _this$state6.visiblePicker,
+          startHour = _this$state6.startHour,
+          startMinutes = _this$state6.startMinutes,
+          endMinutes = _this$state6.endMinutes,
+          endHour = _this$state6.endHour;
+      var extraData = {
+        visiblePicker: visiblePicker,
+        startDate: startDate,
+        endDate: endDate,
+        startMinutes: startMinutes,
+        endMinutes: endMinutes,
+        startHour: startHour,
+        endHour: endHour
+      };
+      var _this$props3 = this.props,
+          error = _this$props3.error,
+          className = _this$props3.className;
+      return React.createElement(Picker, {
+        ref: this.ectorPicker,
+        split: true,
+        extraData: extraData,
+        FirstInputComponent: this.renderStartDateTimeInputComponent,
+        SecondInputComponent: this.renderEndDateTimeInputComponent,
+        SuggestionsComponent: this.renderSuggestionsComponent,
+        className: [s$12.picker, className].join(' '),
+        error: error
+      });
+    }
+  }], [{
+    key: "getDerivedStateFromProps",
+    value: function getDerivedStateFromProps(props, state) {
+      var propStartDate = props.startDate,
+          propEndDate = props.endDate;
+      var startDate = state.startDate,
+          endDate = state.endDate,
+          startMinutes = state.startMinutes,
+          endMinutes = state.endMinutes,
+          startHour = state.startHour,
+          endHour = state.endHour,
+          showTimeInputs = state.showTimeInputs;
+
+      if (!startDate && propStartDate) {
+        startDate = moment(propStartDate);
+      }
+
+      if (!endDate && propEndDate) {
+        endDate = moment(propEndDate);
+      }
+
+      if (!startMinutes && !startHour && propStartDate) {
+        startDate = moment(propStartDate);
+        startMinutes = startDate.minutes();
+        startHour = startDate.hours();
+        showTimeInputs = true;
+      }
+
+      if (!endMinutes && !endHour && propEndDate) {
+        endDate = moment(propEndDate);
+        endMinutes = endDate.minutes();
+        endHour = endDate.hours();
+        showTimeInputs = true;
+      }
+
+      return {
+        showTimeInputs: showTimeInputs,
+        startDate: startDate,
+        endDate: endDate,
+        startMinutes: startMinutes,
+        startHour: startHour,
+        endMinutes: endMinutes,
+        endHour: endHour
+      };
+    }
+  }]);
+
+  return DateTimePicker;
+}(React.PureComponent);
+
+_defineProperty(DateTimePicker, "startDate", 'startDate');
+
+_defineProperty(DateTimePicker, "endDate", 'endDate');
+
+_defineProperty(DateTimePicker, "timePicker", 'timePicker');
+
+_defineProperty(DateTimePicker, "datePicker", 'datePicker');
+
+DateTimePicker.propTypes = {
+  error: PropTypes$1.string,
+  className: PropTypes$1.string,
+  texts: TextsType$7,
+  startDate: PropTypes$1.string,
+  endDate: PropTypes$1.string,
+  onStartDateChange: PropTypes$1.func,
+  onEndDateChange: PropTypes$1.func,
+  onStartTimeChange: PropTypes$1.func,
+  onEndTimeChange: PropTypes$1.func
+};
+DateTimePicker.defaultProps = {
+  error: '',
+  className: undefined,
+  texts: DefaultTexts$7,
+  startDate: undefined,
+  endDate: undefined,
+  onStartDateChange: function onStartDateChange() {
+    return null;
+  },
+  onEndDateChange: function onEndDateChange() {
+    return null;
+  },
+  onStartTimeChange: function onStartTimeChange() {
+    return null;
+  },
+  onEndTimeChange: function onEndTimeChange() {
+    return null;
+  }
+};
 
 var css$14 = ".TimeRange-module_container__qP7nK {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  height: 100%;\n}\n\n.TimeRange-module_hours__9eQEI, .TimeRange-module_minutes__1mA4X {\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  overflow: scroll;\n  position: relative;\n  padding: 0 5px\n}\n\n.TimeRange-module_hours__9eQEI::-webkit-scrollbar, .TimeRange-module_minutes__1mA4X::-webkit-scrollbar {\n  display: none;\n}\n\n.TimeRange-module_hour__XiHg6, .TimeRange-module_minute__32J9f {\n  min-width: 20px;\n  padding: 5px 10px;\n  text-align: center\n}\n\n.TimeRange-module_hour__XiHg6:hover, .TimeRange-module_hour__XiHg6.TimeRange-module_selected__1EEqQ, .TimeRange-module_minute__32J9f:hover, .TimeRange-module_minute__32J9f.TimeRange-module_selected__1EEqQ {\n  border-radius: 5px;\n  cursor: pointer;\n  font-weight: bold;\n}\n\n.TimeRange-module_hour__XiHg6:hover, .TimeRange-module_minute__32J9f:hover {\n  background-color: rgb(255, 245, 204);\n}\n\n.TimeRange-module_hour__XiHg6.TimeRange-module_selected__1EEqQ, .TimeRange-module_minute__32J9f.TimeRange-module_selected__1EEqQ {\n  background-color: #ffcd02;\n}\n\n.TimeRange-module_hour__XiHg6.TimeRange-module_disabled__TxWjV, .TimeRange-module_minute__32J9f.TimeRange-module_disabled__TxWjV {\n  color: #939baa;\n}\n";
 var s$14 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","container":"TimeRange-module_container__qP7nK","hours":"TimeRange-module_hours__9eQEI","minutes":"TimeRange-module_minutes__1mA4X","hour":"TimeRange-module_hour__XiHg6","minute":"TimeRange-module_minute__32J9f","selected":"TimeRange-module_selected__1EEqQ","disabled":"TimeRange-module_disabled__TxWjV"};
@@ -5974,402 +6389,6 @@ TimeRange.propTypes = {
   onSelect: PropTypes$1.func,
   minutes: PropTypes$1.string,
   hour: PropTypes$1.string
-};
-
-var iconCalendar = "data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20width%3D%2215px%22%20height%3D%2215px%22%20viewBox%3D%220%200%2015%2015%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%20%20%20%20%20%20%20%20%3Ctitle%3Ecalendar%3C%2Ftitle%3E%20%20%20%20%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%20%20%20%20%3Cg%20id%3D%22Symbols%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%20%20%20%20%20%20%20%20%3Cg%20id%3D%22filters%22%20transform%3D%22translate%28-526.000000%2C%20-18.000000%29%22%20fill%3D%22%23BFC4D4%22%20fill-rule%3D%22nonzero%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20transform%3D%22translate%281.000000%2C%200.000000%29%22%20id%3D%22date%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20transform%3D%22translate%28509.103631%2C%200.010000%29%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20id%3D%22aller%22%20transform%3D%22translate%2816.000000%2C%2015.000000%29%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M13.2633063%2C3.875%20L11.7457409%2C3.875%20L11.7457409%2C3.4375%20C11.7457409%2C3.195125%2011.5523597%2C3%2011.3121508%2C3%20C11.0719418%2C3%2010.8785607%2C3.196%2010.8785607%2C3.4375%20L10.8785607%2C3.875%20L3.94111888%2C3.875%20L3.94111888%2C3.4375%20C3.94111888%2C3.195125%203.74687051%2C3%203.50752877%2C3%20C3.26818703%2C3%203.07393866%2C3.196%203.07393866%2C3.4375%20L3.07393866%2C3.875%20L1.55637327%2C3.875%20C0.957151736%2C3.87675%200.474132353%2C4.364125%200.472397993%2C4.96875%20L0.472397993%2C15.90625%20C0.474132353%2C16.510875%200.957151736%2C16.99825%201.55637327%2C17%20L13.2633063%2C17%20C13.8625278%2C16.99825%2014.3455472%2C16.510875%2014.3472815%2C15.90625%20L14.3472815%2C4.96875%20C14.3455472%2C4.364125%2013.8625278%2C3.87675%2013.2633063%2C3.875%20Z%20M5.67547932%2C11.75%20L5.67547932%2C8.25%20L9.14420021%2C8.25%20L9.14420021%2C11.75%20L5.67547932%2C11.75%20Z%20M9.14420021%2C12.625%20L9.14420021%2C16.125%20L5.67547932%2C16.125%20L5.67547932%2C12.625%20L9.14420021%2C12.625%20Z%20M1.33957821%2C8.25%20L4.8082991%2C8.25%20L4.8082991%2C11.75%20L1.33957821%2C11.75%20L1.33957821%2C8.25%20Z%20M10.0113804%2C8.25%20L13.4801013%2C8.25%20L13.4801013%2C11.75%20L10.0113804%2C11.75%20L10.0113804%2C8.25%20Z%20M1.40288237%2C4.81475%20C1.44450702%2C4.7745%201.49653783%2C4.75%201.55637327%2C4.75%20L3.07393866%2C4.75%20L3.07393866%2C5.1875%20C3.07393866%2C5.429%203.26818703%2C5.625%203.50752877%2C5.625%20C3.74687051%2C5.625%203.94111888%2C5.429%203.94111888%2C5.1875%20L3.94111888%2C4.75%20L10.8785607%2C4.75%20L10.8785607%2C5.1875%20C10.8785607%2C5.429%2011.0719418%2C5.625%2011.3121508%2C5.625%20C11.5523597%2C5.625%2011.7457409%2C5.429%2011.7457409%2C5.1875%20L11.7457409%2C4.75%20L13.2633063%2C4.75%20C13.3231417%2C4.75%2013.3751725%2C4.773625%2013.4167972%2C4.81475%20C13.4566875%2C4.85675%2013.4801013%2C4.90925%2013.4801013%2C4.96875%20L13.4801013%2C7.375%20L1.33957821%2C7.375%20L1.33957821%2C4.96875%20C1.33957821%2C4.908375%201.36299208%2C4.85675%201.40288237%2C4.81475%20Z%20M1.40288237%2C16.061125%20C1.36299208%2C16.019125%201.33871103%2C15.966625%201.33871103%2C15.90625%20L1.33871103%2C12.625%20L4.80743192%2C12.625%20L4.80743192%2C16.125%20L1.55550609%2C16.125%20C1.49567065%2C16.125%201.44363984%2C16.101375%201.40288237%2C16.061125%20Z%20M13.4167972%2C16.061125%20C13.3751725%2C16.101375%2013.3231417%2C16.125%2013.2633063%2C16.125%20L10.0113804%2C16.125%20L10.0113804%2C12.625%20L13.4801013%2C12.625%20L13.4801013%2C15.90625%20C13.4801013%2C15.966625%2013.4566875%2C16.019125%2013.4167972%2C16.061125%20Z%22%20id%3D%22calendar%22%3E%3C%2Fpath%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E";
-
-var _ref$7 =
-/*#__PURE__*/
-React__default.createElement("g", {
-  transform: "translate(1.396 1.01)",
-  stroke: "#BFC4D4",
-  fill: "none",
-  fillRule: "evenodd"
-}, React__default.createElement("circle", {
-  cx: 6.765,
-  cy: 6.765,
-  r: 6.765
-}), React__default.createElement("path", {
-  d: "M6.765 2.396v4.369-4.369zm2.947 6.57L6.765 6.764l2.947 2.2z",
-  strokeLinecap: "round",
-  strokeLinejoin: "round"
-}));
-
-var iconClock = "data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20width%3D%2216px%22%20height%3D%2216px%22%20viewBox%3D%220%200%2016%2016%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%20%20%20%20%20%20%20%20%3Ctitle%3Eclock%3C%2Ftitle%3E%20%20%20%20%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%20%20%20%20%3Cg%20id%3D%22Symbols%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%20%20%20%20%20%20%20%20%3Cg%20id%3D%22filters%22%20transform%3D%22translate%28-883.000000%2C%20-18.000000%29%22%20stroke%3D%22%23BFC4D4%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20transform%3D%22translate%281.000000%2C%200.000000%29%22%20id%3D%22date%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20transform%3D%22translate%28509.103631%2C%200.010000%29%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20id%3D%22retour%22%20transform%3D%22translate%28237.396369%2C%2015.000000%29%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20id%3D%22clock%22%20transform%3D%22translate%28136.896369%2C%204.000000%29%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ccircle%20id%3D%22Oval%22%20cx%3D%226.76489258%22%20cy%3D%226.76489258%22%20r%3D%226.76489258%22%3E%3C%2Fcircle%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M6.76489258%2C2.3962294%20L6.76489258%2C6.76489258%20L6.76489258%2C2.3962294%20Z%20M9.71221665%2C8.96526185%20L6.76489258%2C6.76489258%20L9.71221665%2C8.96526185%20Z%22%20id%3D%22Combined-Shape%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3C%2Fpath%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E";
-
-var now = moment();
-
-var DateTimePicker =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inherits(DateTimePicker, _React$PureComponent);
-
-  function DateTimePicker() {
-    var _this;
-
-    _classCallCheck(this, DateTimePicker);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(DateTimePicker).call(this));
-
-    _defineProperty(_assertThisInitialized(_this), "handleDateChange", function (_ref) {
-      var startDate = _ref.startDate,
-          endDate = _ref.endDate;
-      var _this$props = _this.props,
-          onStartDateChange = _this$props.onStartDateChange,
-          onEndDateChange = _this$props.onEndDateChange;
-
-      _this.setState(function (prevState) {
-        return {
-          startDate: startDate,
-          endDate: endDate,
-          focusedDateInput: prevState.focusedDateInput === DateTimePicker.startDate && startDate ? DateTimePicker.endDate : DateTimePicker.startDate,
-          visiblePicker: prevState.visiblePicker === DateTimePicker.datePicker && endDate && startDate ? DateTimePicker.timePicker : prevState.visiblePicker,
-          showTimeInputs: !!(endDate || prevState.endDate)
-        };
-      });
-
-      if (onStartDateChange) {
-        onStartDateChange(startDate);
-      }
-
-      if (onEndDateChange) {
-        onEndDateChange(endDate);
-      }
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "handleTimeSelect", function (type, units, value) {
-      var _unitsToStateVariable;
-
-      var _this$props2 = _this.props,
-          onStartTimeChange = _this$props2.onStartTimeChange,
-          onEndTimeChange = _this$props2.onEndTimeChange;
-      var unitsToStateVariable = (_unitsToStateVariable = {}, _defineProperty(_unitsToStateVariable, TimeRange.minutes, type === TimeSuggestions.startTime ? 'startMinutes' : 'endMinutes'), _defineProperty(_unitsToStateVariable, TimeRange.hour, type === TimeSuggestions.startTime ? 'startHour' : 'endHour'), _unitsToStateVariable);
-
-      _this.setState(_defineProperty({}, unitsToStateVariable[units], value));
-
-      if (type === TimeSuggestions.startTime) {
-        onStartTimeChange(units, value);
-      } else {
-        onEndTimeChange(units, value);
-      }
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "isDayBlocked", function (day) {
-      return day.isBefore(now);
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "isDayHighlighted", function (day) {
-      var _this$state = _this.state,
-          startDate = _this$state.startDate,
-          endDate = _this$state.endDate;
-
-      if (!startDate || !endDate) {
-        return false;
-      }
-
-      return day.isBetween(startDate, endDate) && !day.isSame(startDate, 'day');
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "handleTimeFocus", function () {
-      _this.ectorPicker.current.handleFocus();
-
-      _this.setState({
-        visiblePicker: DateTimePicker.timePicker
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "renderMonthElement", function (_ref2) {
-      var month = _ref2.month;
-      return React.createElement("div", {
-        className: s$12.month
-      }, month.format('MMMM YYYY'));
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "renderDateInputLeftElement", function (_ref3) {
-      var className = _ref3.className,
-          props = _objectWithoutProperties(_ref3, ["className"]);
-
-      return React.createElement(Icon, _extends({}, props, {
-        className: [s$12.inputIcon, className].join(' '),
-        src: iconCalendar
-      }));
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "renderTimeInputLeftElement", function (_ref4) {
-      var className = _ref4.className,
-          props = _objectWithoutProperties(_ref4, ["className"]);
-
-      return React.createElement(Icon, _extends({}, props, {
-        className: [s$12.inputIcon, className].join(' '),
-        src: iconClock
-      }));
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "renderStartDateTimeInputComponent", function (_ref5) {
-      var inputClassName = _ref5.className,
-          inputProps = _objectWithoutProperties(_ref5, ["className"]);
-
-      var _this$state2 = _this.state,
-          startDate = _this$state2.startDate,
-          showTimeInputs = _this$state2.showTimeInputs,
-          startMinutes = _this$state2.startMinutes,
-          startHour = _this$state2.startHour;
-      var texts = _this.props.texts;
-      return React.createElement("div", {
-        className: s$12.splitInputContainer
-      }, React.createElement(Input, _extends({}, inputProps, {
-        onFocus: _this.handleStartDateFocus,
-        className: [s$12.datePickerInput, showTimeInputs ? s$12.fixedWidthDateInput : undefined, inputClassName].join(' '),
-        containerClassName: s$12.inputContainer,
-        value: startDate ? startDate.format('ddd DD/MM/YYYY') : '',
-        placeholder: texts.startPlaceholder,
-        LeftComponent: _this.renderDateInputLeftElement
-      })), showTimeInputs && React.createElement(Input, _extends({}, inputProps, {
-        onFocus: _this.handleTimeFocus,
-        containerClassName: s$12.timePickerInputContainer,
-        className: [s$12.timePickerInput, inputClassName].join(' '),
-        value: startHour ? "".concat(startHour, "h").concat(TimeNumber({
-          value: startMinutes
-        })) : '',
-        placeholder: texts.timePlaceholder,
-        LeftComponent: _this.renderTimeInputLeftElement
-      })));
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "renderEndDateTimeInputComponent", function (_ref6) {
-      var inputClassName = _ref6.className,
-          inputProps = _objectWithoutProperties(_ref6, ["className"]);
-
-      var _this$state3 = _this.state,
-          endDate = _this$state3.endDate,
-          showTimeInputs = _this$state3.showTimeInputs,
-          endHour = _this$state3.endHour,
-          endMinutes = _this$state3.endMinutes;
-      var texts = _this.props.texts;
-      return React.createElement("div", {
-        className: s$12.splitInputContainer
-      }, React.createElement(Input, _extends({}, inputProps, {
-        className: [s$12.datePickerInput, showTimeInputs ? s$12.fixedWidthDateInput : undefined, inputClassName].join(' '),
-        containerClassName: s$12.inputContainer,
-        onFocus: _this.handleEndDateFocus,
-        value: endDate ? endDate.format('ddd DD/MM/YYYY') : '',
-        placeholder: texts.endPlaceholder,
-        LeftComponent: _this.renderDateInputLeftElement
-      })), showTimeInputs && React.createElement(Input, _extends({}, inputProps, {
-        containerClassName: s$12.timePickerInputContainer,
-        className: [s$12.timePickerInput, inputClassName].join(' '),
-        onFocus: _this.handleTimeFocus,
-        value: endHour ? "".concat(endHour, "h").concat(TimeNumber({
-          value: endMinutes
-        })) : '',
-        placeholder: texts.timePlaceholder,
-        LeftComponent: _this.renderTimeInputLeftElement
-      })));
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "renderPickerSuggestionsArrow", function (_ref7) {
-      var className = _ref7.className,
-          props = _objectWithoutProperties(_ref7, ["className"]);
-
-      return React.createElement(Arrow, _extends({}, props, {
-        className: [s$12.suggestionsArrow, className].join(' ')
-      }));
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "renderSuggestionsComponent", function (_ref8) {
-      var visible = _ref8.visible,
-          className = _ref8.className,
-          rest = _objectWithoutProperties(_ref8, ["visible", "className"]);
-
-      var _this$state4 = _this.state,
-          visiblePicker = _this$state4.visiblePicker,
-          startDate = _this$state4.startDate,
-          endDate = _this$state4.endDate,
-          focusedDateInput = _this$state4.focusedDateInput,
-          startHour = _this$state4.startHour,
-          startMinutes = _this$state4.startMinutes,
-          endHour = _this$state4.endHour,
-          endMinutes = _this$state4.endMinutes;
-      return React.createElement(PickerSuggestions, _extends({}, rest, {
-        visible: visible,
-        className: [s$12.pickerSuggestions, className].join(' '),
-        ArrowComponent: _this.renderPickerSuggestionsArrow
-      }), visible && visiblePicker === DateTimePicker.datePicker && React.createElement(reactDates.DayPickerRangeController, {
-        verticalBorderSpacing: 1,
-        horizontalMonthPadding: 25,
-        firstDayOfWeek: 1,
-        daySize: 35,
-        startDate: startDate,
-        endDate: endDate,
-        onDatesChange: _this.handleDateChange,
-        hideKeyboardShortcutsPanel: true,
-        numberOfMonths: 2,
-        transitionDuration: 0,
-        noBorder: true,
-        focusedInput: focusedDateInput,
-        renderMonthElement: _this.renderMonthElement,
-        isDayBlocked: _this.isDayBlocked,
-        isDayHighlighted: _this.isDayHighlighted
-      }), visible && React.createElement("div", {
-        className: s$12.hr
-      }), visible && visiblePicker === DateTimePicker.timePicker && React.createElement(TimeSuggestions, {
-        className: s$12.timeSuggestions,
-        containerClassName: s$12.timeSuggestionsContainer,
-        onSelect: _this.handleTimeSelect,
-        startMinutes: startMinutes,
-        startHour: startHour,
-        endMinutes: endMinutes,
-        endHour: endHour
-      }));
-    });
-
-    _this.ectorPicker = React.createRef();
-    _this.handleStartDateFocus = _this.handleDateFocus.bind(_assertThisInitialized(_this), DateTimePicker.startDate);
-    _this.handleEndDateFocus = _this.handleDateFocus.bind(_assertThisInitialized(_this), DateTimePicker.endDate);
-    _this.state = {
-      startDate: undefined,
-      endDate: undefined,
-      startHour: undefined,
-      startMinutes: undefined,
-      endHour: undefined,
-      endMinutes: undefined,
-      focusedDateInput: DateTimePicker.startDate,
-      visiblePicker: DateTimePicker.datePicker,
-      showTimeInputs: false
-    };
-    return _this;
-  }
-
-  _createClass(DateTimePicker, [{
-    key: "handleDateFocus",
-    value: function handleDateFocus(focusedDateInput) {
-      this.ectorPicker.current.handleFocus();
-      this.setState({
-        visiblePicker: DateTimePicker.datePicker,
-        focusedDateInput: focusedDateInput
-      });
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this$state5 = this.state,
-          startDate = _this$state5.startDate,
-          endDate = _this$state5.endDate,
-          visiblePicker = _this$state5.visiblePicker,
-          startHour = _this$state5.startHour,
-          startMinutes = _this$state5.startMinutes,
-          endMinutes = _this$state5.endMinutes,
-          endHour = _this$state5.endHour;
-      var extraData = {
-        visiblePicker: visiblePicker,
-        startDate: startDate,
-        endDate: endDate,
-        startMinutes: startMinutes,
-        endMinutes: endMinutes,
-        startHour: startHour,
-        endHour: endHour
-      };
-      var _this$props3 = this.props,
-          error = _this$props3.error,
-          className = _this$props3.className;
-      return React.createElement(Picker, {
-        ref: this.ectorPicker,
-        split: true,
-        extraData: extraData,
-        FirstInputComponent: this.renderStartDateTimeInputComponent,
-        SecondInputComponent: this.renderEndDateTimeInputComponent,
-        SuggestionsComponent: this.renderSuggestionsComponent,
-        className: [s$12.picker, className].join(' '),
-        error: error
-      });
-    }
-  }], [{
-    key: "getDerivedStateFromProps",
-    value: function getDerivedStateFromProps(props, state) {
-      var propStartDate = props.startDate,
-          propEndDate = props.endDate;
-      var startDate = state.startDate,
-          endDate = state.endDate,
-          startMinutes = state.startMinutes,
-          endMinutes = state.endMinutes,
-          startHour = state.startHour,
-          endHour = state.endHour,
-          showTimeInputs = state.showTimeInputs;
-
-      if (!startDate && propStartDate) {
-        startDate = moment(propStartDate);
-      }
-
-      if (!endDate && propEndDate) {
-        endDate = moment(propEndDate);
-      }
-
-      if (!startMinutes && !startHour && propStartDate) {
-        startDate = moment(propStartDate);
-        startMinutes = startDate.minutes();
-        startHour = startDate.hours();
-        showTimeInputs = true;
-      }
-
-      if (!endMinutes && !endHour && propEndDate) {
-        endDate = moment(propEndDate);
-        endMinutes = endDate.minutes();
-        endHour = endDate.hours();
-        showTimeInputs = true;
-      }
-
-      return {
-        showTimeInputs: showTimeInputs,
-        startDate: startDate,
-        endDate: endDate,
-        startMinutes: startMinutes,
-        startHour: startHour,
-        endMinutes: endMinutes,
-        endHour: endHour
-      };
-    }
-  }]);
-
-  return DateTimePicker;
-}(React.PureComponent);
-
-_defineProperty(DateTimePicker, "startDate", 'startDate');
-
-_defineProperty(DateTimePicker, "endDate", 'endDate');
-
-_defineProperty(DateTimePicker, "timePicker", 'timePicker');
-
-_defineProperty(DateTimePicker, "datePicker", 'datePicker');
-
-DateTimePicker.propTypes = {
-  error: PropTypes$1.string,
-  className: PropTypes$1.string,
-  texts: TextsType$7,
-  startDate: PropTypes$1.string,
-  endDate: PropTypes$1.string,
-  onStartDateChange: PropTypes$1.func,
-  onEndDateChange: PropTypes$1.func,
-  onStartTimeChange: PropTypes$1.func,
-  onEndTimeChange: PropTypes$1.func
-};
-DateTimePicker.defaultProps = {
-  error: '',
-  className: undefined,
-  texts: DefaultTexts$7,
-  startDate: undefined,
-  endDate: undefined,
-  onStartDateChange: function onStartDateChange() {
-    return null;
-  },
-  onEndDateChange: function onEndDateChange() {
-    return null;
-  },
-  onStartTimeChange: function onStartTimeChange() {
-    return null;
-  },
-  onEndTimeChange: function onEndTimeChange() {
-    return null;
-  }
 };
 
 var css$15 = ".FlightInformationForm-module_card__3HVvP {\n    width: 650px;\n}\n\n.FlightInformationForm-module_contentCard__2iuCz {}\n\n.FlightInformationForm-module_formContainer__38_9v {\n    margin-bottom: 20px;\n}\n\n.FlightInformationForm-module_title__3yTDe {\n    margin: 0;\n    font-weight: 300;\n    color: #32a0c5;\n}\n\n.FlightInformationForm-module_firstColumn__3dXcq {\n    padding-right: 20px;\n}\n\n.FlightInformationForm-module_secondColumn__1tg-R {\n    padding-left: 20px;\n}\n\n.FlightInformationForm-module_halfWidth__3iWMs {\n    width: 50%;\n}\n\n.FlightInformationForm-module_row__2j-tW {\n    margin-top: 10px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n}\n\n.FlightInformationForm-module_noMargin__DF7_J {\n    margin: 0;\n}\n\n.FlightInformationForm-module_input__1QJpa {\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n}\n\n.FlightInformationForm-module_select__1KZ8b {\n    margin-top: 0;\n}\n\n.FlightInformationForm-module_defaultOption__MJRT6 {\n    color: #d5d6d7;\n}\n\n.FlightInformationForm-module_actionLink__nzpW1 {\n    margin-top: 5px;\n}\n\n.FlightInformationForm-module_flexStart__3he4R {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: start;\n        -ms-flex-pack: start;\n            justify-content: flex-start;\n}\n\n.FlightInformationForm-module_flexEnd__f47Mt {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: end;\n        -ms-flex-pack: end;\n            justify-content: flex-end;\n}\n\n.FlightInformationForm-module_description__38HJs {\n    margin-top: 10px;\n}\n\n@media (max-width: 1130px) {\n    .FlightInformationForm-module_card__3HVvP {\n        width: -webkit-min-content;\n        width: -moz-min-content;\n        width: min-content;\n    }\n    .FlightInformationForm-module_input__1QJpa {\n        min-width: 275px;\n        max-width: 275px;\n        margin: 5px 10px 0 10px;\n    }\n    .FlightInformationForm-module_firstColumn__3dXcq, .FlightInformationForm-module_secondColumn__1tg-R {\n        padding: 0;\n    }\n    .FlightInformationForm-module_actionLink__nzpW1, .FlightInformationForm-module_description__38HJs {\n        margin-right: 10px;\n        margin-left: 10px;\n    }\n    .FlightInformationForm-module_title__3yTDe {\n        margin-left: 10px;\n    }\n    .FlightInformationForm-module_row__2j-tW {\n        -ms-flex-wrap: wrap;\n            flex-wrap: wrap;\n    }\n}\n\n@media (max-width: 825px) {\n    .FlightInformationForm-module_card__3HVvP {\n        width: 100%;\n    }\n    .FlightInformationForm-module_input__1QJpa {\n        max-width: none;\n    }\n\n}\n\n@media (max-width: 480px) {\n    .FlightInformationForm-module_card__3HVvP {\n        width: 100%;\n    }\n    .FlightInformationForm-module_contentCard__2iuCz {\n        padding: 20px;\n    }\n    .FlightInformationForm-module_halfWidth__3iWMs, .FlightInformationForm-module_input__1QJpa {\n        width: 100%;\n    }\n    .FlightInformationForm-module_input__1QJpa {\n        -webkit-box-flex: 0;\n            -ms-flex: none;\n                flex: none;\n        margin: 5px 0 0 0;\n    }\n    .FlightInformationForm-module_title__3yTDe, .FlightInformationForm-module_actionLink__nzpW1 {\n        margin: 0;\n    }\n    .FlightInformationForm-module_row__2j-tW {\n        margin: 0;\n        -ms-flex-wrap: wrap;\n            flex-wrap: wrap;\n    }\n    .FlightInformationForm-module_firstColumn__3dXcq, .FlightInformationForm-module_secondColumn__1tg-R {\n        padding: 0;\n    }\n    .FlightInformationForm-module_title__3yTDe {\n        font-size: 22px;\n    }\n    .FlightInformationForm-module_description__38HJs {\n        margin: 15px 0;\n    }\n}\n";
@@ -15714,11 +15733,17 @@ var DefaultMiddleComponent = function DefaultMiddleComponent(_ref4) {
 
   renderBusinessButton.propTypes = {
     isActive: PropTypes$1.bool.isRequired
+  }; // eslint-disable-next-line
+
+  var onClick = function onClick() {
+    return window.open('https://business.ectorparking.com', '_blank');
   };
+
   return React__default.createElement("div", {
     className: [s$18.middleMenuItemsContainer, className].join(' ')
   }, React__default.createElement(MenuButton, {
-    LabelComponent: renderBusinessButton
+    LabelComponent: renderBusinessButton,
+    onClick: onClick
   }));
 };
 

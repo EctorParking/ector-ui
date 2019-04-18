@@ -25,12 +25,12 @@ IconComponent.propTypes = {
 };
 
 const ZoneSuggestion = ({
-  value, onClick, split, selected, disabled, ...rest
+  value, onClick, selected, disabled, className, ...rest
 }) => (
   <span
     role="presentation"
-    className={[s.suggestion, split ? undefined : s.hovered, selected ? s.selected : undefined, disabled ? s.disabled : undefined].join(' ')}
-    onClick={disabled ? undefined : onClick}
+    className={[s.suggestion, selected ? s.selected : undefined, disabled ? s.disabled : undefined, className].join(' ')}
+    onClick={onClick}
     {...rest}
   >
     <Icon
@@ -46,18 +46,18 @@ const ZoneSuggestion = ({
 );
 
 ZoneSuggestion.defaultProps = {
+  className: undefined,
   selected: false,
   disabled: false,
-  split: false,
   onClick: () => null,
 };
 
 ZoneSuggestion.propTypes = {
   value: ZoneType.isRequired,
   onClick: PropTypes.func,
-  split: PropTypes.bool,
   selected: PropTypes.bool,
   disabled: PropTypes.bool,
+  className: PropTypes.string,
 };
 
 export default ZoneSuggestion;

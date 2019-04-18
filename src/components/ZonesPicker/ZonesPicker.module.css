@@ -2,7 +2,7 @@
 
 .suggestionsContainer {
   position: relative;
-  height: 75%;
+  height: 85%;
   display: flex;
   flex-direction: row;
 
@@ -43,9 +43,10 @@
 }
 
 .suggestionAction {
-  display: none;
+  border-bottom-left-radius: var(--borderRadius);
+  border-bottom-right-radius: var(--borderRadius);
   padding-left: 15px;
-  height: 25%;
+  height: 15%;
   background-color: var(--lightGrey);
 }
 
@@ -91,8 +92,13 @@
   margin: 0 0 0 25px;
 }
 
-.rightInputIcon {
+.rightInputIconContainer {
   right: var(--marginSmall);
+}
+
+.rightInputIcon {
+  height: 15px;
+  width: 15px;
 }
 
 .stationIcon {
@@ -101,4 +107,8 @@
 
 .inputAction {
   cursor: pointer;
+}
+
+.toZoneSuggestion:hover {
+  font-weight: bold;
 }

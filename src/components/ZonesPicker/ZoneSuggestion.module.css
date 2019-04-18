@@ -13,13 +13,12 @@
   padding-left: 25px;
 }
 
-.selected, .hovered:not(.disabled):hover {
+.selected, .hovered:hover {
   font-weight: bold;
 }
 
 .disabled {
-  color: var(--lightGrey);
-  cursor: not-allowed;
+  color: var(--darkGrey);
 }
 
 .icon {

@@ -58,7 +58,7 @@
 
 .timePickerInput {
   border: none !important;
-  border-radius: 0;
+  border-radius: var(--borderRadius);
   max-width: 100px;
   padding-left: calc(var(--marginLarge) + var(--marginXSmall));
   margin-right: 1px;
@@ -67,10 +67,6 @@
 .timePickerInput::placeholder {
   color: var(--darkGrey);
   font-style: italic;
-}
-
-.timePickerInputContainer {
-  margin-left: var(--marginSmall);
 }
 
 .timePickerInputContainer::before {
