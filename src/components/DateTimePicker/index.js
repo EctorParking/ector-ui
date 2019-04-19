@@ -241,6 +241,7 @@ class DateTimePicker extends React.PureComponent {
       endHour,
       endMinutes,
     } = this.state;
+    const { texts } = this.props;
 
     return (
       <PickerSuggestions
@@ -286,6 +287,7 @@ class DateTimePicker extends React.PureComponent {
               startHour={startHour}
               endMinutes={endMinutes}
               endHour={endHour}
+              texts={texts}
             />
           )
         }

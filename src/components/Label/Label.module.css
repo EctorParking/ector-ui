@@ -15,42 +15,42 @@
     letter-spacing: 1px;
 }
 
-.deepBlue {
+.deepBlueColor {
     background-color: var(--deepBlue);
 }
 
-.green {
+.greenColor {
     background-color: var(--green);
 }
 
-.red {
+.redColor {
     background-color: var(--red);
 }
 
-.melrose {
+.melroseColor {
     background-color: var(--melrose);
 }
 
-.blue {
+.blueColor {
     background-color: var(--blue);
 }
 
-.lightGrey {
+.lightGreyColor {
     background-color: var(--lightGrey);
 }
 
-.metalGrey {
+.metalGreyColor {
     background-color: var(--metalGrey);
 }
 
-.darkMetalGrey {
+.darkMetalGreyColor {
     background-color: var(--darkMetalGrey);
 }
 
-.aquaHazeGrey {
+.aquaHazeGreyColor {
     background-color: var(--aquaHazeGrey);
 }
 
-.orange {
+.orangeColor {
     background-color: var(--orange);
 }

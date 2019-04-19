@@ -23,9 +23,10 @@ const RewardCard = ({
   editExternalCardClassName,
   fetching,
   className,
+  expandOnSelected,
   ...cardProps
 }) => (
-  <div className={s.card}>
+  <div className={[s.card, className].join(' ')}>
     <div className={s.left}>
       <RewardCardHeader
         texts={texts}
@@ -45,7 +46,7 @@ const RewardCard = ({
     <div className={s.imageContainer}>
       <img
         src={image}
-        className={[s.image, isSelected ? s.imageBig : undefined].join(' ')}
+        className={[s.image, isSelected && expandOnSelected ? s.imageBig : undefined].join(' ')}
         alt=""
       />
     </div>
@@ -63,6 +64,7 @@ RewardCard.propTypes = {
   prefixTestId: PropTypes.string,
   rewardTooltipIcon: PropTypes.string,
   isSelected: PropTypes.bool,
+  expandOnSelected: PropTypes.bool,
   selectedIcon: PropTypes.string,
   isConnected: PropTypes.bool,
   hasExternalCard: PropTypes.bool,
@@ -76,6 +78,7 @@ RewardCard.defaultProps = {
   prefixTestId: '',
   rewardTooltipIcon: 'icon-ec-info',
   isSelected: false,
+  expandOnSelected: false,
   selectedIcon: 'check',
   isConnected: false,
   children: null,
