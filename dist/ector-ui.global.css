@@ -2546,8 +2546,7 @@
 }
 
 .RewardCard-module_imageContainer__ZBjX1 {
-  background-position: right center;
-  background-size: cover;
+  background-size: 100% 100%;
   border-bottom-right-radius: 8px;
   border-top-right-radius: 8px;
   width: 30px;

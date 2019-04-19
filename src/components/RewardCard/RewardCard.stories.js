@@ -51,7 +51,10 @@ storiesOf('RewardCard', module)
       onClickEditExternalCard: action('Edit external card'),
       editExternalCardClassName: '',
       children: (
-        <div>Bonjour, je suis un champ</div>
+        <div>
+          <div>Bonjour, je suis un champ</div>
+          <div>Avec un retour à la ligne</div>
+        </div>
       ),
     };
 
