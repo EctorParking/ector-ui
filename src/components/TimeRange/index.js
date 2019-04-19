@@ -3,19 +3,19 @@ import PropTypes from 'prop-types';
 import s from './TimeRange.module.css';
 import TimeElement from './TimeElement';
 
-const getHoursRange = (start, end) => Array.from(Array(end).keys()).slice(start);
-
-const getMinutesRange = interval => Array
-  .from(Array(60).keys())
-  .filter(nbr => nbr % interval === 0);
+const getRange = (start, end, interval = 1) => (
+  Array.from(Array(end).keys()).slice(start).filter(nbr => nbr % interval === 0)
+);
 
 class TimeRange extends React.PureComponent {
   constructor(props) {
     super(props);
-    const { startHour, endHour, minutesInterval } = props;
+    const {
+      startHour, endHour, minutesInterval, startMinute, endMinute,
+    } = props;
 
-    this.minutesRange = getMinutesRange(minutesInterval);
-    this.hoursRange = getHoursRange(startHour, endHour);
+    this.minutesRange = getRange(startMinute, endMinute, minutesInterval);
+    this.hoursRange = getRange(startHour, endHour);
   }
 
   handleHourSelect = (event) => {
@@ -86,6 +86,8 @@ TimeRange.defaultProps = {
   onSelect: () => null,
   hour: undefined,
   minutes: undefined,
+  startMinute: 0,
+  endMinute: 60,
 };
 
 TimeRange.propTypes = {
@@ -95,6 +97,8 @@ TimeRange.propTypes = {
   onSelect: PropTypes.func,
   minutes: PropTypes.string,
   hour: PropTypes.string,
+  startMinute: PropTypes.number,
+  endMinute: PropTypes.number,
 };
 
 export default TimeRange;

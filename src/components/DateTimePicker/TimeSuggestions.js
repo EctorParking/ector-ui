@@ -5,7 +5,7 @@ import { DefaultTexts, TextsType } from './DateTimePickerTexts';
 import s from './TimeSuggestions.module.css';
 
 const TimeSuggestions = ({
-  className, texts, onSelect, startMinutes, startHour, endMinutes, endHour, containerClassName,
+  className, texts, onSelect, startMinutes, startHour, endMinutes, endHour, containerClassName, fromHourRange, fromMinuteRange, toMinuteRange, toHourRange,
 }) => {
   const onSelectStartTime = (timeUnits, value) => onSelect(
     TimeSuggestions.startTime,
@@ -17,6 +17,10 @@ const TimeSuggestions = ({
     timeUnits,
     value,
   );
+  const [startFromMinuteRange, endFromMinuteRange] = fromMinuteRange;
+  const [startFromHourRange, endFromHourRange] = fromHourRange;
+  const [startToMinuteRange, endToMinuteRange] = toMinuteRange;
+  const [startToHourRange, endToHourRange] = toHourRange;
 
   return (
     <div className={[s.container, className].join(' ')}>
@@ -31,6 +35,10 @@ const TimeSuggestions = ({
           hour={startHour}
           minutes={startMinutes}
           minutesInterval={5}
+          startMinute={startFromMinuteRange}
+          endMinute={endFromMinuteRange}
+          startHour={startFromHourRange}
+          endHour={endFromHourRange}
         />
       </div>
       <div className={[s.timeContainer, containerClassName].join(' ')}>
@@ -44,6 +52,10 @@ const TimeSuggestions = ({
           hour={endHour}
           minutes={endMinutes}
           minutesInterval={5}
+          startMinute={startToMinuteRange}
+          endMinute={endToMinuteRange}
+          startHour={startToHourRange}
+          endHour={endToHourRange}
         />
       </div>
     </div>
@@ -59,6 +71,10 @@ TimeSuggestions.defaultProps = {
   endMinutes: undefined,
   endHour: undefined,
   containerClassName: undefined,
+  fromHourRange: [7, 24],
+  fromMinuteRange: [0, 60],
+  toHourRange: [7, 24],
+  toMinuteRange: [0, 60],
 };
 
 TimeSuggestions.propTypes = {
@@ -70,6 +86,10 @@ TimeSuggestions.propTypes = {
   endMinutes: PropTypes.string,
   endHour: PropTypes.string,
   texts: TextsType,
+  fromHourRange: PropTypes.arrayOf(PropTypes.number),
+  toHourRange: PropTypes.arrayOf(PropTypes.number),
+  fromMinuteRange: PropTypes.arrayOf(PropTypes.number),
+  toMinuteRange: PropTypes.arrayOf(PropTypes.number),
 };
 
 TimeSuggestions.startTime = 'startTime';
