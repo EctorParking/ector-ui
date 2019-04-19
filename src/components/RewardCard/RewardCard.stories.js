@@ -17,6 +17,7 @@ const options = [
 ];
 const rewardValue = '+4.60€';
 
+
 storiesOf('RewardCard', module)
 
   .addParameters({
@@ -58,5 +59,5 @@ storiesOf('RewardCard', module)
       ),
     };
 
-    return (<RewardCard {...props} />);
+    return <RewardCard {...props} />;
   });

@@ -43,7 +43,7 @@ const RewardCard = ({
       )}
     </div>
     <div
-      className={[s.imageContainer, isSelected ? s.imageContainerBig : undefined].join(' ')}
+      className={[s.imageContainer, isSelected && children ? s.imageContainerBig : undefined].join(' ')}
       style={{ backgroundImage: `url(${image})` }}
     />
   </div>
