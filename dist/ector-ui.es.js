@@ -5252,9 +5252,11 @@ function (_React$PureComponent) {
       var fromZoneProp = nextProps.fromZone,
           toZoneProp = nextProps.toZone,
           fromZoneSuggestions = nextProps.fromZoneSuggestions,
-          toZoneSuggestions = nextProps.toZoneSuggestions;
+          toZoneSuggestions = nextProps.toZoneSuggestions,
+          propSplit = nextProps.split;
       var fromZoneValue = prevState.fromZoneValue,
-          toZoneValue = prevState.toZoneValue;
+          toZoneValue = prevState.toZoneValue,
+          split = prevState.split;
 
       if (!fromZoneValue && fromZoneProp && fromZoneSuggestions.length) {
         var fromZone = fromZoneSuggestions.find(function (suggestion) {
@@ -5270,7 +5272,20 @@ function (_React$PureComponent) {
         toZoneValue = toZone ? toZone.name : '';
       }
 
+      if (typeof propSplit !== 'undefined') {
+        split = propSplit;
+      }
+
+      if (toZoneValue && !toZoneProp) {
+        toZoneValue = '';
+      }
+
+      if (fromZoneValue && !fromZoneProp) {
+        fromZoneValue = '';
+      }
+
       return {
+        split: split,
         fromZoneValue: fromZoneValue,
         toZoneValue: toZoneValue,
         fromZoneSuggestions: getZoneSuggestionsFromValue(fromZoneSuggestions, fromZoneValue),
@@ -5628,7 +5643,8 @@ ZonesPicker.defaultProps = {
   error: '',
   onSplitSuggestions: function onSplitSuggestions() {
     return null;
-  }
+  },
+  split: undefined
 };
 ZonesPicker.propTypes = {
   fromZoneSuggestions: PropTypes$1.arrayOf(Type),
@@ -5639,7 +5655,8 @@ ZonesPicker.propTypes = {
   texts: TextsType$6,
   className: PropTypes$1.string,
   error: PropTypes$1.string,
-  onSplitSuggestions: PropTypes$1.func
+  onSplitSuggestions: PropTypes$1.func,
+  split: PropTypes$1.bool
 };
 ZonesPicker.fromZone = 'from';
 ZonesPicker.toZone = 'to';
