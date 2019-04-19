@@ -10,7 +10,7 @@
   flex-direction: column;
   overflow: scroll;
   position: relative;
-  padding: 0 5px;
+  margin: 0 var(--marginXSmall);
   &::-webkit-scrollbar {
      display: none;
   }

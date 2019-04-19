@@ -11,7 +11,7 @@ import TimeSuggestions from './TimeSuggestions';
 import iconCalendar from '../../assets/images/calendar.svg';
 import iconClock from '../../assets/images/clock.svg';
 
-const now = moment();
+let now;
 
 class DateTimePicker extends React.PureComponent {
   static startDate = 'startDate';
@@ -39,6 +39,7 @@ class DateTimePicker extends React.PureComponent {
       visiblePicker: DateTimePicker.datePicker,
       showTimeInputs: false,
     };
+    now = moment();
   }
 
   static getDerivedStateFromProps(props, state) {
