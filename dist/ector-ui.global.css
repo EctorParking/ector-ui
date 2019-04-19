@@ -2545,17 +2545,15 @@
           flex-direction: column;
 }
 
-.RewardCard-module_image__1fOt3 {
-  border-top-right-radius: 8px;
+.RewardCard-module_imageContainer__ZBjX1 {
+  background-size: 100% 100%;
   border-bottom-right-radius: 8px;
-  display: block;
-  height: 50px;
+  border-top-right-radius: 8px;
   width: 30px;
 }
 
-.RewardCard-module_imageBig__RYB5l {
-  height: auto;
-  width: 62px;
+.RewardCard-module_imageContainerBig__7BCdx {
+  width: 50px;
 }
 
 .RewardCardHeader-module_header__16x0N {
@@ -2608,6 +2606,10 @@
       -ms-flex-pack: center;
           justify-content: center;
   padding: 10px;
+}
+
+.RewardCardContent-module_content__2HvzU:empty {
+  display: none;
 }
 
 .RoundedButton-module_buttonContainer__1mUSj {

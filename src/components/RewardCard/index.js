@@ -25,7 +25,7 @@ const RewardCard = ({
   className,
   ...cardProps
 }) => (
-  <div className={s.card}>
+  <div className={[s.card, className].join(' ')}>
     <div className={s.left}>
       <RewardCardHeader
         texts={texts}
@@ -42,13 +42,10 @@ const RewardCard = ({
         </RewardCardContent>
       )}
     </div>
-    <div className={s.imageContainer}>
-      <img
-        src={image}
-        className={[s.image, isSelected ? s.imageBig : undefined].join(' ')}
-        alt=""
-      />
-    </div>
+    <div
+      className={[s.imageContainer, isSelected ? s.imageContainerBig : undefined].join(' ')}
+      style={{ backgroundImage: `url(${image})` }}
+    />
   </div>
 );
 
