@@ -6009,7 +6009,7 @@ function (_React$PureComponent) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "isDayBlocked", function (day) {
-      return day.isBefore(now);
+      return day.startOf('day').isBefore(now.startOf('day'));
     });
 
     _defineProperty(_assertThisInitialized(_this), "isDayHighlighted", function (day) {
