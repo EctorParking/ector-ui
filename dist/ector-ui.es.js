@@ -4427,17 +4427,20 @@ var s$V = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a
 styleInject(css$V);
 
 var RewardCardContent = function RewardCardContent(_ref) {
-  var children = _ref.children;
+  var children = _ref.children,
+      className = _ref.className;
   return React__default.createElement("div", {
-    className: s$V.content
+    className: [s$V.content, className].join(' ')
   }, children);
 };
 
 RewardCardContent.propTypes = {
-  children: PropTypes$1.node
+  children: PropTypes$1.node,
+  className: PropTypes$1.node
 };
 RewardCardContent.defaultProps = {
-  children: null
+  children: null,
+  className: undefined
 };
 
 var RewardCard = function RewardCard(_ref) {
@@ -4458,7 +4461,8 @@ var RewardCard = function RewardCard(_ref) {
       editExternalCardClassName = _ref.editExternalCardClassName,
       fetching = _ref.fetching,
       className = _ref.className,
-      cardProps = _objectWithoutProperties(_ref, ["name", "image", "rewardValue", "rewardTooltipIcon", "onRadioButtonChange", "prefixTestId", "isSelected", "selectedIcon", "isConnected", "texts", "hasExternalCard", "children", "isExternalCardUpdatable", "onClickEditExternalCard", "editExternalCardClassName", "fetching", "className"]);
+      contentClassName = _ref.contentClassName,
+      cardProps = _objectWithoutProperties(_ref, ["name", "image", "rewardValue", "rewardTooltipIcon", "onRadioButtonChange", "prefixTestId", "isSelected", "selectedIcon", "isConnected", "texts", "hasExternalCard", "children", "isExternalCardUpdatable", "onClickEditExternalCard", "editExternalCardClassName", "fetching", "className", "contentClassName"]);
 
   return React__default.createElement("div", {
     className: [s$T.card, className].join(' ')
@@ -4471,7 +4475,9 @@ var RewardCard = function RewardCard(_ref) {
     name: name,
     rewardValue: rewardValue,
     rewardTooltipIcon: rewardTooltipIcon
-  }), isSelected && React__default.createElement(RewardCardContent, null, children)), React__default.createElement("div", {
+  }), isSelected && React__default.createElement(RewardCardContent, {
+    className: contentClassName
+  }, children)), React__default.createElement("div", {
     className: [s$T.imageContainer, isSelected && children ? s$T.imageContainerBig : undefined].join(' '),
     style: {
       backgroundImage: "url(".concat(image, ")")
@@ -4496,7 +4502,8 @@ RewardCard.propTypes = {
   isExternalCardUpdatable: PropTypes$1.bool,
   fetching: PropTypes$1.bool,
   editExternalCardClassName: PropTypes$1.string,
-  className: PropTypes$1.string
+  className: PropTypes$1.string,
+  contentClassName: PropTypes$1.string
 };
 RewardCard.defaultProps = {
   prefixTestId: '',
@@ -4510,6 +4517,7 @@ RewardCard.defaultProps = {
   fetching: false,
   editExternalCardClassName: '',
   className: undefined,
+  contentClassName: undefined,
   onClickEditExternalCard: undefined
 };
 

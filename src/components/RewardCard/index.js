@@ -23,6 +23,7 @@ const RewardCard = ({
   editExternalCardClassName,
   fetching,
   className,
+  contentClassName,
   ...cardProps
 }) => (
   <div className={[s.card, className].join(' ')}>
@@ -37,7 +38,7 @@ const RewardCard = ({
       />
 
       {isSelected && (
-        <RewardCardContent>
+        <RewardCardContent className={contentClassName}>
           {children}
         </RewardCardContent>
       )}
@@ -67,6 +68,7 @@ RewardCard.propTypes = {
   fetching: PropTypes.bool,
   editExternalCardClassName: PropTypes.string,
   className: PropTypes.string,
+  contentClassName: PropTypes.string,
 };
 
 RewardCard.defaultProps = {
@@ -81,6 +83,7 @@ RewardCard.defaultProps = {
   fetching: false,
   editExternalCardClassName: '',
   className: undefined,
+  contentClassName: undefined,
   onClickEditExternalCard: undefined,
 };
 
