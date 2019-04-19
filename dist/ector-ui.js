@@ -6082,6 +6082,7 @@ function (_React$PureComponent) {
           startMinutes = _this$state5.startMinutes,
           endHour = _this$state5.endHour,
           endMinutes = _this$state5.endMinutes;
+      var texts = _this.props.texts;
       return React.createElement(PickerSuggestions, _extends({}, rest, {
         visible: visible,
         className: [s$12.pickerSuggestions, className].join(' '),
@@ -6112,7 +6113,8 @@ function (_React$PureComponent) {
         startMinutes: startMinutes,
         startHour: startHour,
         endMinutes: endMinutes,
-        endHour: endHour
+        endHour: endHour,
+        texts: texts
       }));
     });
 
