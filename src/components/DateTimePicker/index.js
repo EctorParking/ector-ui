@@ -125,7 +125,7 @@ class DateTimePicker extends React.PureComponent {
     }
   };
 
-  isDayBlocked = day => day.isBefore(now);
+  isDayBlocked = day => day.startOf('day').isBefore(now.startOf('day'));
 
   isDayHighlighted = (day) => {
     const { startDate, endDate } = this.state;
