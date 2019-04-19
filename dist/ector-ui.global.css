@@ -3264,7 +3264,7 @@
   width: 610px !important;
   margin-left: -300px;
   left: 50%;
-  height: 230px !important
+  height: 265px !important
 }
 
 .DateTimePicker-module_pickerSuggestions__38iqg:before {
@@ -3369,33 +3369,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  position: relative
-}
-
-.DateTimePicker-module_timeSuggestions__3aCiQ:before, .DateTimePicker-module_timeSuggestions__3aCiQ:after {
-  content: '';
-  height: 20px;
-  left: 0;
-  pointer-events: none;
-  position: absolute;
-  width: 100%;
-  z-index: 3;
-}
-
-.DateTimePicker-module_timeSuggestions__3aCiQ:before {
-  background: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(rgba(255, 255, 255, .1)));
-  background: linear-gradient(to bottom, #fefefe, rgba(255, 255, 255, .1));
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  top: 0;
-}
-
-.DateTimePicker-module_timeSuggestions__3aCiQ:after {
-  background: -webkit-gradient(linear, left bottom, left top, from(#fefefe), to(rgba(255, 255, 255, .1)));
-  background: linear-gradient(to top, #fefefe, rgba(255, 255, 255, .1));
-  bottom: 0;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  position: relative;
 }
 
 .DateTimePicker-module_timeSuggestionsContainer__3Pe8K:nth-child(1) {
@@ -3502,7 +3476,7 @@
           flex-direction: column;
   overflow: scroll;
   position: relative;
-  padding: 0 5px
+  margin: 0 5px
 }
 
 .TimeRange-module_hours__9eQEI::-webkit-scrollbar, .TimeRange-module_minutes__1mA4X::-webkit-scrollbar {

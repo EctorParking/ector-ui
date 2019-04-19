@@ -5749,7 +5749,7 @@ Icon.propTypes = {
   iconClassName: PropTypes$1.string
 };
 
-var css$12 = ".DateTimePicker-module_calendar__1m3vk {\n  position: relative;\n  width: 100%;\n  height: 300px;\n}\n\n.DateTimePicker-module_calendarArrow__SvtwN {\n  display: none;\n}\n\n.DateTimePicker-module_datePickerPopper__2V2oe {\n  -webkit-transform: none !important;\n          transform: none !important;\n  width: 100%;\n  margin-top: 0 !important;\n}\n\n.DateTimePicker-module_hidden__OvFBm {\n  display: none !important;\n}\n\n.DateTimePicker-module_pickerSuggestions__38iqg {\n  width: 610px !important;\n  margin-left: -300px;\n  left: 50%;\n  height: 230px !important\n}\n\n.DateTimePicker-module_pickerSuggestions__38iqg:before {\n  display: none;\n}\n\n.DateTimePicker-module_suggestionsArrow__2RcKh {\n  margin-left: -9px;\n}\n\n.DateTimePicker-module_picker__3d7nO {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  height: auto;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP {\n  background: none;\n  padding-left: 40px;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.datePickerInput::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.datePickerInput::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_fixedWidthDateInput__3lrKo {\n  min-width: 160px;\n  width: 160px;\n  max-width: 160px;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU {\n  border: none !important;\n  border-radius: 8px;\n  max-width: 100px;\n  padding-left: 35px;\n  margin-right: 1px;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.timePickerInput::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.timePickerInput::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInputContainer__ROeTv::before {\n  background-color: rgba(191, 196, 212, .52);\n  content: '';\n  height: 20px;\n  margin-top: -10px;\n  position: absolute;\n  top: 50%;\n  width: 1px;\n}\n\n.DateTimePicker-module_timeSuggestions__3aCiQ {\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  position: relative\n}\n\n.DateTimePicker-module_timeSuggestions__3aCiQ:before, .DateTimePicker-module_timeSuggestions__3aCiQ:after {\n  content: '';\n  height: 20px;\n  left: 0;\n  pointer-events: none;\n  position: absolute;\n  width: 100%;\n  z-index: 3;\n}\n\n.DateTimePicker-module_timeSuggestions__3aCiQ:before {\n  background: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(rgba(255, 255, 255, .1)));\n  background: linear-gradient(to bottom, #fefefe, rgba(255, 255, 255, .1));\n  border-top-left-radius: 5px;\n  border-top-right-radius: 5px;\n  top: 0;\n}\n\n.DateTimePicker-module_timeSuggestions__3aCiQ:after {\n  background: -webkit-gradient(linear, left bottom, left top, from(#fefefe), to(rgba(255, 255, 255, .1)));\n  background: linear-gradient(to top, #fefefe, rgba(255, 255, 255, .1));\n  bottom: 0;\n  border-bottom-left-radius: 5px;\n  border-bottom-right-radius: 5px;\n}\n\n.DateTimePicker-module_timeSuggestionsContainer__3Pe8K:nth-child(1) {\n  width: 300px;\n  min-width: 300px;\n}\n\n.DateTimePicker-module_timeSuggestionsContainer__3Pe8K {\n  width: 100%;\n}\n\n.DateTimePicker-module_inputIcon__178Nw {\n  font-size: 19.2px;\n  font-size: 19.2px;\n  font-size: 1.2rem;\n  left: 10px;\n}\n\n.DateTimePicker-module_inputContainer__1FIAJ {\n  padding: 0;\n}\n\n.DateTimePicker-module_splitInputContainer__1fsjs {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  width: 50%\n}\n\n.DateTimePicker-module_splitInputContainer__1fsjs:first-child {\n  border-right: 1px solid rgba(191, 196, 212, .52);\n}\n\n.DateTimePicker-module_month__2AwNj {\n  color: #163457;\n}\n\n.DateTimePicker-module_hr__1p2EJ {\n  height: 85%;\n  width: 1px;\n  position: absolute;\n  left: 300px;\n  background-color: rgba(191, 196, 212, .52);\n  top: 7.5%;\n}\n";
+var css$12 = ".DateTimePicker-module_calendar__1m3vk {\n  position: relative;\n  width: 100%;\n  height: 300px;\n}\n\n.DateTimePicker-module_calendarArrow__SvtwN {\n  display: none;\n}\n\n.DateTimePicker-module_datePickerPopper__2V2oe {\n  -webkit-transform: none !important;\n          transform: none !important;\n  width: 100%;\n  margin-top: 0 !important;\n}\n\n.DateTimePicker-module_hidden__OvFBm {\n  display: none !important;\n}\n\n.DateTimePicker-module_pickerSuggestions__38iqg {\n  width: 610px !important;\n  margin-left: -300px;\n  left: 50%;\n  height: 265px !important\n}\n\n.DateTimePicker-module_pickerSuggestions__38iqg:before {\n  display: none;\n}\n\n.DateTimePicker-module_suggestionsArrow__2RcKh {\n  margin-left: -9px;\n}\n\n.DateTimePicker-module_picker__3d7nO {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  height: auto;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP {\n  background: none;\n  padding-left: 40px;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.datePickerInput::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.datePickerInput::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_fixedWidthDateInput__3lrKo {\n  min-width: 160px;\n  width: 160px;\n  max-width: 160px;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU {\n  border: none !important;\n  border-radius: 8px;\n  max-width: 100px;\n  padding-left: 35px;\n  margin-right: 1px;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.timePickerInput::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.timePickerInput::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInputContainer__ROeTv::before {\n  background-color: rgba(191, 196, 212, .52);\n  content: '';\n  height: 20px;\n  margin-top: -10px;\n  position: absolute;\n  top: 50%;\n  width: 1px;\n}\n\n.DateTimePicker-module_timeSuggestions__3aCiQ {\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  position: relative;\n}\n\n.DateTimePicker-module_timeSuggestionsContainer__3Pe8K:nth-child(1) {\n  width: 300px;\n  min-width: 300px;\n}\n\n.DateTimePicker-module_timeSuggestionsContainer__3Pe8K {\n  width: 100%;\n}\n\n.DateTimePicker-module_inputIcon__178Nw {\n  font-size: 19.2px;\n  font-size: 19.2px;\n  font-size: 1.2rem;\n  left: 10px;\n}\n\n.DateTimePicker-module_inputContainer__1FIAJ {\n  padding: 0;\n}\n\n.DateTimePicker-module_splitInputContainer__1fsjs {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  width: 50%\n}\n\n.DateTimePicker-module_splitInputContainer__1fsjs:first-child {\n  border-right: 1px solid rgba(191, 196, 212, .52);\n}\n\n.DateTimePicker-module_month__2AwNj {\n  color: #163457;\n}\n\n.DateTimePicker-module_hr__1p2EJ {\n  height: 85%;\n  width: 1px;\n  position: absolute;\n  left: 300px;\n  background-color: rgba(191, 196, 212, .52);\n  top: 7.5%;\n}\n";
 var s$12 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","calendar":"DateTimePicker-module_calendar__1m3vk","calendarArrow":"DateTimePicker-module_calendarArrow__SvtwN","datePickerPopper":"DateTimePicker-module_datePickerPopper__2V2oe","hidden":"DateTimePicker-module_hidden__OvFBm","pickerSuggestions":"DateTimePicker-module_pickerSuggestions__38iqg","suggestionsArrow":"DateTimePicker-module_suggestionsArrow__2RcKh","picker":"DateTimePicker-module_picker__3d7nO","datePickerInput":"DateTimePicker-module_datePickerInput__1JwcP","fixedWidthDateInput":"DateTimePicker-module_fixedWidthDateInput__3lrKo","timePickerInput":"DateTimePicker-module_timePickerInput__1vkhU","timePickerInputContainer":"DateTimePicker-module_timePickerInputContainer__ROeTv","timeSuggestions":"DateTimePicker-module_timeSuggestions__3aCiQ","timeSuggestionsContainer":"DateTimePicker-module_timeSuggestionsContainer__3Pe8K","inputIcon":"DateTimePicker-module_inputIcon__178Nw","inputContainer":"DateTimePicker-module_inputContainer__1FIAJ","splitInputContainer":"DateTimePicker-module_splitInputContainer__1fsjs","month":"DateTimePicker-module_month__2AwNj","hr":"DateTimePicker-module_hr__1p2EJ"};
 styleInject(css$12);
 
@@ -5788,7 +5788,11 @@ var TimeSuggestions = function TimeSuggestions(_ref) {
       startHour = _ref.startHour,
       endMinutes = _ref.endMinutes,
       endHour = _ref.endHour,
-      containerClassName = _ref.containerClassName;
+      containerClassName = _ref.containerClassName,
+      fromHourRange = _ref.fromHourRange,
+      fromMinuteRange = _ref.fromMinuteRange,
+      toMinuteRange = _ref.toMinuteRange,
+      toHourRange = _ref.toHourRange;
 
   var onSelectStartTime = function onSelectStartTime(timeUnits, value) {
     return onSelect(TimeSuggestions.startTime, timeUnits, value);
@@ -5797,6 +5801,22 @@ var TimeSuggestions = function TimeSuggestions(_ref) {
   var onSelectEndTime = function onSelectEndTime(timeUnits, value) {
     return onSelect(TimeSuggestions.endTime, timeUnits, value);
   };
+
+  var _fromMinuteRange = _slicedToArray(fromMinuteRange, 2),
+      startFromMinuteRange = _fromMinuteRange[0],
+      endFromMinuteRange = _fromMinuteRange[1];
+
+  var _fromHourRange = _slicedToArray(fromHourRange, 2),
+      startFromHourRange = _fromHourRange[0],
+      endFromHourRange = _fromHourRange[1];
+
+  var _toMinuteRange = _slicedToArray(toMinuteRange, 2),
+      startToMinuteRange = _toMinuteRange[0],
+      endToMinuteRange = _toMinuteRange[1];
+
+  var _toHourRange = _slicedToArray(toHourRange, 2),
+      startToHourRange = _toHourRange[0],
+      endToHourRange = _toHourRange[1];
 
   return React__default.createElement("div", {
     className: [s$13.container, className].join(' ')
@@ -5810,7 +5830,11 @@ var TimeSuggestions = function TimeSuggestions(_ref) {
     onSelect: onSelectStartTime,
     hour: startHour,
     minutes: startMinutes,
-    minutesInterval: 5
+    minutesInterval: 5,
+    startMinute: startFromMinuteRange,
+    endMinute: endFromMinuteRange,
+    startHour: startFromHourRange,
+    endHour: endFromHourRange
   })), React__default.createElement("div", {
     className: [s$13.timeContainer, containerClassName].join(' ')
   }, React__default.createElement("div", {
@@ -5821,7 +5845,11 @@ var TimeSuggestions = function TimeSuggestions(_ref) {
     onSelect: onSelectEndTime,
     hour: endHour,
     minutes: endMinutes,
-    minutesInterval: 5
+    minutesInterval: 5,
+    startMinute: startToMinuteRange,
+    endMinute: endToMinuteRange,
+    startHour: startToHourRange,
+    endHour: endToHourRange
   })));
 };
 
@@ -5835,7 +5863,11 @@ TimeSuggestions.defaultProps = {
   startHour: undefined,
   endMinutes: undefined,
   endHour: undefined,
-  containerClassName: undefined
+  containerClassName: undefined,
+  fromHourRange: [7, 24],
+  fromMinuteRange: [0, 60],
+  toHourRange: [7, 24],
+  toMinuteRange: [0, 60]
 };
 TimeSuggestions.propTypes = {
   className: PropTypes$1.string,
@@ -5845,7 +5877,11 @@ TimeSuggestions.propTypes = {
   startHour: PropTypes$1.string,
   endMinutes: PropTypes$1.string,
   endHour: PropTypes$1.string,
-  texts: TextsType$7
+  texts: TextsType$7,
+  fromHourRange: PropTypes$1.arrayOf(PropTypes$1.number),
+  toHourRange: PropTypes$1.arrayOf(PropTypes$1.number),
+  fromMinuteRange: PropTypes$1.arrayOf(PropTypes$1.number),
+  toMinuteRange: PropTypes$1.arrayOf(PropTypes$1.number)
 };
 TimeSuggestions.startTime = 'startTime';
 TimeSuggestions.endTime = 'endTime';
@@ -5871,7 +5907,7 @@ React__default.createElement("g", {
 
 var iconClock = "data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20width%3D%2216px%22%20height%3D%2216px%22%20viewBox%3D%220%200%2016%2016%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%20%20%20%20%20%20%20%20%3Ctitle%3Eclock%3C%2Ftitle%3E%20%20%20%20%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%20%20%20%20%3Cg%20id%3D%22Symbols%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%20%20%20%20%20%20%20%20%3Cg%20id%3D%22filters%22%20transform%3D%22translate%28-883.000000%2C%20-18.000000%29%22%20stroke%3D%22%23BFC4D4%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20transform%3D%22translate%281.000000%2C%200.000000%29%22%20id%3D%22date%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20transform%3D%22translate%28509.103631%2C%200.010000%29%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20id%3D%22retour%22%20transform%3D%22translate%28237.396369%2C%2015.000000%29%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20id%3D%22clock%22%20transform%3D%22translate%28136.896369%2C%204.000000%29%22%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ccircle%20id%3D%22Oval%22%20cx%3D%226.76489258%22%20cy%3D%226.76489258%22%20r%3D%226.76489258%22%3E%3C%2Fcircle%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M6.76489258%2C2.3962294%20L6.76489258%2C6.76489258%20L6.76489258%2C2.3962294%20Z%20M9.71221665%2C8.96526185%20L6.76489258%2C6.76489258%20L9.71221665%2C8.96526185%20Z%22%20id%3D%22Combined-Shape%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3C%2Fpath%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%20%20%20%20%3C%2Fg%3E%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E";
 
-var now = moment();
+var now;
 
 var DateTimePicker =
 /*#__PURE__*/
@@ -6123,6 +6159,7 @@ function (_React$PureComponent) {
       visiblePicker: DateTimePicker.datePicker,
       showTimeInputs: false
     };
+    now = moment();
     return _this;
   }
 
@@ -6258,7 +6295,7 @@ DateTimePicker.defaultProps = {
   }
 };
 
-var css$14 = ".TimeRange-module_container__qP7nK {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  height: 100%;\n}\n\n.TimeRange-module_hours__9eQEI, .TimeRange-module_minutes__1mA4X {\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  overflow: scroll;\n  position: relative;\n  padding: 0 5px\n}\n\n.TimeRange-module_hours__9eQEI::-webkit-scrollbar, .TimeRange-module_minutes__1mA4X::-webkit-scrollbar {\n  display: none;\n}\n\n.TimeRange-module_hour__XiHg6, .TimeRange-module_minute__32J9f {\n  min-width: 20px;\n  padding: 5px 10px;\n  text-align: center\n}\n\n.TimeRange-module_hour__XiHg6:hover, .TimeRange-module_hour__XiHg6.TimeRange-module_selected__1EEqQ, .TimeRange-module_minute__32J9f:hover, .TimeRange-module_minute__32J9f.TimeRange-module_selected__1EEqQ {\n  border-radius: 5px;\n  cursor: pointer;\n  font-weight: bold;\n}\n\n.TimeRange-module_hour__XiHg6:hover, .TimeRange-module_minute__32J9f:hover {\n  background-color: rgb(255, 245, 204);\n}\n\n.TimeRange-module_hour__XiHg6.TimeRange-module_selected__1EEqQ, .TimeRange-module_minute__32J9f.TimeRange-module_selected__1EEqQ {\n  background-color: #ffcd02;\n}\n\n.TimeRange-module_hour__XiHg6.TimeRange-module_disabled__TxWjV, .TimeRange-module_minute__32J9f.TimeRange-module_disabled__TxWjV {\n  color: #939baa;\n}\n";
+var css$14 = ".TimeRange-module_container__qP7nK {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  height: 100%;\n}\n\n.TimeRange-module_hours__9eQEI, .TimeRange-module_minutes__1mA4X {\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  overflow: scroll;\n  position: relative;\n  margin: 0 5px\n}\n\n.TimeRange-module_hours__9eQEI::-webkit-scrollbar, .TimeRange-module_minutes__1mA4X::-webkit-scrollbar {\n  display: none;\n}\n\n.TimeRange-module_hour__XiHg6, .TimeRange-module_minute__32J9f {\n  min-width: 20px;\n  padding: 5px 10px;\n  text-align: center\n}\n\n.TimeRange-module_hour__XiHg6:hover, .TimeRange-module_hour__XiHg6.TimeRange-module_selected__1EEqQ, .TimeRange-module_minute__32J9f:hover, .TimeRange-module_minute__32J9f.TimeRange-module_selected__1EEqQ {\n  border-radius: 5px;\n  cursor: pointer;\n  font-weight: bold;\n}\n\n.TimeRange-module_hour__XiHg6:hover, .TimeRange-module_minute__32J9f:hover {\n  background-color: rgb(255, 245, 204);\n}\n\n.TimeRange-module_hour__XiHg6.TimeRange-module_selected__1EEqQ, .TimeRange-module_minute__32J9f.TimeRange-module_selected__1EEqQ {\n  background-color: #ffcd02;\n}\n\n.TimeRange-module_hour__XiHg6.TimeRange-module_disabled__TxWjV, .TimeRange-module_minute__32J9f.TimeRange-module_disabled__TxWjV {\n  color: #939baa;\n}\n";
 var s$14 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","container":"TimeRange-module_container__qP7nK","hours":"TimeRange-module_hours__9eQEI","minutes":"TimeRange-module_minutes__1mA4X","hour":"TimeRange-module_hour__XiHg6","minute":"TimeRange-module_minute__32J9f","selected":"TimeRange-module_selected__1EEqQ","disabled":"TimeRange-module_disabled__TxWjV"};
 styleInject(css$14);
 
@@ -6293,12 +6330,9 @@ TimeElement.propTypes = {
   disabled: PropTypes$1.bool.isRequired
 };
 
-var getHoursRange = function getHoursRange(start, end) {
-  return Array.from(Array(end).keys()).slice(start);
-};
-
-var getMinutesRange = function getMinutesRange(interval) {
-  return Array.from(Array(60).keys()).filter(function (nbr) {
+var getRange = function getRange(start, end) {
+  var interval = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
+  return Array.from(Array(end).keys()).slice(start).filter(function (nbr) {
     return nbr % interval === 0;
   });
 };
@@ -6353,9 +6387,11 @@ function (_React$PureComponent) {
 
     var startHour = props.startHour,
         endHour = props.endHour,
-        minutesInterval = props.minutesInterval;
-    _this.minutesRange = getMinutesRange(minutesInterval);
-    _this.hoursRange = getHoursRange(startHour, endHour);
+        minutesInterval = props.minutesInterval,
+        startMinute = props.startMinute,
+        endMinute = props.endMinute;
+    _this.minutesRange = getRange(startMinute, endMinute, minutesInterval);
+    _this.hoursRange = getRange(startHour, endHour);
     return _this;
   }
 
@@ -6385,7 +6421,9 @@ TimeRange.defaultProps = {
     return null;
   },
   hour: undefined,
-  minutes: undefined
+  minutes: undefined,
+  startMinute: 0,
+  endMinute: 60
 };
 TimeRange.propTypes = {
   startHour: PropTypes$1.number,
@@ -6393,7 +6431,9 @@ TimeRange.propTypes = {
   minutesInterval: PropTypes$1.number,
   onSelect: PropTypes$1.func,
   minutes: PropTypes$1.string,
-  hour: PropTypes$1.string
+  hour: PropTypes$1.string,
+  startMinute: PropTypes$1.number,
+  endMinute: PropTypes$1.number
 };
 
 var css$15 = ".FlightInformationForm-module_card__3HVvP {\n    width: 650px;\n}\n\n.FlightInformationForm-module_contentCard__2iuCz {}\n\n.FlightInformationForm-module_formContainer__38_9v {\n    margin-bottom: 20px;\n}\n\n.FlightInformationForm-module_title__3yTDe {\n    margin: 0;\n    font-weight: 300;\n    color: #32a0c5;\n}\n\n.FlightInformationForm-module_firstColumn__3dXcq {\n    padding-right: 20px;\n}\n\n.FlightInformationForm-module_secondColumn__1tg-R {\n    padding-left: 20px;\n}\n\n.FlightInformationForm-module_halfWidth__3iWMs {\n    width: 50%;\n}\n\n.FlightInformationForm-module_row__2j-tW {\n    margin-top: 10px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n}\n\n.FlightInformationForm-module_noMargin__DF7_J {\n    margin: 0;\n}\n\n.FlightInformationForm-module_input__1QJpa {\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n}\n\n.FlightInformationForm-module_select__1KZ8b {\n    margin-top: 0;\n}\n\n.FlightInformationForm-module_defaultOption__MJRT6 {\n    color: #d5d6d7;\n}\n\n.FlightInformationForm-module_actionLink__nzpW1 {\n    margin-top: 5px;\n}\n\n.FlightInformationForm-module_flexStart__3he4R {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: start;\n        -ms-flex-pack: start;\n            justify-content: flex-start;\n}\n\n.FlightInformationForm-module_flexEnd__f47Mt {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: end;\n        -ms-flex-pack: end;\n            justify-content: flex-end;\n}\n\n.FlightInformationForm-module_description__38HJs {\n    margin-top: 10px;\n}\n\n@media (max-width: 1130px) {\n    .FlightInformationForm-module_card__3HVvP {\n        width: -webkit-min-content;\n        width: -moz-min-content;\n        width: min-content;\n    }\n    .FlightInformationForm-module_input__1QJpa {\n        min-width: 275px;\n        max-width: 275px;\n        margin: 5px 10px 0 10px;\n    }\n    .FlightInformationForm-module_firstColumn__3dXcq, .FlightInformationForm-module_secondColumn__1tg-R {\n        padding: 0;\n    }\n    .FlightInformationForm-module_actionLink__nzpW1, .FlightInformationForm-module_description__38HJs {\n        margin-right: 10px;\n        margin-left: 10px;\n    }\n    .FlightInformationForm-module_title__3yTDe {\n        margin-left: 10px;\n    }\n    .FlightInformationForm-module_row__2j-tW {\n        -ms-flex-wrap: wrap;\n            flex-wrap: wrap;\n    }\n}\n\n@media (max-width: 825px) {\n    .FlightInformationForm-module_card__3HVvP {\n        width: 100%;\n    }\n    .FlightInformationForm-module_input__1QJpa {\n        max-width: none;\n    }\n\n}\n\n@media (max-width: 480px) {\n    .FlightInformationForm-module_card__3HVvP {\n        width: 100%;\n    }\n    .FlightInformationForm-module_contentCard__2iuCz {\n        padding: 20px;\n    }\n    .FlightInformationForm-module_halfWidth__3iWMs, .FlightInformationForm-module_input__1QJpa {\n        width: 100%;\n    }\n    .FlightInformationForm-module_input__1QJpa {\n        -webkit-box-flex: 0;\n            -ms-flex: none;\n                flex: none;\n        margin: 5px 0 0 0;\n    }\n    .FlightInformationForm-module_title__3yTDe, .FlightInformationForm-module_actionLink__nzpW1 {\n        margin: 0;\n    }\n    .FlightInformationForm-module_row__2j-tW {\n        margin: 0;\n        -ms-flex-wrap: wrap;\n            flex-wrap: wrap;\n    }\n    .FlightInformationForm-module_firstColumn__3dXcq, .FlightInformationForm-module_secondColumn__1tg-R {\n        padding: 0;\n    }\n    .FlightInformationForm-module_title__3yTDe {\n        font-size: 22px;\n    }\n    .FlightInformationForm-module_description__38HJs {\n        margin: 15px 0;\n    }\n}\n";
