@@ -10,7 +10,7 @@ const Label = ({
   color,
 }) => (
   <div
-    className={[s.labelContainer, className, s[color]].join(' ')}
+    className={[s.labelContainer, s[`${color}Color`], className].join(' ')}
   >
     <span className={`icon-ec-${logo}`} />
     <span className={s.text}>{label}</span>
