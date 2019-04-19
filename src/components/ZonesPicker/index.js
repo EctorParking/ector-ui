@@ -60,14 +60,6 @@ class ZonesPicker extends React.PureComponent {
       toZoneValue = toZone ? toZone.name : '';
     }
 
-    if (!fromZoneProp && fromZoneValue) {
-      fromZoneValue = '';
-    }
-
-    if (!toZoneProp && toZoneValue) {
-      toZoneValue = '';
-    }
-
     return {
       fromZoneValue,
       toZoneValue,
@@ -119,14 +111,26 @@ class ZonesPicker extends React.PureComponent {
 
   handleFromZoneChange = (event) => {
     const { currentTarget: { value } } = event;
+    const { onSelect } = this.props;
 
-    this.setState({ fromZoneValue: value });
+    if (!value) {
+      onSelect(undefined, ZonesPicker.fromZone);
+      this.setState(() => ({ fromZoneValue: '' }));
+    } else {
+      this.setState({ fromZoneValue: value });
+    }
   };
 
   handleToZoneChange = (event) => {
     const { currentTarget: { value } } = event;
+    const { onSelect } = this.props;
 
-    this.setState({ toZoneValue: value });
+    if (!value) {
+      this.setState(() => ({ toZoneValue: '' }));
+      onSelect(undefined, ZonesPicker.toZone);
+    } else {
+      this.setState({ toZoneValue: value });
+    }
   };
 
   handleFromZoneReset = () => {
