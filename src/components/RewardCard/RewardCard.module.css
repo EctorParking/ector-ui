@@ -16,12 +16,13 @@
 }
 
 .imageContainer {
-  background-size: 100% 100%;
+  background-position: center center;
+  background-size: cover;
   border-bottom-right-radius: var(--borderRadius);
   border-top-right-radius: var(--borderRadius);
   width: var(--marginLarge);
 }
 
 .imageContainerBig {
-  width: var(--marginXLarge);
+  width: 65px;
 }
