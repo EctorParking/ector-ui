@@ -50,6 +50,9 @@ storiesOf('RewardCard', module)
       fetching: boolean('Fetching', false),
       onClickEditExternalCard: action('Edit external card'),
       editExternalCardClassName: '',
+      children: (
+        <div>Bonjour, je suis un champ</div>
+      ),
     };
 
     return (<RewardCard {...props} />);

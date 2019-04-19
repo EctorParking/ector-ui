@@ -4375,8 +4375,8 @@ Tooltip.propTypes = {
   IconComponent: PropTypes$1.func
 };
 
-var css$T = ".RewardCard-module_card__1Znmy {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: 0;\n  max-height: 100%;\n  border-radius: 8px;\n  background-color: #fefefe;\n  -webkit-box-shadow: 0px 0px 38px -2px rgba(0, 0, 0, .15);\n          box-shadow: 0px 0px 38px -2px rgba(0, 0, 0, .15);\n}\n\n.RewardCard-module_left__3Vghj {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n\n.RewardCard-module_image__1fOt3 {\n  border-top-right-radius: 8px;\n  border-bottom-right-radius: 8px;\n  display: block;\n  height: 50px;\n  width: 30px;\n}\n\n.RewardCard-module_imageBig__RYB5l {\n  height: auto;\n  width: 62px;\n}\n";
-var s$T = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","card":"RewardCard-module_card__1Znmy","left":"RewardCard-module_left__3Vghj","image":"RewardCard-module_image__1fOt3","imageBig":"RewardCard-module_imageBig__RYB5l"};
+var css$T = ".RewardCard-module_card__1Znmy {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: 0;\n  max-height: 100%;\n  border-radius: 8px;\n  background-color: #fefefe;\n  -webkit-box-shadow: 0px 0px 38px -2px rgba(0, 0, 0, .15);\n          box-shadow: 0px 0px 38px -2px rgba(0, 0, 0, .15);\n}\n\n.RewardCard-module_left__3Vghj {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n\n.RewardCard-module_imageContainer__ZBjX1 {\n  background-position: right center;\n  background-size: cover;\n  border-bottom-right-radius: 8px;\n  border-top-right-radius: 8px;\n  width: 30px;\n}\n\n.RewardCard-module_imageContainerBig__7BCdx {\n  width: 50px;\n}\n";
+var s$T = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","card":"RewardCard-module_card__1Znmy","left":"RewardCard-module_left__3Vghj","imageContainer":"RewardCard-module_imageContainer__ZBjX1","imageContainerBig":"RewardCard-module_imageContainerBig__7BCdx"};
 styleInject(css$T);
 
 var RewardCardTextTypes = PropTypes$1.shape({
@@ -4426,7 +4426,7 @@ RewardCardHeader.propTypes = {
   rewardTooltipIcon: PropTypes$1.string.isRequired
 };
 
-var css$V = ".RewardCardContent-module_content__2HvzU {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  padding: 10px;\n}\n";
+var css$V = ".RewardCardContent-module_content__2HvzU {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  padding: 10px;\n}\n\n.RewardCardContent-module_content__2HvzU:empty {\n  display: none;\n}\n";
 var s$V = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","content":"RewardCardContent-module_content__2HvzU"};
 styleInject(css$V);
 
@@ -4462,8 +4462,7 @@ var RewardCard = function RewardCard(_ref) {
       editExternalCardClassName = _ref.editExternalCardClassName,
       fetching = _ref.fetching,
       className = _ref.className,
-      expandOnSelected = _ref.expandOnSelected,
-      cardProps = _objectWithoutProperties(_ref, ["name", "image", "rewardValue", "rewardTooltipIcon", "onRadioButtonChange", "prefixTestId", "isSelected", "selectedIcon", "isConnected", "texts", "hasExternalCard", "children", "isExternalCardUpdatable", "onClickEditExternalCard", "editExternalCardClassName", "fetching", "className", "expandOnSelected"]);
+      cardProps = _objectWithoutProperties(_ref, ["name", "image", "rewardValue", "rewardTooltipIcon", "onRadioButtonChange", "prefixTestId", "isSelected", "selectedIcon", "isConnected", "texts", "hasExternalCard", "children", "isExternalCardUpdatable", "onClickEditExternalCard", "editExternalCardClassName", "fetching", "className"]);
 
   return React__default.createElement("div", {
     className: [s$T.card, className].join(' ')
@@ -4477,12 +4476,11 @@ var RewardCard = function RewardCard(_ref) {
     rewardValue: rewardValue,
     rewardTooltipIcon: rewardTooltipIcon
   }), isSelected && React__default.createElement(RewardCardContent, null, children)), React__default.createElement("div", {
-    className: s$T.imageContainer
-  }, React__default.createElement("img", {
-    src: image,
-    className: [s$T.image, isSelected && expandOnSelected ? s$T.imageBig : undefined].join(' '),
-    alt: ""
-  })));
+    className: [s$T.imageContainer, isSelected ? s$T.imageContainerBig : undefined].join(' '),
+    style: {
+      backgroundImage: "url(".concat(image, ")")
+    }
+  }));
 };
 
 RewardCard.propTypes = {
@@ -4496,7 +4494,6 @@ RewardCard.propTypes = {
   prefixTestId: PropTypes$1.string,
   rewardTooltipIcon: PropTypes$1.string,
   isSelected: PropTypes$1.bool,
-  expandOnSelected: PropTypes$1.bool,
   selectedIcon: PropTypes$1.string,
   isConnected: PropTypes$1.bool,
   hasExternalCard: PropTypes$1.bool,
@@ -4509,7 +4506,6 @@ RewardCard.defaultProps = {
   prefixTestId: '',
   rewardTooltipIcon: 'icon-ec-info',
   isSelected: false,
-  expandOnSelected: false,
   selectedIcon: 'check',
   isConnected: false,
   children: null,

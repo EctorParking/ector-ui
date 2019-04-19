@@ -15,15 +15,14 @@
   flex-direction: column;
 }
 
-.image {
-  border-top-right-radius: var(--borderRadius);
+.imageContainer {
+  background-position: right center;
+  background-size: cover;
   border-bottom-right-radius: var(--borderRadius);
-  display: block;
-  height: var(--marginXLarge);
+  border-top-right-radius: var(--borderRadius);
   width: var(--marginLarge);
 }
 
-.imageBig {
-  height: auto;
-  width: 62px;
+.imageContainerBig {
+  width: var(--marginXLarge);
 }
