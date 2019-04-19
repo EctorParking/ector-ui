@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { TimeRange } from '..';
+import { DefaultTexts, TextsType } from './DateTimePickerTexts';
 import s from './TimeSuggestions.module.css';
 
 const TimeSuggestions = ({
@@ -52,14 +53,7 @@ const TimeSuggestions = ({
 TimeSuggestions.defaultProps = {
   className: undefined,
   onSelect: () => null,
-  texts: {
-    fromTimeTitle: 'Départ',
-    fromTimeFirstDescription: 'Heure d\'arrivée',
-    fromTimeSecondDescription: 'de votre avion',
-    toTimeTitle: 'Retour',
-    toTimeFirstDescription: 'Heure d\'arrivée',
-    toTimeSecondDescription: 'au dépose minute',
-  },
+  texts: DefaultTexts,
   startMinutes: undefined,
   startHour: undefined,
   endMinutes: undefined,
@@ -75,14 +69,7 @@ TimeSuggestions.propTypes = {
   startHour: PropTypes.string,
   endMinutes: PropTypes.string,
   endHour: PropTypes.string,
-  texts: PropTypes.shape({
-    fromTimeTitle: PropTypes.string,
-    fromTimeFirstDescription: PropTypes.string,
-    fromTimeSecondDescription: PropTypes.string,
-    toTimeTitle: PropTypes.string,
-    toTimeFirstDescription: PropTypes.string,
-    toTimeSecondDescription: PropTypes.string,
-  }),
+  texts: TextsType,
 };
 
 TimeSuggestions.startTime = 'startTime';
