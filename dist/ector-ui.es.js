@@ -2941,8 +2941,8 @@ InputLabel.propTypes = {
   onKeyDown: PropTypes$1.func
 };
 
-var css$y = ".Label-module_labelContainer__22ERg {\n    border-radius: 3px;\n    color: #fefefe;\n    font-size: 11px;\n    padding: 0 5px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n\n.Label-module_text__147Rh {\n    padding: 0 5px;\n    font-weight: 500;\n    letter-spacing: 1px;\n}\n\n.Label-module_var__zf3AY(\\--deepBlue) {\n    background-color: #163457;\n}\n\n.Label-module_var__zf3AY(\\--green) {\n    background-color: #59c871;\n}\n\n.Label-module_var__zf3AY(\\--red) {\n    background-color: #ff5757;\n}\n\n.Label-module_var__zf3AY(\\--melrose) {\n    background-color: #9ca3ff;\n}\n\n.Label-module_var__zf3AY(\\--blue) {\n    background-color: #32a0c5;\n}\n\n.Label-module_var__zf3AY(\\--lightGrey) {\n    background-color: #eceff6;\n}\n\n.Label-module_var__zf3AY(\\--metalGrey) {\n    background-color: #d5d6d7;\n}\n\n.Label-module_darkMetalGrey__GhZE1 {\n    background-color: rgb(206, 206, 206);\n}\n\n.Label-module_var__zf3AY(\\--aquaHazeGrey) {\n    background-color: #9eb3c2;\n}\n\n.Label-module_var__zf3AY(\\--orange) {\n    background-color: #f39c12;\n}\n";
-var s$y = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","labelContainer":"Label-module_labelContainer__22ERg","text":"Label-module_text__147Rh","var":"Label-module_var__zf3AY","darkMetalGrey":"Label-module_darkMetalGrey__GhZE1"};
+var css$y = ".Label-module_labelContainer__22ERg {\n    border-radius: 3px;\n    color: #fefefe;\n    font-size: 11px;\n    padding: 0 5px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n\n.Label-module_text__147Rh {\n    padding: 0 5px;\n    font-weight: 500;\n    letter-spacing: 1px;\n}\n\n.Label-module_deepBlueColor__1ehlD {\n    background-color: #163457;\n}\n\n.Label-module_greenColor__2tK-0 {\n    background-color: #59c871;\n}\n\n.Label-module_redColor__3vBA4 {\n    background-color: #ff5757;\n}\n\n.Label-module_melroseColor__hhiPS {\n    background-color: #9ca3ff;\n}\n\n.Label-module_blueColor__1dgmE {\n    background-color: #32a0c5;\n}\n\n.Label-module_lightGreyColor__1GS0a {\n    background-color: #eceff6;\n}\n\n.Label-module_metalGreyColor__2t5Or {\n    background-color: #d5d6d7;\n}\n\n.Label-module_darkMetalGreyColor__-9Z3n {\n    background-color: rgb(206, 206, 206);\n}\n\n.Label-module_aquaHazeGreyColor__t4pra {\n    background-color: #9eb3c2;\n}\n\n.Label-module_orangeColor__1uCN4 {\n    background-color: #f39c12;\n}\n";
+var s$y = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","labelContainer":"Label-module_labelContainer__22ERg","text":"Label-module_text__147Rh","deepBlueColor":"Label-module_deepBlueColor__1ehlD","greenColor":"Label-module_greenColor__2tK-0","redColor":"Label-module_redColor__3vBA4","melroseColor":"Label-module_melroseColor__hhiPS","blueColor":"Label-module_blueColor__1dgmE","lightGreyColor":"Label-module_lightGreyColor__1GS0a","metalGreyColor":"Label-module_metalGreyColor__2t5Or","darkMetalGreyColor":"Label-module_darkMetalGreyColor__-9Z3n","aquaHazeGreyColor":"Label-module_aquaHazeGreyColor__t4pra","orangeColor":"Label-module_orangeColor__1uCN4"};
 styleInject(css$y);
 
 var Label = function Label(_ref) {
@@ -2951,7 +2951,7 @@ var Label = function Label(_ref) {
       className = _ref.className,
       color = _ref.color;
   return React__default.createElement("div", {
-    className: [s$y.labelContainer, className, s$y[color]].join(' ')
+    className: [s$y.labelContainer, s$y["".concat(color, "Color")], className].join(' ')
   }, React__default.createElement("span", {
     className: "icon-ec-".concat(logo)
   }), React__default.createElement("span", {
@@ -6074,6 +6074,7 @@ function (_React$PureComponent) {
           startMinutes = _this$state5.startMinutes,
           endHour = _this$state5.endHour,
           endMinutes = _this$state5.endMinutes;
+      var texts = _this.props.texts;
       return createElement(PickerSuggestions, _extends({}, rest, {
         visible: visible,
         className: [s$12.pickerSuggestions, className].join(' '),
@@ -6104,7 +6105,8 @@ function (_React$PureComponent) {
         startMinutes: startMinutes,
         startHour: startHour,
         endMinutes: endMinutes,
-        endHour: endHour
+        endHour: endHour,
+        texts: texts
       }));
     });
 
