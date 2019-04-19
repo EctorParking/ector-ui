@@ -45,8 +45,9 @@ class ZonesPicker extends React.PureComponent {
       toZone: toZoneProp,
       fromZoneSuggestions,
       toZoneSuggestions,
+      split: propSplit,
     } = nextProps;
-    let { fromZoneValue, toZoneValue } = prevState;
+    let { fromZoneValue, toZoneValue, split } = prevState;
 
     if (!fromZoneValue && fromZoneProp && fromZoneSuggestions.length) {
       const fromZone = fromZoneSuggestions.find(
@@ -59,8 +60,18 @@ class ZonesPicker extends React.PureComponent {
       const toZone = toZoneSuggestions.find(suggestion => suggestion.name === toZoneProp.name);
       toZoneValue = toZone ? toZone.name : '';
     }
+    if (typeof propSplit !== 'undefined') {
+      split = propSplit;
+    }
+    if (toZoneValue && !toZoneProp) {
+      toZoneValue = '';
+    }
+    if (fromZoneValue && !fromZoneProp) {
+      fromZoneValue = '';
+    }
 
     return {
+      split,
       fromZoneValue,
       toZoneValue,
       fromZoneSuggestions: getZoneSuggestionsFromValue(fromZoneSuggestions, fromZoneValue),
@@ -349,6 +360,7 @@ ZonesPicker.defaultProps = {
   className: undefined,
   error: '',
   onSplitSuggestions: () => null,
+  split: undefined,
 };
 
 ZonesPicker.propTypes = {
@@ -361,6 +373,7 @@ ZonesPicker.propTypes = {
   className: PropTypes.string,
   error: PropTypes.string,
   onSplitSuggestions: PropTypes.func,
+  split: PropTypes.bool,
 };
 
 ZonesPicker.fromZone = 'from';

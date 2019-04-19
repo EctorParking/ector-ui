@@ -5,7 +5,18 @@ import { DefaultTexts, TextsType } from './DateTimePickerTexts';
 import s from './TimeSuggestions.module.css';
 
 const TimeSuggestions = ({
-  className, texts, onSelect, startMinutes, startHour, endMinutes, endHour, containerClassName, fromHourRange, fromMinuteRange, toMinuteRange, toHourRange,
+  className,
+  texts,
+  onSelect,
+  startMinutes,
+  startHour,
+  endMinutes,
+  endHour,
+  containerClassName,
+  fromHourRange,
+  fromMinuteRange,
+  toMinuteRange,
+  toHourRange,
 }) => {
   const onSelectStartTime = (timeUnits, value) => onSelect(
     TimeSuggestions.startTime,
