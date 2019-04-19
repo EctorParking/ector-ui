@@ -5267,14 +5267,6 @@ function (_React$PureComponent) {
         toZoneValue = toZone ? toZone.name : '';
       }
 
-      if (!fromZoneProp && fromZoneValue) {
-        fromZoneValue = '';
-      }
-
-      if (!toZoneProp && toZoneValue) {
-        toZoneValue = '';
-      }
-
       return {
         fromZoneValue: fromZoneValue,
         toZoneValue: toZoneValue,
@@ -5337,18 +5329,40 @@ function (_React$PureComponent) {
 
     _defineProperty(_assertThisInitialized(_this), "handleFromZoneChange", function (event) {
       var value = event.currentTarget.value;
+      var onSelect = _this.props.onSelect;
 
-      _this.setState({
-        fromZoneValue: value
-      });
+      if (!value) {
+        onSelect(undefined, ZonesPicker.fromZone);
+
+        _this.setState(function () {
+          return {
+            fromZoneValue: ''
+          };
+        });
+      } else {
+        _this.setState({
+          fromZoneValue: value
+        });
+      }
     });
 
     _defineProperty(_assertThisInitialized(_this), "handleToZoneChange", function (event) {
       var value = event.currentTarget.value;
+      var onSelect = _this.props.onSelect;
 
-      _this.setState({
-        toZoneValue: value
-      });
+      if (!value) {
+        _this.setState(function () {
+          return {
+            toZoneValue: ''
+          };
+        });
+
+        onSelect(undefined, ZonesPicker.toZone);
+      } else {
+        _this.setState({
+          toZoneValue: value
+        });
+      }
     });
 
     _defineProperty(_assertThisInitialized(_this), "handleFromZoneReset", function () {
@@ -5743,12 +5757,24 @@ styleInject(css$12);
 var TextsType$7 = PropTypes$1.shape({
   startPlaceholder: PropTypes$1.string,
   endPlaceholder: PropTypes$1.string,
-  timePlaceholder: PropTypes$1.string
+  timePlaceholder: PropTypes$1.string,
+  fromTimeTitle: PropTypes$1.string,
+  fromTimeFirstDescription: PropTypes$1.string,
+  fromTimeSecondDescription: PropTypes$1.string,
+  toTimeTitle: PropTypes$1.string,
+  toTimeFirstDescription: PropTypes$1.string,
+  toTimeSecondDescription: PropTypes$1.string
 });
 var DefaultTexts$7 = {
   startPlaceholder: 'Départ',
   endPlaceholder: 'Retour',
-  timePlaceholder: 'Heure'
+  timePlaceholder: 'Heure',
+  fromTimeTitle: 'Départ',
+  fromTimeFirstDescription: 'Heure d\'arrivée',
+  fromTimeSecondDescription: 'de votre avion',
+  toTimeTitle: 'Retour',
+  toTimeFirstDescription: 'Heure d\'arrivée',
+  toTimeSecondDescription: 'au dépose minute'
 };
 
 var css$13 = ".TimeSuggestions-module_container__1FI_D {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n}\n\n.TimeSuggestions-module_timeContainer__cmXVx {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n}\n\n.TimeSuggestions-module_timeDescription__1KSio {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  width: 70%;\n  text-align: right;\n  padding-right: 15px;\n  padding-top: 20px;\n}\n\n.TimeSuggestions-module_timeDescriptionTitle__1CASr {\n  font-weight: bold;\n}\n";
@@ -5805,14 +5831,7 @@ TimeSuggestions.defaultProps = {
   onSelect: function onSelect() {
     return null;
   },
-  texts: {
-    fromTimeTitle: 'Départ',
-    fromTimeFirstDescription: 'Heure d\'arrivée',
-    fromTimeSecondDescription: 'de votre avion',
-    toTimeTitle: 'Retour',
-    toTimeFirstDescription: 'Heure d\'arrivée',
-    toTimeSecondDescription: 'au dépose minute'
-  },
+  texts: DefaultTexts$7,
   startMinutes: undefined,
   startHour: undefined,
   endMinutes: undefined,
@@ -5827,14 +5846,7 @@ TimeSuggestions.propTypes = {
   startHour: PropTypes$1.string,
   endMinutes: PropTypes$1.string,
   endHour: PropTypes$1.string,
-  texts: PropTypes$1.shape({
-    fromTimeTitle: PropTypes$1.string,
-    fromTimeFirstDescription: PropTypes$1.string,
-    fromTimeSecondDescription: PropTypes$1.string,
-    toTimeTitle: PropTypes$1.string,
-    toTimeFirstDescription: PropTypes$1.string,
-    toTimeSecondDescription: PropTypes$1.string
-  })
+  texts: TextsType$7
 };
 TimeSuggestions.startTime = 'startTime';
 TimeSuggestions.endTime = 'endTime';
