@@ -20,7 +20,8 @@ const HtmlPrice = ({
     </span>
   ) : (
     <span className={className}>
-      {`${splitPrice[0]}${currency}`}
+      {`${splitPrice[0]}`}
+      <PriceAppendComponent value="" currency={currency} appendix={appendix} />
     </span>
   );
 };

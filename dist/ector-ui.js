@@ -4092,7 +4092,11 @@ var HtmlPrice = function HtmlPrice(_ref) {
     appendix: appendix
   })) : React__default.createElement("span", {
     className: className
-  }, "".concat(splitPrice[0]).concat(currency));
+  }, "".concat(splitPrice[0]), React__default.createElement(PriceAppendComponent, {
+    value: "",
+    currency: currency,
+    appendix: appendix
+  }));
 };
 
 var PriceAppendDefaultComponent = function PriceAppendDefaultComponent(_ref2) {
