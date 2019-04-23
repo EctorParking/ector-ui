@@ -7,11 +7,18 @@
   width: 100%;
 }
 .input {
+  border-bottom-right-radius: 0;
+  border-right: 0;
+  border-top-right-radius: 0;
   width: 100%;
   margin: 0 auto;
 }
 .input, .button {
   height: var(--fontSizeTitle);
+}
+.button {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
 }
 .helpTextClassname {
   color: var(--metalGrey);
@@ -46,28 +53,4 @@
   font-size: var(--fontSizeRegular);
   font-weight: var(--fontWeightRegular);
   margin: 0 var(--marginSmall);
-}
-
-@media (--minMobile){
-  .input {
-    border-bottom-right-radius: 0;
-    border-right: 0;
-    border-top-right-radius: 0;
-  }
-  .button {
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
-  }
-}
-
-@media (--maxMobile) {
-  .inputButtonContainerClassName {
-    display: block;
-  }
-  .inputContainerClassName {
-    margin-bottom: var(--marginMedium);
-  }
-  .button {
-    margin: 0 auto;
-  }
 }
