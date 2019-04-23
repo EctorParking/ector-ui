@@ -9,17 +9,31 @@
 }
 
 .text {
-  align-items: center;
+  align-items: flex-start;
   display: flex;
   flex: 1;
 }
 
+.textMobile {
+  display: none;
+}
+
 .tooltip {
   align-items: center;
+  align-self: center;
   display: flex;
   margin-left: var(--marginSmall);
 }
 
 .rewardValue:after {
   content: ' ';
+}
+
+@media (--maxPurchaseCanalMinWidth) {
+  .textDesktop {
+    display: none;
+  }
+  .textMobile {
+    display: inline;
+  }
 }

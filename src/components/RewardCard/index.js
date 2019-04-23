@@ -8,6 +8,7 @@ import RewardCardTextTypes from './RewardCardTextTypes';
 const RewardCard = ({
   name,
   image,
+  imageMobile,
   rewardValue,
   rewardTooltipIcon,
   onRadioButtonChange,
@@ -47,6 +48,10 @@ const RewardCard = ({
       className={[s.imageContainer, isSelected && children ? s.imageContainerBig : undefined].join(' ')}
       style={{ backgroundImage: `url(${image})` }}
     />
+    <div
+      className={s.imageContainerMobile}
+      style={{ backgroundImage: `url(${imageMobile})` }}
+    />
   </div>
 );
 
@@ -54,6 +59,7 @@ RewardCard.propTypes = {
   name: PropTypes.string.isRequired,
   texts: RewardCardTextTypes.isRequired,
   image: PropTypes.string.isRequired,
+  imageMobile: PropTypes.string.isRequired,
   rewardValue: PropTypes.string.isRequired,
   onRadioButtonChange: PropTypes.func.isRequired,
   onClickEditExternalCard: PropTypes.func,

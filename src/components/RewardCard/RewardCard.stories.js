@@ -10,10 +10,12 @@ import RewardCard from '.';
 import s from './RewardCard.module.css';
 import cashback from '../../assets/images/cashback.png';
 import flyingBlue from '../../assets/images/flyingBlue.png';
+import flyingBlueSmall from '../../assets/images/flyingBlueSmall.png';
 
 const options = [
   cashback,
   flyingBlue,
+  flyingBlueSmall,
 ];
 const rewardValue = '+4.60€';
 
@@ -33,6 +35,7 @@ storiesOf('RewardCard', module)
       name: text('Name', 'cashback'),
       texts: object('Texts', {
         rewardText: 'de cagnotte fidélité grâce à votre statut platinum',
+        rewardTextMobile: 'de cagnotte fidélité',
         footerButtonText: 'Choisir',
         buttonTextLogin: 'Connexion',
         loginText: 'Pour profiter de cette récompense, la connexion est requise',
@@ -42,7 +45,8 @@ storiesOf('RewardCard', module)
       isSelected: boolean('Selected', true),
       isConnected: boolean('Connected', false),
       onRadioButtonChange: action('Change'),
-      image: select('Image', options, options[0], ''),
+      image: select('Image', options, options[1], ''),
+      imageMobile: select('Image mobile', options, options[2], ''),
       footerButtonClassName: s.footerButton,
       selectedIcon: text('Select icon', 'check'),
       rewardValue: text('Reward value', rewardValue),

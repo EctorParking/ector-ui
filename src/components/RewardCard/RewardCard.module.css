@@ -15,14 +15,31 @@
   flex-direction: column;
 }
 
-.imageContainer {
-  background-position: center center;
-  background-size: cover;
+.imageContainer,
+.imageContainerMobile {
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   border-bottom-right-radius: var(--borderRadius);
   border-top-right-radius: var(--borderRadius);
   width: var(--marginLarge);
 }
 
+.imageContainerMobile {
+  background-size: 100%;
+  display: none;
+  width: 55px;
+}
+
 .imageContainerBig {
   width: 65px;
+}
+
+@media (--maxMobile) {
+  .imageContainer {
+    display: none;
+  }
+  .imageContainerMobile {
+    display: block;
+  }
 }
