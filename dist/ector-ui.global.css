@@ -2531,7 +2531,7 @@
 
 .RewardCard-module_imageContainer__ZBjX1,
 .RewardCard-module_imageContainerMobile__rme7I {
-  background-position: top center;
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   border-bottom-right-radius: 8px;
@@ -2542,7 +2542,7 @@
 .RewardCard-module_imageContainerMobile__rme7I {
   background-size: 100%;
   display: none;
-  width: 55px;
+  width: 40px;
 }
 
 .RewardCard-module_imageContainerBig__7BCdx {

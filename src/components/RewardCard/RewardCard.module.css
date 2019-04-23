@@ -17,7 +17,7 @@
 
 .imageContainer,
 .imageContainerMobile {
-  background-position: top center;
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   border-bottom-right-radius: var(--borderRadius);
@@ -28,7 +28,7 @@
 .imageContainerMobile {
   background-size: 100%;
   display: none;
-  width: 55px;
+  width: var(--marginMLarge);
 }
 
 .imageContainerBig {
