@@ -1367,12 +1367,20 @@
 }
 
 .InputButton-module_input__3lwQJ {
+  border-bottom-right-radius: 0;
+  border-right: 0;
+  border-top-right-radius: 0;
   width: 100%;
   margin: 0 auto;
 }
 
 .InputButton-module_input__3lwQJ, .InputButton-module_button__3YbuH {
   height: 40px;
+}
+
+.InputButton-module_button__3YbuH {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
 }
 
 .InputButton-module_helpTextClassname__3BmMr {
@@ -1418,30 +1426,6 @@
   font-size: 16px;
   font-weight: 500;
   margin: 0 10px;
-}
-
-@media (min-width: 480px){
-  .InputButton-module_input__3lwQJ {
-    border-bottom-right-radius: 0;
-    border-right: 0;
-    border-top-right-radius: 0;
-  }
-  .InputButton-module_button__3YbuH {
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
-  }
-}
-
-@media (max-width: 480px) {
-  .InputButton-module_inputButtonContainerClassName__2OzTt {
-    display: block;
-  }
-  .InputButton-module_inputContainerClassName__2wy9a {
-    margin-bottom: 20px;
-  }
-  .InputButton-module_button__3YbuH {
-    margin: 0 auto;
-  }
 }
 
 /* The input_checkbox */
@@ -2414,7 +2398,7 @@
 }
 
 .Tooltip-module_tooltipContainer__15s8H > i {
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .Tooltip-module_tooltipContainer__15s8H > i:before {
@@ -2426,9 +2410,9 @@
     display: block;
     position: absolute;
     z-index: 1;
-    padding: 5px;
+    padding: 10px;
     border-radius: 8px;
-    text-align: center;
+    text-align: left;
     -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .25);
             box-shadow: 0 0 10px rgba(0, 0, 0, .25);
     background-color: #fefefe;
@@ -2545,16 +2529,33 @@
           flex-direction: column;
 }
 
-.RewardCard-module_imageContainer__ZBjX1 {
-  background-position: center center;
-  background-size: cover;
+.RewardCard-module_imageContainer__ZBjX1,
+.RewardCard-module_imageContainerMobile__rme7I {
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   border-bottom-right-radius: 8px;
   border-top-right-radius: 8px;
   width: 30px;
 }
 
+.RewardCard-module_imageContainerMobile__rme7I {
+  background-size: 100%;
+  display: none;
+  width: 55px;
+}
+
 .RewardCard-module_imageContainerBig__7BCdx {
   width: 65px;
+}
+
+@media (max-width: 480px) {
+  .RewardCard-module_imageContainer__ZBjX1 {
+    display: none;
+  }
+  .RewardCard-module_imageContainerMobile__rme7I {
+    display: block;
+  }
 }
 
 .RewardCardHeader-module_header__16x0N {
@@ -2571,9 +2572,9 @@
 }
 
 .RewardCardHeader-module_text__2_Rz0 {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2582,10 +2583,16 @@
           flex: 1;
 }
 
+.RewardCardHeader-module_textMobile__1E4IT {
+  display: none;
+}
+
 .RewardCardHeader-module_tooltip__26usu {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-item-align: center;
+      align-self: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2594,6 +2601,15 @@
 
 .RewardCardHeader-module_rewardValue__1CNXp:after {
   content: '\A0';
+}
+
+@media (max-width: 1130px) {
+  .RewardCardHeader-module_textDesktop__14Q6S {
+    display: none;
+  }
+  .RewardCardHeader-module_textMobile__1E4IT {
+    display: inline;
+  }
 }
 
 .RewardCardContent-module_content__2HvzU {
