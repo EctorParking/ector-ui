@@ -18,9 +18,9 @@ class ZonePickerStory extends React.PureComponent {
     if (zoneType === ZonesPicker.fromZone) {
       this.setState({
         fromZone: zone,
-        toZoneSuggestions: Suggestions.filter(suggestion => (
+        toZoneSuggestions: zone ? Suggestions.filter(suggestion => (
           zone.name ? suggestion.name.includes(zone.name) : true
-        )),
+        )) : Suggestions,
       });
     } else {
       this.setState({

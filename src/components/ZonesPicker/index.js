@@ -63,12 +63,6 @@ class ZonesPicker extends React.PureComponent {
     if (typeof propSplit !== 'undefined') {
       split = propSplit;
     }
-    if (toZoneValue && !toZoneProp) {
-      toZoneValue = '';
-    }
-    if (fromZoneValue && !fromZoneProp) {
-      fromZoneValue = '';
-    }
 
     return {
       split,
@@ -146,8 +140,14 @@ class ZonesPicker extends React.PureComponent {
 
   handleFromZoneReset = () => {
     const { onSelect } = this.props;
+    const { split, toZoneValue } = this.state;
+    const newState = { toZoneValue, fromZoneValue: '' };
 
-    this.setState(prevState => ({ fromZoneValue: '', toZoneValue: prevState.split ? prevState.toZoneValue : '' }));
+    if (!split) {
+      newState.toZoneValue = '';
+      onSelect(undefined, ZonesPicker.toZone);
+    }
+    this.setState(newState);
     onSelect(undefined, ZonesPicker.fromZone);
   };
 
