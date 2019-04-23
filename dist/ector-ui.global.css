@@ -2952,7 +2952,10 @@
   width: 100%;
   font-size: 14px;
   font-weight: 700;
-  word-break: break-all;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
 }
 
 .Picker-module_errorVisible__3Fa-X {

@@ -4931,7 +4931,7 @@ RegistrationForm.propTypes = {
   countries: PropTypes$1.shape(CountryPropType)
 };
 
-var css$Z = ".Picker-module_container__3AVzP {\n  position: relative;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #163457;\n  border: none;\n  border-radius: 5px;\n  display: block;\n  height: 50px;\n  padding: 0;\n  z-index: 1\n}\n\n.Picker-module_container__3AVzP.Picker-module_active__2IBbO {\n  z-index: 4;\n}\n\n.Picker-module_shadowWrapper__1yU5l {\n  background-color: #fefefe;\n  border-radius: 5px;\n  -webkit-box-shadow: 0 4px 8px 2px rgba(0, 0, 0, .5);\n          box-shadow: 0 4px 8px 2px rgba(0, 0, 0, .5);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative;\n  z-index: 2;\n}\n\n.Picker-module_pickerInputContainer__2EiaS {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: 0 35px 0 15px;\n  width: 100%;\n  z-index: 2;\n}\n\n.Picker-module_pickerInput__1P5_a {\n  border-radius: 5px;\n  height: 50px;\n  padding: 0;\n  border: none;\n  margin-top: 0;\n  font-size: 15px;\n}\n\n.Picker-module_inputError__37bTz {\n  color: #c73637;\n}\n\n.Picker-module_splitPickerInputContainer__2QVF3 {\n  border-left: 1px solid rgba(191, 196, 212, .52);\n}\n\n.Picker-module_suggestionsContainer__20x1U {\n  min-height: 150px;\n  background-color: black;\n  position: absolute;\n  width: 150%;\n  top: 56px;\n  top: 56px;\n  top: 3.5rem;\n  left: -25%;\n  border-radius: 8px;\n  border-width: 1px;\n}\n\n.Picker-module_error__3Mp0C {\n  display: inline-table;\n  background-color: #c73637;\n  border-top-left-radius: 8px;\n  border-top-right-radius: 8px;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #fefefe;\n  height: 45px;\n  left: 0;\n  opacity: 0;\n  padding: 10px;\n  position: absolute;\n  top: 0;\n  -webkit-transform: none;\n          transform: none;\n  -webkit-transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;\n  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  width: 100%;\n  font-size: 14px;\n  font-weight: 700;\n  word-break: break-all;\n}\n\n.Picker-module_errorVisible__3Fa-X {\n  opacity: 1;\n  -webkit-transform: translateY(-100%);\n          transform: translateY(-100%);\n}\n";
+var css$Z = ".Picker-module_container__3AVzP {\n  position: relative;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #163457;\n  border: none;\n  border-radius: 5px;\n  display: block;\n  height: 50px;\n  padding: 0;\n  z-index: 1\n}\n\n.Picker-module_container__3AVzP.Picker-module_active__2IBbO {\n  z-index: 4;\n}\n\n.Picker-module_shadowWrapper__1yU5l {\n  background-color: #fefefe;\n  border-radius: 5px;\n  -webkit-box-shadow: 0 4px 8px 2px rgba(0, 0, 0, .5);\n          box-shadow: 0 4px 8px 2px rgba(0, 0, 0, .5);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative;\n  z-index: 2;\n}\n\n.Picker-module_pickerInputContainer__2EiaS {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: 0 35px 0 15px;\n  width: 100%;\n  z-index: 2;\n}\n\n.Picker-module_pickerInput__1P5_a {\n  border-radius: 5px;\n  height: 50px;\n  padding: 0;\n  border: none;\n  margin-top: 0;\n  font-size: 15px;\n}\n\n.Picker-module_inputError__37bTz {\n  color: #c73637;\n}\n\n.Picker-module_splitPickerInputContainer__2QVF3 {\n  border-left: 1px solid rgba(191, 196, 212, .52);\n}\n\n.Picker-module_suggestionsContainer__20x1U {\n  min-height: 150px;\n  background-color: black;\n  position: absolute;\n  width: 150%;\n  top: 56px;\n  top: 56px;\n  top: 3.5rem;\n  left: -25%;\n  border-radius: 8px;\n  border-width: 1px;\n}\n\n.Picker-module_error__3Mp0C {\n  display: inline-table;\n  background-color: #c73637;\n  border-top-left-radius: 8px;\n  border-top-right-radius: 8px;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #fefefe;\n  height: 45px;\n  left: 0;\n  opacity: 0;\n  padding: 10px;\n  position: absolute;\n  top: 0;\n  -webkit-transform: none;\n          transform: none;\n  -webkit-transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;\n  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  width: 100%;\n  font-size: 14px;\n  font-weight: 700;\n  word-break: break-word;\n  -webkit-hyphens: auto;\n      -ms-hyphens: auto;\n          hyphens: auto;\n}\n\n.Picker-module_errorVisible__3Fa-X {\n  opacity: 1;\n  -webkit-transform: translateY(-100%);\n          transform: translateY(-100%);\n}\n";
 var s$Z = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","container":"Picker-module_container__3AVzP","active":"Picker-module_active__2IBbO","shadowWrapper":"Picker-module_shadowWrapper__1yU5l","pickerInputContainer":"Picker-module_pickerInputContainer__2EiaS","pickerInput":"Picker-module_pickerInput__1P5_a","inputError":"Picker-module_inputError__37bTz","splitPickerInputContainer":"Picker-module_splitPickerInputContainer__2QVF3","suggestionsContainer":"Picker-module_suggestionsContainer__20x1U","error":"Picker-module_error__3Mp0C","errorVisible":"Picker-module_errorVisible__3Fa-X"};
 styleInject(css$Z);
 
@@ -5292,14 +5292,6 @@ function (_React$PureComponent) {
         split = propSplit;
       }
 
-      if (toZoneValue && !toZoneProp) {
-        toZoneValue = '';
-      }
-
-      if (fromZoneValue && !fromZoneProp) {
-        fromZoneValue = '';
-      }
-
       return {
         split: split,
         fromZoneValue: fromZoneValue,
@@ -5401,13 +5393,20 @@ function (_React$PureComponent) {
 
     _defineProperty(_assertThisInitialized(_this), "handleFromZoneReset", function () {
       var onSelect = _this.props.onSelect;
+      var _this$state2 = _this.state,
+          split = _this$state2.split,
+          toZoneValue = _this$state2.toZoneValue;
+      var newState = {
+        toZoneValue: toZoneValue,
+        fromZoneValue: ''
+      };
 
-      _this.setState(function (prevState) {
-        return {
-          fromZoneValue: '',
-          toZoneValue: prevState.split ? prevState.toZoneValue : ''
-        };
-      });
+      if (!split) {
+        newState.toZoneValue = '';
+        onSelect(undefined, ZonesPicker.toZone);
+      }
+
+      _this.setState(newState);
 
       onSelect(undefined, ZonesPicker.fromZone);
     });
@@ -5595,10 +5594,10 @@ function (_React$PureComponent) {
           rest = _objectWithoutProperties(_ref9, ["visible"]);
 
       var texts = _this.props.texts;
-      var _this$state2 = _this.state,
-          split = _this$state2.split,
-          fromZoneSuggestions = _this$state2.fromZoneSuggestions,
-          toZoneSuggestions = _this$state2.toZoneSuggestions;
+      var _this$state3 = _this.state,
+          split = _this$state3.split,
+          fromZoneSuggestions = _this$state3.fromZoneSuggestions,
+          toZoneSuggestions = _this$state3.toZoneSuggestions;
       return React.createElement(PickerSuggestions, _extends({
         visible: visible
       }, rest), React.createElement("div", {
@@ -5622,10 +5621,10 @@ function (_React$PureComponent) {
   _createClass(ZonesPicker, [{
     key: "render",
     value: function render() {
-      var _this$state3 = this.state,
-          split = _this$state3.split,
-          fromZoneValue = _this$state3.fromZoneValue,
-          toZoneValue = _this$state3.toZoneValue;
+      var _this$state4 = this.state,
+          split = _this$state4.split,
+          fromZoneValue = _this$state4.fromZoneValue,
+          toZoneValue = _this$state4.toZoneValue;
       var _this$props = this.props,
           error = _this$props.error,
           className = _this$props.className;
@@ -6146,7 +6145,10 @@ function (_React$PureComponent) {
           startMinutes = _this$state5.startMinutes,
           endHour = _this$state5.endHour,
           endMinutes = _this$state5.endMinutes;
-      var texts = _this.props.texts;
+      var _this$props3 = _this.props,
+          texts = _this$props3.texts,
+          fromHourRange = _this$props3.fromHourRange,
+          toHourRange = _this$props3.toHourRange;
       return React.createElement(PickerSuggestions, _extends({}, rest, {
         visible: visible,
         className: [s$12.pickerSuggestions, className].join(' '),
@@ -6178,7 +6180,9 @@ function (_React$PureComponent) {
         startHour: startHour,
         endMinutes: endMinutes,
         endHour: endHour,
-        texts: texts
+        texts: texts,
+        fromHourRange: fromHourRange,
+        toHourRange: toHourRange
       }));
     });
 
@@ -6229,9 +6233,9 @@ function (_React$PureComponent) {
         startHour: startHour,
         endHour: endHour
       };
-      var _this$props3 = this.props,
-          error = _this$props3.error,
-          className = _this$props3.className;
+      var _this$props4 = this.props,
+          error = _this$props4.error,
+          className = _this$props4.className;
       return React.createElement(Picker, {
         ref: this.ectorPicker,
         split: true,
@@ -6266,15 +6270,15 @@ function (_React$PureComponent) {
 
       if (!startMinutes && !startHour && propStartDate) {
         startDate = moment(propStartDate);
-        startMinutes = startDate.minutes();
-        startHour = startDate.hours();
+        startMinutes = startDate.format('mm');
+        startHour = startDate.format('HH');
         showTimeInputs = true;
       }
 
       if (!endMinutes && !endHour && propEndDate) {
         endDate = moment(propEndDate);
-        endMinutes = endDate.minutes();
-        endHour = endDate.hours();
+        endMinutes = endDate.format('mm');
+        endHour = endDate.format('HH');
         showTimeInputs = true;
       }
 
@@ -6310,7 +6314,9 @@ DateTimePicker.propTypes = {
   onStartDateChange: PropTypes$1.func,
   onEndDateChange: PropTypes$1.func,
   onStartTimeChange: PropTypes$1.func,
-  onEndTimeChange: PropTypes$1.func
+  onEndTimeChange: PropTypes$1.func,
+  fromHourRange: PropTypes$1.arrayOf(PropTypes$1.number),
+  toHourRange: PropTypes$1.arrayOf(PropTypes$1.number)
 };
 DateTimePicker.defaultProps = {
   error: '',
@@ -6329,7 +6335,9 @@ DateTimePicker.defaultProps = {
   },
   onEndTimeChange: function onEndTimeChange() {
     return null;
-  }
+  },
+  fromHourRange: TimeSuggestions.defaultProps.fromHourRange,
+  toHourRange: TimeSuggestions.defaultProps.toHourRange
 };
 
 var css$14 = ".TimeRange-module_container__qP7nK {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  height: 100%;\n}\n\n.TimeRange-module_hours__9eQEI, .TimeRange-module_minutes__1mA4X {\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  overflow: scroll;\n  position: relative;\n  margin: 0 5px\n}\n\n.TimeRange-module_hours__9eQEI::-webkit-scrollbar, .TimeRange-module_minutes__1mA4X::-webkit-scrollbar {\n  display: none;\n}\n\n.TimeRange-module_hour__XiHg6, .TimeRange-module_minute__32J9f {\n  min-width: 20px;\n  padding: 5px 10px;\n  text-align: center\n}\n\n.TimeRange-module_hour__XiHg6:hover, .TimeRange-module_hour__XiHg6.TimeRange-module_selected__1EEqQ, .TimeRange-module_minute__32J9f:hover, .TimeRange-module_minute__32J9f.TimeRange-module_selected__1EEqQ {\n  border-radius: 5px;\n  cursor: pointer;\n  font-weight: bold;\n}\n\n.TimeRange-module_hour__XiHg6:hover, .TimeRange-module_minute__32J9f:hover {\n  background-color: rgb(255, 245, 204);\n}\n\n.TimeRange-module_hour__XiHg6.TimeRange-module_selected__1EEqQ, .TimeRange-module_minute__32J9f.TimeRange-module_selected__1EEqQ {\n  background-color: #ffcd02;\n}\n\n.TimeRange-module_hour__XiHg6.TimeRange-module_disabled__TxWjV, .TimeRange-module_minute__32J9f.TimeRange-module_disabled__TxWjV {\n  color: #939baa;\n}\n";
