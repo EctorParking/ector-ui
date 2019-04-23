@@ -77,7 +77,8 @@
   width: 100%;
   font-size: var(--fontSizeMedium);
   font-weight: var(--fontWeightBold);
-  word-break: break-all;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 .errorVisible {

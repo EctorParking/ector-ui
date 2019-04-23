@@ -59,14 +59,14 @@ class DateTimePicker extends React.PureComponent {
     }
     if (!startMinutes && !startHour && propStartDate) {
       startDate = moment(propStartDate);
-      startMinutes = startDate.minutes();
-      startHour = startDate.hours();
+      startMinutes = startDate.format('mm');
+      startHour = startDate.format('HH');
       showTimeInputs = true;
     }
     if (!endMinutes && !endHour && propEndDate) {
       endDate = moment(propEndDate);
-      endMinutes = endDate.minutes();
-      endHour = endDate.hours();
+      endMinutes = endDate.format('mm');
+      endHour = endDate.format('HH');
       showTimeInputs = true;
     }
     return {
@@ -242,7 +242,7 @@ class DateTimePicker extends React.PureComponent {
       endHour,
       endMinutes,
     } = this.state;
-    const { texts } = this.props;
+    const { texts, fromHourRange, toHourRange } = this.props;
 
     return (
       <PickerSuggestions
@@ -289,6 +289,8 @@ class DateTimePicker extends React.PureComponent {
               endMinutes={endMinutes}
               endHour={endHour}
               texts={texts}
+              fromHourRange={fromHourRange}
+              toHourRange={toHourRange}
             />
           )
         }
@@ -330,6 +332,8 @@ DateTimePicker.propTypes = {
   onEndDateChange: PropTypes.func,
   onStartTimeChange: PropTypes.func,
   onEndTimeChange: PropTypes.func,
+  fromHourRange: PropTypes.arrayOf(PropTypes.number),
+  toHourRange: PropTypes.arrayOf(PropTypes.number),
 };
 
 DateTimePicker.defaultProps = {
@@ -342,6 +346,8 @@ DateTimePicker.defaultProps = {
   onEndDateChange: () => null,
   onStartTimeChange: () => null,
   onEndTimeChange: () => null,
+  fromHourRange: TimeSuggestions.defaultProps.fromHourRange,
+  toHourRange: TimeSuggestions.defaultProps.toHourRange,
 };
 
 export default DateTimePicker;
