@@ -114,6 +114,7 @@
     .input {
         flex: none;
         margin: var(--marginXSmall) 0 0 0;
+        min-width: none;
     }
     .title, .actionLink {
         margin: 0;
