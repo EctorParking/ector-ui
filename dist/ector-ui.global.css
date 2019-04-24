@@ -2529,20 +2529,13 @@
           flex-direction: column;
 }
 
-.RewardCard-module_imageContainer__ZBjX1,
-.RewardCard-module_imageContainerMobile__rme7I {
+.RewardCard-module_imageContainer__ZBjX1 {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   border-bottom-right-radius: 8px;
   border-top-right-radius: 8px;
   width: 30px;
-}
-
-.RewardCard-module_imageContainerMobile__rme7I {
-  background-size: 100%;
-  display: none;
-  width: 40px;
 }
 
 .RewardCard-module_imageContainerBig__7BCdx {
@@ -2552,9 +2545,6 @@
 @media (max-width: 480px) {
   .RewardCard-module_imageContainer__ZBjX1 {
     display: none;
-  }
-  .RewardCard-module_imageContainerMobile__rme7I {
-    display: block;
   }
 }
 

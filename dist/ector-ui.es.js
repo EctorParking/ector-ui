@@ -4371,8 +4371,8 @@ Tooltip.propTypes = {
   IconComponent: PropTypes$1.func
 };
 
-var css$T = ".RewardCard-module_card__1Znmy {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: 0;\n  max-height: 100%;\n  border-radius: 8px;\n  background-color: #fefefe;\n  -webkit-box-shadow: 0px 0px 38px -2px rgba(0, 0, 0, .15);\n          box-shadow: 0px 0px 38px -2px rgba(0, 0, 0, .15);\n}\n\n.RewardCard-module_left__3Vghj {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n\n.RewardCard-module_imageContainer__ZBjX1,\n.RewardCard-module_imageContainerMobile__rme7I {\n  background-position: center center;\n  background-repeat: no-repeat;\n  background-size: 100% 100%;\n  border-bottom-right-radius: 8px;\n  border-top-right-radius: 8px;\n  width: 30px;\n}\n\n.RewardCard-module_imageContainerMobile__rme7I {\n  background-size: 100%;\n  display: none;\n  width: 40px;\n}\n\n.RewardCard-module_imageContainerBig__7BCdx {\n  width: 65px;\n}\n\n@media (max-width: 480px) {\n  .RewardCard-module_imageContainer__ZBjX1 {\n    display: none;\n  }\n  .RewardCard-module_imageContainerMobile__rme7I {\n    display: block;\n  }\n}\n";
-var s$T = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","card":"RewardCard-module_card__1Znmy","left":"RewardCard-module_left__3Vghj","imageContainer":"RewardCard-module_imageContainer__ZBjX1","imageContainerMobile":"RewardCard-module_imageContainerMobile__rme7I","imageContainerBig":"RewardCard-module_imageContainerBig__7BCdx"};
+var css$T = ".RewardCard-module_card__1Znmy {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: 0;\n  max-height: 100%;\n  border-radius: 8px;\n  background-color: #fefefe;\n  -webkit-box-shadow: 0px 0px 38px -2px rgba(0, 0, 0, .15);\n          box-shadow: 0px 0px 38px -2px rgba(0, 0, 0, .15);\n}\n\n.RewardCard-module_left__3Vghj {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n\n.RewardCard-module_imageContainer__ZBjX1 {\n  background-position: center center;\n  background-repeat: no-repeat;\n  background-size: 100% 100%;\n  border-bottom-right-radius: 8px;\n  border-top-right-radius: 8px;\n  width: 30px;\n}\n\n.RewardCard-module_imageContainerBig__7BCdx {\n  width: 65px;\n}\n\n@media (max-width: 480px) {\n  .RewardCard-module_imageContainer__ZBjX1 {\n    display: none;\n  }\n}\n";
+var s$T = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","card":"RewardCard-module_card__1Znmy","left":"RewardCard-module_left__3Vghj","imageContainer":"RewardCard-module_imageContainer__ZBjX1","imageContainerBig":"RewardCard-module_imageContainerBig__7BCdx"};
 styleInject(css$T);
 
 var RewardCardTextTypes = PropTypes$1.shape({
@@ -4451,7 +4451,6 @@ RewardCardContent.defaultProps = {
 var RewardCard = function RewardCard(_ref) {
   var name = _ref.name,
       image = _ref.image,
-      imageMobile = _ref.imageMobile,
       rewardValue = _ref.rewardValue,
       rewardTooltipIcon = _ref.rewardTooltipIcon,
       onRadioButtonChange = _ref.onRadioButtonChange,
@@ -4468,7 +4467,7 @@ var RewardCard = function RewardCard(_ref) {
       fetching = _ref.fetching,
       className = _ref.className,
       contentClassName = _ref.contentClassName,
-      cardProps = _objectWithoutProperties(_ref, ["name", "image", "imageMobile", "rewardValue", "rewardTooltipIcon", "onRadioButtonChange", "prefixTestId", "isSelected", "selectedIcon", "isConnected", "texts", "hasExternalCard", "children", "isExternalCardUpdatable", "onClickEditExternalCard", "editExternalCardClassName", "fetching", "className", "contentClassName"]);
+      cardProps = _objectWithoutProperties(_ref, ["name", "image", "rewardValue", "rewardTooltipIcon", "onRadioButtonChange", "prefixTestId", "isSelected", "selectedIcon", "isConnected", "texts", "hasExternalCard", "children", "isExternalCardUpdatable", "onClickEditExternalCard", "editExternalCardClassName", "fetching", "className", "contentClassName"]);
 
   return React__default.createElement("div", {
     className: [s$T.card, className].join(' ')
@@ -4488,11 +4487,6 @@ var RewardCard = function RewardCard(_ref) {
     style: {
       backgroundImage: "url(".concat(image, ")")
     }
-  }), React__default.createElement("div", {
-    className: s$T.imageContainerMobile,
-    style: {
-      backgroundImage: "url(".concat(imageMobile, ")")
-    }
   }));
 };
 
@@ -4500,7 +4494,6 @@ RewardCard.propTypes = {
   name: PropTypes$1.string.isRequired,
   texts: RewardCardTextTypes.isRequired,
   image: PropTypes$1.string.isRequired,
-  imageMobile: PropTypes$1.string.isRequired,
   rewardValue: PropTypes$1.string.isRequired,
   onRadioButtonChange: PropTypes$1.func.isRequired,
   onClickEditExternalCard: PropTypes$1.func,

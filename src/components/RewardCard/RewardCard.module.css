@@ -15,20 +15,13 @@
   flex-direction: column;
 }
 
-.imageContainer,
-.imageContainerMobile {
+.imageContainer {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   border-bottom-right-radius: var(--borderRadius);
   border-top-right-radius: var(--borderRadius);
   width: var(--marginLarge);
-}
-
-.imageContainerMobile {
-  background-size: 100%;
-  display: none;
-  width: var(--marginMLarge);
 }
 
 .imageContainerBig {
@@ -38,8 +31,5 @@
 @media (--maxMobile) {
   .imageContainer {
     display: none;
-  }
-  .imageContainerMobile {
-    display: block;
   }
 }
