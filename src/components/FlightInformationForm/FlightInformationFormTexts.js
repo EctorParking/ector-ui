@@ -23,7 +23,7 @@ export const TextsType = PropTypes.shape({
 });
 
 export const DefaultTexts = {
-  placeholderSpot: 'Choisir un lieu de rendez-vous',
+  placeholderSpot: 'Sélectionner',
   spotAirport: 'Terminal',
   spotTrain: 'Gare',
   spotLabelAirport: 'Terminal (lieu de rendez-vous)',
