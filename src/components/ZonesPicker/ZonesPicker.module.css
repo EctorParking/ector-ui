@@ -33,12 +33,11 @@
   position: relative;
   overflow-x: scroll;
   display: none;
-  flex-direction: column;
   width: 100%;
   padding: 15px;
 
   &.visible {
-    display: flex;
+    display: block;
   }
 }
 

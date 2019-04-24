@@ -3042,6 +3042,7 @@
 
 .ZoneSuggestion-module_suggestion__nCTAf {
   cursor: pointer;
+  display: block;
   margin-bottom: 10px
 }
 
@@ -3122,18 +3123,12 @@
   position: relative;
   overflow-x: scroll;
   display: none;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   width: 100%;
   padding: 15px
 }
 
 .ZonesPicker-module_suggestions__19igb.ZonesPicker-module_visible__3Tlgg {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: block;
 }
 
 .ZonesPicker-module_suggestionAction__29BOq {

@@ -2,6 +2,7 @@
 
 .suggestion {
   cursor: pointer;
+  display: block;
   margin-bottom: var(--marginSmall);
 
   &:last-child {
