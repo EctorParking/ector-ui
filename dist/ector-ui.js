@@ -6169,6 +6169,7 @@ function (_React$PureComponent) {
         hideKeyboardShortcutsPanel: true,
         numberOfMonths: 2,
         transitionDuration: 0,
+        minimumNights: 0,
         noBorder: true,
         focusedInput: focusedDateInput,
         onFocusChange: _this.handleFocusChange,

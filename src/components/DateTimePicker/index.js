@@ -264,6 +264,7 @@ class DateTimePicker extends React.PureComponent {
               hideKeyboardShortcutsPanel
               numberOfMonths={2}
               transitionDuration={0}
+              minimumNights={0}
               noBorder
               focusedInput={focusedDateInput}
               onFocusChange={this.handleFocusChange}
