@@ -24,6 +24,7 @@
 
 .icon {
   margin-right: var(--marginSmall);
+  position: relative;
 }
 
 .activeIcon {

@@ -3054,6 +3054,7 @@
 
 .ZoneSuggestion-module_icon__2Bikz {
   margin-right: 10px;
+  position: relative;
 }
 
 .ZoneSuggestion-module_activeIcon__2XmM8 {
@@ -3226,8 +3227,12 @@
   font-weight: bold;
 }
 
+.Icon-module_iconContainer__8jSun {
+  position: relative;
+}
+
 .Icon-module_withBackground__EomNm {
-  position: absolute;
+  position: relative;
   z-index: 2;
 }
 
@@ -3237,6 +3242,8 @@
   height: 20.8px;
   height: 20.8px;
   height: 1.3rem;
+  margin-top: -0.65em;
+  top: 50%;
 }
 
 .Icon-module_withBackground__EomNm.Icon-module_left__2QZ0s {
