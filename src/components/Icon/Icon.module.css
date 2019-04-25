@@ -1,5 +1,9 @@
 @import '../../style/variable.global.css';
 
+.iconContainer {
+  position: relative;
+}
+
 .withBackground {
   position: relative;
   z-index: 2;

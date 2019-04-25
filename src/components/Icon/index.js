@@ -73,9 +73,10 @@ const Icon = ({
   ...containerProps
 }) => {
   const hasBackground = typeof BackgroundImages[variant] !== 'undefined';
+  const { className } = containerProps;
 
   return (
-    <span {...containerProps}>
+    <span {...containerProps} className={[s.iconContainer, className].join(' ')}>
       {hasBackground
         ? (<img src={BackgroundImages[variant]} alt="icon background" className={[s.background, backgroundClassName].join(' ')} />)
         : null
