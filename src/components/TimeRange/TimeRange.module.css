@@ -3,7 +3,27 @@
 .container {
   display: flex;
   flex-direction: row;
-  height: 100%;
+  position: relative;
+}
+
+.arrow {
+  width: 25px;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  transition: height .2s ease-in-out;
+  &.left {
+    left: 15px;
+  }
+  &.right {
+    right: 15px;
+   }
+  &.top {
+    top: 0;
+  }
+  &.bottom {
+    bottom: 0;
+   }
 }
 
 .hours, .minutes {
