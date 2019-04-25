@@ -6149,11 +6149,12 @@ function (_React$PureComponent) {
           startHour = _this$state5.startHour,
           startMinutes = _this$state5.startMinutes,
           endHour = _this$state5.endHour,
-          endMinutes = _this$state5.endMinutes;
-      var _this$props3 = _this.props,
-          texts = _this$props3.texts,
-          fromHourRange = _this$props3.fromHourRange,
-          toHourRange = _this$props3.toHourRange;
+          endMinutes = _this$state5.endMinutes,
+          fromHourRange = _this$state5.fromHourRange,
+          toHourRange = _this$state5.toHourRange,
+          fromMinuteRange = _this$state5.fromMinuteRange,
+          toMinuteRange = _this$state5.toMinuteRange;
+      var texts = _this.props.texts;
       return React.createElement(PickerSuggestions, _extends({}, rest, {
         visible: visible,
         className: [s$12.pickerSuggestions, className].join(' '),
@@ -6188,7 +6189,9 @@ function (_React$PureComponent) {
         endHour: endHour,
         texts: texts,
         fromHourRange: fromHourRange,
-        toHourRange: toHourRange
+        toHourRange: toHourRange,
+        fromMinuteRange: fromMinuteRange,
+        toMinuteRange: toMinuteRange
       }));
     });
 
@@ -6202,6 +6205,10 @@ function (_React$PureComponent) {
       startMinutes: undefined,
       endHour: undefined,
       endMinutes: undefined,
+      fromMinuteRange: undefined,
+      toMinuteRange: undefined,
+      fromHourRange: undefined,
+      toHourRange: undefined,
       focusedDateInput: DateTimePicker.startDate,
       visiblePicker: DateTimePicker.datePicker,
       showTimeInputs: false
@@ -6239,9 +6246,9 @@ function (_React$PureComponent) {
         startHour: startHour,
         endHour: endHour
       };
-      var _this$props4 = this.props,
-          error = _this$props4.error,
-          className = _this$props4.className;
+      var _this$props3 = this.props,
+          error = _this$props3.error,
+          className = _this$props3.className;
       return React.createElement(Picker, {
         ref: this.ectorPicker,
         split: true,
@@ -6257,7 +6264,9 @@ function (_React$PureComponent) {
     key: "getDerivedStateFromProps",
     value: function getDerivedStateFromProps(props, state) {
       var propStartDate = props.startDate,
-          propEndDate = props.endDate;
+          propEndDate = props.endDate,
+          fromTimeRange = props.fromTimeRange,
+          toTimeRange = props.toTimeRange;
       var startDate = state.startDate,
           endDate = state.endDate,
           startMinutes = state.startMinutes,
@@ -6288,6 +6297,14 @@ function (_React$PureComponent) {
         showTimeInputs = true;
       }
 
+      var _DateTimePicker$parse = DateTimePicker.parseTimeRange(fromTimeRange),
+          fromHourRange = _DateTimePicker$parse.hourRange,
+          fromMinuteRange = _DateTimePicker$parse.minuteRange;
+
+      var _DateTimePicker$parse2 = DateTimePicker.parseTimeRange(toTimeRange),
+          toHourRange = _DateTimePicker$parse2.hourRange,
+          toMinuteRange = _DateTimePicker$parse2.minuteRange;
+
       return {
         showTimeInputs: showTimeInputs,
         startDate: startDate,
@@ -6295,7 +6312,11 @@ function (_React$PureComponent) {
         startMinutes: startMinutes,
         startHour: startHour,
         endMinutes: endMinutes,
-        endHour: endHour
+        endHour: endHour,
+        fromMinuteRange: fromMinuteRange,
+        fromHourRange: fromHourRange,
+        toMinuteRange: toMinuteRange,
+        toHourRange: toHourRange
       };
     }
   }]);
@@ -6311,6 +6332,35 @@ _defineProperty(DateTimePicker, "timePicker", 'timePicker');
 
 _defineProperty(DateTimePicker, "datePicker", 'datePicker');
 
+_defineProperty(DateTimePicker, "parseTimeRange", function (timeRange) {
+  if (!timeRange || !Array.isArray(timeRange) || timeRange.length !== 2) {
+    return {};
+  }
+
+  var _timeRange = _slicedToArray(timeRange, 2),
+      fromTime = _timeRange[0],
+      toTime = _timeRange[1];
+
+  fromTime = moment(fromTime);
+  toTime = moment(toTime);
+
+  if (!fromTime.isValid() || !toTime.isValid()) {
+    return {};
+  }
+
+  if (toTime.minutes() === 0) {
+    return {
+      minuteRange: [0, 60],
+      hourRange: [fromTime.hours(), toTime.hours()]
+    };
+  }
+
+  return {
+    minuteRange: [0, toTime.minutes()],
+    hourRange: [fromTime.hours(), toTime.hours() + 1]
+  };
+});
+
 DateTimePicker.propTypes = {
   error: PropTypes$1.string,
   className: PropTypes$1.string,
@@ -6321,8 +6371,8 @@ DateTimePicker.propTypes = {
   onEndDateChange: PropTypes$1.func,
   onStartTimeChange: PropTypes$1.func,
   onEndTimeChange: PropTypes$1.func,
-  fromHourRange: PropTypes$1.arrayOf(PropTypes$1.number),
-  toHourRange: PropTypes$1.arrayOf(PropTypes$1.number)
+  fromTimeRange: PropTypes$1.arrayOf(PropTypes$1.number),
+  toTimeRange: PropTypes$1.arrayOf(PropTypes$1.number)
 };
 DateTimePicker.defaultProps = {
   error: '',
@@ -6342,8 +6392,8 @@ DateTimePicker.defaultProps = {
   onEndTimeChange: function onEndTimeChange() {
     return null;
   },
-  fromHourRange: TimeSuggestions.defaultProps.fromHourRange,
-  toHourRange: TimeSuggestions.defaultProps.toHourRange
+  fromTimeRange: undefined,
+  toTimeRange: undefined
 };
 
 var css$14 = ".TimeRange-module_container__qP7nK {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  height: 100%;\n}\n\n.TimeRange-module_hours__9eQEI, .TimeRange-module_minutes__1mA4X {\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  overflow: scroll;\n  position: relative;\n  margin: 0 5px\n}\n\n.TimeRange-module_hours__9eQEI::-webkit-scrollbar, .TimeRange-module_minutes__1mA4X::-webkit-scrollbar {\n  display: none;\n}\n\n.TimeRange-module_hour__XiHg6, .TimeRange-module_minute__32J9f {\n  min-width: 20px;\n  padding: 5px 10px;\n  text-align: center\n}\n\n.TimeRange-module_hour__XiHg6:hover, .TimeRange-module_hour__XiHg6.TimeRange-module_selected__1EEqQ, .TimeRange-module_minute__32J9f:hover, .TimeRange-module_minute__32J9f.TimeRange-module_selected__1EEqQ {\n  border-radius: 5px;\n  cursor: pointer;\n  font-weight: bold;\n}\n\n.TimeRange-module_hour__XiHg6:hover, .TimeRange-module_minute__32J9f:hover {\n  background-color: rgb(255, 245, 204);\n}\n\n.TimeRange-module_hour__XiHg6.TimeRange-module_selected__1EEqQ, .TimeRange-module_minute__32J9f.TimeRange-module_selected__1EEqQ {\n  background-color: #ffcd02;\n}\n\n.TimeRange-module_hour__XiHg6.TimeRange-module_disabled__TxWjV, .TimeRange-module_minute__32J9f.TimeRange-module_disabled__TxWjV {\n  color: #939baa;\n}\n";
