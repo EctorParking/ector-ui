@@ -1,7 +1,7 @@
 @import '../../style/variable.global.css';
 
 .withBackground {
-  position: absolute;
+  position: relative;
   z-index: 2;
 }
 
@@ -9,6 +9,8 @@
   position: absolute;
   z-index: 1;
   height: 1.3rem;
+  margin-top: -0.65em;
+  top: 50%;
 }
 
 .withBackground.left {
