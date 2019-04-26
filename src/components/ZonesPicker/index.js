@@ -11,7 +11,7 @@ import {
 import { Type as ZoneType, ZoneTypesToIconName, ZoneTypes } from './ZoneType';
 import ZoneSuggestion from './ZoneSuggestion';
 import s from './ZonesPicker.module.css';
-import Suggestions from './ZonesPickerSuggestions.json';
+import Suggestions from './Zones.json';
 import { DefaultTexts, TextsType } from './ZonePickerTexts';
 import iconSearch from '../../assets/images/search.svg';
 import iconClear from '../../assets/images/clear.svg';
