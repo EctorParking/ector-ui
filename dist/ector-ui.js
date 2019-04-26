@@ -6396,8 +6396,8 @@ DateTimePicker.defaultProps = {
   toTimeRange: undefined
 };
 
-var css$14 = ".TimeRange-module_container__qP7nK {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  height: 100%;\n}\n\n.TimeRange-module_hours__9eQEI, .TimeRange-module_minutes__1mA4X {\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  overflow: scroll;\n  position: relative;\n  margin: 0 5px\n}\n\n.TimeRange-module_hours__9eQEI::-webkit-scrollbar, .TimeRange-module_minutes__1mA4X::-webkit-scrollbar {\n  display: none;\n}\n\n.TimeRange-module_hour__XiHg6, .TimeRange-module_minute__32J9f {\n  min-width: 20px;\n  padding: 5px 10px;\n  text-align: center\n}\n\n.TimeRange-module_hour__XiHg6:hover, .TimeRange-module_hour__XiHg6.TimeRange-module_selected__1EEqQ, .TimeRange-module_minute__32J9f:hover, .TimeRange-module_minute__32J9f.TimeRange-module_selected__1EEqQ {\n  border-radius: 5px;\n  cursor: pointer;\n  font-weight: bold;\n}\n\n.TimeRange-module_hour__XiHg6:hover, .TimeRange-module_minute__32J9f:hover {\n  background-color: rgb(255, 245, 204);\n}\n\n.TimeRange-module_hour__XiHg6.TimeRange-module_selected__1EEqQ, .TimeRange-module_minute__32J9f.TimeRange-module_selected__1EEqQ {\n  background-color: #ffcd02;\n}\n\n.TimeRange-module_hour__XiHg6.TimeRange-module_disabled__TxWjV, .TimeRange-module_minute__32J9f.TimeRange-module_disabled__TxWjV {\n  color: #939baa;\n}\n";
-var s$14 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","container":"TimeRange-module_container__qP7nK","hours":"TimeRange-module_hours__9eQEI","minutes":"TimeRange-module_minutes__1mA4X","hour":"TimeRange-module_hour__XiHg6","minute":"TimeRange-module_minute__32J9f","selected":"TimeRange-module_selected__1EEqQ","disabled":"TimeRange-module_disabled__TxWjV"};
+var css$14 = ".TimeRange-module_container__qP7nK {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  position: relative;\n}\n\n.TimeRange-module_arrow__3PgLa {\n  width: 25px;\n  text-align: center;\n  cursor: pointer;\n  position: absolute;\n  -webkit-transition: height .2s ease-in-out;\n  transition: height .2s ease-in-out\n}\n\n.TimeRange-module_arrow__3PgLa.TimeRange-module_left__2APgT {\n  left: 12px;\n}\n\n.TimeRange-module_arrow__3PgLa.TimeRange-module_right__pK-Uy {\n  right: 12px;\n}\n\n.TimeRange-module_arrow__3PgLa.TimeRange-module_top__3zrQ_ {\n  top: 0;\n}\n\n.TimeRange-module_arrow__3PgLa.TimeRange-module_bottom__2XcKl {\n  bottom: 0;\n}\n\n.TimeRange-module_arrowIcon__dRj-D {\n  text-shadow: 0 1px 2px rgba(0, 0, 0, .5);\n  color: #eceff6;\n  -webkit-transition: opacity .2s ease-in;\n  transition: opacity .2s ease-in;\n  opacity: 1\n}\n\n.TimeRange-module_arrowIcon__dRj-D.TimeRange-module_hiddenIcon__m6BpK {\n  opacity: 0;\n}\n\n.TimeRange-module_hours__9eQEI, .TimeRange-module_minutes__1mA4X {\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  overflow: scroll;\n  position: relative;\n  margin: 0 5px;\n  scrollbar-width: none\n}\n\n.TimeRange-module_hours__9eQEI::-webkit-scrollbar, .TimeRange-module_minutes__1mA4X::-webkit-scrollbar {\n  display: none;\n}\n\n.TimeRange-module_hour__XiHg6, .TimeRange-module_minute__32J9f {\n  min-width: 20px;\n  padding: 5px 10px;\n  text-align: center\n}\n\n.TimeRange-module_hour__XiHg6:hover, .TimeRange-module_hour__XiHg6.TimeRange-module_selected__1EEqQ, .TimeRange-module_minute__32J9f:hover, .TimeRange-module_minute__32J9f.TimeRange-module_selected__1EEqQ {\n  border-radius: 5px;\n  cursor: pointer;\n  font-weight: bold;\n}\n\n.TimeRange-module_hour__XiHg6:hover, .TimeRange-module_minute__32J9f:hover {\n  background-color: rgb(255, 245, 204);\n}\n\n.TimeRange-module_hour__XiHg6.TimeRange-module_selected__1EEqQ, .TimeRange-module_minute__32J9f.TimeRange-module_selected__1EEqQ {\n  background-color: #ffcd02;\n}\n\n.TimeRange-module_hour__XiHg6.TimeRange-module_disabled__TxWjV, .TimeRange-module_minute__32J9f.TimeRange-module_disabled__TxWjV {\n  color: #939baa;\n}\n";
+var s$14 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","container":"TimeRange-module_container__qP7nK","arrow":"TimeRange-module_arrow__3PgLa","left":"TimeRange-module_left__2APgT","right":"TimeRange-module_right__pK-Uy","top":"TimeRange-module_top__3zrQ_","bottom":"TimeRange-module_bottom__2XcKl","arrowIcon":"TimeRange-module_arrowIcon__dRj-D","hiddenIcon":"TimeRange-module_hiddenIcon__m6BpK","hours":"TimeRange-module_hours__9eQEI","minutes":"TimeRange-module_minutes__1mA4X","hour":"TimeRange-module_hour__XiHg6","minute":"TimeRange-module_minute__32J9f","selected":"TimeRange-module_selected__1EEqQ","disabled":"TimeRange-module_disabled__TxWjV"};
 styleInject(css$14);
 
 var TimeNumber = function TimeNumber(_ref) {
@@ -6425,7 +6425,7 @@ var TimeElement = function TimeElement(_ref2) {
 
 TimeElement.propTypes = {
   className: PropTypes$1.string.isRequired,
-  value: PropTypes$1.string.isRequired,
+  value: PropTypes$1.oneOfType([PropTypes$1.string, PropTypes$1.number]).isRequired,
   selected: PropTypes$1.bool.isRequired,
   onSelect: PropTypes$1.func.isRequired,
   disabled: PropTypes$1.bool.isRequired
@@ -6438,12 +6438,24 @@ var getRange = function getRange(start, end) {
   });
 };
 
+var getContainerBottomScrollLimit = function getContainerBottomScrollLimit(containerRef) {
+  var container = containerRef.current;
+
+  if (!container) {
+    return 0;
+  }
+
+  return container.scrollHeight - container.offsetTop - container.offsetHeight;
+};
+
 var TimeRange =
 /*#__PURE__*/
 function (_React$PureComponent) {
   _inherits(TimeRange, _React$PureComponent);
 
   function TimeRange(props) {
+    var _visibleArrows2;
+
     var _this;
 
     _classCallCheck(this, TimeRange);
@@ -6486,26 +6498,202 @@ function (_React$PureComponent) {
       });
     });
 
+    _defineProperty(_assertThisInitialized(_this), "handleMouseLeave", function () {
+      if (_this.scrollInterval) {
+        clearInterval(_this.scrollInterval);
+        _this.scrollInterval = null;
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "getHoursContainerStyle", function () {
+      var visibleArrows = _this.state.visibleArrows;
+      return {
+        marginTop: visibleArrows[TimeRange.topHoursArrow] ? '20px' : '0',
+        marginBottom: visibleArrows[TimeRange.bottomHoursArrow] ? '20px' : '0'
+      };
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "getMinutesContainerStyle", function () {
+      var visibleArrows = _this.state.visibleArrows;
+      return {
+        marginTop: visibleArrows[TimeRange.topMinutesArrow] ? '20px' : '0',
+        marginBottom: visibleArrows[TimeRange.bottomMinutesArrow] ? '20px' : '0'
+      };
+    });
+
     var startHour = props.startHour,
         endHour = props.endHour,
         minutesInterval = props.minutesInterval,
         startMinute = props.startMinute,
         endMinute = props.endMinute;
-    _this.minutesRange = getRange(startMinute, endMinute, minutesInterval);
-    _this.hoursRange = getRange(startHour, endHour);
+
+    var _visibleArrows = (_visibleArrows2 = {}, _defineProperty(_visibleArrows2, TimeRange.topMinutesArrow, false), _defineProperty(_visibleArrows2, TimeRange.topHoursArrow, false), _defineProperty(_visibleArrows2, TimeRange.bottomHoursArrow, true), _defineProperty(_visibleArrows2, TimeRange.bottomMinutesArrow, true), _visibleArrows2);
+
+    _this.state = {
+      hours: getRange(startHour, endHour),
+      minutes: getRange(startMinute, endMinute, minutesInterval),
+      visibleArrows: _visibleArrows
+    };
+    _this.minutesContainer = React__default.createRef();
+    _this.hoursContainer = React__default.createRef();
+    _this.scrollInterval = null;
+    _this.handleHoursScrollTop = _this.handleScrollHover.bind(_assertThisInitialized(_this), _this.hoursContainer, -TimeRange.scrollOffset);
+    _this.handleHoursScrollBottom = _this.handleScrollHover.bind(_assertThisInitialized(_this), _this.hoursContainer, TimeRange.scrollOffset);
+    _this.handleMinutesScrollTop = _this.handleScrollHover.bind(_assertThisInitialized(_this), _this.minutesContainer, -TimeRange.scrollOffset);
+    _this.handleMinutesScrollBottom = _this.handleScrollHover.bind(_assertThisInitialized(_this), _this.minutesContainer, TimeRange.scrollOffset);
+    _this.handleMinutesScroll = _this.handleScroll.bind(_assertThisInitialized(_this), _this.minutesContainer, TimeRange.topMinutesArrow, TimeRange.bottomMinutesArrow);
+    _this.handleHoursScroll = _this.handleScroll.bind(_assertThisInitialized(_this), _this.hoursContainer, TimeRange.topHoursArrow, TimeRange.bottomHoursArrow);
+    _this.handleMinutesResetScrollTop = _this.resetScroll.bind(_assertThisInitialized(_this), _this.minutesContainer, TimeRange.topMinutesArrow);
+    _this.handleHoursResetScrollTop = _this.resetScroll.bind(_assertThisInitialized(_this), _this.hoursContainer, TimeRange.topHoursArrow);
+    _this.handleMinutesResetScrollBottom = _this.resetScroll.bind(_assertThisInitialized(_this), _this.minutesContainer, TimeRange.bottomMinutesArrow);
+    _this.handleHoursResetScrollBottom = _this.resetScroll.bind(_assertThisInitialized(_this), _this.hoursContainer, TimeRange.bottomHoursArrow);
     return _this;
   }
 
   _createClass(TimeRange, [{
+    key: "handleScrollHover",
+    value: function handleScrollHover(containerRef, interval) {
+      var _this2 = this;
+
+      this.scrollInterval = setInterval(function () {
+        var container = containerRef.current;
+        var top = container.scrollTop + interval;
+
+        if (top <= 0) {
+          top = 0;
+          clearInterval(_this2.scrollInterval);
+        } else if (top >= getContainerBottomScrollLimit(containerRef)) {
+          top = getContainerBottomScrollLimit(containerRef) + TimeRange.scrollOffset;
+        }
+
+        container.scrollTo({
+          top: top,
+          behavior: 'smooth'
+        });
+      }, TimeRange.scrollInterval);
+    }
+  }, {
+    key: "handleScroll",
+    value: function handleScroll(containerRef, topArrow, bottomArrow) {
+      var container = containerRef.current;
+      var visibleArrows = this.state.visibleArrows;
+
+      if (container.scrollTop <= 0) {
+        visibleArrows[topArrow] = false;
+      } else if (container.scrollTop >= getContainerBottomScrollLimit(containerRef)) {
+        visibleArrows[bottomArrow] = false;
+      } else if (!visibleArrows[topArrow] || !visibleArrows[bottomArrow]) {
+        visibleArrows[topArrow] = true;
+        visibleArrows[bottomArrow] = true;
+      } else {
+        return;
+      }
+
+      this.setState({
+        visibleArrows: visibleArrows
+      });
+    }
+  }, {
+    key: "resetScroll",
+    value: function resetScroll(containerRef, arrow) {
+      var container = containerRef.current;
+      var scrollValue = {
+        top: 0
+      };
+
+      if (this.scrollInterval) {
+        clearInterval(this.scrollInterval);
+      }
+
+      if ([TimeRange.bottomMinutesArrow, TimeRange.bottomHoursArrow].includes(arrow)) {
+        scrollValue = {
+          top: getContainerBottomScrollLimit(containerRef)
+        };
+      }
+
+      container.scrollTo(_objectSpread({}, scrollValue, {
+        behavior: 'smooth'
+      }));
+    }
+  }, {
     key: "render",
     value: function render() {
+      var style = this.props.style;
+      var _this$state = this.state,
+          minutes = _this$state.minutes,
+          hours = _this$state.hours,
+          visibleArrows = _this$state.visibleArrows;
       return React__default.createElement("div", {
-        className: s$14.container
+        className: s$14.container,
+        style: style
       }, React__default.createElement("div", {
-        className: s$14.hours
-      }, this.hoursRange.map(this.renderHour)), React__default.createElement("div", {
-        className: s$14.minutes
-      }, this.minutesRange.map(this.renderMinutes)));
+        role: "presentation",
+        style: {
+          height: visibleArrows[TimeRange.topHoursArrow] ? TimeRange.arrowHeight : 0
+        },
+        className: [s$14.arrow, s$14.left, s$14.top].join(' '),
+        onMouseLeave: this.handleMouseLeave,
+        onMouseEnter: this.handleHoursScrollTop,
+        onClick: this.handleHoursResetScrollTop
+      }, React__default.createElement("i", {
+        className: ['icon icon-chevron-thin-up', s$14.arrowIcon, visibleArrows[TimeRange.topHoursArrow] ? undefined : s$14.hiddenIcon].join(' ')
+      })), React__default.createElement("div", {
+        className: s$14.hours,
+        style: this.getHoursContainerStyle(),
+        ref: this.hoursContainer,
+        onScroll: this.handleHoursScroll
+      }, hours.map(this.renderHour)), React__default.createElement("div", {
+        role: "presentation",
+        style: {
+          height: visibleArrows[TimeRange.bottomHoursArrow] ? TimeRange.arrowHeight : 0
+        },
+        className: [s$14.arrow, s$14.left, s$14.bottom].join(' '),
+        onMouseLeave: this.handleMouseLeave,
+        onMouseEnter: this.handleHoursScrollBottom,
+        onClick: this.handleHoursResetScrollBottom
+      }, React__default.createElement("i", {
+        className: ['icon icon-chevron-thin-down', s$14.arrowIcon, visibleArrows[TimeRange.bottomHoursArrow] ? undefined : s$14.hiddenIcon].join(' ')
+      })), React__default.createElement("div", {
+        role: "presentation",
+        style: {
+          height: visibleArrows[TimeRange.topMinutesArrow] ? TimeRange.arrowHeight : 0
+        },
+        className: [s$14.arrow, s$14.right, s$14.top].join(' '),
+        onMouseLeave: this.handleMouseLeave,
+        onMouseEnter: this.handleMinutesScrollTop,
+        onClick: this.handleMinutesResetScrollTop
+      }, React__default.createElement("i", {
+        className: ['icon icon-chevron-thin-up', s$14.arrowIcon, visibleArrows[TimeRange.topMinutesArrow] ? undefined : s$14.hiddenIcon].join(' ')
+      })), React__default.createElement("div", {
+        onScroll: this.handleMinutesScroll,
+        className: s$14.minutes,
+        style: this.getMinutesContainerStyle(),
+        ref: this.minutesContainer
+      }, minutes.map(this.renderMinutes)), React__default.createElement("div", {
+        role: "presentation",
+        style: {
+          height: visibleArrows[TimeRange.bottomMinutesArrow] ? TimeRange.arrowHeight : 0
+        },
+        className: [s$14.arrow, s$14.right, s$14.bottom].join(' '),
+        onMouseLeave: this.handleMouseLeave,
+        onMouseEnter: this.handleMinutesScrollBottom,
+        onClick: this.handleMinutesResetScrollBottom
+      }, React__default.createElement("i", {
+        className: ['icon icon-chevron-thin-down', s$14.arrowIcon, visibleArrows[TimeRange.bottomMinutesArrow] ? undefined : s$14.hiddenIcon].join(' ')
+      })));
+    }
+  }], [{
+    key: "getDerivedStateFromProps",
+    value: function getDerivedStateFromProps(props) {
+      var startMinute = props.startMinute,
+          endMinute = props.endMinute,
+          minutesInterval = props.minutesInterval,
+          startHour = props.startHour,
+          endHour = props.endHour;
+      return {
+        hours: getRange(startHour, endHour),
+        minutes: getRange(startMinute, endMinute, minutesInterval)
+      };
     }
   }]);
 
@@ -6514,6 +6702,13 @@ function (_React$PureComponent) {
 
 TimeRange.minutes = 'minutes';
 TimeRange.hour = 'hour';
+TimeRange.topHoursArrow = 'topHoursArrow';
+TimeRange.bottomHoursArrow = 'bottomHoursArrow';
+TimeRange.topMinutesArrow = 'topMinutesArrow';
+TimeRange.bottomMinutesArrow = 'bottomMinutesArrow';
+TimeRange.arrowHeight = '20px';
+TimeRange.scrollOffset = 30;
+TimeRange.scrollInterval = 100;
 TimeRange.defaultProps = {
   startHour: 7,
   endHour: 24,
@@ -6524,7 +6719,8 @@ TimeRange.defaultProps = {
   hour: undefined,
   minutes: undefined,
   startMinute: 0,
-  endMinute: 60
+  endMinute: 60,
+  style: undefined
 };
 TimeRange.propTypes = {
   startHour: PropTypes$1.number,
@@ -6534,7 +6730,8 @@ TimeRange.propTypes = {
   minutes: PropTypes$1.string,
   hour: PropTypes$1.string,
   startMinute: PropTypes$1.number,
-  endMinute: PropTypes$1.number
+  endMinute: PropTypes$1.number,
+  style: PropTypes$1.object
 };
 
 var css$15 = ".FlightInformationForm-module_card__3HVvP {\n    width: 650px;\n}\n\n.FlightInformationForm-module_contentCard__2iuCz {}\n\n.FlightInformationForm-module_formContainer__38_9v {\n    margin-bottom: 20px;\n}\n\n.FlightInformationForm-module_title__3yTDe {\n    margin: 0;\n    font-weight: 300;\n    color: #32a0c5;\n}\n\n.FlightInformationForm-module_firstColumn__3dXcq {\n    padding-right: 20px;\n}\n\n.FlightInformationForm-module_secondColumn__1tg-R {\n    padding-left: 20px;\n}\n\n.FlightInformationForm-module_halfWidth__3iWMs {\n    width: 50%;\n}\n\n.FlightInformationForm-module_row__2j-tW {\n    margin-top: 10px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n}\n\n.FlightInformationForm-module_noMargin__DF7_J {\n    margin: 0;\n}\n\n.FlightInformationForm-module_input__1QJpa {\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n}\n\n.FlightInformationForm-module_select__1KZ8b {\n    margin-top: 0;\n}\n\n.FlightInformationForm-module_defaultOption__MJRT6 {\n    color: #d5d6d7;\n}\n\n.FlightInformationForm-module_actionLink__nzpW1 {\n    margin-top: 5px;\n}\n\n.FlightInformationForm-module_flexStart__3he4R {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: start;\n        -ms-flex-pack: start;\n            justify-content: flex-start;\n}\n\n.FlightInformationForm-module_flexEnd__f47Mt {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: end;\n        -ms-flex-pack: end;\n            justify-content: flex-end;\n}\n\n.FlightInformationForm-module_description__38HJs {\n    margin-top: 10px;\n}\n\n@media (max-width: 1130px) {\n    .FlightInformationForm-module_card__3HVvP {\n        width: -webkit-min-content;\n        width: -moz-min-content;\n        width: min-content;\n    }\n    .FlightInformationForm-module_input__1QJpa {\n        min-width: 275px;\n        max-width: 275px;\n        margin: 5px 10px 0 10px;\n    }\n    .FlightInformationForm-module_firstColumn__3dXcq, .FlightInformationForm-module_secondColumn__1tg-R {\n        padding: 0;\n    }\n    .FlightInformationForm-module_actionLink__nzpW1, .FlightInformationForm-module_description__38HJs {\n        margin-right: 10px;\n        margin-left: 10px;\n    }\n    .FlightInformationForm-module_title__3yTDe {\n        margin-left: 10px;\n    }\n    .FlightInformationForm-module_row__2j-tW {\n        -ms-flex-wrap: wrap;\n            flex-wrap: wrap;\n    }\n}\n\n@media (max-width: 825px) {\n    .FlightInformationForm-module_card__3HVvP {\n        width: 100%;\n    }\n    .FlightInformationForm-module_input__1QJpa {\n        max-width: none;\n    }\n\n}\n\n@media (max-width: 480px) {\n    .FlightInformationForm-module_card__3HVvP {\n        width: 100%;\n    }\n    .FlightInformationForm-module_contentCard__2iuCz {\n        padding: 20px;\n    }\n    .FlightInformationForm-module_halfWidth__3iWMs, .FlightInformationForm-module_input__1QJpa {\n        width: 100%;\n    }\n    .FlightInformationForm-module_input__1QJpa {\n        -webkit-box-flex: 0;\n            -ms-flex: none;\n                flex: none;\n        margin: 5px 0 0 0;\n        min-width: 0;\n    }\n    .FlightInformationForm-module_title__3yTDe, .FlightInformationForm-module_actionLink__nzpW1 {\n        margin: 0;\n    }\n    .FlightInformationForm-module_row__2j-tW {\n        margin: 0;\n        -ms-flex-wrap: wrap;\n            flex-wrap: wrap;\n    }\n    .FlightInformationForm-module_firstColumn__3dXcq, .FlightInformationForm-module_secondColumn__1tg-R {\n        padding: 0;\n    }\n    .FlightInformationForm-module_title__3yTDe {\n        font-size: 22px;\n    }\n    .FlightInformationForm-module_description__38HJs {\n        margin: 15px 0;\n    }\n}\n";
