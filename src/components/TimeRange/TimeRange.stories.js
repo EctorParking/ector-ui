@@ -1,13 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
-import { withKnobs, text, number } from '@storybook/addon-knobs';
+import { withKnobs, number } from '@storybook/addon-knobs';
 import TimeRange from '.';
 
 class TimeRangeStory extends React.Component {
   state = {
-    selectedMinute: 0,
-    selectedHour: 0,
+    selectedMinute: '0',
+    selectedHour: '0',
   };
 
   onSelect = (timeUnits, value) => {

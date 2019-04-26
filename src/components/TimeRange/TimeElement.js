@@ -20,7 +20,10 @@ const TimeElement = ({
 
 TimeElement.propTypes = {
   className: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]).isRequired,
   selected: PropTypes.bool.isRequired,
   onSelect: PropTypes.func.isRequired,
   disabled: PropTypes.bool.isRequired,
