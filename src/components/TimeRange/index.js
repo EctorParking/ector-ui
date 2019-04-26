@@ -311,7 +311,7 @@ TimeRange.propTypes = {
   hour: PropTypes.string,
   startMinute: PropTypes.number,
   endMinute: PropTypes.number,
-  style: PropTypes.object,
+  style: PropTypes.shape(),
 };
 
 export default TimeRange;
