@@ -7,6 +7,16 @@ const getRange = (start, end, interval = 1) => (
   Array.from(Array(end).keys()).slice(start).filter(nbr => nbr % interval === 0)
 );
 
+const getContainerBottomScrollLimit = (containerRef, offset = 0) => {
+  const { current: container } = containerRef;
+
+  if (!container) {
+    return 0;
+  }
+  return container.scrollHeight - container.offsetTop - container.offsetHeight;
+};
+
+
 class TimeRange extends React.PureComponent {
   constructor(props) {
     super(props);
@@ -28,12 +38,36 @@ class TimeRange extends React.PureComponent {
     this.minutesContainer = React.createRef();
     this.hoursContainer = React.createRef();
     this.scrollInterval = null;
-    this.handleHoursScrollTop = this.handleScrollHover.bind(this, this.hoursContainer, -TimeRange.scrollOffset, TimeRange.topHoursArrow);
-    this.handleHoursScrollBottom = this.handleScrollHover.bind(this, this.hoursContainer, TimeRange.scrollOffset, TimeRange.bottomHoursArrow);
-    this.handleMinutesScrollTop = this.handleScrollHover.bind(this, this.minutesContainer, -TimeRange.scrollOffset, TimeRange.topMinutesArrow);
-    this.handleMinutesScrollBottom = this.handleScrollHover.bind(this, this.minutesContainer, TimeRange.scrollOffset, TimeRange.bottomMinutesArrow);
-    this.handleMinutesScroll = this.handleScroll.bind(this, this.minutesContainer, TimeRange.topMinutesArrow, TimeRange.bottomMinutesArrow);
-    this.handleHoursScroll = this.handleScroll.bind(this, this.hoursContainer, TimeRange.topHoursArrow, TimeRange.bottomHoursArrow);
+    this.handleHoursScrollTop = this.handleScrollHover.bind(
+      this, this.hoursContainer, -TimeRange.scrollOffset,
+    );
+    this.handleHoursScrollBottom = this.handleScrollHover.bind(
+      this, this.hoursContainer, TimeRange.scrollOffset,
+    );
+    this.handleMinutesScrollTop = this.handleScrollHover.bind(
+      this, this.minutesContainer, -TimeRange.scrollOffset,
+    );
+    this.handleMinutesScrollBottom = this.handleScrollHover.bind(
+      this, this.minutesContainer, TimeRange.scrollOffset,
+    );
+    this.handleMinutesScroll = this.handleScroll.bind(
+      this, this.minutesContainer, TimeRange.topMinutesArrow, TimeRange.bottomMinutesArrow,
+    );
+    this.handleHoursScroll = this.handleScroll.bind(
+      this, this.hoursContainer, TimeRange.topHoursArrow, TimeRange.bottomHoursArrow,
+    );
+    this.handleMinutesResetScrollTop = this.resetScroll.bind(
+      this, this.minutesContainer, TimeRange.topMinutesArrow,
+    );
+    this.handleHoursResetScrollTop = this.resetScroll.bind(
+      this, this.hoursContainer, TimeRange.topHoursArrow,
+    );
+    this.handleMinutesResetScrollBottom = this.resetScroll.bind(
+      this, this.minutesContainer, TimeRange.bottomMinutesArrow,
+    );
+    this.handleHoursResetScrollBottom = this.resetScroll.bind(
+      this, this.hoursContainer, TimeRange.bottomHoursArrow,
+    );
   }
 
   static getDerivedStateFromProps(props) {
@@ -116,34 +150,32 @@ class TimeRange extends React.PureComponent {
     };
   };
 
-  handleScrollHover(containerRef, interval, arrow) {
+  handleScrollHover(containerRef, interval) {
     this.scrollInterval = setInterval(() => {
       const { current: container } = containerRef;
-      if (
-        container.scrollTop + interval > 0
-        && container.scrollTop + interval < container.scrollHeight
-      ) {
-        container.scrollTo({
-          top: container.scrollTop + interval,
-          behavior: 'smooth',
-        });
-      } else {
-        this.resetScroll(containerRef, arrow);
+      let top = container.scrollTop + interval;
+
+      if (top <= 0) {
+        top = 0;
         clearInterval(this.scrollInterval);
+      } else if (top >= getContainerBottomScrollLimit(containerRef)) {
+        top = getContainerBottomScrollLimit(containerRef) + TimeRange.scrollOffset;
       }
+      container.scrollTo({
+        top,
+        behavior: 'smooth',
+      });
     },
-    !this.scrollInterval ? 0 : 42);
+    TimeRange.scrollInterval);
   }
 
   handleScroll(containerRef, topArrow, bottomArrow) {
     const { current: container } = containerRef;
     const { visibleArrows } = this.state;
 
-    console.log('container::', container.scrollHeight);
-    console.dir(container);
-    if (container.scrollTop < 10) {
+    if (container.scrollTop <= 0) {
       visibleArrows[topArrow] = false;
-    } else if (container.scrollTop > container.scrollHeight - 10) {
+    } else if (container.scrollTop >= getContainerBottomScrollLimit(containerRef)) {
       visibleArrows[bottomArrow] = false;
     } else if (
       !visibleArrows[topArrow] || !visibleArrows[bottomArrow]
@@ -160,8 +192,11 @@ class TimeRange extends React.PureComponent {
     const { current: container } = containerRef;
     let scrollValue = { top: 0 };
 
+    if (this.scrollInterval) {
+      clearInterval(this.scrollInterval);
+    }
     if ([TimeRange.bottomMinutesArrow, TimeRange.bottomHoursArrow].includes(arrow)) {
-      scrollValue = { bottom: 0 };
+      scrollValue = { top: getContainerBottomScrollLimit(containerRef) };
     }
     container.scrollTo({
       ...scrollValue,
@@ -170,20 +205,21 @@ class TimeRange extends React.PureComponent {
   }
 
   render() {
-    const { height } = this.props;
     const { minutes, hours, visibleArrows } = this.state;
 
     return (
-      <div className={s.container} style={{ height: `${height}px` }}>
+      <div className={s.container}>
         <div
+          role="presentation"
           style={{
             height: visibleArrows[TimeRange.topHoursArrow] ? TimeRange.arrowHeight : 0,
           }}
           className={[s.arrow, s.left, s.top].join(' ')}
           onMouseLeave={this.handleMouseLeave}
           onMouseEnter={this.handleHoursScrollTop}
+          onClick={this.handleHoursResetScrollTop}
         >
-          {visibleArrows[TimeRange.topHoursArrow] && '|'}
+          <i className={['icon icon-chevron-thin-up', s.arrowIcon, visibleArrows[TimeRange.topHoursArrow] ? undefined : s.hiddenIcon].join(' ')} />
         </div>
         <div
           className={s.hours}
@@ -194,24 +230,28 @@ class TimeRange extends React.PureComponent {
           {hours.map(this.renderHour)}
         </div>
         <div
+          role="presentation"
           style={{
             height: visibleArrows[TimeRange.bottomHoursArrow] ? TimeRange.arrowHeight : 0,
           }}
           className={[s.arrow, s.left, s.bottom].join(' ')}
           onMouseLeave={this.handleMouseLeave}
           onMouseEnter={this.handleHoursScrollBottom}
+          onClick={this.handleHoursResetScrollBottom}
         >
-          {visibleArrows[TimeRange.bottomHoursArrow] && '|'}
+          <i className={['icon icon-chevron-thin-down', s.arrowIcon, visibleArrows[TimeRange.bottomHoursArrow] ? undefined : s.hiddenIcon].join(' ')} />
         </div>
         <div
+          role="presentation"
           style={{
             height: visibleArrows[TimeRange.topMinutesArrow] ? TimeRange.arrowHeight : 0,
           }}
           className={[s.arrow, s.right, s.top].join(' ')}
           onMouseLeave={this.handleMouseLeave}
           onMouseEnter={this.handleMinutesScrollTop}
+          onClick={this.handleMinutesResetScrollTop}
         >
-          {visibleArrows[TimeRange.topMinutesArrow] && '|'}
+          <i className={['icon icon-chevron-thin-up', s.arrowIcon, visibleArrows[TimeRange.topMinutesArrow] ? undefined : s.hiddenIcon].join(' ')} />
         </div>
 
         <div
@@ -223,14 +263,16 @@ class TimeRange extends React.PureComponent {
           {minutes.map(this.renderMinutes)}
         </div>
         <div
+          role="presentation"
           style={{
             height: visibleArrows[TimeRange.bottomMinutesArrow] ? TimeRange.arrowHeight : 0,
           }}
           className={[s.arrow, s.right, s.bottom].join(' ')}
           onMouseLeave={this.handleMouseLeave}
           onMouseEnter={this.handleMinutesScrollBottom}
+          onClick={this.handleMinutesResetScrollBottom}
         >
-          {visibleArrows[TimeRange.bottomMinutesArrow] && '|'}
+          <i className={['icon icon-chevron-thin-down', s.arrowIcon, visibleArrows[TimeRange.bottomMinutesArrow] ? undefined : s.hiddenIcon].join(' ')} />
         </div>
       </div>
     );
@@ -244,7 +286,8 @@ TimeRange.bottomHoursArrow = 'bottomHoursArrow';
 TimeRange.topMinutesArrow = 'topMinutesArrow';
 TimeRange.bottomMinutesArrow = 'bottomMinutesArrow';
 TimeRange.arrowHeight = '20px';
-TimeRange.scrollOffset = 5;
+TimeRange.scrollOffset = 30;
+TimeRange.scrollInterval = 100;
 
 TimeRange.defaultProps = {
   startHour: 7,
@@ -255,7 +298,6 @@ TimeRange.defaultProps = {
   minutes: undefined,
   startMinute: 0,
   endMinute: 60,
-  height: 200,
 };
 
 TimeRange.propTypes = {
@@ -267,7 +309,6 @@ TimeRange.propTypes = {
   hour: PropTypes.string,
   startMinute: PropTypes.number,
   endMinute: PropTypes.number,
-  height: PropTypes.number,
 };
 
 export default TimeRange;
