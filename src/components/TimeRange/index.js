@@ -205,10 +205,11 @@ class TimeRange extends React.PureComponent {
   }
 
   render() {
+    const { style } = this.props;
     const { minutes, hours, visibleArrows } = this.state;
 
     return (
-      <div className={s.container}>
+      <div className={s.container} style={style}>
         <div
           role="presentation"
           style={{
@@ -298,6 +299,7 @@ TimeRange.defaultProps = {
   minutes: undefined,
   startMinute: 0,
   endMinute: 60,
+  style: undefined,
 };
 
 TimeRange.propTypes = {
@@ -309,6 +311,7 @@ TimeRange.propTypes = {
   hour: PropTypes.string,
   startMinute: PropTypes.number,
   endMinute: PropTypes.number,
+  style: PropTypes.object,
 };
 
 export default TimeRange;

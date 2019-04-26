@@ -25,6 +25,7 @@ class TimeRangeStory extends React.Component {
     return (
       <TimeRange
         {...this.props}
+        style={{ height: '200px' }}
         onSelect={this.onSelect}
         minutes={selectedMinute}
         hour={selectedHour}
