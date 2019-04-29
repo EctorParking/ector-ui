@@ -3,15 +3,13 @@ import PropTypes from 'prop-types';
 import Levenshtein from 'fast-levenshtein';
 import {
   Picker,
-  PickerSuggestions,
   Input,
-  InputCheckbox,
   Icon,
 } from '..';
 import { Type as ZoneType, ZoneTypesToIconName, ZoneTypes } from './ZoneType';
-import ZoneSuggestion from './ZoneSuggestion';
+import ZonesPickerSuggestions from './ZonesPickerSuggestions';
 import s from './ZonesPicker.module.css';
-import Suggestions from './ZonesPickerSuggestions.json';
+import Suggestions from './Zones.json';
 import { DefaultTexts, TextsType } from './ZonePickerTexts';
 import iconSearch from '../../assets/images/search.svg';
 import iconClear from '../../assets/images/clear.svg';
@@ -281,52 +279,28 @@ class ZonesPicker extends React.PureComponent {
         onChange={this.handleToZoneChange}
         placeholder={texts.inputPlaceholder}
         className={[s.input, className].join(' ')}
-        autocomplete="off"
+        autoComplete="off"
         LeftComponent={this.renderToInputLeftComponent}
         RightComponent={this.renderToInputRightComponent}
       />
     );
   };
 
-  renderFromZoneSuggestion = zone => (
-    <ZoneSuggestion
-      value={zone}
-      key={zone.code}
-      onClick={() => this.handleFromZoneClick(zone)}
-      disabled={zone.disabled}
-    />
-  );
-
-  renderToZoneSuggestion = zone => (
-    <ZoneSuggestion
-      value={zone}
-      key={zone.code}
-      onClick={() => this.handleToZoneClick(zone)}
-      disabled={zone.disabled}
-      className={s.toZoneSuggestion}
-    />
-  );
-
-  renderSuggestionsComponent = ({ visible, ...rest }) => {
+  renderSuggestionsComponent = (pickerSuggestionsProps) => {
     const { texts } = this.props;
     const { split, fromZoneSuggestions, toZoneSuggestions } = this.state;
 
     return (
-      <PickerSuggestions visible={visible} {...rest}>
-        <div className={s.suggestionsContainer}>
-          <div className={[s.suggestions, visible ? s.visible : undefined].join(' ')}>
-            {fromZoneSuggestions.map(this.renderFromZoneSuggestion)}
-          </div>
-          <div className={[s.suggestions, visible && split ? s.visible : undefined].join(' ')}>
-            {toZoneSuggestions.map(this.renderToZoneSuggestion)}
-          </div>
-        </div>
-        <div className={[s.suggestionAction, visible ? s.suggestionActionVisible : undefined].join(' ')}>
-          <InputCheckbox onChange={this.handleSplitSuggestions} checked={split}>
-            {texts.suggestionCheckboxLabel}
-          </InputCheckbox>
-        </div>
-      </PickerSuggestions>
+      <ZonesPickerSuggestions
+        {...pickerSuggestionsProps}
+        texts={texts}
+        split={split}
+        fromZoneSuggestions={fromZoneSuggestions}
+        toZoneSuggestions={toZoneSuggestions}
+        onSplit={this.handleSplitSuggestions}
+        onFromZoneClick={this.handleFromZoneClick}
+        onToZoneClick={this.handleToZoneClick}
+      />
     );
   };
 
