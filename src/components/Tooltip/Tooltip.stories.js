@@ -18,6 +18,10 @@ const sizeOptions = {
   medium: 'medium',
   larger: 'larger',
 };
+const visibleOptions = {
+  visible: true,
+  hidden: false,
+};
 
 storiesOf('Tooltip', module)
   .addParameters({
@@ -34,6 +38,7 @@ storiesOf('Tooltip', module)
       iconClassName: text('Icon', 'icon-ec-info'),
       position: select('Position', positionOptions, 'bottom'),
       tooltipSize: select('Size', sizeOptions, 'medium'),
+      visible: select('Visible', visibleOptions, false),
     };
 
     return <Tooltip {...props} />;

@@ -11,12 +11,14 @@ const Tooltip = ({
   position,
   tooltipSize,
   IconComponent,
+  visible,
 }) => {
   const computedTooltipClassName = [
     s.tooltipText,
     s[position],
     s[tooltipSize],
     tooltipClassName,
+    visible ? s.visibleTooltip : s.hiddenTooltip,
   ];
 
   return (
@@ -42,6 +44,7 @@ Tooltip.defaultProps = {
   tooltipSize: 'medium',
   IconComponent: null,
   iconClassName: '',
+  visible: false,
 };
 
 Tooltip.propTypes = {
@@ -52,6 +55,7 @@ Tooltip.propTypes = {
   position: PropTypes.oneOf(['left', 'top', 'right', 'bottom']),
   tooltipSize: PropTypes.oneOf(['xSmall', 'small', 'medium', 'large']),
   IconComponent: PropTypes.func,
+  visible: PropTypes.bool,
 };
 
 
