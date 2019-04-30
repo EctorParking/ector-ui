@@ -7013,6 +7013,7 @@ function (_React$Component) {
           returnFlightCompany = _this$props3.values.returnFlightCompany,
           returnFlightCompanyError = _this$props3.errors.returnFlightCompany,
           texts = _this$props3.texts;
+      var shouldDisplayReturnFlightInformation = _this.state.shouldDisplayReturnFlightInformation;
       var selectedAirline = airlines.find(function (airline) {
         return airline.value.toLowerCase() === (returnFlightCompany ? returnFlightCompany.toLowerCase() : '');
       });
@@ -7026,7 +7027,7 @@ function (_React$Component) {
         noOptionsMessage: function noOptionsMessage() {
           return texts.noResult;
         },
-        error: returnFlightCompanyError
+        error: shouldDisplayReturnFlightInformation ? returnFlightCompanyError : null
       });
     });
 
@@ -7138,7 +7139,7 @@ function (_React$Component) {
         onChange: this.onChangeReturnFlightOrigin,
         className: [s$16.input, s$16.firstColumn].join(' '),
         mandatory: shouldDisplayReturnFlightInformation,
-        autocomplete: "off",
+        autoComplete: "off",
         error: shouldDisplayReturnFlightInformation ? errors.returnFlightOrigin : null
       })), toSpot && !shouldDisplayReturnFlightInformation && React__default.createElement(ActionLink, {
         label: texts.unknown,
