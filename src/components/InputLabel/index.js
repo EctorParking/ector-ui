@@ -42,7 +42,7 @@ const InputLabel = ({
       }
       {
         InputComponent !== null && typeof InputComponent === 'function' && InputComponent() ? (
-          <InputComponent />
+          <InputComponent className={[s.input, inputClassName].join(' ')} placeholder={placeholder} type={type} {...inputProps} />
         ) : (
           <Input
             className={[s.input, inputClassName].join(' ')}
