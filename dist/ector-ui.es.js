@@ -2891,7 +2891,11 @@ var InputLabel = function InputLabel(_ref) {
   }) : React__default.createElement("label", {
     htmlFor: id,
     className: [left ? s$x.leftLabel : undefined, labelClassName].join(' ')
-  }, label), InputComponent !== null && typeof InputComponent === 'function' && InputComponent() ? React__default.createElement(InputComponent, null) : React__default.createElement(Input, _extends({
+  }, label), InputComponent !== null && typeof InputComponent === 'function' && InputComponent() ? React__default.createElement(InputComponent, _extends({
+    className: [s$x.input, inputClassName].join(' '),
+    placeholder: placeholder,
+    type: type
+  }, inputProps)) : React__default.createElement(Input, _extends({
     className: [s$x.input, inputClassName].join(' '),
     id: id,
     placeholder: placeholder,
@@ -4331,8 +4335,8 @@ TitleStep.propTypes = {
   className: PropTypes$1.string
 };
 
-var css$S = ".Tooltip-module_tooltipContainer__15s8H {\n    font-size: 2em;\n    text-align: center;\n    position: relative\n}\n\n.Tooltip-module_tooltipContainer__15s8H:hover>.Tooltip-module_tooltipText__1buoM {\n    visibility: visible;\n}\n\n.Tooltip-module_tooltipContainer__15s8H > i {\n    font-size: 18px;\n}\n\n.Tooltip-module_tooltipContainer__15s8H > i:before {\n    color: #163457 !important;\n}\n\n.Tooltip-module_tooltipText__1buoM {\n    visibility: hidden;\n    display: block;\n    position: absolute;\n    z-index: 1;\n    padding: 10px;\n    border-radius: 8px;\n    text-align: left;\n    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .25);\n            box-shadow: 0 0 10px rgba(0, 0, 0, .25);\n    background-color: #fefefe;\n    color: #163457;\n    font-size: 16px;\n}\n\n.Tooltip-module_tooltipText__1buoM:after {\n    border: solid transparent;\n    content: \" \";\n    height: 0;\n    width: 0;\n    position: absolute;\n    pointer-events: none;\n    border-color: transparent;\n    border-width: 8px;\n}\n\n.Tooltip-module_right__1nw9g {\n    -webkit-transform: translateY(-50%);\n            transform: translateY(-50%);\n    left: 30px;\n    top: 12px;\n}\n\n.Tooltip-module_tooltipText__1buoM.Tooltip-module_right__1nw9g:after {\n    right: 100%;\n    top: 50%;\n    margin-top: -8px;\n    border-right-color: #fefefe;\n}\n\n.Tooltip-module_left__3nypM {\n    -webkit-transform: translateY(-50%) translateX(-100%);\n            transform: translateY(-50%) translateX(-100%);\n    top: 12px;\n    left: -15px;\n}\n\n.Tooltip-module_tooltipText__1buoM.Tooltip-module_left__3nypM:after {\n    left: 100%;\n    top: 50%;\n    margin-top: -8px;\n    border-left-color: #fefefe;\n}\n\n.Tooltip-module_bottom__2SGDR {\n    -webkit-transform: translateX(-50%);\n            transform: translateX(-50%);\n    left: 8px;\n    top: 35px;\n}\n\n.Tooltip-module_tooltipText__1buoM.Tooltip-module_bottom__2SGDR:after {\n    bottom: 100%;\n    left: 50%;\n    margin-left: -8px;\n    border-bottom-color: #fefefe;\n}\n\n.Tooltip-module_top__239MH {\n    -webkit-transform: translateX(-50%) translateY(-100%);\n            transform: translateX(-50%) translateY(-100%);\n    left: 8px;\n    top: -8px;\n}\n\n.Tooltip-module_tooltipText__1buoM.Tooltip-module_top__239MH:after {\n    top: 100%;\n    left: 50%;\n    margin-left: -8px;\n    border-top-color: #fefefe;\n}\n\n.Tooltip-module_xSmall__p7rPd {\n    width: 100px;\n}\n\n.Tooltip-module_small__1IS1m {\n    width: 200px;\n}\n\n.Tooltip-module_medium__hRcmQ {\n    width: 400px;\n}\n\n.Tooltip-module_large__paGda {\n    width: 600px;\n\n}\n";
-var s$S = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","tooltipContainer":"Tooltip-module_tooltipContainer__15s8H","tooltipText":"Tooltip-module_tooltipText__1buoM","right":"Tooltip-module_right__1nw9g","left":"Tooltip-module_left__3nypM","bottom":"Tooltip-module_bottom__2SGDR","top":"Tooltip-module_top__239MH","xSmall":"Tooltip-module_xSmall__p7rPd","small":"Tooltip-module_small__1IS1m","medium":"Tooltip-module_medium__hRcmQ","large":"Tooltip-module_large__paGda"};
+var css$S = ".Tooltip-module_tooltipContainer__15s8H {\n    font-size: 2em;\n    text-align: center;\n    position: relative\n}\n\n.Tooltip-module_tooltipContainer__15s8H:hover>.Tooltip-module_tooltipText__1buoM {\n    visibility: visible;\n}\n\n.Tooltip-module_tooltipContainer__15s8H > i {\n    font-size: 18px;\n}\n\n.Tooltip-module_tooltipContainer__15s8H > i:before {\n    color: #163457 !important;\n}\n\n.Tooltip-module_tooltipText__1buoM {\n    display: block;\n    position: absolute;\n    z-index: 1;\n    padding: 10px;\n    border-radius: 8px;\n    text-align: left;\n    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .25);\n            box-shadow: 0 0 10px rgba(0, 0, 0, .25);\n    background-color: #fefefe;\n    color: #163457;\n    font-size: 16px;\n}\n\n.Tooltip-module_hiddenTooltip__173uY {\n    visibility: hidden;\n}\n\n.Tooltip-module_visibleTooltip__3zTRG {\n    visibility: visible;\n}\n\n.Tooltip-module_tooltipText__1buoM:after {\n    border: solid transparent;\n    content: \" \";\n    height: 0;\n    width: 0;\n    position: absolute;\n    pointer-events: none;\n    border-color: transparent;\n    border-width: 8px;\n}\n\n.Tooltip-module_right__1nw9g {\n    -webkit-transform: translateY(-50%);\n            transform: translateY(-50%);\n    left: 30px;\n    top: 12px;\n}\n\n.Tooltip-module_tooltipText__1buoM.Tooltip-module_right__1nw9g:after {\n    right: 100%;\n    top: 50%;\n    margin-top: -8px;\n    border-right-color: #fefefe;\n}\n\n.Tooltip-module_left__3nypM {\n    -webkit-transform: translateY(-50%) translateX(-100%);\n            transform: translateY(-50%) translateX(-100%);\n    top: 12px;\n    left: -15px;\n}\n\n.Tooltip-module_tooltipText__1buoM.Tooltip-module_left__3nypM:after {\n    left: 100%;\n    top: 50%;\n    margin-top: -8px;\n    border-left-color: #fefefe;\n}\n\n.Tooltip-module_bottom__2SGDR {\n    -webkit-transform: translateX(-50%);\n            transform: translateX(-50%);\n    left: 8px;\n    top: 35px;\n}\n\n.Tooltip-module_tooltipText__1buoM.Tooltip-module_bottom__2SGDR:after {\n    bottom: 100%;\n    left: 50%;\n    margin-left: -8px;\n    border-bottom-color: #fefefe;\n}\n\n.Tooltip-module_top__239MH {\n    -webkit-transform: translateX(-50%) translateY(-100%);\n            transform: translateX(-50%) translateY(-100%);\n    left: 8px;\n    top: -8px;\n}\n\n.Tooltip-module_tooltipText__1buoM.Tooltip-module_top__239MH:after {\n    top: 100%;\n    left: 50%;\n    margin-left: -8px;\n    border-top-color: #fefefe;\n}\n\n.Tooltip-module_xSmall__p7rPd {\n    width: 100px;\n}\n\n.Tooltip-module_small__1IS1m {\n    width: 200px;\n}\n\n.Tooltip-module_medium__hRcmQ {\n    width: 400px;\n}\n\n.Tooltip-module_large__paGda {\n    width: 600px;\n\n}\n";
+var s$S = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","tooltipContainer":"Tooltip-module_tooltipContainer__15s8H","tooltipText":"Tooltip-module_tooltipText__1buoM","hiddenTooltip":"Tooltip-module_hiddenTooltip__173uY","visibleTooltip":"Tooltip-module_visibleTooltip__3zTRG","right":"Tooltip-module_right__1nw9g","left":"Tooltip-module_left__3nypM","bottom":"Tooltip-module_bottom__2SGDR","top":"Tooltip-module_top__239MH","xSmall":"Tooltip-module_xSmall__p7rPd","small":"Tooltip-module_small__1IS1m","medium":"Tooltip-module_medium__hRcmQ","large":"Tooltip-module_large__paGda"};
 styleInject(css$S);
 
 var Tooltip = function Tooltip(_ref) {
@@ -4342,8 +4346,9 @@ var Tooltip = function Tooltip(_ref) {
       tooltipClassName = _ref.tooltipClassName,
       position = _ref.position,
       tooltipSize = _ref.tooltipSize,
-      IconComponent = _ref.IconComponent;
-  var computedTooltipClassName = [s$S.tooltipText, s$S[position], s$S[tooltipSize], tooltipClassName];
+      IconComponent = _ref.IconComponent,
+      visible = _ref.visible;
+  var computedTooltipClassName = [s$S.tooltipText, s$S[position], s$S[tooltipSize], tooltipClassName, visible ? s$S.visibleTooltip : s$S.hiddenTooltip];
   return React__default.createElement("div", {
     className: [s$S.tooltipContainer, className].join(' ')
   }, IconComponent !== null && typeof IconComponent === 'function' && IconComponent() ? React__default.createElement(IconComponent, null) : React__default.createElement("i", {
@@ -4359,7 +4364,8 @@ Tooltip.defaultProps = {
   position: 'bottom',
   tooltipSize: 'medium',
   IconComponent: null,
-  iconClassName: ''
+  iconClassName: '',
+  visible: false
 };
 Tooltip.propTypes = {
   iconClassName: PropTypes$1.string,
@@ -4368,7 +4374,8 @@ Tooltip.propTypes = {
   tooltipClassName: PropTypes$1.string,
   position: PropTypes$1.oneOf(['left', 'top', 'right', 'bottom']),
   tooltipSize: PropTypes$1.oneOf(['xSmall', 'small', 'medium', 'large']),
-  IconComponent: PropTypes$1.func
+  IconComponent: PropTypes$1.func,
+  visible: PropTypes$1.bool
 };
 
 var css$T = ".RewardCard-module_card__1Znmy {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: 0;\n  max-height: 100%;\n  border-radius: 8px;\n  background-color: #fefefe;\n  -webkit-box-shadow: 0px 0px 38px -2px rgba(0, 0, 0, .15);\n          box-shadow: 0px 0px 38px -2px rgba(0, 0, 0, .15);\n}\n\n.RewardCard-module_left__3Vghj {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n\n.RewardCard-module_imageContainer__ZBjX1 {\n  background-position: center center;\n  background-repeat: no-repeat;\n  background-size: 100% 100%;\n  border-bottom-right-radius: 8px;\n  border-top-right-radius: 8px;\n  width: 30px;\n}\n\n.RewardCard-module_imageContainerBig__7BCdx {\n  width: 65px;\n}\n\n@media (max-width: 480px) {\n  .RewardCard-module_imageContainer__ZBjX1 {\n    display: none;\n  }\n}\n";
@@ -6894,8 +6901,8 @@ TimeRange.propTypes = {
   style: PropTypes$1.shape()
 };
 
-var css$16 = ".FlightInformationForm-module_card__3HVvP {\n    width: 650px;\n}\n\n.FlightInformationForm-module_contentCard__2iuCz {}\n\n.FlightInformationForm-module_formContainer__38_9v {\n    margin-bottom: 20px;\n}\n\n.FlightInformationForm-module_title__3yTDe {\n    margin: 0;\n    font-weight: 300;\n    color: #32a0c5;\n}\n\n.FlightInformationForm-module_firstColumn__3dXcq {\n    padding-right: 20px;\n}\n\n.FlightInformationForm-module_secondColumn__1tg-R {\n    padding-left: 20px;\n}\n\n.FlightInformationForm-module_halfWidth__3iWMs {\n    width: 50%;\n}\n\n.FlightInformationForm-module_row__2j-tW {\n    margin-top: 10px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n}\n\n.FlightInformationForm-module_noMargin__DF7_J {\n    margin: 0;\n}\n\n.FlightInformationForm-module_input__1QJpa {\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n}\n\n.FlightInformationForm-module_select__1KZ8b {\n    margin-top: 0;\n}\n\n.FlightInformationForm-module_defaultOption__MJRT6 {\n    color: #d5d6d7;\n}\n\n.FlightInformationForm-module_actionLink__nzpW1 {\n    margin-top: 5px;\n}\n\n.FlightInformationForm-module_flexStart__3he4R {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: start;\n        -ms-flex-pack: start;\n            justify-content: flex-start;\n}\n\n.FlightInformationForm-module_flexEnd__f47Mt {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: end;\n        -ms-flex-pack: end;\n            justify-content: flex-end;\n}\n\n.FlightInformationForm-module_description__38HJs {\n    margin-top: 10px;\n}\n\n@media (max-width: 1130px) {\n    .FlightInformationForm-module_card__3HVvP {\n        width: -webkit-min-content;\n        width: -moz-min-content;\n        width: min-content;\n    }\n    .FlightInformationForm-module_input__1QJpa {\n        min-width: 275px;\n        max-width: 275px;\n        margin: 5px 10px 0 10px;\n    }\n    .FlightInformationForm-module_firstColumn__3dXcq, .FlightInformationForm-module_secondColumn__1tg-R {\n        padding: 0;\n    }\n    .FlightInformationForm-module_actionLink__nzpW1, .FlightInformationForm-module_description__38HJs {\n        margin-right: 10px;\n        margin-left: 10px;\n    }\n    .FlightInformationForm-module_title__3yTDe {\n        margin-left: 10px;\n    }\n    .FlightInformationForm-module_row__2j-tW {\n        -ms-flex-wrap: wrap;\n            flex-wrap: wrap;\n    }\n}\n\n@media (max-width: 825px) {\n    .FlightInformationForm-module_card__3HVvP {\n        width: 100%;\n    }\n    .FlightInformationForm-module_input__1QJpa {\n        max-width: none;\n    }\n\n}\n\n@media (max-width: 480px) {\n    .FlightInformationForm-module_card__3HVvP {\n        width: 100%;\n    }\n    .FlightInformationForm-module_contentCard__2iuCz {\n        padding: 20px;\n    }\n    .FlightInformationForm-module_halfWidth__3iWMs, .FlightInformationForm-module_input__1QJpa {\n        width: 100%;\n    }\n    .FlightInformationForm-module_input__1QJpa {\n        -webkit-box-flex: 0;\n            -ms-flex: none;\n                flex: none;\n        margin: 5px 0 0 0;\n        min-width: 0;\n    }\n    .FlightInformationForm-module_title__3yTDe, .FlightInformationForm-module_actionLink__nzpW1 {\n        margin: 0;\n    }\n    .FlightInformationForm-module_row__2j-tW {\n        margin: 0;\n        -ms-flex-wrap: wrap;\n            flex-wrap: wrap;\n    }\n    .FlightInformationForm-module_firstColumn__3dXcq, .FlightInformationForm-module_secondColumn__1tg-R {\n        padding: 0;\n    }\n    .FlightInformationForm-module_title__3yTDe {\n        font-size: 22px;\n    }\n    .FlightInformationForm-module_description__38HJs {\n        margin: 15px 0;\n    }\n}\n";
-var s$16 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","card":"FlightInformationForm-module_card__3HVvP","contentCard":"FlightInformationForm-module_contentCard__2iuCz","formContainer":"FlightInformationForm-module_formContainer__38_9v","title":"FlightInformationForm-module_title__3yTDe","firstColumn":"FlightInformationForm-module_firstColumn__3dXcq","secondColumn":"FlightInformationForm-module_secondColumn__1tg-R","halfWidth":"FlightInformationForm-module_halfWidth__3iWMs","row":"FlightInformationForm-module_row__2j-tW","noMargin":"FlightInformationForm-module_noMargin__DF7_J","input":"FlightInformationForm-module_input__1QJpa","select":"FlightInformationForm-module_select__1KZ8b","defaultOption":"FlightInformationForm-module_defaultOption__MJRT6","actionLink":"FlightInformationForm-module_actionLink__nzpW1","flexStart":"FlightInformationForm-module_flexStart__3he4R","flexEnd":"FlightInformationForm-module_flexEnd__f47Mt","description":"FlightInformationForm-module_description__38HJs"};
+var css$16 = ".FlightInformationForm-module_card__3HVvP {\n    width: 650px;\n}\n\n.FlightInformationForm-module_contentCard__2iuCz {}\n\n.FlightInformationForm-module_formContainer__38_9v {\n    margin-bottom: 20px;\n}\n\n.FlightInformationForm-module_title__3yTDe {\n    margin: 0;\n    font-weight: 300;\n    color: #32a0c5;\n}\n\n.FlightInformationForm-module_firstColumn__3dXcq {\n    padding-right: 20px;\n}\n\n.FlightInformationForm-module_secondColumn__1tg-R {\n    padding-left: 20px;\n}\n\n.FlightInformationForm-module_halfWidth__3iWMs {\n    width: 50%;\n}\n\n.FlightInformationForm-module_row__2j-tW {\n    margin-top: 10px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n}\n\n.FlightInformationForm-module_noMargin__DF7_J {\n    margin: 0;\n}\n\n.FlightInformationForm-module_input__1QJpa {\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n}\n\n.FlightInformationForm-module_select__1KZ8b {\n    margin-top: 0;\n}\n\n.FlightInformationForm-module_defaultOption__MJRT6 {\n    color: #d5d6d7;\n}\n\n.FlightInformationForm-module_actionLink__nzpW1 {\n    margin-top: 5px;\n}\n\n.FlightInformationForm-module_flexStart__3he4R {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: start;\n        -ms-flex-pack: start;\n            justify-content: flex-start;\n}\n\n.FlightInformationForm-module_flexEnd__f47Mt {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: end;\n        -ms-flex-pack: end;\n            justify-content: flex-end;\n}\n\n.FlightInformationForm-module_description__38HJs {\n    margin-top: 10px;\n}\n\n.FlightInformationForm-module_inputTooltip__3RQLe {\n    left: 50%;\n    top: -25px;\n}\n\n@media (max-width: 1130px) {\n    .FlightInformationForm-module_card__3HVvP {\n        width: -webkit-min-content;\n        width: -moz-min-content;\n        width: min-content;\n    }\n    .FlightInformationForm-module_input__1QJpa {\n        min-width: 275px;\n        max-width: 275px;\n        margin: 5px 10px 0 10px;\n    }\n    .FlightInformationForm-module_firstColumn__3dXcq, .FlightInformationForm-module_secondColumn__1tg-R {\n        padding: 0;\n    }\n    .FlightInformationForm-module_actionLink__nzpW1, .FlightInformationForm-module_description__38HJs {\n        margin-right: 10px;\n        margin-left: 10px;\n    }\n    .FlightInformationForm-module_title__3yTDe {\n        margin-left: 10px;\n    }\n    .FlightInformationForm-module_row__2j-tW {\n        -ms-flex-wrap: wrap;\n            flex-wrap: wrap;\n    }\n}\n\n@media (max-width: 825px) {\n    .FlightInformationForm-module_card__3HVvP {\n        width: 100%;\n    }\n    .FlightInformationForm-module_input__1QJpa {\n        max-width: none;\n    }\n\n}\n\n@media (max-width: 480px) {\n    .FlightInformationForm-module_card__3HVvP {\n        width: 100%;\n    }\n    .FlightInformationForm-module_contentCard__2iuCz {\n        padding: 20px;\n    }\n    .FlightInformationForm-module_halfWidth__3iWMs, .FlightInformationForm-module_input__1QJpa {\n        width: 100%;\n    }\n    .FlightInformationForm-module_input__1QJpa {\n        -webkit-box-flex: 0;\n            -ms-flex: none;\n                flex: none;\n        margin: 5px 0 0 0;\n        min-width: 0;\n    }\n    .FlightInformationForm-module_title__3yTDe, .FlightInformationForm-module_actionLink__nzpW1 {\n        margin: 0;\n    }\n    .FlightInformationForm-module_row__2j-tW {\n        margin: 0;\n        -ms-flex-wrap: wrap;\n            flex-wrap: wrap;\n    }\n    .FlightInformationForm-module_firstColumn__3dXcq, .FlightInformationForm-module_secondColumn__1tg-R {\n        padding: 0;\n    }\n    .FlightInformationForm-module_title__3yTDe {\n        font-size: 22px;\n    }\n    .FlightInformationForm-module_description__38HJs {\n        margin: 15px 0;\n    }\n}\n";
+var s$16 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","card":"FlightInformationForm-module_card__3HVvP","contentCard":"FlightInformationForm-module_contentCard__2iuCz","formContainer":"FlightInformationForm-module_formContainer__38_9v","title":"FlightInformationForm-module_title__3yTDe","firstColumn":"FlightInformationForm-module_firstColumn__3dXcq","secondColumn":"FlightInformationForm-module_secondColumn__1tg-R","halfWidth":"FlightInformationForm-module_halfWidth__3iWMs","row":"FlightInformationForm-module_row__2j-tW","noMargin":"FlightInformationForm-module_noMargin__DF7_J","input":"FlightInformationForm-module_input__1QJpa","select":"FlightInformationForm-module_select__1KZ8b","defaultOption":"FlightInformationForm-module_defaultOption__MJRT6","actionLink":"FlightInformationForm-module_actionLink__nzpW1","flexStart":"FlightInformationForm-module_flexStart__3he4R","flexEnd":"FlightInformationForm-module_flexEnd__f47Mt","description":"FlightInformationForm-module_description__38HJs","inputTooltip":"FlightInformationForm-module_inputTooltip__3RQLe"};
 styleInject(css$16);
 
 var ZoneTypes$1 = {
@@ -6927,7 +6934,10 @@ var TextsType$8 = PropTypes$1.shape({
   spotLabelUnknown: PropTypes$1.string,
   switchMandatoryAirportDescription: PropTypes$1.string,
   switchMandatoryStationDescription: PropTypes$1.string,
-  noResult: PropTypes$1.string
+  noResult: PropTypes$1.string,
+  travelingNumberToTooltip: PropTypes$1.string,
+  returnFlightCompanyTooltip: PropTypes$1.string,
+  returnFlightOriginTooltip: PropTypes$1.string
 });
 var DefaultTexts$8 = {
   placeholderSpot: 'Sélectionner',
@@ -6948,7 +6958,10 @@ var DefaultTexts$8 = {
   spotLabelUnknown: 'Lieu de rendez-vous',
   switchMandatoryAirportDescription: 'Si vous ne connaissez pas votre numéro de vol, veuillez indiquer la compagnie aérienne et la ville de provenance de votre dernier vol.',
   switchMandatoryStationDescription: 'Si vous ne connaissez pas votre numéro de train, veuillez indiquer la ville de provenance de votre dernier train.',
-  noResult: 'Aucun résultat'
+  noResult: 'Aucun résultat',
+  travelingNumberToTooltip: 'En cas d\'escale, renseignez le numéro de votre dernier vol. Cela permettra à votre voiturier de suivre votre arrivée.',
+  returnFlightCompanyTooltip: 'En cas d\'escale, indiquez la compagnie aérienne de votre dernier vol.',
+  returnFlightOriginTooltip: 'En cas d\'escale, indiquez la ville où vous prendrez votre dernier avion.'
 };
 
 var FlightInformationForm =
@@ -6956,12 +6969,12 @@ var FlightInformationForm =
 function (_React$Component) {
   _inherits(FlightInformationForm, _React$Component);
 
-  function FlightInformationForm(props) {
+  function FlightInformationForm(_props) {
     var _this;
 
     _classCallCheck(this, FlightInformationForm);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(FlightInformationForm).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(FlightInformationForm).call(this, _props));
 
     _defineProperty(_assertThisInitialized(_this), "onChange", function (field, event) {
       var onChange = _this.props.onChange;
@@ -7013,11 +7026,19 @@ function (_React$Component) {
           returnFlightCompany = _this$props3.values.returnFlightCompany,
           returnFlightCompanyError = _this$props3.errors.returnFlightCompany,
           texts = _this$props3.texts;
-      var shouldDisplayReturnFlightInformation = _this.state.shouldDisplayReturnFlightInformation;
+      var _this$state = _this.state,
+          shouldDisplayReturnFlightInformation = _this$state.shouldDisplayReturnFlightInformation,
+          showReturnFlightCompanyTooltip = _this$state.showReturnFlightCompanyTooltip;
       var selectedAirline = airlines.find(function (airline) {
         return airline.value.toLowerCase() === (returnFlightCompany ? returnFlightCompany.toLowerCase() : '');
       });
-      return React__default.createElement(InputSelect, {
+      return React__default.createElement(React__default.Fragment, null, React__default.createElement(Tooltip, {
+        text: texts.returnFlightCompanyTooltip,
+        visible: showReturnFlightCompanyTooltip,
+        position: "top",
+        size: "small",
+        tooltipClassName: s$16.inputTooltip
+      }), React__default.createElement(InputSelect, {
         options: airlines,
         value: selectedAirline,
         placeholder: texts.returnFlightCompanyPlaceholder,
@@ -7027,8 +7048,10 @@ function (_React$Component) {
         noOptionsMessage: function noOptionsMessage() {
           return texts.noResult;
         },
-        error: shouldDisplayReturnFlightInformation ? returnFlightCompanyError : null
-      });
+        error: shouldDisplayReturnFlightInformation ? returnFlightCompanyError : null,
+        onFocus: _this.onFocusReturnFlightCompanyInput,
+        onBlur: _this.onBlurReturnFlightCompanyInput
+      }));
     });
 
     _defineProperty(_assertThisInitialized(_this), "showExtraFields", function () {
@@ -7047,6 +7070,29 @@ function (_React$Component) {
       return spot.type === 'airport' ? texts.spotLabelAirport : texts.spotLabelUnknown;
     });
 
+    _defineProperty(_assertThisInitialized(_this), "renderTravelingNumberToInputComponent", function (props) {
+      var texts = _this.props.texts;
+      var showTravelingNumberToTooltip = _this.state.showTravelingNumberToTooltip;
+      return React__default.createElement(React__default.Fragment, null, React__default.createElement(Tooltip, {
+        text: texts.travelingNumberToTooltip,
+        visible: showTravelingNumberToTooltip,
+        position: "top",
+        tooltipClassName: s$16.inputTooltip
+      }), React__default.createElement(InputLabel, props));
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "renderReturnFlightOriginInputComponent", function (props) {
+      var texts = _this.props.texts;
+      var showReturnFlightOriginTooltip = _this.state.showReturnFlightOriginTooltip;
+      return React__default.createElement(React__default.Fragment, null, React__default.createElement(Tooltip, {
+        text: texts.travelingNumberToTooltip,
+        visible: showReturnFlightOriginTooltip,
+        position: "top",
+        size: "small",
+        tooltipClassName: s$16.inputTooltip
+      }), React__default.createElement(InputLabel, props));
+    });
+
     _this.renderFromZoneTerminal = _this.renderTerminalSelect.bind(_assertThisInitialized(_this), 'from');
     _this.renderToZoneTerminal = _this.renderTerminalSelect.bind(_assertThisInitialized(_this), 'to');
     _this.onChangeTravelingNumberTo = _this.onChange.bind(_assertThisInitialized(_this), 'travelingNumberTo');
@@ -7054,8 +7100,17 @@ function (_React$Component) {
     _this.onChangeReturnFlightCompany = _this.onChangeSelect.bind(_assertThisInitialized(_this), 'returnFlightCompany');
     _this.onChangeFromSpot = _this.onChangeSelect.bind(_assertThisInitialized(_this), 'fromSpot');
     _this.onChangeToSpot = _this.onChangeSelect.bind(_assertThisInitialized(_this), 'toSpot');
+    _this.onFocusTravelingNumberToInput = _this.setTooltipVisibility.bind(_assertThisInitialized(_this), 'showTravelingNumberToTooltip', true);
+    _this.onBlurTravelingNumberToInput = _this.setTooltipVisibility.bind(_assertThisInitialized(_this), 'showTravelingNumberToTooltip', false);
+    _this.onFocusReturnFlightCompanyInput = _this.setTooltipVisibility.bind(_assertThisInitialized(_this), 'showReturnFlightCompanyTooltip', true);
+    _this.onBlurReturnFlightCompanyInput = _this.setTooltipVisibility.bind(_assertThisInitialized(_this), 'showReturnFlightCompanyTooltip', false);
+    _this.onFocusReturnFlightOriginInput = _this.setTooltipVisibility.bind(_assertThisInitialized(_this), 'showReturnFlightOriginTooltip', true);
+    _this.onBlurReturnFlightOriginInput = _this.setTooltipVisibility.bind(_assertThisInitialized(_this), 'showReturnFlightOriginTooltip', false);
     _this.state = {
-      shouldDisplayReturnFlightInformation: false
+      shouldDisplayReturnFlightInformation: false,
+      showTravelingNumberToTooltip: false,
+      showReturnFlightCompanyTooltip: false,
+      showReturnFlightOriginTooltip: false
     };
     return _this;
   }
@@ -7073,10 +7128,16 @@ function (_React$Component) {
       }
     }
   }, {
+    key: "setTooltipVisibility",
+    value: function setTooltipVisibility(tooltip, visible) {
+      this.setState(_defineProperty({}, tooltip, visible));
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this$props4 = this.props,
           RootComponent = _this$props4.RootComponent,
+          ReturnFlightInformationComponent = _this$props4.ReturnFlightInformationComponent,
           fromSpotsAvailable = _this$props4.fromSpotsAvailable,
           toSpotsAvailable = _this$props4.toSpotsAvailable,
           _this$props4$values = _this$props4.values,
@@ -7090,7 +7151,7 @@ function (_React$Component) {
           contentClassName = _this$props4.contentClassName,
           texts = _this$props4.texts,
           travelingNumberToInputProps = _this$props4.travelingNumberToInputProps,
-          cardProps = _objectWithoutProperties(_this$props4, ["RootComponent", "fromSpotsAvailable", "toSpotsAvailable", "values", "errors", "className", "contentClassName", "texts", "travelingNumberToInputProps"]);
+          cardProps = _objectWithoutProperties(_this$props4, ["RootComponent", "ReturnFlightInformationComponent", "fromSpotsAvailable", "toSpotsAvailable", "values", "errors", "className", "contentClassName", "texts", "travelingNumberToInputProps"]);
 
       var shouldDisplayReturnFlightInformation = this.state.shouldDisplayReturnFlightInformation;
 
@@ -7131,8 +7192,11 @@ function (_React$Component) {
         className: [s$16.input, toSpotsAvailable.length > 1 ? s$16.secondColumn : s$16.firstColumn].join(' '),
         onChange: this.onChangeTravelingNumberTo,
         autoComplete: "off",
-        error: !shouldDisplayReturnFlightInformation ? errors.travelingNumberTo : null
-      }, travelingNumberToInputProps)), toSpotsAvailable.length <= 1 && toSpot && toSpot.type === 'station' && React__default.createElement(InputLabel, {
+        error: !shouldDisplayReturnFlightInformation ? errors.travelingNumberTo : null,
+        onFocus: this.onFocusTravelingNumberToInput,
+        onBlur: this.onBlurTravelingNumberToInput,
+        InputComponent: this.renderTravelingNumberToInputComponent
+      }, travelingNumberToInputProps)), toSpotsAvailable.length <= 1 && toSpot && toSpot.type === 'station' && shouldDisplayReturnFlightInformation && React__default.createElement(InputLabel, {
         label: texts.returnFlightOriginLabel,
         placeholder: texts.returnFlightOriginPlaceholder,
         value: returnFlightOrigin,
@@ -7145,9 +7209,9 @@ function (_React$Component) {
         label: texts.unknown,
         className: [s$16.actionLink, toSpotsAvailable.length <= 1 ? s$16.flexStart : s$16.flexEnd].join(' '),
         onClick: this.showExtraFields
-      }), toSpot && shouldDisplayReturnFlightInformation && React__default.createElement("div", {
+      }), toSpot && shouldDisplayReturnFlightInformation && React__default.createElement(ReturnFlightInformationComponent, {
         className: s$16.description
-      }, React__default.createElement("span", null, toSpot.type === 'airport' ? texts.switchMandatoryAirportDescription : texts.switchMandatoryStationDescription)), toSpot && React__default.createElement("div", {
+      }, React__default.createElement("span", null, toSpot.type === 'airport' ? texts.switchMandatoryAirportDescription : texts.switchMandatoryStationDescription)), toSpot && shouldDisplayReturnFlightInformation && React__default.createElement("div", {
         className: [s$16.row, toSpot.type === 'station' ? s$16.halfWidth : undefined].join(' ')
       }, (toSpot.type !== 'station' || toSpotsAvailable.length > 1) && React__default.createElement(InputLabel, {
         label: texts.returnFlightOriginLabel,
@@ -7157,14 +7221,19 @@ function (_React$Component) {
         className: [s$16.input, s$16.firstColumn].join(' '),
         mandatory: shouldDisplayReturnFlightInformation,
         autoComplete: "off",
-        error: shouldDisplayReturnFlightInformation ? errors.returnFlightOrigin : null
-      }), toSpot.type === 'airport' && React__default.createElement(InputLabel, {
+        error: shouldDisplayReturnFlightInformation ? errors.returnFlightOrigin : null,
+        InputComponent: this.renderReturnFlightOriginInputComponent,
+        onFocus: this.onFocusReturnFlightOriginInput,
+        onBlur: this.onBlurReturnFlightOriginInput
+      }), toSpot.type === 'airport' && shouldDisplayReturnFlightInformation && React__default.createElement(InputLabel, {
         label: texts.returnFlightCompanyLabel,
         value: returnFlightCompany,
         className: [s$16.input, toSpotsAvailable.length > 1 ? s$16.secondColumn : s$16.firstColumn].join(' '),
         InputComponent: this.renderAirlinesSelect,
         mandatory: shouldDisplayReturnFlightInformation,
-        error: shouldDisplayReturnFlightInformation ? errors.returnFlightCompany : null
+        error: shouldDisplayReturnFlightInformation ? errors.returnFlightCompany : null,
+        onFocus: this.onFocusReturnFlightCompanyInput,
+        onBlur: this.onBlurReturnFlightCompanyInput
       }))));
     }
   }]);
@@ -7185,10 +7254,14 @@ FlightInformationForm.defaultProps = {
   airlines: [],
   texts: DefaultTexts$8,
   shouldDisplayReturnFlightInformation: false,
-  travelingNumberToInputProps: {}
+  travelingNumberToInputProps: {},
+  ReturnFlightInformationComponent: function ReturnFlightInformationComponent(props) {
+    return React__default.createElement("div", props);
+  }
 };
 FlightInformationForm.propTypes = {
   RootComponent: PropTypes$1.func,
+  ReturnFlightInformationComponent: PropTypes$1.func,
   className: PropTypes$1.string,
   contentClassName: PropTypes$1.string,
   fromSpotsAvailable: PropTypes$1.arrayOf(SpotType).isRequired,

@@ -2406,7 +2406,6 @@
 }
 
 .Tooltip-module_tooltipText__1buoM {
-    visibility: hidden;
     display: block;
     position: absolute;
     z-index: 1;
@@ -2418,6 +2417,14 @@
     background-color: #fefefe;
     color: #163457;
     font-size: 16px;
+}
+
+.Tooltip-module_hiddenTooltip__173uY {
+    visibility: hidden;
+}
+
+.Tooltip-module_visibleTooltip__3zTRG {
+    visibility: visible;
 }
 
 .Tooltip-module_tooltipText__1buoM:after {
@@ -3650,6 +3657,11 @@
 
 .FlightInformationForm-module_description__38HJs {
     margin-top: 10px;
+}
+
+.FlightInformationForm-module_inputTooltip__3RQLe {
+    left: 50%;
+    top: -25px;
 }
 
 @media (max-width: 1130px) {
