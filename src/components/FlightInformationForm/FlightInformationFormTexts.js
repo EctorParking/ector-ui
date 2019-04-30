@@ -20,6 +20,9 @@ export const TextsType = PropTypes.shape({
   switchMandatoryAirportDescription: PropTypes.string,
   switchMandatoryStationDescription: PropTypes.string,
   noResult: PropTypes.string,
+  travelingNumberToTooltip: PropTypes.string,
+  returnFlightCompanyTooltip: PropTypes.string,
+  returnFlightOriginTooltip: PropTypes.string,
 });
 
 export const DefaultTexts = {
@@ -42,4 +45,7 @@ export const DefaultTexts = {
   switchMandatoryAirportDescription: 'Si vous ne connaissez pas votre numéro de vol, veuillez indiquer la compagnie aérienne et la ville de provenance de votre dernier vol.',
   switchMandatoryStationDescription: 'Si vous ne connaissez pas votre numéro de train, veuillez indiquer la ville de provenance de votre dernier train.',
   noResult: 'Aucun résultat',
+  travelingNumberToTooltip: 'En cas d\'escale, renseignez le numéro de votre dernier vol. Cela permettra à votre voiturier de suivre votre arrivée.',
+  returnFlightCompanyTooltip: 'En cas d\'escale, indiquez la compagnie aérienne de votre dernier vol.',
+  returnFlightOriginTooltip: 'En cas d\'escale, indiquez la ville où vous prendrez votre dernier avion.',
 };

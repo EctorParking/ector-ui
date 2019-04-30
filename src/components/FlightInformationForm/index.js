@@ -5,6 +5,7 @@ import {
   InputLabel,
   InputSelect,
   ActionLink,
+  Tooltip,
 } from '..';
 import s from './FlightInformationForm.module.css';
 import { SpotType } from './SpotType';
@@ -22,8 +23,32 @@ class FlightInformationForm extends React.Component {
     this.onChangeFromSpot = this.onChangeSelect.bind(this, 'fromSpot');
     this.onChangeToSpot = this.onChangeSelect.bind(this, 'toSpot');
 
+    this.onFocusTravelingNumberToInput = this.setTooltipVisibility.bind(
+      this, 'showTravelingNumberToTooltip', true,
+    );
+    this.onBlurTravelingNumberToInput = this.setTooltipVisibility.bind(
+      this, 'showTravelingNumberToTooltip', false,
+    );
+
+    this.onFocusReturnFlightCompanyInput = this.setTooltipVisibility.bind(
+      this, 'showReturnFlightCompanyTooltip', true,
+    );
+    this.onBlurReturnFlightCompanyInput = this.setTooltipVisibility.bind(
+      this, 'showReturnFlightCompanyTooltip', false,
+    );
+
+    this.onFocusReturnFlightOriginInput = this.setTooltipVisibility.bind(
+      this, 'showReturnFlightOriginTooltip', true,
+    );
+    this.onBlurReturnFlightOriginInput = this.setTooltipVisibility.bind(
+      this, 'showReturnFlightOriginTooltip', false,
+    );
+
     this.state = {
       shouldDisplayReturnFlightInformation: false,
+      showTravelingNumberToTooltip: false,
+      showReturnFlightCompanyTooltip: false,
+      showReturnFlightOriginTooltip: false,
     };
   }
 
@@ -56,6 +81,10 @@ class FlightInformationForm extends React.Component {
     }
   };
 
+  setTooltipVisibility(tooltip, visible) {
+    this.setState({ [tooltip]: visible });
+  }
+
   renderTerminalSelect = (fromOrTo) => {
     const {
       [`${fromOrTo}SpotsAvailable`]: spots,
@@ -84,20 +113,31 @@ class FlightInformationForm extends React.Component {
       errors: { returnFlightCompany: returnFlightCompanyError },
       texts,
     } = this.props;
-    const { shouldDisplayReturnFlightInformation } = this.state;
+    const { shouldDisplayReturnFlightInformation, showReturnFlightCompanyTooltip } = this.state;
     const selectedAirline = airlines.find(airline => airline.value.toLowerCase() === (returnFlightCompany ? returnFlightCompany.toLowerCase() : ''));
 
     return (
-      <InputSelect
-        options={airlines}
-        value={selectedAirline}
-        placeholder={texts.returnFlightCompanyPlaceholder}
-        onChange={this.onChangeReturnFlightCompany}
-        isClearable
-        isSearchable
-        noOptionsMessage={() => texts.noResult}
-        error={shouldDisplayReturnFlightInformation ? returnFlightCompanyError : null}
-      />
+      <>
+        <Tooltip
+          text={texts.returnFlightCompanyTooltip}
+          visible={showReturnFlightCompanyTooltip}
+          position="top"
+          size="small"
+          tooltipClassName={s.inputTooltip}
+        />
+        <InputSelect
+          options={airlines}
+          value={selectedAirline}
+          placeholder={texts.returnFlightCompanyPlaceholder}
+          onChange={this.onChangeReturnFlightCompany}
+          isClearable
+          isSearchable
+          noOptionsMessage={() => texts.noResult}
+          error={shouldDisplayReturnFlightInformation ? returnFlightCompanyError : null}
+          onFocus={this.onFocusReturnFlightCompanyInput}
+          onBlur={this.onBlurReturnFlightCompanyInput}
+        />
+      </>
     );
   };
 
@@ -113,9 +153,45 @@ class FlightInformationForm extends React.Component {
     return spot.type === 'airport' ? texts.spotLabelAirport : texts.spotLabelUnknown;
   };
 
+  renderTravelingNumberToInputComponent = (props) => {
+    const { texts } = this.props;
+    const { showTravelingNumberToTooltip } = this.state;
+
+    return (
+      <>
+        <Tooltip
+          text={texts.travelingNumberToTooltip}
+          visible={showTravelingNumberToTooltip}
+          position="top"
+          tooltipClassName={s.inputTooltip}
+        />
+        <InputLabel {...props} />
+      </>
+    );
+  };
+
+  renderReturnFlightOriginInputComponent = (props) => {
+    const { texts } = this.props;
+    const { showReturnFlightOriginTooltip } = this.state;
+
+    return (
+      <>
+        <Tooltip
+          text={texts.travelingNumberToTooltip}
+          visible={showReturnFlightOriginTooltip}
+          position="top"
+          size="small"
+          tooltipClassName={s.inputTooltip}
+        />
+        <InputLabel {...props} />
+      </>
+    );
+  };
+
   render() {
     const {
       RootComponent,
+      ReturnFlightInformationComponent,
       fromSpotsAvailable,
       toSpotsAvailable,
       values: {
@@ -184,10 +260,13 @@ class FlightInformationForm extends React.Component {
                 onChange={this.onChangeTravelingNumberTo}
                 autoComplete="off"
                 error={!shouldDisplayReturnFlightInformation ? errors.travelingNumberTo : null}
+                onFocus={this.onFocusTravelingNumberToInput}
+                onBlur={this.onBlurTravelingNumberToInput}
+                InputComponent={this.renderTravelingNumberToInputComponent}
                 {...travelingNumberToInputProps}
               />
             )}
-            {toSpotsAvailable.length <= 1 && toSpot && toSpot.type === 'station' && (
+            {toSpotsAvailable.length <= 1 && toSpot && toSpot.type === 'station' && shouldDisplayReturnFlightInformation && (
               <InputLabel
                 label={texts.returnFlightOriginLabel}
                 placeholder={texts.returnFlightOriginPlaceholder}
@@ -208,11 +287,11 @@ class FlightInformationForm extends React.Component {
             />
           )}
           {toSpot && shouldDisplayReturnFlightInformation && (
-            <div className={s.description}>
+            <ReturnFlightInformationComponent className={s.description}>
               <span>{toSpot.type === 'airport' ? texts.switchMandatoryAirportDescription : texts.switchMandatoryStationDescription}</span>
-            </div>
+            </ReturnFlightInformationComponent>
           )}
-          {toSpot && (
+          {toSpot && shouldDisplayReturnFlightInformation && (
             <div className={[s.row, toSpot.type === 'station' ? s.halfWidth : undefined].join(' ')}>
               {(toSpot.type !== 'station' || toSpotsAvailable.length > 1) && (
                 <InputLabel
@@ -224,9 +303,12 @@ class FlightInformationForm extends React.Component {
                   mandatory={shouldDisplayReturnFlightInformation}
                   autoComplete="off"
                   error={shouldDisplayReturnFlightInformation ? errors.returnFlightOrigin : null}
+                  InputComponent={this.renderReturnFlightOriginInputComponent}
+                  onFocus={this.onFocusReturnFlightOriginInput}
+                  onBlur={this.onBlurReturnFlightOriginInput}
                 />
               )}
-              {toSpot.type === 'airport' && (
+              {toSpot.type === 'airport' && shouldDisplayReturnFlightInformation && (
                 <InputLabel
                   label={texts.returnFlightCompanyLabel}
                   value={returnFlightCompany}
@@ -234,6 +316,8 @@ class FlightInformationForm extends React.Component {
                   InputComponent={this.renderAirlinesSelect}
                   mandatory={shouldDisplayReturnFlightInformation}
                   error={shouldDisplayReturnFlightInformation ? errors.returnFlightCompany : null}
+                  onFocus={this.onFocusReturnFlightCompanyInput}
+                  onBlur={this.onBlurReturnFlightCompanyInput}
                 />
               )}
             </div>
@@ -253,10 +337,12 @@ FlightInformationForm.defaultProps = {
   texts: DefaultTexts,
   shouldDisplayReturnFlightInformation: false,
   travelingNumberToInputProps: {},
+  ReturnFlightInformationComponent: props => <div {...props} />,
 };
 
 FlightInformationForm.propTypes = {
   RootComponent: PropTypes.func,
+  ReturnFlightInformationComponent: PropTypes.func,
   className: PropTypes.string,
   contentClassName: PropTypes.string,
   fromSpotsAvailable: PropTypes.arrayOf(SpotType).isRequired,

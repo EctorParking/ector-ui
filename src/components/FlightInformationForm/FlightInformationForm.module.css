@@ -67,6 +67,11 @@
     margin-top: var(--marginSmall);
 }
 
+.inputTooltip {
+    left: 50%;
+    top: -25px;
+}
+
 @media (--maxPurchaseCanalMinWidth) {
     .card {
         width: min-content;
