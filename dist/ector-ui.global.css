@@ -3896,21 +3896,25 @@
 .TextIcon-module_text__1v24r {}
 .ScrollArrow-module_arrowIcon__14U_w {
   text-shadow: 0 1px 2px rgba(0, 0, 0, .5);
-  color: var(--lightGrey);
+  color: rgb(206, 206, 206);
   -webkit-transition: opacity .2s ease-in;
   transition: opacity .2s ease-in;
   opacity: 1
 }
+
 .ScrollArrow-module_arrowIcon__14U_w.ScrollArrow-module_hiddenIcon__1pH1C {
   opacity: 0;
 }
+
 .ScrollArrow-module_container__12qp8 {
   -webkit-transition: height .2s ease-in;
   transition: height .2s ease-in
 }
+
 .ScrollArrow-module_container__12qp8.ScrollArrow-module_visible__3xgBX {
   height: 20px;
 }
+
 .ScrollArrow-module_container__12qp8.ScrollArrow-module_hidden__evuUC {
   height: 0;
 }

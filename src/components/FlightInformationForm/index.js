@@ -85,7 +85,7 @@ class FlightInformationForm extends React.Component {
       texts,
     } = this.props;
     const { shouldDisplayReturnFlightInformation } = this.state;
-    const selectedAirline = airlines.find(airline => airline.name === returnFlightCompany);
+    const selectedAirline = airlines.find(airline => airline.value.toLowerCase() === (returnFlightCompany ? returnFlightCompany.toLowerCase() : ''));
 
     return (
       <InputSelect
@@ -129,6 +129,7 @@ class FlightInformationForm extends React.Component {
       className,
       contentClassName,
       texts,
+      travelingNumberToInputProps,
       ...cardProps
     } = this.props;
     const { shouldDisplayReturnFlightInformation } = this.state;
@@ -183,6 +184,7 @@ class FlightInformationForm extends React.Component {
                 onChange={this.onChangeTravelingNumberTo}
                 autoComplete="off"
                 error={!shouldDisplayReturnFlightInformation ? errors.travelingNumberTo : null}
+                {...travelingNumberToInputProps}
               />
             )}
             {toSpotsAvailable.length <= 1 && toSpot && toSpot.type === 'station' && (
@@ -250,6 +252,7 @@ FlightInformationForm.defaultProps = {
   airlines: [],
   texts: DefaultTexts,
   shouldDisplayReturnFlightInformation: false,
+  travelingNumberToInputProps: {},
 };
 
 FlightInformationForm.propTypes = {
@@ -280,6 +283,7 @@ FlightInformationForm.propTypes = {
   onChange: PropTypes.func.isRequired,
   onClear: PropTypes.func.isRequired,
   shouldDisplayReturnFlightInformation: PropTypes.bool,
+  travelingNumberToInputProps: PropTypes.shape(InputLabel.propTypes),
 };
 
 export default FlightInformationForm;

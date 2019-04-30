@@ -7013,9 +7013,8 @@ function (_React$Component) {
           returnFlightCompany = _this$props3.values.returnFlightCompany,
           returnFlightCompanyError = _this$props3.errors.returnFlightCompany,
           texts = _this$props3.texts;
-      var shouldDisplayReturnFlightInformation = _this.state.shouldDisplayReturnFlightInformation;
       var selectedAirline = airlines.find(function (airline) {
-        return airline.name === returnFlightCompany;
+        return airline.value.toLowerCase() === (returnFlightCompany ? returnFlightCompany.toLowerCase() : '');
       });
       return React__default.createElement(InputSelect, {
         options: airlines,
@@ -7027,7 +7026,7 @@ function (_React$Component) {
         noOptionsMessage: function noOptionsMessage() {
           return texts.noResult;
         },
-        error: shouldDisplayReturnFlightInformation ? returnFlightCompanyError : null
+        error: returnFlightCompanyError
       });
     });
 
@@ -7089,7 +7088,8 @@ function (_React$Component) {
           className = _this$props4.className,
           contentClassName = _this$props4.contentClassName,
           texts = _this$props4.texts,
-          cardProps = _objectWithoutProperties(_this$props4, ["RootComponent", "fromSpotsAvailable", "toSpotsAvailable", "values", "errors", "className", "contentClassName", "texts"]);
+          travelingNumberToInputProps = _this$props4.travelingNumberToInputProps,
+          cardProps = _objectWithoutProperties(_this$props4, ["RootComponent", "fromSpotsAvailable", "toSpotsAvailable", "values", "errors", "className", "contentClassName", "texts", "travelingNumberToInputProps"]);
 
       var shouldDisplayReturnFlightInformation = this.state.shouldDisplayReturnFlightInformation;
 
@@ -7122,7 +7122,7 @@ function (_React$Component) {
         InputComponent: this.renderToZoneTerminal,
         className: [s$16.input, s$16.firstColumn].join(' '),
         error: errors.toSpot
-      }), toSpot && React__default.createElement(InputLabel, {
+      }), toSpot && React__default.createElement(InputLabel, _extends({
         label: toSpot.type === 'airport' ? texts.travelingNumberToLabel : texts.travelingNumberToLabelTrain,
         placeholder: toSpot.type === 'airport' ? texts.travelingNumberToPlaceholder : texts.travelingNumberToPlaceholderTrain,
         value: travelingNumberTo,
@@ -7131,14 +7131,14 @@ function (_React$Component) {
         onChange: this.onChangeTravelingNumberTo,
         autoComplete: "off",
         error: !shouldDisplayReturnFlightInformation ? errors.travelingNumberTo : null
-      }), toSpotsAvailable.length <= 1 && toSpot && toSpot.type === 'station' && React__default.createElement(InputLabel, {
+      }, travelingNumberToInputProps)), toSpotsAvailable.length <= 1 && toSpot && toSpot.type === 'station' && React__default.createElement(InputLabel, {
         label: texts.returnFlightOriginLabel,
         placeholder: texts.returnFlightOriginPlaceholder,
         value: returnFlightOrigin,
         onChange: this.onChangeReturnFlightOrigin,
         className: [s$16.input, s$16.firstColumn].join(' '),
         mandatory: shouldDisplayReturnFlightInformation,
-        autoComplete: "off",
+        autocomplete: "off",
         error: shouldDisplayReturnFlightInformation ? errors.returnFlightOrigin : null
       })), toSpot && !shouldDisplayReturnFlightInformation && React__default.createElement(ActionLink, {
         label: texts.unknown,
@@ -7183,7 +7183,8 @@ FlightInformationForm.defaultProps = {
   contentClassName: undefined,
   airlines: [],
   texts: DefaultTexts$8,
-  shouldDisplayReturnFlightInformation: false
+  shouldDisplayReturnFlightInformation: false,
+  travelingNumberToInputProps: {}
 };
 FlightInformationForm.propTypes = {
   RootComponent: PropTypes$1.func,
@@ -7212,7 +7213,8 @@ FlightInformationForm.propTypes = {
   texts: TextsType$8,
   onChange: PropTypes$1.func.isRequired,
   onClear: PropTypes$1.func.isRequired,
-  shouldDisplayReturnFlightInformation: PropTypes$1.bool
+  shouldDisplayReturnFlightInformation: PropTypes$1.bool,
+  travelingNumberToInputProps: PropTypes$1.shape(InputLabel.propTypes)
 };
 
 var shallowEqual = function shallowEqual(newValue, oldValue) {
@@ -16464,8 +16466,8 @@ TextIcon.propTypes = {
   iconClassName: PropTypes$1.string
 };
 
-var css$1e = ".ScrollArrow-module_arrowIcon__14U_w {\n  text-shadow: 0 1px 2px rgba(0, 0, 0, .5);\n  color: var(--lightGrey);\n  -webkit-transition: opacity .2s ease-in;\n  transition: opacity .2s ease-in;\n  opacity: 1\n}\n.ScrollArrow-module_arrowIcon__14U_w.ScrollArrow-module_hiddenIcon__1pH1C {\n  opacity: 0;\n}\n.ScrollArrow-module_container__12qp8 {\n  -webkit-transition: height .2s ease-in;\n  transition: height .2s ease-in\n}\n.ScrollArrow-module_container__12qp8.ScrollArrow-module_visible__3xgBX {\n  height: 20px;\n}\n.ScrollArrow-module_container__12qp8.ScrollArrow-module_hidden__evuUC {\n  height: 0;\n}\n";
-var s$1c = {"arrowIcon":"ScrollArrow-module_arrowIcon__14U_w","hiddenIcon":"ScrollArrow-module_hiddenIcon__1pH1C","container":"ScrollArrow-module_container__12qp8","visible":"ScrollArrow-module_visible__3xgBX","hidden":"ScrollArrow-module_hidden__evuUC"};
+var css$1e = ".ScrollArrow-module_arrowIcon__14U_w {\n  text-shadow: 0 1px 2px rgba(0, 0, 0, .5);\n  color: rgb(206, 206, 206);\n  -webkit-transition: opacity .2s ease-in;\n  transition: opacity .2s ease-in;\n  opacity: 1\n}\n\n.ScrollArrow-module_arrowIcon__14U_w.ScrollArrow-module_hiddenIcon__1pH1C {\n  opacity: 0;\n}\n\n.ScrollArrow-module_container__12qp8 {\n  -webkit-transition: height .2s ease-in;\n  transition: height .2s ease-in\n}\n\n.ScrollArrow-module_container__12qp8.ScrollArrow-module_visible__3xgBX {\n  height: 20px;\n}\n\n.ScrollArrow-module_container__12qp8.ScrollArrow-module_hidden__evuUC {\n  height: 0;\n}\n";
+var s$1c = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","arrowIcon":"ScrollArrow-module_arrowIcon__14U_w","hiddenIcon":"ScrollArrow-module_hiddenIcon__1pH1C","container":"ScrollArrow-module_container__12qp8","visible":"ScrollArrow-module_visible__3xgBX","hidden":"ScrollArrow-module_hidden__evuUC"};
 styleInject(css$1e);
 
 var ScrollArrow =
