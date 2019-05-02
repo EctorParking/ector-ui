@@ -31,12 +31,17 @@
   justify-content: flex-end;
 }
 
-.menuItemContainer {
-  display: flex;
-  align-items: center;
+.menuItemNotHovered {
+  cursor: default !important;
+  font-weight: normal !important;
 }
 
-.visible, .menuItemContainer:hover, .suggestion:hover {
+.menuItemHovered:hover {
+  font-weight: var(--fontWeightBold) !important;
+  cursor: pointer !important;
+}
+
+.visible, .suggestion:hover {
   font-weight: var(--fontWeightBold);
 }
 

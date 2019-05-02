@@ -49,7 +49,12 @@ class MenuButton extends React.PureComponent {
 
   render() {
     const {
-      LabelComponent, SuggestionsComponent, className, buttonClassName, suggestionsClassName,
+      LabelComponent,
+      SuggestionsComponent,
+      className,
+      buttonClassName,
+      suggestionsClassName,
+      disabled,
     } = this.props;
     const { visible, isMouseHover } = this.state;
 
@@ -63,6 +68,7 @@ class MenuButton extends React.PureComponent {
           onClick={this.handleClick}
           onMouseEnter={this.onHover}
           onMouseLeave={this.onLeave}
+          disabled={disabled}
         >
           <LabelComponent isActive={(!!SuggestionsComponent && visible) || isMouseHover} />
         </button>
@@ -82,6 +88,7 @@ MenuButton.defaultProps = {
   suggestionsClassName: undefined,
   SuggestionsComponent: null,
   onClick: () => null,
+  disabled: false,
 };
 
 MenuButton.propTypes = {
@@ -91,6 +98,7 @@ MenuButton.propTypes = {
   className: PropTypes.string,
   buttonClassName: PropTypes.string,
   suggestionsClassName: PropTypes.string,
+  disabled: PropTypes.bool,
 };
 
 export default MenuButton;

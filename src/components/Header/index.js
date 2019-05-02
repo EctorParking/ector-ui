@@ -8,11 +8,11 @@ import logoEctor from '../../assets/images/logoEctor.svg';
 import s from './Header.module.css';
 import TextsType, { DefaultTexts } from './HeaderTextsType';
 
-const DefaultRightComponent = ({ texts, className }) => {
+const DefaultRightComponent = ({ texts, className, disabledButtons }) => {
   const renderHelpButton = ({ isActive }) => (
     <TextIcon
       imageUrl={faqIcon}
-      variant={isActive ? 'yellow' : 'white'}
+      variant={isActive && !disabledButtons ? 'yellow' : 'white'}
       position="right"
     >
       {texts.needHelp}
@@ -44,27 +44,32 @@ const DefaultRightComponent = ({ texts, className }) => {
 
   return (
     <div className={[s.menuItemsContainer, className].join(' ')}>
-      <MenuButton LabelComponent={renderHelpButton} SuggestionsComponent={renderSuggestions} />
-      <MenuButton LabelComponent={renderConnectionButton} />
+      <MenuButton
+        buttonClassName={disabledButtons ? s.menuItemNotHovered : s.menuItemHovered}
+        LabelComponent={renderHelpButton}
+        SuggestionsComponent={renderSuggestions}
+        disabled={disabledButtons}
+      />
+      <MenuButton
+        buttonClassName={disabledButtons ? s.menuItemNotHovered : s.menuItemHovered}
+        LabelComponent={renderConnectionButton}
+        disabled={disabledButtons}
+      />
     </div>
   );
 };
 
-DefaultRightComponent.defaultProps = {
-  texts: DefaultTexts,
-  className: undefined,
-};
-
 DefaultRightComponent.propTypes = {
-  texts: TextsType,
-  className: PropTypes.string,
+  texts: TextsType.isRequired,
+  className: PropTypes.string.isRequired,
+  disabledButtons: PropTypes.bool.isRequired,
 };
 
-const DefaultMiddleComponent = ({ texts, className }) => {
+const DefaultMiddleComponent = ({ texts, className, disabledButtons }) => {
   const renderBusinessButton = ({ isActive }) => (
     <TextIcon
       imageUrl={businessIcon}
-      variant={isActive ? 'yellow' : 'melrose'}
+      variant={isActive && !disabledButtons ? 'yellow' : 'melrose'}
       position="right"
     >
       {texts.business}
@@ -80,19 +85,20 @@ const DefaultMiddleComponent = ({ texts, className }) => {
 
   return (
     <div className={[s.middleMenuItemsContainer, className].join(' ')}>
-      <MenuButton LabelComponent={renderBusinessButton} onClick={onClick} />
+      <MenuButton
+        buttonClassName={disabledButtons ? s.menuItemNotHovered : s.menuItemHovered}
+        LabelComponent={renderBusinessButton}
+        onClick={onClick}
+        disabled={disabledButtons}
+      />
     </div>
   );
 };
 
-DefaultMiddleComponent.defaultProps = {
-  texts: DefaultTexts,
-  className: undefined,
-};
-
 DefaultMiddleComponent.propTypes = {
-  texts: TextsType,
-  className: PropTypes.string,
+  texts: TextsType.isRequired,
+  className: PropTypes.string.isRequired,
+  disabledButtons: PropTypes.bool.isRequired,
 };
 
 const Header = ({
@@ -106,12 +112,21 @@ const Header = ({
   RightComponent,
   texts,
   onClickLogo,
+  disabledButtons,
 }) => (
   <div className={[s.wrapper, className].join(' ')}>
     <div className={[s.container, containerClassName].join(' ')}>
       <LogoComponent className={logoClassName} onClick={onClickLogo} />
-      <MiddleComponent texts={texts} className={middleComponentClassName} />
-      <RightComponent texts={texts} className={rightComponentClassName} />
+      <MiddleComponent
+        texts={texts}
+        className={middleComponentClassName}
+        disabledButtons={disabledButtons}
+      />
+      <RightComponent
+        texts={texts}
+        className={rightComponentClassName}
+        disabledButtons={disabledButtons}
+      />
     </div>
   </div>
 );
@@ -131,6 +146,7 @@ Header.defaultProps = {
   RightComponent: DefaultRightComponent,
   texts: DefaultTexts,
   onClickLogo: () => null,
+  disabledButtons: false,
 };
 
 Header.propTypes = {
@@ -144,6 +160,7 @@ Header.propTypes = {
   rightComponentClassName: PropTypes.string,
   texts: TextsType,
   onClickLogo: PropTypes.func,
+  disabledButtons: PropTypes.bool,
 };
 
 export default Header;
