@@ -177,7 +177,7 @@ class FlightInformationForm extends React.Component {
     return (
       <>
         <Tooltip
-          text={texts.travelingNumberToTooltip}
+          text={texts.returnFlightOriginTooltip}
           visible={showReturnFlightOriginTooltip}
           position="top"
           size="small"
