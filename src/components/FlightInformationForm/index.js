@@ -154,13 +154,13 @@ class FlightInformationForm extends React.Component {
   };
 
   renderTravelingNumberToInputComponent = (props) => {
-    const { texts } = this.props;
+    const { texts, values: { toSpot } } = this.props;
     const { showTravelingNumberToTooltip } = this.state;
 
     return (
       <>
         <Tooltip
-          text={texts.travelingNumberToTooltip}
+          text={toSpot && toSpot.type === 'airport' ? texts.travelingFlightNumberToTooltip : texts.travelingTrainNumberToTooltip}
           visible={showTravelingNumberToTooltip}
           position="top"
           tooltipClassName={s.inputTooltip}
@@ -171,13 +171,13 @@ class FlightInformationForm extends React.Component {
   };
 
   renderReturnFlightOriginInputComponent = (props) => {
-    const { texts } = this.props;
+    const { texts, values: { toSpot } } = this.props;
     const { showReturnFlightOriginTooltip } = this.state;
 
     return (
       <>
         <Tooltip
-          text={texts.returnFlightOriginTooltip}
+          text={toSpot && toSpot.type === 'airport' ? texts.returnFlightAirportOriginTooltip : texts.returnFlightStationOriginTooltip}
           visible={showReturnFlightOriginTooltip}
           position="top"
           size="small"

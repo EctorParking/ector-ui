@@ -6967,9 +6967,11 @@ var DefaultTexts$8 = {
   switchMandatoryAirportDescription: 'Si vous ne connaissez pas votre numéro de vol, veuillez indiquer la compagnie aérienne et la ville de provenance de votre dernier vol.',
   switchMandatoryStationDescription: 'Si vous ne connaissez pas votre numéro de train, veuillez indiquer la ville de provenance de votre dernier train.',
   noResult: 'Aucun résultat',
-  travelingNumberToTooltip: 'En cas d\'escale, renseignez le numéro de votre dernier vol. Cela permettra à votre voiturier de suivre votre arrivée.',
+  travelingFlightNumberToTooltip: 'En cas d\'escale, renseignez le numéro de votre dernier vol. Cela permettra à votre voiturier de suivre votre arrivée.',
+  travelingTrainNumberToTooltip: 'En cas d\'escale, renseignez le numéro de votre dernier train. Cela permettra à votre voiturier de suivre votre arrivée.',
   returnFlightCompanyTooltip: 'En cas d\'escale, indiquez la compagnie aérienne de votre dernier vol.',
-  returnFlightOriginTooltip: 'En cas d\'escale, indiquez la ville où vous prendrez votre dernier avion.'
+  returnFlightAirportOriginTooltip: 'En cas d\'escale, indiquez la ville où vous prendrez votre dernier avion.',
+  returnFlightStationOriginTooltip: 'En cas d\'escale, indiquez la ville où vous prendrez votre dernier train.'
 };
 
 var FlightInformationForm =
@@ -7079,10 +7081,12 @@ function (_React$Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "renderTravelingNumberToInputComponent", function (props) {
-      var texts = _this.props.texts;
+      var _this$props4 = _this.props,
+          texts = _this$props4.texts,
+          toSpot = _this$props4.values.toSpot;
       var showTravelingNumberToTooltip = _this.state.showTravelingNumberToTooltip;
       return React__default.createElement(React__default.Fragment, null, React__default.createElement(Tooltip, {
-        text: texts.travelingNumberToTooltip,
+        text: toSpot && toSpot.type === 'airport' ? texts.travelingFlightNumberToTooltip : texts.travelingTrainNumberToTooltip,
         visible: showTravelingNumberToTooltip,
         position: "top",
         tooltipClassName: s$16.inputTooltip
@@ -7090,10 +7094,12 @@ function (_React$Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "renderReturnFlightOriginInputComponent", function (props) {
-      var texts = _this.props.texts;
+      var _this$props5 = _this.props,
+          texts = _this$props5.texts,
+          toSpot = _this$props5.values.toSpot;
       var showReturnFlightOriginTooltip = _this.state.showReturnFlightOriginTooltip;
       return React__default.createElement(React__default.Fragment, null, React__default.createElement(Tooltip, {
-        text: texts.returnFlightOriginTooltip,
+        text: toSpot && toSpot.type === 'airport' ? texts.returnFlightAirportOriginTooltip : texts.returnFlightStationOriginTooltip,
         visible: showReturnFlightOriginTooltip,
         position: "top",
         size: "small",
@@ -7143,23 +7149,23 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this$props4 = this.props,
-          RootComponent = _this$props4.RootComponent,
-          ReturnFlightInformationComponent = _this$props4.ReturnFlightInformationComponent,
-          fromSpotsAvailable = _this$props4.fromSpotsAvailable,
-          toSpotsAvailable = _this$props4.toSpotsAvailable,
-          _this$props4$values = _this$props4.values,
-          fromSpot = _this$props4$values.fromSpot,
-          toSpot = _this$props4$values.toSpot,
-          travelingNumberTo = _this$props4$values.travelingNumberTo,
-          returnFlightCompany = _this$props4$values.returnFlightCompany,
-          returnFlightOrigin = _this$props4$values.returnFlightOrigin,
-          errors = _this$props4.errors,
-          className = _this$props4.className,
-          contentClassName = _this$props4.contentClassName,
-          texts = _this$props4.texts,
-          travelingNumberToInputProps = _this$props4.travelingNumberToInputProps,
-          cardProps = _objectWithoutProperties(_this$props4, ["RootComponent", "ReturnFlightInformationComponent", "fromSpotsAvailable", "toSpotsAvailable", "values", "errors", "className", "contentClassName", "texts", "travelingNumberToInputProps"]);
+      var _this$props6 = this.props,
+          RootComponent = _this$props6.RootComponent,
+          ReturnFlightInformationComponent = _this$props6.ReturnFlightInformationComponent,
+          fromSpotsAvailable = _this$props6.fromSpotsAvailable,
+          toSpotsAvailable = _this$props6.toSpotsAvailable,
+          _this$props6$values = _this$props6.values,
+          fromSpot = _this$props6$values.fromSpot,
+          toSpot = _this$props6$values.toSpot,
+          travelingNumberTo = _this$props6$values.travelingNumberTo,
+          returnFlightCompany = _this$props6$values.returnFlightCompany,
+          returnFlightOrigin = _this$props6$values.returnFlightOrigin,
+          errors = _this$props6.errors,
+          className = _this$props6.className,
+          contentClassName = _this$props6.contentClassName,
+          texts = _this$props6.texts,
+          travelingNumberToInputProps = _this$props6.travelingNumberToInputProps,
+          cardProps = _objectWithoutProperties(_this$props6, ["RootComponent", "ReturnFlightInformationComponent", "fromSpotsAvailable", "toSpotsAvailable", "values", "errors", "className", "contentClassName", "texts", "travelingNumberToInputProps"]);
 
       var shouldDisplayReturnFlightInformation = this.state.shouldDisplayReturnFlightInformation;
 
