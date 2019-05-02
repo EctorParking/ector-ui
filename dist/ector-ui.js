@@ -7093,7 +7093,7 @@ function (_React$Component) {
       var texts = _this.props.texts;
       var showReturnFlightOriginTooltip = _this.state.showReturnFlightOriginTooltip;
       return React__default.createElement(React__default.Fragment, null, React__default.createElement(Tooltip, {
-        text: texts.travelingNumberToTooltip,
+        text: texts.returnFlightOriginTooltip,
         visible: showReturnFlightOriginTooltip,
         position: "top",
         size: "small",
