@@ -3806,16 +3806,17 @@
           justify-content: flex-end;
 }
 
-.Header-module_menuItemContainer__3AND5 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.Header-module_menuItemNotHovered__3b9v6 {
+  cursor: default !important;
+  font-weight: normal !important;
 }
 
-.Header-module_visible__sHCWg, .Header-module_menuItemContainer__3AND5:hover, .Header-module_suggestion__3LyBf:hover {
+.Header-module_menuItemHovered__dPSDr:hover {
+  font-weight: 700 !important;
+  cursor: pointer !important;
+}
+
+.Header-module_visible__sHCWg, .Header-module_suggestion__3LyBf:hover {
   font-weight: 700;
 }
 
