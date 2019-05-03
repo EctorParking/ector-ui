@@ -38,8 +38,9 @@
 }
 
 .hour, .minute {
-  min-width: 20px;
+  min-width: 40px;
   padding: 5px 10px;
+  transition: text-shadow .3s;
   text-align: center;
   &:hover, &.selected {
     border-radius: var(--marginXSmall);

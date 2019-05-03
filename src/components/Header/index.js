@@ -14,13 +14,19 @@ const DefaultRightComponent = ({ texts, className, disabledButtons }) => {
       imageUrl={faqIcon}
       variant={isActive && !disabledButtons ? 'yellow' : 'white'}
       position="right"
+      backgroundClassName={s.backgroundTextIcon}
+
     >
       {texts.needHelp}
     </TextIcon>
   );
 
   const renderConnectionButton = ({ isActive }) => (
-    <TextIcon imageUrl={headIcon} variant={isActive ? 'yellow' : 'white'}>
+    <TextIcon
+      imageUrl={headIcon}
+      variant={isActive ? 'yellow' : 'white'}
+      backgroundClassName={s.backgroundTextIcon}
+    >
       {texts.login}
     </TextIcon>
   );
@@ -45,13 +51,13 @@ const DefaultRightComponent = ({ texts, className, disabledButtons }) => {
   return (
     <div className={[s.menuItemsContainer, className].join(' ')}>
       <MenuButton
-        buttonClassName={disabledButtons ? s.menuItemNotHovered : s.menuItemHovered}
+        buttonClassName={[s.menuItem, disabledButtons ? s.menuItemNotHovered : s.menuItemHovered].join(' ')}
         LabelComponent={renderHelpButton}
         SuggestionsComponent={renderSuggestions}
         disabled={disabledButtons}
       />
       <MenuButton
-        buttonClassName={disabledButtons ? s.menuItemNotHovered : s.menuItemHovered}
+        buttonClassName={[s.menuItem, disabledButtons ? s.menuItemNotHovered : s.menuItemHovered].join(' ')}
         LabelComponent={renderConnectionButton}
         disabled={disabledButtons}
       />
@@ -71,6 +77,7 @@ const DefaultMiddleComponent = ({ texts, className, disabledButtons }) => {
       imageUrl={businessIcon}
       variant={isActive && !disabledButtons ? 'yellow' : 'melrose'}
       position="right"
+      backgroundClassName={s.backgroundTextIcon}
     >
       {texts.business}
     </TextIcon>
@@ -86,7 +93,7 @@ const DefaultMiddleComponent = ({ texts, className, disabledButtons }) => {
   return (
     <div className={[s.middleMenuItemsContainer, className].join(' ')}>
       <MenuButton
-        buttonClassName={disabledButtons ? s.menuItemNotHovered : s.menuItemHovered}
+        buttonClassName={[s.menuItem, disabledButtons ? s.menuItemNotHovered : s.menuItemHovered].join(' ')}
         LabelComponent={renderBusinessButton}
         onClick={onClick}
         disabled={disabledButtons}
