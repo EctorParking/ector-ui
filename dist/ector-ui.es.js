@@ -6971,6 +6971,22 @@ var FlightInformationForm =
 function (_React$Component) {
   _inherits(FlightInformationForm, _React$Component);
 
+  _createClass(FlightInformationForm, null, [{
+    key: "getDerivedStateFromProps",
+    value: function getDerivedStateFromProps(props, state) {
+      var propShouldDisplayReturnFlightInformation = props.shouldDisplayReturnFlightInformation;
+      var shouldDisplayReturnFlightInformation = state.shouldDisplayReturnFlightInformation;
+
+      if (typeof propShouldDisplayReturnFlightInformation === 'boolean' && propShouldDisplayReturnFlightInformation !== shouldDisplayReturnFlightInformation) {
+        shouldDisplayReturnFlightInformation = propShouldDisplayReturnFlightInformation;
+      }
+
+      return {
+        shouldDisplayReturnFlightInformation: shouldDisplayReturnFlightInformation
+      };
+    }
+  }]);
+
   function FlightInformationForm(_props) {
     var _this;
 
@@ -7057,9 +7073,13 @@ function (_React$Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "showExtraFields", function () {
-      return _this.setState({
+      var onDisplayFlightInformationClick = _this.props.onDisplayFlightInformationClick;
+
+      _this.setState({
         shouldDisplayReturnFlightInformation: true
       });
+
+      onDisplayFlightInformationClick();
     });
 
     _defineProperty(_assertThisInitialized(_this), "getLabelSpot", function (spot) {
@@ -7122,18 +7142,6 @@ function (_React$Component) {
   }
 
   _createClass(FlightInformationForm, [{
-    key: "componentDidUpdate",
-    value: function componentDidUpdate(prevProps) {
-      var should = this.props.shouldDisplayReturnFlightInformation;
-      var oldShould = prevProps.shouldDisplayReturnFlightInformation;
-
-      if (oldShould !== should && should) {
-        this.setState({
-          shouldDisplayReturnFlightInformation: should
-        });
-      }
-    }
-  }, {
     key: "setTooltipVisibility",
     value: function setTooltipVisibility(tooltip, visible) {
       this.setState(_defineProperty({}, tooltip, visible));
@@ -7263,6 +7271,9 @@ FlightInformationForm.defaultProps = {
   travelingNumberToInputProps: {},
   ReturnFlightInformationComponent: function ReturnFlightInformationComponent(props) {
     return React__default.createElement("div", props);
+  },
+  onDisplayFlightInformationClick: function onDisplayFlightInformationClick() {
+    return null;
   }
 };
 FlightInformationForm.propTypes = {
@@ -7294,7 +7305,8 @@ FlightInformationForm.propTypes = {
   onChange: PropTypes$1.func.isRequired,
   onClear: PropTypes$1.func.isRequired,
   shouldDisplayReturnFlightInformation: PropTypes$1.bool,
-  travelingNumberToInputProps: PropTypes$1.shape(InputLabel.propTypes)
+  travelingNumberToInputProps: PropTypes$1.shape(InputLabel.propTypes),
+  onDisplayFlightInformationClick: PropTypes$1.func
 };
 
 var shallowEqual = function shallowEqual(newValue, oldValue) {
