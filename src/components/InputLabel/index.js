@@ -68,7 +68,7 @@ const InputLabel = ({
 };
 
 InputLabel.defaultProps = {
-  id: 'InputStart',
+  id: undefined,
   mandatory: false,
   placeholder: '',
   className: '',
@@ -90,7 +90,7 @@ InputLabel.propTypes = {
   id: PropTypes.string,
   mandatory: PropTypes.bool,
   placeholder: PropTypes.string,
-  type: PropTypes.oneOfType(['text', 'number']),
+  type: PropTypes.oneOf(['text', 'number', 'password', 'email']),
   className: PropTypes.string,
   inputClassName: PropTypes.string,
   inputContainerClassName: PropTypes.string,

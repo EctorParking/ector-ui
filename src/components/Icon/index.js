@@ -46,8 +46,8 @@ const IconComponent = ({
 IconComponent.defaultProps = {
   src: undefined,
   name: undefined,
-  children: undefined,
-  className: null,
+  className: undefined,
+  children: null,
 };
 
 IconComponent.propTypes = {
@@ -58,7 +58,7 @@ IconComponent.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
-  ]).isRequired,
+  ]),
 };
 
 const Icon = ({
@@ -113,8 +113,11 @@ Icon.propTypes = {
   className: PropTypes.string,
   backgroundClassName: PropTypes.string,
   variant: PropTypes.oneOf(Object.keys(Backgrounds)),
-  position: PropTypes.oneOfType([null, PropTypes.oneOf(Positions)]),
-  children: PropTypes.arrayOf(PropTypes.element),
+  position: PropTypes.oneOf(Positions),
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
   IconComponent: PropTypes.func,
   iconClassName: PropTypes.string,
 };

@@ -387,8 +387,8 @@ DateTimePicker.propTypes = {
   onEndDateChange: PropTypes.func,
   onStartTimeChange: PropTypes.func,
   onEndTimeChange: PropTypes.func,
-  fromTimeRange: PropTypes.arrayOf(PropTypes.number),
-  toTimeRange: PropTypes.arrayOf(PropTypes.number),
+  fromTimeRange: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])),
+  toTimeRange: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])),
 };
 
 DateTimePicker.defaultProps = {

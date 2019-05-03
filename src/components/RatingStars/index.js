@@ -12,12 +12,12 @@ const RatingStars = (props) => {
 
   return (
     <div className={[s.container, className].join(' ')}>
-      {stars.map(() => (
-        <span style={{ color: inactiveColor }} className={['icon icon-ec-google-star', s.inactiveStar].join(' ')} />
+      {stars.map(index => (
+        <span key={`in-star-${index}`} style={{ color: inactiveColor }} className={['icon icon-ec-google-star', s.inactiveStar].join(' ')} />
       ))}
       <div className={s.activeStars} style={{ width: `${value * 20}%` }}>
-        {stars.map(() => (
-          <span style={{ color: activeColor }} className={['icon icon-ec-google-star', s.activeStar].join(' ')} />
+        {stars.map(index => (
+          <span key={`ac-star-${index}`} style={{ color: activeColor }} className={['icon icon-ec-google-star', s.activeStar].join(' ')} />
         ))}
       </div>
     </div>

@@ -44,7 +44,10 @@ ServiceCardFooter.defaultProps = {
 };
 
 ServiceCardFooter.propTypes = {
-  price: PropTypes.number.isRequired,
+  price: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]).isRequired,
   actionFooter: PropTypes.func.isRequired,
   buttonLabelFooter: PropTypes.string.isRequired,
   isSubscribed: PropTypes.bool.isRequired,

@@ -32,7 +32,7 @@ const InputCheckbox = ({
 );
 
 InputCheckbox.defaultProps = {
-  id: 'InputStart',
+  id: undefined,
   onChange: () => {},
   checked: false,
   className: '',

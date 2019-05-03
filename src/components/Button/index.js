@@ -57,6 +57,7 @@ Button.defaultProps = {
   fetching: false,
   disabled: false,
   component: 'a',
+  title: undefined,
 };
 
 Button.propTypes = {
@@ -66,12 +67,15 @@ Button.propTypes = {
   onClick: PropTypes.func,
   to: PropTypes.string,
   type: PropTypes.string,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   className: PropTypes.string,
   fetching: PropTypes.bool,
   disabled: PropTypes.bool,
-  children: PropTypes.string.isRequired,
-  component: PropTypes.oneOf([PropTypes.string, PropTypes.node]),
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
+  component: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
 };
 
 export default Button;
