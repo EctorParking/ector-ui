@@ -32,7 +32,10 @@ Title.defaultProps = {
 };
 
 Title.propTypes = {
-  label: PropTypes.string.isRequired,
+  label: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element,
+  ]).isRequired,
   className: PropTypes.string,
   htmlElement: PropTypes.string,
   testid: PropTypes.string,

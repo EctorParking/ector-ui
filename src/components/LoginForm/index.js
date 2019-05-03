@@ -87,6 +87,7 @@ LoginForm.defaultProps = {
   SubmitButtonComponent: ({ children, ...buttonProps }) => (<LinkUnderlined {...buttonProps}>{children}</LinkUnderlined>),
   onClickPasswordForgotten: undefined,
   shouldDisplayEmailField: true,
+  onSubmit: undefined,
 };
 
 LoginForm.propTypes = {
@@ -95,7 +96,7 @@ LoginForm.propTypes = {
   errorLogin: PropTypes.string,
   onChangeEmail: PropTypes.func.isRequired,
   onChangePassword: PropTypes.func.isRequired,
-  onSubmit: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func,
   texts: TextsType,
   className: PropTypes.string,
   emailInputClassName: PropTypes.string,

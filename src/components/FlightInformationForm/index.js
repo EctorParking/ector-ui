@@ -353,9 +353,9 @@ FlightInformationForm.propTypes = {
   fromSpotsAvailable: PropTypes.arrayOf(SpotType).isRequired,
   toSpotsAvailable: PropTypes.arrayOf(SpotType).isRequired,
   values: PropTypes.shape({
-    fromSpot: SpotType.isRequired,
-    toSpot: SpotType.isRequired,
-    travelingNumberTo: PropTypes.string.isRequired,
+    fromSpot: SpotType,
+    toSpot: SpotType,
+    travelingNumberTo: PropTypes.string,
     returnFlightCompany: PropTypes.string,
     returnFlightOrigin: PropTypes.string,
   }).isRequired,
@@ -374,7 +374,9 @@ FlightInformationForm.propTypes = {
   onChange: PropTypes.func.isRequired,
   onClear: PropTypes.func.isRequired,
   shouldDisplayReturnFlightInformation: PropTypes.bool,
-  travelingNumberToInputProps: PropTypes.shape(InputLabel.propTypes),
+  travelingNumberToInputProps: PropTypes.shape({
+    RightInputComponent: PropTypes.func,
+  }),
   onDisplayFlightInformationClick: PropTypes.func,
 };
 

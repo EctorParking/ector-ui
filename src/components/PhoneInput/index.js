@@ -161,7 +161,7 @@ PhoneInput.propTypes = {
   mandatory: PropTypes.bool,
   left: PropTypes.bool,
   className: PropTypes.string,
-  countries: PropTypes.shape(CountryPropType),
+  countries: PropTypes.arrayOf(CountryPropType),
   withFlag: PropTypes.bool,
   inputClassName: PropTypes.string,
 };

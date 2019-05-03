@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const FeePropType = PropTypes.oneOf(PropTypes.string, PropTypes.number);
+const FeePropType = PropTypes.oneOfType([PropTypes.string, PropTypes.number]);
 
 export default PropTypes.shape({
   initialPrice: PropTypes.string,

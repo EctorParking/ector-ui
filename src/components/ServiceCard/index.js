@@ -73,7 +73,10 @@ ServiceCard.propTypes = {
   image: PropTypes.node,
   title: PropTypes.string,
   description: PropTypes.string,
-  price: PropTypes.number,
+  price: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string,
+  ]),
   actionFooter: PropTypes.func.isRequired,
   openShowMore: PropTypes.func,
   isSubscribed: PropTypes.bool,

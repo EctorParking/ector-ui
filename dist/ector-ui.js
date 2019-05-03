@@ -836,7 +836,8 @@ Button.defaultProps = {
   className: '',
   fetching: false,
   disabled: false,
-  component: 'a'
+  component: 'a',
+  title: undefined
 };
 Button.propTypes = {
   animationDuration: PropTypes$1.number,
@@ -845,12 +846,12 @@ Button.propTypes = {
   onClick: PropTypes$1.func,
   to: PropTypes$1.string,
   type: PropTypes$1.string,
-  title: PropTypes$1.string.isRequired,
+  title: PropTypes$1.string,
   className: PropTypes$1.string,
   fetching: PropTypes$1.bool,
   disabled: PropTypes$1.bool,
-  children: PropTypes$1.string.isRequired,
-  component: PropTypes$1.oneOf([PropTypes$1.string, PropTypes$1.node])
+  children: PropTypes$1.oneOfType([PropTypes$1.arrayOf(PropTypes$1.node), PropTypes$1.node]).isRequired,
+  component: PropTypes$1.oneOfType([PropTypes$1.string, PropTypes$1.node])
 };
 
 var css$a = ".BookingModificationSummaryRow-module_summaryRow__3yRUL {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  margin: 5px 0;\n}\n\n.BookingModificationSummaryRow-module_summaryRowText__3WlNz {\n  color: #163457;\n  font-size: 16px;\n  margin: 0;\n}\n\n.BookingModificationSummaryRow-module_summaryRowPrice__Zr9Jr {\n  margin: 0;\n  font-size: 22px;\n}\n";
@@ -906,7 +907,7 @@ var defaultTexts$2 = {
   total: 'Total reste à payer'
 };
 
-var FeePropType = PropTypes$1.oneOf(PropTypes$1.string, PropTypes$1.number);
+var FeePropType = PropTypes$1.oneOfType([PropTypes$1.string, PropTypes$1.number]);
 var BookingModificationSummaryPriceType = PropTypes$1.shape({
   initialPrice: PropTypes$1.string,
   routingFee: FeePropType,
@@ -2853,7 +2854,7 @@ var InputCheckbox = function InputCheckbox(_ref) {
 };
 
 InputCheckbox.defaultProps = {
-  id: 'InputStart',
+  id: undefined,
   onChange: function onChange() {},
   checked: false,
   className: '',
@@ -2918,7 +2919,7 @@ var InputLabel = function InputLabel(_ref) {
 };
 
 InputLabel.defaultProps = {
-  id: 'InputStart',
+  id: undefined,
   mandatory: false,
   placeholder: '',
   className: '',
@@ -2939,7 +2940,7 @@ InputLabel.propTypes = {
   id: PropTypes$1.string,
   mandatory: PropTypes$1.bool,
   placeholder: PropTypes$1.string,
-  type: PropTypes$1.oneOfType(['text', 'number']),
+  type: PropTypes$1.oneOf(['text', 'number', 'password', 'email']),
   className: PropTypes$1.string,
   inputClassName: PropTypes$1.string,
   inputContainerClassName: PropTypes$1.string,
@@ -3115,7 +3116,8 @@ LoginForm.defaultProps = {
     return React__default.createElement(LinkUnderlined, buttonProps, children);
   },
   onClickPasswordForgotten: undefined,
-  shouldDisplayEmailField: true
+  shouldDisplayEmailField: true,
+  onSubmit: undefined
 };
 LoginForm.propTypes = {
   values: LoginFormValuesType.isRequired,
@@ -3123,7 +3125,7 @@ LoginForm.propTypes = {
   errorLogin: PropTypes$1.string,
   onChangeEmail: PropTypes$1.func.isRequired,
   onChangePassword: PropTypes$1.func.isRequired,
-  onSubmit: PropTypes$1.func.isRequired,
+  onSubmit: PropTypes$1.func,
   texts: TextsType$4,
   className: PropTypes$1.string,
   emailInputClassName: PropTypes$1.string,
@@ -3708,7 +3710,7 @@ PhoneInput.propTypes = {
   mandatory: PropTypes$1.bool,
   left: PropTypes$1.bool,
   className: PropTypes$1.string,
-  countries: PropTypes$1.shape(CountryPropType),
+  countries: PropTypes$1.arrayOf(CountryPropType),
   withFlag: PropTypes$1.bool,
   inputClassName: PropTypes$1.string
 };
@@ -4159,7 +4161,7 @@ ServiceCardFooter.defaultProps = {
   showButton: true
 };
 ServiceCardFooter.propTypes = {
-  price: PropTypes$1.number.isRequired,
+  price: PropTypes$1.oneOfType([PropTypes$1.string, PropTypes$1.number]).isRequired,
   actionFooter: PropTypes$1.func.isRequired,
   buttonLabelFooter: PropTypes$1.string.isRequired,
   isSubscribed: PropTypes$1.bool.isRequired,
@@ -4230,7 +4232,7 @@ ServiceCard.propTypes = {
   image: PropTypes$1.node,
   title: PropTypes$1.string,
   description: PropTypes$1.string,
-  price: PropTypes$1.number,
+  price: PropTypes$1.oneOfType([PropTypes$1.number, PropTypes$1.string]),
   actionFooter: PropTypes$1.func.isRequired,
   openShowMore: PropTypes$1.func,
   isSubscribed: PropTypes$1.bool,
@@ -4306,7 +4308,7 @@ Title.defaultProps = {
   variant: TitleVariants.underlined
 };
 Title.propTypes = {
-  label: PropTypes$1.string.isRequired,
+  label: PropTypes$1.oneOfType([PropTypes$1.string, PropTypes$1.element]).isRequired,
   className: PropTypes$1.string,
   htmlElement: PropTypes$1.string,
   testid: PropTypes$1.string,
@@ -5944,15 +5946,15 @@ var IconComponent$1 = function IconComponent(_ref) {
 IconComponent$1.defaultProps = {
   src: undefined,
   name: undefined,
-  children: undefined,
-  className: null
+  className: undefined,
+  children: null
 };
 IconComponent$1.propTypes = {
   src: PropTypes$1.string,
   name: PropTypes$1.string,
   className: PropTypes$1.string,
   separator: PropTypes$1.string,
-  children: PropTypes$1.oneOfType([PropTypes$1.arrayOf(PropTypes$1.node), PropTypes$1.node]).isRequired
+  children: PropTypes$1.oneOfType([PropTypes$1.arrayOf(PropTypes$1.node), PropTypes$1.node])
 };
 
 var Icon = function Icon(_ref2) {
@@ -5995,8 +5997,8 @@ Icon.propTypes = {
   className: PropTypes$1.string,
   backgroundClassName: PropTypes$1.string,
   variant: PropTypes$1.oneOf(Object.keys(Backgrounds)),
-  position: PropTypes$1.oneOfType([null, PropTypes$1.oneOf(Positions)]),
-  children: PropTypes$1.arrayOf(PropTypes$1.element),
+  position: PropTypes$1.oneOf(Positions),
+  children: PropTypes$1.oneOfType([PropTypes$1.arrayOf(PropTypes$1.node), PropTypes$1.node]),
   IconComponent: PropTypes$1.func,
   iconClassName: PropTypes$1.string
 };
@@ -6582,8 +6584,8 @@ DateTimePicker.propTypes = {
   onEndDateChange: PropTypes$1.func,
   onStartTimeChange: PropTypes$1.func,
   onEndTimeChange: PropTypes$1.func,
-  fromTimeRange: PropTypes$1.arrayOf(PropTypes$1.number),
-  toTimeRange: PropTypes$1.arrayOf(PropTypes$1.number)
+  fromTimeRange: PropTypes$1.arrayOf(PropTypes$1.oneOfType([PropTypes$1.number, PropTypes$1.string])),
+  toTimeRange: PropTypes$1.arrayOf(PropTypes$1.oneOfType([PropTypes$1.number, PropTypes$1.string]))
 };
 DateTimePicker.defaultProps = {
   error: '',
@@ -7292,9 +7294,9 @@ FlightInformationForm.propTypes = {
   fromSpotsAvailable: PropTypes$1.arrayOf(SpotType).isRequired,
   toSpotsAvailable: PropTypes$1.arrayOf(SpotType).isRequired,
   values: PropTypes$1.shape({
-    fromSpot: SpotType.isRequired,
-    toSpot: SpotType.isRequired,
-    travelingNumberTo: PropTypes$1.string.isRequired,
+    fromSpot: SpotType,
+    toSpot: SpotType,
+    travelingNumberTo: PropTypes$1.string,
     returnFlightCompany: PropTypes$1.string,
     returnFlightOrigin: PropTypes$1.string
   }).isRequired,
@@ -7313,7 +7315,9 @@ FlightInformationForm.propTypes = {
   onChange: PropTypes$1.func.isRequired,
   onClear: PropTypes$1.func.isRequired,
   shouldDisplayReturnFlightInformation: PropTypes$1.bool,
-  travelingNumberToInputProps: PropTypes$1.shape(InputLabel.propTypes),
+  travelingNumberToInputProps: PropTypes$1.shape({
+    RightInputComponent: PropTypes$1.func
+  }),
   onDisplayFlightInformationClick: PropTypes$1.func
 };
 
@@ -16153,8 +16157,9 @@ var RatingStars = function RatingStars(props) {
       inactiveColor = props.inactiveColor;
   return React__default.createElement("div", {
     className: [s$18.container, className].join(' ')
-  }, stars.map(function () {
+  }, stars.map(function (index) {
     return React__default.createElement("span", {
+      key: "in-star-".concat(index),
       style: {
         color: inactiveColor
       },
@@ -16165,8 +16170,9 @@ var RatingStars = function RatingStars(props) {
     style: {
       width: "".concat(value * 20, "%")
     }
-  }, stars.map(function () {
+  }, stars.map(function (index) {
     return React__default.createElement("span", {
+      key: "ac-star-".concat(index),
       style: {
         color: activeColor
       },
