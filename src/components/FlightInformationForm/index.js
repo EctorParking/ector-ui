@@ -12,6 +12,18 @@ import { SpotType } from './SpotType';
 import { TextsType, DefaultTexts } from './FlightInformationFormTexts';
 
 class FlightInformationForm extends React.Component {
+  static getDerivedStateFromProps(props, state) {
+    const {
+      shouldDisplayReturnFlightInformation: propShouldDisplayReturnFlightInformation,
+    } = props;
+    let { shouldDisplayReturnFlightInformation } = state;
+
+    if (typeof propShouldDisplayReturnFlightInformation === 'boolean' && propShouldDisplayReturnFlightInformation !== shouldDisplayReturnFlightInformation) {
+      shouldDisplayReturnFlightInformation = propShouldDisplayReturnFlightInformation;
+    }
+    return { shouldDisplayReturnFlightInformation };
+  }
+
   constructor(props) {
     super(props);
 
@@ -50,19 +62,6 @@ class FlightInformationForm extends React.Component {
       showReturnFlightCompanyTooltip: false,
       showReturnFlightOriginTooltip: false,
     };
-  }
-
-  componentDidUpdate(prevProps) {
-    const { shouldDisplayReturnFlightInformation: should } = this.props;
-    const {
-      shouldDisplayReturnFlightInformation: oldShould,
-    } = prevProps;
-
-    if (oldShould !== should
-      && should
-    ) {
-      this.setState({ shouldDisplayReturnFlightInformation: should });
-    }
   }
 
   onChange = (field, event) => {
@@ -141,7 +140,12 @@ class FlightInformationForm extends React.Component {
     );
   };
 
-  showExtraFields = () => this.setState({ shouldDisplayReturnFlightInformation: true });
+  showExtraFields = () => {
+    const { onDisplayFlightInformationClick } = this.props;
+
+    this.setState({ shouldDisplayReturnFlightInformation: true });
+    onDisplayFlightInformationClick();
+  };
 
   getLabelSpot = (spot) => {
     const { texts } = this.props;
@@ -338,6 +342,7 @@ FlightInformationForm.defaultProps = {
   shouldDisplayReturnFlightInformation: false,
   travelingNumberToInputProps: {},
   ReturnFlightInformationComponent: props => <div {...props} />,
+  onDisplayFlightInformationClick: () => null,
 };
 
 FlightInformationForm.propTypes = {
@@ -370,6 +375,7 @@ FlightInformationForm.propTypes = {
   onClear: PropTypes.func.isRequired,
   shouldDisplayReturnFlightInformation: PropTypes.bool,
   travelingNumberToInputProps: PropTypes.shape(InputLabel.propTypes),
+  onDisplayFlightInformationClick: PropTypes.func,
 };
 
 export default FlightInformationForm;
