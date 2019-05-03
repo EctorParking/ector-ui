@@ -71,7 +71,7 @@
   opacity: 0;
   padding: var(--marginSmall);
   position: absolute;
-  top: 0;
+  top: 5px;
   transform: none;
   transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
   width: 100%;

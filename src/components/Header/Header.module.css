@@ -31,13 +31,17 @@
   justify-content: flex-end;
 }
 
+.menuItem {
+  transition: text-shadow .3s;
+}
+
 .menuItemNotHovered {
   cursor: default !important;
   font-weight: normal !important;
 }
 
 .menuItemHovered:hover {
-  font-weight: var(--fontWeightBold) !important;
+  text-shadow: 1px 0 0 currentColor;
   cursor: pointer !important;
 }
 
@@ -74,4 +78,8 @@
   margin: var(--marginSmall) 0;
   color: var(--deepBlue);
   align-self: flex-start;
+}
+
+.backgroundTextIcon {
+  height: 1.5em;
 }
