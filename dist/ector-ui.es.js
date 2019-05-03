@@ -6480,22 +6480,14 @@ function (_React$PureComponent) {
           endHour = state.endHour,
           showTimeInputs = state.showTimeInputs;
 
-      if (!startDate && propStartDate) {
-        startDate = moment(propStartDate);
-      }
-
-      if (!endDate && propEndDate) {
-        endDate = moment(propEndDate);
-      }
-
-      if (!startMinutes && !startHour && propStartDate) {
+      if (propStartDate) {
         startDate = moment(propStartDate);
         startMinutes = startDate.format('mm');
         startHour = startDate.format('HH');
         showTimeInputs = true;
       }
 
-      if (!endMinutes && !endHour && propEndDate) {
+      if (propEndDate) {
         endDate = moment(propEndDate);
         endMinutes = endDate.format('mm');
         endHour = endDate.format('HH');
