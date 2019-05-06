@@ -277,7 +277,7 @@ TimeRange.propTypes = {
   minutes: PropTypes.string,
   hour: PropTypes.string,
   startMinute: PropTypes.number,
-  endMinute: PropTypes.number,
+  endMinute: PropTypes.number, // eslint-disable-line
   style: PropTypes.shape(),
 };
 
