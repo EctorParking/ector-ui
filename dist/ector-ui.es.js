@@ -6854,7 +6854,6 @@ function (_React$PureComponent) {
           startHour = props.startHour,
           endHour = props.endHour,
           hour = props.hour;
-      console.log('derived state::', hour, endHour, endMinute, TimeRange.defaultProps.endMinute, +hour === +endHour - 1 && +endMinute !== +TimeRange.defaultProps.endMinute);
       return {
         hours: getRange(startHour, endHour),
         minutes: +hour === +endHour - 1 && +endMinute !== +TimeRange.defaultProps.endMinute - 1 ? getRange(startMinute, endMinute + minutesInterval, minutesInterval) : getRange(startMinute, TimeRange.defaultProps.endMinute, minutesInterval)
@@ -6893,6 +6892,7 @@ TimeRange.propTypes = {
   hour: PropTypes$1.string,
   startMinute: PropTypes$1.number,
   endMinute: PropTypes$1.number,
+  // eslint-disable-line
   style: PropTypes$1.shape()
 };
 
