@@ -3837,7 +3837,8 @@ styleInject(css$K);
 
 var RideSummary = function RideSummary(_ref) {
   var texts = _ref.texts,
-      className = _ref.className;
+      className = _ref.className,
+      type = _ref.type;
   return React__default.createElement("div", {
     className: "".concat(s$K.rideSummary, " ").concat(className)
   }, React__default.createElement("p", {
@@ -3846,18 +3847,20 @@ var RideSummary = function RideSummary(_ref) {
     className: s$K.rideSummaryText
   }, texts.date), React__default.createElement("p", {
     className: s$K.rideSummaryText
-  }, texts.spot), React__default.createElement("p", {
+  }, texts.spot), type === 'out' && React__default.createElement("p", {
     className: s$K.rideSummaryText
   }, texts.travelingNumber));
 };
 
 RideSummary.defaultProps = {
   className: '',
-  texts: defaultTexts$4
+  texts: defaultTexts$4,
+  type: ''
 };
 RideSummary.propTypes = {
   texts: RideSummaryTextType,
-  className: PropTypes$1.string
+  className: PropTypes$1.string,
+  type: PropTypes$1.string
 };
 
 var SelectValueType = PropTypes$1.shape({
