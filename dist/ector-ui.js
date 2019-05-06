@@ -6734,14 +6734,13 @@ function (_React$PureComponent) {
     var startHour = props.startHour,
         endHour = props.endHour,
         minutesInterval = props.minutesInterval,
-        startMinute = props.startMinute,
-        endMinute = props.endMinute;
+        startMinute = props.startMinute;
 
     var _visibleArrows = (_visibleArrows2 = {}, _defineProperty(_visibleArrows2, TimeRange.topMinutesArrow, false), _defineProperty(_visibleArrows2, TimeRange.topHoursArrow, false), _defineProperty(_visibleArrows2, TimeRange.bottomHoursArrow, true), _defineProperty(_visibleArrows2, TimeRange.bottomMinutesArrow, true), _visibleArrows2);
 
     _this.state = {
       hours: getRange(startHour, endHour),
-      minutes: getRange(startMinute, endMinute, minutesInterval),
+      minutes: getRange(startMinute, TimeRange.defaultProps.endMinute, minutesInterval),
       visibleArrows: _visibleArrows
     };
     _this.minutesContainer = React__default.createRef();
@@ -6861,10 +6860,12 @@ function (_React$PureComponent) {
           endMinute = props.endMinute,
           minutesInterval = props.minutesInterval,
           startHour = props.startHour,
-          endHour = props.endHour;
+          endHour = props.endHour,
+          hour = props.hour;
+      console.log('derived state::', hour, endHour, endMinute, TimeRange.defaultProps.endMinute, +hour === +endHour - 1 && +endMinute !== +TimeRange.defaultProps.endMinute);
       return {
         hours: getRange(startHour, endHour),
-        minutes: getRange(startMinute, endMinute, minutesInterval)
+        minutes: +hour === +endHour - 1 && +endMinute !== +TimeRange.defaultProps.endMinute - 1 ? getRange(startMinute, endMinute + minutesInterval, minutesInterval) : getRange(startMinute, TimeRange.defaultProps.endMinute, minutesInterval)
       };
     }
   }]);

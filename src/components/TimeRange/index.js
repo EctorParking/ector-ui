@@ -29,7 +29,7 @@ class TimeRange extends React.PureComponent {
   constructor(props) {
     super(props);
     const {
-      startHour, endHour, minutesInterval, startMinute, endMinute,
+      startHour, endHour, minutesInterval, startMinute,
     } = props;
 
     const visibleArrows = {
@@ -40,7 +40,8 @@ class TimeRange extends React.PureComponent {
     };
     this.state = {
       hours: getRange(startHour, endHour),
-      minutes: getRange(startMinute, endMinute, minutesInterval),
+      minutes:
+        getRange(startMinute, TimeRange.defaultProps.endMinute, minutesInterval),
       visibleArrows,
     };
     this.minutesContainer = React.createRef();
@@ -81,12 +82,14 @@ class TimeRange extends React.PureComponent {
 
   static getDerivedStateFromProps(props) {
     const {
-      startMinute, endMinute, minutesInterval, startHour, endHour,
+      startMinute, endMinute, minutesInterval, startHour, endHour, hour,
     } = props;
 
     return {
       hours: getRange(startHour, endHour),
-      minutes: getRange(startMinute, endMinute, minutesInterval),
+      minutes: (+hour === (+endHour - 1) && +endMinute !== (+TimeRange.defaultProps.endMinute - 1))
+        ? getRange(startMinute, endMinute + minutesInterval, minutesInterval)
+        : getRange(startMinute, TimeRange.defaultProps.endMinute, minutesInterval),
     };
   }
 
@@ -274,7 +277,7 @@ TimeRange.propTypes = {
   minutes: PropTypes.string,
   hour: PropTypes.string,
   startMinute: PropTypes.number,
-  endMinute: PropTypes.number,
+  endMinute: PropTypes.number, // eslint-disable-line
   style: PropTypes.shape(),
 };
 
