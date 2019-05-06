@@ -70,7 +70,7 @@ class ScrollArrow extends PureComponent {
       <div
         role="presentation"
         style={style}
-        className={[className, visible ? s.visible : s.hidden].join(' ')}
+        className={[s.container, visible ? s.visible : s.hidden, className].join(' ')}
         onMouseLeave={this.handleMouseLeave}
         onMouseEnter={this.handleScrollHover}
         onClick={this.resetScroll}
