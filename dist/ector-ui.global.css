@@ -3520,9 +3520,7 @@
   width: 25px;
   text-align: center;
   cursor: pointer;
-  position: absolute;
-  -webkit-transition: height .2s ease-in-out;
-  transition: height .2s ease-in-out
+  position: absolute
 }
 
 .TimeRange-module_arrow__3PgLa.TimeRange-module_left__2APgT {
