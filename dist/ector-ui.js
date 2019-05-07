@@ -6721,6 +6721,8 @@ function (_React$PureComponent) {
     _defineProperty(_assertThisInitialized(_this), "getHoursContainerStyle", function () {
       var visibleArrows = _this.state.visibleArrows;
       return {
+        paddingTop: '20px',
+        paddingBottom: '20px',
         marginTop: visibleArrows[TimeRange.topHoursArrow] ? '20px' : '0',
         marginBottom: visibleArrows[TimeRange.bottomHoursArrow] ? '20px' : '0'
       };
@@ -6729,6 +6731,8 @@ function (_React$PureComponent) {
     _defineProperty(_assertThisInitialized(_this), "getMinutesContainerStyle", function () {
       var visibleArrows = _this.state.visibleArrows;
       return {
+        paddingTop: '20px',
+        paddingBottom: '20px',
         marginTop: visibleArrows[TimeRange.topMinutesArrow] ? '20px' : '0',
         marginBottom: visibleArrows[TimeRange.bottomMinutesArrow] ? '20px' : '0'
       };

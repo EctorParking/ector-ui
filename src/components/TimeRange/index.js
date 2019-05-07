@@ -150,6 +150,8 @@ class TimeRange extends React.PureComponent {
     const { visibleArrows } = this.state;
 
     return {
+      paddingTop: '20px',
+      paddingBottom: '20px',
       marginTop: visibleArrows[TimeRange.topHoursArrow] ? '20px' : '0',
       marginBottom: visibleArrows[TimeRange.bottomHoursArrow] ? '20px' : '0',
     };
@@ -159,6 +161,8 @@ class TimeRange extends React.PureComponent {
     const { visibleArrows } = this.state;
 
     return {
+      paddingTop: '20px',
+      paddingBottom: '20px',
       marginTop: visibleArrows[TimeRange.topMinutesArrow] ? '20px' : '0',
       marginBottom: visibleArrows[TimeRange.bottomMinutesArrow] ? '20px' : '0',
     };
