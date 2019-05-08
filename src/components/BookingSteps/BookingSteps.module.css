@@ -6,7 +6,7 @@
 }
 
 .bookingSteps > div:first-child {
-  padding-bottom: var(--marginLarge);
+  padding-bottom: var(--marginSmall);
   position: relative;
 }
 

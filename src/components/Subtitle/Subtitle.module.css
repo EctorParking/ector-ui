@@ -20,3 +20,9 @@
   margin: 0;
   width: var(--titleHrWidth);
 }
+
+@media (--maxPurchaseCanalMinWidth) {
+  .subtitle h2 {
+    margin: 0 0 var(--marginXSmall);
+  }
+}

@@ -742,44 +742,42 @@ BookingCard.propTypes = {
   className: PropTypes$1.string
 };
 
-var css$8 = ".BookingSteps-module_bookingSteps__6TCaf {\n  padding-left: 30px;\n  font-size: 16px;\n}\n\n.BookingSteps-module_bookingSteps__6TCaf > div:first-child {\n  padding-bottom: 30px;\n  position: relative;\n}\n\n.BookingSteps-module_bookingSteps__6TCaf > div:first-child:before {\n  content: '';\n  position: absolute;\n  top: 10px;\n  left: -20px;\n  margin-left: 4px;\n  bottom: -10px;\n  border-right: 2px dotted #32a0c5;\n}\n\n.BookingSteps-module_stepName__3dA-f {\n  font-size: 1.2em;\n  font-weight: 500;\n  color: #32a0c5;\n  margin: 0;\n  position: relative;\n}\n\n.BookingSteps-module_stepName__3dA-f:before {\n  position: absolute;\n  content: '';\n  width: 10px;\n  height: 10px;\n  top: 50%;\n  left: -20px;\n  border-radius: 50%;\n  background-color: #32a0c5;\n  margin-top: -5px;\n}\n\n.BookingSteps-module_bookingSteps__6TCaf div span {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 0.9em;\n}\n\n.BookingSteps-module_bookingSteps__6TCaf div span i {\n  /* margin-right: var(--marginSmall); */\n  font-size: 0.7em;\n  width: 30px;\n}\n";
+var css$8 = ".BookingSteps-module_bookingSteps__6TCaf {\n  padding-left: 30px;\n  font-size: 16px;\n}\n\n.BookingSteps-module_bookingSteps__6TCaf > div:first-child {\n  padding-bottom: 10px;\n  position: relative;\n}\n\n.BookingSteps-module_bookingSteps__6TCaf > div:first-child:before {\n  content: '';\n  position: absolute;\n  top: 10px;\n  left: -20px;\n  margin-left: 4px;\n  bottom: -10px;\n  border-right: 2px dotted #32a0c5;\n}\n\n.BookingSteps-module_stepName__3dA-f {\n  font-size: 1.2em;\n  font-weight: 500;\n  color: #32a0c5;\n  margin: 0;\n  position: relative;\n}\n\n.BookingSteps-module_stepName__3dA-f:before {\n  position: absolute;\n  content: '';\n  width: 10px;\n  height: 10px;\n  top: 50%;\n  left: -20px;\n  border-radius: 50%;\n  background-color: #32a0c5;\n  margin-top: -5px;\n}\n\n.BookingSteps-module_bookingSteps__6TCaf div span {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 0.9em;\n}\n\n.BookingSteps-module_bookingSteps__6TCaf div span i {\n  /* margin-right: var(--marginSmall); */\n  font-size: 0.7em;\n  width: 30px;\n}\n";
 var s$8 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","bookingSteps":"BookingSteps-module_bookingSteps__6TCaf","stepName":"BookingSteps-module_stepName__3dA-f"};
 styleInject(css$8);
 
 var BookingSteps = function BookingSteps(_ref) {
-  var fromSpot = _ref.fromSpot,
-      toSpot = _ref.toSpot,
-      startAt = _ref.startAt,
-      endAt = _ref.endAt,
-      texts = _ref.texts,
-      className = _ref.className;
+  var className = _ref.className,
+      pickupDescriptions = _ref.pickupDescriptions,
+      pickupTitle = _ref.pickupTitle,
+      returnDescriptions = _ref.returnDescriptions,
+      returnTitle = _ref.returnTitle;
   return React__default.createElement("div", {
     className: "".concat(s$8.bookingSteps, " ").concat(className)
   }, React__default.createElement("div", null, React__default.createElement("h3", {
     className: s$8.stepName
-  }, texts.pickup), React__default.createElement("span", null, React__default.createElement("i", {
-    className: "icon icon-ec-departure"
-  }), fromSpot), React__default.createElement("span", null, React__default.createElement("i", {
-    className: "icon icon-ec-dateA"
-  }), startAt)), React__default.createElement("div", null, React__default.createElement("h3", {
+  }, pickupTitle), pickupDescriptions.map(function (description) {
+    return React__default.createElement("span", {
+      key: description
+    }, description);
+  })), React__default.createElement("div", null, React__default.createElement("h3", {
     className: s$8.stepName
-  }, texts.return), React__default.createElement("span", null, React__default.createElement("i", {
-    className: "icon icon-ec-arrival"
-  }), toSpot), React__default.createElement("span", null, React__default.createElement("i", {
-    className: "icon icon-ec-dateB"
-  }), endAt)));
+  }, returnTitle), returnDescriptions.map(function (description) {
+    return React__default.createElement("span", {
+      key: description
+    }, description);
+  })));
 };
 
 BookingSteps.defaultProps = {
   className: ''
 };
 BookingSteps.propTypes = {
-  fromSpot: PropTypes$1.string.isRequired,
-  toSpot: PropTypes$1.string.isRequired,
-  startAt: PropTypes$1.string.isRequired,
-  endAt: PropTypes$1.string.isRequired,
-  texts: BookingStepsTextsType.isRequired,
-  className: PropTypes$1.string
+  className: PropTypes$1.string,
+  pickupDescriptions: PropTypes$1.arrayOf(PropTypes$1.string).isRequired,
+  pickupTitle: PropTypes$1.string.isRequired,
+  returnDescriptions: PropTypes$1.arrayOf(PropTypes$1.string).isRequired,
+  returnTitle: PropTypes$1.string.isRequired
 };
 
 var css$9 = ".Button-module_button__6y6Zv {\n  background-color: #ffcd02;\n  border-radius: 8px;\n  cursor: pointer;\n  display: block;\n  font-size: 16px;\n  font-weight: 700;\n  line-height: 1;\n  margin: 0;\n  outline: none;\n  overflow: hidden;\n  padding: 0.8em 1.1em;\n  position: relative;\n  text-decoration: none;\n  text-transform: uppercase;\n  -webkit-transition: background-color 0.2s ease-in-out;\n  transition: background-color 0.2s ease-in-out;\n}\n\n.Button-module_button__6y6Zv span {\n  position: relative;\n}\n\n.Button-module_button__6y6Zv .Button-module_track__n1eRD {\n  -webkit-animation: Button-module_outFromFetching__2D1oh 0.2s linear forwards;\n          animation: Button-module_outFromFetching__2D1oh 0.2s linear forwards;\n  background-color: #ffcd02;\n  border-radius: 8px;\n  content: '';\n  height: 100%;\n  left: 0;\n  opacity: 0;\n  position: absolute;\n  top: 0;\n  width: 0%;\n}\n\n.Button-module_button__6y6Zv[disabled] {\n  background-color: #7890a3;\n  cursor: not-allowed\n}\n\n.Button-module_button__6y6Zv[disabled]:hover {\n  background-color: #7890a3;\n}\n\n.Button-module_button__6y6Zv.Button-module_fetching__1tCOO {\n  background-color: rgba(255, 205, 2, .41961);\n}\n\n.Button-module_track__n1eRD.Button-module_fetchingTrack__SjURZ {\n  -webkit-animation: Button-module_fetching__1tCOO 3s cubic-bezier(.33,.6,.3,.69) forwards;\n          animation: Button-module_fetching__1tCOO 3s cubic-bezier(.33,.6,.3,.69) forwards;\n  opacity: 1;\n}\n\n@-webkit-keyframes Button-module_fetching__1tCOO {\n    from {\n      width: 0%;\n    }\n\n    to {\n      width: 100%;\n    }\n}\n\n@keyframes Button-module_fetching__1tCOO {\n    from {\n      width: 0%;\n    }\n\n    to {\n      width: 100%;\n    }\n}\n\n@-webkit-keyframes Button-module_outFromFetching__2D1oh {\n    from {\n      opacity: 1;\n      width: 100%;\n    }\n\n    to {\n      opacity: 0;\n      width: 100%;\n    }\n}\n\n@keyframes Button-module_outFromFetching__2D1oh {\n    from {\n      opacity: 1;\n      width: 100%;\n    }\n\n    to {\n      opacity: 0;\n      width: 100%;\n    }\n}\n";
@@ -4248,7 +4246,7 @@ ServiceCard.propTypes = {
   knowMoreLabel: PropTypes$1.string
 };
 
-var css$P = ".Subtitle-module_subtitle__3qud- {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  margin-bottom: 30px;\n}\n\n.Subtitle-module_subtitle__3qud- h2 {\n  color: #163457;\n  font-size: 22px;\n  font-weight: 500;\n  line-height: 1;\n  margin: 0 0 10px;\n}\n\n.Subtitle-module_subtitle__3qud- hr {\n  border: 0;\n  border-top: 2px dotted #9eb3c2;\n  margin: 0;\n  width: 50px;\n}\n";
+var css$P = ".Subtitle-module_subtitle__3qud- {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  margin-bottom: 30px;\n}\n\n.Subtitle-module_subtitle__3qud- h2 {\n  color: #163457;\n  font-size: 22px;\n  font-weight: 500;\n  line-height: 1;\n  margin: 0 0 10px;\n}\n\n.Subtitle-module_subtitle__3qud- hr {\n  border: 0;\n  border-top: 2px dotted #9eb3c2;\n  margin: 0;\n  width: 50px;\n}\n\n@media (max-width: 1130px) {\n  .Subtitle-module_subtitle__3qud- h2 {\n    margin: 0 0 5px;\n  }\n}\n";
 var s$P = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","subtitle":"Subtitle-module_subtitle__3qud-"};
 styleInject(css$P);
 
@@ -4297,7 +4295,7 @@ var Title = function Title(_ref) {
 
   if (variant === TitleVariants.none) {
     return React__default.createElement(htmlElement, {
-      className: [s$Q.newTitle, className].join(' ')
+      className: "".concat(s$Q.newTitle, " ").concat(className)
     }, label, testid);
   }
 

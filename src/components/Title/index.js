@@ -19,7 +19,7 @@ const Title = ({
     );
   }
   if (variant === TitleVariants.none) {
-    return React.createElement(htmlElement, { className: [s.newTitle, className].join(' ') }, label, testid);
+    return React.createElement(htmlElement, { className: `${s.newTitle} ${className}` }, label, testid);
   }
   return null;
 };

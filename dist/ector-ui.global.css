@@ -465,7 +465,7 @@
 }
 
 .BookingSteps-module_bookingSteps__6TCaf > div:first-child {
-  padding-bottom: 30px;
+  padding-bottom: 10px;
   position: relative;
 }
 
@@ -2238,6 +2238,12 @@
   border-top: 2px dotted #9eb3c2;
   margin: 0;
   width: 50px;
+}
+
+@media (max-width: 1130px) {
+  .Subtitle-module_subtitle__3qud- h2 {
+    margin: 0 0 5px;
+  }
 }
 
 .Title-module_title__gpPet {
