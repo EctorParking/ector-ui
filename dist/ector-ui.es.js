@@ -734,8 +734,8 @@ BookingCard.propTypes = {
   className: PropTypes$1.string
 };
 
-var css$8 = ".BookingSteps-module_bookingSteps__6TCaf {\n  padding-left: 30px;\n  font-size: 16px;\n}\n\n.BookingSteps-module_bookingSteps__6TCaf > div:first-child {\n  padding-bottom: 10px;\n  position: relative;\n}\n\n.BookingSteps-module_bookingSteps__6TCaf > div:first-child:before {\n  content: '';\n  position: absolute;\n  top: 10px;\n  left: -20px;\n  margin-left: 4px;\n  bottom: -10px;\n  border-right: 2px dotted #32a0c5;\n}\n\n.BookingSteps-module_stepName__3dA-f {\n  font-size: 1.2em;\n  font-weight: 500;\n  color: #32a0c5;\n  margin: 0;\n  position: relative;\n}\n\n.BookingSteps-module_stepName__3dA-f:before {\n  position: absolute;\n  content: '';\n  width: 10px;\n  height: 10px;\n  top: 50%;\n  left: -20px;\n  border-radius: 50%;\n  background-color: #32a0c5;\n  margin-top: -5px;\n}\n\n.BookingSteps-module_bookingSteps__6TCaf div span {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 0.9em;\n}\n\n.BookingSteps-module_bookingSteps__6TCaf div span i {\n  /* margin-right: var(--marginSmall); */\n  font-size: 0.7em;\n  width: 30px;\n}\n";
-var s$8 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","bookingSteps":"BookingSteps-module_bookingSteps__6TCaf","stepName":"BookingSteps-module_stepName__3dA-f"};
+var css$8 = ".BookingSteps-module_bookingSteps__6TCaf {\n  padding-left: 30px;\n  font-size: 16px;\n}\n\n.BookingSteps-module_firstBookingStep__171xE {\n  padding-bottom: 10px;\n  position: relative;\n}\n\n.BookingSteps-module_firstBookingStep__171xE:before {\n  content: '';\n  position: absolute;\n  top: 10px;\n  left: -20px;\n  margin-left: 4px;\n  bottom: -10px;\n  border-right: 2px dotted #32a0c5;\n}\n\n.BookingSteps-module_stepName__3dA-f {\n  font-size: 1.2em;\n  font-weight: 500;\n  color: #32a0c5;\n  margin: 0;\n  position: relative;\n}\n\n.BookingSteps-module_stepName__3dA-f:before {\n  position: absolute;\n  content: '';\n  width: 10px;\n  height: 10px;\n  top: 50%;\n  left: -20px;\n  border-radius: 50%;\n  background-color: #32a0c5;\n  margin-top: -5px;\n}\n\n.BookingSteps-module_bookingSteps__6TCaf div span {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 0.9em;\n}\n\n.BookingSteps-module_bookingSteps__6TCaf div span i {\n  /* margin-right: var(--marginSmall); */\n  font-size: 0.7em;\n  width: 30px;\n}\n";
+var s$8 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","bookingSteps":"BookingSteps-module_bookingSteps__6TCaf","firstBookingStep":"BookingSteps-module_firstBookingStep__171xE","stepName":"BookingSteps-module_stepName__3dA-f"};
 styleInject(css$8);
 
 var BookingSteps = function BookingSteps(_ref) {
@@ -746,7 +746,9 @@ var BookingSteps = function BookingSteps(_ref) {
       returnTitle = _ref.returnTitle;
   return React__default.createElement("div", {
     className: "".concat(s$8.bookingSteps, " ").concat(className)
-  }, React__default.createElement("div", null, React__default.createElement("h3", {
+  }, React__default.createElement("div", {
+    className: s$8.firstBookingStep
+  }, React__default.createElement("h3", {
     className: s$8.stepName
   }, pickupTitle), pickupDescriptions.map(function (description) {
     return React__default.createElement("span", {
@@ -4238,8 +4240,8 @@ ServiceCard.propTypes = {
   knowMoreLabel: PropTypes$1.string
 };
 
-var css$P = ".Subtitle-module_subtitle__3qud- {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  margin-bottom: 30px;\n}\n\n.Subtitle-module_subtitle__3qud- h2 {\n  color: #163457;\n  font-size: 22px;\n  font-weight: 500;\n  line-height: 1;\n  margin: 0 0 10px;\n}\n\n.Subtitle-module_subtitle__3qud- hr {\n  border: 0;\n  border-top: 2px dotted #9eb3c2;\n  margin: 0;\n  width: 50px;\n}\n\n@media (max-width: 1130px) {\n  .Subtitle-module_subtitle__3qud- h2 {\n    margin: 0 0 5px;\n  }\n}\n";
-var s$P = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","subtitle":"Subtitle-module_subtitle__3qud-"};
+var css$P = ".Subtitle-module_subtitle__3qud- {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  margin-bottom: 30px;\n}\n\n.Subtitle-module_h2__3Utt_ {\n  color: #163457;\n  font-size: 22px;\n  font-weight: 500;\n  line-height: 1;\n  margin: 0 0 10px;\n}\n\n.Subtitle-module_hr__2cWQK {\n  border: 0;\n  border-top: 2px dotted #9eb3c2;\n  margin: 0;\n  width: 50px;\n}\n\n@media (max-width: 1130px) {\n  .Subtitle-module_h2__3Utt_ {\n    margin: 0 0 5px;\n  }\n}\n";
+var s$P = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","subtitle":"Subtitle-module_subtitle__3qud-","h2":"Subtitle-module_h2__3Utt_","hr":"Subtitle-module_hr__2cWQK"};
 styleInject(css$P);
 
 var Subtitle = function Subtitle(_ref) {
@@ -4247,7 +4249,11 @@ var Subtitle = function Subtitle(_ref) {
       className = _ref.className;
   return React__default.createElement("div", {
     className: "".concat(s$P.subtitle, " ").concat(className)
-  }, React__default.createElement("h2", null, label), React__default.createElement("hr", null));
+  }, React__default.createElement("h2", {
+    className: s$P.h2
+  }, label), React__default.createElement("hr", {
+    className: s$P.hr
+  }));
 };
 
 Subtitle.defaultProps = {

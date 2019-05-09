@@ -11,7 +11,7 @@ const BookingSteps = ({
   returnTitle,
 }) => (
   <div className={`${s.bookingSteps} ${className}`}>
-    <div>
+    <div className={s.firstBookingStep}>
       <h3 className={s.stepName}>{pickupTitle}</h3>
       {pickupDescriptions.map(description => (
         <span key={description}>{description}</span>

@@ -2,28 +2,30 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import centered from '@storybook/addon-centered';
-import { withKnobs, text, object } from '@storybook/addon-knobs';
+import { withKnobs, text, array } from '@storybook/addon-knobs';
 
 import BookingSteps from '.';
-import { defaultTexts } from './BookingStepsTextsType';
 
 storiesOf('BookingSteps', module)
-
   .addParameters({
-    backgrounds: [
-      { name: 'header', value: 'white', default: true },
-    ],
+    backgrounds: [{ name: 'header', value: 'white', default: true }],
   })
   .addDecorator(centered)
   .addDecorator(withKnobs)
 
   .add('with knobs', () => {
     const props = {
-      fromSpot: text('From spot', 'Paris Gare de l’Est'),
-      toSpot: text('To spot', 'Paris Gare de l’Est'),
-      startAt: text('Start at', 'Ven. 20 avril à 15:00'),
-      endAt: text('End at', 'Dim. 22 avril à 15:00'),
-      texts: object('Texts', defaultTexts),
+      pickupDescriptions: array('Pickup descriptions', [
+        'Paris Gare de l’Est',
+        'Ven. 20 avril à 15:00',
+      ]),
+      returnDescriptions: array('Return descriptions', [
+        'Paris Gare de l’Est',
+        'Dim. 22 avril à 15:00',
+        'Train n°1234',
+      ]),
+      pickupTitle: text('Pickup title', 'Aller'),
+      returnTitle: text('Return title', 'Retour'),
     };
 
     return <BookingSteps {...props} />;

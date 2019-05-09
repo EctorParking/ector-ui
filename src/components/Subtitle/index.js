@@ -4,8 +4,8 @@ import s from './Subtitle.module.css';
 
 const Subtitle = ({ label, className }) => (
   <div className={`${s.subtitle} ${className}`}>
-    <h2>{label}</h2>
-    <hr />
+    <h2 className={s.h2}>{label}</h2>
+    <hr className={s.hr} />
   </div>
 );
 
