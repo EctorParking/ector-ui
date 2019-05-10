@@ -140,7 +140,7 @@ class DateTimePicker extends React.PureComponent {
     this.setState({
       startDate,
       endDate,
-      focusedDateInput: focusedDateInput === DateTimePicker.startDate && startDate
+      focusedDateInput: startDate
         ? DateTimePicker.endDate
         : DateTimePicker.startDate,
       visiblePicker: visiblePicker === DateTimePicker.datePicker && endDate && startDate
