@@ -6197,7 +6197,7 @@ function (_React$PureComponent) {
       _this.setState({
         startDate: startDate,
         endDate: endDate,
-        focusedDateInput: focusedDateInput === DateTimePicker.startDate && startDate ? DateTimePicker.endDate : DateTimePicker.startDate,
+        focusedDateInput: startDate ? DateTimePicker.endDate : DateTimePicker.startDate,
         visiblePicker: visiblePicker === DateTimePicker.datePicker && endDate && startDate ? DateTimePicker.timePicker : visiblePicker,
         showTimeInputs: !!(stateEndDate || endDate)
       });
