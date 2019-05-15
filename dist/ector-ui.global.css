@@ -1140,8 +1140,8 @@
 
 .ContactForm-module_columns__2X9Q2 > div {
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
 }
 
 .ContactForm-module_firstSection__2-PaO {
@@ -1836,8 +1836,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
 }
 
 .PhoneInput-module_phoneInputCountryCode__1qz3Z {
