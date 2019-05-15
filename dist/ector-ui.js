@@ -3297,7 +3297,7 @@ PaymentMethodCardContentRead.propTypes = {
   texts: TextsType$5.isRequired
 };
 
-var css$D = ".PaymentmethodCardContentDelete-module_container__2q5zt {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n\n.PaymentmethodCardContentDelete-module_sentence__4dwCI {\n  margin: 10px 0;\n}\n\n.PaymentmethodCardContentDelete-module_buttons__1lGiu {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: distribute;\n      justify-content: space-around;\n  width: 100%;\n}\n";
+var css$D = ".PaymentmethodCardContentDelete-module_container__2q5zt {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n\n.PaymentmethodCardContentDelete-module_sentence__4dwCI {\n  margin: 10px 0;\n  width: 100%;\n}\n\n.PaymentmethodCardContentDelete-module_buttons__1lGiu {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: distribute;\n      justify-content: space-around;\n  width: 100%;\n}\n";
 var s$D = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","container":"PaymentmethodCardContentDelete-module_container__2q5zt","sentence":"PaymentmethodCardContentDelete-module_sentence__4dwCI","buttons":"PaymentmethodCardContentDelete-module_buttons__1lGiu"};
 styleInject(css$D);
 
@@ -6186,7 +6186,6 @@ function (_React$PureComponent) {
           onEndDateChange = _this$props.onEndDateChange;
       var _this$state = _this.state,
           stateEndDate = _this$state.endDate,
-          focusedDateInput = _this$state.focusedDateInput,
           visiblePicker = _this$state.visiblePicker;
       var endDate = datePickerEndDate;
 

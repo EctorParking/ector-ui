@@ -8,6 +8,7 @@
 
 .sentence {
   margin: var(--marginSmall) 0;
+  width: 100%;
 }
 
 .buttons {
