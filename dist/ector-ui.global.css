@@ -3001,7 +3001,7 @@
 
 .PickerSuggestions-module_container__1Oq6m.PickerSuggestions-module_visible__4ey8N {
   opacity: 1;
-  pointer-events: initial;
+  pointer-events: auto;
   -webkit-transform: none;
           transform: none;
 }
