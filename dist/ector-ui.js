@@ -6378,7 +6378,9 @@ function (_React$PureComponent) {
         visible: visible,
         className: [s$13.pickerSuggestions, className].join(' '),
         ArrowComponent: _this.renderPickerSuggestionsArrow
-      }), visible && visiblePicker === DateTimePicker.datePicker && React.createElement(reactDates.DayPickerRangeController, {
+      }), React.createElement("div", {
+        className: visiblePicker !== DateTimePicker.datePicker ? s$13.hidden : undefined
+      }, React.createElement(reactDates.DayPickerRangeController, {
         verticalBorderSpacing: 1,
         horizontalMonthPadding: 25,
         firstDayOfWeek: 1,
@@ -6394,11 +6396,12 @@ function (_React$PureComponent) {
         focusedInput: focusedDateInput,
         onFocusChange: _this.handleFocusChange,
         renderMonthElement: _this.renderMonthElement,
+        renderCalendarDay: _this.renderCalendarDay,
         isDayBlocked: _this.isDayBlocked,
         isDayHighlighted: _this.isDayHighlighted
-      }), visible && React.createElement("div", {
+      })), React.createElement("div", {
         className: s$13.hr
-      }), visible && visiblePicker === DateTimePicker.timePicker && React.createElement(TimeSuggestions, {
+      }), visiblePicker === DateTimePicker.timePicker && React.createElement(TimeSuggestions, {
         className: s$13.timeSuggestions,
         containerClassName: s$13.timeSuggestionsContainer,
         onSelect: _this.handleTimeSelect,
