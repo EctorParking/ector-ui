@@ -297,36 +297,31 @@ class DateTimePicker extends React.PureComponent {
         className={[s.pickerSuggestions, className].join(' ')}
         ArrowComponent={this.renderPickerSuggestionsArrow}
       >
+        <div className={visiblePicker !== DateTimePicker.datePicker ? s.hidden : undefined}>
+          <DayPickerRangeController
+            verticalBorderSpacing={1}
+            horizontalMonthPadding={25}
+            firstDayOfWeek={1}
+            daySize={35}
+            startDate={startDate}
+            endDate={endDate}
+            onDatesChange={this.handleDateChange}
+            hideKeyboardShortcutsPanel
+            numberOfMonths={2}
+            transitionDuration={0}
+            minimumNights={0}
+            noBorder
+            focusedInput={focusedDateInput}
+            onFocusChange={this.handleFocusChange}
+            renderMonthElement={this.renderMonthElement}
+            renderCalendarDay={this.renderCalendarDay}
+            isDayBlocked={this.isDayBlocked}
+            isDayHighlighted={this.isDayHighlighted}
+          />
+        </div>
+        <div className={s.hr} />
         {
-          visible && visiblePicker === DateTimePicker.datePicker && (
-            <DayPickerRangeController
-              verticalBorderSpacing={1}
-              horizontalMonthPadding={25}
-              firstDayOfWeek={1}
-              daySize={35}
-              startDate={startDate}
-              endDate={endDate}
-              onDatesChange={this.handleDateChange}
-              hideKeyboardShortcutsPanel
-              numberOfMonths={2}
-              transitionDuration={0}
-              minimumNights={0}
-              noBorder
-              focusedInput={focusedDateInput}
-              onFocusChange={this.handleFocusChange}
-              renderMonthElement={this.renderMonthElement}
-              isDayBlocked={this.isDayBlocked}
-              isDayHighlighted={this.isDayHighlighted}
-            />
-          )
-        }
-        {
-          visible && (
-            <div className={s.hr} />
-          )
-        }
-        {
-          visible && visiblePicker === DateTimePicker.timePicker && (
+          visiblePicker === DateTimePicker.timePicker && (
             <TimeSuggestions
               className={s.timeSuggestions}
               containerClassName={s.timeSuggestionsContainer}
