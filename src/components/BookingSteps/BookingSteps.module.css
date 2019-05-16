@@ -5,12 +5,12 @@
   font-size: var(--fontSizeRegular);
 }
 
-.bookingSteps > div:first-child {
-  padding-bottom: var(--marginLarge);
+.firstBookingStep {
+  padding-bottom: var(--marginSmall);
   position: relative;
 }
 
-.bookingSteps > div:first-child:before {
+.firstBookingStep:before {
   content: '';
   position: absolute;
   top: var(--marginSmall);

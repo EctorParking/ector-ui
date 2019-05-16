@@ -464,12 +464,12 @@
   font-size: 16px;
 }
 
-.BookingSteps-module_bookingSteps__6TCaf > div:first-child {
-  padding-bottom: 30px;
+.BookingSteps-module_firstBookingStep__171xE {
+  padding-bottom: 10px;
   position: relative;
 }
 
-.BookingSteps-module_bookingSteps__6TCaf > div:first-child:before {
+.BookingSteps-module_firstBookingStep__171xE:before {
   content: '';
   position: absolute;
   top: 10px;
@@ -2225,7 +2225,7 @@
   margin-bottom: 30px;
 }
 
-.Subtitle-module_subtitle__3qud- h2 {
+.Subtitle-module_h2__3Utt_ {
   color: #163457;
   font-size: 22px;
   font-weight: 500;
@@ -2233,11 +2233,17 @@
   margin: 0 0 10px;
 }
 
-.Subtitle-module_subtitle__3qud- hr {
+.Subtitle-module_hr__2cWQK {
   border: 0;
   border-top: 2px dotted #9eb3c2;
   margin: 0;
   width: 50px;
+}
+
+@media (max-width: 1130px) {
+  .Subtitle-module_h2__3Utt_ {
+    margin: 0 0 5px;
+  }
 }
 
 .Title-module_title__gpPet {

@@ -1,43 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import BookingStepsTextsType from './BookingStepsTextsType';
 
 import s from './BookingSteps.module.css';
 
 const BookingSteps = ({
-  fromSpot,
-  toSpot,
-  startAt,
-  endAt,
-  texts,
   className,
+  pickupDescriptions,
+  pickupTitle,
+  returnDescriptions,
+  returnTitle,
 }) => (
   <div className={`${s.bookingSteps} ${className}`}>
-    <div>
-      <h3 className={s.stepName}>{texts.pickup}</h3>
-      <span>
-        <i className="icon icon-ec-departure" />
-
-        {fromSpot}
-      </span>
-      <span>
-        <i className="icon icon-ec-dateA" />
-
-        {startAt}
-      </span>
+    <div className={s.firstBookingStep}>
+      <h3 className={s.stepName}>{pickupTitle}</h3>
+      {pickupDescriptions.map(description => (
+        <span key={description}>{description}</span>
+      ))}
     </div>
     <div>
-      <h3 className={s.stepName}>{texts.return}</h3>
-      <span>
-        <i className="icon icon-ec-arrival" />
-
-        {toSpot}
-      </span>
-      <span>
-        <i className="icon icon-ec-dateB" />
-
-        {endAt}
-      </span>
+      <h3 className={s.stepName}>{returnTitle}</h3>
+      {returnDescriptions.map(description => (
+        <span key={description}>{description}</span>
+      ))}
     </div>
   </div>
 );
@@ -47,12 +31,11 @@ BookingSteps.defaultProps = {
 };
 
 BookingSteps.propTypes = {
-  fromSpot: PropTypes.string.isRequired,
-  toSpot: PropTypes.string.isRequired,
-  startAt: PropTypes.string.isRequired,
-  endAt: PropTypes.string.isRequired,
-  texts: BookingStepsTextsType.isRequired,
   className: PropTypes.string,
+  pickupDescriptions: PropTypes.arrayOf(PropTypes.string).isRequired,
+  pickupTitle: PropTypes.string.isRequired,
+  returnDescriptions: PropTypes.arrayOf(PropTypes.string).isRequired,
+  returnTitle: PropTypes.string.isRequired,
 };
 
 export default BookingSteps;
