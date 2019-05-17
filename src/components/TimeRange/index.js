@@ -12,7 +12,7 @@ class TimeRange extends React.PureComponent {
   static getScrollTop(containerRef) {
     const { current: container } = containerRef;
 
-    if (container) {
+    if (container && container.scrollTop) {
       return container.scrollTop;
     }
     return 0;
@@ -21,7 +21,7 @@ class TimeRange extends React.PureComponent {
   static scrollTo(containerRef, scroll) {
     const { current: container } = containerRef;
 
-    if (container) {
+    if (container && container.scrollTo) {
       container.scrollTo(scroll);
     }
   }

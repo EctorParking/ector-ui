@@ -6662,7 +6662,7 @@ function (_React$PureComponent) {
     value: function getScrollTop(containerRef) {
       var container = containerRef.current;
 
-      if (container) {
+      if (container && container.scrollTop) {
         return container.scrollTop;
       }
 
@@ -6673,7 +6673,7 @@ function (_React$PureComponent) {
     value: function scrollTo(containerRef, scroll) {
       var container = containerRef.current;
 
-      if (container) {
+      if (container && container.scrollTo) {
         container.scrollTo(scroll);
       }
     }
@@ -16629,6 +16629,11 @@ function (_PureComponent) {
           scrollOffset = _this$props.scrollOffset,
           getBottomScrollLimit = _this$props.getBottomScrollLimit,
           direction = _this$props.direction;
+
+      if (!scrollTo) {
+        return;
+      }
+
       _this.scrollInterval = setInterval(function () {
         var top;
 
@@ -16665,9 +16670,11 @@ function (_PureComponent) {
         clearInterval(_this.scrollInterval);
       }
 
-      scrollTo(_objectSpread({}, scrollValue, {
-        behavior: 'smooth'
-      }));
+      if (scrollTo) {
+        scrollTo(_objectSpread({}, scrollValue, {
+          behavior: 'smooth'
+        }));
+      }
     });
 
     return _this;
@@ -16717,7 +16724,7 @@ ScrollArrow.defaultProps = {
   direction: ScrollArrow.up,
   className: undefined,
   style: undefined,
-  scrollTo: function scrollTo() {}
+  scrollTo: null
 };
 ScrollArrow.propTypes = {
   visible: PropTypes$1.bool,

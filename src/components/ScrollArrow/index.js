@@ -24,6 +24,9 @@ class ScrollArrow extends PureComponent {
       scrollInterval, getScrollTop, scrollTo, scrollOffset, getBottomScrollLimit, direction,
     } = this.props;
 
+    if (!scrollTo) {
+      return;
+    }
     this.scrollInterval = setInterval(() => {
       let top;
 
@@ -55,10 +58,12 @@ class ScrollArrow extends PureComponent {
     if (this.scrollInterval) {
       clearInterval(this.scrollInterval);
     }
-    scrollTo({
-      ...scrollValue,
-      behavior: 'smooth',
-    });
+    if (scrollTo) {
+      scrollTo({
+        ...scrollValue,
+        behavior: 'smooth',
+      });
+    }
   };
 
   render() {
@@ -91,7 +96,7 @@ ScrollArrow.defaultProps = {
   direction: ScrollArrow.up,
   className: undefined,
   style: undefined,
-  scrollTo: () => {},
+  scrollTo: null,
 };
 
 ScrollArrow.propTypes = {
