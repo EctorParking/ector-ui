@@ -8,12 +8,12 @@ export const TitleVariants = {
 };
 
 const Title = ({
-  label, className, htmlElement, testid, variant,
+  label, className, htmlElement, testid, variant, elementClassName,
 }) => {
   if (variant === TitleVariants.underlined) {
     return (
       <div className={`${s.title} ${className}`} testid={testid}>
-        {React.createElement(htmlElement, { className: s.element }, label)}
+        {React.createElement(htmlElement, { className: [s.element, elementClassName].join(' ') }, label)}
         <hr className={s.horizontalRule} />
       </div>
     );
@@ -26,6 +26,7 @@ const Title = ({
 
 Title.defaultProps = {
   className: '',
+  elementClassName: undefined,
   htmlElement: 'h1',
   testid: '',
   variant: TitleVariants.underlined,
@@ -40,6 +41,7 @@ Title.propTypes = {
   htmlElement: PropTypes.string,
   testid: PropTypes.string,
   variant: PropTypes.oneOf(Object.keys(TitleVariants)),
+  elementClassName: PropTypes.string,
 };
 
 export default Title;

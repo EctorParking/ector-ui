@@ -4278,14 +4278,15 @@ var Title = function Title(_ref) {
       className = _ref.className,
       htmlElement = _ref.htmlElement,
       testid = _ref.testid,
-      variant = _ref.variant;
+      variant = _ref.variant,
+      elementClassName = _ref.elementClassName;
 
   if (variant === TitleVariants.underlined) {
     return React__default.createElement("div", {
       className: "".concat(s$Q.title, " ").concat(className),
       testid: testid
     }, React__default.createElement(htmlElement, {
-      className: s$Q.element
+      className: [s$Q.element, elementClassName].join(' ')
     }, label), React__default.createElement("hr", {
       className: s$Q.horizontalRule
     }));
@@ -4302,6 +4303,7 @@ var Title = function Title(_ref) {
 
 Title.defaultProps = {
   className: '',
+  elementClassName: undefined,
   htmlElement: 'h1',
   testid: '',
   variant: TitleVariants.underlined
@@ -4311,7 +4313,8 @@ Title.propTypes = {
   className: PropTypes$1.string,
   htmlElement: PropTypes$1.string,
   testid: PropTypes$1.string,
-  variant: PropTypes$1.oneOf(Object.keys(TitleVariants))
+  variant: PropTypes$1.oneOf(Object.keys(TitleVariants)),
+  elementClassName: PropTypes$1.string
 };
 
 var css$R = "/**\n* This element has to be wrapped in a .steps div to increment the counter\n*/\n\n.TitleStep-module_steps__1Ryhp {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  counter-reset: steps;\n}\n\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0:before,\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0 + .TitleStep-module_step_button__1xXOY:before,\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0 + .TitleStep-module_step_button__1xXOY + .TitleStep-module_step_button__1xXOY:before {\n  content: counter(steps);\n}\n\n.TitleStep-module_step_button__1xXOY {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  color: #9eb3c2;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 17.6px;\n  font-size: 17.6px;\n  font-size: 1.1rem;\n  margin-right: 48px;\n  margin-right: 48px;\n  margin-right: 3rem;\n  position: relative;\n  background-color: transparent;\n  border: 0;\n  counter-increment: steps;\n  cursor: pointer;\n  font-weight: 300;\n  -webkit-transition: all 0.3s ease-in-out;\n  transition: all 0.3s ease-in-out;\n  opacity: 1\n}\n\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0 {\n  color: #ffcd02;\n  cursor: default;\n}\n\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0:before {\n  background-color: #fefefe;\n}\n\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0:after {\n  border-right: 2px solid #fefefe;\n  content: '';\n  height: 35px;\n  left: 19px;\n  position: absolute;\n  top: 26px;\n}\n\n.TitleStep-module_step_button__1xXOY.TitleStep-module_done__1vIiB:before {\n  content: '\\2713';\n}\n\n.TitleStep-module_step_button__1xXOY:before {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  background-color: #9eb3c2;\n  border-radius: 50%;\n  color: #163457;\n  content: '7';\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 13px;\n  font-weight: bold;\n  height: 25px;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  margin-right: 10px;\n  width: 25px;\n}\n\n.TitleStep-module_step_button__1xXOY:before, .TitleStep-module_step_button__1xXOY:after {\n  -webkit-transition: all 0.3s ease-in-out;\n  transition: all 0.3s ease-in-out;\n}\n\n.TitleStep-module_step_button__1xXOY:hover {\n  color: #fefefe;\n}\n\n.TitleStep-module_step_button__1xXOY:hover:before, .TitleStep-module_step_button__1xXOY:hover:after {\n  background-color: #fefefe;\n}\n\n.TitleStep-module_step_button__1xXOY:hover:active {\n  -webkit-transition: all 0s ease-in-out;\n  transition: all 0s ease-in-out;\n  opacity: 0.6;\n}\n";
