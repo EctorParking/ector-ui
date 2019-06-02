@@ -12,10 +12,11 @@
   cursor: pointer;
   position: absolute;
   &.left {
-    left: 12px;
+    left: 22px;
   }
   &.right {
-    right: 12px;
+    left: auto;
+    right: 22px;
    }
   &.top {
     top: 0;
@@ -31,8 +32,9 @@
   position: relative;
   margin: 0 var(--marginXSmall);
   scrollbar-width: none;
+  -ms-overflow-style: none;
   &::-webkit-scrollbar {
-     display: none;
+    display: none;
   }
 }
 
