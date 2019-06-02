@@ -1320,6 +1320,12 @@
   border-color: #ffcd02;
 }
 
+/* Hide big cross in IE */
+
+.Input-module_input__1TjxO::-ms-clear {
+  display: none;
+}
+
 .Input-module_inputWithError__q0fcE {
   border-color: #ff5757 !important;
 }
@@ -3084,6 +3090,7 @@
   text-align: center;
   position: absolute;
   cursor: pointer;
+  left: 0;
   width: 100%
 }
 
@@ -3118,7 +3125,13 @@
   overflow-x: scroll;
   display: none;
   width: 100%;
-  padding: 15px
+  padding: 15px;
+  scrollbar-width: none;
+  -ms-overflow-style: none
+}
+
+.ZonesPickerSuggestions-module_suggestions__WffHg::-webkit-scrollbar {
+  display: none;
 }
 
 .ZonesPickerSuggestions-module_suggestions__WffHg.ZonesPickerSuggestions-module_visible__4fdZH {
@@ -3531,11 +3544,12 @@
 }
 
 .TimeRange-module_arrow__3PgLa.TimeRange-module_left__2APgT {
-  left: 12px;
+  left: 22px;
 }
 
 .TimeRange-module_arrow__3PgLa.TimeRange-module_right__pK-Uy {
-  right: 12px;
+  left: auto;
+  right: 22px;
 }
 
 .TimeRange-module_arrow__3PgLa.TimeRange-module_top__3zrQ_ {
@@ -3554,7 +3568,8 @@
   overflow: scroll;
   position: relative;
   margin: 0 5px;
-  scrollbar-width: none
+  scrollbar-width: none;
+  -ms-overflow-style: none
 }
 
 .TimeRange-module_hours__9eQEI::-webkit-scrollbar, .TimeRange-module_minutes__1mA4X::-webkit-scrollbar {
