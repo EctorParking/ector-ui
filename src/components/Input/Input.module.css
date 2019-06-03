@@ -26,6 +26,11 @@
   }
 }
 
+/* Hide big cross in IE */
+.input::-ms-clear {
+  display: none;
+}
+
 .inputWithError {
   border-color: var(--red) !important;
 }
