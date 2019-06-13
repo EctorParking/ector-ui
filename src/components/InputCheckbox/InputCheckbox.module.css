@@ -19,14 +19,14 @@
 /* Hide the browser's default checkbox */
 .input_checkbox input {
   position: absolute;
-  border: 0.15rem solid transparent;
+  border: 2rem solid transparent;
   opacity: 0;
   cursor: pointer;
   top: 0;
   left: 0;
   height: 22px;
   margin-top: 0;
-  width: 100%;
+  width: 22px;
   z-index: 1;
 }
 
@@ -40,7 +40,7 @@
   height: 22px;
   width: 22px;
   border-radius: 0.25rem;
-  border: 0.15rem solid var(--metalGrey);
+  border: 2px solid var(--metalGrey);
 }
 
 /* On mouse-over, add a grey background color */
@@ -56,22 +56,19 @@
 
 /* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
+  background-color: var(--yellow);
+  border-radius: 2px;
+  box-sizing: border-box;
   content: '';
-  position: absolute;
   display: none;
+  height: 14px;
+  left: 2px;
+  position: absolute;
+  top: 2px;
+  width: 14px;
 }
 
 /* Show the checkmark when checked */
 .input_checkbox input:checked ~ .checkmark:after {
   display: block;
-}
-
-/* Style the checkmark/indicator */
-.input_checkbox .checkmark:after {
-  left: 2px;
-  top: 3px;
-  border-radius: 0.15rem;
-  width: 12px;
-  height: 12px;
-  background-color: var(--yellow);
 }

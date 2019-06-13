@@ -1464,16 +1464,16 @@
 
 .InputCheckbox-module_input_checkbox__cqwzW input {
   position: absolute;
-  border: 2.4px solid transparent;
-  border: 2.4px solid transparent;
-  border: 0.15rem solid transparent;
+  border: 32px solid transparent;
+  border: 32px solid transparent;
+  border: 2rem solid transparent;
   opacity: 0;
   cursor: pointer;
   top: 0;
   left: 0;
   height: 22px;
   margin-top: 0;
-  width: 100%;
+  width: 22px;
   z-index: 1;
 }
 
@@ -1489,9 +1489,7 @@
   height: 22px;
   width: 22px;
   border-radius: 0.25rem;
-  border: 2.4px solid #d5d6d7;
-  border: 2.4px solid #d5d6d7;
-  border: 0.15rem solid #d5d6d7;
+  border: 2px solid #d5d6d7;
 }
 
 /* On mouse-over, add a grey background color */
@@ -1510,26 +1508,23 @@
 /* Create the checkmark/indicator (hidden when not checked) */
 
 .InputCheckbox-module_checkmark__QSyLA:after {
+  background-color: #ffcd02;
+  border-radius: 2px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   content: '';
-  position: absolute;
   display: none;
+  height: 14px;
+  left: 2px;
+  position: absolute;
+  top: 2px;
+  width: 14px;
 }
 
 /* Show the checkmark when checked */
 
 .InputCheckbox-module_input_checkbox__cqwzW input:checked ~ .InputCheckbox-module_checkmark__QSyLA:after {
   display: block;
-}
-
-/* Style the checkmark/indicator */
-
-.InputCheckbox-module_input_checkbox__cqwzW .InputCheckbox-module_checkmark__QSyLA:after {
-  left: 2px;
-  top: 3px;
-  border-radius: 0.15rem;
-  width: 12px;
-  height: 12px;
-  background-color: #ffcd02;
 }
 
 .InputLabel-module_container__204V9 {
@@ -3103,6 +3098,7 @@
 }
 
 .ZonesPickerSuggestions-module_arrowContainer__18EYI.ZonesPickerSuggestions-module_rightArrow__19PFa {
+  left: auto;
   right: 0;
   width: 50%;
 }

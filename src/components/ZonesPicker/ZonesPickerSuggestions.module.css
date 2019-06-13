@@ -36,22 +36,23 @@
   left: 0;
   width: 100%;
   &.topArrow {
-     top: 0;
-   }
+    top: 0;
+  }
   &.bottomArrow {
-     bottom: 0;
-   }
+    bottom: 0;
+  }
   &.rightArrow {
-     right: 0;
-     width: 50%;
-   }
+    left: auto;
+    right: 0;
+    width: 50%;
+  }
   &.leftArrow {
-     left: 0;
-     width: 50%;
-   }
+    left: 0;
+    width: 50%;
+  }
   &.hiddenArrow {
-     display: none;
-   }
+    display: none;
+  }
 }
 
 .toZoneSuggestion:hover {
