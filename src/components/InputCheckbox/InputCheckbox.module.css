@@ -68,7 +68,7 @@
 
 /* Style the checkmark/indicator */
 .input_checkbox .checkmark:after {
-  left: 3px;
+  left: 2px;
   top: 3px;
   border-radius: 0.15rem;
   width: 12px;
