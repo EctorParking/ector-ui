@@ -56,6 +56,7 @@ InputButton.defaultProps = {
   ButtonComponent: props => (<Button {...props} component="button" title="button" />),
   SubTextComponent: () => null,
   LeftComponent: () => null,
+  className: '',
 };
 
 InputButton.propTypes = {
@@ -72,6 +73,7 @@ InputButton.propTypes = {
   ButtonComponent: PropTypes.func,
   SubTextComponent: PropTypes.func,
   LeftComponent: PropTypes.func,
+  className: PropTypes.string,
 };
 
 export default InputButton;
