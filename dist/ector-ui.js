@@ -2766,9 +2766,7 @@ var InputButton = function InputButton(_ref) {
       IconComponent = _ref.IconComponent,
       ButtonComponent = _ref.ButtonComponent,
       SubTextComponent = _ref.SubTextComponent,
-      LeftComponent = _ref.LeftComponent,
-      RightComponent = _ref.RightComponent,
-      inputProps = _objectWithoutProperties(_ref, ["id", "placeholder", "buttonText", "inputClassName", "inputContainerClassName", "inputButtonContainerClassName", "inputType", "hasError", "buttonVisible", "IconComponent", "ButtonComponent", "SubTextComponent", "LeftComponent", "RightComponent"]);
+      inputProps = _objectWithoutProperties(_ref, ["id", "placeholder", "buttonText", "inputClassName", "inputContainerClassName", "inputButtonContainerClassName", "inputType", "hasError", "buttonVisible", "IconComponent", "ButtonComponent", "SubTextComponent"]);
 
   return React__default.createElement("div", {
     className: [s$v.inputButtonContainerClassName, inputButtonContainerClassName].join(' ')

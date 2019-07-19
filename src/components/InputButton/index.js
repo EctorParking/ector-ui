@@ -17,8 +17,6 @@ const InputButton = ({
   IconComponent,
   ButtonComponent,
   SubTextComponent,
-  LeftComponent,
-  RightComponent,
   ...inputProps
 }) => (
   <div className={[s.inputButtonContainerClassName, inputButtonContainerClassName].join(' ')}>
