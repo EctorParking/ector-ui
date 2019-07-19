@@ -2771,25 +2771,14 @@ var InputButton = function InputButton(_ref) {
     className: [buttonVisible ? s$v.input : undefined, inputClassName].join(' '),
     id: id,
     type: inputType,
-    hasError: hasError
-  }, inputProps, {
-    RightComponent: RightComponent ? function (_ref2) {
+    hasError: hasError,
+    RightComponent: function RightComponent(_ref2) {
       var className = _ref2.className;
       return React__default.createElement(IconComponent, {
         className: [className, s$v.icon].join(' ')
       });
-    } : function () {
-      return null;
-    },
-    LeftComponent: LeftComponent ? function (_ref3) {
-      var className = _ref3.className;
-      return React__default.createElement(IconComponent, {
-        className: [className, s$v.icon].join(' ')
-      });
-    } : function () {
-      return null;
     }
-  })), React__default.createElement(SubTextComponent, null)), buttonVisible && React__default.createElement(ButtonComponent, {
+  }, inputProps)), React__default.createElement(SubTextComponent, null)), buttonVisible && React__default.createElement(ButtonComponent, {
     className: s$v.button
   }, buttonText));
 };
@@ -2814,10 +2803,7 @@ InputButton.defaultProps = {
   },
   SubTextComponent: function SubTextComponent() {
     return null;
-  },
-  LeftComponent: null,
-  className: '',
-  RightComponent: null
+  }
 };
 InputButton.propTypes = {
   id: PropTypes$1.string,
@@ -2831,10 +2817,7 @@ InputButton.propTypes = {
   buttonVisible: PropTypes$1.bool,
   IconComponent: PropTypes$1.func,
   ButtonComponent: PropTypes$1.func,
-  SubTextComponent: PropTypes$1.func,
-  LeftComponent: PropTypes$1.func,
-  className: PropTypes$1.string,
-  RightComponent: PropTypes$1.func
+  SubTextComponent: PropTypes$1.func
 };
 
 var css$w = "/* The input_checkbox */\n\n.InputCheckbox-module_input_checkbox__cqwzW {\n  display: block;\n  position: relative;\n  padding-left: 32px;\n  padding-left: 32px;\n  padding-left: 2rem;\n  padding-top: 2px;\n  cursor: pointer;\n  font-size: 16px;\n  font-size: 16px;\n  font-size: 1rem;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  height: 24px;\n  height: 24px;\n  height: 1.5rem\n}\n\n.InputCheckbox-module_input_checkbox__cqwzW:active {\n  opacity: 0.6;\n}\n\n/* Hide the browser's default checkbox */\n\n.InputCheckbox-module_input_checkbox__cqwzW input {\n  position: absolute;\n  border: 32px solid transparent;\n  border: 32px solid transparent;\n  border: 2rem solid transparent;\n  opacity: 0;\n  cursor: pointer;\n  top: 0;\n  left: 0;\n  height: 22px;\n  margin-top: 0;\n  width: 22px;\n  z-index: 1;\n}\n\n/* Create a custom checkbox */\n\n.InputCheckbox-module_checkmark__QSyLA {\n  background-color: #fefefe;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  position: absolute;\n  top: 0;\n  left: 0;\n  height: 22px;\n  width: 22px;\n  border-radius: 0.25rem;\n  border: 2px solid #d5d6d7;\n}\n\n/* On mouse-over, add a grey background color */\n\n.InputCheckbox-module_input_checkbox__cqwzW:hover input ~ .InputCheckbox-module_checkmark__QSyLA {\n  border-color: rgb(206, 206, 206);\n}\n\n/* When the checkbox is checked, add a blue background */\n\n.InputCheckbox-module_input_checkbox__cqwzW input:checked ~ .InputCheckbox-module_checkmark__QSyLA {\n  background-color: transparent;\n  border-color: rgb(206, 206, 206);\n}\n\n/* Create the checkmark/indicator (hidden when not checked) */\n\n.InputCheckbox-module_checkmark__QSyLA:after {\n  background-color: #ffcd02;\n  border-radius: 2px;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  content: '';\n  display: none;\n  height: 14px;\n  left: 2px;\n  position: absolute;\n  top: 2px;\n  width: 14px;\n}\n\n/* Show the checkmark when checked */\n\n.InputCheckbox-module_input_checkbox__cqwzW input:checked ~ .InputCheckbox-module_checkmark__QSyLA:after {\n  display: block;\n}\n";
