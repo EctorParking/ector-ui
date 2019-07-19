@@ -17,6 +17,7 @@ const InputButton = ({
   IconComponent,
   ButtonComponent,
   SubTextComponent,
+  LeftComponent,
   ...inputProps
 }) => (
   <div className={[s.inputButtonContainerClassName, inputButtonContainerClassName].join(' ')}>
@@ -29,6 +30,7 @@ const InputButton = ({
         hasError={hasError}
         {...inputProps}
         RightComponent={({ className }) => <IconComponent className={[className, s.icon].join(' ')} />}
+        LeftComponent={({ className }) => <IconComponent className={[className, s.icon].join(' ')} />}
       />
       <SubTextComponent />
     </div>
@@ -53,6 +55,7 @@ InputButton.defaultProps = {
   IconComponent: () => null,
   ButtonComponent: props => (<Button {...props} component="button" title="button" />),
   SubTextComponent: () => null,
+  LeftComponent: () => null,
 };
 
 InputButton.propTypes = {
@@ -68,6 +71,7 @@ InputButton.propTypes = {
   IconComponent: PropTypes.func,
   ButtonComponent: PropTypes.func,
   SubTextComponent: PropTypes.func,
+  LeftComponent: PropTypes.func,
 };
 
 export default InputButton;
