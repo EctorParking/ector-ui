@@ -27,8 +27,8 @@ const InputButton = ({
         id={id}
         type={inputType}
         hasError={hasError}
-        RightComponent={({ className }) => <IconComponent className={[className, s.icon].join(' ')} />}
         {...inputProps}
+        RightComponent={({ className }) => <IconComponent className={[className, s.icon].join(' ')} />}
       />
       <SubTextComponent />
     </div>

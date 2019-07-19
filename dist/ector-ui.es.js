@@ -2769,14 +2769,15 @@ var InputButton = function InputButton(_ref) {
     className: [buttonVisible ? s$v.input : undefined, inputClassName].join(' '),
     id: id,
     type: inputType,
-    hasError: hasError,
+    hasError: hasError
+  }, inputProps, {
     RightComponent: function RightComponent(_ref2) {
       var className = _ref2.className;
       return React__default.createElement(IconComponent, {
         className: [className, s$v.icon].join(' ')
       });
     }
-  }, inputProps)), React__default.createElement(SubTextComponent, null)), buttonVisible && React__default.createElement(ButtonComponent, {
+  })), React__default.createElement(SubTextComponent, null)), buttonVisible && React__default.createElement(ButtonComponent, {
     className: s$v.button
   }, buttonText));
 };
