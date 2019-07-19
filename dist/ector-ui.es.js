@@ -2778,11 +2778,13 @@ var InputButton = function InputButton(_ref) {
         className: [className, s$v.icon].join(' ')
       });
     },
-    LeftComponent: function LeftComponent(_ref3) {
+    LeftComponent: LeftComponent ? function (_ref3) {
       var className = _ref3.className;
       return React__default.createElement(IconComponent, {
         className: [className, s$v.icon].join(' ')
       });
+    } : function () {
+      return null;
     }
   })), React__default.createElement(SubTextComponent, null)), buttonVisible && React__default.createElement(ButtonComponent, {
     className: s$v.button
