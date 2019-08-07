@@ -17,6 +17,7 @@ storiesOf('Picker', module)
   .add('with knobs', () => {
     const props = {
       error: text('Error', ''),
+      info: text('Info', ''),
     };
 
     return <Picker {...props} />;

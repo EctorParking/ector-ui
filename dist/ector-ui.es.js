@@ -4947,8 +4947,8 @@ RegistrationForm.propTypes = {
   countries: PropTypes$1.shape(CountryPropType)
 };
 
-var css$Z = ".Picker-module_container__3AVzP {\n  position: relative;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #163457;\n  border: none;\n  border-radius: 5px;\n  display: block;\n  height: 50px;\n  padding: 0;\n  z-index: 1\n}\n\n.Picker-module_container__3AVzP.Picker-module_active__2IBbO {\n  z-index: 4;\n}\n\n.Picker-module_shadowWrapper__1yU5l {\n  background-color: #fefefe;\n  border-radius: 5px;\n  -webkit-box-shadow: 0 4px 8px 2px rgba(0, 0, 0, .25);\n          box-shadow: 0 4px 8px 2px rgba(0, 0, 0, .25);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative;\n  z-index: 2;\n}\n\n.Picker-module_pickerInputContainer__2EiaS {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: 0 35px 0 15px;\n  width: 100%;\n  z-index: 2;\n}\n\n.Picker-module_pickerInput__1P5_a {\n  border-radius: 5px;\n  height: 50px;\n  padding: 0;\n  border: none;\n  margin-top: 0;\n  font-size: 15px;\n}\n\n.Picker-module_inputError__37bTz {\n  color: #c73637;\n}\n\n.Picker-module_splitPickerInputContainer__2QVF3 {\n  border-left: 1px solid rgba(191, 196, 212, .52);\n}\n\n.Picker-module_suggestionsContainer__20x1U {\n  min-height: 150px;\n  background-color: black;\n  position: absolute;\n  width: 150%;\n  top: 56px;\n  top: 56px;\n  top: 3.5rem;\n  left: -25%;\n  border-radius: 8px;\n  border-width: 1px;\n}\n\n.Picker-module_error__3Mp0C {\n  display: inline-table;\n  background-color: #c73637;\n  border-top-left-radius: 8px;\n  border-top-right-radius: 8px;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #fefefe;\n  height: 45px;\n  left: 0;\n  opacity: 0;\n  padding: 10px;\n  position: absolute;\n  top: 5px;\n  -webkit-transform: none;\n          transform: none;\n  -webkit-transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;\n  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  width: 100%;\n  font-size: 14px;\n  font-weight: 700;\n  word-break: break-word;\n  -webkit-hyphens: auto;\n      -ms-hyphens: auto;\n          hyphens: auto;\n}\n\n.Picker-module_errorVisible__3Fa-X {\n  opacity: 1;\n  -webkit-transform: translateY(-100%);\n          transform: translateY(-100%);\n}\n";
-var s$Z = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","container":"Picker-module_container__3AVzP","active":"Picker-module_active__2IBbO","shadowWrapper":"Picker-module_shadowWrapper__1yU5l","pickerInputContainer":"Picker-module_pickerInputContainer__2EiaS","pickerInput":"Picker-module_pickerInput__1P5_a","inputError":"Picker-module_inputError__37bTz","splitPickerInputContainer":"Picker-module_splitPickerInputContainer__2QVF3","suggestionsContainer":"Picker-module_suggestionsContainer__20x1U","error":"Picker-module_error__3Mp0C","errorVisible":"Picker-module_errorVisible__3Fa-X"};
+var css$Z = ".Picker-module_container__3AVzP {\n  position: relative;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #163457;\n  border: none;\n  border-radius: 5px;\n  display: block;\n  height: 50px;\n  padding: 0;\n  z-index: 1\n}\n\n.Picker-module_container__3AVzP.Picker-module_active__2IBbO {\n  z-index: 4;\n}\n\n.Picker-module_shadowWrapper__1yU5l {\n  background-color: #fefefe;\n  border-radius: 5px;\n  -webkit-box-shadow: 0 4px 8px 2px rgba(0, 0, 0, .25);\n          box-shadow: 0 4px 8px 2px rgba(0, 0, 0, .25);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative;\n  z-index: 2;\n}\n\n.Picker-module_pickerInputContainer__2EiaS {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: 0 35px 0 15px;\n  width: 100%;\n  z-index: 2;\n}\n\n.Picker-module_pickerInput__1P5_a {\n  border-radius: 5px;\n  height: 50px;\n  padding: 0;\n  border: none;\n  margin-top: 0;\n  font-size: 15px;\n}\n\n.Picker-module_inputError__37bTz {\n  color: #c73637;\n}\n\n.Picker-module_splitPickerInputContainer__2QVF3 {\n  border-left: 1px solid rgba(191, 196, 212, .52);\n}\n\n.Picker-module_suggestionsContainer__20x1U {\n  min-height: 150px;\n  background-color: black;\n  position: absolute;\n  width: 150%;\n  top: 56px;\n  top: 56px;\n  top: 3.5rem;\n  left: -25%;\n  border-radius: 8px;\n  border-width: 1px;\n}\n\n.Picker-module_error__3Mp0C, .Picker-module_info__IVLnU {\n  display: inline-table;\n  background-color: #c73637;\n  border-top-left-radius: 8px;\n  border-top-right-radius: 8px;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #fefefe;\n  height: 45px;\n  left: 0;\n  opacity: 0;\n  padding: 10px;\n  position: absolute;\n  top: 5px;\n  -webkit-transform: none;\n          transform: none;\n  -webkit-transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;\n  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  width: 100%;\n  font-size: 14px;\n  font-weight: 700;\n  word-break: break-word;\n  -webkit-hyphens: auto;\n      -ms-hyphens: auto;\n          hyphens: auto;\n}\n\n.Picker-module_info__IVLnU {\n  background-color: #32a0c5;\n  color: #fefefe;\n}\n\n.Picker-module_errorVisible__3Fa-X, .Picker-module_infoVisible__2IbCs {\n  opacity: 1;\n  -webkit-transform: translateY(-100%);\n          transform: translateY(-100%);\n}\n";
+var s$Z = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","container":"Picker-module_container__3AVzP","active":"Picker-module_active__2IBbO","shadowWrapper":"Picker-module_shadowWrapper__1yU5l","pickerInputContainer":"Picker-module_pickerInputContainer__2EiaS","pickerInput":"Picker-module_pickerInput__1P5_a","inputError":"Picker-module_inputError__37bTz","splitPickerInputContainer":"Picker-module_splitPickerInputContainer__2QVF3","suggestionsContainer":"Picker-module_suggestionsContainer__20x1U","error":"Picker-module_error__3Mp0C","info":"Picker-module_info__IVLnU","errorVisible":"Picker-module_errorVisible__3Fa-X","infoVisible":"Picker-module_infoVisible__2IbCs"};
 styleInject(css$Z);
 
 var Picker =
@@ -5008,15 +5008,19 @@ function (_React$PureComponent) {
           firstValue = _this$props.firstValue,
           secondValue = _this$props.secondValue,
           className = _this$props.className,
-          error = _this$props.error;
+          error = _this$props.error,
+          info = _this$props.info;
       var suggestionsVisible = this.state.suggestionsVisible;
       var hasError = error && error !== '';
+      var hasInfo = info && info !== '';
       return React__default.createElement("div", {
         className: [s$Z.container, suggestionsVisible ? s$Z.active : undefined, className].join(' '),
         ref: this.containerRef
       }, React__default.createElement("div", {
         className: [s$Z.error, hasError ? s$Z.errorVisible : undefined].join(' ')
       }, error), React__default.createElement("div", {
+        className: [s$Z.info, hasInfo ? s$Z.infoVisible : undefined].join(' ')
+      }, info), React__default.createElement("div", {
         className: s$Z.shadowWrapper
       }, React__default.createElement(FirstInputComponent, {
         value: firstValue,
@@ -5052,7 +5056,8 @@ Picker.defaultProps = {
   firstValue: '',
   secondValue: '',
   className: undefined,
-  error: undefined
+  error: undefined,
+  info: undefined
 };
 Picker.propTypes = {
   split: PropTypes$1.bool,
@@ -5062,7 +5067,8 @@ Picker.propTypes = {
   firstValue: PropTypes$1.string,
   secondValue: PropTypes$1.string,
   className: PropTypes$1.string,
-  error: PropTypes$1.string
+  error: PropTypes$1.string,
+  info: PropTypes$1.string
 };
 
 var positionToUnicodeCharacter = {
@@ -6465,6 +6471,7 @@ function (_React$PureComponent) {
       };
       var _this$props3 = this.props,
           error = _this$props3.error,
+          info = _this$props3.info,
           className = _this$props3.className;
       return createElement(Picker, {
         ref: this.ectorPicker,
@@ -6474,7 +6481,8 @@ function (_React$PureComponent) {
         SecondInputComponent: this.renderEndDateTimeInputComponent,
         SuggestionsComponent: this.renderSuggestionsComponent,
         className: [s$13.picker, className].join(' '),
-        error: error
+        error: error,
+        info: info
       });
     }
   }], [{
@@ -6572,6 +6580,7 @@ _defineProperty(DateTimePicker, "parseTimeRange", function (timeRange) {
 
 DateTimePicker.propTypes = {
   error: PropTypes$1.string,
+  info: PropTypes$1.string,
   className: PropTypes$1.string,
   texts: TextsType$7,
   startDate: PropTypes$1.string,
@@ -6585,6 +6594,7 @@ DateTimePicker.propTypes = {
 };
 DateTimePicker.defaultProps = {
   error: '',
+  info: '',
   className: undefined,
   texts: DefaultTexts$7,
   startDate: undefined,

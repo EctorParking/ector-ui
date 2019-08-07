@@ -44,14 +44,19 @@ class Picker extends React.PureComponent {
       secondValue,
       className,
       error,
+      info,
     } = this.props;
     const { suggestionsVisible } = this.state;
     const hasError = error && error !== '';
+    const hasInfo = info && info !== '';
 
     return (
       <div className={[s.container, suggestionsVisible ? s.active : undefined, className].join(' ')} ref={this.containerRef}>
         <div className={[s.error, hasError ? s.errorVisible : undefined].join(' ')}>
           {error}
+        </div>
+        <div className={[s.info, hasInfo ? s.infoVisible : undefined].join(' ')}>
+          {info}
         </div>
         <div className={s.shadowWrapper}>
           <FirstInputComponent
@@ -86,6 +91,7 @@ Picker.defaultProps = {
   secondValue: '',
   className: undefined,
   error: undefined,
+  info: undefined,
 };
 
 Picker.propTypes = {
@@ -97,6 +103,7 @@ Picker.propTypes = {
   secondValue: PropTypes.string,
   className: PropTypes.string,
   error: PropTypes.string,
+  info: PropTypes.string,
 };
 
 export default Picker;

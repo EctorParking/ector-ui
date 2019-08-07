@@ -59,7 +59,7 @@
   border-width: 1px;
 }
 
-.error {
+.error, .info {
   display: inline-table;
   background-color: var(--magenta);
   border-top-left-radius: var(--borderRadius);
@@ -81,7 +81,12 @@
   hyphens: auto;
 }
 
-.errorVisible {
+.info {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.errorVisible, .infoVisible {
   opacity: 1;
   transform: translateY(-100%);
 }

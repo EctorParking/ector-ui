@@ -17,6 +17,7 @@ storiesOf('DateTimePicker', module)
   .add('with knobs', () => {
     const props = {
       error: text('Error', ''),
+      info: text('Info', ''),
     };
 
     return <DateTimePicker {...props} />;
