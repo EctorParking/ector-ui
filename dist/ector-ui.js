@@ -5064,7 +5064,8 @@ Picker.defaultProps = {
   firstValue: '',
   secondValue: '',
   className: undefined,
-  error: undefined
+  error: undefined,
+  info: undefined
 };
 Picker.propTypes = {
   split: PropTypes$1.bool,
@@ -5074,7 +5075,8 @@ Picker.propTypes = {
   firstValue: PropTypes$1.string,
   secondValue: PropTypes$1.string,
   className: PropTypes$1.string,
-  error: PropTypes$1.string
+  error: PropTypes$1.string,
+  info: PropTypes$1.string
 };
 
 var positionToUnicodeCharacter = {
