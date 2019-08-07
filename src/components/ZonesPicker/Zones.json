@@ -11,6 +11,10 @@
   "code": "ADL",
   "type": "airport"
 }, {
+  "name": "Lyon Part-Dieu",
+  "code": "LPD",
+  "type": "station"
+}, {
   "name": "Gare de Lyon",
   "code": "GDL",
   "type": "station"

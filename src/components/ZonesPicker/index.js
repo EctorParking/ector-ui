@@ -30,6 +30,11 @@ const getZoneSuggestionsFromValue = (zoneSuggestions, value) => zoneSuggestions.
   }
   return zoneSuggestion;
 }).sort((zoneSuggestionA, zoneSuggestionB) => {
+  if (zoneSuggestionA.name.indexOf(value) > -1
+      && zoneSuggestionA.name.indexOf(value) < zoneSuggestionB.name.indexOf(value)) {
+    return -1;
+  }
+
   if (zoneSuggestionA.similarity === zoneSuggestionB.similarity) {
     return 0;
   }
