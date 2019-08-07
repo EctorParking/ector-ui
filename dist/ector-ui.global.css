@@ -2950,7 +2950,7 @@
   border-width: 1px;
 }
 
-.Picker-module_error__3Mp0C {
+.Picker-module_error__3Mp0C, .Picker-module_info__IVLnU {
   display: inline-table;
   background-color: #c73637;
   border-top-left-radius: 8px;
@@ -2979,7 +2979,12 @@
           hyphens: auto;
 }
 
-.Picker-module_errorVisible__3Fa-X {
+.Picker-module_info__IVLnU {
+  background-color: #32a0c5;
+  color: #fefefe;
+}
+
+.Picker-module_errorVisible__3Fa-X, .Picker-module_infoVisible__2IbCs {
   opacity: 1;
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
