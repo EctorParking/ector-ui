@@ -3161,8 +3161,13 @@
 }
 
 .ZoneSuggestion-module_suggestion__nCTAf {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   cursor: pointer;
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   margin-bottom: 10px
 }
 
@@ -3171,7 +3176,7 @@
 }
 
 .ZoneSuggestion-module_zoneName__2XBZo {
-  padding-left: 25px;
+  margin-left: 10px;
 }
 
 .ZoneSuggestion-module_selected__2jOH2, .ZoneSuggestion-module_hovered__1ETlf:hover {
@@ -3183,7 +3188,6 @@
 }
 
 .ZoneSuggestion-module_icon__2Bikz {
-  margin-right: 10px;
   position: relative;
 }
 

@@ -5160,7 +5160,7 @@ var css$$ = ".ZonesPickerSuggestions-module_suggestionsContainer__1ZgOP {\n  pos
 var s$$ = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","suggestionsContainer":"ZonesPickerSuggestions-module_suggestionsContainer__1ZgOP","arrowContainer":"ZonesPickerSuggestions-module_arrowContainer__18EYI","topArrow":"ZonesPickerSuggestions-module_topArrow__lNAts","bottomArrow":"ZonesPickerSuggestions-module_bottomArrow__1lJZK","rightArrow":"ZonesPickerSuggestions-module_rightArrow__19PFa","leftArrow":"ZonesPickerSuggestions-module_leftArrow__3Qer1","hiddenArrow":"ZonesPickerSuggestions-module_hiddenArrow__1s1La","toZoneSuggestion":"ZonesPickerSuggestions-module_toZoneSuggestion__27sGx","suggestions":"ZonesPickerSuggestions-module_suggestions__WffHg","visible":"ZonesPickerSuggestions-module_visible__4fdZH","suggestionAction":"ZonesPickerSuggestions-module_suggestionAction__2r5Eb","suggestionActionVisible":"ZonesPickerSuggestions-module_suggestionActionVisible__wLjpw"};
 styleInject(css$$);
 
-var css$10 = ".ZoneSuggestion-module_suggestion__nCTAf {\n  cursor: pointer;\n  display: block;\n  margin-bottom: 10px\n}\n\n.ZoneSuggestion-module_suggestion__nCTAf:last-child {\n  margin-bottom: 0;\n}\n\n.ZoneSuggestion-module_zoneName__2XBZo {\n  padding-left: 25px;\n}\n\n.ZoneSuggestion-module_selected__2jOH2, .ZoneSuggestion-module_hovered__1ETlf:hover {\n  font-weight: bold;\n}\n\n.ZoneSuggestion-module_disabled__1DHUU {\n  color: #939baa;\n}\n\n.ZoneSuggestion-module_icon__2Bikz {\n  margin-right: 10px;\n  position: relative;\n}\n\n.ZoneSuggestion-module_activeIcon__2XmM8 {\n  color: #163457;\n}\n\n.ZoneSuggestion-module_trainIcon__2zCRZ {\n  margin-left: 5px !important;\n}\n\n.ZoneSuggestion-module_mixedIcon__2-Jvz {\n  font-size: 19px;\n  margin-left: 0 !important;\n}\n\n.ZoneSuggestion-module_airportIcon__1yD1n {\n  margin-left: 2px !important;\n}\n";
+var css$10 = ".ZoneSuggestion-module_suggestion__nCTAf {\n  -webkit-box-align: start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  cursor: pointer;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  margin-bottom: 10px\n}\n\n.ZoneSuggestion-module_suggestion__nCTAf:last-child {\n  margin-bottom: 0;\n}\n\n.ZoneSuggestion-module_zoneName__2XBZo {\n  margin-left: 10px;\n}\n\n.ZoneSuggestion-module_selected__2jOH2, .ZoneSuggestion-module_hovered__1ETlf:hover {\n  font-weight: bold;\n}\n\n.ZoneSuggestion-module_disabled__1DHUU {\n  color: #939baa;\n}\n\n.ZoneSuggestion-module_icon__2Bikz {\n  position: relative;\n}\n\n.ZoneSuggestion-module_activeIcon__2XmM8 {\n  color: #163457;\n}\n\n.ZoneSuggestion-module_trainIcon__2zCRZ {\n  margin-left: 5px !important;\n}\n\n.ZoneSuggestion-module_mixedIcon__2-Jvz {\n  font-size: 19px;\n  margin-left: 0 !important;\n}\n\n.ZoneSuggestion-module_airportIcon__1yD1n {\n  margin-left: 2px !important;\n}\n";
 var s$10 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","suggestion":"ZoneSuggestion-module_suggestion__nCTAf","zoneName":"ZoneSuggestion-module_zoneName__2XBZo","selected":"ZoneSuggestion-module_selected__2jOH2","hovered":"ZoneSuggestion-module_hovered__1ETlf","disabled":"ZoneSuggestion-module_disabled__1DHUU","icon":"ZoneSuggestion-module_icon__2Bikz","activeIcon":"ZoneSuggestion-module_activeIcon__2XmM8","trainIcon":"ZoneSuggestion-module_trainIcon__2zCRZ","mixedIcon":"ZoneSuggestion-module_mixedIcon__2-Jvz","airportIcon":"ZoneSuggestion-module_airportIcon__1yD1n"};
 styleInject(css$10);
 
@@ -5186,7 +5186,8 @@ var ZoneSuggestion = function ZoneSuggestion(_ref2) {
       selected = _ref2.selected,
       disabled = _ref2.disabled,
       className = _ref2.className,
-      rest = _objectWithoutProperties(_ref2, ["value", "onClick", "selected", "disabled", "className"]);
+      search = _ref2.search,
+      rest = _objectWithoutProperties(_ref2, ["value", "onClick", "selected", "disabled", "className", "search"]);
 
   return React__default.createElement("span", _extends({
     role: "presentation",
@@ -5200,8 +5201,12 @@ var ZoneSuggestion = function ZoneSuggestion(_ref2) {
     className: [s$10.icon, disabled ? s$10.disabled : s$10.activeIcon].join(' '),
     IconComponent: IconComponent
   }), React__default.createElement("span", {
-    className: s$10.zoneName
-  }, value.name));
+    className: s$10.zoneName // eslint-disable-next-line react/no-danger
+    ,
+    dangerouslySetInnerHTML: {
+      __html: value.name.replace(new RegExp("(".concat(search, ")"), 'i'), '<strong>$1</strong>')
+    }
+  }));
 };
 
 ZoneSuggestion.defaultProps = {
@@ -5210,14 +5215,16 @@ ZoneSuggestion.defaultProps = {
   disabled: false,
   onClick: function onClick() {
     return null;
-  }
+  },
+  search: ''
 };
 ZoneSuggestion.propTypes = {
   value: Type.isRequired,
   onClick: PropTypes$1.func,
   selected: PropTypes$1.bool,
   disabled: PropTypes$1.bool,
-  className: PropTypes$1.string
+  className: PropTypes$1.string,
+  search: PropTypes$1.string
 };
 
 var ZonesPickerSuggestions =
@@ -5273,19 +5280,24 @@ function (_PureComponent) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "renderFromZoneSuggestion", function (zone) {
-      var onFromZoneClick = _this.props.onFromZoneClick;
+      var _this$props = _this.props,
+          onFromZoneClick = _this$props.onFromZoneClick,
+          searchFrom = _this$props.searchFrom;
       return React__default.createElement(ZoneSuggestion, {
         value: zone,
         key: zone.code,
         onClick: function onClick() {
           return onFromZoneClick(zone);
         },
-        disabled: zone.disabled
+        disabled: zone.disabled,
+        search: searchFrom
       });
     });
 
     _defineProperty(_assertThisInitialized(_this), "renderToZoneSuggestion", function (zone) {
-      var onToZoneClick = _this.props.onToZoneClick;
+      var _this$props2 = _this.props,
+          onToZoneClick = _this$props2.onToZoneClick,
+          searchTo = _this$props2.searchTo;
       return React__default.createElement(ZoneSuggestion, {
         value: zone,
         key: zone.code,
@@ -5293,7 +5305,8 @@ function (_PureComponent) {
           return onToZoneClick(zone);
         },
         disabled: zone.disabled,
-        className: s$$.toZoneSuggestion
+        className: s$$.toZoneSuggestion,
+        search: searchTo
       });
     });
 
@@ -5357,13 +5370,13 @@ function (_PureComponent) {
   }, {
     key: "render",
     value: function render() {
-      var _this$props = this.props,
-          visible = _this$props.visible,
-          split = _this$props.split,
-          fromZoneSuggestions = _this$props.fromZoneSuggestions,
-          toZoneSuggestions = _this$props.toZoneSuggestions,
-          texts = _this$props.texts,
-          onSplit = _this$props.onSplit;
+      var _this$props3 = this.props,
+          visible = _this$props3.visible,
+          split = _this$props3.split,
+          fromZoneSuggestions = _this$props3.fromZoneSuggestions,
+          toZoneSuggestions = _this$props3.toZoneSuggestions,
+          texts = _this$props3.texts,
+          onSplit = _this$props3.onSplit;
       var visibleArrows = this.state.visibleArrows;
       return React__default.createElement(PickerSuggestions, {
         visible: visible
@@ -5434,7 +5447,9 @@ ZonesPickerSuggestions.defaultProps = {
   split: false,
   onSplit: function onSplit() {},
   fromZoneSuggestions: [],
-  toZoneSuggestions: []
+  toZoneSuggestions: [],
+  searchFrom: '',
+  searchTo: ''
 };
 ZonesPickerSuggestions.propTypes = {
   onFromZoneClick: PropTypes$1.func,
@@ -5444,7 +5459,9 @@ ZonesPickerSuggestions.propTypes = {
   onSplit: PropTypes$1.func,
   fromZoneSuggestions: PropTypes$1.arrayOf(Type),
   toZoneSuggestions: PropTypes$1.arrayOf(Type),
-  texts: PropTypes$1.shape().isRequired
+  texts: PropTypes$1.shape().isRequired,
+  searchFrom: PropTypes$1.string,
+  searchTo: PropTypes$1.string
 };
 ZonesPickerSuggestions.topFromZoneArrow = 'topFromZoneArrow';
 ZonesPickerSuggestions.bottomFromZoneArrow = 'bottomFromZoneArrow';
@@ -5455,7 +5472,7 @@ var css$11 = ".ZonesPicker-module_inputContainer__17GCF {\n  padding: 0 35px 0 1
 var s$11 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","inputContainer":"ZonesPicker-module_inputContainer__17GCF","input":"ZonesPicker-module_input__1qXay","inputImgIcon":"ZonesPicker-module_inputImgIcon__2U4u7","inputIcon":"ZonesPicker-module_inputIcon__lD2sz","leftInputIcon":"ZonesPicker-module_leftInputIcon__3Azxc","rightInputIconContainer":"ZonesPicker-module_rightInputIconContainer__1A3Zs","rightInputIcon":"ZonesPicker-module_rightInputIcon__WQQ5r","stationIcon":"ZonesPicker-module_stationIcon__36JCs","inputAction":"ZonesPicker-module_inputAction__qyPpy"};
 styleInject(css$11);
 
-var Suggestions = [{name:"Paris Orly",code:"ORY",type:"airport"},{name:"Paris CDG",code:"CDG",type:"airport"},{name:"Lyon",code:"ADL",type:"airport"},{name:"Gare de Lyon",code:"GDL",type:"station"},{name:"Marseille",code:"MAR",type:"airport"},{name:"Marseille2",code:"MAR2",type:"airport"},{name:"Marseille3",code:"MAR3",type:"airport"},{name:"Marseille4",code:"MAR4",type:"airport"},{name:"Marseille5",code:"MAR5",type:"airport"}];
+var Suggestions = [{name:"Paris Orly",code:"ORY",type:"airport"},{name:"Paris CDG",code:"CDG",type:"airport"},{name:"Lyon",code:"ADL",type:"airport"},{name:"Lyon Part-Dieu",code:"LPD",type:"station"},{name:"Gare de Lyon",code:"GDL",type:"station"},{name:"Marseille",code:"MAR",type:"airport"},{name:"Marseille2",code:"MAR2",type:"airport"},{name:"Marseille3",code:"MAR3",type:"airport"},{name:"Marseille4",code:"MAR4",type:"airport"},{name:"Marseille5",code:"MAR5",type:"airport"}];
 
 var TextsType$6 = PropTypes$1.shape({
   inputPlaceholder: PropTypes$1.string,
@@ -5514,6 +5531,10 @@ var getZoneSuggestionsFromValue = function getZoneSuggestionsFromValue(zoneSugge
 
     return zoneSuggestion;
   }).sort(function (zoneSuggestionA, zoneSuggestionB) {
+    if (zoneSuggestionA.name.indexOf(value) > -1 && zoneSuggestionA.name.indexOf(value) < zoneSuggestionB.name.indexOf(value)) {
+      return -1;
+    }
+
     if (zoneSuggestionA.similarity === zoneSuggestionB.similarity) {
       return 0;
     }
@@ -5836,7 +5857,9 @@ function (_React$PureComponent) {
       var _this$state3 = _this.state,
           split = _this$state3.split,
           fromZoneSuggestions = _this$state3.fromZoneSuggestions,
-          toZoneSuggestions = _this$state3.toZoneSuggestions;
+          toZoneSuggestions = _this$state3.toZoneSuggestions,
+          fromZoneValue = _this$state3.fromZoneValue,
+          toZoneValue = _this$state3.toZoneValue;
       return React.createElement(ZonesPickerSuggestions, _extends({}, pickerSuggestionsProps, {
         texts: texts,
         split: split,
@@ -5844,7 +5867,9 @@ function (_React$PureComponent) {
         toZoneSuggestions: toZoneSuggestions,
         onSplit: _this.handleSplitSuggestions,
         onFromZoneClick: _this.handleFromZoneClick,
-        onToZoneClick: _this.handleToZoneClick
+        onToZoneClick: _this.handleToZoneClick,
+        searchFrom: fromZoneValue,
+        searchTo: toZoneValue
       }));
     });
 
