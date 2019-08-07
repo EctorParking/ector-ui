@@ -91,6 +91,7 @@ Picker.defaultProps = {
   secondValue: '',
   className: undefined,
   error: undefined,
+  info: undefined,
 };
 
 Picker.propTypes = {
@@ -102,6 +103,7 @@ Picker.propTypes = {
   secondValue: PropTypes.string,
   className: PropTypes.string,
   error: PropTypes.string,
+  info: PropTypes.string,
 };
 
 export default Picker;
