@@ -288,7 +288,13 @@ class ZonesPicker extends React.PureComponent {
 
   renderSuggestionsComponent = (pickerSuggestionsProps) => {
     const { texts } = this.props;
-    const { split, fromZoneSuggestions, toZoneSuggestions } = this.state;
+    const {
+      split,
+      fromZoneSuggestions,
+      toZoneSuggestions,
+      fromZoneValue,
+      toZoneValue,
+    } = this.state;
 
     return (
       <ZonesPickerSuggestions
@@ -300,6 +306,8 @@ class ZonesPicker extends React.PureComponent {
         onSplit={this.handleSplitSuggestions}
         onFromZoneClick={this.handleFromZoneClick}
         onToZoneClick={this.handleToZoneClick}
+        searchFrom={fromZoneValue}
+        searchTo={toZoneValue}
       />
     );
   };
