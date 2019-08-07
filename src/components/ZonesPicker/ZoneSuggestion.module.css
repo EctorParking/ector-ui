@@ -1,8 +1,9 @@
 @import '../../style/variable.global.css';
 
 .suggestion {
+  align-items: flex-start;
   cursor: pointer;
-  display: block;
+  display: flex;
   margin-bottom: var(--marginSmall);
 
   &:last-child {
@@ -11,7 +12,7 @@
 }
 
 .zoneName {
-  padding-left: 25px;
+  margin-left: var(--marginSmall);
 }
 
 .selected, .hovered:hover {
@@ -23,7 +24,6 @@
 }
 
 .icon {
-  margin-right: var(--marginSmall);
   position: relative;
 }
 
