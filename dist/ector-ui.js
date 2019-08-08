@@ -5472,7 +5472,7 @@ var css$11 = ".ZonesPicker-module_inputContainer__17GCF {\n  padding: 0 35px 0 1
 var s$11 = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","inputContainer":"ZonesPicker-module_inputContainer__17GCF","input":"ZonesPicker-module_input__1qXay","inputImgIcon":"ZonesPicker-module_inputImgIcon__2U4u7","inputIcon":"ZonesPicker-module_inputIcon__lD2sz","leftInputIcon":"ZonesPicker-module_leftInputIcon__3Azxc","rightInputIconContainer":"ZonesPicker-module_rightInputIconContainer__1A3Zs","rightInputIcon":"ZonesPicker-module_rightInputIcon__WQQ5r","stationIcon":"ZonesPicker-module_stationIcon__36JCs","inputAction":"ZonesPicker-module_inputAction__qyPpy"};
 styleInject(css$11);
 
-var Suggestions = [{name:"Paris Orly",code:"ORY",type:"airport"},{name:"Paris CDG",code:"CDG",type:"airport"},{name:"Lyon",code:"ADL",type:"airport"},{name:"Lyon Part-Dieu",code:"LPD",type:"station"},{name:"Gare de Lyon",code:"GDL",type:"station"},{name:"Marseille",code:"MAR",type:"airport"},{name:"Marseille2",code:"MAR2",type:"airport"},{name:"Marseille3",code:"MAR3",type:"airport"},{name:"Marseille4",code:"MAR4",type:"airport"},{name:"Marseille5",code:"MAR5",type:"airport"}];
+var Suggestions = [{name:"Paris Orly",code:"ORY",type:"airport"},{name:"Paris CDG",code:"CDG",type:"airport"},{name:"Lyon",code:"ADL",type:"airport"},{name:"Gare de Lyon",code:"GDL",type:"station"},{name:"Marseille",code:"MAR",type:"airport"},{name:"Marseille2",code:"MAR2",type:"airport"},{name:"Marseille3",code:"MAR3",type:"airport"},{name:"Marseille4",code:"MAR4",type:"airport"},{name:"Marseille5",code:"MAR5",type:"airport"}];
 
 var TextsType$6 = PropTypes$1.shape({
   inputPlaceholder: PropTypes$1.string,
@@ -5533,6 +5533,10 @@ var getZoneSuggestionsFromValue = function getZoneSuggestionsFromValue(zoneSugge
   }).sort(function (zoneSuggestionA, zoneSuggestionB) {
     if (zoneSuggestionA.name.indexOf(value) > -1 && zoneSuggestionA.name.indexOf(value) < zoneSuggestionB.name.indexOf(value)) {
       return -1;
+    }
+
+    if (zoneSuggestionB.name.indexOf(value) > -1 && zoneSuggestionB.name.indexOf(value) < zoneSuggestionA.name.indexOf(value)) {
+      return 1;
     }
 
     if (zoneSuggestionA.similarity === zoneSuggestionB.similarity) {
