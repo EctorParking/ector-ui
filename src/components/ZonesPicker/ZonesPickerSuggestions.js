@@ -117,7 +117,7 @@ class ZonesPickerSuggestions extends PureComponent {
 
 
   renderFromZoneSuggestion = (zone) => {
-    const { onFromZoneClick } = this.props;
+    const { onFromZoneClick, searchFrom } = this.props;
 
     return (
       <ZoneSuggestion
@@ -125,12 +125,13 @@ class ZonesPickerSuggestions extends PureComponent {
         key={zone.code}
         onClick={() => onFromZoneClick(zone)}
         disabled={zone.disabled}
+        search={searchFrom}
       />
     );
   };
 
   renderToZoneSuggestion = (zone) => {
-    const { onToZoneClick } = this.props;
+    const { onToZoneClick, searchTo } = this.props;
 
     return (
       <ZoneSuggestion
@@ -139,6 +140,7 @@ class ZonesPickerSuggestions extends PureComponent {
         onClick={() => onToZoneClick(zone)}
         disabled={zone.disabled}
         className={s.toZoneSuggestion}
+        search={searchTo}
       />
     );
   };
@@ -247,6 +249,8 @@ ZonesPickerSuggestions.defaultProps = {
   onSplit: () => {},
   fromZoneSuggestions: [],
   toZoneSuggestions: [],
+  searchFrom: '',
+  searchTo: '',
 };
 
 ZonesPickerSuggestions.propTypes = {
@@ -258,6 +262,8 @@ ZonesPickerSuggestions.propTypes = {
   fromZoneSuggestions: PropTypes.arrayOf(ZoneType),
   toZoneSuggestions: PropTypes.arrayOf(ZoneType),
   texts: PropTypes.shape().isRequired,
+  searchFrom: PropTypes.string,
+  searchTo: PropTypes.string,
 };
 
 ZonesPickerSuggestions.topFromZoneArrow = 'topFromZoneArrow';

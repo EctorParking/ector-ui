@@ -25,7 +25,7 @@ IconComponent.propTypes = {
 };
 
 const ZoneSuggestion = ({
-  value, onClick, selected, disabled, className, ...rest
+  value, onClick, selected, disabled, className, search, ...rest
 }) => (
   <span
     role="presentation"
@@ -41,7 +41,13 @@ const ZoneSuggestion = ({
       className={[s.icon, disabled ? s.disabled : s.activeIcon].join(' ')}
       IconComponent={IconComponent}
     />
-    <span className={s.zoneName}>{value.name}</span>
+    <span
+      className={s.zoneName}
+      // eslint-disable-next-line react/no-danger
+      dangerouslySetInnerHTML={{
+        __html: value.name.replace(new RegExp(`(${search})`, 'i'), '<strong>$1</strong>'),
+      }}
+    />
   </span>
 );
 
@@ -50,6 +56,7 @@ ZoneSuggestion.defaultProps = {
   selected: false,
   disabled: false,
   onClick: () => null,
+  search: '',
 };
 
 ZoneSuggestion.propTypes = {
@@ -58,6 +65,7 @@ ZoneSuggestion.propTypes = {
   selected: PropTypes.bool,
   disabled: PropTypes.bool,
   className: PropTypes.string,
+  search: PropTypes.string,
 };
 
 export default ZoneSuggestion;

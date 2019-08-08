@@ -30,6 +30,11 @@ const getZoneSuggestionsFromValue = (zoneSuggestions, value) => zoneSuggestions.
   }
   return zoneSuggestion;
 }).sort((zoneSuggestionA, zoneSuggestionB) => {
+  if (zoneSuggestionA.name.indexOf(value) > -1
+      && zoneSuggestionA.name.indexOf(value) < zoneSuggestionB.name.indexOf(value)) {
+    return -1;
+  }
+
   if (zoneSuggestionA.similarity === zoneSuggestionB.similarity) {
     return 0;
   }
@@ -288,7 +293,13 @@ class ZonesPicker extends React.PureComponent {
 
   renderSuggestionsComponent = (pickerSuggestionsProps) => {
     const { texts } = this.props;
-    const { split, fromZoneSuggestions, toZoneSuggestions } = this.state;
+    const {
+      split,
+      fromZoneSuggestions,
+      toZoneSuggestions,
+      fromZoneValue,
+      toZoneValue,
+    } = this.state;
 
     return (
       <ZonesPickerSuggestions
@@ -300,6 +311,8 @@ class ZonesPicker extends React.PureComponent {
         onSplit={this.handleSplitSuggestions}
         onFromZoneClick={this.handleFromZoneClick}
         onToZoneClick={this.handleToZoneClick}
+        searchFrom={fromZoneValue}
+        searchTo={toZoneValue}
       />
     );
   };
