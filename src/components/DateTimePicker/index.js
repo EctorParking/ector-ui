@@ -229,12 +229,14 @@ class DateTimePicker extends React.PureComponent {
 
   onEndDateFocus = () => {
     const { onEndDateTimeFocus } = this.props;
+
     this.handleEndDateFocus();
     onEndDateTimeFocus();
   };
 
   onEndTimeFocus = () => {
     const { onEndDateTimeFocus } = this.props;
+
     this.handleTimeFocus();
     onEndDateTimeFocus();
   };
