@@ -206,7 +206,7 @@ class DateTimePicker extends React.PureComponent {
     if (startHour && startHour !== '00') {
       displayedTime = `${startHour}h`;
     }
-    if (startMinutes !== arbitraryUnsetMinutesValue) {
+    if (startMinutes && startMinutes !== arbitraryUnsetMinutesValue) {
       displayedTime += startMinutes;
     }
 
@@ -276,7 +276,7 @@ class DateTimePicker extends React.PureComponent {
     if (endHour && endHour !== '00') {
       displayedTime = `${endHour}h`;
     }
-    if (endMinutes !== arbitraryUnsetMinutesValue) {
+    if (endMinutes && endMinutes !== arbitraryUnsetMinutesValue) {
       displayedTime += endMinutes;
     }
 
