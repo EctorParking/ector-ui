@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import s from './TimeRange.module.css';
 import { ScrollArrow } from '..';
+import { arbitraryUnsetMinutesValue } from '../DateTimePicker';
 import TimeElement from './TimeElement';
 
 const getRange = (start, end, interval = 1) => (
@@ -124,7 +125,7 @@ class TimeRange extends React.PureComponent {
         className={s.hour}
         value={hour}
         selected={isSelected}
-        disabled={!isSelected && typeof selectedHour !== 'undefined'}
+        disabled={!isSelected && typeof selectedHour !== 'undefined' && selectedHour !== '00'}
         onSelect={this.handleHourSelect}
       />
     );
@@ -140,7 +141,7 @@ class TimeRange extends React.PureComponent {
         className={s.minute}
         value={minutes}
         selected={isSelected}
-        disabled={!isSelected && typeof selectedMinutes !== 'undefined'}
+        disabled={!isSelected && typeof selectedMinutes !== 'undefined' && selectedMinutes !== arbitraryUnsetMinutesValue}
         onSelect={this.handleMinutesSelect}
       />
     );

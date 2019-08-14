@@ -13,6 +13,8 @@ import iconClock from '../../assets/images/clock.svg';
 
 let now;
 
+const arbitraryUnsetMinutesValue = '22';
+
 class DateTimePicker extends React.PureComponent {
   static startDate = 'startDate';
 
@@ -207,6 +209,15 @@ class DateTimePicker extends React.PureComponent {
     } = this.state;
     const { texts } = this.props;
 
+    let displayedTime = '';
+
+    if (startHour && startHour !== '00') {
+      displayedTime = `${startHour}h`;
+    }
+    if (startMinutes !== arbitraryUnsetMinutesValue) {
+      displayedTime += startMinutes;
+    }
+
     return (
       <div className={s.splitInputContainer}>
         <Input
@@ -225,7 +236,7 @@ class DateTimePicker extends React.PureComponent {
               onFocus={this.handleTimeFocus}
               containerClassName={s.timePickerInputContainer}
               className={[s.timePickerInput, inputClassName].join(' ')}
-              value={startHour ? `${startHour}h${startMinutes || ''}` : ''}
+              value={displayedTime}
               placeholder={texts.timePlaceholder}
               LeftComponent={this.renderTimeInputLeftElement}
             />
@@ -240,6 +251,15 @@ class DateTimePicker extends React.PureComponent {
       endDate, showTimeInputs, endHour, endMinutes,
     } = this.state;
     const { texts } = this.props;
+
+    let displayedTime = '';
+
+    if (endHour && endHour !== '00') {
+      displayedTime = `${endHour}h`;
+    }
+    if (endMinutes !== arbitraryUnsetMinutesValue) {
+      displayedTime += endMinutes;
+    }
 
     return (
       <div className={s.splitInputContainer}>
@@ -259,7 +279,7 @@ class DateTimePicker extends React.PureComponent {
               containerClassName={s.timePickerInputContainer}
               className={[s.timePickerInput, inputClassName].join(' ')}
               onFocus={this.handleTimeFocus}
-              value={endHour ? `${endHour}h${endMinutes || ''}` : ''}
+              value={displayedTime}
               placeholder={texts.timePlaceholder}
               LeftComponent={this.renderTimeInputLeftElement}
             />
@@ -398,3 +418,5 @@ DateTimePicker.defaultProps = {
 };
 
 export default DateTimePicker;
+
+export { arbitraryUnsetMinutesValue };
