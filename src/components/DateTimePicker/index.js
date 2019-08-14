@@ -187,14 +187,6 @@ class DateTimePicker extends React.PureComponent {
     this.setState({ focusedDateInput });
   };
 
-  handleDateFocus(focusedDateInput) {
-    this.ectorPicker.current.handleFocus();
-    this.setState({
-      visiblePicker: DateTimePicker.datePicker,
-      focusedDateInput,
-    });
-  }
-
   renderMonthElement = ({ month }) => <div className={s.month}>{month.format('MMMM YYYY')}</div>;
 
   renderDateInputLeftElement = ({ className, ...props }) => <Icon {...props} className={[s.inputIcon, className].join(' ')} src={iconCalendar} />;
@@ -235,6 +227,31 @@ class DateTimePicker extends React.PureComponent {
     );
   };
 
+  onEndDateFocus = () => {
+    const { onEndDateTimeFocus } = this.props;
+    this.handleEndDateFocus();
+    onEndDateTimeFocus();
+  };
+
+  onEndTimeFocus = () => {
+    const { onEndDateTimeFocus } = this.props;
+    this.handleTimeFocus();
+    onEndDateTimeFocus();
+  };
+
+  handleEndDateTimeBlur = () => {
+    const { onEndDateTimeBlur } = this.props;
+    onEndDateTimeBlur();
+  };
+
+  handleDateFocus(focusedDateInput) {
+    this.ectorPicker.current.handleFocus();
+    this.setState({
+      visiblePicker: DateTimePicker.datePicker,
+      focusedDateInput,
+    });
+  }
+
   renderEndDateTimeInputComponent = ({ className: inputClassName, ...inputProps }) => {
     const {
       endDate, showTimeInputs, endHour, endMinutes,
@@ -247,7 +264,8 @@ class DateTimePicker extends React.PureComponent {
           {...inputProps}
           className={[s.datePickerInput, showTimeInputs ? s.fixedWidthDateInput : undefined, inputClassName].join(' ')}
           containerClassName={s.inputContainer}
-          onFocus={this.handleEndDateFocus}
+          onFocus={this.onEndDateFocus}
+          onBlur={this.handleEndDateTimeBlur}
           value={endDate ? endDate.format('ddd DD/MM/YYYY') : ''}
           placeholder={texts.endPlaceholder}
           LeftComponent={this.renderDateInputLeftElement}
@@ -258,7 +276,8 @@ class DateTimePicker extends React.PureComponent {
               {...inputProps}
               containerClassName={s.timePickerInputContainer}
               className={[s.timePickerInput, inputClassName].join(' ')}
-              onFocus={this.handleTimeFocus}
+              onFocus={this.onEndTimeFocus}
+              onBlur={this.handleEndDateTimeBlur}
               value={endHour ? `${endHour}h${endMinutes || ''}` : ''}
               placeholder={texts.timePlaceholder}
               LeftComponent={this.renderTimeInputLeftElement}
@@ -378,6 +397,8 @@ DateTimePicker.propTypes = {
   onEndDateChange: PropTypes.func,
   onStartTimeChange: PropTypes.func,
   onEndTimeChange: PropTypes.func,
+  onEndDateTimeFocus: PropTypes.func,
+  onEndDateTimeBlur: PropTypes.func,
   fromTimeRange: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])),
   toTimeRange: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])),
 };
@@ -393,6 +414,8 @@ DateTimePicker.defaultProps = {
   onEndDateChange: () => null,
   onStartTimeChange: () => null,
   onEndTimeChange: () => null,
+  onEndDateTimeFocus: () => null,
+  onEndDateTimeBlur: () => null,
   fromTimeRange: undefined,
   toTimeRange: undefined,
 };

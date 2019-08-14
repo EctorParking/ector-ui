@@ -6347,6 +6347,27 @@ function (_React$PureComponent) {
       })));
     });
 
+    _defineProperty(_assertThisInitialized(_this), "onEndDateFocus", function () {
+      var onEndDateTimeFocus = _this.props.onEndDateTimeFocus;
+
+      _this.handleEndDateFocus();
+
+      onEndDateTimeFocus();
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onEndTimeFocus", function () {
+      var onEndDateTimeFocus = _this.props.onEndDateTimeFocus;
+
+      _this.handleTimeFocus();
+
+      onEndDateTimeFocus();
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "handleEndDateTimeBlur", function () {
+      var onEndDateTimeBlur = _this.props.onEndDateTimeBlur;
+      onEndDateTimeBlur();
+    });
+
     _defineProperty(_assertThisInitialized(_this), "renderEndDateTimeInputComponent", function (_ref6) {
       var inputClassName = _ref6.className,
           inputProps = _objectWithoutProperties(_ref6, ["className"]);
@@ -6362,14 +6383,16 @@ function (_React$PureComponent) {
       }, createElement(Input, _extends({}, inputProps, {
         className: [s$13.datePickerInput, showTimeInputs ? s$13.fixedWidthDateInput : undefined, inputClassName].join(' '),
         containerClassName: s$13.inputContainer,
-        onFocus: _this.handleEndDateFocus,
+        onFocus: _this.onEndDateFocus,
+        onBlur: _this.handleEndDateTimeBlur,
         value: endDate ? endDate.format('ddd DD/MM/YYYY') : '',
         placeholder: texts.endPlaceholder,
         LeftComponent: _this.renderDateInputLeftElement
       })), showTimeInputs && createElement(Input, _extends({}, inputProps, {
         containerClassName: s$13.timePickerInputContainer,
         className: [s$13.timePickerInput, inputClassName].join(' '),
-        onFocus: _this.handleTimeFocus,
+        onFocus: _this.onEndTimeFocus,
+        onBlur: _this.handleEndDateTimeBlur,
         value: endHour ? "".concat(endHour, "h").concat(endMinutes || '') : '',
         placeholder: texts.timePlaceholder,
         LeftComponent: _this.renderTimeInputLeftElement
@@ -6618,6 +6641,8 @@ DateTimePicker.propTypes = {
   onEndDateChange: PropTypes$1.func,
   onStartTimeChange: PropTypes$1.func,
   onEndTimeChange: PropTypes$1.func,
+  onEndDateTimeFocus: PropTypes$1.func,
+  onEndDateTimeBlur: PropTypes$1.func,
   fromTimeRange: PropTypes$1.arrayOf(PropTypes$1.oneOfType([PropTypes$1.number, PropTypes$1.string])),
   toTimeRange: PropTypes$1.arrayOf(PropTypes$1.oneOfType([PropTypes$1.number, PropTypes$1.string]))
 };
@@ -6638,6 +6663,12 @@ DateTimePicker.defaultProps = {
     return null;
   },
   onEndTimeChange: function onEndTimeChange() {
+    return null;
+  },
+  onEndDateTimeFocus: function onEndDateTimeFocus() {
+    return null;
+  },
+  onEndDateTimeBlur: function onEndDateTimeBlur() {
     return null;
   },
   fromTimeRange: undefined,
