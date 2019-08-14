@@ -27,6 +27,10 @@ class Picker extends React.PureComponent {
   handleClickOutside = (e) => {
     if (this.containerRef.current && !this.containerRef.current.contains(e.target)) {
       this.setState({ suggestionsVisible: false });
+
+      const { onSuggestionsHide } = this.props;
+
+      onSuggestionsHide();
     }
   };
 
@@ -92,6 +96,7 @@ Picker.defaultProps = {
   className: undefined,
   error: undefined,
   info: undefined,
+  onSuggestionsHide: () => null,
 };
 
 Picker.propTypes = {
@@ -104,6 +109,7 @@ Picker.propTypes = {
   className: PropTypes.string,
   error: PropTypes.string,
   info: PropTypes.string,
+  onSuggestionsHide: PropTypes.func,
 };
 
 export default Picker;

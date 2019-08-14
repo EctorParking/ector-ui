@@ -4972,6 +4972,9 @@ function (_React$PureComponent) {
         _this.setState({
           suggestionsVisible: false
         });
+
+        var onSuggestionsHide = _this.props.onSuggestionsHide;
+        onSuggestionsHide();
       }
     });
 
@@ -5057,7 +5060,10 @@ Picker.defaultProps = {
   secondValue: '',
   className: undefined,
   error: undefined,
-  info: undefined
+  info: undefined,
+  onSuggestionsHide: function onSuggestionsHide() {
+    return null;
+  }
 };
 Picker.propTypes = {
   split: PropTypes$1.bool,
@@ -5068,7 +5074,8 @@ Picker.propTypes = {
   secondValue: PropTypes$1.string,
   className: PropTypes$1.string,
   error: PropTypes$1.string,
-  info: PropTypes$1.string
+  info: PropTypes$1.string,
+  onSuggestionsHide: PropTypes$1.func
 };
 
 var positionToUnicodeCharacter = {
@@ -16673,7 +16680,8 @@ function (_React$PureComponent) {
       var _this$props3 = this.props,
           error = _this$props3.error,
           info = _this$props3.info,
-          className = _this$props3.className;
+          className = _this$props3.className,
+          onSuggestionsHide = _this$props3.onSuggestionsHide;
       return createElement(Picker, {
         ref: this.ectorPicker,
         split: true,
@@ -16682,6 +16690,7 @@ function (_React$PureComponent) {
         SecondInputComponent: this.renderEndDateTimeInputComponent,
         SuggestionsComponent: this.renderSuggestionsComponent,
         className: [s$1b.picker, className].join(' '),
+        onSuggestionsHide: onSuggestionsHide,
         error: error,
         info: info
       });
@@ -16792,6 +16801,7 @@ DateTimePicker.propTypes = {
   onEndTimeChange: PropTypes$1.func,
   onEndDateTimeFocus: PropTypes$1.func,
   onEndDateTimeBlur: PropTypes$1.func,
+  onSuggestionsHide: PropTypes$1.func,
   fromTimeRange: PropTypes$1.arrayOf(PropTypes$1.oneOfType([PropTypes$1.number, PropTypes$1.string])),
   toTimeRange: PropTypes$1.arrayOf(PropTypes$1.oneOfType([PropTypes$1.number, PropTypes$1.string]))
 };
@@ -16818,6 +16828,9 @@ DateTimePicker.defaultProps = {
     return null;
   },
   onEndDateTimeBlur: function onEndDateTimeBlur() {
+    return null;
+  },
+  onSuggestionsHide: function onSuggestionsHide() {
     return null;
   },
   fromTimeRange: undefined,

@@ -390,7 +390,9 @@ class DateTimePicker extends React.PureComponent {
     const extraData = {
       visiblePicker, startDate, endDate, startMinutes, endMinutes, startHour, endHour,
     };
-    const { error, info, className } = this.props;
+    const {
+      error, info, className, onSuggestionsHide,
+    } = this.props;
 
     return (
       <Picker
@@ -401,6 +403,7 @@ class DateTimePicker extends React.PureComponent {
         SecondInputComponent={this.renderEndDateTimeInputComponent}
         SuggestionsComponent={this.renderSuggestionsComponent}
         className={[s.picker, className].join(' ')}
+        onSuggestionsHide={onSuggestionsHide}
         error={error}
         info={info}
       />
@@ -421,6 +424,7 @@ DateTimePicker.propTypes = {
   onEndTimeChange: PropTypes.func,
   onEndDateTimeFocus: PropTypes.func,
   onEndDateTimeBlur: PropTypes.func,
+  onSuggestionsHide: PropTypes.func,
   fromTimeRange: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])),
   toTimeRange: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])),
 };
@@ -438,6 +442,7 @@ DateTimePicker.defaultProps = {
   onEndTimeChange: () => null,
   onEndDateTimeFocus: () => null,
   onEndDateTimeBlur: () => null,
+  onSuggestionsHide: () => null,
   fromTimeRange: undefined,
   toTimeRange: undefined,
 };
