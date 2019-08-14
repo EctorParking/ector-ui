@@ -16471,7 +16471,7 @@ function (_React$PureComponent) {
         displayedTime = "".concat(startHour, "h");
       }
 
-      if (startMinutes !== arbitraryUnsetMinutesValue) {
+      if (startMinutes && startMinutes !== arbitraryUnsetMinutesValue) {
         displayedTime += startMinutes;
       }
 
@@ -16526,8 +16526,6 @@ function (_React$PureComponent) {
           endMinutes = _this$state4.endMinutes;
       var texts = _this.props.texts;
       var displayedTime = '';
-      console.log(endHour);
-      console.log(endMinutes);
 
       if (endHour && endHour !== '00') {
         displayedTime = "".concat(endHour, "h");
