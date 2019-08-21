@@ -5030,7 +5030,7 @@ function (_React$PureComponent) {
       }, React__default.createElement("div", {
         className: [s$Z.error, hasError ? s$Z.errorVisible : undefined].join(' ')
       }, error), React__default.createElement("div", {
-        className: [s$Z.info, hasInfo ? s$Z.infoVisible : undefined].join(' ')
+        className: [s$Z.info, hasInfo && !hasError ? s$Z.infoVisible : undefined].join(' ')
       }, info), React__default.createElement("div", {
         className: s$Z.shadowWrapper
       }, React__default.createElement(FirstInputComponent, {

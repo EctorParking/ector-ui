@@ -59,7 +59,7 @@ class Picker extends React.PureComponent {
         <div className={[s.error, hasError ? s.errorVisible : undefined].join(' ')}>
           {error}
         </div>
-        <div className={[s.info, hasInfo ? s.infoVisible : undefined].join(' ')}>
+        <div className={[s.info, hasInfo && !hasError ? s.infoVisible : undefined].join(' ')}>
           {info}
         </div>
         <div className={s.shadowWrapper}>
