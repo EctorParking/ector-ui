@@ -4,19 +4,52 @@ import s from './Picker.module.css';
 import { Input, PickerSuggestions } from '..';
 
 class Picker extends React.PureComponent {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.containerRef = React.createRef();
-  }
 
-  state = {
-    suggestionsVisible: false,
-  };
+    const { info, error } = this.props;
+
+    this.state = {
+      suggestionsVisible: false,
+      info,
+      error,
+    };
+  }
 
   componentDidMount() {
     // eslint-disable-next-line no-undef
     document.addEventListener('mousedown', this.handleClickOutside);
+  }
+
+  componentWillReceiveProps(newProps) {
+    const { info, error } = this.state;
+    const { info: newInfo, error: newError } = newProps;
+
+    if (info !== newInfo) {
+      const setNewInfo = () => this.setState({ info: newInfo });
+
+      if (info === '') {
+        setNewInfo();
+      } else {
+        this.setState({ info: '' }, () => {
+          setTimeout(setNewInfo, 200);
+        });
+      }
+    }
+
+    if (error !== newError) {
+      const setNewError = () => this.setState({ error: newError });
+
+      if (error === '') {
+        setNewError();
+      } else {
+        this.setState({ error: '' }, () => {
+          setTimeout(setNewError, 200);
+        });
+      }
+    }
   }
 
   componentWillUnmount() {
@@ -47,10 +80,12 @@ class Picker extends React.PureComponent {
       firstValue,
       secondValue,
       className,
-      error,
-      info,
     } = this.props;
-    const { suggestionsVisible } = this.state;
+    const {
+      info,
+      error,
+      suggestionsVisible,
+    } = this.state;
     const hasError = error && error !== '';
     const hasInfo = info && info !== '';
 
