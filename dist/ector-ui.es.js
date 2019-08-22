@@ -4956,16 +4956,12 @@ var Picker =
 function (_React$PureComponent) {
   _inherits(Picker, _React$PureComponent);
 
-  function Picker() {
+  function Picker(props) {
     var _this;
 
     _classCallCheck(this, Picker);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Picker).call(this));
-
-    _defineProperty(_assertThisInitialized(_this), "state", {
-      suggestionsVisible: false
-    });
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Picker).call(this, props));
 
     _defineProperty(_assertThisInitialized(_this), "handleClickOutside", function (e) {
       if (_this.containerRef.current && !_this.containerRef.current.contains(e.target)) {
@@ -4985,6 +4981,14 @@ function (_React$PureComponent) {
     });
 
     _this.containerRef = React__default.createRef();
+    var _this$props = _this.props,
+        info = _this$props.info,
+        error = _this$props.error;
+    _this.state = {
+      suggestionsVisible: false,
+      info: info,
+      error: error
+    };
     return _this;
   }
 
@@ -4995,6 +4999,53 @@ function (_React$PureComponent) {
       document.addEventListener('mousedown', this.handleClickOutside);
     }
   }, {
+    key: "componentWillReceiveProps",
+    value: function componentWillReceiveProps(newProps) {
+      var _this2 = this;
+
+      var _this$state = this.state,
+          info = _this$state.info,
+          error = _this$state.error;
+      var newInfo = newProps.info,
+          newError = newProps.error;
+
+      if (info !== newInfo) {
+        var setNewInfo = function setNewInfo() {
+          return _this2.setState({
+            info: newInfo
+          });
+        };
+
+        if (info === '') {
+          setNewInfo();
+        } else {
+          this.setState({
+            info: ''
+          }, function () {
+            setTimeout(setNewInfo, 200);
+          });
+        }
+      }
+
+      if (error !== newError) {
+        var setNewError = function setNewError() {
+          return _this2.setState({
+            error: newError
+          });
+        };
+
+        if (error === '') {
+          setNewError();
+        } else {
+          this.setState({
+            error: ''
+          }, function () {
+            setTimeout(setNewError, 200);
+          });
+        }
+      }
+    }
+  }, {
     key: "componentWillUnmount",
     value: function componentWillUnmount() {
       // eslint-disable-next-line no-undef
@@ -5003,17 +5054,18 @@ function (_React$PureComponent) {
   }, {
     key: "render",
     value: function render() {
-      var _this$props = this.props,
-          split = _this$props.split,
-          SuggestionsComponent = _this$props.SuggestionsComponent,
-          FirstInputComponent = _this$props.FirstInputComponent,
-          SecondInputComponent = _this$props.SecondInputComponent,
-          firstValue = _this$props.firstValue,
-          secondValue = _this$props.secondValue,
-          className = _this$props.className,
-          error = _this$props.error,
-          info = _this$props.info;
-      var suggestionsVisible = this.state.suggestionsVisible;
+      var _this$props2 = this.props,
+          split = _this$props2.split,
+          SuggestionsComponent = _this$props2.SuggestionsComponent,
+          FirstInputComponent = _this$props2.FirstInputComponent,
+          SecondInputComponent = _this$props2.SecondInputComponent,
+          firstValue = _this$props2.firstValue,
+          secondValue = _this$props2.secondValue,
+          className = _this$props2.className;
+      var _this$state2 = this.state,
+          info = _this$state2.info,
+          error = _this$state2.error,
+          suggestionsVisible = _this$state2.suggestionsVisible;
       var hasError = error && error !== '';
       var hasInfo = info && info !== '';
       return React__default.createElement("div", {
