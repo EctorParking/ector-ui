@@ -9,7 +9,9 @@ import s from './DateTimePicker.module.css';
 import { DefaultTexts, TextsType } from './DateTimePickerTexts';
 import TimeSuggestions from './TimeSuggestions';
 import iconCalendar from '../../assets/images/calendar.svg';
+import iconCalendarRed from '../../assets/images/calendar-red.svg';
 import iconClock from '../../assets/images/clock.svg';
+import iconClockRed from '../../assets/images/clock-red.svg';
 
 let now;
 
@@ -191,9 +193,33 @@ class DateTimePicker extends React.PureComponent {
 
   renderMonthElement = ({ month }) => <div className={s.month}>{month.format('MMMM YYYY')}</div>;
 
-  renderDateInputLeftElement = ({ className, ...props }) => <Icon {...props} className={[s.inputIcon, className].join(' ')} src={iconCalendar} />;
+  renderDateInputLeftElement = ({ className, ...props }, error) => <Icon {...props} className={[s.inputIcon, className].join(' ')} src={error ? iconCalendarRed : iconCalendar} />;
 
-  renderTimeInputLeftElement = ({ className, ...props }) => <Icon {...props} className={[s.inputIcon, className].join(' ')} src={iconClock} />;
+  renderStartDateInputLeftElement = (props) => {
+    const { hasStartDateError } = this.props;
+
+    return this.renderDateInputLeftElement(props, hasStartDateError);
+  };
+
+  renderEndDateInputLeftElement = (props) => {
+    const { hasEndDateError } = this.props;
+
+    return this.renderDateInputLeftElement(props, hasEndDateError);
+  };
+
+  renderTimeInputLeftElement = ({ className, ...props }, error) => <Icon {...props} className={[s.inputIcon, className].join(' ')} src={error ? iconClockRed : iconClock} />;
+
+  renderStartTimeInputLeftElement = (props) => {
+    const { hasStartTimeError } = this.props;
+
+    return this.renderTimeInputLeftElement(props, hasStartTimeError);
+  };
+
+  renderEndTimeInputLeftElement = (props) => {
+    const { hasEndTimeError } = this.props;
+
+    return this.renderTimeInputLeftElement(props, hasEndTimeError);
+  };
 
   renderStartDateTimeInputComponent = ({ className: inputClassName, ...inputProps }) => {
     const {
@@ -219,7 +245,7 @@ class DateTimePicker extends React.PureComponent {
           containerClassName={s.inputContainer}
           value={startDate ? startDate.format('ddd DD/MM/YYYY') : ''}
           placeholder={texts.startPlaceholder}
-          LeftComponent={this.renderDateInputLeftElement}
+          LeftComponent={this.renderStartDateInputLeftElement}
         />
         {
           showTimeInputs && (
@@ -230,7 +256,7 @@ class DateTimePicker extends React.PureComponent {
               className={[s.timePickerInput, hasStartTimeError ? s.inputError : undefined, inputClassName].join(' ')}
               value={displayedTime}
               placeholder={texts.timePlaceholder}
-              LeftComponent={this.renderTimeInputLeftElement}
+              LeftComponent={this.renderStartTimeInputLeftElement}
             />
           )
         }
@@ -290,7 +316,7 @@ class DateTimePicker extends React.PureComponent {
           onBlur={this.handleEndDateTimeBlur}
           value={endDate ? endDate.format('ddd DD/MM/YYYY') : ''}
           placeholder={texts.endPlaceholder}
-          LeftComponent={this.renderDateInputLeftElement}
+          LeftComponent={this.renderEndDateInputLeftElement}
         />
         {
           showTimeInputs && (
@@ -302,7 +328,7 @@ class DateTimePicker extends React.PureComponent {
               onBlur={this.handleEndDateTimeBlur}
               value={displayedTime}
               placeholder={texts.timePlaceholder}
-              LeftComponent={this.renderTimeInputLeftElement}
+              LeftComponent={this.renderEndTimeInputLeftElement}
             />
           )
         }
