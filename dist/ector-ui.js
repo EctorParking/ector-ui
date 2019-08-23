@@ -2903,7 +2903,8 @@ var InputLabel = function InputLabel(_ref) {
   }, label), InputComponent !== null && typeof InputComponent === 'function' && InputComponent() ? React__default.createElement(InputComponent, _extends({
     className: [s$x.input, inputClassName].join(' '),
     placeholder: placeholder,
-    type: type
+    type: type,
+    hasError: !!error
   }, inputProps)) : React__default.createElement(Input, _extends({
     className: [s$x.input, inputClassName].join(' '),
     id: id,
