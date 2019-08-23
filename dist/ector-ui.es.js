@@ -5030,21 +5030,27 @@ function (_React$PureComponent) {
       }
 
       if (!error) {
-        var setNewInfo = function setNewInfo() {
-          return _this2.setState({
-            info: newInfo,
-            infoVisible: true
-          });
-        };
+        if (newInfo !== info) {
+          var setNewInfo = function setNewInfo() {
+            return _this2.setState({
+              info: newInfo,
+              infoVisible: true
+            });
+          };
 
-        if (info === '') {
-          setNewInfo();
+          if (info === '') {
+            setNewInfo();
+          } else {
+            this.setState({
+              info: '',
+              infoVisible: false
+            }, function () {
+              setTimeout(setNewInfo, 200);
+            });
+          }
         } else {
           this.setState({
-            info: '',
-            infoVisible: false
-          }, function () {
-            setTimeout(setNewInfo, 200);
+            infoVisible: true
           });
         }
       } else {

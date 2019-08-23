@@ -40,14 +40,18 @@ class Picker extends React.PureComponent {
     }
 
     if (!error) {
-      const setNewInfo = () => this.setState({ info: newInfo, infoVisible: true });
+      if (newInfo !== info) {
+        const setNewInfo = () => this.setState({ info: newInfo, infoVisible: true });
 
-      if (info === '') {
-        setNewInfo();
+        if (info === '') {
+          setNewInfo();
+        } else {
+          this.setState({ info: '', infoVisible: false }, () => {
+            setTimeout(setNewInfo, 200);
+          });
+        }
       } else {
-        this.setState({ info: '', infoVisible: false }, () => {
-          setTimeout(setNewInfo, 200);
-        });
+        this.setState({ infoVisible: true });
       }
     } else {
       this.setState({ info: '', infoVisible: false });
