@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import centered from '@storybook/addon-centered';
-import { withKnobs, text } from '@storybook/addon-knobs';
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 import DateTimePicker from '.';
 
 storiesOf('DateTimePicker', module)
@@ -18,6 +18,10 @@ storiesOf('DateTimePicker', module)
     const props = {
       error: text('Error', ''),
       info: text('Info', ''),
+      hasStartDateError: boolean('hasStartDateError', false),
+      hasStartTimeError: boolean('hasStartTimeError', false),
+      hasEndDateError: boolean('hasEndDateError', false),
+      hasEndTimeError: boolean('hasEndTimeError', false),
     };
 
     return <DateTimePicker {...props} />;

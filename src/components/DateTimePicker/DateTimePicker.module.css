@@ -100,6 +100,10 @@
   left: var(--marginSmall);
 }
 
+.inputError {
+  color: var(--red);
+}
+
 .inputContainer {
   padding: 0;
 }

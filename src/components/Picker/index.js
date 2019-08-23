@@ -14,7 +14,9 @@ class Picker extends React.PureComponent {
     this.state = {
       suggestionsVisible: false,
       info,
+      infoVisible: !!info,
       error,
+      errorVisible: !!error,
     };
   }
 
@@ -27,28 +29,24 @@ class Picker extends React.PureComponent {
     const { info, error } = this.state;
     const { info: newInfo, error: newError } = newProps;
 
-    if (info !== newInfo) {
-      const setNewInfo = () => this.setState({ info: newInfo });
+    const setNewInfo = () => this.setState({ info: newInfo, infoVisible: true });
 
-      if (info === '') {
-        setNewInfo();
-      } else {
-        this.setState({ info: '' }, () => {
-          setTimeout(setNewInfo, 200);
-        });
-      }
+    if (info === '') {
+      setNewInfo();
+    } else {
+      this.setState({ info: '', infoVisible: false }, () => {
+        setTimeout(setNewInfo, 200);
+      });
     }
 
-    if (error !== newError) {
-      const setNewError = () => this.setState({ error: newError });
+    const setNewError = () => this.setState({ error: newError, errorVisible: true });
 
-      if (error === '') {
-        setNewError();
-      } else {
-        this.setState({ error: '' }, () => {
-          setTimeout(setNewError, 200);
-        });
-      }
+    if (error === '') {
+      setNewError();
+    } else {
+      this.setState({ error: '', errorVisible: false }, () => {
+        setTimeout(setNewError, 200);
+      });
     }
   }
 
@@ -83,24 +81,26 @@ class Picker extends React.PureComponent {
     } = this.props;
     const {
       info,
+      infoVisible,
       error,
+      errorVisible,
       suggestionsVisible,
     } = this.state;
-    const hasError = error && error !== '';
     const hasInfo = info && info !== '';
+    const hasError = error && error !== '';
 
     return (
       <div className={[s.container, suggestionsVisible ? s.active : undefined, className].join(' ')} ref={this.containerRef}>
-        <div className={[s.error, hasError ? s.errorVisible : undefined].join(' ')}>
+        <div className={[s.error, hasError && errorVisible ? s.errorVisible : undefined].join(' ')}>
           {error}
         </div>
-        <div className={[s.info, hasInfo && !hasError ? s.infoVisible : undefined].join(' ')}>
+        <div className={[s.info, hasInfo && !hasError && infoVisible ? s.infoVisible : undefined].join(' ')}>
           {info}
         </div>
         <div className={s.shadowWrapper}>
           <FirstInputComponent
             value={firstValue}
-            className={[s.pickerInput, hasError ? s.inputError : undefined].join(' ')}
+            className={s.pickerInput}
             containerClassName={s.pickerInputContainer}
             onFocus={this.handleFocus}
           />
@@ -108,7 +108,7 @@ class Picker extends React.PureComponent {
             split && (
               <SecondInputComponent
                 value={secondValue}
-                className={[s.pickerInput, hasError ? s.inputError : undefined].join(' ')}
+                className={s.pickerInput}
                 containerClassName={[s.pickerInputContainer, s.splitPickerInputContainer].join(' ')}
                 onFocus={this.handleFocus}
               />

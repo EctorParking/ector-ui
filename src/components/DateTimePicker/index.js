@@ -199,7 +199,7 @@ class DateTimePicker extends React.PureComponent {
     const {
       startDate, showTimeInputs, startMinutes, startHour,
     } = this.state;
-    const { texts } = this.props;
+    const { texts, hasStartDateError, hasStartTimeError } = this.props;
 
     let displayedTime = '';
 
@@ -215,7 +215,7 @@ class DateTimePicker extends React.PureComponent {
         <Input
           {...inputProps}
           onFocus={this.handleStartDateFocus}
-          className={[s.datePickerInput, showTimeInputs ? s.fixedWidthDateInput : undefined, inputClassName].join(' ')}
+          className={[s.datePickerInput, showTimeInputs ? s.fixedWidthDateInput : undefined, hasStartDateError ? s.inputError : undefined, inputClassName].join(' ')}
           containerClassName={s.inputContainer}
           value={startDate ? startDate.format('ddd DD/MM/YYYY') : ''}
           placeholder={texts.startPlaceholder}
@@ -227,7 +227,7 @@ class DateTimePicker extends React.PureComponent {
               {...inputProps}
               onFocus={this.handleTimeFocus}
               containerClassName={s.timePickerInputContainer}
-              className={[s.timePickerInput, inputClassName].join(' ')}
+              className={[s.timePickerInput, hasStartTimeError ? s.inputError : undefined, inputClassName].join(' ')}
               value={displayedTime}
               placeholder={texts.timePlaceholder}
               LeftComponent={this.renderTimeInputLeftElement}
@@ -269,7 +269,7 @@ class DateTimePicker extends React.PureComponent {
     const {
       endDate, showTimeInputs, endHour, endMinutes,
     } = this.state;
-    const { texts } = this.props;
+    const { texts, hasEndDateError, hasEndTimeError } = this.props;
 
     let displayedTime = '';
 
@@ -284,7 +284,7 @@ class DateTimePicker extends React.PureComponent {
       <div className={s.splitInputContainer}>
         <Input
           {...inputProps}
-          className={[s.datePickerInput, showTimeInputs ? s.fixedWidthDateInput : undefined, inputClassName].join(' ')}
+          className={[s.datePickerInput, showTimeInputs ? s.fixedWidthDateInput : undefined, hasEndDateError ? s.inputError : undefined, inputClassName].join(' ')}
           containerClassName={s.inputContainer}
           onFocus={this.onEndDateFocus}
           onBlur={this.handleEndDateTimeBlur}
@@ -297,7 +297,7 @@ class DateTimePicker extends React.PureComponent {
             <Input
               {...inputProps}
               containerClassName={s.timePickerInputContainer}
-              className={[s.timePickerInput, inputClassName].join(' ')}
+              className={[s.timePickerInput, hasEndTimeError ? s.inputError : undefined, inputClassName].join(' ')}
               onFocus={this.onEndTimeFocus}
               onBlur={this.handleEndDateTimeBlur}
               value={displayedTime}
@@ -427,6 +427,10 @@ DateTimePicker.propTypes = {
   onSuggestionsHide: PropTypes.func,
   fromTimeRange: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])),
   toTimeRange: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])),
+  hasStartDateError: PropTypes.bool,
+  hasStartTimeError: PropTypes.bool,
+  hasEndDateError: PropTypes.bool,
+  hasEndTimeError: PropTypes.bool,
 };
 
 DateTimePicker.defaultProps = {
@@ -445,6 +449,10 @@ DateTimePicker.defaultProps = {
   onSuggestionsHide: () => null,
   fromTimeRange: undefined,
   toTimeRange: undefined,
+  hasStartDateError: false,
+  hasStartTimeError: false,
+  hasEndDateError: false,
+  hasEndTimeError: false,
 };
 
 export default DateTimePicker;
