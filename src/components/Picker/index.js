@@ -29,16 +29,6 @@ class Picker extends React.PureComponent {
     const { info, error } = this.state;
     const { info: newInfo, error: newError } = newProps;
 
-    const setNewInfo = () => this.setState({ info: newInfo, infoVisible: true });
-
-    if (info === '') {
-      setNewInfo();
-    } else {
-      this.setState({ info: '', infoVisible: false }, () => {
-        setTimeout(setNewInfo, 200);
-      });
-    }
-
     const setNewError = () => this.setState({ error: newError, errorVisible: true });
 
     if (error === '') {
@@ -47,6 +37,20 @@ class Picker extends React.PureComponent {
       this.setState({ error: '', errorVisible: false }, () => {
         setTimeout(setNewError, 200);
       });
+    }
+
+    if (!error) {
+      const setNewInfo = () => this.setState({ info: newInfo, infoVisible: true });
+
+      if (info === '') {
+        setNewInfo();
+      } else {
+        this.setState({ info: '', infoVisible: false }, () => {
+          setTimeout(setNewInfo, 200);
+        });
+      }
+    } else {
+      this.setState({ info: '', infoVisible: false });
     }
   }
 

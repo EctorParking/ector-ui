@@ -104,6 +104,21 @@
   color: var(--red);
 }
 
+.inputError::placeholder {
+  color: var(--red);
+  opacity: 0.5;
+}
+
+.inputError:-ms-input-placeholder {
+  color: var(--red);
+  opacity: 0.5;
+}
+
+.inputError::-ms-input-placeholder {
+  color: var(--red);
+  opacity: 0.5;
+}
+
 .inputContainer {
   padding: 0;
 }

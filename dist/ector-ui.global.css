@@ -3898,6 +3898,41 @@
   color: #ff5757;
 }
 
+.DateTimePicker-module_inputError__2-au6::-webkit-input-placeholder {
+  color: #ff5757;
+  opacity: 0.5;
+}
+
+.DateTimePicker-module_inputError__2-au6::-ms-input-placeholder {
+  color: #ff5757;
+  opacity: 0.5;
+}
+
+.inputError::-webkit-input-placeholder {
+  color: #ff5757;
+  opacity: 0.5;
+}
+
+.inputError::-ms-input-placeholder {
+  color: #ff5757;
+  opacity: 0.5;
+}
+
+.DateTimePicker-module_inputError__2-au6::placeholder {
+  color: #ff5757;
+  opacity: 0.5;
+}
+
+.DateTimePicker-module_inputError__2-au6:-ms-input-placeholder {
+  color: #ff5757;
+  opacity: 0.5;
+}
+
+.DateTimePicker-module_inputError__2-au6::-ms-input-placeholder {
+  color: #ff5757;
+  opacity: 0.5;
+}
+
 .DateTimePicker-module_inputContainer__1FIAJ {
   padding: 0;
 }
