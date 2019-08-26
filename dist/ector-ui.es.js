@@ -4967,6 +4967,8 @@ function (_React$PureComponent) {
     _defineProperty(_assertThisInitialized(_this), "handleClickOutside", function (e) {
       if (_this.containerRef.current && !_this.containerRef.current.contains(e.target)) {
         _this.setState({
+          infoVisible: false,
+          info: '',
           suggestionsVisible: false
         });
 

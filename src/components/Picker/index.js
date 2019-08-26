@@ -65,7 +65,7 @@ class Picker extends React.PureComponent {
 
   handleClickOutside = (e) => {
     if (this.containerRef.current && !this.containerRef.current.contains(e.target)) {
-      this.setState({ suggestionsVisible: false });
+      this.setState({ infoVisible: false, info: '', suggestionsVisible: false });
 
       const { onSuggestionsHide } = this.props;
 
