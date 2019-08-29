@@ -4974,11 +4974,6 @@ function (_React$PureComponent) {
 
     _defineProperty(_assertThisInitialized(_this), "handleClickOutside", function (e) {
       if (_this.containerRef.current && !_this.containerRef.current.contains(e.target)) {
-        _this.setState({
-          infoVisible: false,
-          info: ''
-        });
-
         _this.hideSuggestions();
 
         var onSuggestionsHide = _this.props.onSuggestionsHide;
@@ -5082,6 +5077,8 @@ function (_React$PureComponent) {
     key: "hideSuggestions",
     value: function hideSuggestions() {
       this.setState({
+        infoVisible: false,
+        info: '',
         suggestionsVisible: false
       });
     }
