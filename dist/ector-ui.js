@@ -16768,6 +16768,13 @@ function (_React$PureComponent) {
       });
     }
   }, {
+    key: "hideSuggestions",
+    value: function hideSuggestions() {
+      this.setState({
+        visiblePicker: ''
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this$state6 = this.state,

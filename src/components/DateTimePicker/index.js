@@ -291,6 +291,12 @@ class DateTimePicker extends React.PureComponent {
     });
   }
 
+  hideSuggestions() {
+    this.setState({
+      visiblePicker: '',
+    });
+  }
+
   renderEndDateTimeInputComponent = ({ className: inputClassName, ...inputProps }) => {
     const {
       endDate, showTimeInputs, endHour, endMinutes,
