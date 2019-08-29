@@ -4968,9 +4968,10 @@ function (_React$PureComponent) {
       if (_this.containerRef.current && !_this.containerRef.current.contains(e.target)) {
         _this.setState({
           infoVisible: false,
-          info: '',
-          suggestionsVisible: false
+          info: ''
         });
+
+        _this.hideSuggestions();
 
         var onSuggestionsHide = _this.props.onSuggestionsHide;
         onSuggestionsHide();
@@ -5068,6 +5069,13 @@ function (_React$PureComponent) {
     value: function componentWillUnmount() {
       // eslint-disable-next-line no-undef
       document.removeEventListener('mousedown', this.handleClickOutside);
+    }
+  }, {
+    key: "hideSuggestions",
+    value: function hideSuggestions() {
+      this.setState({
+        suggestionsVisible: false
+      });
     }
   }, {
     key: "render",
@@ -16762,9 +16770,7 @@ function (_React$PureComponent) {
   }, {
     key: "hideSuggestions",
     value: function hideSuggestions() {
-      this.setState({
-        visiblePicker: ''
-      });
+      this.ectorPicker.current.hideSuggestions();
     }
   }, {
     key: "render",
