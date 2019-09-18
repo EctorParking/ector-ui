@@ -6586,7 +6586,7 @@ function (_React$Component) {
           shouldDisplayReturnFlightInformation = _this$state.shouldDisplayReturnFlightInformation,
           showReturnFlightCompanyTooltip = _this$state.showReturnFlightCompanyTooltip;
       var selectedAirline = airlines.find(function (airline) {
-        return airline.value.toLowerCase() === (returnFlightCompany ? returnFlightCompany.toLowerCase() : '');
+        return airline.value && airline.value.toLowerCase() === (returnFlightCompany ? returnFlightCompany.toLowerCase() : '');
       });
       return React__default.createElement(React__default.Fragment, null, React__default.createElement(Tooltip, {
         text: texts.returnFlightCompanyTooltip,
