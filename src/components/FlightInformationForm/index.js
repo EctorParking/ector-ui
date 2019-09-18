@@ -113,7 +113,7 @@ class FlightInformationForm extends React.Component {
       texts,
     } = this.props;
     const { shouldDisplayReturnFlightInformation, showReturnFlightCompanyTooltip } = this.state;
-    const selectedAirline = airlines.find(airline => airline.value.toLowerCase() === (returnFlightCompany ? returnFlightCompany.toLowerCase() : ''));
+    const selectedAirline = airlines.find(airline => airline.value && airline.value.toLowerCase() === (returnFlightCompany ? returnFlightCompany.toLowerCase() : ''));
 
     return (
       <>
