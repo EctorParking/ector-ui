@@ -3170,7 +3170,8 @@ var PaymentMethodType = PropTypes$1.shape({
   last4digits: PropTypes$1.string,
   brand: PropTypes$1.oneOf(['visa', 'mastercard', 'american', 'cb']),
   type: PropTypes$1.oneOf(['card', 'account', 'sepa']),
-  expireAt: PropTypes$1.string
+  expireAt: PropTypes$1.string,
+  cardName: PropTypes$1.string
 });
 
 var _ref$2 =
@@ -3287,6 +3288,8 @@ var PaymentMethodCardContentRead = function PaymentMethodCardContentRead(_ref) {
     src: creditCardBrandIcons[paymentMethod.brand],
     alt: paymentMethod.brand
   }), React__default.createElement("span", {
+    className: s$C.content
+  }, paymentMethod.cardName || null), React__default.createElement("span", {
     className: s$C.content
   }, "\xB7\xB7\xB7\xB7\xA0\xB7\xB7\xB7\xB7\xA0\xB7\xB7\xB7\xB7\xA0", paymentMethod.last4digits), React__default.createElement("span", {
     className: s$C.content
