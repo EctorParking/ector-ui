@@ -25,9 +25,13 @@ const PaymentMethodCardContentRead = ({ paymentMethod, texts }) => (
         />
       )
     }
-    <span className={s.content}>
-      {paymentMethod.cardName || null}
-    </span>
+    {
+      paymentMethod.cardName && (
+        <span className={s.content}>
+          {paymentMethod.cardName}
+        </span>
+      )
+    }
     <span className={s.content}>
       &#183;&#183;&#183;&#183;&nbsp;&#183;&#183;&#183;&#183;&nbsp;&#183;&#183;&#183;&#183;&nbsp;
       {paymentMethod.last4digits}
