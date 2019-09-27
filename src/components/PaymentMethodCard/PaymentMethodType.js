@@ -5,4 +5,5 @@ export default PropTypes.shape({
   brand: PropTypes.oneOf(['visa', 'mastercard', 'american', 'cb']),
   type: PropTypes.oneOf(['card', 'account', 'sepa']),
   expireAt: PropTypes.string,
+  cardName: PropTypes.string,
 });
