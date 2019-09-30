@@ -26,7 +26,11 @@ const PaymentMethodCardContentRead = ({ paymentMethod, texts }) => (
       )
     }
     {
-      paymentMethod.cardName && (
+      !paymentMethod.cardName ? (
+        <span className={s.contentHalfLine}>
+          <br />
+        </span>
+      ) : (
         <span className={s.content}>
           {paymentMethod.cardName}
         </span>
@@ -41,6 +45,13 @@ const PaymentMethodCardContentRead = ({ paymentMethod, texts }) => (
 &nbsp;:&nbsp;
       {paymentMethod.expireAt}
     </span>
+    {
+      !paymentMethod.cardName && (
+        <span className={s.contentHalfLine}>
+          <br />
+        </span>
+      )
+    }
   </Fragment>
 );
 

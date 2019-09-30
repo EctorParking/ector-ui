@@ -11,3 +11,7 @@
   align-self: center;
   margin-bottom: var(--marginSmall);
 }
+
+.contentHalfLine {
+  line-height: .70em;
+}
