@@ -1,0 +1,27 @@
+@import '../../style/variable.global.css';
+
+.alert {
+  margin-top: var(--marginMedium);
+  margin-right: var(--marginLarge);
+  background-color: var(--bgClearBlue);
+  border-left: 5px solid var(--blue);
+  padding: var(--marginSmall) var(--marginMediumXL) var(--marginXSmall) var(--marginXMedium);
+}
+
+.alertTitle {
+  font-weight: var(--fontWeightBold);
+  display: flex;
+}
+
+.alertIconContainer {
+  font-size: var(--fontSizeRegularBig);
+  margin-right: var(--marginSmall);
+}
+
+.alertIcon:before {
+  color: var(--deepBlue);
+}
+
+.alertDescription {
+  margin: 0;
+}
