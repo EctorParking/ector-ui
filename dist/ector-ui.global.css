@@ -3749,6 +3749,33 @@
   height: 0;
 }
 
+.InformationAlert-module_alert__1wyed {
+  margin-top: 20px;
+  margin-right: 30px;
+  background-color: #ebeff6;
+  border-left: 5px solid #32a0c5;
+  padding: 10px 25px 5px 15px;
+}
+
+.InformationAlert-module_alertTitle__3gVaH {
+  font-weight: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.InformationAlert-module_alertIconContainer__1BM6F {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.InformationAlert-module_alertIcon__23fVN:before {
+  color: #163457;
+}
+
+.InformationAlert-module_alertDescription__4n3PJ {
+  margin: 0;
+}
 .DateTimePicker-module_calendar__1m3vk {
   position: relative;
   width: 100%;
