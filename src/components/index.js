@@ -53,3 +53,4 @@ export { default as Header } from './Header';
 export { default as MenuButton } from './MenuButton';
 export { default as TextIcon } from './TextIcon';
 export { default as ScrollArrow } from './ScrollArrow';
+export { default as InformationAlert } from './InformationAlert';
