@@ -11,6 +11,8 @@
   --fifthColor: #9ca3ff;
   --sixthColor: #59c871;
   --seventhColor: #fefefe;
+  --eighthColor: #a2b4c2;
+  --ninthColor: #ebeff6;
 
   --metalGrey: #d5d6d7;
   --darkMetalGrey: color(#d5d6d7 blackness(20%));
@@ -30,6 +32,8 @@
   --melrose: var(--fifthColor);
   --green: var(--sixthColor);
   --white: var(--seventhColor);
+  --bgrey: var(--eighthColor);
+  --bgClearBlue: var(--ninthColor);
   --splitBorderColor: rgba(191, 196, 212, 0.52);
 
   --bpDesktop: var(--containerWidth);
@@ -39,6 +43,7 @@
   --fontSizeLabel: 11px;
   --fontSizeMedium: 14px;
   --fontSizeRegular: 16px;
+  --fontSizeRegularBig: 20px;
   --fontSizeSubtitle: 22px;
   --fontSizeNewTitle: 30px;
   --fontSizeTitle: 40px;
@@ -69,7 +74,9 @@
   --noMargin: 0;
   --marginXSmall: 5px;
   --marginSmall: 10px;
+  --marginXMedium: 15px;
   --marginMedium: 20px;
+  --marginMediumXL: 25px;
   --marginLarge: 30px;
   --marginMLarge: 40px;
   --marginXLarge: 50px;
