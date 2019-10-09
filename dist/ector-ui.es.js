@@ -3935,10 +3935,6 @@ function createCommonjsModule(fn, module) {
 	return module = { exports: {} }, fn(module, module.exports), module.exports;
 }
 
-function getCjsExportFromNamespace (n) {
-	return n && n.default || n;
-}
-
 var wordwrap_1 = createCommonjsModule(function (module) {
 var wordwrap = module.exports = function (start, stop, params) {
     if (typeof start === 'object') {
@@ -8212,7 +8208,7 @@ var performanceNow = createCommonjsModule(function (module) {
 
 }).call(commonjsGlobal);
 
-
+//# sourceMappingURL=performance-now.js.map
 });
 
 var root = typeof window === 'undefined' ? commonjsGlobal : window
@@ -8810,8 +8806,6 @@ exports.classNamesShape = classNamesShape;
 unwrapExports(PropTypes);
 var PropTypes_1 = PropTypes.classNamesShape;
 var PropTypes_2 = PropTypes.timeoutsShape;
-
-var _reactLifecyclesCompat = getCjsExportFromNamespace(reactLifecyclesCompat_es);
 
 var Transition_1 = createCommonjsModule(function (module, exports) {
 
@@ -9418,7 +9412,7 @@ Transition.ENTERING = 2;
 Transition.ENTERED = 3;
 Transition.EXITING = 4;
 
-var _default = (0, _reactLifecyclesCompat.polyfill)(Transition);
+var _default = (0, reactLifecyclesCompat_es.polyfill)(Transition);
 
 exports.default = _default;
 });
@@ -10139,7 +10133,7 @@ TransitionGroup.propTypes = process.env.NODE_ENV !== "production" ? {
 } : {};
 TransitionGroup.defaultProps = defaultProps;
 
-var _default = (0, _reactLifecyclesCompat.polyfill)(TransitionGroup);
+var _default = (0, reactLifecyclesCompat_es.polyfill)(TransitionGroup);
 
 exports.default = _default;
 module.exports = exports["default"];
@@ -16259,12 +16253,13 @@ ScrollArrow.propTypes = {
   getBottomScrollLimit: PropTypes$1.func.isRequired
 };
 
-var css$1d = ".InformationAlert-module_alert__1wyed {\n  margin-top: 20px;\n  margin-right: 30px;\n  background-color: #ebeff6;\n  border-left: 5px solid #32a0c5;\n  padding: 10px 25px 5px 15px;\n}\n\n.InformationAlert-module_alertTitle__3gVaH {\n  font-weight: 700;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.InformationAlert-module_alertIconContainer__1BM6F {\n  font-size: 20px;\n  margin-right: 10px;\n}\n\n.InformationAlert-module_alertIcon__23fVN:before {\n  color: #163457;\n}\n\n.InformationAlert-module_alertDescription__4n3PJ {\n  margin: 0;\n}";
-var s$1b = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","alert":"InformationAlert-module_alert__1wyed","alertTitle":"InformationAlert-module_alertTitle__3gVaH","alertIconContainer":"InformationAlert-module_alertIconContainer__1BM6F","alertIcon":"InformationAlert-module_alertIcon__23fVN","alertDescription":"InformationAlert-module_alertDescription__4n3PJ"};
+var css$1d = ".InformationAlert-module_alert__1wyed {\n  margin-top: 20px;\n  margin-right: 30px;\n  background-color: #ebeff6;\n  border-left: 5px solid #32a0c5;\n  padding: 10px 25px 5px 15px;\n}\n\n.InformationAlert-module_alertTitle__3gVaH {\n  font-weight: 700;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.InformationAlert-module_alertIconContainer__1BM6F {\n  font-size: 20px;\n  margin-right: 10px;\n}\n\n.InformationAlert-module_alertDescription__4n3PJ {\n  margin: 0;\n}";
+var s$1b = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","alert":"InformationAlert-module_alert__1wyed","alertTitle":"InformationAlert-module_alertTitle__3gVaH","alertIconContainer":"InformationAlert-module_alertIconContainer__1BM6F","alertDescription":"InformationAlert-module_alertDescription__4n3PJ"};
 styleInject(css$1d);
 
 var InformationAlert = function InformationAlert(_ref) {
   var className = _ref.className,
+      classNameIcon = _ref.classNameIcon,
       title = _ref.title,
       description = _ref.description;
   return React__default.createElement("div", {
@@ -16275,7 +16270,7 @@ var InformationAlert = function InformationAlert(_ref) {
     name: "ec-info",
     variant: "none",
     className: s$1b.alertIconContainer,
-    iconClassName: s$1b.alertIcon
+    iconClassName: classNameIcon
   }), title), React__default.createElement("p", {
     className: s$1b.alertDescription
   }, description));
@@ -16284,12 +16279,14 @@ var InformationAlert = function InformationAlert(_ref) {
 InformationAlert.defaultProps = {
   title: '',
   description: '',
-  className: ''
+  className: '',
+  classNameIcon: ''
 };
 InformationAlert.propTypes = {
   title: PropTypes$1.string,
   description: PropTypes$1.string,
-  className: PropTypes$1.string
+  className: PropTypes$1.string,
+  classNameIcon: PropTypes$1.string
 };
 
 var css$1e = ".DateTimePicker-module_calendar__1m3vk {\n  position: relative;\n  width: 100%;\n  height: 300px;\n}\n\n.DateTimePicker-module_calendarArrow__SvtwN {\n  display: none;\n}\n\n.DateTimePicker-module_datePickerPopper__2V2oe {\n  -webkit-transform: none !important;\n          transform: none !important;\n  width: 100%;\n  margin-top: 0 !important;\n}\n\n.DateTimePicker-module_hidden__OvFBm {\n  display: none !important;\n}\n\n.DateTimePicker-module_pickerSuggestions__38iqg {\n  width: 610px !important;\n  margin-left: -300px;\n  left: 50%;\n  height: 265px !important\n}\n\n.DateTimePicker-module_pickerSuggestions__38iqg:before {\n  display: none;\n}\n\n.DateTimePicker-module_suggestionsArrow__2RcKh {\n  margin-left: -9px;\n}\n\n.DateTimePicker-module_picker__3d7nO {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  height: auto;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP {\n  background: none;\n  padding-left: 40px;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.datePickerInput::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.datePickerInput::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_fixedWidthDateInput__3lrKo {\n  min-width: 160px;\n  width: 160px;\n  max-width: 160px;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU {\n  border: none !important;\n  border-radius: 8px;\n  max-width: 100px;\n  padding-left: 35px;\n  margin-right: 1px;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.timePickerInput::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.timePickerInput::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInputContainer__ROeTv::before {\n  background-color: rgba(191, 196, 212, .52);\n  content: '';\n  height: 20px;\n  margin-top: -10px;\n  position: absolute;\n  top: 50%;\n  width: 1px;\n}\n\n.DateTimePicker-module_timeSuggestions__3aCiQ {\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  position: relative;\n}\n\n.DateTimePicker-module_timeSuggestionsContainer__3Pe8K:nth-child(1) {\n  width: 300px;\n  min-width: 300px;\n}\n\n.DateTimePicker-module_timeSuggestionsContainer__3Pe8K {\n  width: 100%;\n}\n\n.DateTimePicker-module_inputIcon__178Nw {\n  font-size: 19.2px;\n  font-size: 19.2px;\n  font-size: 1.2rem;\n  left: 10px;\n}\n\n.DateTimePicker-module_inputError__2-au6 {\n  color: #ff5757;\n}\n\n.DateTimePicker-module_inputError__2-au6::-webkit-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputError__2-au6::-ms-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.inputError::-webkit-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.inputError::-ms-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputError__2-au6::placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputError__2-au6:-ms-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputError__2-au6::-ms-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputContainer__1FIAJ {\n  padding: 0;\n}\n\n.DateTimePicker-module_splitInputContainer__1fsjs {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  width: 50%\n}\n\n.DateTimePicker-module_splitInputContainer__1fsjs:first-child {\n  border-right: 1px solid rgba(191, 196, 212, .52);\n}\n\n.DateTimePicker-module_month__2AwNj {\n  color: #163457;\n}\n\n.DateTimePicker-module_hr__1p2EJ {\n  height: 85%;\n  width: 1px;\n  position: absolute;\n  left: 300px;\n  background-color: rgba(191, 196, 212, .52);\n  top: 7.5%;\n}\n";
