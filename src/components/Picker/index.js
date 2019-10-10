@@ -54,7 +54,7 @@ class Picker extends React.PureComponent {
   };
 
   hideSuggestions() {
-    this.setState({ infoVisible: false, info: '', suggestionsVisible: false });
+    this.setState({ infoVisible: false, suggestionsVisible: false });
   }
 
   render() {
