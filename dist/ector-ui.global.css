@@ -1,3 +1,40 @@
+.FlightSelectorRow-module_row__1Xacd {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  -webkit-column-gap: 8px;
+          column-gap: 8px;
+  height: 190px;
+}
+
+
+
+.IconFixed-module_icon__2LlpT {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+
+
+.FlightSelector-module_filters__3I-lr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.FlightSelector-module_list__1YS5p {
+  height: 450px;
+  overflow: auto;
+}
+
+.FlightSelector-module_help__i4FmB {
+  margin-top: 8px;
+  text-align: right;
+}
+
 .ActionLink-module_container__1snmH {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -3772,6 +3809,16 @@
 .InformationAlert-module_alertDescription__4n3PJ {
   margin: 0;
 }
+.IconPatched-module_icon__2dhg3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+
 .DateTimePicker-module_calendar__1m3vk {
   position: relative;
   width: 100%;

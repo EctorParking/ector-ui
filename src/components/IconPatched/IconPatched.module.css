@@ -1,0 +1,10 @@
+.icon {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.icon > * {
+  z-index: unset;
+}
