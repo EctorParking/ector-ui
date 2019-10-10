@@ -1,0 +1,16 @@
+@import '../../style/variable.global.css';
+
+.button {
+  align-items: center;
+  border-radius: var(--borderRadius );
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.5);
+  color: var(--firstColor);
+  display: flex;
+  justify-content: center;
+  line-height: var(--lineHeight);
+  padding: var(--marginXMedium);
+}
+
+.label {
+  margin-left: var(--marginSmall);
+}

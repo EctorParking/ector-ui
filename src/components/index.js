@@ -55,3 +55,4 @@ export { default as TextIcon } from './TextIcon';
 export { default as ScrollArrow } from './ScrollArrow';
 export { default as InformationAlert } from './InformationAlert';
 export { default as IconPatched } from './IconPatched';
+export { default as IconButton } from './IconButton';
