@@ -5007,9 +5007,7 @@ function (_React$PureComponent) {
   }, {
     key: "componentWillReceiveProps",
     value: function componentWillReceiveProps(newProps) {
-      var _this$props2 = this.props,
-          oldInfo = _this$props2.info,
-          oldError = _this$props2.error;
+      var oldError = this.props.error;
       var newInfo = newProps.info,
           newError = newProps.error;
 
@@ -5017,7 +5015,7 @@ function (_React$PureComponent) {
         this.setState({
           errorVisible: !!newError
         });
-      } else if (newInfo !== oldInfo) {
+      } else if (newInfo) {
         this.setState({
           infoVisible: !!newInfo
         });
@@ -5034,23 +5032,22 @@ function (_React$PureComponent) {
     value: function hideSuggestions() {
       this.setState({
         infoVisible: false,
-        info: '',
         suggestionsVisible: false
       });
     }
   }, {
     key: "render",
     value: function render() {
-      var _this$props3 = this.props,
-          split = _this$props3.split,
-          SuggestionsComponent = _this$props3.SuggestionsComponent,
-          FirstInputComponent = _this$props3.FirstInputComponent,
-          SecondInputComponent = _this$props3.SecondInputComponent,
-          firstValue = _this$props3.firstValue,
-          secondValue = _this$props3.secondValue,
-          className = _this$props3.className,
-          error = _this$props3.error,
-          info = _this$props3.info;
+      var _this$props2 = this.props,
+          split = _this$props2.split,
+          SuggestionsComponent = _this$props2.SuggestionsComponent,
+          FirstInputComponent = _this$props2.FirstInputComponent,
+          SecondInputComponent = _this$props2.SecondInputComponent,
+          firstValue = _this$props2.firstValue,
+          secondValue = _this$props2.secondValue,
+          className = _this$props2.className,
+          error = _this$props2.error,
+          info = _this$props2.info;
       var _this$state = this.state,
           infoVisible = _this$state.infoVisible,
           errorVisible = _this$state.errorVisible,

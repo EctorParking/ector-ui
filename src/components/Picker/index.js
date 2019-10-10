@@ -24,12 +24,12 @@ class Picker extends React.PureComponent {
   }
 
   componentWillReceiveProps(newProps) {
-    const { info: oldInfo, error: oldError } = this.props;
+    const { error: oldError } = this.props;
     const { info: newInfo, error: newError } = newProps;
 
     if (newError !== oldError) {
       this.setState({ errorVisible: !!newError });
-    } else if (newInfo !== oldInfo) {
+    } else if (newInfo) {
       this.setState({ infoVisible: !!newInfo });
     }
   }
