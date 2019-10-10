@@ -4992,9 +4992,7 @@ function (_React$PureComponent) {
         error = _this$props.error;
     _this.state = {
       suggestionsVisible: false,
-      info: info,
       infoVisible: !!info,
-      error: error,
       errorVisible: !!error
     };
     return _this;
@@ -5009,60 +5007,19 @@ function (_React$PureComponent) {
   }, {
     key: "componentWillReceiveProps",
     value: function componentWillReceiveProps(newProps) {
-      var _this2 = this;
-
-      var _this$state = this.state,
-          info = _this$state.info,
-          error = _this$state.error;
+      var _this$props2 = this.props,
+          oldInfo = _this$props2.info,
+          oldError = _this$props2.error;
       var newInfo = newProps.info,
           newError = newProps.error;
 
-      var setNewError = function setNewError() {
-        return _this2.setState({
-          error: newError,
-          errorVisible: true
-        });
-      };
-
-      if (error === '') {
-        setNewError();
-      } else {
+      if (newError !== oldError) {
         this.setState({
-          error: '',
-          errorVisible: false
-        }, function () {
-          setTimeout(setNewError, 200);
+          errorVisible: !!newError
         });
-      }
-
-      if (!error) {
-        if (newInfo !== info) {
-          var setNewInfo = function setNewInfo() {
-            return _this2.setState({
-              info: newInfo,
-              infoVisible: true
-            });
-          };
-
-          if (info === '') {
-            setNewInfo();
-          } else {
-            this.setState({
-              info: '',
-              infoVisible: false
-            }, function () {
-              setTimeout(setNewInfo, 200);
-            });
-          }
-        } else {
-          this.setState({
-            infoVisible: true
-          });
-        }
-      } else {
+      } else if (newInfo !== oldInfo) {
         this.setState({
-          info: '',
-          infoVisible: false
+          infoVisible: !!newInfo
         });
       }
     }
@@ -5084,20 +5041,20 @@ function (_React$PureComponent) {
   }, {
     key: "render",
     value: function render() {
-      var _this$props2 = this.props,
-          split = _this$props2.split,
-          SuggestionsComponent = _this$props2.SuggestionsComponent,
-          FirstInputComponent = _this$props2.FirstInputComponent,
-          SecondInputComponent = _this$props2.SecondInputComponent,
-          firstValue = _this$props2.firstValue,
-          secondValue = _this$props2.secondValue,
-          className = _this$props2.className;
-      var _this$state2 = this.state,
-          info = _this$state2.info,
-          infoVisible = _this$state2.infoVisible,
-          error = _this$state2.error,
-          errorVisible = _this$state2.errorVisible,
-          suggestionsVisible = _this$state2.suggestionsVisible;
+      var _this$props3 = this.props,
+          split = _this$props3.split,
+          SuggestionsComponent = _this$props3.SuggestionsComponent,
+          FirstInputComponent = _this$props3.FirstInputComponent,
+          SecondInputComponent = _this$props3.SecondInputComponent,
+          firstValue = _this$props3.firstValue,
+          secondValue = _this$props3.secondValue,
+          className = _this$props3.className,
+          error = _this$props3.error,
+          info = _this$props3.info;
+      var _this$state = this.state,
+          infoVisible = _this$state.infoVisible,
+          errorVisible = _this$state.errorVisible,
+          suggestionsVisible = _this$state.suggestionsVisible;
       var hasInfo = info && info !== '';
       var hasError = error && error !== '';
       return React__default.createElement("div", {
