@@ -13,9 +13,7 @@ class Picker extends React.PureComponent {
 
     this.state = {
       suggestionsVisible: false,
-      info,
       infoVisible: !!info,
-      error,
       errorVisible: !!error,
     };
   }
@@ -26,35 +24,13 @@ class Picker extends React.PureComponent {
   }
 
   componentWillReceiveProps(newProps) {
-    const { info, error } = this.state;
+    const { info: oldInfo, error: oldError } = this.props;
     const { info: newInfo, error: newError } = newProps;
 
-    const setNewError = () => this.setState({ error: newError, errorVisible: true });
-
-    if (error === '') {
-      setNewError();
-    } else {
-      this.setState({ error: '', errorVisible: false }, () => {
-        setTimeout(setNewError, 200);
-      });
-    }
-
-    if (!error) {
-      if (newInfo !== info) {
-        const setNewInfo = () => this.setState({ info: newInfo, infoVisible: true });
-
-        if (info === '') {
-          setNewInfo();
-        } else {
-          this.setState({ info: '', infoVisible: false }, () => {
-            setTimeout(setNewInfo, 200);
-          });
-        }
-      } else {
-        this.setState({ infoVisible: true });
-      }
-    } else {
-      this.setState({ info: '', infoVisible: false });
+    if (newError !== oldError) {
+      this.setState({ errorVisible: !!newError });
+    } else if (newInfo !== oldInfo) {
+      this.setState({ infoVisible: !!newInfo });
     }
   }
 
@@ -78,7 +54,7 @@ class Picker extends React.PureComponent {
   };
 
   hideSuggestions() {
-    this.setState({ infoVisible: false, info: '', suggestionsVisible: false });
+    this.setState({ infoVisible: false, suggestionsVisible: false });
   }
 
   render() {
@@ -90,11 +66,11 @@ class Picker extends React.PureComponent {
       firstValue,
       secondValue,
       className,
+      error,
+      info,
     } = this.props;
     const {
-      info,
       infoVisible,
-      error,
       errorVisible,
       suggestionsVisible,
     } = this.state;
