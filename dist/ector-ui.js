@@ -5025,7 +5025,7 @@ function (_React$PureComponent) {
         this.setState({
           errorVisible: !!newError
         });
-      } else if (newInfo !== oldInfo) {
+      } else if (newInfo) {
         this.setState({
           infoVisible: !!newInfo
         });
@@ -5042,7 +5042,6 @@ function (_React$PureComponent) {
     value: function hideSuggestions() {
       this.setState({
         infoVisible: false,
-        info: '',
         suggestionsVisible: false
       });
     }

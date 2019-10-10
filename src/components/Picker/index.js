@@ -29,7 +29,7 @@ class Picker extends React.PureComponent {
 
     if (newError !== oldError) {
       this.setState({ errorVisible: !!newError });
-    } else if (newInfo !== oldInfo) {
+    } else if (newInfo) {
       this.setState({ infoVisible: !!newInfo });
     }
   }
