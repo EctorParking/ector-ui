@@ -5429,7 +5429,8 @@ function (_PureComponent) {
           fromZoneSuggestions = _this$props3.fromZoneSuggestions,
           toZoneSuggestions = _this$props3.toZoneSuggestions,
           texts = _this$props3.texts,
-          onSplit = _this$props3.onSplit;
+          onSplit = _this$props3.onSplit,
+          ArrowIcon = _this$props3.ArrowIcon;
       var visibleArrows = this.state.visibleArrows;
       return React__default.createElement(PickerSuggestions, {
         visible: visible
@@ -5443,7 +5444,8 @@ function (_PureComponent) {
         getBottomScrollLimit: this.getFromZonesContainerBottomScrollLimit,
         scrollTo: this.fromZonesScrollTo,
         onHide: this.hideTopFromZonesArrow,
-        onShow: this.showTopFromZonesArrow
+        onShow: this.showTopFromZonesArrow,
+        Icon: ArrowIcon
       }), React__default.createElement("div", {
         className: [s$$.suggestions, visible ? s$$.visible : undefined].join(' '),
         ref: this.fromZonesContainer,
@@ -5457,7 +5459,8 @@ function (_PureComponent) {
         getBottomScrollLimit: this.getFromZonesContainerBottomScrollLimit,
         scrollTo: this.fromZonesScrollTo,
         onHide: this.hideBottomFromZonesArrow,
-        onShow: this.showBottomFromZonesArrow
+        onShow: this.showBottomFromZonesArrow,
+        Icon: ArrowIcon
       }), React__default.createElement(ScrollArrow, {
         visible: visibleArrows[ZonesPickerSuggestions.topToZoneArrow],
         className: [s$$.arrowContainer, s$$.topArrow, split ? s$$.rightArrow : s$$.hiddenArrow].join(' '),
@@ -5466,7 +5469,8 @@ function (_PureComponent) {
         getBottomScrollLimit: this.getToZonesContainerBottomScrollLimit,
         scrollTo: this.toZonesScrollTo,
         onHide: this.hideTopToZonesArrow,
-        onShow: this.showTopToZonesArrow
+        onShow: this.showTopToZonesArrow,
+        Icon: ArrowIcon
       }), React__default.createElement("div", {
         className: [s$$.suggestions, visible && split ? s$$.visible : undefined].join(' '),
         ref: this.toZonesContainer,
@@ -5480,7 +5484,8 @@ function (_PureComponent) {
         getBottomScrollLimit: this.getToZonesContainerBottomScrollLimit,
         scrollTo: this.toZonesScrollTo,
         onHide: this.hideBottomToZonesArrow,
-        onShow: this.showBottomToZonesArrow
+        onShow: this.showBottomToZonesArrow,
+        Icon: ArrowIcon
       })), React__default.createElement("div", {
         className: [s$$.suggestionAction, visible ? s$$.suggestionActionVisible : undefined].join(' ')
       }, React__default.createElement(InputCheckbox, {
@@ -5505,6 +5510,9 @@ ZonesPickerSuggestions.defaultProps = {
   searchTo: '',
   ZoneSuggestionIcon: function ZoneSuggestionIcon() {
     return null;
+  },
+  ArrowIcon: function ArrowIcon() {
+    return null;
   }
 };
 ZonesPickerSuggestions.propTypes = {
@@ -5518,7 +5526,8 @@ ZonesPickerSuggestions.propTypes = {
   texts: PropTypes$1.shape().isRequired,
   searchFrom: PropTypes$1.string,
   searchTo: PropTypes$1.string,
-  ZoneSuggestionIcon: PropTypes$1.func
+  ZoneSuggestionIcon: PropTypes$1.func,
+  ArrowIcon: PropTypes$1.func
 };
 ZonesPickerSuggestions.topFromZoneArrow = 'topFromZoneArrow';
 ZonesPickerSuggestions.bottomFromZoneArrow = 'bottomFromZoneArrow';
@@ -5916,7 +5925,8 @@ function (_React$PureComponent) {
     _defineProperty(_assertThisInitialized(_this), "renderSuggestionsComponent", function (pickerSuggestionsProps) {
       var _this$props = _this.props,
           texts = _this$props.texts,
-          ZoneSuggestionIcon = _this$props.ZoneSuggestionIcon;
+          ZoneSuggestionIcon = _this$props.ZoneSuggestionIcon,
+          ArrowIcon = _this$props.ArrowIcon;
       var _this$state3 = _this.state,
           split = _this$state3.split,
           fromZoneSuggestions = _this$state3.fromZoneSuggestions,
@@ -5933,7 +5943,8 @@ function (_React$PureComponent) {
         onToZoneClick: _this.handleToZoneClick,
         searchFrom: fromZoneValue,
         searchTo: toZoneValue,
-        ZoneSuggestionIcon: ZoneSuggestionIcon
+        ZoneSuggestionIcon: ZoneSuggestionIcon,
+        ArrowIcon: ArrowIcon
       }));
     });
 
@@ -5985,6 +5996,9 @@ ZonesPicker.defaultProps = {
   ZoneSuggestionIcon: function ZoneSuggestionIcon() {
     return null;
   },
+  ArrowIcon: function ArrowIcon() {
+    return null;
+  },
   split: undefined
 };
 ZonesPicker.propTypes = {
@@ -5998,7 +6012,8 @@ ZonesPicker.propTypes = {
   error: PropTypes$1.string,
   onSplitSuggestions: PropTypes$1.func,
   split: PropTypes$1.bool,
-  ZoneSuggestionIcon: PropTypes$1.func
+  ZoneSuggestionIcon: PropTypes$1.func,
+  ArrowIcon: PropTypes$1.func
 };
 ZonesPicker.fromZone = 'from';
 ZonesPicker.toZone = 'to';
@@ -16189,7 +16204,8 @@ function (_PureComponent) {
           visible = _this$props3.visible,
           direction = _this$props3.direction,
           className = _this$props3.className,
-          style = _this$props3.style;
+          style = _this$props3.style,
+          Icon = _this$props3.Icon;
       return React__default.createElement("div", {
         role: "presentation",
         style: style,
@@ -16197,7 +16213,9 @@ function (_PureComponent) {
         onMouseLeave: this.handleMouseLeave,
         onMouseEnter: this.handleScrollHover,
         onClick: this.resetScroll
-      }, React__default.createElement("i", {
+      }, Icon() ? React__default.createElement(Icon, {
+        direction: direction
+      }) : React__default.createElement("i", {
         className: ["icon icon-chevron-thin-".concat(direction), s$1a.arrowIcon, visible ? undefined : s$1a.hiddenIcon].join(' ')
       }));
     }
@@ -16226,7 +16244,8 @@ ScrollArrow.defaultProps = {
   direction: ScrollArrow.up,
   className: undefined,
   style: undefined,
-  scrollTo: null
+  scrollTo: null,
+  Icon: null
 };
 ScrollArrow.propTypes = {
   visible: PropTypes$1.bool,
@@ -16237,7 +16256,8 @@ ScrollArrow.propTypes = {
   style: PropTypes$1.shape(),
   getScrollTop: PropTypes$1.func.isRequired,
   scrollTo: PropTypes$1.func,
-  getBottomScrollLimit: PropTypes$1.func.isRequired
+  getBottomScrollLimit: PropTypes$1.func.isRequired,
+  Icon: PropTypes$1.func
 };
 
 var css$1d = ".InformationAlert-module_alert__1wyed {\n  margin-top: 20px;\n  margin-right: 30px;\n  background-color: #ebeff6;\n  border-left: 5px solid #32a0c5;\n  padding: 10px 25px 5px 15px;\n}\n\n.InformationAlert-module_alertTitle__3gVaH {\n  font-weight: 700;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.InformationAlert-module_alertIconContainer__1BM6F {\n  font-size: 20px;\n  margin-right: 10px;\n}\n\n.InformationAlert-module_alertDescription__4n3PJ {\n  margin: 0;\n}";

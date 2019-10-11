@@ -169,7 +169,7 @@ class ZonesPickerSuggestions extends PureComponent {
 
   render() {
     const {
-      visible, split, fromZoneSuggestions, toZoneSuggestions, texts, onSplit,
+      visible, split, fromZoneSuggestions, toZoneSuggestions, texts, onSplit, ArrowIcon,
     } = this.props;
     const { visibleArrows } = this.state;
 
@@ -185,6 +185,7 @@ class ZonesPickerSuggestions extends PureComponent {
             scrollTo={this.fromZonesScrollTo}
             onHide={this.hideTopFromZonesArrow}
             onShow={this.showTopFromZonesArrow}
+            Icon={ArrowIcon}
           />
           <div
             className={[s.suggestions, visible ? s.visible : undefined].join(' ')}
@@ -203,6 +204,7 @@ class ZonesPickerSuggestions extends PureComponent {
             scrollTo={this.fromZonesScrollTo}
             onHide={this.hideBottomFromZonesArrow}
             onShow={this.showBottomFromZonesArrow}
+            Icon={ArrowIcon}
           />
           <ScrollArrow
             visible={visibleArrows[ZonesPickerSuggestions.topToZoneArrow]}
@@ -213,6 +215,7 @@ class ZonesPickerSuggestions extends PureComponent {
             scrollTo={this.toZonesScrollTo}
             onHide={this.hideTopToZonesArrow}
             onShow={this.showTopToZonesArrow}
+            Icon={ArrowIcon}
           />
           <div
             className={[s.suggestions, visible && split ? s.visible : undefined].join(' ')}
@@ -231,6 +234,7 @@ class ZonesPickerSuggestions extends PureComponent {
             scrollTo={this.toZonesScrollTo}
             onHide={this.hideBottomToZonesArrow}
             onShow={this.showBottomToZonesArrow}
+            Icon={ArrowIcon}
           />
         </div>
         <div className={[s.suggestionAction, visible ? s.suggestionActionVisible : undefined].join(' ')}>
@@ -254,6 +258,7 @@ ZonesPickerSuggestions.defaultProps = {
   searchFrom: '',
   searchTo: '',
   ZoneSuggestionIcon: () => null,
+  ArrowIcon: () => null,
 };
 
 ZonesPickerSuggestions.propTypes = {
@@ -268,6 +273,7 @@ ZonesPickerSuggestions.propTypes = {
   searchFrom: PropTypes.string,
   searchTo: PropTypes.string,
   ZoneSuggestionIcon: PropTypes.func,
+  ArrowIcon: PropTypes.func,
 };
 
 ZonesPickerSuggestions.topFromZoneArrow = 'topFromZoneArrow';

@@ -44,10 +44,6 @@ class ZonePickerStory extends React.PureComponent {
         fromZoneSuggestions={fromZoneSuggestions}
         toZoneSuggestions={toZoneSuggestions}
         error={error}
-        ZoneSuggestionIcon={(props) => {
-          console.log('props: ', props);
-          return (<Icon name="ec-airport" />)
-        }}
       />
     );
   }

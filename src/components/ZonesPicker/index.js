@@ -297,7 +297,7 @@ class ZonesPicker extends React.PureComponent {
   };
 
   renderSuggestionsComponent = (pickerSuggestionsProps) => {
-    const { texts, ZoneSuggestionIcon } = this.props;
+    const { texts, ZoneSuggestionIcon, ArrowIcon } = this.props;
     const {
       split,
       fromZoneSuggestions,
@@ -319,6 +319,7 @@ class ZonesPicker extends React.PureComponent {
         searchFrom={fromZoneValue}
         searchTo={toZoneValue}
         ZoneSuggestionIcon={ZoneSuggestionIcon}
+        ArrowIcon={ArrowIcon}
       />
     );
   };
@@ -354,6 +355,7 @@ ZonesPicker.defaultProps = {
   error: '',
   onSplitSuggestions: () => null,
   ZoneSuggestionIcon: () => null,
+  ArrowIcon: () => null,
   split: undefined,
 };
 
@@ -369,6 +371,7 @@ ZonesPicker.propTypes = {
   onSplitSuggestions: PropTypes.func,
   split: PropTypes.bool,
   ZoneSuggestionIcon: PropTypes.func,
+  ArrowIcon: PropTypes.func,
 };
 
 ZonesPicker.fromZone = 'from';
