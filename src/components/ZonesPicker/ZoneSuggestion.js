@@ -25,31 +25,35 @@ IconComponent.propTypes = {
 };
 
 const ZoneSuggestion = ({
-  value, onClick, selected, disabled, className, search, ...rest
-}) => (
-  <span
-    role="presentation"
-    className={[s.suggestion, selected ? s.selected : undefined, disabled ? s.disabled : undefined, className].join(' ')}
-    onClick={onClick}
-    {...rest}
-  >
-    <Icon
-      type={value.type}
-      name={ZoneTypesToIconName[value.type]}
-      variant={disabled ? 'grey' : 'blue'}
-      position="left"
-      className={[s.icon, disabled ? s.disabled : s.activeIcon].join(' ')}
-      IconComponent={IconComponent}
-    />
+  value, onClick, selected, disabled, className, search, Icon: IconProps, ...rest
+}) => {
+  const IconComputed = IconProps() ? IconProps : Icon;
+
+  return (
     <span
-      className={s.zoneName}
-      // eslint-disable-next-line react/no-danger
-      dangerouslySetInnerHTML={{
-        __html: value.name.replace(new RegExp(`(${search})`, 'i'), '<strong>$1</strong>'),
-      }}
-    />
-  </span>
-);
+      role="presentation"
+      className={[s.suggestion, selected ? s.selected : undefined, disabled ? s.disabled : undefined, className].join(' ')}
+      onClick={onClick}
+      {...rest}
+    >
+      <IconComputed
+        type={value.type}
+        name={ZoneTypesToIconName[value.type]}
+        variant={disabled ? 'grey' : 'blue'}
+        position="left"
+        className={[s.icon, disabled ? s.disabled : s.activeIcon].join(' ')}
+        IconComponent={IconComponent}
+      />
+      <span
+        className={s.zoneName}
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{
+          __html: value.name.replace(new RegExp(`(${search})`, 'i'), '<strong>$1</strong>'),
+        }}
+      />
+    </span>
+  );
+};
 
 ZoneSuggestion.defaultProps = {
   className: undefined,
@@ -57,6 +61,7 @@ ZoneSuggestion.defaultProps = {
   disabled: false,
   onClick: () => null,
   search: '',
+  Icon: undefined,
 };
 
 ZoneSuggestion.propTypes = {
@@ -66,6 +71,7 @@ ZoneSuggestion.propTypes = {
   disabled: PropTypes.bool,
   className: PropTypes.string,
   search: PropTypes.string,
+  Icon: PropTypes.func,
 };
 
 export default ZoneSuggestion;

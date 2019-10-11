@@ -5,6 +5,7 @@ import centered from '@storybook/addon-centered';
 import { withKnobs, text } from '@storybook/addon-knobs';
 import ZonesPicker from '.';
 import Suggestions from './Zones.json';
+import Icon from "../Icon";
 
 class ZonePickerStory extends React.PureComponent {
   state = {
@@ -43,6 +44,10 @@ class ZonePickerStory extends React.PureComponent {
         fromZoneSuggestions={fromZoneSuggestions}
         toZoneSuggestions={toZoneSuggestions}
         error={error}
+        ZoneSuggestionIcon={(props) => {
+          console.log('props: ', props);
+          return (<Icon name="ec-airport" />)
+        }}
       />
     );
   }

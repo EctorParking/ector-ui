@@ -5232,13 +5232,15 @@ var ZoneSuggestion = function ZoneSuggestion(_ref2) {
       disabled = _ref2.disabled,
       className = _ref2.className,
       search = _ref2.search,
-      rest = _objectWithoutProperties(_ref2, ["value", "onClick", "selected", "disabled", "className", "search"]);
+      IconProps = _ref2.Icon,
+      rest = _objectWithoutProperties(_ref2, ["value", "onClick", "selected", "disabled", "className", "search", "Icon"]);
 
+  var IconComputed = IconProps() ? IconProps : Icon;
   return React__default.createElement("span", _extends({
     role: "presentation",
     className: [s$10.suggestion, selected ? s$10.selected : undefined, disabled ? s$10.disabled : undefined, className].join(' '),
     onClick: onClick
-  }, rest), React__default.createElement(Icon, {
+  }, rest), React__default.createElement(IconComputed, {
     type: value.type,
     name: ZoneTypesToIconName[value.type],
     variant: disabled ? 'grey' : 'blue',
@@ -5261,7 +5263,8 @@ ZoneSuggestion.defaultProps = {
   onClick: function onClick() {
     return null;
   },
-  search: ''
+  search: '',
+  Icon: undefined
 };
 ZoneSuggestion.propTypes = {
   value: Type.isRequired,
@@ -5269,7 +5272,8 @@ ZoneSuggestion.propTypes = {
   selected: PropTypes$1.bool,
   disabled: PropTypes$1.bool,
   className: PropTypes$1.string,
-  search: PropTypes$1.string
+  search: PropTypes$1.string,
+  Icon: PropTypes$1.func
 };
 
 var ZonesPickerSuggestions =
@@ -5327,7 +5331,8 @@ function (_PureComponent) {
     _defineProperty(_assertThisInitialized(_this), "renderFromZoneSuggestion", function (zone) {
       var _this$props = _this.props,
           onFromZoneClick = _this$props.onFromZoneClick,
-          searchFrom = _this$props.searchFrom;
+          searchFrom = _this$props.searchFrom,
+          ZoneSuggestionIcon = _this$props.ZoneSuggestionIcon;
       return React__default.createElement(ZoneSuggestion, {
         value: zone,
         key: zone.code,
@@ -5335,14 +5340,16 @@ function (_PureComponent) {
           return onFromZoneClick(zone);
         },
         disabled: zone.disabled,
-        search: searchFrom
+        search: searchFrom,
+        Icon: ZoneSuggestionIcon
       });
     });
 
     _defineProperty(_assertThisInitialized(_this), "renderToZoneSuggestion", function (zone) {
       var _this$props2 = _this.props,
           onToZoneClick = _this$props2.onToZoneClick,
-          searchTo = _this$props2.searchTo;
+          searchTo = _this$props2.searchTo,
+          ZoneSuggestionIcon = _this$props2.ZoneSuggestionIcon;
       return React__default.createElement(ZoneSuggestion, {
         value: zone,
         key: zone.code,
@@ -5351,7 +5358,8 @@ function (_PureComponent) {
         },
         disabled: zone.disabled,
         className: s$$.toZoneSuggestion,
-        search: searchTo
+        search: searchTo,
+        Icon: ZoneSuggestionIcon
       });
     });
 
@@ -5494,7 +5502,10 @@ ZonesPickerSuggestions.defaultProps = {
   fromZoneSuggestions: [],
   toZoneSuggestions: [],
   searchFrom: '',
-  searchTo: ''
+  searchTo: '',
+  ZoneSuggestionIcon: function ZoneSuggestionIcon() {
+    return null;
+  }
 };
 ZonesPickerSuggestions.propTypes = {
   onFromZoneClick: PropTypes$1.func,
@@ -5506,7 +5517,8 @@ ZonesPickerSuggestions.propTypes = {
   toZoneSuggestions: PropTypes$1.arrayOf(Type),
   texts: PropTypes$1.shape().isRequired,
   searchFrom: PropTypes$1.string,
-  searchTo: PropTypes$1.string
+  searchTo: PropTypes$1.string,
+  ZoneSuggestionIcon: PropTypes$1.func
 };
 ZonesPickerSuggestions.topFromZoneArrow = 'topFromZoneArrow';
 ZonesPickerSuggestions.bottomFromZoneArrow = 'bottomFromZoneArrow';
@@ -5902,7 +5914,9 @@ function (_React$PureComponent) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "renderSuggestionsComponent", function (pickerSuggestionsProps) {
-      var texts = _this.props.texts;
+      var _this$props = _this.props,
+          texts = _this$props.texts,
+          ZoneSuggestionIcon = _this$props.ZoneSuggestionIcon;
       var _this$state3 = _this.state,
           split = _this$state3.split,
           fromZoneSuggestions = _this$state3.fromZoneSuggestions,
@@ -5918,7 +5932,8 @@ function (_React$PureComponent) {
         onFromZoneClick: _this.handleFromZoneClick,
         onToZoneClick: _this.handleToZoneClick,
         searchFrom: fromZoneValue,
-        searchTo: toZoneValue
+        searchTo: toZoneValue,
+        ZoneSuggestionIcon: ZoneSuggestionIcon
       }));
     });
 
@@ -5933,9 +5948,9 @@ function (_React$PureComponent) {
           split = _this$state4.split,
           fromZoneValue = _this$state4.fromZoneValue,
           toZoneValue = _this$state4.toZoneValue;
-      var _this$props = this.props,
-          error = _this$props.error,
-          className = _this$props.className;
+      var _this$props2 = this.props,
+          error = _this$props2.error,
+          className = _this$props2.className;
       return React.createElement(Picker, {
         ref: this.picker,
         split: split,
@@ -5967,6 +5982,9 @@ ZonesPicker.defaultProps = {
   onSplitSuggestions: function onSplitSuggestions() {
     return null;
   },
+  ZoneSuggestionIcon: function ZoneSuggestionIcon() {
+    return null;
+  },
   split: undefined
 };
 ZonesPicker.propTypes = {
@@ -5979,7 +5997,8 @@ ZonesPicker.propTypes = {
   className: PropTypes$1.string,
   error: PropTypes$1.string,
   onSplitSuggestions: PropTypes$1.func,
-  split: PropTypes$1.bool
+  split: PropTypes$1.bool,
+  ZoneSuggestionIcon: PropTypes$1.func
 };
 ZonesPicker.fromZone = 'from';
 ZonesPicker.toZone = 'to';
