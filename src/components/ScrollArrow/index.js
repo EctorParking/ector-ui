@@ -68,7 +68,7 @@ class ScrollArrow extends PureComponent {
 
   render() {
     const {
-      visible, direction, className, style,
+      visible, direction, className, style, Icon,
     } = this.props;
 
     return (
@@ -80,7 +80,9 @@ class ScrollArrow extends PureComponent {
         onMouseEnter={this.handleScrollHover}
         onClick={this.resetScroll}
       >
-        <i className={[`icon icon-chevron-thin-${direction}`, s.arrowIcon, visible ? undefined : s.hiddenIcon].join(' ')} />
+        {Icon() ? <Icon direction={direction} /> : (
+          <i className={[`icon icon-chevron-thin-${direction}`, s.arrowIcon, visible ? undefined : s.hiddenIcon].join(' ')} />
+        )}
       </div>
     );
   }
@@ -97,6 +99,7 @@ ScrollArrow.defaultProps = {
   className: undefined,
   style: undefined,
   scrollTo: null,
+  Icon: () => null,
 };
 
 ScrollArrow.propTypes = {
@@ -109,6 +112,7 @@ ScrollArrow.propTypes = {
   getScrollTop: PropTypes.func.isRequired,
   scrollTo: PropTypes.func,
   getBottomScrollLimit: PropTypes.func.isRequired,
+  Icon: PropTypes.func,
 };
 
 export default ScrollArrow;

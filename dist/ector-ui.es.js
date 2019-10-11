@@ -5224,13 +5224,15 @@ var ZoneSuggestion = function ZoneSuggestion(_ref2) {
       disabled = _ref2.disabled,
       className = _ref2.className,
       search = _ref2.search,
-      rest = _objectWithoutProperties(_ref2, ["value", "onClick", "selected", "disabled", "className", "search"]);
+      IconProps = _ref2.Icon,
+      rest = _objectWithoutProperties(_ref2, ["value", "onClick", "selected", "disabled", "className", "search", "Icon"]);
 
+  var IconComputed = IconProps() ? IconProps : Icon;
   return React__default.createElement("span", _extends({
     role: "presentation",
     className: [s$10.suggestion, selected ? s$10.selected : undefined, disabled ? s$10.disabled : undefined, className].join(' '),
     onClick: onClick
-  }, rest), React__default.createElement(Icon, {
+  }, rest), React__default.createElement(IconComputed, {
     type: value.type,
     name: ZoneTypesToIconName[value.type],
     variant: disabled ? 'grey' : 'blue',
@@ -5253,7 +5255,8 @@ ZoneSuggestion.defaultProps = {
   onClick: function onClick() {
     return null;
   },
-  search: ''
+  search: '',
+  Icon: undefined
 };
 ZoneSuggestion.propTypes = {
   value: Type.isRequired,
@@ -5261,7 +5264,8 @@ ZoneSuggestion.propTypes = {
   selected: PropTypes$1.bool,
   disabled: PropTypes$1.bool,
   className: PropTypes$1.string,
-  search: PropTypes$1.string
+  search: PropTypes$1.string,
+  Icon: PropTypes$1.func
 };
 
 var ZonesPickerSuggestions =
@@ -5319,7 +5323,8 @@ function (_PureComponent) {
     _defineProperty(_assertThisInitialized(_this), "renderFromZoneSuggestion", function (zone) {
       var _this$props = _this.props,
           onFromZoneClick = _this$props.onFromZoneClick,
-          searchFrom = _this$props.searchFrom;
+          searchFrom = _this$props.searchFrom,
+          ZoneSuggestionIcon = _this$props.ZoneSuggestionIcon;
       return React__default.createElement(ZoneSuggestion, {
         value: zone,
         key: zone.code,
@@ -5327,14 +5332,16 @@ function (_PureComponent) {
           return onFromZoneClick(zone);
         },
         disabled: zone.disabled,
-        search: searchFrom
+        search: searchFrom,
+        Icon: ZoneSuggestionIcon
       });
     });
 
     _defineProperty(_assertThisInitialized(_this), "renderToZoneSuggestion", function (zone) {
       var _this$props2 = _this.props,
           onToZoneClick = _this$props2.onToZoneClick,
-          searchTo = _this$props2.searchTo;
+          searchTo = _this$props2.searchTo,
+          ZoneSuggestionIcon = _this$props2.ZoneSuggestionIcon;
       return React__default.createElement(ZoneSuggestion, {
         value: zone,
         key: zone.code,
@@ -5343,7 +5350,8 @@ function (_PureComponent) {
         },
         disabled: zone.disabled,
         className: s$$.toZoneSuggestion,
-        search: searchTo
+        search: searchTo,
+        Icon: ZoneSuggestionIcon
       });
     });
 
@@ -5413,7 +5421,8 @@ function (_PureComponent) {
           fromZoneSuggestions = _this$props3.fromZoneSuggestions,
           toZoneSuggestions = _this$props3.toZoneSuggestions,
           texts = _this$props3.texts,
-          onSplit = _this$props3.onSplit;
+          onSplit = _this$props3.onSplit,
+          ArrowIcon = _this$props3.ArrowIcon;
       var visibleArrows = this.state.visibleArrows;
       return React__default.createElement(PickerSuggestions, {
         visible: visible
@@ -5427,7 +5436,8 @@ function (_PureComponent) {
         getBottomScrollLimit: this.getFromZonesContainerBottomScrollLimit,
         scrollTo: this.fromZonesScrollTo,
         onHide: this.hideTopFromZonesArrow,
-        onShow: this.showTopFromZonesArrow
+        onShow: this.showTopFromZonesArrow,
+        Icon: ArrowIcon
       }), React__default.createElement("div", {
         className: [s$$.suggestions, visible ? s$$.visible : undefined].join(' '),
         ref: this.fromZonesContainer,
@@ -5441,7 +5451,8 @@ function (_PureComponent) {
         getBottomScrollLimit: this.getFromZonesContainerBottomScrollLimit,
         scrollTo: this.fromZonesScrollTo,
         onHide: this.hideBottomFromZonesArrow,
-        onShow: this.showBottomFromZonesArrow
+        onShow: this.showBottomFromZonesArrow,
+        Icon: ArrowIcon
       }), React__default.createElement(ScrollArrow, {
         visible: visibleArrows[ZonesPickerSuggestions.topToZoneArrow],
         className: [s$$.arrowContainer, s$$.topArrow, split ? s$$.rightArrow : s$$.hiddenArrow].join(' '),
@@ -5450,7 +5461,8 @@ function (_PureComponent) {
         getBottomScrollLimit: this.getToZonesContainerBottomScrollLimit,
         scrollTo: this.toZonesScrollTo,
         onHide: this.hideTopToZonesArrow,
-        onShow: this.showTopToZonesArrow
+        onShow: this.showTopToZonesArrow,
+        Icon: ArrowIcon
       }), React__default.createElement("div", {
         className: [s$$.suggestions, visible && split ? s$$.visible : undefined].join(' '),
         ref: this.toZonesContainer,
@@ -5464,7 +5476,8 @@ function (_PureComponent) {
         getBottomScrollLimit: this.getToZonesContainerBottomScrollLimit,
         scrollTo: this.toZonesScrollTo,
         onHide: this.hideBottomToZonesArrow,
-        onShow: this.showBottomToZonesArrow
+        onShow: this.showBottomToZonesArrow,
+        Icon: ArrowIcon
       })), React__default.createElement("div", {
         className: [s$$.suggestionAction, visible ? s$$.suggestionActionVisible : undefined].join(' ')
       }, React__default.createElement(InputCheckbox, {
@@ -5486,7 +5499,13 @@ ZonesPickerSuggestions.defaultProps = {
   fromZoneSuggestions: [],
   toZoneSuggestions: [],
   searchFrom: '',
-  searchTo: ''
+  searchTo: '',
+  ZoneSuggestionIcon: function ZoneSuggestionIcon() {
+    return null;
+  },
+  ArrowIcon: function ArrowIcon() {
+    return null;
+  }
 };
 ZonesPickerSuggestions.propTypes = {
   onFromZoneClick: PropTypes$1.func,
@@ -5498,7 +5517,9 @@ ZonesPickerSuggestions.propTypes = {
   toZoneSuggestions: PropTypes$1.arrayOf(Type),
   texts: PropTypes$1.shape().isRequired,
   searchFrom: PropTypes$1.string,
-  searchTo: PropTypes$1.string
+  searchTo: PropTypes$1.string,
+  ZoneSuggestionIcon: PropTypes$1.func,
+  ArrowIcon: PropTypes$1.func
 };
 ZonesPickerSuggestions.topFromZoneArrow = 'topFromZoneArrow';
 ZonesPickerSuggestions.bottomFromZoneArrow = 'bottomFromZoneArrow';
@@ -5894,7 +5915,10 @@ function (_React$PureComponent) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "renderSuggestionsComponent", function (pickerSuggestionsProps) {
-      var texts = _this.props.texts;
+      var _this$props = _this.props,
+          texts = _this$props.texts,
+          ZoneSuggestionIcon = _this$props.ZoneSuggestionIcon,
+          ArrowIcon = _this$props.ArrowIcon;
       var _this$state3 = _this.state,
           split = _this$state3.split,
           fromZoneSuggestions = _this$state3.fromZoneSuggestions,
@@ -5910,7 +5934,9 @@ function (_React$PureComponent) {
         onFromZoneClick: _this.handleFromZoneClick,
         onToZoneClick: _this.handleToZoneClick,
         searchFrom: fromZoneValue,
-        searchTo: toZoneValue
+        searchTo: toZoneValue,
+        ZoneSuggestionIcon: ZoneSuggestionIcon,
+        ArrowIcon: ArrowIcon
       }));
     });
 
@@ -5925,9 +5951,9 @@ function (_React$PureComponent) {
           split = _this$state4.split,
           fromZoneValue = _this$state4.fromZoneValue,
           toZoneValue = _this$state4.toZoneValue;
-      var _this$props = this.props,
-          error = _this$props.error,
-          className = _this$props.className;
+      var _this$props2 = this.props,
+          error = _this$props2.error,
+          className = _this$props2.className;
       return createElement(Picker, {
         ref: this.picker,
         split: split,
@@ -5959,6 +5985,12 @@ ZonesPicker.defaultProps = {
   onSplitSuggestions: function onSplitSuggestions() {
     return null;
   },
+  ZoneSuggestionIcon: function ZoneSuggestionIcon() {
+    return null;
+  },
+  ArrowIcon: function ArrowIcon() {
+    return null;
+  },
   split: undefined
 };
 ZonesPicker.propTypes = {
@@ -5971,7 +6003,9 @@ ZonesPicker.propTypes = {
   className: PropTypes$1.string,
   error: PropTypes$1.string,
   onSplitSuggestions: PropTypes$1.func,
-  split: PropTypes$1.bool
+  split: PropTypes$1.bool,
+  ZoneSuggestionIcon: PropTypes$1.func,
+  ArrowIcon: PropTypes$1.func
 };
 ZonesPicker.fromZone = 'from';
 ZonesPicker.toZone = 'to';
@@ -16162,7 +16196,8 @@ function (_PureComponent) {
           visible = _this$props3.visible,
           direction = _this$props3.direction,
           className = _this$props3.className,
-          style = _this$props3.style;
+          style = _this$props3.style,
+          Icon = _this$props3.Icon;
       return React__default.createElement("div", {
         role: "presentation",
         style: style,
@@ -16170,7 +16205,9 @@ function (_PureComponent) {
         onMouseLeave: this.handleMouseLeave,
         onMouseEnter: this.handleScrollHover,
         onClick: this.resetScroll
-      }, React__default.createElement("i", {
+      }, Icon() ? React__default.createElement(Icon, {
+        direction: direction
+      }) : React__default.createElement("i", {
         className: ["icon icon-chevron-thin-".concat(direction), s$1a.arrowIcon, visible ? undefined : s$1a.hiddenIcon].join(' ')
       }));
     }
@@ -16199,7 +16236,10 @@ ScrollArrow.defaultProps = {
   direction: ScrollArrow.up,
   className: undefined,
   style: undefined,
-  scrollTo: null
+  scrollTo: null,
+  Icon: function Icon() {
+    return null;
+  }
 };
 ScrollArrow.propTypes = {
   visible: PropTypes$1.bool,
@@ -16210,7 +16250,8 @@ ScrollArrow.propTypes = {
   style: PropTypes$1.shape(),
   getScrollTop: PropTypes$1.func.isRequired,
   scrollTo: PropTypes$1.func,
-  getBottomScrollLimit: PropTypes$1.func.isRequired
+  getBottomScrollLimit: PropTypes$1.func.isRequired,
+  Icon: PropTypes$1.func
 };
 
 var css$1d = ".InformationAlert-module_alert__1wyed {\n  margin-top: 20px;\n  margin-right: 30px;\n  background-color: #ebeff6;\n  border-left: 5px solid #32a0c5;\n  padding: 10px 25px 5px 15px;\n}\n\n.InformationAlert-module_alertTitle__3gVaH {\n  font-weight: 700;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.InformationAlert-module_alertIconContainer__1BM6F {\n  font-size: 20px;\n  margin-right: 10px;\n}\n\n.InformationAlert-module_alertDescription__4n3PJ {\n  margin: 0;\n}";

@@ -117,7 +117,7 @@ class ZonesPickerSuggestions extends PureComponent {
 
 
   renderFromZoneSuggestion = (zone) => {
-    const { onFromZoneClick, searchFrom } = this.props;
+    const { onFromZoneClick, searchFrom, ZoneSuggestionIcon } = this.props;
 
     return (
       <ZoneSuggestion
@@ -126,12 +126,13 @@ class ZonesPickerSuggestions extends PureComponent {
         onClick={() => onFromZoneClick(zone)}
         disabled={zone.disabled}
         search={searchFrom}
+        Icon={ZoneSuggestionIcon}
       />
     );
   };
 
   renderToZoneSuggestion = (zone) => {
-    const { onToZoneClick, searchTo } = this.props;
+    const { onToZoneClick, searchTo, ZoneSuggestionIcon } = this.props;
 
     return (
       <ZoneSuggestion
@@ -141,6 +142,7 @@ class ZonesPickerSuggestions extends PureComponent {
         disabled={zone.disabled}
         className={s.toZoneSuggestion}
         search={searchTo}
+        Icon={ZoneSuggestionIcon}
       />
     );
   };
@@ -167,7 +169,7 @@ class ZonesPickerSuggestions extends PureComponent {
 
   render() {
     const {
-      visible, split, fromZoneSuggestions, toZoneSuggestions, texts, onSplit,
+      visible, split, fromZoneSuggestions, toZoneSuggestions, texts, onSplit, ArrowIcon,
     } = this.props;
     const { visibleArrows } = this.state;
 
@@ -183,6 +185,7 @@ class ZonesPickerSuggestions extends PureComponent {
             scrollTo={this.fromZonesScrollTo}
             onHide={this.hideTopFromZonesArrow}
             onShow={this.showTopFromZonesArrow}
+            Icon={ArrowIcon}
           />
           <div
             className={[s.suggestions, visible ? s.visible : undefined].join(' ')}
@@ -201,6 +204,7 @@ class ZonesPickerSuggestions extends PureComponent {
             scrollTo={this.fromZonesScrollTo}
             onHide={this.hideBottomFromZonesArrow}
             onShow={this.showBottomFromZonesArrow}
+            Icon={ArrowIcon}
           />
           <ScrollArrow
             visible={visibleArrows[ZonesPickerSuggestions.topToZoneArrow]}
@@ -211,6 +215,7 @@ class ZonesPickerSuggestions extends PureComponent {
             scrollTo={this.toZonesScrollTo}
             onHide={this.hideTopToZonesArrow}
             onShow={this.showTopToZonesArrow}
+            Icon={ArrowIcon}
           />
           <div
             className={[s.suggestions, visible && split ? s.visible : undefined].join(' ')}
@@ -229,6 +234,7 @@ class ZonesPickerSuggestions extends PureComponent {
             scrollTo={this.toZonesScrollTo}
             onHide={this.hideBottomToZonesArrow}
             onShow={this.showBottomToZonesArrow}
+            Icon={ArrowIcon}
           />
         </div>
         <div className={[s.suggestionAction, visible ? s.suggestionActionVisible : undefined].join(' ')}>
@@ -251,6 +257,8 @@ ZonesPickerSuggestions.defaultProps = {
   toZoneSuggestions: [],
   searchFrom: '',
   searchTo: '',
+  ZoneSuggestionIcon: () => null,
+  ArrowIcon: () => null,
 };
 
 ZonesPickerSuggestions.propTypes = {
@@ -264,6 +272,8 @@ ZonesPickerSuggestions.propTypes = {
   texts: PropTypes.shape().isRequired,
   searchFrom: PropTypes.string,
   searchTo: PropTypes.string,
+  ZoneSuggestionIcon: PropTypes.func,
+  ArrowIcon: PropTypes.func,
 };
 
 ZonesPickerSuggestions.topFromZoneArrow = 'topFromZoneArrow';
