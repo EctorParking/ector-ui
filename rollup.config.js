@@ -48,6 +48,76 @@ const config = [
     },
   },
   {
+    input: 'src/initializeWithoutFonts.js',
+    output: [
+      {
+        file: 'dist/initializeWithoutFonts.css',
+        format: 'es',
+      },
+    ],
+    plugins: [
+      progress(),
+      external(),
+      svgr(),
+      postcss({
+        minimize: true,
+        modules: false,
+        extract: true,
+      }),
+      url(),
+      babel({
+        exclude: 'node_modules/**',
+        plugins: ['@babel/plugin-proposal-class-properties'],
+      }),
+      resolve(),
+      commonjs(),
+      json({
+        include: ['src/**'],
+        exclude: ['node_modules/**', 'src/icomoon'],
+        compact: true,
+        preferConst: true,
+      }),
+    ],
+    watch: {
+      exclude: '*',
+    },
+  },
+  {
+    input: 'src/initializeWithoutFontsAndIcons.js',
+    output: [
+      {
+        file: 'dist/initializeWithoutFontsAndIcons.css',
+        format: 'es',
+      },
+    ],
+    plugins: [
+      progress(),
+      external(),
+      svgr(),
+      postcss({
+        minimize: true,
+        modules: false,
+        extract: true,
+      }),
+      url(),
+      babel({
+        exclude: 'node_modules/**',
+        plugins: ['@babel/plugin-proposal-class-properties'],
+      }),
+      resolve(),
+      commonjs(),
+      json({
+        include: ['src/**'],
+        exclude: ['node_modules/**', 'src/icomoon'],
+        compact: true,
+        preferConst: true,
+      }),
+    ],
+    watch: {
+      exclude: '*',
+    },
+  },
+  {
     input: 'src/index.js',
     output: [
       {
