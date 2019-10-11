@@ -99,7 +99,7 @@ ScrollArrow.defaultProps = {
   className: undefined,
   style: undefined,
   scrollTo: null,
-  Icon: null,
+  Icon: () => null,
 };
 
 ScrollArrow.propTypes = {

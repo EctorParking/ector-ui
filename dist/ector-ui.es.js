@@ -16237,7 +16237,9 @@ ScrollArrow.defaultProps = {
   className: undefined,
   style: undefined,
   scrollTo: null,
-  Icon: null
+  Icon: function Icon() {
+    return null;
+  }
 };
 ScrollArrow.propTypes = {
   visible: PropTypes$1.bool,

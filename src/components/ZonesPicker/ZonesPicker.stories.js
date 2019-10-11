@@ -5,7 +5,6 @@ import centered from '@storybook/addon-centered';
 import { withKnobs, text } from '@storybook/addon-knobs';
 import ZonesPicker from '.';
 import Suggestions from './Zones.json';
-import Icon from "../Icon";
 
 class ZonePickerStory extends React.PureComponent {
   state = {
