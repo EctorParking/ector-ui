@@ -3772,6 +3772,48 @@
 .InformationAlert-module_alertDescription__4n3PJ {
   margin: 0;
 }
+.IconPatched-module_icon__2dhg3 {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+
+.IconPatched-module_icon__2dhg3 > * {
+  z-index: unset;
+}
+
+.IconButton-module_button__ZTBlf {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #163457;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 15px;
+  width: 100%;
+}
+
+.IconButton-module_label__K6mXP {
+  margin-left: 10px;
+}
+
+.Box-module_box__2wWmS {
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
+  border-radius: 8px;
+}
+
 .DateTimePicker-module_calendar__1m3vk {
   position: relative;
   width: 100%;

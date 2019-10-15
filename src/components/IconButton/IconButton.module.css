@@ -1,0 +1,14 @@
+@import '../../style/variable.global.css';
+
+.button {
+  align-items: center;
+  color: var(--firstColor);
+  display: flex;
+  justify-content: center;
+  padding: var(--marginXMedium);
+  width: 100%;
+}
+
+.label {
+  margin-left: var(--marginSmall);
+}

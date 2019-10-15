@@ -16298,9 +16298,71 @@ InformationAlert.propTypes = {
   classNameIcon: PropTypes$1.string
 };
 
-var css$1e = ".DateTimePicker-module_calendar__1m3vk {\n  position: relative;\n  width: 100%;\n  height: 300px;\n}\n\n.DateTimePicker-module_calendarArrow__SvtwN {\n  display: none;\n}\n\n.DateTimePicker-module_datePickerPopper__2V2oe {\n  -webkit-transform: none !important;\n          transform: none !important;\n  width: 100%;\n  margin-top: 0 !important;\n}\n\n.DateTimePicker-module_hidden__OvFBm {\n  display: none !important;\n}\n\n.DateTimePicker-module_pickerSuggestions__38iqg {\n  width: 610px !important;\n  margin-left: -300px;\n  left: 50%;\n  height: 265px !important\n}\n\n.DateTimePicker-module_pickerSuggestions__38iqg:before {\n  display: none;\n}\n\n.DateTimePicker-module_suggestionsArrow__2RcKh {\n  margin-left: -9px;\n}\n\n.DateTimePicker-module_picker__3d7nO {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  height: auto;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP {\n  background: none;\n  padding-left: 40px;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.datePickerInput::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.datePickerInput::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_fixedWidthDateInput__3lrKo {\n  min-width: 160px;\n  width: 160px;\n  max-width: 160px;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU {\n  border: none !important;\n  border-radius: 8px;\n  max-width: 100px;\n  padding-left: 35px;\n  margin-right: 1px;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.timePickerInput::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.timePickerInput::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInputContainer__ROeTv::before {\n  background-color: rgba(191, 196, 212, .52);\n  content: '';\n  height: 20px;\n  margin-top: -10px;\n  position: absolute;\n  top: 50%;\n  width: 1px;\n}\n\n.DateTimePicker-module_timeSuggestions__3aCiQ {\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  position: relative;\n}\n\n.DateTimePicker-module_timeSuggestionsContainer__3Pe8K:nth-child(1) {\n  width: 300px;\n  min-width: 300px;\n}\n\n.DateTimePicker-module_timeSuggestionsContainer__3Pe8K {\n  width: 100%;\n}\n\n.DateTimePicker-module_inputIcon__178Nw {\n  font-size: 19.2px;\n  font-size: 19.2px;\n  font-size: 1.2rem;\n  left: 10px;\n}\n\n.DateTimePicker-module_inputError__2-au6 {\n  color: #ff5757;\n}\n\n.DateTimePicker-module_inputError__2-au6::-webkit-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputError__2-au6::-ms-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.inputError::-webkit-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.inputError::-ms-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputError__2-au6::placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputError__2-au6:-ms-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputError__2-au6::-ms-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputContainer__1FIAJ {\n  padding: 0;\n}\n\n.DateTimePicker-module_splitInputContainer__1fsjs {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  width: 50%\n}\n\n.DateTimePicker-module_splitInputContainer__1fsjs:first-child {\n  border-right: 1px solid rgba(191, 196, 212, .52);\n}\n\n.DateTimePicker-module_month__2AwNj {\n  color: #163457;\n}\n\n.DateTimePicker-module_hr__1p2EJ {\n  height: 85%;\n  width: 1px;\n  position: absolute;\n  left: 300px;\n  background-color: rgba(191, 196, 212, .52);\n  top: 7.5%;\n}\n";
-var s$1c = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","calendar":"DateTimePicker-module_calendar__1m3vk","calendarArrow":"DateTimePicker-module_calendarArrow__SvtwN","datePickerPopper":"DateTimePicker-module_datePickerPopper__2V2oe","hidden":"DateTimePicker-module_hidden__OvFBm","pickerSuggestions":"DateTimePicker-module_pickerSuggestions__38iqg","suggestionsArrow":"DateTimePicker-module_suggestionsArrow__2RcKh","picker":"DateTimePicker-module_picker__3d7nO","datePickerInput":"DateTimePicker-module_datePickerInput__1JwcP","fixedWidthDateInput":"DateTimePicker-module_fixedWidthDateInput__3lrKo","timePickerInput":"DateTimePicker-module_timePickerInput__1vkhU","timePickerInputContainer":"DateTimePicker-module_timePickerInputContainer__ROeTv","timeSuggestions":"DateTimePicker-module_timeSuggestions__3aCiQ","timeSuggestionsContainer":"DateTimePicker-module_timeSuggestionsContainer__3Pe8K","inputIcon":"DateTimePicker-module_inputIcon__178Nw","inputError":"DateTimePicker-module_inputError__2-au6","inputContainer":"DateTimePicker-module_inputContainer__1FIAJ","splitInputContainer":"DateTimePicker-module_splitInputContainer__1fsjs","month":"DateTimePicker-module_month__2AwNj","hr":"DateTimePicker-module_hr__1p2EJ"};
+var css$1e = ".IconPatched-module_icon__2dhg3 {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  position: relative;\n}\n\n.IconPatched-module_icon__2dhg3 > * {\n  z-index: unset;\n}\n";
+var s$1c = {"icon":"IconPatched-module_icon__2dhg3"};
 styleInject(css$1e);
+
+var IconPatched = function IconPatched(_ref) {
+  var className = _ref.className,
+      props = _objectWithoutProperties(_ref, ["className"]);
+
+  return React__default.createElement(Icon, _extends({}, props, {
+    className: [className, s$1c.icon].join(' ')
+  }));
+};
+
+IconPatched.defaultProps = {
+  className: ''
+};
+IconPatched.propTypes = {
+  className: PropTypes$1.string
+};
+
+var css$1f = ".IconButton-module_button__ZTBlf {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  color: #163457;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  padding: 15px;\n  width: 100%;\n}\n\n.IconButton-module_label__K6mXP {\n  margin-left: 10px;\n}\n";
+var s$1d = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","button":"IconButton-module_button__ZTBlf","label":"IconButton-module_label__K6mXP"};
+styleInject(css$1f);
+
+var css$1g = ".Box-module_box__2wWmS {\n  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);\n          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);\n  border-radius: 8px;\n}\n";
+var s$1e = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","box":"Box-module_box__2wWmS"};
+styleInject(css$1g);
+
+var Box = function Box(_ref) {
+  var className = _ref.className,
+      children = _ref.children;
+  return React__default.createElement("div", {
+    className: [s$1e.box, className].join(' ')
+  }, children);
+};
+
+Box.defaultProps = {
+  className: ''
+};
+Box.propTypes = {
+  children: PropTypes$1.node.isRequired,
+  className: PropTypes$1.string
+};
+
+var IconButton = function IconButton(_ref) {
+  var onClick = _ref.onClick,
+      icon = _ref.icon,
+      label = _ref.label;
+  return React__default.createElement(Box, null, React__default.createElement("button", {
+    onClick: onClick,
+    className: s$1d.button
+  }, icon, React__default.createElement("div", {
+    className: s$1d.label
+  }, label)));
+};
+
+IconButton.propTypes = {
+  onClick: PropTypes$1.func.isRequired,
+  icon: PropTypes$1.node.isRequired,
+  label: PropTypes$1.string.isRequired
+};
+
+var css$1h = ".DateTimePicker-module_calendar__1m3vk {\n  position: relative;\n  width: 100%;\n  height: 300px;\n}\n\n.DateTimePicker-module_calendarArrow__SvtwN {\n  display: none;\n}\n\n.DateTimePicker-module_datePickerPopper__2V2oe {\n  -webkit-transform: none !important;\n          transform: none !important;\n  width: 100%;\n  margin-top: 0 !important;\n}\n\n.DateTimePicker-module_hidden__OvFBm {\n  display: none !important;\n}\n\n.DateTimePicker-module_pickerSuggestions__38iqg {\n  width: 610px !important;\n  margin-left: -300px;\n  left: 50%;\n  height: 265px !important\n}\n\n.DateTimePicker-module_pickerSuggestions__38iqg:before {\n  display: none;\n}\n\n.DateTimePicker-module_suggestionsArrow__2RcKh {\n  margin-left: -9px;\n}\n\n.DateTimePicker-module_picker__3d7nO {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  height: auto;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP {\n  background: none;\n  padding-left: 40px;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.datePickerInput::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.datePickerInput::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_fixedWidthDateInput__3lrKo {\n  min-width: 160px;\n  width: 160px;\n  max-width: 160px;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU {\n  border: none !important;\n  border-radius: 8px;\n  max-width: 100px;\n  padding-left: 35px;\n  margin-right: 1px;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.timePickerInput::-webkit-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.timePickerInput::-ms-input-placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::placeholder {\n  color: #939baa;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInputContainer__ROeTv::before {\n  background-color: rgba(191, 196, 212, .52);\n  content: '';\n  height: 20px;\n  margin-top: -10px;\n  position: absolute;\n  top: 50%;\n  width: 1px;\n}\n\n.DateTimePicker-module_timeSuggestions__3aCiQ {\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  position: relative;\n}\n\n.DateTimePicker-module_timeSuggestionsContainer__3Pe8K:nth-child(1) {\n  width: 300px;\n  min-width: 300px;\n}\n\n.DateTimePicker-module_timeSuggestionsContainer__3Pe8K {\n  width: 100%;\n}\n\n.DateTimePicker-module_inputIcon__178Nw {\n  font-size: 19.2px;\n  font-size: 19.2px;\n  font-size: 1.2rem;\n  left: 10px;\n}\n\n.DateTimePicker-module_inputError__2-au6 {\n  color: #ff5757;\n}\n\n.DateTimePicker-module_inputError__2-au6::-webkit-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputError__2-au6::-ms-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.inputError::-webkit-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.inputError::-ms-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputError__2-au6::placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputError__2-au6:-ms-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputError__2-au6::-ms-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputContainer__1FIAJ {\n  padding: 0;\n}\n\n.DateTimePicker-module_splitInputContainer__1fsjs {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  width: 50%\n}\n\n.DateTimePicker-module_splitInputContainer__1fsjs:first-child {\n  border-right: 1px solid rgba(191, 196, 212, .52);\n}\n\n.DateTimePicker-module_month__2AwNj {\n  color: #163457;\n}\n\n.DateTimePicker-module_hr__1p2EJ {\n  height: 85%;\n  width: 1px;\n  position: absolute;\n  left: 300px;\n  background-color: rgba(191, 196, 212, .52);\n  top: 7.5%;\n}\n";
+var s$1f = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","calendar":"DateTimePicker-module_calendar__1m3vk","calendarArrow":"DateTimePicker-module_calendarArrow__SvtwN","datePickerPopper":"DateTimePicker-module_datePickerPopper__2V2oe","hidden":"DateTimePicker-module_hidden__OvFBm","pickerSuggestions":"DateTimePicker-module_pickerSuggestions__38iqg","suggestionsArrow":"DateTimePicker-module_suggestionsArrow__2RcKh","picker":"DateTimePicker-module_picker__3d7nO","datePickerInput":"DateTimePicker-module_datePickerInput__1JwcP","fixedWidthDateInput":"DateTimePicker-module_fixedWidthDateInput__3lrKo","timePickerInput":"DateTimePicker-module_timePickerInput__1vkhU","timePickerInputContainer":"DateTimePicker-module_timePickerInputContainer__ROeTv","timeSuggestions":"DateTimePicker-module_timeSuggestions__3aCiQ","timeSuggestionsContainer":"DateTimePicker-module_timeSuggestionsContainer__3Pe8K","inputIcon":"DateTimePicker-module_inputIcon__178Nw","inputError":"DateTimePicker-module_inputError__2-au6","inputContainer":"DateTimePicker-module_inputContainer__1FIAJ","splitInputContainer":"DateTimePicker-module_splitInputContainer__1fsjs","month":"DateTimePicker-module_month__2AwNj","hr":"DateTimePicker-module_hr__1p2EJ"};
+styleInject(css$1h);
 
 var TextsType$9 = PropTypes$1.shape({
   startPlaceholder: PropTypes$1.string,
@@ -16325,9 +16387,9 @@ var DefaultTexts$9 = {
   toTimeSecondDescription: 'au dépose minute'
 };
 
-var css$1f = ".TimeSuggestions-module_container__1FI_D {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n}\n\n.TimeSuggestions-module_timeContainer__cmXVx {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n}\n\n.TimeSuggestions-module_timeDescription__1KSio {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  width: 70%;\n  text-align: right;\n  padding-right: 15px;\n  padding-top: 20px;\n}\n\n.TimeSuggestions-module_timeDescriptionTitle__1CASr {\n  font-weight: bold;\n}\n";
-var s$1d = {"container":"TimeSuggestions-module_container__1FI_D","timeContainer":"TimeSuggestions-module_timeContainer__cmXVx","timeDescription":"TimeSuggestions-module_timeDescription__1KSio","timeDescriptionTitle":"TimeSuggestions-module_timeDescriptionTitle__1CASr"};
-styleInject(css$1f);
+var css$1i = ".TimeSuggestions-module_container__1FI_D {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n}\n\n.TimeSuggestions-module_timeContainer__cmXVx {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n}\n\n.TimeSuggestions-module_timeDescription__1KSio {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  width: 70%;\n  text-align: right;\n  padding-right: 15px;\n  padding-top: 20px;\n}\n\n.TimeSuggestions-module_timeDescriptionTitle__1CASr {\n  font-weight: bold;\n}\n";
+var s$1g = {"container":"TimeSuggestions-module_container__1FI_D","timeContainer":"TimeSuggestions-module_timeContainer__cmXVx","timeDescription":"TimeSuggestions-module_timeDescription__1KSio","timeDescriptionTitle":"TimeSuggestions-module_timeDescriptionTitle__1CASr"};
+styleInject(css$1i);
 
 var TimeSuggestions = function TimeSuggestions(_ref) {
   var className = _ref.className,
@@ -16368,13 +16430,13 @@ var TimeSuggestions = function TimeSuggestions(_ref) {
       endToHourRange = _toHourRange[1];
 
   return React__default.createElement("div", {
-    className: [s$1d.container, className].join(' ')
+    className: [s$1g.container, className].join(' ')
   }, React__default.createElement("div", {
-    className: [s$1d.timeContainer, containerClassName].join(' ')
+    className: [s$1g.timeContainer, containerClassName].join(' ')
   }, React__default.createElement("div", {
-    className: s$1d.timeDescription
+    className: s$1g.timeDescription
   }, React__default.createElement("span", {
-    className: s$1d.timeDescriptionTitle
+    className: s$1g.timeDescriptionTitle
   }, texts.fromTimeTitle), React__default.createElement("span", null, texts.fromTimeFirstDescription), React__default.createElement("span", null, texts.fromTimeSecondDescription)), React__default.createElement(TimeRange, {
     onSelect: onSelectStartTime,
     hour: startHour,
@@ -16385,11 +16447,11 @@ var TimeSuggestions = function TimeSuggestions(_ref) {
     startHour: startFromHourRange,
     endHour: endFromHourRange
   })), React__default.createElement("div", {
-    className: [s$1d.timeContainer, containerClassName].join(' ')
+    className: [s$1g.timeContainer, containerClassName].join(' ')
   }, React__default.createElement("div", {
-    className: s$1d.timeDescription
+    className: s$1g.timeDescription
   }, React__default.createElement("span", {
-    className: s$1d.timeDescriptionTitle
+    className: s$1g.timeDescriptionTitle
   }, texts.toTimeTitle), React__default.createElement("span", null, texts.toTimeFirstDescription), React__default.createElement("span", null, texts.toTimeSecondDescription)), React__default.createElement(TimeRange, {
     onSelect: onSelectEndTime,
     hour: endHour,
@@ -16557,7 +16619,7 @@ function (_React$PureComponent) {
     _defineProperty(_assertThisInitialized(_this), "renderMonthElement", function (_ref2) {
       var month = _ref2.month;
       return React.createElement("div", {
-        className: s$1c.month
+        className: s$1f.month
       }, month.format('MMMM YYYY'));
     });
 
@@ -16566,7 +16628,7 @@ function (_React$PureComponent) {
           props = _objectWithoutProperties(_ref3, ["className"]);
 
       return React.createElement(Icon, _extends({}, props, {
-        className: [s$1c.inputIcon, className].join(' '),
+        className: [s$1f.inputIcon, className].join(' '),
         src: error ? iconCalendarRed : iconCalendar
       }));
     });
@@ -16586,7 +16648,7 @@ function (_React$PureComponent) {
           props = _objectWithoutProperties(_ref4, ["className"]);
 
       return React.createElement(Icon, _extends({}, props, {
-        className: [s$1c.inputIcon, className].join(' '),
+        className: [s$1f.inputIcon, className].join(' '),
         src: error ? iconClockRed : iconClock
       }));
     });
@@ -16625,18 +16687,18 @@ function (_React$PureComponent) {
       }
 
       return React.createElement("div", {
-        className: s$1c.splitInputContainer
+        className: s$1f.splitInputContainer
       }, React.createElement(Input, _extends({}, inputProps, {
         onFocus: _this.handleStartDateFocus,
-        className: [s$1c.datePickerInput, showTimeInputs ? s$1c.fixedWidthDateInput : undefined, hasStartDateError ? s$1c.inputError : undefined, inputClassName].join(' '),
-        containerClassName: s$1c.inputContainer,
+        className: [s$1f.datePickerInput, showTimeInputs ? s$1f.fixedWidthDateInput : undefined, hasStartDateError ? s$1f.inputError : undefined, inputClassName].join(' '),
+        containerClassName: s$1f.inputContainer,
         value: startDate ? startDate.format('ddd DD/MM/YYYY') : '',
         placeholder: texts.startPlaceholder,
         LeftComponent: _this.renderStartDateInputLeftElement
       })), showTimeInputs && React.createElement(Input, _extends({}, inputProps, {
         onFocus: _this.handleTimeFocus,
-        containerClassName: s$1c.timePickerInputContainer,
-        className: [s$1c.timePickerInput, hasStartTimeError ? s$1c.inputError : undefined, inputClassName].join(' '),
+        containerClassName: s$1f.timePickerInputContainer,
+        className: [s$1f.timePickerInput, hasStartTimeError ? s$1f.inputError : undefined, inputClassName].join(' '),
         value: displayedTime,
         placeholder: texts.timePlaceholder,
         LeftComponent: _this.renderStartTimeInputLeftElement
@@ -16688,18 +16750,18 @@ function (_React$PureComponent) {
       }
 
       return React.createElement("div", {
-        className: s$1c.splitInputContainer
+        className: s$1f.splitInputContainer
       }, React.createElement(Input, _extends({}, inputProps, {
-        className: [s$1c.datePickerInput, showTimeInputs ? s$1c.fixedWidthDateInput : undefined, hasEndDateError ? s$1c.inputError : undefined, inputClassName].join(' '),
-        containerClassName: s$1c.inputContainer,
+        className: [s$1f.datePickerInput, showTimeInputs ? s$1f.fixedWidthDateInput : undefined, hasEndDateError ? s$1f.inputError : undefined, inputClassName].join(' '),
+        containerClassName: s$1f.inputContainer,
         onFocus: _this.onEndDateFocus,
         onBlur: _this.handleEndDateTimeBlur,
         value: endDate ? endDate.format('ddd DD/MM/YYYY') : '',
         placeholder: texts.endPlaceholder,
         LeftComponent: _this.renderEndDateInputLeftElement
       })), showTimeInputs && React.createElement(Input, _extends({}, inputProps, {
-        containerClassName: s$1c.timePickerInputContainer,
-        className: [s$1c.timePickerInput, hasEndTimeError ? s$1c.inputError : undefined, inputClassName].join(' '),
+        containerClassName: s$1f.timePickerInputContainer,
+        className: [s$1f.timePickerInput, hasEndTimeError ? s$1f.inputError : undefined, inputClassName].join(' '),
         onFocus: _this.onEndTimeFocus,
         onBlur: _this.handleEndDateTimeBlur,
         value: displayedTime,
@@ -16713,7 +16775,7 @@ function (_React$PureComponent) {
           props = _objectWithoutProperties(_ref7, ["className"]);
 
       return React.createElement(Arrow, _extends({}, props, {
-        className: [s$1c.suggestionsArrow, className].join(' ')
+        className: [s$1f.suggestionsArrow, className].join(' ')
       }));
     });
 
@@ -16738,10 +16800,10 @@ function (_React$PureComponent) {
       var texts = _this.props.texts;
       return React.createElement(PickerSuggestions, _extends({}, rest, {
         visible: visible,
-        className: [s$1c.pickerSuggestions, className].join(' '),
+        className: [s$1f.pickerSuggestions, className].join(' '),
         ArrowComponent: _this.renderPickerSuggestionsArrow
       }), React.createElement("div", {
-        className: visiblePicker !== DateTimePicker.datePicker ? s$1c.hidden : undefined
+        className: visiblePicker !== DateTimePicker.datePicker ? s$1f.hidden : undefined
       }, React.createElement(reactDates.DayPickerRangeController, {
         verticalBorderSpacing: 1,
         horizontalMonthPadding: 25,
@@ -16762,10 +16824,10 @@ function (_React$PureComponent) {
         isDayBlocked: _this.isDayBlocked,
         isDayHighlighted: _this.isDayHighlighted
       })), React.createElement("div", {
-        className: s$1c.hr
+        className: s$1f.hr
       }), visiblePicker === DateTimePicker.timePicker && React.createElement(TimeSuggestions, {
-        className: s$1c.timeSuggestions,
-        containerClassName: s$1c.timeSuggestionsContainer,
+        className: s$1f.timeSuggestions,
+        containerClassName: s$1f.timeSuggestionsContainer,
         onSelect: _this.handleTimeSelect,
         startMinutes: startMinutes,
         startHour: startHour,
@@ -16847,7 +16909,7 @@ function (_React$PureComponent) {
         FirstInputComponent: this.renderStartDateTimeInputComponent,
         SecondInputComponent: this.renderEndDateTimeInputComponent,
         SuggestionsComponent: this.renderSuggestionsComponent,
-        className: [s$1c.picker, className].join(' '),
+        className: [s$1f.picker, className].join(' '),
         onSuggestionsHide: onSuggestionsHide,
         error: error,
         info: info
@@ -17014,6 +17076,7 @@ exports.Arrow = Arrow;
 exports.BookingCard = BookingCard;
 exports.BookingModificationSummary = BookingModificationSummary;
 exports.BookingSteps = BookingSteps;
+exports.Box = Box;
 exports.Button = Button;
 exports.CarCard = CarCard;
 exports.Card = Card;
@@ -17028,6 +17091,8 @@ exports.GenderPicker = GenderPicker;
 exports.Header = Header;
 exports.HtmlPrice = HtmlPrice;
 exports.Icon = Icon;
+exports.IconButton = IconButton;
+exports.IconPatched = IconPatched;
 exports.InformationAlert = InformationAlert;
 exports.Input = Input;
 exports.InputButton = InputButton;
