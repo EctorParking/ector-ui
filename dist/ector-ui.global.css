@@ -3777,13 +3777,14 @@
 }
 
 .PaymentMethodLine-module_tableRow__1y4vI:hover {
-  -webkit-box-shadow: 0px 0px 38px -2px rgba(0, 0, 0, .15);
-          box-shadow: 0px 0px 38px -2px rgba(0, 0, 0, .15);
+  -webkit-box-shadow: 0px 0px 15px -2px rgba(0, 0, 0, .15);
+          box-shadow: 0px 0px 15px -2px rgba(0, 0, 0, .15);
 }
 
 .PaymentMethodLine-module_checkedButton__3Vvd1 {
   padding: 0 0 0 8px;
   width: 5%;
+  border-bottom: 2px solid #eceff6;
 }
 
 .PaymentMethodLine-module_paymentCardCell__VfYAj {
@@ -3841,8 +3842,8 @@
 }
 
 .PaymentMethodLine-module_clicked__RgGz8 {
-  -webkit-box-shadow: 0px 0px 38px -2px rgba(0, 0, 0, .15);
-          box-shadow: 0px 0px 38px -2px rgba(0, 0, 0, .15);
+  -webkit-box-shadow: 0px 0px 15px -2px rgba(0, 0, 0, .15);
+          box-shadow: 0px 0px 15px -2px rgba(0, 0, 0, .15);
   color: #163457;
 }
 

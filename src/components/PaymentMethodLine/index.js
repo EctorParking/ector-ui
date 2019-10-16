@@ -21,8 +21,6 @@ const PaymentMethodLine = ({
     onClick={() => onSelect(paymentMethod.id)}
     className={[s.tableRow, card === paymentMethod.id ? s.clicked : undefined].join(' ')}
   >
-    {console.log(`card = ${card}`)}
-    {console.log(`id = ${paymentMethod.id}`)}
     <td className={s.checkedButton}>
       {card === paymentMethod.id && (
         <img
