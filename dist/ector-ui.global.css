@@ -3772,6 +3772,80 @@
 .InformationAlert-module_alertDescription__4n3PJ {
   margin: 0;
 }
+.PaymentMethodLine-module_tableRow__1y4vI {
+  color: #939baa;
+}
+
+.PaymentMethodLine-module_tableRow__1y4vI:hover {
+  -webkit-box-shadow: 0px 0px 38px -2px rgba(0, 0, 0, .15);
+          box-shadow: 0px 0px 38px -2px rgba(0, 0, 0, .15);
+}
+
+.PaymentMethodLine-module_checkedButton__3Vvd1 {
+  padding: 0 0 0 8px;
+  width: 5%;
+}
+
+.PaymentMethodLine-module_paymentCardCell__VfYAj {
+  border-bottom: 2px solid #eceff6;
+  text-align: center;
+  padding: 15px 30px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.PaymentMethodLine-module_brand__2Y_7n {
+  display: table-cell;
+  text-align: justify;
+}
+
+.PaymentMethodLine-module_cardIconInList__1ZL9K {
+  height: 24px;
+  margin: 0 10px 0 0;
+  vertical-align: middle;
+}
+
+.PaymentMethodLine-module_lastFourDigits__1MPXa {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.PaymentMethodLine-module_hiddenDigits__Gxa4m {
+  font-size: 2em;
+  margin-right: 5px;
+}
+
+.PaymentMethodLine-module_deleteButtonCell__2yozC {
+  border-bottom: 2px solid #eceff6;
+  padding: 15px 20px;
+  text-align: justify;
+}
+
+.PaymentMethodLine-module_deleteButton__2iU_v {
+  background: none;
+  border: 0;
+  padding: 0;
+}
+
+.PaymentMethodLine-module_deleteIcon__1Q_Mn::before {
+  color: #163457;
+}
+
+.PaymentMethodLine-module_deleteIcon__1Q_Mn:hover::before {
+  color: #ff5757;
+}
+
+.PaymentMethodLine-module_clicked__RgGz8 {
+  -webkit-box-shadow: 0px 0px 38px -2px rgba(0, 0, 0, .15);
+          box-shadow: 0px 0px 38px -2px rgba(0, 0, 0, .15);
+  color: #163457;
+}
+
 .DateTimePicker-module_calendar__1m3vk {
   position: relative;
   width: 100%;
