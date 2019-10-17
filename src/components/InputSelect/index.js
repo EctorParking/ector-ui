@@ -1,5 +1,5 @@
 import React from 'react';
-import Select from 'react-select';
+import Select, { createFilter } from 'react-select';
 import PropTypes from 'prop-types';
 import s from './InputSelect.module.css';
 import Colors from '../../style/variable.global.css';
@@ -56,6 +56,7 @@ const InputSelect = ({
       styles={ectorStyles}
       value={value}
       onChange={onChange}
+      filterOption={createFilter({ ignoreAccents: false })} // https://github.com/JedWatson/react-select/issues/3128#issuecomment-487256349
       {...props}
     />
   );

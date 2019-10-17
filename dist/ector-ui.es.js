@@ -15635,7 +15635,11 @@ var InputSelect = function InputSelect(_ref) {
     theme: ectorTheme,
     styles: ectorStyles,
     value: value,
-    onChange: onChange
+    onChange: onChange,
+    filterOption: createFilter({
+      ignoreAccents: false
+    }) // https://github.com/JedWatson/react-select/issues/3128#issuecomment-487256349
+
   }, props));
 };
 
