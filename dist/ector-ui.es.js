@@ -16318,7 +16318,7 @@ var css$1f = ".IconButton-module_button__ZTBlf {\n  -webkit-box-align: center;\n
 var s$1d = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","button":"IconButton-module_button__ZTBlf","label":"IconButton-module_label__K6mXP"};
 styleInject(css$1f);
 
-var css$1g = ".Box-module_box__2wWmS {\n  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);\n          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);\n  border-radius: 8px;\n}\n";
+var css$1g = ".Box-module_box__2wWmS {\n  border-radius: 8px;\n  -webkit-box-shadow: 0px 2px 16px rgba(0, 0, 0, .12);\n          box-shadow: 0px 2px 16px rgba(0, 0, 0, .12);\n}\n";
 var s$1e = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#939baa","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","box":"Box-module_box__2wWmS"};
 styleInject(css$1g);
 
