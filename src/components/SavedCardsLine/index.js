@@ -4,7 +4,7 @@ import moment from 'moment';
 import s from './SavedCardsLine.module.css';
 import PaymentMethodType from './PaymentMethodType';
 
-const Index = ({
+const SavedCardsLine = ({
   card,
   paymentMethod,
   src,
@@ -61,7 +61,7 @@ const Index = ({
   </tr>
 );
 
-Index.propTypes = {
+SavedCardsLine.propTypes = {
   card: PropTypes.string.isRequired,
   paymentMethod: PaymentMethodType.isRequired,
   src: PropTypes.string.isRequired,
@@ -74,9 +74,9 @@ Index.propTypes = {
   checkImg: PropTypes.string.isRequired,
 };
 
-Index.defaultProps = {
+SavedCardsLine.defaultProps = {
   deleteIconClassName: undefined,
 };
 
 
-export default Index;
+export default SavedCardsLine;

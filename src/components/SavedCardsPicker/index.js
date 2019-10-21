@@ -9,26 +9,27 @@ import LinkUnderlined from '../LinkUnderlined';
 class SavedCardsPicker extends React.PureComponent {
   renderContent() {
     const {
-      renderSavedCardsLine, paymentMethods, onClickStripeModal, card, texts,
+      renderSavedCardsLine, paymentMethods, onClickAddCardModal, card, texts, showHeader,
     } = this.props;
-
     const renderOneLine = renderSavedCardsLine(card);
 
     return (
       <div className={s.paymentMethodBox}>
         <table cellSpacing="0" className={s.paymentCardsTable}>
-          <thead>
-            <tr>
-              <th />
-              <th className={s.paymentCardsHeader}>
-                {texts.typeCard}
-              </th>
-              <th className={s.paymentCardsHeader}>{texts.number}</th>
-              <th className={s.paymentCardsHeader}>
-                {texts.expire}
-              </th>
-            </tr>
-          </thead>
+          { showHeader && (
+            <thead>
+              <tr>
+                <th />
+                <th className={s.paymentCardsHeader}>
+                  {texts.typeCard}
+                </th>
+                <th className={s.paymentCardsHeader}>{texts.number}</th>
+                <th className={s.paymentCardsHeader}>
+                  {texts.expire}
+                </th>
+              </tr>
+            </thead>
+          )}
           <tbody>
             {paymentMethods.map(renderOneLine)}
           </tbody>
@@ -41,7 +42,7 @@ class SavedCardsPicker extends React.PureComponent {
                     className={s.addPaymentCardIcon}
                     alt=""
                   />
-                  <LinkUnderlined onClick={onClickStripeModal} className={s.addCardButton}>
+                  <LinkUnderlined onClick={onClickAddCardModal} className={s.addCardButton}>
                     <strong>{texts.addCard}</strong>
                   </LinkUnderlined>
                 </div>
@@ -57,7 +58,7 @@ class SavedCardsPicker extends React.PureComponent {
     const {
       className,
       onRadioButtonChange,
-      value,
+      cardType,
       isSelected,
       texts,
     } = this.props;
@@ -68,7 +69,7 @@ class SavedCardsPicker extends React.PureComponent {
           <SavedCardsPickerHeader
             isSelected={isSelected}
             onRadioButtonChange={onRadioButtonChange}
-            value={value}
+            cardType={cardType}
             texts={texts}
           />
           {isSelected && this.renderContent()}
@@ -80,19 +81,21 @@ class SavedCardsPicker extends React.PureComponent {
 
 SavedCardsPicker.propTypes = {
   className: PropTypes.string,
-  value: PropTypes.string,
+  cardType: PropTypes.string,
   isSelected: PropTypes.bool.isRequired,
   onRadioButtonChange: PropTypes.func.isRequired,
   paymentMethods: PropTypes.arrayOf(PaymentMethodType).isRequired,
-  onClickStripeModal: PropTypes.func.isRequired,
+  onClickAddCardModal: PropTypes.func.isRequired,
   renderSavedCardsLine: PropTypes.func.isRequired,
-  card: PropTypes.string,
+  card: PropTypes.string.isRequired,
   texts: SavedCardsPickerTextTypes.isRequired,
+  showHeader: PropTypes.bool,
 };
 
 SavedCardsPicker.defaultProps = {
   className: undefined,
-  value: '',
+  cardType: '',
+  showHeader: false,
 };
 
 

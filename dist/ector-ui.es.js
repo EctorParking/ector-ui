@@ -16302,7 +16302,7 @@ var PaymentMethodType$1 = PropTypes$1.shape({
   cardName: PropTypes$1.string
 });
 
-var Index = function Index(_ref) {
+var SavedCardsLine = function SavedCardsLine(_ref) {
   var card = _ref.card,
       paymentMethod = _ref.paymentMethod,
       src = _ref.src,
@@ -16352,7 +16352,7 @@ var Index = function Index(_ref) {
   }))));
 };
 
-Index.propTypes = {
+SavedCardsLine.propTypes = {
   card: PropTypes$1.string.isRequired,
   paymentMethod: PaymentMethodType$1.isRequired,
   src: PropTypes$1.string.isRequired,
@@ -16364,7 +16364,7 @@ Index.propTypes = {
   onSelectLine: PropTypes$1.func.isRequired,
   checkImg: PropTypes$1.string.isRequired
 };
-Index.defaultProps = {
+SavedCardsLine.defaultProps = {
   deleteIconClassName: undefined
 };
 
@@ -16387,13 +16387,32 @@ var SavedCardsPickerTextTypes = PropTypes$1.shape({
   iconVisa: PropTypes$1.string,
   iconMastercard: PropTypes$1.string,
   iconAmerican: PropTypes$1.string,
-  iconBusinessEdenRed: PropTypes$1.string
+  iconBusinessEdenRed: PropTypes$1.string,
+  iconTotal: PropTypes$1.string
 });
+
+var CardTypes = {
+  total: 'total',
+  stripe: 'stripe'
+};
+
+var getHeaderTitle = function getHeaderTitle(value, texts) {
+  switch (value) {
+    case CardTypes.stripe:
+      return texts.titleStripe;
+
+    case CardTypes.total:
+      return texts.titleTotal;
+
+    default:
+      return null;
+  }
+};
 
 var SavedCardsPickerHeader = function SavedCardsPickerHeader(_ref) {
   var isSelected = _ref.isSelected,
       onRadioButtonChange = _ref.onRadioButtonChange,
-      value = _ref.value,
+      cardType = _ref.cardType,
       texts = _ref.texts;
   return React__default.createElement("div", {
     className: s$1e.header
@@ -16401,11 +16420,11 @@ var SavedCardsPickerHeader = function SavedCardsPickerHeader(_ref) {
     label: "\xA0",
     checked: isSelected,
     onSelect: onRadioButtonChange,
-    value: value,
+    value: cardType,
     name: ""
   }), React__default.createElement("span", {
     className: s$1e.text
-  }, React__default.createElement("strong", null, value === 'stripe' ? texts.titleStripe : texts.titleTotal)), value === 'stripe' && React__default.createElement("div", {
+  }, React__default.createElement("strong", null, getHeaderTitle(cardType, texts))), cardType === CardTypes.stripe && React__default.createElement("div", {
     className: s$1e.availableCards
   }, React__default.createElement("img", {
     src: texts.iconVisa,
@@ -16423,17 +16442,17 @@ var SavedCardsPickerHeader = function SavedCardsPickerHeader(_ref) {
     src: texts.iconBusinessEdenRed,
     alt: "Business Edenred",
     className: [s$1e.cardIcon, s$1e.cardIconBusinessEdenred].join(' ')
-  })), value === 'total' && React__default.createElement("div", {
+  })), cardType === CardTypes.total && React__default.createElement("div", {
     className: s$1e.availableCards
   }, React__default.createElement("img", {
-    src: texts.iconVisa,
-    alt: "Visa",
+    src: texts.iconTotal,
+    alt: "Total",
     className: [s$1e.cardIcon, s$1e.cardIconBigger].join(' ')
   })));
 };
 
 SavedCardsPickerHeader.propTypes = {
-  value: PropTypes$1.string.isRequired,
+  cardType: PropTypes$1.oneOf(Object.values(CardTypes)).isRequired,
   isSelected: PropTypes$1.bool.isRequired,
   onRadioButtonChange: PropTypes$1.func.isRequired,
   texts: SavedCardsPickerTextTypes.isRequired
@@ -16464,16 +16483,17 @@ function (_React$PureComponent) {
       var _this$props = this.props,
           renderSavedCardsLine = _this$props.renderSavedCardsLine,
           paymentMethods = _this$props.paymentMethods,
-          onClickStripeModal = _this$props.onClickStripeModal,
+          onClickAddCardModal = _this$props.onClickAddCardModal,
           card = _this$props.card,
-          texts = _this$props.texts;
+          texts = _this$props.texts,
+          showHeader = _this$props.showHeader;
       var renderOneLine = renderSavedCardsLine(card);
       return React__default.createElement("div", {
         className: s$1d.paymentMethodBox
       }, React__default.createElement("table", {
         cellSpacing: "0",
         className: s$1d.paymentCardsTable
-      }, React__default.createElement("thead", null, React__default.createElement("tr", null, React__default.createElement("th", null), React__default.createElement("th", {
+      }, showHeader && React__default.createElement("thead", null, React__default.createElement("tr", null, React__default.createElement("th", null), React__default.createElement("th", {
         className: s$1d.paymentCardsHeader
       }, texts.typeCard), React__default.createElement("th", {
         className: s$1d.paymentCardsHeader
@@ -16488,7 +16508,7 @@ function (_React$PureComponent) {
         className: s$1d.addPaymentCardIcon,
         alt: ""
       }), React__default.createElement(LinkUnderlined, {
-        onClick: onClickStripeModal,
+        onClick: onClickAddCardModal,
         className: s$1d.addCardButton
       }, React__default.createElement("strong", null, texts.addCard))))))));
     }
@@ -16498,7 +16518,7 @@ function (_React$PureComponent) {
       var _this$props2 = this.props,
           className = _this$props2.className,
           onRadioButtonChange = _this$props2.onRadioButtonChange,
-          value = _this$props2.value,
+          cardType = _this$props2.cardType,
           isSelected = _this$props2.isSelected,
           texts = _this$props2.texts;
       return React__default.createElement("div", {
@@ -16508,7 +16528,7 @@ function (_React$PureComponent) {
       }, React__default.createElement(SavedCardsPickerHeader, {
         isSelected: isSelected,
         onRadioButtonChange: onRadioButtonChange,
-        value: value,
+        cardType: cardType,
         texts: texts
       }), isSelected && this.renderContent()));
     }
@@ -16519,18 +16539,20 @@ function (_React$PureComponent) {
 
 SavedCardsPicker.propTypes = {
   className: PropTypes$1.string,
-  value: PropTypes$1.string,
+  cardType: PropTypes$1.string,
   isSelected: PropTypes$1.bool.isRequired,
   onRadioButtonChange: PropTypes$1.func.isRequired,
   paymentMethods: PropTypes$1.arrayOf(PaymentMethodType$2).isRequired,
-  onClickStripeModal: PropTypes$1.func.isRequired,
+  onClickAddCardModal: PropTypes$1.func.isRequired,
   renderSavedCardsLine: PropTypes$1.func.isRequired,
-  card: PropTypes$1.string,
-  texts: SavedCardsPickerTextTypes.isRequired
+  card: PropTypes$1.string.isRequired,
+  texts: SavedCardsPickerTextTypes.isRequired,
+  showHeader: PropTypes$1.bool
 };
 SavedCardsPicker.defaultProps = {
   className: undefined,
-  value: ''
+  cardType: '',
+  showHeader: false
 };
 
 var css$1h = ".DateTimePicker-module_calendar__1m3vk {\n  position: relative;\n  width: 100%;\n  height: 300px;\n}\n\n.DateTimePicker-module_calendarArrow__SvtwN {\n  display: none;\n}\n\n.DateTimePicker-module_datePickerPopper__2V2oe {\n  -webkit-transform: none !important;\n          transform: none !important;\n  width: 100%;\n  margin-top: 0 !important;\n}\n\n.DateTimePicker-module_hidden__OvFBm {\n  display: none !important;\n}\n\n.DateTimePicker-module_pickerSuggestions__38iqg {\n  width: 610px !important;\n  margin-left: -300px;\n  left: 50%;\n  height: 265px !important\n}\n\n.DateTimePicker-module_pickerSuggestions__38iqg:before {\n  display: none;\n}\n\n.DateTimePicker-module_suggestionsArrow__2RcKh {\n  margin-left: -9px;\n}\n\n.DateTimePicker-module_picker__3d7nO {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  height: auto;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP {\n  background: none;\n  padding-left: 40px;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::-webkit-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::-ms-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.datePickerInput::-webkit-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.datePickerInput::-ms-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.DateTimePicker-module_fixedWidthDateInput__3lrKo {\n  min-width: 160px;\n  width: 160px;\n  max-width: 160px;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU {\n  border: none !important;\n  border-radius: 8px;\n  max-width: 100px;\n  padding-left: 35px;\n  margin-right: 1px;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::-webkit-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::-ms-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.timePickerInput::-webkit-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.timePickerInput::-ms-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInputContainer__ROeTv::before {\n  background-color: rgba(191, 196, 212, .52);\n  content: '';\n  height: 20px;\n  margin-top: -10px;\n  position: absolute;\n  top: 50%;\n  width: 1px;\n}\n\n.DateTimePicker-module_timeSuggestions__3aCiQ {\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  position: relative;\n}\n\n.DateTimePicker-module_timeSuggestionsContainer__3Pe8K:nth-child(1) {\n  width: 300px;\n  min-width: 300px;\n}\n\n.DateTimePicker-module_timeSuggestionsContainer__3Pe8K {\n  width: 100%;\n}\n\n.DateTimePicker-module_inputIcon__178Nw {\n  font-size: 19.2px;\n  font-size: 19.2px;\n  font-size: 1.2rem;\n  left: 10px;\n}\n\n.DateTimePicker-module_inputError__2-au6 {\n  color: #ff5757;\n}\n\n.DateTimePicker-module_inputError__2-au6::-webkit-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputError__2-au6::-ms-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.inputError::-webkit-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.inputError::-ms-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputError__2-au6::placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputError__2-au6:-ms-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputError__2-au6::-ms-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputContainer__1FIAJ {\n  padding: 0;\n}\n\n.DateTimePicker-module_splitInputContainer__1fsjs {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  width: 50%\n}\n\n.DateTimePicker-module_splitInputContainer__1fsjs:first-child {\n  border-right: 1px solid rgba(191, 196, 212, .52);\n}\n\n.DateTimePicker-module_month__2AwNj {\n  color: #163457;\n}\n\n.DateTimePicker-module_hr__1p2EJ {\n  height: 85%;\n  width: 1px;\n  position: absolute;\n  left: 300px;\n  background-color: rgba(191, 196, 212, .52);\n  top: 7.5%;\n}\n";
@@ -17241,5 +17263,5 @@ DateTimePicker.defaultProps = {
 var index$2 = './components';
 
 export default index$2;
-export { ActionLink, AddItemCard, Alert, AlternativeTimeCard, ApplicationCard, Arrow, BookingCard, BookingModificationSummary, BookingSteps, Button, CarCard, Card, CardTitle, CardTravelInformation, ColorPicker, ContactCard, ContactForm, DateTimePicker, FlightInformationForm, GenderPicker, Header, HtmlPrice, Icon, InformationAlert, Input, InputButton, InputCheckbox, InputLabel, InputSelect, Label, LinkUnderlined, Loader, LoginForm, MenuButton, PaymentMethodCard, PhoneInput, Picker, PickerSuggestions, PricingSummary, RadioButton, RatingStars, ReferralCard, RegistrationForm, RewardCard, RideSummary, RoundedButton, Index as SavedCardsLine, SavedCardsPicker, ScrollArrow, Select, ServiceCard, Subtitle, TextIcon, TimeRange, Title, TitleStep, Tooltip, ZonesPicker, arbitraryUnsetMinutesValue };
+export { ActionLink, AddItemCard, Alert, AlternativeTimeCard, ApplicationCard, Arrow, BookingCard, BookingModificationSummary, BookingSteps, Button, CarCard, Card, CardTitle, CardTravelInformation, ColorPicker, ContactCard, ContactForm, DateTimePicker, FlightInformationForm, GenderPicker, Header, HtmlPrice, Icon, InformationAlert, Input, InputButton, InputCheckbox, InputLabel, InputSelect, Label, LinkUnderlined, Loader, LoginForm, MenuButton, PaymentMethodCard, PhoneInput, Picker, PickerSuggestions, PricingSummary, RadioButton, RatingStars, ReferralCard, RegistrationForm, RewardCard, RideSummary, RoundedButton, SavedCardsLine, SavedCardsPicker, ScrollArrow, Select, ServiceCard, Subtitle, TextIcon, TimeRange, Title, TitleStep, Tooltip, ZonesPicker, arbitraryUnsetMinutesValue };
 //# sourceMappingURL=ector-ui.es.js.map

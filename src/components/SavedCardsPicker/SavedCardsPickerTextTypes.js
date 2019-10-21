@@ -12,4 +12,5 @@ export default PropTypes.shape({
   iconMastercard: PropTypes.string,
   iconAmerican: PropTypes.string,
   iconBusinessEdenRed: PropTypes.string,
+  iconTotal: PropTypes.string,
 });
