@@ -1334,7 +1334,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #939baa;
+  color: #a9b3c5;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1351,7 +1351,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #939baa;
+  color: #a9b3c5;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3188,7 +3188,7 @@
 }
 
 .ZoneSuggestion-module_disabled__1DHUU {
-  color: #939baa;
+  color: #a9b3c5;
 }
 
 .ZoneSuggestion-module_icon__2Bikz {
@@ -3221,27 +3221,27 @@
 }
 
 .ZonesPicker-module_input__1qXay::-webkit-input-placeholder {
-  color: #939baa;
+  color: #a9b3c5;
   font-style: italic;
 }
 
 .ZonesPicker-module_input__1qXay::-ms-input-placeholder {
-  color: #939baa;
+  color: #a9b3c5;
   font-style: italic;
 }
 
 .input::-webkit-input-placeholder {
-  color: #939baa;
+  color: #a9b3c5;
   font-style: italic;
 }
 
 .input::-ms-input-placeholder {
-  color: #939baa;
+  color: #a9b3c5;
   font-style: italic;
 }
 
 .ZonesPicker-module_input__1qXay::placeholder {
-  color: #939baa;
+  color: #a9b3c5;
   font-style: italic;
 }
 
@@ -3389,7 +3389,7 @@
 }
 
 .TimeRange-module_hour__XiHg6.TimeRange-module_disabled__TxWjV, .TimeRange-module_minute__32J9f.TimeRange-module_disabled__TxWjV {
-  color: #939baa;
+  color: #a9b3c5;
 }
 
 .FlightInformationForm-module_card__3HVvP {
@@ -3772,80 +3772,216 @@
 .InformationAlert-module_alertDescription__4n3PJ {
   margin: 0;
 }
-.PaymentMethodLine-module_tableRow__1y4vI {
-  color: #939baa;
-}
-
-.PaymentMethodLine-module_tableRow__1y4vI:hover {
-  -webkit-box-shadow: 0px 0px 15px -2px rgba(0, 0, 0, .15);
-          box-shadow: 0px 0px 15px -2px rgba(0, 0, 0, .15);
-}
-
-.PaymentMethodLine-module_checkedButton__3Vvd1 {
-  padding: 0 0 0 8px;
-  width: 5%;
-  border-bottom: 2px solid #eceff6;
-}
-
-.PaymentMethodLine-module_paymentCardCell__VfYAj {
-  border-bottom: 2px solid #eceff6;
-  text-align: center;
-  padding: 15px 30px;
+.SavedCardsLine-module_tableRow__8zJ9M {
+  color: #a9b3c5;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
 
-.PaymentMethodLine-module_brand__2Y_7n {
-  display: table-cell;
-  text-align: justify;
+.SavedCardsLine-module_tableRow__8zJ9M:hover {
+  -webkit-box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, .15);
+          box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, .15);
 }
 
-.PaymentMethodLine-module_cardIconInList__1ZL9K {
-  height: 24px;
-  margin: 0 10px 0 0;
+.SavedCardsLine-module_checkedButton__b64Id {
+  padding-left: 8px;
   vertical-align: middle;
 }
 
-.PaymentMethodLine-module_lastFourDigits__1MPXa {
+.SavedCardsLine-module_checkedImg__2TnGE {
+  width: 25px;
+}
+
+.SavedCardsLine-module_paymentCardCell__eH68n {
+  border-bottom: 2px solid #eceff6;
+  padding: 0 60px 0 15px;
+  vertical-align: middle;
+}
+
+.SavedCardsLine-module_cardIcon__3atbF {
+  margin: 0 10px 0 0;
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+}
+
+.SavedCardsLine-module_cardName__zMJRV {
+  text-align: left;
+  vertical-align: middle;
+}
+
+.SavedCardsLine-module_lastFourDigits__28_QZ {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  vertical-align: middle;
 }
 
-.PaymentMethodLine-module_hiddenDigits__Gxa4m {
+.SavedCardsLine-module_hiddenDigits__2QCDF {
   font-size: 2em;
   margin-right: 5px;
+  vertical-align: middle;
 }
 
-.PaymentMethodLine-module_deleteButtonCell__2yozC {
+.SavedCardsLine-module_deleteButtonCell__2C3NU {
   border-bottom: 2px solid #eceff6;
-  padding: 15px 20px;
-  text-align: justify;
+  padding: 10px 10px;
 }
 
-.PaymentMethodLine-module_deleteButton__2iU_v {
+.SavedCardsLine-module_expireAt__39dzO {
+  text-align: center;
+}
+
+.SavedCardsLine-module_deleteButton__2aq34 {
   background: none;
   border: 0;
   padding: 0;
 }
 
-.PaymentMethodLine-module_deleteIcon__1Q_Mn::before {
+.SavedCardsLine-module_deleteIcon__Hz5ss::before {
   color: #163457;
 }
 
-.PaymentMethodLine-module_deleteIcon__1Q_Mn:hover::before {
+.SavedCardsLine-module_deleteIcon__Hz5ss:hover::before {
   color: #ff5757;
 }
 
-.PaymentMethodLine-module_clicked__RgGz8 {
-  -webkit-box-shadow: 0px 0px 15px -2px rgba(0, 0, 0, .15);
-          box-shadow: 0px 0px 15px -2px rgba(0, 0, 0, .15);
+.SavedCardsLine-module_clicked__9z_VH {
+  -webkit-box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, .15);
+          box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, .15);
   color: #163457;
 }
+
+.SavedCardsPicker-module_card__3Lo7m {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  max-height: 100%;
+  border-radius: 8px;
+  background-color: #fefefe;
+  margin: 0 0 15px 0;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .15);
+          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .15);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  overflow-x: auto;
+}
+
+.SavedCardsPicker-module_left__vjeNi {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.SavedCardsPicker-module_paymentMethodBox__1oVXr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px 0 10px 0;
+  max-height: 100%;
+  border-radius: 8px;
+  background-color: #fefefe;
+  margin : 0 0 0 0;
+  max-width: 720px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  overflow-x: auto;
+}
+
+.SavedCardsPicker-module_paymentCardsTable__Qpt3G {
+  display: table;
+  overflow-x: auto;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.SavedCardsPicker-module_paymentCardsHeader__19KgR {
+  padding: 10px 40px 10px 0;
+}
+
+.SavedCardsPicker-module_paymentTableFooter__1lBCH {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+}
+
+.SavedCardsPicker-module_addPaymentCardIcon__VUpeM {
+  width: 20px;
+  height: 20px;
+}
+
+.SavedCardsPicker-module_addCardButton__1FlP7 {
+  vertical-align: middle;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.SavedCardsPickerHeader-module_header__2Px_I {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40px;
+  padding: 10px;
+  margin-left: 10px;
+}
+
+.SavedCardsPickerHeader-module_text__CJFVs {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.SavedCardsPickerHeader-module_availableCards__drqAA {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.SavedCardsPickerHeader-module_cardIcon__3OlwR {
+  height: 24px;
+  margin: 0 2px;
+}
+
+.SavedCardsPickerHeader-module_cardIconSmaller__3Rwc_ {
+  width: 30px;
+}
+
+.SavedCardsPickerHeader-module_cardIconBigger__2Pt6B {
+  width: 50px;
+}
+
+.SavedCardsPickerHeader-module_cardIconBusinessEdenred__3VfqK {
+  height: 24px;
+}
+
 
 .DateTimePicker-module_calendar__1m3vk {
   position: relative;
@@ -3895,27 +4031,27 @@
 }
 
 .DateTimePicker-module_datePickerInput__1JwcP::-webkit-input-placeholder {
-  color: #939baa;
+  color: #a9b3c5;
   font-style: italic;
 }
 
 .DateTimePicker-module_datePickerInput__1JwcP::-ms-input-placeholder {
-  color: #939baa;
+  color: #a9b3c5;
   font-style: italic;
 }
 
 .datePickerInput::-webkit-input-placeholder {
-  color: #939baa;
+  color: #a9b3c5;
   font-style: italic;
 }
 
 .datePickerInput::-ms-input-placeholder {
-  color: #939baa;
+  color: #a9b3c5;
   font-style: italic;
 }
 
 .DateTimePicker-module_datePickerInput__1JwcP::placeholder {
-  color: #939baa;
+  color: #a9b3c5;
   font-style: italic;
 }
 
@@ -3934,27 +4070,27 @@
 }
 
 .DateTimePicker-module_timePickerInput__1vkhU::-webkit-input-placeholder {
-  color: #939baa;
+  color: #a9b3c5;
   font-style: italic;
 }
 
 .DateTimePicker-module_timePickerInput__1vkhU::-ms-input-placeholder {
-  color: #939baa;
+  color: #a9b3c5;
   font-style: italic;
 }
 
 .timePickerInput::-webkit-input-placeholder {
-  color: #939baa;
+  color: #a9b3c5;
   font-style: italic;
 }
 
 .timePickerInput::-ms-input-placeholder {
-  color: #939baa;
+  color: #a9b3c5;
   font-style: italic;
 }
 
 .DateTimePicker-module_timePickerInput__1vkhU::placeholder {
-  color: #939baa;
+  color: #a9b3c5;
   font-style: italic;
 }
 

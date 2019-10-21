@@ -2,50 +2,59 @@
 
 .tableRow {
   color: var(--darkGrey);
+  width: fit-content;
 }
 
 .tableRow:hover {
-  box-shadow: 0px 0px 15px -2px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.15);
 }
 
 .checkedButton {
-  padding: 0 0 0 8px;
-  width: 5%;
-  border-bottom: 2px solid var(--lightGrey);
+  padding-left: 8px;
+  vertical-align: middle;
+}
+
+.checkedImg {
+  width: 25px;
 }
 
 .paymentCardCell {
   border-bottom: 2px solid var(--lightGrey);
-  text-align: center;
-  padding: var(--marginXMedium) var(--marginLarge);
-  width: fit-content;
+  padding: 0 var(--marginXXLarge) 0 var(--marginXMedium);
+  vertical-align: middle;
 }
 
-.brand {
-  display: table-cell;
-  text-align: justify;
-}
-
-.cardIconInList {
-  height: 24px;
+.cardIcon {
   margin: 0 var(--marginSmall) 0 0;
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+}
+
+.cardName {
+  text-align: left;
   vertical-align: middle;
 }
 
 .lastFourDigits {
   align-items: center;
   justify-content: center;
+  vertical-align: middle;
 }
 
 .hiddenDigits {
   font-size: var(--iconFontSize);
   margin-right: var(--marginXSmall);
+  vertical-align: middle;
 }
 
 .deleteButtonCell {
   border-bottom: 2px solid var(--lightGrey);
-  padding: var(--marginXMedium) var(--marginMedium);
-  text-align: justify;
+  padding: var(--marginSmall) var(--marginSmall);
+}
+
+.expireAt {
+  text-align: center;
 }
 
 .deleteButton {
@@ -63,6 +72,6 @@
 }
 
 .clicked {
-  box-shadow: 0px 0px 15px -2px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.15);
   color: var(--deepBlue);
 }

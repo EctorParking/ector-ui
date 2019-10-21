@@ -54,4 +54,5 @@ export { default as MenuButton } from './MenuButton';
 export { default as TextIcon } from './TextIcon';
 export { default as ScrollArrow } from './ScrollArrow';
 export { default as InformationAlert } from './InformationAlert';
-export { default as PaymentMethodLine } from './PaymentMethodLine';
+export { default as SavedCardsLine } from './SavedCardsLine';
+export { default as SavedCardsPicker } from './SavedCardsPicker';

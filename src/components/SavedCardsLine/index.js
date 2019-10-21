@@ -1,41 +1,44 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import s from './PaymentMethodLine.module.css';
+import s from './SavedCardsLine.module.css';
 import PaymentMethodType from './PaymentMethodType';
 
-import cbImage from '../../assets/images/cb.svg';
-
-const PaymentMethodLine = ({
+const Index = ({
   card,
   paymentMethod,
   src,
+  srcGrey,
   alt,
   brandText,
-  onClick,
+  onClickDeleteButton,
   deleteIconClassName,
-  onSelect,
+  onSelectLine,
+  checkImg,
 }) => (
   <tr
     key={paymentMethod.id}
-    onClick={() => onSelect(paymentMethod.id)}
+    onClick={() => onSelectLine(paymentMethod.id)}
     className={[s.tableRow, card === paymentMethod.id ? s.clicked : undefined].join(' ')}
   >
     <td className={s.checkedButton}>
       {card === paymentMethod.id && (
         <img
-          src={cbImage}
+          src={checkImg}
           alt="checkedButton"
+          className={s.checkedImg}
         />
       )}
     </td>
-    <td className={[s.paymentCardCell, s.brand].join(' ')}>
+    <td className={s.paymentCardCell}>
       <img
-        src={src}
+        src={card === paymentMethod.id ? src : srcGrey}
         alt={alt}
-        className={s.cardIconInList}
+        className={s.cardIcon}
       />
-      {paymentMethod.cardName || brandText}
+      <span className={s.cardName}>
+        {paymentMethod.cardName || brandText}
+      </span>
     </td>
     <td className={s.paymentCardCell}>
       <span className={s.lastFourDigits}>
@@ -45,13 +48,12 @@ const PaymentMethodLine = ({
         {paymentMethod.last4digits}
       </span>
     </td>
-    <td className={s.paymentCardCell}>{moment(paymentMethod.expireAt).format('MM/YY')}</td>
-    <td className={s.deleteButtonCell}>
+    <td className={[s.paymentCardCell, s.expireAt].join(' ')}>{moment(paymentMethod.expireAt).format('MM/YY')}</td>
+    <td className={[s.deleteButtonCell, s.paymentCardCell].join(' ')}>
       <button
         type="button"
         className={s.deleteButton}
-        title="Supprimer"
-        onClick={onClick}
+        onClick={onClickDeleteButton}
       >
         <i className={`icon-ec-close ${deleteIconClassName}`} />
       </button>
@@ -59,20 +61,22 @@ const PaymentMethodLine = ({
   </tr>
 );
 
-PaymentMethodLine.propTypes = {
+Index.propTypes = {
   card: PropTypes.string.isRequired,
   paymentMethod: PaymentMethodType.isRequired,
   src: PropTypes.string.isRequired,
+  srcGrey: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
   brandText: PropTypes.string.isRequired,
-  onClick: PropTypes.string.isRequired,
+  onClickDeleteButton: PropTypes.string.isRequired,
   deleteIconClassName: PropTypes.string,
-  onSelect: PropTypes.func.isRequired,
+  onSelectLine: PropTypes.func.isRequired,
+  checkImg: PropTypes.string.isRequired,
 };
 
-PaymentMethodLine.defaultProps = {
+Index.defaultProps = {
   deleteIconClassName: undefined,
 };
 
 
-export default PaymentMethodLine;
+export default Index;
