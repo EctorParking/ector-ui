@@ -11,7 +11,7 @@ const LinkUnderlined = ({
       testid={testid}
       onClick={onClick}
       id={id === LinkUnderlined.defaultProps.id ? '' : `${id}Button`}
-      className={fetching ? s.fetching : undefined}
+      className={[s.button, fetching ? s.fetching : ''].join(' ')}
     >
       { children }
     </button>
