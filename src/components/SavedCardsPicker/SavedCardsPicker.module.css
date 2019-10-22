@@ -1,0 +1,58 @@
+@import '../../style/variable.global.css';
+
+.card {
+  display: flex;
+  padding: var(--noMargin);
+  max-height: 100%;
+  border-radius: var(--borderRadius);
+  background-color: var(--seventhColor);
+  margin: 0 0 var(--marginXMedium) 0;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+  width: fit-content;
+  overflow-x: auto;
+}
+
+.left {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.paymentMethodBox {
+  display: flex;
+  padding: var(--marginSmall) 0 var(--marginSmall) 0;
+  max-height: 100%;
+  border-radius: var(--borderRadius);
+  background-color: var(--seventhColor);
+  margin : 0 0 0 0;
+  max-width: 720px;
+  width: fit-content;
+  overflow-x: auto;
+}
+
+.paymentCardsTable {
+  display: table;
+  overflow-x: auto;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.paymentCardsHeader {
+  padding: var(--marginSmall) var(--marginMLarge) var(--marginSmall) 0;
+}
+
+.paymentTableFooter {
+  display: flex;
+  align-items: center;
+  padding: var(--marginSmall);
+}
+
+.addPaymentCardIcon {
+  width: var(--marginMedium);
+  height: var(--marginMedium);
+}
+
+.addCardButton {
+  vertical-align: middle;
+  align-items: center;
+}

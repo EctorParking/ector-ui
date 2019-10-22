@@ -1,0 +1,38 @@
+@import '../../style/variable.global.css';
+
+.header {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  height: var(--marginMLarge);
+  padding: var(--marginSmall);
+  margin-left: var(--marginSmall);
+}
+
+.text {
+  align-items: flex-start;
+}
+
+.availableCards {
+  align-items: center;
+  margin-left: var(--marginMedium);
+  display: flex;
+}
+
+.cardIcon {
+  height: 24px;
+  margin: 0 2px;
+}
+
+.cardIconSmaller {
+  width: var(--marginLarge);
+}
+
+.cardIconBigger {
+  width: var(--marginXLarge);
+}
+
+.cardIconBusinessEdenred {
+  height: 24px;
+}
+
