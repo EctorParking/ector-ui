@@ -62,13 +62,13 @@ const SavedCardsLine = ({
 );
 
 SavedCardsLine.propTypes = {
-  card: PropTypes.string.isRequired,
+  card: PropTypes.string,
   paymentMethod: PaymentMethodType.isRequired,
   src: PropTypes.string.isRequired,
   srcGrey: PropTypes.string.isRequired,
-  alt: PropTypes.string.isRequired,
+  alt: PropTypes.string,
   brandText: PropTypes.string.isRequired,
-  onClickDeleteButton: PropTypes.string.isRequired,
+  onClickDeleteButton: PropTypes.func.isRequired,
   deleteIconClassName: PropTypes.string,
   onSelectLine: PropTypes.func.isRequired,
   checkImg: PropTypes.string.isRequired,
@@ -76,6 +76,8 @@ SavedCardsLine.propTypes = {
 
 SavedCardsLine.defaultProps = {
   deleteIconClassName: undefined,
+  alt: '',
+  card: null,
 };
 
 

@@ -87,7 +87,7 @@ SavedCardsPicker.propTypes = {
   paymentMethods: PropTypes.arrayOf(PaymentMethodType).isRequired,
   onClickAddCardModal: PropTypes.func.isRequired,
   renderSavedCardsLine: PropTypes.func.isRequired,
-  card: PropTypes.string.isRequired,
+  card: PropTypes.string,
   texts: SavedCardsPickerTextTypes.isRequired,
   showHeader: PropTypes.bool,
 };
@@ -96,6 +96,7 @@ SavedCardsPicker.defaultProps = {
   className: undefined,
   cardType: '',
   showHeader: false,
+  card: null,
 };
 
 
