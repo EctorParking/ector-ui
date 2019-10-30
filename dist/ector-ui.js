@@ -3168,8 +3168,8 @@ var TextsType$5 = PropTypes$1.shape({
 
 var PaymentMethodType = PropTypes$1.shape({
   last4digits: PropTypes$1.string,
-  brand: PropTypes$1.oneOf(['visa', 'mastercard', 'american', 'cb']),
-  type: PropTypes$1.oneOf(['card', 'account', 'sepa']),
+  brand: PropTypes$1.oneOf(['visa', 'mastercard', 'american', 'cb', 'total']),
+  type: PropTypes$1.oneOf(['card', 'account', 'sepa', 'saved-total']),
   expireAt: PropTypes$1.string,
   cardName: PropTypes$1.string
 });
@@ -3309,11 +3309,15 @@ var creditCardBrandIcons = {
   mastercard: iconMastercard,
   total: iconTotal
 };
+var paymentMethodType = {
+  card: 'card',
+  total: 'saved-total'
+};
 
 var PaymentMethodCardContentRead = function PaymentMethodCardContentRead(_ref) {
   var paymentMethod = _ref.paymentMethod,
       texts = _ref.texts;
-  return React__default.createElement(React.Fragment, null, (paymentMethod.type === 'card' || paymentMethod.type === 'saved-total') && React__default.createElement("img", {
+  return React__default.createElement(React.Fragment, null, (paymentMethod.type === paymentMethodType.card || paymentMethod.type === paymentMethodType.total) && React__default.createElement("img", {
     className: s$C.brandIcon,
     src: creditCardBrandIcons[paymentMethod.brand],
     alt: paymentMethod.brand
@@ -16400,8 +16404,8 @@ styleInject(css$1h);
 
 var PaymentMethodType$1 = PropTypes$1.shape({
   last4digits: PropTypes$1.string,
-  brand: PropTypes$1.oneOf(['visa', 'mastercard', 'american', 'cb']),
-  type: PropTypes$1.oneOf(['card', 'account', 'sepa']),
+  brand: PropTypes$1.oneOf(['visa', 'mastercard', 'american', 'cb', 'total']),
+  type: PropTypes$1.oneOf(['card', 'account', 'sepa', 'saved-total']),
   expireAt: PropTypes$1.string,
   cardName: PropTypes$1.string
 });

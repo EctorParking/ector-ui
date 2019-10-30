@@ -16,10 +16,16 @@ const creditCardBrandIcons = {
   total: iconTotal,
 };
 
+const paymentMethodType = {
+  card: 'card',
+  total: 'saved-total',
+};
+
 const PaymentMethodCardContentRead = ({ paymentMethod, texts }) => (
   <Fragment>
     {
-      (paymentMethod.type === 'card' || paymentMethod.type === 'saved-total') && (
+      (paymentMethod.type === paymentMethodType.card
+        || paymentMethod.type === paymentMethodType.total) && (
         <img
           className={s.brandIcon}
           src={creditCardBrandIcons[paymentMethod.brand]}
