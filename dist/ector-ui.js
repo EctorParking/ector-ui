@@ -3168,7 +3168,7 @@ var TextsType$5 = PropTypes$1.shape({
 
 var PaymentMethodType = PropTypes$1.shape({
   last4digits: PropTypes$1.string,
-  brand: PropTypes$1.oneOf(['visa', 'mastercard', 'american', 'cb', 'total']),
+  brand: PropTypes$1.oneOf(['visa', 'mastercard', 'american', 'cb', 'totalgr']),
   type: PropTypes$1.oneOf(['card', 'account', 'sepa', 'saved-total']),
   expireAt: PropTypes$1.string,
   cardName: PropTypes$1.string
@@ -3307,7 +3307,7 @@ var creditCardBrandIcons = {
   american: iconAmerican,
   cb: iconCb,
   mastercard: iconMastercard,
-  total: iconTotal
+  totalgr: iconTotal
 };
 var paymentMethodType = {
   card: 'card',
@@ -16404,7 +16404,7 @@ styleInject(css$1h);
 
 var PaymentMethodType$1 = PropTypes$1.shape({
   last4digits: PropTypes$1.string,
-  brand: PropTypes$1.oneOf(['visa', 'mastercard', 'american', 'cb', 'total']),
+  brand: PropTypes$1.oneOf(['visa', 'mastercard', 'american', 'cb', 'totalgr']),
   type: PropTypes$1.oneOf(['card', 'account', 'sepa', 'saved-total']),
   expireAt: PropTypes$1.string,
   cardName: PropTypes$1.string
@@ -16570,8 +16570,8 @@ SavedCardsPickerHeader.propTypes = {
 
 var PaymentMethodType$2 = PropTypes$1.shape({
   last4digits: PropTypes$1.string,
-  brand: PropTypes$1.oneOf(['visa', 'mastercard', 'american', 'cb']),
-  type: PropTypes$1.oneOf(['card', 'account', 'sepa']),
+  brand: PropTypes$1.oneOf(['visa', 'mastercard', 'american', 'cb', 'totalgr']),
+  type: PropTypes$1.oneOf(['card', 'account', 'sepa', 'saved-total']),
   expireAt: PropTypes$1.string,
   cardName: PropTypes$1.string
 });
