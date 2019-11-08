@@ -16597,7 +16597,7 @@ function (_React$PureComponent) {
           card = _this$props.card,
           texts = _this$props.texts,
           showHeader = _this$props.showHeader,
-          renderAddCardForm = _this$props.renderAddCardForm;
+          renderEmptyPaymentMethods = _this$props.renderEmptyPaymentMethods;
       var renderOneLine = renderSavedCardsLine(card);
       return React__default.createElement("div", {
         className: s$1g.paymentMethodBox
@@ -16610,7 +16610,7 @@ function (_React$PureComponent) {
         className: s$1g.paymentCardsHeader
       }, texts.number), React__default.createElement("th", {
         className: s$1g.paymentCardsHeader
-      }, texts.expire))), React__default.createElement("tbody", null, paymentMethods.length > 0 ? paymentMethods.map(renderOneLine) : renderAddCardForm()), paymentMethods.length > 0 && React__default.createElement("tfoot", null, React__default.createElement("tr", null, React__default.createElement("td", {
+      }, texts.expire))), React__default.createElement("tbody", null, paymentMethods.length > 0 ? paymentMethods.map(renderOneLine) : renderEmptyPaymentMethods()), paymentMethods.length > 0 && React__default.createElement("tfoot", null, React__default.createElement("tr", null, React__default.createElement("td", {
         colSpan: "4"
       }, React__default.createElement("div", {
         className: s$1g.paymentTableFooter
@@ -16659,7 +16659,7 @@ SavedCardsPicker.propTypes = {
   card: PropTypes$1.string,
   texts: SavedCardsPickerTextTypes.isRequired,
   showHeader: PropTypes$1.bool,
-  renderAddCardForm: PropTypes$1.func.isRequired
+  renderEmptyPaymentMethods: PropTypes$1.func.isRequired
 };
 SavedCardsPicker.defaultProps = {
   className: undefined,

@@ -15,7 +15,7 @@ class SavedCardsPicker extends React.PureComponent {
       card,
       texts,
       showHeader,
-      renderAddCardForm,
+      renderEmptyPaymentMethods,
     } = this.props;
     const renderOneLine = renderSavedCardsLine(card);
 
@@ -37,7 +37,9 @@ class SavedCardsPicker extends React.PureComponent {
             </thead>
           )}
           <tbody>
-            {paymentMethods.length > 0 ? paymentMethods.map(renderOneLine) : renderAddCardForm()}
+            {paymentMethods.length > 0
+              ? paymentMethods.map(renderOneLine)
+              : renderEmptyPaymentMethods()}
           </tbody>
           {paymentMethods.length > 0 && (
             <tfoot>
@@ -98,7 +100,7 @@ SavedCardsPicker.propTypes = {
   card: PropTypes.string,
   texts: SavedCardsPickerTextTypes.isRequired,
   showHeader: PropTypes.bool,
-  renderAddCardForm: PropTypes.func.isRequired,
+  renderEmptyPaymentMethods: PropTypes.func.isRequired,
 };
 
 SavedCardsPicker.defaultProps = {
