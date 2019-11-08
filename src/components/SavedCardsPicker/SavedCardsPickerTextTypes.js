@@ -6,6 +6,7 @@ export default PropTypes.shape({
   number: PropTypes.string,
   srcCardIcon: PropTypes.string,
   addCard: PropTypes.string,
+  addTotalCard: PropTypes.string,
   titleStripe: PropTypes.string,
   titleTotal: PropTypes.string,
   iconVisa: PropTypes.string,
@@ -13,4 +14,5 @@ export default PropTypes.shape({
   iconAmerican: PropTypes.string,
   iconBusinessEdenRed: PropTypes.string,
   iconTotal: PropTypes.string,
+  informationTotalRefund: PropTypes.string,
 });

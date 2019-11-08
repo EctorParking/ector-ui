@@ -6,6 +6,11 @@ import SavedCardsPickerTextTypes from './SavedCardsPickerTextTypes';
 import PaymentMethodType from './PaymentMethodType';
 import LinkUnderlined from '../LinkUnderlined';
 
+const CardTypes = {
+  total: 'total',
+  stripe: 'stripe',
+};
+
 class SavedCardsPicker extends React.PureComponent {
   renderContent() {
     const {
@@ -16,7 +21,7 @@ class SavedCardsPicker extends React.PureComponent {
       texts,
       showHeader,
       renderEmptyPaymentMethods,
-      isAddButtonVisible,
+      cardType,
     } = this.props;
     const renderOneLine = renderSavedCardsLine(card);
 
@@ -42,25 +47,33 @@ class SavedCardsPicker extends React.PureComponent {
               ? paymentMethods.map(renderOneLine)
               : renderEmptyPaymentMethods()}
           </tbody>
-          {isAddButtonVisible && (
-            <tfoot>
-              <tr>
-                <td colSpan="4">
-                  <div className={s.paymentTableFooter}>
-                    <img
-                      src={texts.srcCardIcon}
-                      className={s.addPaymentCardIcon}
-                      alt=""
-                    />
-                    <LinkUnderlined onClick={onClickAddCardModal} className={s.addCardButton}>
-                      <strong>{texts.addCard}</strong>
-                    </LinkUnderlined>
-                  </div>
-                </td>
-              </tr>
-            </tfoot>
-          )}
         </table>
+        {paymentMethods.length > 0 && (
+        <>
+          <div className={s.paymentTableFooter}>
+            <img
+              src={texts.srcCardIcon}
+              className={s.addPaymentCardIcon}
+              alt=""
+            />
+            <LinkUnderlined onClick={onClickAddCardModal} className={s.addCardButton}>
+              <strong>
+                {cardType === CardTypes.stripe
+                  ? texts.addCard
+                  : texts.addTotalCard}
+              </strong>
+            </LinkUnderlined>
+          </div>
+          <div>
+            {cardType === CardTypes.total
+                && (
+                  <p className={s.informationTotalRefund}>
+                    {texts.informationTotalRefund}
+                  </p>
+                )}
+          </div>
+        </>
+        )}
       </div>
     );
   }
@@ -102,7 +115,6 @@ SavedCardsPicker.propTypes = {
   texts: SavedCardsPickerTextTypes.isRequired,
   showHeader: PropTypes.bool,
   renderEmptyPaymentMethods: PropTypes.func.isRequired,
-  isAddButtonVisible: PropTypes.bool.isRequired,
 };
 
 SavedCardsPicker.defaultProps = {

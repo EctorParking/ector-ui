@@ -18,8 +18,12 @@
   flex-direction: column;
 }
 
+.informationTotalRefund {
+  border-top: 2px solid var(--lightGrey);
+  padding: 0 var(--marginMediumXL);
+}
+
 .paymentMethodBox {
-  display: flex;
   padding: var(--marginSmall) 0 var(--marginSmall) 0;
   max-height: 100%;
   border-radius: var(--borderRadius);
