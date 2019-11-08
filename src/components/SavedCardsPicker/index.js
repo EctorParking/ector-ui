@@ -9,7 +9,13 @@ import LinkUnderlined from '../LinkUnderlined';
 class SavedCardsPicker extends React.PureComponent {
   renderContent() {
     const {
-      renderSavedCardsLine, paymentMethods, onClickAddCardModal, card, texts, showHeader,
+      renderSavedCardsLine,
+      paymentMethods,
+      onClickAddCardModal,
+      card,
+      texts,
+      showHeader,
+      renderAddCardForm,
     } = this.props;
     const renderOneLine = renderSavedCardsLine(card);
 
@@ -31,24 +37,26 @@ class SavedCardsPicker extends React.PureComponent {
             </thead>
           )}
           <tbody>
-            {paymentMethods.map(renderOneLine)}
+            {paymentMethods.length > 0 ? paymentMethods.map(renderOneLine) : renderAddCardForm()}
           </tbody>
-          <tfoot>
-            <tr>
-              <td colSpan="4">
-                <div className={s.paymentTableFooter}>
-                  <img
-                    src={texts.srcCardIcon}
-                    className={s.addPaymentCardIcon}
-                    alt=""
-                  />
-                  <LinkUnderlined onClick={onClickAddCardModal} className={s.addCardButton}>
-                    <strong>{texts.addCard}</strong>
-                  </LinkUnderlined>
-                </div>
-              </td>
-            </tr>
-          </tfoot>
+          {paymentMethods.length > 0 && (
+            <tfoot>
+              <tr>
+                <td colSpan="4">
+                  <div className={s.paymentTableFooter}>
+                    <img
+                      src={texts.srcCardIcon}
+                      className={s.addPaymentCardIcon}
+                      alt=""
+                    />
+                    <LinkUnderlined onClick={onClickAddCardModal} className={s.addCardButton}>
+                      <strong>{texts.addCard}</strong>
+                    </LinkUnderlined>
+                  </div>
+                </td>
+              </tr>
+            </tfoot>
+          )}
         </table>
       </div>
     );
@@ -90,6 +98,7 @@ SavedCardsPicker.propTypes = {
   card: PropTypes.string,
   texts: SavedCardsPickerTextTypes.isRequired,
   showHeader: PropTypes.bool,
+  renderAddCardForm: PropTypes.func.isRequired,
 };
 
 SavedCardsPicker.defaultProps = {

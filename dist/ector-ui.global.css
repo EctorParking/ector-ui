@@ -3946,6 +3946,8 @@
   width: -moz-fit-content;
   width: fit-content;
   overflow-x: auto;
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 
 .SavedCardsPicker-module_paymentCardsTable__Qpt3G {

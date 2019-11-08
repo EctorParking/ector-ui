@@ -28,6 +28,7 @@
   max-width: 720px;
   width: fit-content;
   overflow-x: auto;
+  align-self: center;
 }
 
 .paymentCardsTable {
