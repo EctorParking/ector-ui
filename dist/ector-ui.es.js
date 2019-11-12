@@ -2586,8 +2586,8 @@ var GenderType = PropTypes$1.shape({
   label: PropTypes$1.string
 });
 
-var css$s = ".RadioButton-module_radioButton__2iRZ- * {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\n\n.RadioButton-module_radioButton__2iRZ- {\n  position: relative;\n}\n\n.RadioButton-module_radioButton__2iRZ- input {\n  position: absolute;\n  opacity: 0;\n}\n\n.RadioButton-module_radioButton__2iRZ- > span {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative;\n}\n\n.RadioButton-module_radioButton__2iRZ- > span:before,\n.RadioButton-module_radioButton__2iRZ- > span:after {\n  display: block;\n}\n\n.RadioButton-module_radioButton__2iRZ- > span:before {\n  border-radius: 50%;\n  border: 2px solid rgb(206, 206, 206);\n  content: '';\n  height: 10px;\n  margin-right: 10px;\n  width: 10px;\n}\n\n.RadioButton-module_radioButton__2iRZ- > span:after {\n  background-color: #ffcd02;\n  border-radius: 50%;\n  content: '';\n  display: none;\n  height: 6px;\n  left: 4px;\n  position: absolute;\n  top: 8px;\n  width: 6px;\n}\n\n.RadioButton-module_radioButton__2iRZ- input[type=\"radio\"]:checked + span:after {\n  display: block;\n}\n";
-var s$s = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","radioButton":"RadioButton-module_radioButton__2iRZ-"};
+var css$s = ".RadioButton-module_radioButton__2iRZ- {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative;\n}\n\n.RadioButton-module_radioButton__2iRZ- * {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\n\n.RadioButton-module_button__3iWip {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  border-radius: 50%;\n  border: 2px solid rgb(206, 206, 206);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: 14px;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  width: 14px;\n}\n\n.RadioButton-module_button__3iWip:after {\n  background-color: #ffcd02;\n  border-radius: 50%;\n  content: '';\n  display: none;\n  height: 6px;\n  width: 6px;\n}\n\n.RadioButton-module_input__4uUTG {\n  position: absolute;\n  opacity: 0;\n}\n\n.RadioButton-module_input__4uUTG:checked + .RadioButton-module_button__3iWip:after {\n  display: block;\n}\n\n.RadioButton-module_label__b8VQZ {\n  margin-left: 10px;\n}\n\n";
+var s$s = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","radioButton":"RadioButton-module_radioButton__2iRZ-","button":"RadioButton-module_button__3iWip","input":"RadioButton-module_input__4uUTG","label":"RadioButton-module_label__b8VQZ"};
 styleInject(css$s);
 
 var RadioButton = function RadioButton(_ref) {
@@ -2603,6 +2603,7 @@ var RadioButton = function RadioButton(_ref) {
     htmlFor: "".concat(name, "-").concat(value),
     className: "".concat(s$s.radioButton, " ").concat(className)
   }, React__default.createElement("input", _extends({
+    className: s$s.input,
     type: "radio",
     name: name,
     value: value,
@@ -2611,7 +2612,9 @@ var RadioButton = function RadioButton(_ref) {
       return onSelect(value);
     }
   }, restOfProps)), React__default.createElement("span", {
-    className: labelClassName
+    className: s$s.button
+  }), label && React__default.createElement("span", {
+    className: "".concat(s$s.label, " ").concat(labelClassName)
   }, label));
 };
 
@@ -3967,10 +3970,6 @@ function unwrapExports (x) {
 
 function createCommonjsModule(fn, module) {
 	return module = { exports: {} }, fn(module, module.exports), module.exports;
-}
-
-function getCjsExportFromNamespace (n) {
-	return n && n.default || n;
 }
 
 var wordwrap_1 = createCommonjsModule(function (module) {
@@ -8234,7 +8233,7 @@ var performanceNow = createCommonjsModule(function (module) {
 
 }).call(commonjsGlobal);
 
-
+//# sourceMappingURL=performance-now.js.map
 });
 
 var root = typeof window === 'undefined' ? commonjsGlobal : window
@@ -8832,8 +8831,6 @@ exports.classNamesShape = classNamesShape;
 unwrapExports(PropTypes);
 var PropTypes_1 = PropTypes.classNamesShape;
 var PropTypes_2 = PropTypes.timeoutsShape;
-
-var _reactLifecyclesCompat = getCjsExportFromNamespace(reactLifecyclesCompat_es);
 
 var Transition_1 = createCommonjsModule(function (module, exports) {
 
@@ -9440,7 +9437,7 @@ Transition.ENTERING = 2;
 Transition.ENTERED = 3;
 Transition.EXITING = 4;
 
-var _default = (0, _reactLifecyclesCompat.polyfill)(Transition);
+var _default = (0, reactLifecyclesCompat_es.polyfill)(Transition);
 
 exports.default = _default;
 });
@@ -10161,7 +10158,7 @@ TransitionGroup.propTypes = process.env.NODE_ENV !== "production" ? {
 } : {};
 TransitionGroup.defaultProps = defaultProps;
 
-var _default = (0, _reactLifecyclesCompat.polyfill)(TransitionGroup);
+var _default = (0, reactLifecyclesCompat_es.polyfill)(TransitionGroup);
 
 exports.default = _default;
 module.exports = exports["default"];

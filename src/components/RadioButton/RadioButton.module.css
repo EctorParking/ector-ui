@@ -1,43 +1,44 @@
 @import '../../style/variable.global.css';
 
-.radioButton * {
-  box-sizing: border-box;
-}
 .radioButton {
-  position: relative;
-}
-.radioButton input {
-  position: absolute;
-  opacity: 0;
-}
-.radioButton > span {
   align-items: center;
   display: flex;
   position: relative;
 }
-.radioButton > span:before,
-.radioButton > span:after {
-  display: block;
+
+.radioButton * {
+  box-sizing: border-box;
 }
-.radioButton > span:before {
+
+.button {
+  align-items: center;
   border-radius: 50%;
   border: 2px solid var(--darkMetalGrey);
-  content: '';
-  height: 10px;
-  margin-right: var(--marginSmall);
-  width: 10px;
+  display: flex;
+  height: 14px;
+  justify-content: center;
+  width: 14px;
 }
-.radioButton > span:after {
+
+.button:after {
   background-color: var(--yellow);
   border-radius: 50%;
   content: '';
   display: none;
   height: 6px;
-  left: 4px;
-  position: absolute;
-  top: 8px;
   width: 6px;
 }
-.radioButton input[type="radio"]:checked + span:after {
+
+.input {
+  position: absolute;
+  opacity: 0;
+}
+
+.input:checked + .button:after {
   display: block;
 }
+
+.label {
+  margin-left: var(--marginSmall);
+}
+
