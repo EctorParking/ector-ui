@@ -16470,8 +16470,8 @@ SavedCardsLine.defaultProps = {
   card: null
 };
 
-var css$1i = ".SavedCardsPicker-module_card__3Lo7m {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: 0;\n  max-height: 100%;\n  border-radius: 8px;\n  background-color: #fefefe;\n  margin: 0 0 15px 0;\n  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .15);\n          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .15);\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n  overflow-x: auto;\n}\n\n.SavedCardsPicker-module_left__vjeNi {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n\n.SavedCardsPicker-module_paymentMethodBox__1oVXr {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: 10px 0 10px 0;\n  max-height: 100%;\n  border-radius: 8px;\n  background-color: #fefefe;\n  margin : 0 0 0 0;\n  max-width: 720px;\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n  overflow-x: auto;\n}\n\n.SavedCardsPicker-module_paymentCardsTable__Qpt3G {\n  display: table;\n  overflow-x: auto;\n  white-space: nowrap;\n  width: 100%;\n}\n\n.SavedCardsPicker-module_paymentCardsHeader__19KgR {\n  padding: 10px 40px 10px 0;\n}\n\n.SavedCardsPicker-module_paymentTableFooter__1lBCH {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding: 10px;\n}\n\n.SavedCardsPicker-module_addPaymentCardIcon__VUpeM {\n  width: 20px;\n  height: 20px;\n}\n\n.SavedCardsPicker-module_addCardButton__1FlP7 {\n  vertical-align: middle;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n";
-var s$1g = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","card":"SavedCardsPicker-module_card__3Lo7m","left":"SavedCardsPicker-module_left__vjeNi","paymentMethodBox":"SavedCardsPicker-module_paymentMethodBox__1oVXr","paymentCardsTable":"SavedCardsPicker-module_paymentCardsTable__Qpt3G","paymentCardsHeader":"SavedCardsPicker-module_paymentCardsHeader__19KgR","paymentTableFooter":"SavedCardsPicker-module_paymentTableFooter__1lBCH","addPaymentCardIcon":"SavedCardsPicker-module_addPaymentCardIcon__VUpeM","addCardButton":"SavedCardsPicker-module_addCardButton__1FlP7"};
+var css$1i = ".SavedCardsPicker-module_card__3Lo7m {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: 0;\n  max-height: 100%;\n  border-radius: 8px;\n  background-color: #fefefe;\n  margin: 0 0 15px 0;\n  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .15);\n          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .15);\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n  overflow-x: auto;\n}\n\n.SavedCardsPicker-module_left__vjeNi {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n\n.SavedCardsPicker-module_informationTotalRefund__2Obh8 {\n  border-top: 2px solid #eceff6;\n  padding: 0 25px;\n}\n\n.SavedCardsPicker-module_paymentMethodBox__1oVXr {\n  padding: 10px 0 10px 0;\n  max-height: 100%;\n  border-radius: 8px;\n  background-color: #fefefe;\n  margin : 0 0 0 0;\n  max-width: 720px;\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n  overflow-x: auto;\n  -ms-flex-item-align: center;\n      align-self: center;\n}\n\n.SavedCardsPicker-module_paymentCardsTable__Qpt3G {\n  display: table;\n  overflow-x: auto;\n  white-space: nowrap;\n  width: 100%;\n}\n\n.SavedCardsPicker-module_paymentCardsHeader__19KgR {\n  padding: 10px 40px 10px 0;\n}\n\n.SavedCardsPicker-module_paymentTableFooter__1lBCH {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding: 10px;\n}\n\n.SavedCardsPicker-module_addPaymentCardIcon__VUpeM {\n  width: 20px;\n  height: 20px;\n}\n\n.SavedCardsPicker-module_addCardButton__1FlP7 {\n  vertical-align: middle;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n";
+var s$1g = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","card":"SavedCardsPicker-module_card__3Lo7m","left":"SavedCardsPicker-module_left__vjeNi","informationTotalRefund":"SavedCardsPicker-module_informationTotalRefund__2Obh8","paymentMethodBox":"SavedCardsPicker-module_paymentMethodBox__1oVXr","paymentCardsTable":"SavedCardsPicker-module_paymentCardsTable__Qpt3G","paymentCardsHeader":"SavedCardsPicker-module_paymentCardsHeader__19KgR","paymentTableFooter":"SavedCardsPicker-module_paymentTableFooter__1lBCH","addPaymentCardIcon":"SavedCardsPicker-module_addPaymentCardIcon__VUpeM","addCardButton":"SavedCardsPicker-module_addCardButton__1FlP7"};
 styleInject(css$1i);
 
 var css$1j = ".SavedCardsPickerHeader-module_header__2Px_I {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: 40px;\n  padding: 10px;\n  margin-left: 10px;\n}\n\n.SavedCardsPickerHeader-module_text__CJFVs {\n  -webkit-box-align: start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n}\n\n.SavedCardsPickerHeader-module_availableCards__drqAA {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  margin-left: 20px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.SavedCardsPickerHeader-module_cardIcon__3OlwR {\n  height: 24px;\n  margin: 0 2px;\n}\n\n.SavedCardsPickerHeader-module_cardIconSmaller__3Rwc_ {\n  width: 30px;\n}\n\n.SavedCardsPickerHeader-module_cardIconBigger__2Pt6B {\n  width: 50px;\n}\n\n.SavedCardsPickerHeader-module_cardIconBusinessEdenred__3VfqK {\n  height: 24px;\n}\n\n";
@@ -16484,13 +16484,15 @@ var SavedCardsPickerTextTypes = PropTypes$1.shape({
   number: PropTypes$1.string,
   srcCardIcon: PropTypes$1.string,
   addCard: PropTypes$1.string,
+  addTotalCard: PropTypes$1.string,
   titleStripe: PropTypes$1.string,
   titleTotal: PropTypes$1.string,
   iconVisa: PropTypes$1.string,
   iconMastercard: PropTypes$1.string,
   iconAmerican: PropTypes$1.string,
   iconBusinessEdenRed: PropTypes$1.string,
-  iconTotal: PropTypes$1.string
+  iconTotal: PropTypes$1.string,
+  informationTotalRefund: PropTypes$1.string
 });
 
 var CardTypes = {
@@ -16568,6 +16570,11 @@ var PaymentMethodType$2 = PropTypes$1.shape({
   cardName: PropTypes$1.string
 });
 
+var CardTypes$1 = {
+  total: 'total',
+  stripe: 'stripe'
+};
+
 var SavedCardsPicker =
 /*#__PURE__*/
 function (_React$PureComponent) {
@@ -16583,13 +16590,17 @@ function (_React$PureComponent) {
     key: "renderContent",
     value: function renderContent() {
       var _this$props = this.props,
-          renderSavedCardsLine = _this$props.renderSavedCardsLine,
+          SavedCardsLineComponent = _this$props.SavedCardsLineComponent,
           paymentMethods = _this$props.paymentMethods,
           onClickAddCardModal = _this$props.onClickAddCardModal,
           card = _this$props.card,
           texts = _this$props.texts,
-          showHeader = _this$props.showHeader;
-      var renderOneLine = renderSavedCardsLine(card);
+          showHeader = _this$props.showHeader,
+          EmptyPaymentMethodsComponent = _this$props.EmptyPaymentMethodsComponent,
+          cardType = _this$props.cardType;
+      var renderOneLine = React__default.createElement(SavedCardsLineComponent, {
+        card: card
+      });
       return React__default.createElement("div", {
         className: s$1g.paymentMethodBox
       }, React__default.createElement("table", {
@@ -16601,9 +16612,7 @@ function (_React$PureComponent) {
         className: s$1g.paymentCardsHeader
       }, texts.number), React__default.createElement("th", {
         className: s$1g.paymentCardsHeader
-      }, texts.expire))), React__default.createElement("tbody", null, paymentMethods.map(renderOneLine)), React__default.createElement("tfoot", null, React__default.createElement("tr", null, React__default.createElement("td", {
-        colSpan: "4"
-      }, React__default.createElement("div", {
+      }, texts.expire))), React__default.createElement("tbody", null, paymentMethods.length > 0 ? paymentMethods.map(renderOneLine) : React__default.createElement(EmptyPaymentMethodsComponent, null))), paymentMethods.length > 0 && React__default.createElement(React__default.Fragment, null, React__default.createElement("div", {
         className: s$1g.paymentTableFooter
       }, React__default.createElement("img", {
         src: texts.srcCardIcon,
@@ -16612,7 +16621,9 @@ function (_React$PureComponent) {
       }), React__default.createElement(LinkUnderlined, {
         onClick: onClickAddCardModal,
         className: s$1g.addCardButton
-      }, React__default.createElement("strong", null, texts.addCard))))))));
+      }, React__default.createElement("strong", null, cardType === CardTypes$1.stripe ? texts.addCard : texts.addTotalCard))), React__default.createElement("div", null, cardType === CardTypes$1.total && React__default.createElement("p", {
+        className: s$1g.informationTotalRefund
+      }, texts.informationTotalRefund))));
     }
   }, {
     key: "render",
@@ -16646,10 +16657,11 @@ SavedCardsPicker.propTypes = {
   onRadioButtonChange: PropTypes$1.func.isRequired,
   paymentMethods: PropTypes$1.arrayOf(PaymentMethodType$2).isRequired,
   onClickAddCardModal: PropTypes$1.func.isRequired,
-  renderSavedCardsLine: PropTypes$1.func.isRequired,
+  SavedCardsLineComponent: PropTypes$1.func.isRequired,
   card: PropTypes$1.string,
   texts: SavedCardsPickerTextTypes.isRequired,
-  showHeader: PropTypes$1.bool
+  showHeader: PropTypes$1.bool,
+  EmptyPaymentMethodsComponent: PropTypes$1.func.isRequired
 };
 SavedCardsPicker.defaultProps = {
   className: undefined,

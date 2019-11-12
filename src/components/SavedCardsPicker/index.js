@@ -6,12 +6,24 @@ import SavedCardsPickerTextTypes from './SavedCardsPickerTextTypes';
 import PaymentMethodType from './PaymentMethodType';
 import LinkUnderlined from '../LinkUnderlined';
 
+const CardTypes = {
+  total: 'total',
+  stripe: 'stripe',
+};
+
 class SavedCardsPicker extends React.PureComponent {
   renderContent() {
     const {
-      renderSavedCardsLine, paymentMethods, onClickAddCardModal, card, texts, showHeader,
+      SavedCardsLineComponent,
+      paymentMethods,
+      onClickAddCardModal,
+      card,
+      texts,
+      showHeader,
+      EmptyPaymentMethodsComponent,
+      cardType,
     } = this.props;
-    const renderOneLine = renderSavedCardsLine(card);
+    const renderOneLine = <SavedCardsLineComponent card={card} />;
 
     return (
       <div className={s.paymentMethodBox}>
@@ -31,25 +43,37 @@ class SavedCardsPicker extends React.PureComponent {
             </thead>
           )}
           <tbody>
-            {paymentMethods.map(renderOneLine)}
+            {paymentMethods.length > 0
+              ? paymentMethods.map(renderOneLine)
+              : <EmptyPaymentMethodsComponent />}
           </tbody>
-          <tfoot>
-            <tr>
-              <td colSpan="4">
-                <div className={s.paymentTableFooter}>
-                  <img
-                    src={texts.srcCardIcon}
-                    className={s.addPaymentCardIcon}
-                    alt=""
-                  />
-                  <LinkUnderlined onClick={onClickAddCardModal} className={s.addCardButton}>
-                    <strong>{texts.addCard}</strong>
-                  </LinkUnderlined>
-                </div>
-              </td>
-            </tr>
-          </tfoot>
         </table>
+        {paymentMethods.length > 0 && (
+        <>
+          <div className={s.paymentTableFooter}>
+            <img
+              src={texts.srcCardIcon}
+              className={s.addPaymentCardIcon}
+              alt=""
+            />
+            <LinkUnderlined onClick={onClickAddCardModal} className={s.addCardButton}>
+              <strong>
+                {cardType === CardTypes.stripe
+                  ? texts.addCard
+                  : texts.addTotalCard}
+              </strong>
+            </LinkUnderlined>
+          </div>
+          <div>
+            {cardType === CardTypes.total
+                && (
+                  <p className={s.informationTotalRefund}>
+                    {texts.informationTotalRefund}
+                  </p>
+                )}
+          </div>
+        </>
+        )}
       </div>
     );
   }
@@ -86,10 +110,11 @@ SavedCardsPicker.propTypes = {
   onRadioButtonChange: PropTypes.func.isRequired,
   paymentMethods: PropTypes.arrayOf(PaymentMethodType).isRequired,
   onClickAddCardModal: PropTypes.func.isRequired,
-  renderSavedCardsLine: PropTypes.func.isRequired,
+  SavedCardsLineComponent: PropTypes.func.isRequired,
   card: PropTypes.string,
   texts: SavedCardsPickerTextTypes.isRequired,
   showHeader: PropTypes.bool,
+  EmptyPaymentMethodsComponent: PropTypes.func.isRequired,
 };
 
 SavedCardsPicker.defaultProps = {
