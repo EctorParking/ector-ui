@@ -16500,7 +16500,7 @@ var SavedCardsPickerTextTypes = PropTypes$1.shape({
   iconAmerican: PropTypes$1.string,
   iconBusinessEdenRed: PropTypes$1.string,
   iconTotal: PropTypes$1.string,
-  informationTotalRefund: PropTypes$1.string
+  informationTotalRefund: PropTypes$1.object
 });
 
 var CardTypes = {
@@ -16527,7 +16527,10 @@ var SavedCardsPickerHeader = function SavedCardsPickerHeader(_ref) {
       cardType = _ref.cardType,
       texts = _ref.texts;
   return React__default.createElement("div", {
-    className: s$1h.header
+    className: s$1h.header,
+    onClick: function onClick() {
+      return onRadioButtonChange(cardType);
+    }
   }, React__default.createElement(RadioButton, {
     label: "\xA0",
     checked: isSelected,
