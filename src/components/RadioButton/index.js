@@ -17,6 +17,7 @@ const RadioButton = ({
     className={`${s.radioButton} ${className}`}
   >
     <input
+      className={s.input}
       type="radio"
       name={name}
       value={value}
@@ -25,7 +26,8 @@ const RadioButton = ({
       {...restOfProps}
     />
 
-    <span className={labelClassName}>{label}</span>
+    <span className={s.button} />
+    {label && <span className={`${s.label} ${labelClassName}`}>{label}</span> }
   </label>
 );
 
