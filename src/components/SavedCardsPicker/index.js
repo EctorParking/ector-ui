@@ -14,16 +14,16 @@ const CardTypes = {
 class SavedCardsPicker extends React.PureComponent {
   renderContent() {
     const {
-      renderSavedCardsLine,
+      SavedCardsLineComponent,
       paymentMethods,
       onClickAddCardModal,
       card,
       texts,
       showHeader,
-      renderEmptyPaymentMethods,
+      EmptyPaymentMethodsComponent,
       cardType,
     } = this.props;
-    const renderOneLine = renderSavedCardsLine(card);
+    const renderOneLine = <SavedCardsLineComponent card={card} />;
 
     return (
       <div className={s.paymentMethodBox}>
@@ -45,7 +45,7 @@ class SavedCardsPicker extends React.PureComponent {
           <tbody>
             {paymentMethods.length > 0
               ? paymentMethods.map(renderOneLine)
-              : renderEmptyPaymentMethods()}
+              : <EmptyPaymentMethodsComponent />}
           </tbody>
         </table>
         {paymentMethods.length > 0 && (
@@ -110,11 +110,11 @@ SavedCardsPicker.propTypes = {
   onRadioButtonChange: PropTypes.func.isRequired,
   paymentMethods: PropTypes.arrayOf(PaymentMethodType).isRequired,
   onClickAddCardModal: PropTypes.func.isRequired,
-  renderSavedCardsLine: PropTypes.func.isRequired,
+  SavedCardsLineComponent: PropTypes.func.isRequired,
   card: PropTypes.string,
   texts: SavedCardsPickerTextTypes.isRequired,
   showHeader: PropTypes.bool,
-  renderEmptyPaymentMethods: PropTypes.func.isRequired,
+  EmptyPaymentMethodsComponent: PropTypes.func.isRequired,
 };
 
 SavedCardsPicker.defaultProps = {

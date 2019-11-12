@@ -16598,15 +16598,17 @@ function (_React$PureComponent) {
     key: "renderContent",
     value: function renderContent() {
       var _this$props = this.props,
-          renderSavedCardsLine = _this$props.renderSavedCardsLine,
+          SavedCardsLineComponent = _this$props.SavedCardsLineComponent,
           paymentMethods = _this$props.paymentMethods,
           onClickAddCardModal = _this$props.onClickAddCardModal,
           card = _this$props.card,
           texts = _this$props.texts,
           showHeader = _this$props.showHeader,
-          renderEmptyPaymentMethods = _this$props.renderEmptyPaymentMethods,
+          EmptyPaymentMethodsComponent = _this$props.EmptyPaymentMethodsComponent,
           cardType = _this$props.cardType;
-      var renderOneLine = renderSavedCardsLine(card);
+      var renderOneLine = React__default.createElement(SavedCardsLineComponent, {
+        card: card
+      });
       return React__default.createElement("div", {
         className: s$1g.paymentMethodBox
       }, React__default.createElement("table", {
@@ -16618,7 +16620,7 @@ function (_React$PureComponent) {
         className: s$1g.paymentCardsHeader
       }, texts.number), React__default.createElement("th", {
         className: s$1g.paymentCardsHeader
-      }, texts.expire))), React__default.createElement("tbody", null, paymentMethods.length > 0 ? paymentMethods.map(renderOneLine) : renderEmptyPaymentMethods())), paymentMethods.length > 0 && React__default.createElement(React__default.Fragment, null, React__default.createElement("div", {
+      }, texts.expire))), React__default.createElement("tbody", null, paymentMethods.length > 0 ? paymentMethods.map(renderOneLine) : React__default.createElement(EmptyPaymentMethodsComponent, null))), paymentMethods.length > 0 && React__default.createElement(React__default.Fragment, null, React__default.createElement("div", {
         className: s$1g.paymentTableFooter
       }, React__default.createElement("img", {
         src: texts.srcCardIcon,
@@ -16663,11 +16665,11 @@ SavedCardsPicker.propTypes = {
   onRadioButtonChange: PropTypes$1.func.isRequired,
   paymentMethods: PropTypes$1.arrayOf(PaymentMethodType$2).isRequired,
   onClickAddCardModal: PropTypes$1.func.isRequired,
-  renderSavedCardsLine: PropTypes$1.func.isRequired,
+  SavedCardsLineComponent: PropTypes$1.func.isRequired,
   card: PropTypes$1.string,
   texts: SavedCardsPickerTextTypes.isRequired,
   showHeader: PropTypes$1.bool,
-  renderEmptyPaymentMethods: PropTypes$1.func.isRequired
+  EmptyPaymentMethodsComponent: PropTypes$1.func.isRequired
 };
 SavedCardsPicker.defaultProps = {
   className: undefined,
