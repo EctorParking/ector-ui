@@ -17,7 +17,6 @@ const SavedCardsLine = ({
   checkImg,
 }) => (
   <tr
-    key={paymentMethod.id}
     onClick={() => onSelectLine(paymentMethod.id)}
     className={[s.tableRow, card === paymentMethod.id ? s.clicked : undefined].join(' ')}
   >
