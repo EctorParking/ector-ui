@@ -24,7 +24,7 @@ const SavedCardsPickerHeader = ({
   cardType,
   texts,
 }) => (
-  <div className={s.header} onClick={() => onRadioButtonChange(cardType)}>
+  <tr className={s.header} onClick={() => onRadioButtonChange(cardType)}>
     <RadioButton
       label=" "
       checked={isSelected}
@@ -68,7 +68,7 @@ const SavedCardsPickerHeader = ({
         />
       </div>
     )}
-  </div>
+  </tr>
 );
 
 SavedCardsPickerHeader.propTypes = {
