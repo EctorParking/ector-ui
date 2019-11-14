@@ -14,5 +14,5 @@ export default PropTypes.shape({
   iconAmerican: PropTypes.string,
   iconBusinessEdenRed: PropTypes.string,
   iconTotal: PropTypes.string,
-  informationTotalRefund: PropTypes.string,
+  informationTotalRefund: PropTypes.object,
 });

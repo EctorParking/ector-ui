@@ -3980,6 +3980,10 @@ function createCommonjsModule(fn, module) {
 	return module = { exports: {} }, fn(module, module.exports), module.exports;
 }
 
+function getCjsExportFromNamespace (n) {
+	return n && n.default || n;
+}
+
 var wordwrap_1 = createCommonjsModule(function (module) {
 var wordwrap = module.exports = function (start, stop, params) {
     if (typeof start === 'object') {
@@ -8241,7 +8245,7 @@ var performanceNow = createCommonjsModule(function (module) {
 
 }).call(commonjsGlobal);
 
-//# sourceMappingURL=performance-now.js.map
+
 });
 
 var root = typeof window === 'undefined' ? commonjsGlobal : window
@@ -8839,6 +8843,8 @@ exports.classNamesShape = classNamesShape;
 unwrapExports(PropTypes);
 var PropTypes_1 = PropTypes.classNamesShape;
 var PropTypes_2 = PropTypes.timeoutsShape;
+
+var _reactLifecyclesCompat = getCjsExportFromNamespace(reactLifecyclesCompat_es);
 
 var Transition_1 = createCommonjsModule(function (module, exports) {
 
@@ -9445,7 +9451,7 @@ Transition.ENTERING = 2;
 Transition.ENTERED = 3;
 Transition.EXITING = 4;
 
-var _default = (0, reactLifecyclesCompat_es.polyfill)(Transition);
+var _default = (0, _reactLifecyclesCompat.polyfill)(Transition);
 
 exports.default = _default;
 });
@@ -10166,7 +10172,7 @@ TransitionGroup.propTypes = process.env.NODE_ENV !== "production" ? {
 } : {};
 TransitionGroup.defaultProps = defaultProps;
 
-var _default = (0, reactLifecyclesCompat_es.polyfill)(TransitionGroup);
+var _default = (0, _reactLifecyclesCompat.polyfill)(TransitionGroup);
 
 exports.default = _default;
 module.exports = exports["default"];
@@ -16419,7 +16425,6 @@ var SavedCardsLine = function SavedCardsLine(_ref) {
       onSelectLine = _ref.onSelectLine,
       checkImg = _ref.checkImg;
   return React__default.createElement("tr", {
-    key: paymentMethod.id,
     onClick: function onClick() {
       return onSelectLine(paymentMethod.id);
     },
@@ -16479,7 +16484,7 @@ var css$1i = ".SavedCardsPicker-module_card__3Lo7m {\n  display: -webkit-box;\n 
 var s$1g = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","card":"SavedCardsPicker-module_card__3Lo7m","left":"SavedCardsPicker-module_left__vjeNi","informationTotalRefund":"SavedCardsPicker-module_informationTotalRefund__2Obh8","paymentMethodBox":"SavedCardsPicker-module_paymentMethodBox__1oVXr","paymentCardsTable":"SavedCardsPicker-module_paymentCardsTable__Qpt3G","paymentCardsHeader":"SavedCardsPicker-module_paymentCardsHeader__19KgR","paymentTableFooter":"SavedCardsPicker-module_paymentTableFooter__1lBCH","addPaymentCardIcon":"SavedCardsPicker-module_addPaymentCardIcon__VUpeM","addCardButton":"SavedCardsPicker-module_addCardButton__1FlP7"};
 styleInject(css$1i);
 
-var css$1j = ".SavedCardsPickerHeader-module_header__2Px_I {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: 40px;\n  padding: 10px;\n  margin-left: 10px;\n}\n\n.SavedCardsPickerHeader-module_text__CJFVs {\n  -webkit-box-align: start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n}\n\n.SavedCardsPickerHeader-module_availableCards__drqAA {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  margin-left: 20px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.SavedCardsPickerHeader-module_cardIcon__3OlwR {\n  height: 24px;\n  margin: 0 2px;\n}\n\n.SavedCardsPickerHeader-module_cardIconSmaller__3Rwc_ {\n  width: 30px;\n}\n\n.SavedCardsPickerHeader-module_cardIconBigger__2Pt6B {\n  width: 50px;\n}\n\n.SavedCardsPickerHeader-module_cardIconBusinessEdenred__3VfqK {\n  height: 24px;\n}\n\n";
+var css$1j = ".SavedCardsPickerHeader-module_header__2Px_I {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: 40px;\n  padding: 10px;\n  margin-left: 10px;\n  cursor: pointer;\n}\n\n.SavedCardsPickerHeader-module_text__CJFVs {\n  -webkit-box-align: start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n}\n\n.SavedCardsPickerHeader-module_availableCards__drqAA {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  margin-left: 20px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.SavedCardsPickerHeader-module_cardIcon__3OlwR {\n  height: 24px;\n  margin: 0 2px;\n}\n\n.SavedCardsPickerHeader-module_cardIconSmaller__3Rwc_ {\n  width: 30px;\n}\n\n.SavedCardsPickerHeader-module_cardIconBigger__2Pt6B {\n  width: 50px;\n}\n\n.SavedCardsPickerHeader-module_cardIconBusinessEdenred__3VfqK {\n  height: 24px;\n}\n\n";
 var s$1h = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","header":"SavedCardsPickerHeader-module_header__2Px_I","text":"SavedCardsPickerHeader-module_text__CJFVs","availableCards":"SavedCardsPickerHeader-module_availableCards__drqAA","cardIcon":"SavedCardsPickerHeader-module_cardIcon__3OlwR","cardIconSmaller":"SavedCardsPickerHeader-module_cardIconSmaller__3Rwc_","cardIconBigger":"SavedCardsPickerHeader-module_cardIconBigger__2Pt6B","cardIconBusinessEdenred":"SavedCardsPickerHeader-module_cardIconBusinessEdenred__3VfqK"};
 styleInject(css$1j);
 
@@ -16497,7 +16502,7 @@ var SavedCardsPickerTextTypes = PropTypes$1.shape({
   iconAmerican: PropTypes$1.string,
   iconBusinessEdenRed: PropTypes$1.string,
   iconTotal: PropTypes$1.string,
-  informationTotalRefund: PropTypes$1.string
+  informationTotalRefund: PropTypes$1.object
 });
 
 var CardTypes = {
@@ -16523,8 +16528,11 @@ var SavedCardsPickerHeader = function SavedCardsPickerHeader(_ref) {
       onRadioButtonChange = _ref.onRadioButtonChange,
       cardType = _ref.cardType,
       texts = _ref.texts;
-  return React__default.createElement("div", {
-    className: s$1h.header
+  return React__default.createElement("tr", {
+    className: s$1h.header,
+    onClick: function onClick() {
+      return onRadioButtonChange(cardType);
+    }
   }, React__default.createElement(RadioButton, {
     label: "\xA0",
     checked: isSelected,
@@ -16598,14 +16606,10 @@ function (_React$PureComponent) {
           SavedCardsLineComponent = _this$props.SavedCardsLineComponent,
           paymentMethods = _this$props.paymentMethods,
           onClickAddCardModal = _this$props.onClickAddCardModal,
-          card = _this$props.card,
           texts = _this$props.texts,
           showHeader = _this$props.showHeader,
           EmptyPaymentMethodsComponent = _this$props.EmptyPaymentMethodsComponent,
           cardType = _this$props.cardType;
-      var renderOneLine = React__default.createElement(SavedCardsLineComponent, {
-        card: card
-      });
       return React__default.createElement("div", {
         className: s$1g.paymentMethodBox
       }, React__default.createElement("table", {
@@ -16617,7 +16621,7 @@ function (_React$PureComponent) {
         className: s$1g.paymentCardsHeader
       }, texts.number), React__default.createElement("th", {
         className: s$1g.paymentCardsHeader
-      }, texts.expire))), React__default.createElement("tbody", null, paymentMethods.length > 0 ? paymentMethods.map(renderOneLine) : React__default.createElement(EmptyPaymentMethodsComponent, null))), paymentMethods.length > 0 && React__default.createElement(React__default.Fragment, null, React__default.createElement("div", {
+      }, texts.expire))), React__default.createElement("tbody", null, paymentMethods.length > 0 ? paymentMethods.map(SavedCardsLineComponent) : React__default.createElement(EmptyPaymentMethodsComponent, null))), paymentMethods.length > 0 && React__default.createElement(React__default.Fragment, null, React__default.createElement("div", {
         className: s$1g.paymentTableFooter
       }, React__default.createElement("img", {
         src: texts.srcCardIcon,
@@ -16663,7 +16667,6 @@ SavedCardsPicker.propTypes = {
   paymentMethods: PropTypes$1.arrayOf(PaymentMethodType$2).isRequired,
   onClickAddCardModal: PropTypes$1.func.isRequired,
   SavedCardsLineComponent: PropTypes$1.func.isRequired,
-  card: PropTypes$1.string,
   texts: SavedCardsPickerTextTypes.isRequired,
   showHeader: PropTypes$1.bool,
   EmptyPaymentMethodsComponent: PropTypes$1.func.isRequired
@@ -16671,8 +16674,7 @@ SavedCardsPicker.propTypes = {
 SavedCardsPicker.defaultProps = {
   className: undefined,
   cardType: '',
-  showHeader: false,
-  card: null
+  showHeader: false
 };
 
 var css$1k = ".DateTimePicker-module_calendar__1m3vk {\n  position: relative;\n  width: 100%;\n  height: 300px;\n}\n\n.DateTimePicker-module_calendarArrow__SvtwN {\n  display: none;\n}\n\n.DateTimePicker-module_datePickerPopper__2V2oe {\n  -webkit-transform: none !important;\n          transform: none !important;\n  width: 100%;\n  margin-top: 0 !important;\n}\n\n.DateTimePicker-module_hidden__OvFBm {\n  display: none !important;\n}\n\n.DateTimePicker-module_pickerSuggestions__38iqg {\n  width: 610px !important;\n  margin-left: -300px;\n  left: 50%;\n  height: 265px !important\n}\n\n.DateTimePicker-module_pickerSuggestions__38iqg:before {\n  display: none;\n}\n\n.DateTimePicker-module_suggestionsArrow__2RcKh {\n  margin-left: -9px;\n}\n\n.DateTimePicker-module_picker__3d7nO {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  height: auto;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP {\n  background: none;\n  padding-left: 40px;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::-webkit-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::-ms-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.datePickerInput::-webkit-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.datePickerInput::-ms-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.DateTimePicker-module_fixedWidthDateInput__3lrKo {\n  min-width: 160px;\n  width: 160px;\n  max-width: 160px;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU {\n  border: none !important;\n  border-radius: 8px;\n  max-width: 100px;\n  padding-left: 35px;\n  margin-right: 1px;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::-webkit-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::-ms-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.timePickerInput::-webkit-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.timePickerInput::-ms-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInputContainer__ROeTv::before {\n  background-color: rgba(191, 196, 212, .52);\n  content: '';\n  height: 20px;\n  margin-top: -10px;\n  position: absolute;\n  top: 50%;\n  width: 1px;\n}\n\n.DateTimePicker-module_timeSuggestions__3aCiQ {\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  position: relative;\n}\n\n.DateTimePicker-module_timeSuggestionsContainer__3Pe8K:nth-child(1) {\n  width: 300px;\n  min-width: 300px;\n}\n\n.DateTimePicker-module_timeSuggestionsContainer__3Pe8K {\n  width: 100%;\n}\n\n.DateTimePicker-module_inputIcon__178Nw {\n  font-size: 19.2px;\n  font-size: 19.2px;\n  font-size: 1.2rem;\n  left: 10px;\n}\n\n.DateTimePicker-module_inputError__2-au6 {\n  color: #ff5757;\n}\n\n.DateTimePicker-module_inputError__2-au6::-webkit-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputError__2-au6::-ms-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.inputError::-webkit-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.inputError::-ms-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputError__2-au6::placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputError__2-au6:-ms-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputError__2-au6::-ms-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputContainer__1FIAJ {\n  padding: 0;\n}\n\n.DateTimePicker-module_splitInputContainer__1fsjs {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  width: 50%\n}\n\n.DateTimePicker-module_splitInputContainer__1fsjs:first-child {\n  border-right: 1px solid rgba(191, 196, 212, .52);\n}\n\n.DateTimePicker-module_month__2AwNj {\n  color: #163457;\n}\n\n.DateTimePicker-module_hr__1p2EJ {\n  height: 85%;\n  width: 1px;\n  position: absolute;\n  left: 300px;\n  background-color: rgba(191, 196, 212, .52);\n  top: 7.5%;\n}\n";
