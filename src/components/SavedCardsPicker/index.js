@@ -19,9 +19,9 @@ class SavedCardsPicker extends React.PureComponent {
       onClickAddCard,
       texts,
       showHeader,
-      EmptyPaymentMethodsComponent,
+      PaymentFormComponent,
       cardType,
-      showTotalForm,
+      showForm,
     } = this.props;
 
     return (
@@ -44,10 +44,10 @@ class SavedCardsPicker extends React.PureComponent {
           <tbody>
             {paymentMethods.length > 0
               ? paymentMethods.map(SavedCardsLineComponent)
-              : <EmptyPaymentMethodsComponent />}
+              : <PaymentFormComponent />}
           </tbody>
         </table>
-        {paymentMethods.length > 0 && !showTotalForm && (
+        {paymentMethods.length > 0 && !showForm && (
         <>
           <div className={s.paymentTableFooter}>
             <img
@@ -65,7 +65,7 @@ class SavedCardsPicker extends React.PureComponent {
           </div>
         </>
         )}
-        {showTotalForm && (<EmptyPaymentMethodsComponent />)}
+        {showForm && (<PaymentFormComponent />)}
         <div>
           {cardType === CardTypes.total
                 && (
@@ -113,15 +113,15 @@ SavedCardsPicker.propTypes = {
   SavedCardsLineComponent: PropTypes.func.isRequired,
   texts: SavedCardsPickerTextTypes.isRequired,
   showHeader: PropTypes.bool,
-  EmptyPaymentMethodsComponent: PropTypes.func.isRequired,
-  showTotalForm: PropTypes.bool,
+  PaymentFormComponent: PropTypes.func.isRequired,
+  showForm: PropTypes.bool,
 };
 
 SavedCardsPicker.defaultProps = {
   className: undefined,
   cardType: '',
   showHeader: false,
-  showTotalForm: false,
+  showForm: false,
 };
 
 
