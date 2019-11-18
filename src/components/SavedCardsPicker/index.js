@@ -16,11 +16,12 @@ class SavedCardsPicker extends React.PureComponent {
     const {
       SavedCardsLineComponent,
       paymentMethods,
-      onClickAddCardModal,
+      onClickAddCard,
       texts,
       showHeader,
-      EmptyPaymentMethodsComponent,
+      PaymentFormComponent,
       cardType,
+      showForm,
     } = this.props;
 
     return (
@@ -43,10 +44,10 @@ class SavedCardsPicker extends React.PureComponent {
           <tbody>
             {paymentMethods.length > 0
               ? paymentMethods.map(SavedCardsLineComponent)
-              : <EmptyPaymentMethodsComponent />}
+              : <PaymentFormComponent />}
           </tbody>
         </table>
-        {paymentMethods.length > 0 && (
+        {paymentMethods.length > 0 && !showForm && (
         <>
           <div className={s.paymentTableFooter}>
             <img
@@ -54,7 +55,7 @@ class SavedCardsPicker extends React.PureComponent {
               className={s.addPaymentCardIcon}
               alt=""
             />
-            <LinkUnderlined onClick={onClickAddCardModal} className={s.addCardButton}>
+            <LinkUnderlined onClick={onClickAddCard} className={s.addCardButton}>
               <strong>
                 {cardType === CardTypes.stripe
                   ? texts.addCard
@@ -62,16 +63,17 @@ class SavedCardsPicker extends React.PureComponent {
               </strong>
             </LinkUnderlined>
           </div>
-          <div>
-            {cardType === CardTypes.total
+        </>
+        )}
+        {showForm && (<PaymentFormComponent />)}
+        <div>
+          {cardType === CardTypes.total
                 && (
                   <p className={s.informationTotalRefund}>
                     {texts.informationTotalRefund}
                   </p>
                 )}
-          </div>
-        </>
-        )}
+        </div>
       </div>
     );
   }
@@ -107,17 +109,19 @@ SavedCardsPicker.propTypes = {
   isSelected: PropTypes.bool.isRequired,
   onRadioButtonChange: PropTypes.func.isRequired,
   paymentMethods: PropTypes.arrayOf(PaymentMethodType).isRequired,
-  onClickAddCardModal: PropTypes.func.isRequired,
+  onClickAddCard: PropTypes.func.isRequired,
   SavedCardsLineComponent: PropTypes.func.isRequired,
   texts: SavedCardsPickerTextTypes.isRequired,
   showHeader: PropTypes.bool,
-  EmptyPaymentMethodsComponent: PropTypes.func.isRequired,
+  PaymentFormComponent: PropTypes.func.isRequired,
+  showForm: PropTypes.bool,
 };
 
 SavedCardsPicker.defaultProps = {
   className: undefined,
   cardType: '',
   showHeader: false,
+  showForm: false,
 };
 
 
