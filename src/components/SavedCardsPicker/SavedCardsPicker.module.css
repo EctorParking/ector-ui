@@ -2,13 +2,11 @@
 
 .card {
   display: flex;
-  padding: var(--noMargin);
-  max-height: 100%;
   border-radius: var(--borderRadius);
   background-color: var(--seventhColor);
   margin: 0 0 var(--marginXMedium) 0;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
-  width: fit-content;
+  max-width: fit-content;
   overflow-x: auto;
 }
 
@@ -20,19 +18,13 @@
 
 .informationTotalRefund {
   border-top: 2px solid var(--lightGrey);
-  padding: 0 var(--marginMediumXL);
+  padding: var(--marginSmall) var(--marginMediumXL) 0 var(--marginMediumXL);
+  max-width: fit-content;
 }
 
 .paymentMethodBox {
   padding: var(--marginSmall) 0 var(--marginSmall) 0;
-  max-height: 100%;
-  border-radius: var(--borderRadius);
-  background-color: var(--seventhColor);
-  margin : 0 0 0 0;
   max-width: 720px;
-  width: fit-content;
-  overflow-x: auto;
-  align-self: center;
 }
 
 .paymentCardsTable {
