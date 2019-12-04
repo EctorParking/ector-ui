@@ -16255,7 +16255,8 @@ function (_PureComponent) {
         onMouseEnter: this.handleScrollHover,
         onClick: this.resetScroll
       }, Icon() ? React__default.createElement(Icon, {
-        direction: direction
+        direction: direction,
+        visible: visible
       }) : React__default.createElement("i", {
         className: ["icon icon-chevron-thin-".concat(direction), s$1a.arrowIcon, visible ? undefined : s$1a.hiddenIcon].join(' ')
       }));
