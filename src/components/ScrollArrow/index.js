@@ -80,7 +80,7 @@ class ScrollArrow extends PureComponent {
         onMouseEnter={this.handleScrollHover}
         onClick={this.resetScroll}
       >
-        {Icon() ? <Icon direction={direction} /> : (
+        {Icon() ? <Icon direction={direction} visible={visible} /> : (
           <i className={[`icon icon-chevron-thin-${direction}`, s.arrowIcon, visible ? undefined : s.hiddenIcon].join(' ')} />
         )}
       </div>
