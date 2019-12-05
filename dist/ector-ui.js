@@ -5836,8 +5836,9 @@ function (_React$PureComponent) {
       }
 
       return React.createElement(Icon, {
-        IconComponent: _this.renderInputLeftIconComponent,
-        type: fromZone.type,
+        IconComponent: function IconComponent(props) {
+          return _this.renderInputLeftIconComponent(props, fromZone.type);
+        },
         name: ZoneTypesToIconName[fromZone.type],
         variant: "yellow",
         className: [s$11.inputIcon, s$11.leftInputIcon, className].join(' ')
@@ -5880,10 +5881,9 @@ function (_React$PureComponent) {
       }));
     });
 
-    _defineProperty(_assertThisInitialized(_this), "renderInputLeftIconComponent", function (_ref4) {
+    _defineProperty(_assertThisInitialized(_this), "renderInputLeftIconComponent", function (_ref4, type) {
       var name = _ref4.name,
-          iconClassName = _ref4.className,
-          type = _ref4.type;
+          iconClassName = _ref4.className;
       var InputLeftIcon = _this.props.InputLeftIcon;
 
       if (InputLeftIcon()) {
@@ -5912,9 +5912,10 @@ function (_React$PureComponent) {
       }
 
       return React.createElement(Icon, {
-        IconComponent: _this.renderInputLeftIconComponent,
+        IconComponent: function IconComponent(props) {
+          return _this.renderInputLeftIconComponent(props, toZone.type);
+        },
         name: ZoneTypesToIconName[toZone.type],
-        type: toZone.type,
         variant: "yellow",
         className: [s$11.inputIcon, s$11.leftInputIcon, className].join(' ')
       });

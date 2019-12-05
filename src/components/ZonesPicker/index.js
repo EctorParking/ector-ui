@@ -188,8 +188,7 @@ class ZonesPicker extends React.PureComponent {
     }
     return (
       <Icon
-        IconComponent={this.renderInputLeftIconComponent}
-        type={fromZone.type}
+        IconComponent={props => this.renderInputLeftIconComponent(props, fromZone.type)}
         name={ZoneTypesToIconName[fromZone.type]}
         variant="yellow"
         className={[s.inputIcon, s.leftInputIcon, className].join(' ')}
@@ -232,7 +231,7 @@ class ZonesPicker extends React.PureComponent {
     );
   };
 
-  renderInputLeftIconComponent = ({ name, className: iconClassName, type }) => {
+  renderInputLeftIconComponent = ({ name, className: iconClassName }, type) => {
     const { InputLeftIcon } = this.props;
 
     if (InputLeftIcon()) {
@@ -258,9 +257,8 @@ class ZonesPicker extends React.PureComponent {
     }
     return (
       <Icon
-        IconComponent={this.renderInputLeftIconComponent}
+        IconComponent={props => this.renderInputLeftIconComponent(props, toZone.type)}
         name={ZoneTypesToIconName[toZone.type]}
-        type={toZone.type}
         variant="yellow"
         className={[s.inputIcon, s.leftInputIcon, className].join(' ')}
       />
