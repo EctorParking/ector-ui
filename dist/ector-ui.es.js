@@ -5819,22 +5819,8 @@ function (_React$PureComponent) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "renderFromInputLeftIconComponent", function (_ref) {
-      var name = _ref.name,
-          iconClassName = _ref.className;
-      var className = ["icon icon-".concat(name), iconClassName].join(' ');
-
-      if (name === ZoneTypesToIconName[ZoneTypes.station]) {
-        className = [className, s$11.stationIcon].join(' ');
-      }
-
-      return createElement("i", {
-        className: className
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "renderFromInputLeftComponent", function (_ref2) {
-      var className = _ref2.className;
+    _defineProperty(_assertThisInitialized(_this), "renderFromInputLeftComponent", function (_ref) {
+      var className = _ref.className;
       var fromZone = _this.props.fromZone;
 
       if (!fromZone || !fromZone.type) {
@@ -5842,15 +5828,16 @@ function (_React$PureComponent) {
       }
 
       return createElement(Icon, {
-        IconComponent: _this.renderFromInputLeftIconComponent,
+        IconComponent: _this.renderInputLeftIconComponent,
+        type: fromZone.type,
         name: ZoneTypesToIconName[fromZone.type],
         variant: "yellow",
         className: [s$11.inputIcon, s$11.leftInputIcon, className].join(' ')
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "renderFromInputRightComponent", function (_ref3) {
-      var className = _ref3.className;
+    _defineProperty(_assertThisInitialized(_this), "renderFromInputRightComponent", function (_ref2) {
+      var className = _ref2.className;
       var fromZoneValue = _this.state.fromZoneValue;
 
       if (fromZoneValue.length === 0) {
@@ -5870,9 +5857,9 @@ function (_React$PureComponent) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "renderFromInputComponent", function (_ref4) {
-      var className = _ref4.className,
-          inputProps = _objectWithoutProperties(_ref4, ["className"]);
+    _defineProperty(_assertThisInitialized(_this), "renderFromInputComponent", function (_ref3) {
+      var className = _ref3.className,
+          inputProps = _objectWithoutProperties(_ref3, ["className"]);
 
       var texts = _this.props.texts;
       return createElement(Input, _extends({}, inputProps, {
@@ -5885,9 +5872,18 @@ function (_React$PureComponent) {
       }));
     });
 
-    _defineProperty(_assertThisInitialized(_this), "renderToInputLeftIconComponent", function (_ref5) {
-      var name = _ref5.name,
-          iconClassName = _ref5.className;
+    _defineProperty(_assertThisInitialized(_this), "renderInputLeftIconComponent", function (_ref4) {
+      var name = _ref4.name,
+          iconClassName = _ref4.className,
+          type = _ref4.type;
+      var InputLeftIcon = _this.props.InputLeftIcon;
+
+      if (InputLeftIcon()) {
+        return createElement(InputLeftIcon, {
+          type: type
+        });
+      }
+
       var className = ["icon icon-".concat(name), iconClassName].join(' ');
 
       if (name === ZoneTypesToIconName[ZoneTypes.station]) {
@@ -5899,8 +5895,8 @@ function (_React$PureComponent) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "renderToInputLeftComponent", function (_ref6) {
-      var className = _ref6.className;
+    _defineProperty(_assertThisInitialized(_this), "renderToInputLeftComponent", function (_ref5) {
+      var className = _ref5.className;
       var toZone = _this.props.toZone;
 
       if (!toZone || !toZone.type) {
@@ -5908,15 +5904,16 @@ function (_React$PureComponent) {
       }
 
       return createElement(Icon, {
-        IconComponent: _this.renderToInputLeftIconComponent,
+        IconComponent: _this.renderInputLeftIconComponent,
         name: ZoneTypesToIconName[toZone.type],
+        type: toZone.type,
         variant: "yellow",
         className: [s$11.inputIcon, s$11.leftInputIcon, className].join(' ')
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "renderToInputRightComponent", function (_ref7) {
-      var className = _ref7.className;
+    _defineProperty(_assertThisInitialized(_this), "renderToInputRightComponent", function (_ref6) {
+      var className = _ref6.className;
       var toZoneValue = _this.state.toZoneValue;
 
       if (toZoneValue.length === 0) {
@@ -5936,9 +5933,9 @@ function (_React$PureComponent) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "renderToInputComponent", function (_ref8) {
-      var className = _ref8.className,
-          inputProps = _objectWithoutProperties(_ref8, ["className"]);
+    _defineProperty(_assertThisInitialized(_this), "renderToInputComponent", function (_ref7) {
+      var className = _ref7.className,
+          inputProps = _objectWithoutProperties(_ref7, ["className"]);
 
       var texts = _this.props.texts;
       return createElement(Input, _extends({}, inputProps, {
@@ -6028,6 +6025,9 @@ ZonesPicker.defaultProps = {
   ArrowIcon: function ArrowIcon() {
     return null;
   },
+  InputLeftIcon: function InputLeftIcon() {
+    return null;
+  },
   split: undefined
 };
 ZonesPicker.propTypes = {
@@ -6042,7 +6042,8 @@ ZonesPicker.propTypes = {
   onSplitSuggestions: PropTypes$1.func,
   split: PropTypes$1.bool,
   ZoneSuggestionIcon: PropTypes$1.func,
-  ArrowIcon: PropTypes$1.func
+  ArrowIcon: PropTypes$1.func,
+  InputLeftIcon: PropTypes$1.func
 };
 ZonesPicker.fromZone = 'from';
 ZonesPicker.toZone = 'to';

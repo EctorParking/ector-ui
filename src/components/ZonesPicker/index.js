@@ -180,18 +180,6 @@ class ZonesPicker extends React.PureComponent {
     });
   };
 
-  renderFromInputLeftIconComponent = ({ name, className: iconClassName }) => {
-    let className = [`icon icon-${name}`, iconClassName].join(' ');
-
-    if (name === ZoneTypesToIconName[ZoneTypes.station]) {
-      className = [className, s.stationIcon].join(' ');
-    }
-
-    return (
-      <i className={className} />
-    );
-  };
-
   renderFromInputLeftComponent = ({ className }) => {
     const { fromZone } = this.props;
 
@@ -199,7 +187,13 @@ class ZonesPicker extends React.PureComponent {
       return null;
     }
     return (
-      <Icon IconComponent={this.renderFromInputLeftIconComponent} name={ZoneTypesToIconName[fromZone.type]} variant="yellow" className={[s.inputIcon, s.leftInputIcon, className].join(' ')} />
+      <Icon
+        IconComponent={this.renderInputLeftIconComponent}
+        type={fromZone.type}
+        name={ZoneTypesToIconName[fromZone.type]}
+        variant="yellow"
+        className={[s.inputIcon, s.leftInputIcon, className].join(' ')}
+      />
     );
   };
 
@@ -238,7 +232,13 @@ class ZonesPicker extends React.PureComponent {
     );
   };
 
-  renderToInputLeftIconComponent = ({ name, className: iconClassName }) => {
+  renderInputLeftIconComponent = ({ name, className: iconClassName, type }) => {
+    const { InputLeftIcon } = this.props;
+
+    if (InputLeftIcon()) {
+      return <InputLeftIcon type={type} />;
+    }
+
     let className = [`icon icon-${name}`, iconClassName].join(' ');
 
     if (name === ZoneTypesToIconName[ZoneTypes.station]) {
@@ -257,7 +257,13 @@ class ZonesPicker extends React.PureComponent {
       return null;
     }
     return (
-      <Icon IconComponent={this.renderToInputLeftIconComponent} name={ZoneTypesToIconName[toZone.type]} variant="yellow" className={[s.inputIcon, s.leftInputIcon, className].join(' ')} />
+      <Icon
+        IconComponent={this.renderInputLeftIconComponent}
+        name={ZoneTypesToIconName[toZone.type]}
+        type={toZone.type}
+        variant="yellow"
+        className={[s.inputIcon, s.leftInputIcon, className].join(' ')}
+      />
     );
   };
 
@@ -356,6 +362,7 @@ ZonesPicker.defaultProps = {
   onSplitSuggestions: () => null,
   ZoneSuggestionIcon: () => null,
   ArrowIcon: () => null,
+  InputLeftIcon: () => null,
   split: undefined,
 };
 
@@ -372,6 +379,7 @@ ZonesPicker.propTypes = {
   split: PropTypes.bool,
   ZoneSuggestionIcon: PropTypes.func,
   ArrowIcon: PropTypes.func,
+  InputLeftIcon: PropTypes.func,
 };
 
 ZonesPicker.fromZone = 'from';
