@@ -10925,9 +10925,7 @@ var menuCSS = function menuCSS(_ref2) {
       borderRadius = _ref2$theme.borderRadius,
       spacing = _ref2$theme.spacing,
       colors = _ref2$theme.colors;
-  return _ref3 = {
-    label: 'menu'
-  }, _defineProperty$1(_ref3, alignToControl(placement), '100%'), _defineProperty$1(_ref3, "backgroundColor", colors.neutral0), _defineProperty$1(_ref3, "borderRadius", borderRadius), _defineProperty$1(_ref3, "boxShadow", '0 0 0 1px hsla(0, 0%, 0%, 0.1), 0 4px 11px hsla(0, 0%, 0%, 0.1)'), _defineProperty$1(_ref3, "marginBottom", spacing.menuGutter), _defineProperty$1(_ref3, "marginTop", spacing.menuGutter), _defineProperty$1(_ref3, "position", 'absolute'), _defineProperty$1(_ref3, "width", '100%'), _defineProperty$1(_ref3, "zIndex", 1), _ref3;
+  return _ref3 = {}, _defineProperty$1(_ref3, alignToControl(placement), '100%'), _defineProperty$1(_ref3, "backgroundColor", colors.neutral0), _defineProperty$1(_ref3, "borderRadius", borderRadius), _defineProperty$1(_ref3, "boxShadow", '0 0 0 1px hsla(0, 0%, 0%, 0.1), 0 4px 11px hsla(0, 0%, 0%, 0.1)'), _defineProperty$1(_ref3, "marginBottom", spacing.menuGutter), _defineProperty$1(_ref3, "marginTop", spacing.menuGutter), _defineProperty$1(_ref3, "position", 'absolute'), _defineProperty$1(_ref3, "width", '100%'), _defineProperty$1(_ref3, "zIndex", 1), _ref3;
 }; // NOTE: internal only
 
 var MenuPlacer =
@@ -11614,7 +11612,6 @@ var A11yText = function A11yText(props) {
 
     /*#__PURE__*/
     css$15({
-      label: 'a11yText',
       zIndex: 9999,
       border: 0,
       clip: 'rect(1px, 1px, 1px, 1px)',
@@ -11663,7 +11660,6 @@ function (_Component) {
 
         /*#__PURE__*/
         css$15({
-          label: 'dummyInput',
           // get rid of any default styles
           background: 0,
           border: 0,
@@ -12229,7 +12225,6 @@ var containerCSS = function containerCSS(_ref) {
   var isDisabled = _ref.isDisabled,
       isRtl = _ref.isRtl;
   return {
-    label: 'container',
     direction: isRtl ? 'rtl' : null,
     pointerEvents: isDisabled ? 'none' : null,
     // cancel mouse events when disabled
@@ -12379,7 +12374,6 @@ var baseCSS = function baseCSS(_ref2) {
       baseUnit = _ref2$theme.spacing.baseUnit,
       colors = _ref2$theme.colors;
   return {
-    label: 'indicatorContainer',
     color: isFocused ? colors.neutral60 : colors.neutral20,
     display: 'flex',
     padding: baseUnit * 2,
@@ -12431,7 +12425,6 @@ var indicatorSeparatorCSS = function indicatorSeparatorCSS(_ref3) {
       baseUnit = _ref3$theme.spacing.baseUnit,
       colors = _ref3$theme.colors;
   return {
-    label: 'indicatorSeparator',
     alignSelf: 'stretch',
     backgroundColor: isDisabled ? colors.neutral10 : colors.neutral20,
     marginBottom: baseUnit * 2,
@@ -12464,7 +12457,6 @@ var loadingIndicatorCSS = function loadingIndicatorCSS(_ref4) {
       colors = _ref4$theme.colors,
       baseUnit = _ref4$theme.spacing.baseUnit;
   return {
-    label: 'loadingIndicator',
     color: isFocused ? colors.neutral60 : colors.neutral20,
     display: 'flex',
     padding: baseUnit * 2,
@@ -12553,7 +12545,6 @@ var css$1$1 = function css$$1(_ref) {
       borderRadius = _ref$theme.borderRadius,
       spacing = _ref$theme.spacing;
   return {
-    label: 'control',
     alignItems: 'center',
     backgroundColor: isDisabled ? colors.neutral5 : colors.neutral0,
     borderColor: isDisabled ? colors.neutral10 : isFocused ? colors.primary : colors.neutral20,
@@ -12633,7 +12624,6 @@ var Group = function Group(props) {
 var groupHeadingCSS = function groupHeadingCSS(_ref2) {
   var spacing = _ref2.theme.spacing;
   return {
-    label: 'group',
     color: '#999',
     cursor: 'default',
     display: 'block',
@@ -12680,7 +12670,6 @@ var inputCSS = function inputCSS(_ref) {
 
 var inputStyle = function inputStyle(isHidden) {
   return {
-    label: 'input',
     background: 0,
     border: 0,
     fontSize: 'inherit',
@@ -12726,7 +12715,6 @@ var multiValueCSS = function multiValueCSS(_ref) {
       borderRadius = _ref$theme.borderRadius,
       colors = _ref$theme.colors;
   return {
-    label: 'multiValue',
     backgroundColor: colors.neutral10,
     borderRadius: borderRadius / 2,
     display: 'flex',
@@ -12888,7 +12876,6 @@ var optionCSS = function optionCSS(_ref) {
       spacing = _ref$theme.spacing,
       colors = _ref$theme.colors;
   return {
-    label: 'option',
     backgroundColor: isSelected ? colors.primary : isFocused ? colors.primary25 : 'transparent',
     color: isDisabled ? colors.neutral20 : isSelected ? colors.neutral0 : 'inherit',
     cursor: 'default',
@@ -12900,7 +12887,7 @@ var optionCSS = function optionCSS(_ref) {
     WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
     // provide some affordance on touch devices
     ':active': {
-      backgroundColor: !isDisabled && (isSelected ? colors.primary : colors.primary50)
+      backgroundColor: isSelected ? colors.primary : colors.primary50
     }
   };
 };
@@ -12933,7 +12920,6 @@ var placeholderCSS = function placeholderCSS(_ref) {
       spacing = _ref$theme.spacing,
       colors = _ref$theme.colors;
   return {
-    label: 'placeholder',
     color: colors.neutral50,
     marginLeft: spacing.baseUnit / 2,
     marginRight: spacing.baseUnit / 2,
@@ -12964,7 +12950,6 @@ var css$2$1 = function css$$1(_ref) {
       spacing = _ref$theme.spacing,
       colors = _ref$theme.colors;
   return {
-    label: 'singleValue',
     color: isDisabled ? colors.neutral40 : colors.neutral80,
     marginLeft: spacing.baseUnit / 2,
     marginRight: spacing.baseUnit / 2,
@@ -13164,6 +13149,7 @@ function (_Component) {
       focusedValue: null,
       inputIsHidden: false,
       isFocused: false,
+      isComposing: false,
       menuOptions: {
         render: [],
         focusable: []
@@ -13172,8 +13158,6 @@ function (_Component) {
     });
 
     _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "blockOptionHover", false);
-
-    _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "isComposing", false);
 
     _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "clearFocusValueOnUpdate", false);
 
@@ -13525,11 +13509,15 @@ function (_Component) {
     });
 
     _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "onCompositionStart", function () {
-      _this.isComposing = true;
+      _this.setState({
+        isComposing: true
+      });
     });
 
     _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "onCompositionEnd", function () {
-      _this.isComposing = false;
+      _this.setState({
+        isComposing: false
+      });
     });
 
     _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "onTouchStart", function (_ref4) {
@@ -13686,6 +13674,7 @@ function (_Component) {
           tabSelectsValue = _this$props7.tabSelectsValue,
           openMenuOnFocus = _this$props7.openMenuOnFocus;
       var _this$state2 = _this.state,
+          isComposing = _this$state2.isComposing,
           focusedOption = _this$state2.focusedOption,
           focusedValue = _this$state2.focusedValue,
           selectValue = _this$state2.selectValue;
@@ -13736,7 +13725,7 @@ function (_Component) {
           break;
 
         case 'Tab':
-          if (_this.isComposing) return;
+          if (isComposing) return;
 
           if (event.shiftKey || !menuIsOpen || !tabSelectsValue || !focusedOption || // don't capture the event if the menu opens on focus and the focused
           // option is already selected; it breaks the flow of navigation
@@ -13749,15 +13738,9 @@ function (_Component) {
           break;
 
         case 'Enter':
-          if (event.keyCode === 229) {
-            // ignore the keydown event from an Input Method Editor(IME)
-            // ref. https://www.w3.org/TR/uievents/#determine-keydown-keyup-keyCode
-            break;
-          }
-
           if (menuIsOpen) {
             if (!focusedOption) return;
-            if (_this.isComposing) return;
+            if (isComposing) return;
 
             _this.selectOption(focusedOption);
 
@@ -14556,14 +14539,14 @@ function (_Component) {
 
       if (isMulti) {
         var selectValues = selectValue.map(function (opt) {
-          var isOptionFocused = opt === focusedValue;
+          var isFocused = opt === focusedValue;
           return React__default.createElement(MultiValue, _extends$1({}, commonProps, {
             components: {
               Container: MultiValueContainer,
               Label: MultiValueLabel,
               Remove: MultiValueRemove
             },
-            isFocused: isOptionFocused,
+            isFocused: isFocused,
             isDisabled: isDisabled,
             key: _this4.getOptionValue(opt),
             removeProps: {
@@ -16539,13 +16522,14 @@ var SavedCardsPickerHeader = function SavedCardsPickerHeader(_ref) {
   var isSelected = _ref.isSelected,
       onRadioButtonChange = _ref.onRadioButtonChange,
       cardType = _ref.cardType,
-      texts = _ref.texts;
+      texts = _ref.texts,
+      isRadioButtonVisible = _ref.isRadioButtonVisible;
   return React__default.createElement("tr", {
     className: s$1h.header,
     onClick: function onClick() {
       return onRadioButtonChange(cardType);
     }
-  }, React__default.createElement(RadioButton, {
+  }, isRadioButtonVisible && React__default.createElement(RadioButton, {
     label: "\xA0",
     checked: isSelected,
     onSelect: onRadioButtonChange,
@@ -16584,7 +16568,8 @@ SavedCardsPickerHeader.propTypes = {
   cardType: PropTypes$1.oneOf(Object.values(CardTypes)).isRequired,
   isSelected: PropTypes$1.bool.isRequired,
   onRadioButtonChange: PropTypes$1.func.isRequired,
-  texts: SavedCardsPickerTextTypes.isRequired
+  texts: SavedCardsPickerTextTypes.isRequired,
+  isRadioButtonVisible: PropTypes$1.bool.isRequired
 };
 
 var PaymentMethodType$2 = PropTypes$1.shape({
@@ -16658,7 +16643,8 @@ function (_React$PureComponent) {
           onRadioButtonChange = _this$props2.onRadioButtonChange,
           cardType = _this$props2.cardType,
           isSelected = _this$props2.isSelected,
-          texts = _this$props2.texts;
+          texts = _this$props2.texts,
+          isRadioButtonVisible = _this$props2.isRadioButtonVisible;
       return React__default.createElement("div", {
         className: [s$1g.card, className].join(' ')
       }, React__default.createElement("div", {
@@ -16667,7 +16653,8 @@ function (_React$PureComponent) {
         isSelected: isSelected,
         onRadioButtonChange: onRadioButtonChange,
         cardType: cardType,
-        texts: texts
+        texts: texts,
+        isRadioButtonVisible: isRadioButtonVisible
       }), isSelected && this.renderContent()));
     }
   }]);
@@ -16687,14 +16674,16 @@ SavedCardsPicker.propTypes = {
   showHeader: PropTypes$1.bool,
   PaymentFormComponent: PropTypes$1.func.isRequired,
   showForm: PropTypes$1.bool,
-  card: PropTypes$1.string
+  card: PropTypes$1.string,
+  isRadioButtonVisible: PropTypes$1.bool
 };
 SavedCardsPicker.defaultProps = {
   className: undefined,
   cardType: '',
   showHeader: false,
   showForm: false,
-  card: ''
+  card: '',
+  isRadioButtonVisible: true
 };
 
 var css$1k = ".DateTimePicker-module_calendar__1m3vk {\n  position: relative;\n  width: 100%;\n  height: 300px;\n}\n\n.DateTimePicker-module_calendarArrow__SvtwN {\n  display: none;\n}\n\n.DateTimePicker-module_datePickerPopper__2V2oe {\n  -webkit-transform: none !important;\n          transform: none !important;\n  width: 100%;\n  margin-top: 0 !important;\n}\n\n.DateTimePicker-module_hidden__OvFBm {\n  display: none !important;\n}\n\n.DateTimePicker-module_pickerSuggestions__38iqg {\n  width: 610px !important;\n  margin-left: -300px;\n  left: 50%;\n  height: 265px !important\n}\n\n.DateTimePicker-module_pickerSuggestions__38iqg:before {\n  display: none;\n}\n\n.DateTimePicker-module_suggestionsArrow__2RcKh {\n  margin-left: -9px;\n}\n\n.DateTimePicker-module_picker__3d7nO {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  height: auto;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP {\n  background: none;\n  padding-left: 40px;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::-webkit-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::-ms-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.datePickerInput::-webkit-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.datePickerInput::-ms-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.DateTimePicker-module_fixedWidthDateInput__3lrKo {\n  min-width: 160px;\n  width: 160px;\n  max-width: 160px;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU {\n  border: none !important;\n  border-radius: 8px;\n  max-width: 100px;\n  padding-left: 35px;\n  margin-right: 1px;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::-webkit-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::-ms-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.timePickerInput::-webkit-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.timePickerInput::-ms-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInputContainer__ROeTv::before {\n  background-color: rgba(191, 196, 212, .52);\n  content: '';\n  height: 20px;\n  margin-top: -10px;\n  position: absolute;\n  top: 50%;\n  width: 1px;\n}\n\n.DateTimePicker-module_timeSuggestions__3aCiQ {\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  position: relative;\n}\n\n.DateTimePicker-module_timeSuggestionsContainer__3Pe8K:nth-child(1) {\n  width: 300px;\n  min-width: 300px;\n}\n\n.DateTimePicker-module_timeSuggestionsContainer__3Pe8K {\n  width: 100%;\n}\n\n.DateTimePicker-module_inputIcon__178Nw {\n  font-size: 19.2px;\n  font-size: 19.2px;\n  font-size: 1.2rem;\n  left: 10px;\n}\n\n.DateTimePicker-module_inputError__2-au6 {\n  color: #ff5757;\n}\n\n.DateTimePicker-module_inputError__2-au6::-webkit-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputError__2-au6::-ms-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.inputError::-webkit-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.inputError::-ms-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputError__2-au6::placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputError__2-au6:-ms-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputError__2-au6::-ms-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputContainer__1FIAJ {\n  padding: 0;\n}\n\n.DateTimePicker-module_splitInputContainer__1fsjs {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  width: 50%\n}\n\n.DateTimePicker-module_splitInputContainer__1fsjs:first-child {\n  border-right: 1px solid rgba(191, 196, 212, .52);\n}\n\n.DateTimePicker-module_month__2AwNj {\n  color: #163457;\n}\n\n.DateTimePicker-module_hr__1p2EJ {\n  height: 85%;\n  width: 1px;\n  position: absolute;\n  left: 300px;\n  background-color: rgba(191, 196, 212, .52);\n  top: 7.5%;\n}\n";

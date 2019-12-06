@@ -23,15 +23,18 @@ const SavedCardsPickerHeader = ({
   onRadioButtonChange,
   cardType,
   texts,
+  isRadioButtonVisible,
 }) => (
   <tr className={s.header} onClick={() => onRadioButtonChange(cardType)}>
-    <RadioButton
-      label=" "
-      checked={isSelected}
-      onSelect={onRadioButtonChange}
-      value={cardType}
-      name=""
-    />
+    {isRadioButtonVisible && (
+      <RadioButton
+        label=" "
+        checked={isSelected}
+        onSelect={onRadioButtonChange}
+        value={cardType}
+        name=""
+      />
+    )}
     <span className={s.text}>
       <strong>{getHeaderTitle(cardType, texts)}</strong>
     </span>
@@ -76,6 +79,7 @@ SavedCardsPickerHeader.propTypes = {
   isSelected: PropTypes.bool.isRequired,
   onRadioButtonChange: PropTypes.func.isRequired,
   texts: SavedCardsPickerTextTypes.isRequired,
+  isRadioButtonVisible: PropTypes.bool.isRequired,
 };
 
 export default SavedCardsPickerHeader;
