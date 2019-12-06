@@ -6,5 +6,5 @@
 }
 
 .icon > * {
-  z-index: unset;
+  z-index: 0;
 }
