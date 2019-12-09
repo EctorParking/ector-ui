@@ -86,6 +86,7 @@ class SavedCardsPicker extends React.PureComponent {
       cardType,
       isSelected,
       texts,
+      isRadioButtonVisible,
     } = this.props;
 
     return (
@@ -96,6 +97,7 @@ class SavedCardsPicker extends React.PureComponent {
             onRadioButtonChange={onRadioButtonChange}
             cardType={cardType}
             texts={texts}
+            isRadioButtonVisible={isRadioButtonVisible}
           />
           {isSelected && this.renderContent()}
         </div>
@@ -117,6 +119,7 @@ SavedCardsPicker.propTypes = {
   PaymentFormComponent: PropTypes.func.isRequired,
   showForm: PropTypes.bool,
   card: PropTypes.string,
+  isRadioButtonVisible: PropTypes.bool,
 };
 
 SavedCardsPicker.defaultProps = {
@@ -125,6 +128,7 @@ SavedCardsPicker.defaultProps = {
   showHeader: false,
   showForm: false,
   card: '',
+  isRadioButtonVisible: true,
 };
 
 
