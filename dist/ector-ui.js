@@ -3072,7 +3072,7 @@ var LoginForm = function LoginForm(_ref) {
     onChange: onChangeEmail,
     error: errors.email
   }), React__default.createElement(InputLabel, {
-    className: [s$A.input, passwordInputClassName].join(''),
+    className: [s$A.input, passwordInputClassName].join(' '),
     hasError: !!errors.password || typeof errorLogin !== 'undefined' && errorLogin !== '',
     label: texts.password,
     mandatory: true,

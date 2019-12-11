@@ -45,7 +45,7 @@ const LoginForm = ({
     )
     }
     <InputLabel
-      className={[s.input, passwordInputClassName].join('')}
+      className={[s.input, passwordInputClassName].join(' ')}
       hasError={!!errors.password || (typeof errorLogin !== 'undefined' && errorLogin !== '')}
       label={texts.password}
       mandatory
