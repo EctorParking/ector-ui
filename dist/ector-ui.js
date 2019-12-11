@@ -4879,7 +4879,8 @@ function (_React$Component) {
           errors = _this$props.errors,
           onKeyDownEmail = _this$props.onKeyDownEmail,
           countries = _this$props.countries,
-          cardProps = _objectWithoutProperties(_this$props, ["RootComponent", "className", "contentClassName", "texts", "phoneWithFlags", "values", "errors", "onKeyDownEmail", "countries"]);
+          leftColumnClassName = _this$props.leftColumnClassName,
+          cardProps = _objectWithoutProperties(_this$props, ["RootComponent", "className", "contentClassName", "texts", "phoneWithFlags", "values", "errors", "onKeyDownEmail", "countries", "leftColumnClassName"]);
 
       var actualCardProps = _objectSpread({}, cardProps, {
         className: [s$Y.card, className].join(' '),
@@ -4889,7 +4890,7 @@ function (_React$Component) {
       return React__default.createElement(RootComponent, actualCardProps, React__default.createElement("div", {
         className: s$Y.columns
       }, React__default.createElement("div", {
-        className: s$Y.leftColumn
+        className: [s$Y.leftColumn, leftColumnClassName].join(' ')
       }, React__default.createElement("div", {
         className: s$Y.titleRadio
       }, React__default.createElement("label", {
@@ -4977,6 +4978,7 @@ RegistrationForm.defaultProps = {
   },
   className: undefined,
   contentClassName: undefined,
+  leftColumnClassName: undefined,
   texts: defaultTexts$5,
   phoneWithFlags: false,
   onChangeProperty: function onChangeProperty() {},
@@ -4990,6 +4992,7 @@ RegistrationForm.propTypes = {
   RootComponent: PropTypes$1.func,
   className: PropTypes$1.string,
   contentClassName: PropTypes$1.string,
+  leftColumnClassName: PropTypes$1.string,
   texts: RegistrationFormTextTypes,
   phoneWithFlags: PropTypes$1.bool,
   onChangeProperty: PropTypes$1.func,

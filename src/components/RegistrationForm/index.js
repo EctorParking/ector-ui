@@ -53,7 +53,7 @@ class RegistrationForm extends React.Component {
   render() {
     const {
       RootComponent, className, contentClassName,
-      texts, phoneWithFlags, values, errors, onKeyDownEmail, countries,
+      texts, phoneWithFlags, values, errors, onKeyDownEmail, countries, leftColumnClassName,
       ...cardProps
     } = this.props;
 
@@ -66,7 +66,7 @@ class RegistrationForm extends React.Component {
     return (
       <RootComponent {...actualCardProps}>
         <div className={s.columns}>
-          <div className={s.leftColumn}>
+          <div className={[s.leftColumn, leftColumnClassName].join(' ')}>
             <div className={s.titleRadio}>
               <label htmlFor="title">{texts.title}</label>
               <GenderPicker
@@ -158,6 +158,7 @@ RegistrationForm.defaultProps = {
   RootComponent: ({ children, ...cardProps }) => (<Card {...cardProps}>{children}</Card>),
   className: undefined,
   contentClassName: undefined,
+  leftColumnClassName: undefined,
   texts: defaultTexts,
   phoneWithFlags: false,
   onChangeProperty: () => {},
@@ -172,6 +173,7 @@ RegistrationForm.propTypes = {
   RootComponent: PropTypes.func,
   className: PropTypes.string,
   contentClassName: PropTypes.string,
+  leftColumnClassName: PropTypes.string,
   texts: RegistrationFormTextTypes,
   phoneWithFlags: PropTypes.bool,
   onChangeProperty: PropTypes.func,
