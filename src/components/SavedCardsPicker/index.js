@@ -5,6 +5,7 @@ import SavedCardsPickerHeader from './SavedCardsPickerHeader';
 import SavedCardsPickerTextTypes from './SavedCardsPickerTextTypes';
 import PaymentMethodType from './PaymentMethodType';
 import LinkUnderlined from '../LinkUnderlined';
+import Loader from '../Loader';
 
 const CardTypes = {
   total: 'total',
@@ -23,6 +24,7 @@ class SavedCardsPicker extends React.PureComponent {
       cardType,
       showForm,
       card,
+      fetching,
     } = this.props;
 
     return (
@@ -46,6 +48,7 @@ class SavedCardsPicker extends React.PureComponent {
             {paymentMethods.length > 0
               ? paymentMethods.map(paymentMethod => SavedCardsLineComponent(paymentMethod, card))
               : <PaymentFormComponent />}
+            {fetching && <Loader size="xSmall" />}
           </tbody>
         </table>
         {paymentMethods.length > 0 && !showForm && (
@@ -120,6 +123,7 @@ SavedCardsPicker.propTypes = {
   showForm: PropTypes.bool,
   card: PropTypes.string,
   isRadioButtonVisible: PropTypes.bool,
+  fetching: PropTypes.bool,
 };
 
 SavedCardsPicker.defaultProps = {
@@ -129,6 +133,7 @@ SavedCardsPicker.defaultProps = {
   showForm: false,
   card: '',
   isRadioButtonVisible: true,
+  fetching: false,
 };
 
 
