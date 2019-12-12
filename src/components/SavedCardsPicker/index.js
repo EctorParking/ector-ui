@@ -5,7 +5,7 @@ import SavedCardsPickerHeader from './SavedCardsPickerHeader';
 import SavedCardsPickerTextTypes from './SavedCardsPickerTextTypes';
 import PaymentMethodType from './PaymentMethodType';
 import LinkUnderlined from '../LinkUnderlined';
-import Loader from "../Loader";
+import Loader from '../Loader';
 
 const CardTypes = {
   total: 'total',
