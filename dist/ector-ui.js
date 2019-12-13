@@ -827,7 +827,7 @@ var Button = function Button(_ref) {
 };
 
 Button.defaultProps = {
-  animationDuration: 4.5,
+  animationDuration: 4,
   fetchingDelay: 0.5,
   href: '#',
   onClick: null,
