@@ -95,6 +95,15 @@ class ZonesPicker extends React.PureComponent {
     this.picker = React.createRef();
   }
 
+  componentDidUpdate(prevProps) {
+    const { fromZone: prevFromZone } = prevProps;
+    const { fromZone } = this.props;
+
+    if (prevFromZone !== fromZone) {
+      this.setState({ fromZoneValue: fromZone ? fromZone.name : '' });
+    }
+  }
+
   handleFromZoneClick = (zone) => {
     const { onSelect } = this.props;
     const { split } = this.state;
