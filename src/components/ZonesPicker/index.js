@@ -95,6 +95,18 @@ class ZonesPicker extends React.PureComponent {
     this.picker = React.createRef();
   }
 
+  componentDidUpdate(prevProps) {
+    const { fromZone: prevFromZone, toZone: prevToZone } = prevProps;
+    const { fromZone, toZone } = this.props;
+
+    if (prevFromZone !== fromZone) {
+      this.setState({ fromZoneValue: fromZone ? fromZone.name : '' });
+    }
+    if (prevToZone !== toZone) {
+      this.setState({ toZoneValue: toZone ? toZone.name : '' });
+    }
+  }
+
   handleFromZoneClick = (zone) => {
     const { onSelect } = this.props;
     const { split } = this.state;
@@ -330,7 +342,9 @@ class ZonesPicker extends React.PureComponent {
 
   render() {
     const { split, fromZoneValue, toZoneValue } = this.state;
-    const { error, className } = this.props;
+    const {
+      error, className, fromZone, toZone,
+    } = this.props;
 
     return (
       <Picker
@@ -341,6 +355,8 @@ class ZonesPicker extends React.PureComponent {
         SuggestionsComponent={this.renderSuggestionsComponent}
         firstValue={fromZoneValue}
         secondValue={toZoneValue}
+        fromZone={fromZone}
+        toZone={toZone}
         error={error}
         className={className}
       />
