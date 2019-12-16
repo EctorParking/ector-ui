@@ -5991,15 +5991,38 @@ function (_React$PureComponent) {
   }
 
   _createClass(ZonesPicker, [{
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
+      var prevFromZone = prevProps.fromZone,
+          prevToZone = prevProps.toZone;
+      var _this$props2 = this.props,
+          fromZone = _this$props2.fromZone,
+          toZone = _this$props2.toZone;
+
+      if (prevFromZone !== fromZone) {
+        this.setState({
+          fromZoneValue: fromZone ? fromZone.name : ''
+        });
+      }
+
+      if (prevToZone !== toZone) {
+        this.setState({
+          toZoneValue: toZone ? toZone.name : ''
+        });
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this$state4 = this.state,
           split = _this$state4.split,
           fromZoneValue = _this$state4.fromZoneValue,
           toZoneValue = _this$state4.toZoneValue;
-      var _this$props2 = this.props,
-          error = _this$props2.error,
-          className = _this$props2.className;
+      var _this$props3 = this.props,
+          error = _this$props3.error,
+          className = _this$props3.className,
+          fromZone = _this$props3.fromZone,
+          toZone = _this$props3.toZone;
       return React.createElement(Picker, {
         ref: this.picker,
         split: split,
@@ -6008,6 +6031,8 @@ function (_React$PureComponent) {
         SuggestionsComponent: this.renderSuggestionsComponent,
         firstValue: fromZoneValue,
         secondValue: toZoneValue,
+        fromZone: fromZone,
+        toZone: toZone,
         error: error,
         className: className
       });
