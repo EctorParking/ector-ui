@@ -6022,7 +6022,8 @@ function (_React$PureComponent) {
           error = _this$props3.error,
           className = _this$props3.className,
           fromZone = _this$props3.fromZone,
-          toZone = _this$props3.toZone;
+          toZone = _this$props3.toZone,
+          texts = _this$props3.texts;
       return React.createElement(Picker, {
         ref: this.picker,
         split: split,
@@ -6034,7 +6035,8 @@ function (_React$PureComponent) {
         fromZone: fromZone,
         toZone: toZone,
         error: error,
-        className: className
+        className: className,
+        texts: texts
       });
     }
   }]);

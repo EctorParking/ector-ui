@@ -343,7 +343,7 @@ class ZonesPicker extends React.PureComponent {
   render() {
     const { split, fromZoneValue, toZoneValue } = this.state;
     const {
-      error, className, fromZone, toZone,
+      error, className, fromZone, toZone, texts,
     } = this.props;
 
     return (
@@ -359,6 +359,7 @@ class ZonesPicker extends React.PureComponent {
         toZone={toZone}
         error={error}
         className={className}
+        texts={texts}
       />
     );
   }
