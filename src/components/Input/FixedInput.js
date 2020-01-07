@@ -19,12 +19,12 @@ class FixedInput extends React.Component {
   }
 
   render() {
-    return <input ref={this.inputRef} {...this.props} value={undefined}/>;
+    return <input ref={this.inputRef} {...this.props} value={undefined} />;
   }
 }
 
 FixedInput.propTypes = {
-  value: PropTypes.string,
+  value: PropTypes.string.isRequired,
 };
 
 export default FixedInput;
