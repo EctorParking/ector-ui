@@ -14,8 +14,11 @@ class FixedInput extends React.Component {
     const oldIdx = node.selectionStart;
     node.value = value;
     const newIdx = Math.max(0, node.value.length - oldLength + oldIdx);
-    node.selectionStart = newIdx;
-    node.selectionEnd = newIdx;
+
+    if (node.selectionStart && node.selectionEnd) {
+      node.selectionStart = newIdx;
+      node.selectionEnd = newIdx;
+    }
   }
 
   render() {

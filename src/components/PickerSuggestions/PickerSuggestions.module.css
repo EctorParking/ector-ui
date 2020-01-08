@@ -4,9 +4,9 @@
   background-color: var(--white);
   border-radius: var(--marginXSmall);
   box-shadow: var(--pickerBoxShadow);
-  height: var(--pickerSuggestionsHeight);
+  height: auto;
   left: -10%;
-  min-height: 150px;
+  min-height: 0;
   opacity: 0;
   pointer-events: none;
   position: absolute;
