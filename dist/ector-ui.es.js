@@ -2672,6 +2672,54 @@ GenderPicker.propTypes = {
   error: PropTypes$1.string
 };
 
+var FixedInput =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(FixedInput, _React$Component);
+
+  function FixedInput(props) {
+    var _this;
+
+    _classCallCheck(this, FixedInput);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(FixedInput).call(this, props));
+    _this.inputRef = React__default.createRef();
+    return _this;
+  }
+
+  _createClass(FixedInput, [{
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {
+      var value = this.props.value;
+      var node = this.inputRef.current;
+      var oldLength = node.value.length;
+      var oldIdx = node.selectionStart;
+      node.value = value;
+      var newIdx = Math.max(0, node.value.length - oldLength + oldIdx);
+
+      if (node.selectionStart && node.selectionEnd) {
+        node.selectionStart = newIdx;
+        node.selectionEnd = newIdx;
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return React__default.createElement("input", _extends({
+        ref: this.inputRef
+      }, this.props, {
+        value: undefined
+      }));
+    }
+  }]);
+
+  return FixedInput;
+}(React__default.Component);
+
+FixedInput.propTypes = {
+  value: PropTypes$1.string.isRequired
+};
+
 var css$u = ".Input-module_container__y-kIk {\n  position: relative;\n}\n\n.Input-module_input__1TjxO {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #163457;\n  border: 2px solid #d5d6d7;\n  border-radius: 3px;\n  display: block;\n  height: 40px;\n  height: 40px;\n  height: 2.5rem;\n  padding: 8px;\n  padding: 8px;\n  padding: 0.5rem;\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  -ms-flex-preferred-size: auto;\n      flex-basis: auto;\n  margin-top: 4px;\n  margin-top: 4px;\n  margin-top: 0.25rem\n}\n\n.Input-module_input__1TjxO::-webkit-input-placeholder {\n  opacity: 0.8;\n  color: #d5d6d7;\n}\n\n.Input-module_input__1TjxO::-ms-input-placeholder {\n  opacity: 0.8;\n  color: #d5d6d7;\n}\n\n.input::-webkit-input-placeholder {\n  opacity: 0.8;\n  color: #d5d6d7;\n}\n\n.input::-ms-input-placeholder {\n  opacity: 0.8;\n  color: #d5d6d7;\n}\n\n.Input-module_input__1TjxO::placeholder {\n  opacity: 0.8;\n  color: #d5d6d7;\n}\n\n.Input-module_input__1TjxO:focus {\n  border-color: #ffcd02;\n}\n\n/* Hide big cross in IE */\n\n.Input-module_input__1TjxO::-ms-clear {\n  display: none;\n}\n\n.Input-module_inputWithError__q0fcE {\n  border-color: #ff5757 !important;\n}\n\n.Input-module_inputPrepend__36mBv {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  color: #a9b3c5;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 32px;\n  font-size: 32px;\n  font-size: 2rem;\n  height: 100%;\n  left: 5px;\n  position: absolute;\n  top: 0;\n}\n\n.Input-module_inputAppend__2lJtU {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  color: #a9b3c5;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 32px;\n  font-size: 32px;\n  font-size: 2rem;\n  height: 100%;\n  position: absolute;\n  right: 5px;\n  top: 0;\n}\n";
 var s$u = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","container":"Input-module_container__y-kIk","input":"Input-module_input__1TjxO","inputWithError":"Input-module_inputWithError__q0fcE","inputPrepend":"Input-module_inputPrepend__36mBv","inputAppend":"Input-module_inputAppend__2lJtU"};
 styleInject(css$u);
@@ -2694,7 +2742,7 @@ var Input = function Input(_ref) {
     className: [s$u.container, containerClassName].join(' ')
   }, React__default.createElement(LeftComponent, {
     className: s$u.inputPrepend
-  }), React__default.createElement("input", _extends({
+  }), React__default.createElement(FixedInput, _extends({
     className: [s$u.input, hasError ? s$u.inputWithError : '', className].join(' '),
     onFocus: onFocus,
     onBlur: onBlur,
@@ -5180,7 +5228,7 @@ Arrow.propTypes = {
   className: PropTypes$1.string
 };
 
-var css$_ = ".PickerSuggestions-module_container__1Oq6m {\n  background-color: #fefefe;\n  border-radius: 5px;\n  -webkit-box-shadow: 0 4px 8px 2px rgba(0, 0, 0, .25);\n          box-shadow: 0 4px 8px 2px rgba(0, 0, 0, .25);\n  height: 275px;\n  left: -10%;\n  min-height: 150px;\n  opacity: 0;\n  pointer-events: none;\n  position: absolute;\n  top: 65px;\n  -webkit-transform: translateY(-50px);\n          transform: translateY(-50px);\n  -webkit-transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;\n  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  width: 120%\n}\n\n.PickerSuggestions-module_container__1Oq6m.PickerSuggestions-module_visible__4ey8N {\n  opacity: 1;\n  pointer-events: auto;\n  -webkit-transform: none;\n          transform: none;\n}\n\n.PickerSuggestions-module_arrowContainer__2SiPV {\n  position: absolute;\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  left: 0;\n  top: -15px;\n}\n\n.PickerSuggestions-module_arrow__JgXgd {\n  color: transparent\n}\n\n.PickerSuggestions-module_arrow__JgXgd.PickerSuggestions-module_visible__4ey8N {\n  color: #fefefe;\n  text-shadow: 0 -5px 15px rgb(206, 206, 206);\n}\n\n.PickerSuggestions-module_splitContainer__3P0nJ:before {\n  background-color: rgba(191, 196, 212, .52);\n  content: \"\";\n  height: calc(75% - 40px);\n  left: 50%;\n  position: absolute;\n  top: 20px;\n  width: 1px;\n}\n";
+var css$_ = ".PickerSuggestions-module_container__1Oq6m {\n  background-color: #fefefe;\n  border-radius: 5px;\n  -webkit-box-shadow: 0 4px 8px 2px rgba(0, 0, 0, .25);\n          box-shadow: 0 4px 8px 2px rgba(0, 0, 0, .25);\n  height: auto;\n  left: -10%;\n  min-height: 0;\n  opacity: 0;\n  pointer-events: none;\n  position: absolute;\n  top: 65px;\n  -webkit-transform: translateY(-50px);\n          transform: translateY(-50px);\n  -webkit-transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;\n  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  width: 120%\n}\n\n.PickerSuggestions-module_container__1Oq6m.PickerSuggestions-module_visible__4ey8N {\n  opacity: 1;\n  pointer-events: auto;\n  -webkit-transform: none;\n          transform: none;\n}\n\n.PickerSuggestions-module_arrowContainer__2SiPV {\n  position: absolute;\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  left: 0;\n  top: -15px;\n}\n\n.PickerSuggestions-module_arrow__JgXgd {\n  color: transparent\n}\n\n.PickerSuggestions-module_arrow__JgXgd.PickerSuggestions-module_visible__4ey8N {\n  color: #fefefe;\n  text-shadow: 0 -5px 15px rgb(206, 206, 206);\n}\n\n.PickerSuggestions-module_splitContainer__3P0nJ:before {\n  background-color: rgba(191, 196, 212, .52);\n  content: \"\";\n  height: calc(75% - 40px);\n  left: 50%;\n  position: absolute;\n  top: 20px;\n  width: 1px;\n}\n";
 var s$_ = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","container":"PickerSuggestions-module_container__1Oq6m","visible":"PickerSuggestions-module_visible__4ey8N","arrowContainer":"PickerSuggestions-module_arrowContainer__2SiPV","arrow":"PickerSuggestions-module_arrow__JgXgd","splitContainer":"PickerSuggestions-module_splitContainer__3P0nJ"};
 styleInject(css$_);
 
