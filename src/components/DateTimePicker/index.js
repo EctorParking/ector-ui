@@ -123,6 +123,18 @@ class DateTimePicker extends React.PureComponent {
     };
   }
 
+  componentDidUpdate(prevProps) {
+    const { startDate: prevStartDate, endDate: prevEndDate } = prevProps;
+    const { startDate, endDate } = this.props;
+
+    if (startDate !== prevStartDate) {
+      this.setState({ startDate });
+    }
+    if (endDate !== prevEndDate) {
+      this.setState({ endDate });
+    }
+  }
+
   handleDateChange = ({ startDate, endDate: datePickerEndDate }) => {
     const { onStartDateChange, onEndDateChange } = this.props;
     const { endDate: stateEndDate, visiblePicker } = this.state;
@@ -370,7 +382,7 @@ class DateTimePicker extends React.PureComponent {
       fromMinuteRange,
       toMinuteRange,
     } = this.state;
-    const { texts } = this.props;
+    const { texts, ArrowIcon } = this.props;
 
     return (
       <PickerSuggestions
@@ -417,6 +429,7 @@ class DateTimePicker extends React.PureComponent {
               toHourRange={toHourRange}
               fromMinuteRange={fromMinuteRange}
               toMinuteRange={toMinuteRange}
+              ArrowIcon={ArrowIcon}
             />
           )
         }
@@ -466,6 +479,7 @@ DateTimePicker.propTypes = {
   onEndDateTimeFocus: PropTypes.func,
   onEndDateTimeBlur: PropTypes.func,
   onSuggestionsHide: PropTypes.func,
+  ArrowIcon: PropTypes.func,
   fromTimeRange: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])),
   toTimeRange: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])),
   hasStartDateError: PropTypes.bool,
@@ -488,6 +502,7 @@ DateTimePicker.defaultProps = {
   onEndDateTimeFocus: () => null,
   onEndDateTimeBlur: () => null,
   onSuggestionsHide: () => null,
+  ArrowIcon: () => null,
   fromTimeRange: undefined,
   toTimeRange: undefined,
   hasStartDateError: false,

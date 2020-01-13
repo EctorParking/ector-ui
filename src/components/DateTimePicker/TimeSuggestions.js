@@ -17,6 +17,7 @@ const TimeSuggestions = ({
   fromMinuteRange,
   toMinuteRange,
   toHourRange,
+  ArrowIcon,
 }) => {
   const onSelectStartTime = (timeUnits, value) => onSelect(
     TimeSuggestions.startTime,
@@ -50,6 +51,7 @@ const TimeSuggestions = ({
           endMinute={endFromMinuteRange}
           startHour={startFromHourRange}
           endHour={endFromHourRange}
+          ArrowIcon={ArrowIcon}
         />
       </div>
       <div className={[s.timeContainer, containerClassName].join(' ')}>
@@ -67,6 +69,7 @@ const TimeSuggestions = ({
           endMinute={endToMinuteRange}
           startHour={startToHourRange}
           endHour={endToHourRange}
+          ArrowIcon={ArrowIcon}
         />
       </div>
     </div>
@@ -76,6 +79,7 @@ const TimeSuggestions = ({
 TimeSuggestions.defaultProps = {
   className: undefined,
   onSelect: () => null,
+  ArrowIcon: () => null,
   texts: DefaultTexts,
   startMinutes: undefined,
   startHour: undefined,
@@ -92,6 +96,7 @@ TimeSuggestions.propTypes = {
   className: PropTypes.string,
   containerClassName: PropTypes.string,
   onSelect: PropTypes.func,
+  ArrowIcon: PropTypes.func,
   startMinutes: PropTypes.string,
   startHour: PropTypes.string,
   endMinutes: PropTypes.string,
