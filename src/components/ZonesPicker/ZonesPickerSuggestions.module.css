@@ -1,5 +1,10 @@
 @import '../../style/variable.global.css';
 
+.pickerSuggestions {
+  height: var(--pickerSuggestionsHeight);;
+  min-height: 150px;
+}
+
 .suggestionsContainer {
   position: relative;
   height: 85%;
