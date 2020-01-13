@@ -174,7 +174,7 @@ class ZonesPickerSuggestions extends PureComponent {
     const { visibleArrows } = this.state;
 
     return (
-      <PickerSuggestions visible={visible}>
+      <PickerSuggestions visible={visible} className={s.pickerSuggestions}>
         <div className={s.suggestionsContainer}>
           <ScrollArrow
             visible={visibleArrows[ZonesPickerSuggestions.topFromZoneArrow]}
