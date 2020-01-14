@@ -6445,7 +6445,9 @@ function (_React$PureComponent) {
   }, {
     key: "render",
     value: function render() {
-      var style = this.props.style;
+      var _this$props = this.props,
+          style = _this$props.style,
+          ArrowIcon = _this$props.ArrowIcon;
       var _this$state = this.state,
           minutes = _this$state.minutes,
           hours = _this$state.hours,
@@ -6461,7 +6463,8 @@ function (_React$PureComponent) {
         getBottomScrollLimit: this.getHoursContainerBottomScrollLimit,
         scrollTo: this.hoursScrollTo,
         onHide: this.hideTopHoursArrow,
-        onShow: this.showTopHoursArrow
+        onShow: this.showTopHoursArrow,
+        Icon: ArrowIcon
       }), React__default.createElement("div", {
         className: s$13.hours,
         style: this.getHoursContainerStyle(),
@@ -6475,7 +6478,8 @@ function (_React$PureComponent) {
         getBottomScrollLimit: this.getHoursContainerBottomScrollLimit,
         scrollTo: this.hoursScrollTo,
         onHide: this.hideBottomHoursArrow,
-        onShow: this.showBottomHoursArrow
+        onShow: this.showBottomHoursArrow,
+        Icon: ArrowIcon
       }), React__default.createElement(ScrollArrow, {
         visible: visibleArrows[TimeRange.topMinutesArrow],
         direction: ScrollArrow.up,
@@ -6484,7 +6488,8 @@ function (_React$PureComponent) {
         getBottomScrollLimit: this.getMinutesContainerBottomScrollLimit,
         scrollTo: this.minutesScrollTo,
         onHide: this.hideTopMinutesArrow,
-        onShow: this.showTopMinutesArrow
+        onShow: this.showTopMinutesArrow,
+        Icon: ArrowIcon
       }), React__default.createElement("div", {
         onScroll: this.handleMinutesScroll,
         className: s$13.minutes,
@@ -6498,7 +6503,8 @@ function (_React$PureComponent) {
         getBottomScrollLimit: this.getMinutesContainerBottomScrollLimit,
         scrollTo: this.minutesScrollTo,
         onHide: this.hideBottomMinutesArrow,
-        onShow: this.showBottomMinutesArrow
+        onShow: this.showBottomMinutesArrow,
+        Icon: ArrowIcon
       }));
     }
   }], [{
@@ -6533,6 +6539,9 @@ TimeRange.defaultProps = {
   onSelect: function onSelect() {
     return null;
   },
+  ArrowIcon: function ArrowIcon() {
+    return null;
+  },
   hour: undefined,
   minutes: undefined,
   startMinute: 0,
@@ -6544,6 +6553,7 @@ TimeRange.propTypes = {
   endHour: PropTypes$1.number,
   minutesInterval: PropTypes$1.number,
   onSelect: PropTypes$1.func,
+  ArrowIcon: PropTypes$1.func,
   minutes: PropTypes$1.string,
   hour: PropTypes$1.string,
   startMinute: PropTypes$1.number,
@@ -16821,7 +16831,8 @@ var TimeSuggestions = function TimeSuggestions(_ref) {
       fromHourRange = _ref.fromHourRange,
       fromMinuteRange = _ref.fromMinuteRange,
       toMinuteRange = _ref.toMinuteRange,
-      toHourRange = _ref.toHourRange;
+      toHourRange = _ref.toHourRange,
+      ArrowIcon = _ref.ArrowIcon;
 
   var onSelectStartTime = function onSelectStartTime(timeUnits, value) {
     return onSelect(TimeSuggestions.startTime, timeUnits, value);
@@ -16863,7 +16874,8 @@ var TimeSuggestions = function TimeSuggestions(_ref) {
     startMinute: startFromMinuteRange,
     endMinute: endFromMinuteRange,
     startHour: startFromHourRange,
-    endHour: endFromHourRange
+    endHour: endFromHourRange,
+    ArrowIcon: ArrowIcon
   })), React__default.createElement("div", {
     className: [s$1j.timeContainer, containerClassName].join(' ')
   }, React__default.createElement("div", {
@@ -16878,13 +16890,17 @@ var TimeSuggestions = function TimeSuggestions(_ref) {
     startMinute: startToMinuteRange,
     endMinute: endToMinuteRange,
     startHour: startToHourRange,
-    endHour: endToHourRange
+    endHour: endToHourRange,
+    ArrowIcon: ArrowIcon
   })));
 };
 
 TimeSuggestions.defaultProps = {
   className: undefined,
   onSelect: function onSelect() {
+    return null;
+  },
+  ArrowIcon: function ArrowIcon() {
     return null;
   },
   texts: DefaultTexts$9,
@@ -16902,6 +16918,7 @@ TimeSuggestions.propTypes = {
   className: PropTypes$1.string,
   containerClassName: PropTypes$1.string,
   onSelect: PropTypes$1.func,
+  ArrowIcon: PropTypes$1.func,
   startMinutes: PropTypes$1.string,
   startHour: PropTypes$1.string,
   endMinutes: PropTypes$1.string,
@@ -17219,7 +17236,9 @@ function (_React$PureComponent) {
           toHourRange = _this$state5.toHourRange,
           fromMinuteRange = _this$state5.fromMinuteRange,
           toMinuteRange = _this$state5.toMinuteRange;
-      var texts = _this.props.texts;
+      var _this$props5 = _this.props,
+          texts = _this$props5.texts,
+          ArrowIcon = _this$props5.ArrowIcon;
       return React.createElement(PickerSuggestions, _extends({}, rest, {
         visible: visible,
         className: [s$1i.pickerSuggestions, className].join(' '),
@@ -17259,7 +17278,8 @@ function (_React$PureComponent) {
         fromHourRange: fromHourRange,
         toHourRange: toHourRange,
         fromMinuteRange: fromMinuteRange,
-        toMinuteRange: toMinuteRange
+        toMinuteRange: toMinuteRange,
+        ArrowIcon: ArrowIcon
       }));
     });
 
@@ -17287,6 +17307,27 @@ function (_React$PureComponent) {
   }
 
   _createClass(DateTimePicker, [{
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
+      var prevStartDate = prevProps.startDate,
+          prevEndDate = prevProps.endDate;
+      var _this$props6 = this.props,
+          startDate = _this$props6.startDate,
+          endDate = _this$props6.endDate;
+
+      if (startDate !== prevStartDate) {
+        this.setState({
+          startDate: startDate
+        });
+      }
+
+      if (endDate !== prevEndDate) {
+        this.setState({
+          endDate: endDate
+        });
+      }
+    }
+  }, {
     key: "handleDateFocus",
     value: function handleDateFocus(focusedDateInput) {
       this.ectorPicker.current.handleFocus();
@@ -17320,11 +17361,11 @@ function (_React$PureComponent) {
         startHour: startHour,
         endHour: endHour
       };
-      var _this$props5 = this.props,
-          error = _this$props5.error,
-          info = _this$props5.info,
-          className = _this$props5.className,
-          onSuggestionsHide = _this$props5.onSuggestionsHide;
+      var _this$props7 = this.props,
+          error = _this$props7.error,
+          info = _this$props7.info,
+          className = _this$props7.className,
+          onSuggestionsHide = _this$props7.onSuggestionsHide;
       return React.createElement(Picker, {
         ref: this.ectorPicker,
         split: true,
@@ -17438,6 +17479,7 @@ DateTimePicker.propTypes = {
   onEndDateTimeFocus: PropTypes$1.func,
   onEndDateTimeBlur: PropTypes$1.func,
   onSuggestionsHide: PropTypes$1.func,
+  ArrowIcon: PropTypes$1.func,
   fromTimeRange: PropTypes$1.arrayOf(PropTypes$1.oneOfType([PropTypes$1.number, PropTypes$1.string])),
   toTimeRange: PropTypes$1.arrayOf(PropTypes$1.oneOfType([PropTypes$1.number, PropTypes$1.string])),
   hasStartDateError: PropTypes$1.bool,
@@ -17471,6 +17513,9 @@ DateTimePicker.defaultProps = {
     return null;
   },
   onSuggestionsHide: function onSuggestionsHide() {
+    return null;
+  },
+  ArrowIcon: function ArrowIcon() {
     return null;
   },
   fromTimeRange: undefined,

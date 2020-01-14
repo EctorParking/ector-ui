@@ -189,7 +189,7 @@ class TimeRange extends React.PureComponent {
   }
 
   render() {
-    const { style } = this.props;
+    const { style, ArrowIcon } = this.props;
     const { minutes, hours, visibleArrows } = this.state;
 
     return (
@@ -203,6 +203,7 @@ class TimeRange extends React.PureComponent {
           scrollTo={this.hoursScrollTo}
           onHide={this.hideTopHoursArrow}
           onShow={this.showTopHoursArrow}
+          Icon={ArrowIcon}
         />
         <div
           className={s.hours}
@@ -221,6 +222,7 @@ class TimeRange extends React.PureComponent {
           scrollTo={this.hoursScrollTo}
           onHide={this.hideBottomHoursArrow}
           onShow={this.showBottomHoursArrow}
+          Icon={ArrowIcon}
         />
         <ScrollArrow
           visible={visibleArrows[TimeRange.topMinutesArrow]}
@@ -231,6 +233,7 @@ class TimeRange extends React.PureComponent {
           scrollTo={this.minutesScrollTo}
           onHide={this.hideTopMinutesArrow}
           onShow={this.showTopMinutesArrow}
+          Icon={ArrowIcon}
         />
         <div
           onScroll={this.handleMinutesScroll}
@@ -249,6 +252,7 @@ class TimeRange extends React.PureComponent {
           scrollTo={this.minutesScrollTo}
           onHide={this.hideBottomMinutesArrow}
           onShow={this.showBottomMinutesArrow}
+          Icon={ArrowIcon}
         />
       </div>
     );
@@ -267,6 +271,7 @@ TimeRange.defaultProps = {
   endHour: 24,
   minutesInterval: 1,
   onSelect: () => null,
+  ArrowIcon: () => null,
   hour: undefined,
   minutes: undefined,
   startMinute: 0,
@@ -279,6 +284,7 @@ TimeRange.propTypes = {
   endHour: PropTypes.number,
   minutesInterval: PropTypes.number,
   onSelect: PropTypes.func,
+  ArrowIcon: PropTypes.func,
   minutes: PropTypes.string,
   hour: PropTypes.string,
   startMinute: PropTypes.number,
