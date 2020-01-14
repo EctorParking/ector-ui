@@ -71,6 +71,7 @@ class DateTimePicker extends React.PureComponent {
       visiblePicker: DateTimePicker.datePicker,
       showTimeInputs: false,
     };
+    this.isDayHighlighted = this.isDayHighlightedFactory();
     now = moment();
   }
 
@@ -91,18 +92,14 @@ class DateTimePicker extends React.PureComponent {
       showTimeInputs,
     } = state;
 
-    if (propStartDate) {
-      startDate = moment(propStartDate);
-      startMinutes = startDate.format('mm');
-      startHour = startDate.format('HH');
-      showTimeInputs = true;
-    }
-    if (propEndDate) {
-      endDate = moment(propEndDate);
-      endMinutes = endDate.format('mm');
-      endHour = endDate.format('HH');
-      showTimeInputs = true;
-    }
+    startDate = propStartDate ? moment(propStartDate) : undefined;
+    startMinutes = startDate ? startDate.format('mm') : undefined;
+    startHour = startDate ? startDate.format('HH') : undefined;
+    endDate = propEndDate ? moment(propEndDate) : undefined;
+    endMinutes = endDate ? endDate.format('mm') : undefined;
+    endHour = endDate ? endDate.format('HH') : undefined;
+    showTimeInputs = !!endDate || !!startDate;
+
     const {
       hourRange: fromHourRange,
       minuteRange: fromMinuteRange,
@@ -151,6 +148,8 @@ class DateTimePicker extends React.PureComponent {
         ? DateTimePicker.timePicker
         : visiblePicker,
       showTimeInputs: !!(stateEndDate || endDate),
+    }, () => {
+      this.isDayHighlighted = this.isDayHighlightedFactory();
     });
   };
 
@@ -173,7 +172,7 @@ class DateTimePicker extends React.PureComponent {
 
   isDayBlocked = day => day.startOf('day').isBefore(now.startOf('day'));
 
-  isDayHighlighted = (day) => {
+  isDayHighlightedFactory = () => (day) => {
     const { startDate, endDate } = this.state;
 
     if (!startDate || !endDate) {
@@ -193,7 +192,13 @@ class DateTimePicker extends React.PureComponent {
 
   renderMonthElement = ({ month }) => <div className={s.month}>{month.format('MMMM YYYY')}</div>;
 
-  renderDateInputLeftElement = ({ className, ...props }, error) => <Icon {...props} className={[s.inputIcon, className].join(' ')} src={error ? iconCalendarRed : iconCalendar} />;
+  renderDateInputLeftElement = ({ className, ...props }, error) => (
+    <Icon
+      {...props}
+      className={[s.inputIcon, className].join(' ')}
+      src={error ? iconCalendarRed : iconCalendar}
+    />
+  );
 
   renderStartDateInputLeftElement = (props) => {
     const { hasStartDateError } = this.props;
@@ -207,7 +212,13 @@ class DateTimePicker extends React.PureComponent {
     return this.renderDateInputLeftElement(props, hasEndDateError);
   };
 
-  renderTimeInputLeftElement = ({ className, ...props }, error) => <Icon {...props} className={[s.inputIcon, className].join(' ')} src={error ? iconClockRed : iconClock} />;
+  renderTimeInputLeftElement = ({ className, ...props }, error) => (
+    <Icon
+      {...props}
+      className={[s.inputIcon, className].join(' ')}
+      src={error ? iconClockRed : iconClock}
+    />
+  );
 
   renderStartTimeInputLeftElement = (props) => {
     const { hasStartTimeError } = this.props;
