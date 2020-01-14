@@ -16976,6 +16976,8 @@ function (_React$PureComponent) {
         focusedDateInput: startDate ? DateTimePicker.endDate : DateTimePicker.startDate,
         visiblePicker: visiblePicker === DateTimePicker.datePicker && endDate && startDate ? DateTimePicker.timePicker : visiblePicker,
         showTimeInputs: !!(stateEndDate || endDate)
+      }, function () {
+        _this.isDayHighlighted = _this.isDayHighlightedFactory();
       });
     });
 
@@ -17000,16 +17002,18 @@ function (_React$PureComponent) {
       return day.startOf('day').isBefore(now.startOf('day'));
     });
 
-    _defineProperty(_assertThisInitialized(_this), "isDayHighlighted", function (day) {
-      var _this$state2 = _this.state,
-          startDate = _this$state2.startDate,
-          endDate = _this$state2.endDate;
+    _defineProperty(_assertThisInitialized(_this), "isDayHighlightedFactory", function () {
+      return function (day) {
+        var _this$state2 = _this.state,
+            startDate = _this$state2.startDate,
+            endDate = _this$state2.endDate;
 
-      if (!startDate || !endDate) {
-        return false;
-      }
+        if (!startDate || !endDate) {
+          return false;
+        }
 
-      return day.isBetween(startDate, endDate) && !day.isSame(startDate, 'day');
+        return day.isBetween(startDate, endDate) && !day.isSame(startDate, 'day');
+      };
     });
 
     _defineProperty(_assertThisInitialized(_this), "handleTimeFocus", function () {
@@ -17269,6 +17273,7 @@ function (_React$PureComponent) {
       visiblePicker: DateTimePicker.datePicker,
       showTimeInputs: false
     };
+    _this.isDayHighlighted = _this.isDayHighlightedFactory();
     now = moment();
     return _this;
   }
@@ -17339,20 +17344,13 @@ function (_React$PureComponent) {
           startHour = state.startHour,
           endHour = state.endHour,
           showTimeInputs = state.showTimeInputs;
-
-      if (propStartDate) {
-        startDate = moment(propStartDate);
-        startMinutes = startDate.format('mm');
-        startHour = startDate.format('HH');
-        showTimeInputs = true;
-      }
-
-      if (propEndDate) {
-        endDate = moment(propEndDate);
-        endMinutes = endDate.format('mm');
-        endHour = endDate.format('HH');
-        showTimeInputs = true;
-      }
+      startDate = propStartDate ? moment(propStartDate) : undefined;
+      startMinutes = startDate ? startDate.format('mm') : undefined;
+      startHour = startDate ? startDate.format('HH') : undefined;
+      endDate = propEndDate ? moment(propEndDate) : undefined;
+      endMinutes = endDate ? endDate.format('mm') : undefined;
+      endHour = endDate ? endDate.format('HH') : undefined;
+      showTimeInputs = !!endDate || !!startDate;
 
       var _DateTimePicker$parse = DateTimePicker.parseTimeRange(fromTimeRange),
           fromHourRange = _DateTimePicker$parse.hourRange,
