@@ -2680,54 +2680,6 @@ GenderPicker.propTypes = {
   error: PropTypes$1.string
 };
 
-var FixedInput =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(FixedInput, _React$Component);
-
-  function FixedInput(props) {
-    var _this;
-
-    _classCallCheck(this, FixedInput);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(FixedInput).call(this, props));
-    _this.inputRef = React__default.createRef();
-    return _this;
-  }
-
-  _createClass(FixedInput, [{
-    key: "componentDidUpdate",
-    value: function componentDidUpdate() {
-      var value = this.props.value;
-      var node = this.inputRef.current;
-      var oldLength = node.value.length;
-      var oldIdx = node.selectionStart;
-      node.value = value;
-      var newIdx = Math.max(0, node.value.length - oldLength + oldIdx);
-
-      if (node.selectionStart && node.selectionEnd) {
-        node.selectionStart = newIdx;
-        node.selectionEnd = newIdx;
-      }
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      return React__default.createElement("input", _extends({
-        ref: this.inputRef
-      }, this.props, {
-        value: undefined
-      }));
-    }
-  }]);
-
-  return FixedInput;
-}(React__default.Component);
-
-FixedInput.propTypes = {
-  value: PropTypes$1.string.isRequired
-};
-
 var css$u = ".Input-module_container__y-kIk {\n  position: relative;\n}\n\n.Input-module_input__1TjxO {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #163457;\n  border: 2px solid #d5d6d7;\n  border-radius: 3px;\n  display: block;\n  height: 40px;\n  height: 40px;\n  height: 2.5rem;\n  padding: 8px;\n  padding: 8px;\n  padding: 0.5rem;\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  -ms-flex-preferred-size: auto;\n      flex-basis: auto;\n  margin-top: 4px;\n  margin-top: 4px;\n  margin-top: 0.25rem\n}\n\n.Input-module_input__1TjxO::-webkit-input-placeholder {\n  opacity: 0.8;\n  color: #d5d6d7;\n}\n\n.Input-module_input__1TjxO::-ms-input-placeholder {\n  opacity: 0.8;\n  color: #d5d6d7;\n}\n\n.input::-webkit-input-placeholder {\n  opacity: 0.8;\n  color: #d5d6d7;\n}\n\n.input::-ms-input-placeholder {\n  opacity: 0.8;\n  color: #d5d6d7;\n}\n\n.Input-module_input__1TjxO::placeholder {\n  opacity: 0.8;\n  color: #d5d6d7;\n}\n\n.Input-module_input__1TjxO:focus {\n  border-color: #ffcd02;\n}\n\n/* Hide big cross in IE */\n\n.Input-module_input__1TjxO::-ms-clear {\n  display: none;\n}\n\n.Input-module_inputWithError__q0fcE {\n  border-color: #ff5757 !important;\n}\n\n.Input-module_inputPrepend__36mBv {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  color: #a9b3c5;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 32px;\n  font-size: 32px;\n  font-size: 2rem;\n  height: 100%;\n  left: 5px;\n  position: absolute;\n  top: 0;\n}\n\n.Input-module_inputAppend__2lJtU {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  color: #a9b3c5;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 32px;\n  font-size: 32px;\n  font-size: 2rem;\n  height: 100%;\n  position: absolute;\n  right: 5px;\n  top: 0;\n}\n";
 var s$u = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","container":"Input-module_container__y-kIk","input":"Input-module_input__1TjxO","inputWithError":"Input-module_inputWithError__q0fcE","inputPrepend":"Input-module_inputPrepend__36mBv","inputAppend":"Input-module_inputAppend__2lJtU"};
 styleInject(css$u);
@@ -2750,7 +2702,7 @@ var Input = function Input(_ref) {
     className: [s$u.container, containerClassName].join(' ')
   }, React__default.createElement(LeftComponent, {
     className: s$u.inputPrepend
-  }), React__default.createElement(FixedInput, _extends({
+  }), React__default.createElement("input", _extends({
     className: [s$u.input, hasError ? s$u.inputWithError : '', className].join(' '),
     onFocus: onFocus,
     onBlur: onBlur,
