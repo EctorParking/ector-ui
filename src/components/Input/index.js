@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import FixedInput from './FixedInput';
 
 import s from './Input.module.css';
 
@@ -20,7 +19,7 @@ const Input = ({
 }) => (
   <div className={[s.container, containerClassName].join(' ')}>
     <LeftComponent className={s.inputPrepend} />
-    <FixedInput
+    <input
       className={[s.input, hasError ? s.inputWithError : '', className].join(' ')}
       onFocus={onFocus}
       onBlur={onBlur}
