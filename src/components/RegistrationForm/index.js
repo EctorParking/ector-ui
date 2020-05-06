@@ -6,7 +6,6 @@ import {
 import s from './RegistrationForm.module.css';
 import RegistrationFormTextTypes, {
   defaultTexts,
-  radioDefaultValues,
   ValuesType,
   ErrorsType,
   defaultValues,
