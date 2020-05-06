@@ -24,11 +24,6 @@ const defaultTexts = {
   title: 'Civilité',
 };
 
-const radioDefaultValues = {
-  male: 'Mr',
-  female: 'Mme',
-};
-
 const ValuesType = PropTypes.shape({
   firstName: PropTypes.string,
   lastName: PropTypes.string,
@@ -76,7 +71,6 @@ const defaultErrors = {
 
 export {
   defaultTexts,
-  radioDefaultValues,
   ValuesType,
   ErrorsType,
   defaultValues,

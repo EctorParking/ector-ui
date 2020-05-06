@@ -6,7 +6,6 @@ import {
 import s from './RegistrationForm.module.css';
 import RegistrationFormTextTypes, {
   defaultTexts,
-  radioDefaultValues,
   ValuesType,
   ErrorsType,
   defaultValues,
@@ -29,10 +28,10 @@ class RegistrationForm extends React.Component {
 
     this.genders = [{
       value: 'male',
-      label: radioDefaultValues.male,
+      label: props.texts.male,
     }, {
       value: 'female',
-      label: radioDefaultValues.female,
+      label: props.texts.female,
     }];
   }
 
