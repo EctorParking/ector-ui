@@ -29,10 +29,10 @@ class RegistrationForm extends React.Component {
 
     this.genders = [{
       value: 'male',
-      label: radioDefaultValues.male,
+      label: props.texts.male,
     }, {
       value: 'female',
-      label: radioDefaultValues.female,
+      label: props.texts.female,
     }];
   }
 
