@@ -4778,10 +4778,6 @@ var defaultTexts$5 = {
   passwordConfirmation: 'Confirmation de mot de passe',
   title: 'Civilité'
 };
-var radioDefaultValues = {
-  male: 'Mr',
-  female: 'Mme'
-};
 var ValuesType = PropTypes$1.shape({
   firstName: PropTypes$1.string,
   lastName: PropTypes$1.string,
@@ -4852,10 +4848,10 @@ function (_React$Component) {
     _this.handleChangePasswordConfirmation = _this.handleChangeProperty.bind(_assertThisInitialized(_this), 'passwordConfirmation');
     _this.genders = [{
       value: 'male',
-      label: radioDefaultValues.male
+      label: props.texts.male
     }, {
       value: 'female',
-      label: radioDefaultValues.female
+      label: props.texts.female
     }];
     return _this;
   }
