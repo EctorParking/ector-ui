@@ -2220,7 +2220,7 @@ var DefaultTexts$3 = {
   notMandatory: 'facultatif',
   emailPlaceholder: 'alain.prost@gmail.com',
   postCodePlaceholder: '44 100',
-  male: 'Mr',
+  male: 'M',
   female: 'Mme'
 };
 
@@ -4759,7 +4759,7 @@ var RegistrationFormTextTypes = PropTypes$1.shape({
   title: PropTypes$1.string
 });
 var defaultTexts$5 = {
-  male: 'Mr',
+  male: 'M',
   female: 'Mme',
   firstName: 'Prénom',
   lastName: 'Nom',

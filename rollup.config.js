@@ -4,11 +4,8 @@ import external from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
 import resolve from 'rollup-plugin-node-resolve';
 import json from 'rollup-plugin-json';
-import progress from 'rollup-plugin-progress';
 import svgr from '@svgr/rollup';
 import url from 'rollup-plugin-url';
-import os from 'os';
-import path from 'path';
 import pkg from './package.json';
 
 const config = [
@@ -21,7 +18,6 @@ const config = [
       },
     ],
     plugins: [
-      progress(),
       external(),
       svgr(),
       postcss({
@@ -56,7 +52,6 @@ const config = [
       },
     ],
     plugins: [
-      progress(),
       external(),
       svgr(),
       postcss({
@@ -91,7 +86,6 @@ const config = [
       },
     ],
     plugins: [
-      progress(),
       external(),
       svgr(),
       postcss({
@@ -126,7 +120,6 @@ const config = [
       },
     ],
     plugins: [
-      progress(),
       external(),
       svgr(),
       postcss({
@@ -169,7 +162,6 @@ const config = [
       },
     ],
     plugins: [
-      progress(),
       external(),
       svgr(),
       postcss({
@@ -201,7 +193,6 @@ const config = [
 //       format: 'system',
 //     },
 //     plugins: [
-//       progress(),
 //       external(),
 //       svgr(),
 //       postcss({
