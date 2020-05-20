@@ -12,7 +12,7 @@ export default PropTypes.shape({
 });
 
 const defaultTexts = {
-  male: 'Mr',
+  male: 'M',
   female: 'Mme',
   firstName: 'Prénom',
   lastName: 'Nom',

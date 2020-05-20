@@ -6,7 +6,7 @@ import centered from '@storybook/addon-centered';
 import GenderPicker from '.';
 
 const genders = [
-  { value: 'male', label: 'Mr' },
+  { value: 'male', label: 'M' },
   { value: 'female', label: 'Mme' },
 ];
 

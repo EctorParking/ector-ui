@@ -32,6 +32,6 @@ export const DefaultTexts = {
   notMandatory: 'facultatif',
   emailPlaceholder: 'alain.prost@gmail.com',
   postCodePlaceholder: '44 100',
-  male: 'Mr',
+  male: 'M',
   female: 'Mme',
 };
