@@ -3608,14 +3608,14 @@ function (_React$Component) {
         src: country.image,
         className: s$G.selectImage,
         alt: country.label
-      }), React__default.createElement("span", null, country.label)), React__default.createElement(Input, _extends({}, phoneInputProps, {
+      }), React__default.createElement("span", null, country.label)), React__default.createElement(Input, _extends({
         className: inputClassName,
         hasError: !!error && error.length > 0,
         placeholder: "06 07 08 09 00",
         type: "text",
         onChange: _this.onPhoneNumberChange,
         value: phone
-      })));
+      }, phoneInputProps)));
     });
 
     var value = props.value;
