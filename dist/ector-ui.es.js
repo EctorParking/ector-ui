@@ -5186,12 +5186,19 @@ var PickerSuggestions = function PickerSuggestions(_ref) {
       className = _ref.className,
       ArrowComponent = _ref.ArrowComponent,
       split = _ref.split,
-      rest = _objectWithoutProperties(_ref, ["visible", "children", "className", "ArrowComponent", "split"]);
+      containerOffset = _ref.containerOffset,
+      rest = _objectWithoutProperties(_ref, ["visible", "children", "className", "ArrowComponent", "split", "containerOffset"]);
 
   return React__default.createElement("div", _extends({
-    className: [s$_.container, visible ? s$_.visible : undefined, split ? s$_.splitContainer : undefined, className].join(' ')
+    className: [s$_.container, visible ? s$_.visible : undefined, split ? s$_.splitContainer : undefined, className].join(' '),
+    style: {
+      left: "calc(50% - ".concat(containerOffset + 130, "px)")
+    }
   }, rest), React__default.createElement("div", {
-    className: s$_.arrowContainer
+    className: s$_.arrowContainer,
+    style: {
+      left: "".concat(containerOffset, "px")
+    }
   }, React__default.createElement(ArrowComponent, {
     position: "top",
     className: [s$_.arrow, visible ? s$_.visible : undefined].join(' ')
@@ -5205,7 +5212,8 @@ PickerSuggestions.defaultProps = {
   className: undefined,
   ArrowComponent: function ArrowComponent(props) {
     return React__default.createElement(Arrow, props);
-  }
+  },
+  containerOffset: 0
 };
 PickerSuggestions.propTypes = {
   visible: PropTypes$1.bool,
@@ -5213,7 +5221,8 @@ PickerSuggestions.propTypes = {
   // eslint-disable-line
   className: PropTypes$1.string,
   ArrowComponent: PropTypes$1.func,
-  split: PropTypes$1.bool
+  split: PropTypes$1.bool,
+  containerOffset: PropTypes$1.number
 };
 
 var _ZoneTypesToIconName;
@@ -16106,7 +16115,8 @@ function (_React$PureComponent) {
           className = _this$props.className,
           buttonClassName = _this$props.buttonClassName,
           suggestionsClassName = _this$props.suggestionsClassName,
-          disabled = _this$props.disabled;
+          disabled = _this$props.disabled,
+          suggestionContainerOffset = _this$props.suggestionContainerOffset;
       var _this$state = this.state,
           visible = _this$state.visible,
           isMouseHover = _this$state.isMouseHover;
@@ -16123,7 +16133,8 @@ function (_React$PureComponent) {
         isActive: !!SuggestionsComponent && visible || isMouseHover
       })), SuggestionsComponent && React__default.createElement(PickerSuggestions, {
         visible: visible,
-        className: [s$18.suggestions, suggestionsClassName].join(' ')
+        className: [s$18.suggestions, suggestionsClassName].join(' '),
+        containerOffset: suggestionContainerOffset
       }, React__default.createElement(SuggestionsComponent, null)));
     }
   }]);
@@ -16139,7 +16150,8 @@ MenuButton.defaultProps = {
   onClick: function onClick() {
     return null;
   },
-  disabled: false
+  disabled: false,
+  suggestionContainerOffset: 0
 };
 MenuButton.propTypes = {
   LabelComponent: PropTypes$1.func.isRequired,
@@ -16148,7 +16160,8 @@ MenuButton.propTypes = {
   className: PropTypes$1.string,
   buttonClassName: PropTypes$1.string,
   suggestionsClassName: PropTypes$1.string,
-  disabled: PropTypes$1.bool
+  disabled: PropTypes$1.bool,
+  suggestionContainerOffset: PropTypes$1.number
 };
 
 var css$1b = ".TextIcon-module_container__3uZXq {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.TextIcon-module_icon__3DoI9 {\n  height: 2em;\n  width: 2em;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.TextIcon-module_text__1v24r {}";
