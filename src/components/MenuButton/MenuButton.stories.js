@@ -26,4 +26,20 @@ storiesOf('Button.MenuButton', module)
     };
 
     return <MenuButton {...props} />;
+  })
+
+  .add('with offset', () => {
+    const props = {
+      LabelComponent: () => (<span>Aide</span>),
+      SuggestionsComponent: () => (
+        <div>
+          <button>Questions fréquentes</button>
+          <button>Service client</button>
+        </div>
+      ),
+      onClick: action('clicked'),
+      suggestionContainerOffset: 50,
+    };
+
+    return <MenuButton {...props} />;
   });
