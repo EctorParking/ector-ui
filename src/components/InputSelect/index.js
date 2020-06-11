@@ -23,9 +23,10 @@ const ectorTheme = theme => ({
 });
 
 const InputSelect = ({
-  options, classname, onChange, value, error, ...props
+  options, classname, onChange, value, error, modal, ...props
 }) => {
   const ectorStyles = {
+    menuPortal: base => ({ ...base, zIndex: 9999 }),
     option: (styles, { isSelected, isFocused }) => ({
       ...styles,
       color: Colors.deepBlue,
@@ -48,6 +49,12 @@ const InputSelect = ({
     }),
   };
 
+  const modalProps = modal ? {
+    menuPosition: 'absolute',
+    menuPlacement: 'auto',
+    menuPortalTarget: document.body,
+  } : {};
+
   return (
     <Select
       className={[s.select, classname].join(' ')}
@@ -57,6 +64,7 @@ const InputSelect = ({
       value={value}
       onChange={onChange}
       filterOption={createFilter({ ignoreAccents: false })} // https://github.com/JedWatson/react-select/issues/3128#issuecomment-487256349
+      {...modalProps}
       {...props}
     />
   );
@@ -67,6 +75,7 @@ InputSelect.defaultProps = {
   classname: undefined,
   value: undefined,
   error: null,
+  modal: false,
 };
 
 InputSelect.propTypes = {
@@ -81,6 +90,7 @@ InputSelect.propTypes = {
   error: PropTypes.string,
   classname: PropTypes.string,
   onChange: PropTypes.func.isRequired,
+  modal: PropTypes.boolean,
 };
 
 export default InputSelect;
