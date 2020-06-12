@@ -52,6 +52,7 @@ const InputSelect = ({
   const modalProps = modal ? {
     menuPosition: 'absolute',
     menuPlacement: 'auto',
+    // eslint-disable-next-line no-undef
     menuPortalTarget: document.body,
   } : {};
 
@@ -90,7 +91,7 @@ InputSelect.propTypes = {
   error: PropTypes.string,
   classname: PropTypes.string,
   onChange: PropTypes.func.isRequired,
-  modal: PropTypes.boolean,
+  modal: PropTypes.bool,
 };
 
 export default InputSelect;

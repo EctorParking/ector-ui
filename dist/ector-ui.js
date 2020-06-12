@@ -15695,9 +15695,15 @@ var InputSelect = function InputSelect(_ref) {
       onChange = _ref.onChange,
       value = _ref.value,
       error = _ref.error,
-      props = _objectWithoutProperties(_ref, ["options", "classname", "onChange", "value", "error"]);
+      modal = _ref.modal,
+      props = _objectWithoutProperties(_ref, ["options", "classname", "onChange", "value", "error", "modal"]);
 
   var ectorStyles = {
+    menuPortal: function menuPortal(base) {
+      return _objectSpread({}, base, {
+        zIndex: 9999
+      });
+    },
     option: function option(styles, _ref2) {
       var isSelected = _ref2.isSelected,
           isFocused = _ref2.isFocused;
@@ -15724,6 +15730,11 @@ var InputSelect = function InputSelect(_ref) {
       });
     }
   };
+  var modalProps = modal ? {
+    menuPosition: 'absolute',
+    menuPlacement: 'auto',
+    menuPortalTarget: document.body
+  } : {};
   return React__default.createElement(index$1$1, _extends({
     className: [s$15.select, classname].join(' '),
     options: options,
@@ -15735,14 +15746,15 @@ var InputSelect = function InputSelect(_ref) {
       ignoreAccents: false
     }) // https://github.com/JedWatson/react-select/issues/3128#issuecomment-487256349
 
-  }, props));
+  }, modalProps, props));
 };
 
 InputSelect.defaultProps = {
   options: [],
   classname: undefined,
   value: undefined,
-  error: null
+  error: null,
+  modal: false
 };
 InputSelect.propTypes = {
   options: PropTypes$1.arrayOf(PropTypes$1.shape({
@@ -15755,7 +15767,8 @@ InputSelect.propTypes = {
   }),
   error: PropTypes$1.string,
   classname: PropTypes$1.string,
-  onChange: PropTypes$1.func.isRequired
+  onChange: PropTypes$1.func.isRequired,
+  modal: PropTypes$1.boolean
 };
 
 var css$18 = ".RatingStars-module_container__3pCeB {\n  position: relative;\n}\n\n.RatingStars-module_activeStars__1LEHa {\n  position: absolute;\n  top: 0;\n  overflow: hidden;\n}\n";
