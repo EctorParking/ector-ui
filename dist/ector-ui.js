@@ -15733,6 +15733,7 @@ var InputSelect = function InputSelect(_ref) {
   var modalProps = modal ? {
     menuPosition: 'absolute',
     menuPlacement: 'auto',
+    // eslint-disable-next-line no-undef
     menuPortalTarget: document.body
   } : {};
   return React__default.createElement(index$1$1, _extends({
@@ -15768,7 +15769,7 @@ InputSelect.propTypes = {
   error: PropTypes$1.string,
   classname: PropTypes$1.string,
   onChange: PropTypes$1.func.isRequired,
-  modal: PropTypes$1.boolean
+  modal: PropTypes$1.bool
 };
 
 var css$18 = ".RatingStars-module_container__3pCeB {\n  position: relative;\n}\n\n.RatingStars-module_activeStars__1LEHa {\n  position: absolute;\n  top: 0;\n  overflow: hidden;\n}\n";
