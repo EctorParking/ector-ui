@@ -2193,7 +2193,7 @@ ContactCard.defaultProps = {
   }
 };
 
-var css$r = ".ContactForm-module_title__3ved4 {\n  color: #32a0c5;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 22px;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  margin-top: -0.75em;\n  margin-bottom: 20px;\n}\n\n.ContactForm-module_hidden__qeLf1 {\n  display: none;\n}\n\n.ContactForm-module_columns__2X9Q2 {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.ContactForm-module_columns__2X9Q2 > div {\n  -webkit-box-flex: 1;\n      -ms-flex: 1 1 auto;\n          flex: 1 1 auto;\n}\n\n.ContactForm-module_firstSection__2-PaO {\n  margin-right: 30px;\n}\n\n.ContactForm-module_secondSection__3Tyz5 {\n  margin-left: 30px;\n}\n\n.ContactForm-module_footer__1tHfE {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n\n.ContactForm-module_leftGenderPickerField__35PAF {\n  height: 44px;\n}\n\n.ContactForm-module_topGenderPickerField__4HrA9 {\n  height: 66px;\n}\n\n.ContactForm-module_genderPickerInputs__JKZh- {\n  height: 100%;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.ContactForm-module_contactFormInput__2qQIC {\n  margin-top: 10px;\n}\n\n.ContactForm-module_postalCodeInput__2kGf4 {\n  max-width: 42%;\n}\n\n.ContactForm-module_phoneInput__AIWcI {\n  width: 100%;\n}\n";
+var css$r = ".ContactForm-module_title__3ved4 {\n  color: #32a0c5;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 22px;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  margin-top: -0.75em;\n  margin-bottom: 20px;\n}\n\n.ContactForm-module_hidden__qeLf1 {\n  display: none;\n}\n\n.ContactForm-module_columns__2X9Q2 {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.ContactForm-module_columns__2X9Q2 > div {\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n}\n\n.ContactForm-module_firstSection__2-PaO {\n  margin-right: 30px;\n}\n\n.ContactForm-module_secondSection__3Tyz5 {\n  margin-left: 30px;\n}\n\n.ContactForm-module_footer__1tHfE {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n\n.ContactForm-module_leftGenderPickerField__35PAF {\n  height: 44px;\n}\n\n.ContactForm-module_topGenderPickerField__4HrA9 {\n  height: 66px;\n}\n\n.ContactForm-module_genderPickerInputs__JKZh- {\n  height: 100%;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.ContactForm-module_contactFormInput__2qQIC {\n  margin-top: 10px;\n}\n\n.ContactForm-module_postalCodeInput__2kGf4 {\n  max-width: 42%;\n}\n\n.ContactForm-module_phoneInput__AIWcI {\n  width: 100%;\n}\n";
 var s$r = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","title":"ContactForm-module_title__3ved4","hidden":"ContactForm-module_hidden__qeLf1","-webkit-columns":"ContactForm-module_columns__2X9Q2","columns":"ContactForm-module_columns__2X9Q2","firstSection":"ContactForm-module_firstSection__2-PaO","secondSection":"ContactForm-module_secondSection__3Tyz5","footer":"ContactForm-module_footer__1tHfE","leftGenderPickerField":"ContactForm-module_leftGenderPickerField__35PAF","topGenderPickerField":"ContactForm-module_topGenderPickerField__4HrA9","genderPickerInputs":"ContactForm-module_genderPickerInputs__JKZh-","contactFormInput":"ContactForm-module_contactFormInput__2qQIC","postalCodeInput":"ContactForm-module_postalCodeInput__2kGf4","phoneInput":"ContactForm-module_phoneInput__AIWcI"};
 styleInject(css$r);
 
@@ -2212,7 +2212,8 @@ var TextsType$3 = PropTypes$1.shape({
   emailPlaceholder: PropTypes$1.string,
   postCodePlaceholder: PropTypes$1.string,
   male: PropTypes$1.string,
-  female: PropTypes$1.string
+  female: PropTypes$1.string,
+  communicationLocale: PropTypes$1.string
 });
 var DefaultTexts$3 = {
   newDriver: 'Ajouter un nouveau conducteur',
@@ -2229,7 +2230,8 @@ var DefaultTexts$3 = {
   emailPlaceholder: 'alain.prost@gmail.com',
   postCodePlaceholder: '44 100',
   male: 'M',
-  female: 'Mme'
+  female: 'Mme',
+  communicationLocale: 'Langue préférentielle'
 };
 
 var _ref =
@@ -2314,28 +2316,37 @@ var ContactForm =
 function (_React$Component) {
   _inherits(ContactForm, _React$Component);
 
-  function ContactForm(props) {
+  function ContactForm(_props) {
     var _this;
 
     _classCallCheck(this, ContactForm);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(ContactForm).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ContactForm).call(this, _props));
 
-    _defineProperty(_assertThisInitialized(_this), "renderGenderPicker", function () {
-      var title = _this.props.values.title;
-      return React__default.createElement(GenderPicker, {
-        genders: _this.genders,
-        onSelect: _this.handleChangeGender,
-        selected: title || '',
-        className: s$r.genderPickerInputs
-      });
+    _defineProperty(_assertThisInitialized(_this), "renderLanguageOption", function (option) {
+      return React__default.createElement("option", {
+        value: option.locale,
+        key: option.locale
+      }, option.name);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "renderCommunicationLocaleInput", function (props) {
+      var _this$props = _this.props,
+          languages = _this$props.languages,
+          values = _this$props.values;
+      return React__default.createElement(Select, _extends({
+        options: languages,
+        value: values.communicationLocale,
+        renderOption: _this.renderLanguageOption,
+        onChange: _this.handleChangeCommunicationLocale
+      }, props));
     });
 
     _defineProperty(_assertThisInitialized(_this), "renderFooter", function (footerProps) {
-      var _this$props = _this.props,
-          FooterComponent = _this$props.FooterComponent,
-          texts = _this$props.texts,
-          onSubmit = _this$props.onSubmit;
+      var _this$props2 = _this.props,
+          FooterComponent = _this$props2.FooterComponent,
+          texts = _this$props2.texts,
+          onSubmit = _this$props2.onSubmit;
 
       if (FooterComponent === null) {
         return null;
@@ -2352,23 +2363,16 @@ function (_React$Component) {
       }, texts.addDriver));
     });
 
-    _this.handleChangeGender = props.onChangeProperty.bind(_assertThisInitialized(_this), 'title');
     _this.handleChangeFirstName = _this.handleChangeProperty.bind(_assertThisInitialized(_this), 'firstName');
     _this.handleChangeLastName = _this.handleChangeProperty.bind(_assertThisInitialized(_this), 'lastName');
     _this.handleChangeEmail = _this.handleChangeProperty.bind(_assertThisInitialized(_this), 'email');
     _this.handleChangePhone = _this.handleChangeProperty.bind(_assertThisInitialized(_this), 'phone');
     _this.handleChangePostalCode = _this.handleChangeProperty.bind(_assertThisInitialized(_this), 'postalCode');
+    _this.handleChangeCommunicationLocale = _this.handleChangeProperty.bind(_assertThisInitialized(_this), 'communicationLocale');
     _this.renderFirstNameInput = _this.renderInputComponent.bind(_assertThisInitialized(_this), 'firstName');
     _this.renderLastNameInput = _this.renderInputComponent.bind(_assertThisInitialized(_this), 'lastName');
     _this.renderEmailInput = _this.renderInputComponent.bind(_assertThisInitialized(_this), 'email');
     _this.renderPostalCodeInput = _this.renderInputComponent.bind(_assertThisInitialized(_this), 'postalCode');
-    _this.genders = [{
-      value: 'male',
-      label: props.texts.male
-    }, {
-      value: 'female',
-      label: props.texts.female
-    }];
     return _this;
   }
 
@@ -2387,26 +2391,28 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this$props2 = this.props,
-          texts = _this$props2.texts,
-          values = _this$props2.values,
-          selected = _this$props2.selected,
-          onInputBlur = _this$props2.onInputBlur,
-          onInputFocus = _this$props2.onInputFocus,
-          errors = _this$props2.errors,
-          labelPosition = _this$props2.labelPosition,
-          countries = _this$props2.countries,
-          contentClassName = _this$props2.contentClassName,
-          firstSectionClassName = _this$props2.firstSectionClassName,
-          secondSectionClassName = _this$props2.secondSectionClassName,
-          withCountryFlag = _this$props2.withCountryFlag,
-          RootComponent = _this$props2.RootComponent,
-          cardProps = _objectWithoutProperties(_this$props2, ["texts", "values", "selected", "onInputBlur", "onInputFocus", "errors", "labelPosition", "countries", "contentClassName", "firstSectionClassName", "secondSectionClassName", "withCountryFlag", "RootComponent"]);
+      var _this$props3 = this.props,
+          texts = _this$props3.texts,
+          values = _this$props3.values,
+          selected = _this$props3.selected,
+          onInputBlur = _this$props3.onInputBlur,
+          onInputFocus = _this$props3.onInputFocus,
+          errors = _this$props3.errors,
+          labelPosition = _this$props3.labelPosition,
+          countries = _this$props3.countries,
+          contentClassName = _this$props3.contentClassName,
+          firstSectionClassName = _this$props3.firstSectionClassName,
+          secondSectionClassName = _this$props3.secondSectionClassName,
+          withCountryFlag = _this$props3.withCountryFlag,
+          RootComponent = _this$props3.RootComponent,
+          showCommunicationLocaleInput = _this$props3.showCommunicationLocaleInput,
+          cardProps = _objectWithoutProperties(_this$props3, ["texts", "values", "selected", "onInputBlur", "onInputFocus", "errors", "labelPosition", "countries", "contentClassName", "firstSectionClassName", "secondSectionClassName", "withCountryFlag", "RootComponent", "showCommunicationLocaleInput"]);
 
       var newDriver = texts.newDriver,
-          civility = texts.civility,
           firstName = texts.firstName,
           firstNamePlaceholder = texts.firstNamePlaceholder,
+          communicationLocale = texts.communicationLocale,
+          communicationLocalePlaceholder = texts.communicationLocalePlaceholder,
           lastName = texts.lastName,
           lastNamePlaceholder = texts.lastNamePlaceholder,
           email = texts.email,
@@ -2424,11 +2430,6 @@ function (_React$Component) {
       }, React__default.createElement("div", {
         className: [s$r.firstSection, firstSectionClassName].join(' ')
       }, React__default.createElement(InputLabel, {
-        label: civility,
-        left: labelPosition === 'left',
-        InputComponent: this.renderGenderPicker,
-        className: [labelPosition === 'left' ? s$r.leftGenderPickerField : s$r.topGenderPickerField, s$r.contactFormInput].join(' ')
-      }), React__default.createElement(InputLabel, {
         left: labelPosition === 'left',
         type: "text",
         name: "firstName",
@@ -2445,23 +2446,6 @@ function (_React$Component) {
         InputComponent: this.renderFirstNameInput
       }), React__default.createElement(InputLabel, {
         left: labelPosition === 'left',
-        label: lastName,
-        mandatory: true,
-        name: "lastName",
-        type: "text",
-        id: "last-name",
-        placeholder: lastNamePlaceholder,
-        onFocus: onInputFocus,
-        onBlur: onInputBlur,
-        onChange: this.handleChangeLastName,
-        value: values.lastName || '',
-        error: errors.lastName,
-        className: s$r.contactFormInput,
-        InputComponent: this.renderLastNameInput
-      })), React__default.createElement("div", {
-        className: [s$r.secondSection, secondSectionClassName].join(' ')
-      }, React__default.createElement(InputLabel, {
-        left: labelPosition === 'left',
         label: email,
         mandatory: true,
         name: "email",
@@ -2475,6 +2459,37 @@ function (_React$Component) {
         error: errors.email,
         className: s$r.contactFormInput,
         InputComponent: this.renderEmailInput
+      }), showCommunicationLocaleInput && React__default.createElement(InputLabel, {
+        left: labelPosition === 'left',
+        label: communicationLocale,
+        mandatory: true,
+        name: "communicationLocale",
+        type: "text",
+        id: "communication-locale",
+        placeholder: communicationLocalePlaceholder,
+        onFocus: onInputFocus,
+        onBlur: onInputBlur,
+        value: values.communicationLocale || '',
+        error: errors.communicationLocale,
+        className: s$r.contactFormInput,
+        InputComponent: this.renderCommunicationLocaleInput
+      })), React__default.createElement("div", {
+        className: [s$r.secondSection, secondSectionClassName].join(' ')
+      }, React__default.createElement(InputLabel, {
+        left: labelPosition === 'left',
+        label: lastName,
+        mandatory: true,
+        name: "lastName",
+        type: "text",
+        id: "last-name",
+        placeholder: lastNamePlaceholder,
+        onFocus: onInputFocus,
+        onBlur: onInputBlur,
+        onChange: this.handleChangeLastName,
+        value: values.lastName || '',
+        error: errors.lastName,
+        className: s$r.contactFormInput,
+        InputComponent: this.renderLastNameInput
       }), React__default.createElement(PhoneInput, {
         label: phone,
         mandatory: true,
@@ -2516,7 +2531,6 @@ ContactForm.defaultProps = {
   texts: DefaultTexts$3,
   onChangeProperty: function onChangeProperty() {},
   values: {
-    gender: null,
     firstName: null,
     lastName: null,
     email: null,
@@ -2524,7 +2538,6 @@ ContactForm.defaultProps = {
     postalCode: null
   },
   errors: {
-    gender: null,
     firstName: null,
     lastName: null,
     email: null,
@@ -2547,32 +2560,34 @@ ContactForm.defaultProps = {
   FooterComponent: function FooterComponent() {
     return null;
   },
+  showCommunicationLocaleInput: false,
   // eslint-disable-next-line react/prop-types
   RootComponent: function RootComponent(_ref) {
     var children = _ref.children,
         cardProps = _objectWithoutProperties(_ref, ["children"]);
 
     return React__default.createElement(Card, cardProps, children);
-  }
+  },
+  languages: []
 };
 ContactForm.propTypes = {
   texts: TextsType$3,
   onChangeProperty: PropTypes$1.func,
   values: PropTypes$1.shape({
-    title: PropTypes$1.oneOf(['male', 'female', null, '']),
     firstName: PropTypes$1.string,
     lastName: PropTypes$1.string,
     email: PropTypes$1.string,
     phoneNumber: PropTypes$1.string,
-    postalCode: PropTypes$1.string
+    postalCode: PropTypes$1.string,
+    communicationLocale: PropTypes$1.string
   }),
   errors: PropTypes$1.shape({
-    title: PropTypes$1.string,
     firstName: PropTypes$1.string,
     lastName: PropTypes$1.string,
     email: PropTypes$1.string,
     phoneNumber: PropTypes$1.string,
-    postalCode: PropTypes$1.string
+    postalCode: PropTypes$1.string,
+    communicationLocale: PropTypes$1.string
   }),
   onInputFocus: PropTypes$1.func,
   onInputBlur: PropTypes$1.func,
@@ -2586,7 +2601,12 @@ ContactForm.propTypes = {
   withCountryFlag: PropTypes$1.bool,
   renderInput: PropTypes$1.func,
   FooterComponent: PropTypes$1.func,
-  RootComponent: PropTypes$1.func
+  RootComponent: PropTypes$1.func,
+  showCommunicationLocaleInput: PropTypes$1.bool,
+  languages: PropTypes$1.arrayOf(PropTypes$1.shape({
+    name: PropTypes$1.string,
+    locale: PropTypes$1.string
+  }))
 };
 
 var GenderType = PropTypes$1.shape({
@@ -3568,8 +3588,8 @@ PaymentMethodCard.propTypes = {
   testid: PropTypes$1.string
 };
 
-var css$G = ".PhoneInput-module_phoneInput__28kFN {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 1;\n      -ms-flex: 1 1 auto;\n          flex: 1 1 auto;\n}\n\n.PhoneInput-module_phoneInputCountryCode__1qz3Z {\n  -webkit-box-flex: 1;\n      -ms-flex: 1 0 50px;\n          flex: 1 0 50px;\n}\n\n.PhoneInput-module_phoneInput__28kFN input {\n  margin-left: 10px;\n}\n\n.PhoneInput-module_selectImage__2afak {\n  margin-right: 10px;\n  max-height: 24px;\n  max-width: 24px;\n}\n\n";
-var s$G = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","phoneInput":"PhoneInput-module_phoneInput__28kFN","phoneInputCountryCode":"PhoneInput-module_phoneInputCountryCode__1qz3Z","selectImage":"PhoneInput-module_selectImage__2afak"};
+var css$G = ".PhoneInput-module_phoneInput__28kFN {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 1;\n      -ms-flex: 1 1 auto;\n          flex: 1 1 auto;\n}\n\n.PhoneInput-module_phoneInputCountryCode__1qz3Z {\n  -webkit-box-flex: 1;\n      -ms-flex: 1 0 50px;\n          flex: 1 0 50px;\n}\n\n.PhoneInput-module_inputContainer__3-cxE {\n  margin-left: 10px;\n}\n\n.PhoneInput-module_selectImage__2afak {\n  margin-right: 10px;\n  max-height: 24px;\n  max-width: 24px;\n}\n\n";
+var s$G = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","phoneInput":"PhoneInput-module_phoneInput__28kFN","phoneInputCountryCode":"PhoneInput-module_phoneInputCountryCode__1qz3Z","inputContainer":"PhoneInput-module_inputContainer__3-cxE","selectImage":"PhoneInput-module_selectImage__2afak"};
 styleInject(css$G);
 
 var PhoneInput =
@@ -3618,7 +3638,8 @@ function (_React$Component) {
         alt: country.label
       }), React__default.createElement("span", null, country.label)), React__default.createElement(Input, _extends({
         placeholder: "06 07 08 09 00" // Here to override the placeholder
-
+        ,
+        containerClassName: s$G.inputContainer
       }, phoneInputProps, {
         className: inputClassName,
         hasError: !!error && error.length > 0,
@@ -3924,8 +3945,8 @@ var SelectValueType = PropTypes$1.shape({
   image: PropTypes$1.string
 });
 
-var css$L = ".Select-module_select__3oApo {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  border-radius: 3px;\n  border: 2px solid #d5d6d7;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #163457;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: 40px;\n  height: 40px;\n  height: 2.5rem;\n  margin-top: 4px;\n  margin-top: 4px;\n  margin-top: 0.25rem;\n  padding: 8px;\n  padding: 8px;\n  padding: 0.5rem;\n  position: relative;\n}\n\n.Select-module_select__3oApo:after {\n  content: '\\E954';\n  font-family: 'icomoon';\n  font-size: 80%;\n  margin-right: 10px;\n  position: absolute;\n  right: 0;\n}\n\n.Select-module_select__3oApo select {\n  position: absolute;\n  opacity: 0;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n}\n\n.Select-module_select__3oApo select:disabled {\n  cursor: not-allowed;\n}\n\n.Select-module_disabled__1fHPm {\n  background-color: #eceff6;\n}\n";
-var s$L = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","select":"Select-module_select__3oApo","disabled":"Select-module_disabled__1fHPm"};
+var css$L = ".Select-module_select__3oApo {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  border-radius: 3px;\n  border: 2px solid #d5d6d7;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #163457;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: 40px;\n  height: 40px;\n  height: 2.5rem;\n  margin-top: 4px;\n  margin-top: 4px;\n  margin-top: 0.25rem;\n  padding: 8px;\n  padding: 8px;\n  padding: 0.5rem;\n  position: relative;\n}\n\n.Select-module_select__3oApo:after {\n  content: '\\E954';\n  font-family: 'icomoon';\n  font-size: 80%;\n  margin-right: 10px;\n  position: absolute;\n  right: 0;\n}\n\n.Select-module_select__3oApo select {\n  position: absolute;\n  opacity: 0;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n}\n\n.Select-module_select__3oApo select:disabled {\n  cursor: not-allowed;\n}\n\n.Select-module_disabled__1fHPm {\n  background-color: #eceff6;\n}\n\n.Select-module_inputWithError__20ymI {\n  border-color: #ff5757 !important;\n}\n";
+var s$L = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","select":"Select-module_select__3oApo","disabled":"Select-module_disabled__1fHPm","inputWithError":"Select-module_inputWithError__20ymI"};
 styleInject(css$L);
 
 var renderSelectOption = function renderSelectOption(option) {
@@ -3940,12 +3961,13 @@ var Select = function Select(props) {
       options = props.options,
       children = props.children,
       className = props.className,
+      hasError = props.hasError,
       renderOption = props.renderOption,
-      selectProps = _objectWithoutProperties(props, ["value", "options", "children", "className", "renderOption"]);
+      selectProps = _objectWithoutProperties(props, ["value", "options", "children", "className", "hasError", "renderOption"]);
 
   var optionRenderer = renderOption || renderSelectOption;
   return React__default.createElement("div", {
-    className: [s$L.select, selectProps.disabled ? s$L.disabled : undefined, className].join(' ')
+    className: [s$L.select, selectProps.disabled ? s$L.disabled : undefined, hasError ? s$L.inputWithError : '', className].join(' ')
   }, React__default.createElement("select", _extends({
     value: value
   }, selectProps), options.map(optionRenderer)), children !== null ? children : React__default.createElement("span", {
@@ -3957,7 +3979,8 @@ Select.defaultProps = {
   children: null,
   className: '',
   renderOption: null,
-  disabled: false
+  disabled: false,
+  hasError: false
 };
 Select.propTypes = {
   options: PropTypes$1.arrayOf(SelectValueType).isRequired,
@@ -3965,7 +3988,8 @@ Select.propTypes = {
   children: PropTypes$1.node,
   className: PropTypes$1.string,
   renderOption: PropTypes$1.func,
-  disabled: PropTypes$1.bool
+  disabled: PropTypes$1.bool,
+  hasError: PropTypes$1.bool
 };
 
 var css$M = ".ServiceCard-module_card__2WAwR {\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n    background-color: #eceff6;\n    border-radius: 8px;\n    padding: 5px;\n    margin-top: 25px;\n    position: relative;\n    width: 250px;\n    height: 260px;\n}\n\n.ServiceCard-module_optionCardContainerSelected__1EDYO {\n    background-color: #ffcd02;\n}\n\n.ServiceCard-module_labelContainer__14NKR {\n    position: absolute;\n    top: -10px;\n    right: 8%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n\n@media (max-width: 1232px) {\n    .ServiceCard-module_card__2WAwR {\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-flex: 1;\n            -ms-flex: 1 1 auto;\n                flex: 1 1 auto;\n        height: auto;\n        margin-right: 0;\n        width: 100%;\n    }\n}\n";

@@ -1144,8 +1144,8 @@
 
 .ContactForm-module_columns__2X9Q2 > div {
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 .ContactForm-module_firstSection__2-PaO {
@@ -1855,7 +1855,7 @@
           flex: 1 0 50px;
 }
 
-.PhoneInput-module_phoneInput__28kFN input {
+.PhoneInput-module_inputContainer__3-cxE {
   margin-left: 10px;
 }
 
@@ -2063,6 +2063,10 @@
 
 .Select-module_disabled__1fHPm {
   background-color: #eceff6;
+}
+
+.Select-module_inputWithError__20ymI {
+  border-color: #ff5757 !important;
 }
 
 .ServiceCard-module_card__2WAwR {
