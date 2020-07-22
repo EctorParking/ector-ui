@@ -2,7 +2,9 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import centered from '@storybook/addon-centered';
-import { withKnobs, object, select } from '@storybook/addon-knobs';
+import {
+  withKnobs, object, select, boolean,
+} from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { DefaultTexts } from './ContactFormTextsType';
 
@@ -21,6 +23,8 @@ storiesOf('ContactForm', module)
   .add('normal', () => {
     const props = {
       texts: object('Textes', DefaultTexts),
+      languages: [{ locale: 'fr', name: 'Français' }, { locale: 'en', name: 'English' }],
+      showCommunicationLocaleInput: boolean('Voir champs langue', true),
       values: object('Values', {
         firstName: '',
         lastName: '',
@@ -28,6 +32,7 @@ storiesOf('ContactForm', module)
         title: '',
         phone: '',
         postalCode: '',
+        communicationLocale: '',
       }),
       errors: object('Errors', {
         firstName: '',
@@ -36,6 +41,7 @@ storiesOf('ContactForm', module)
         title: '',
         phone: '',
         postalCode: '',
+        communicationLocale: '',
       }),
       labelPosition: select('Label Position', {
         left: 'Left',

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import s from './ContactForm.module.css';
 import TextsType, { DefaultTexts } from './ContactFormTextsType';
 import {
-  Card, GenderPicker, LinkUnderlined, CardTitle, InputLabel, PhoneInput,
+  Card, LinkUnderlined, CardTitle, InputLabel, PhoneInput, Select,
 } from '..';
 import { CountryPropType } from '../PhoneInput/PhoneInputCountries';
 
@@ -11,24 +11,17 @@ class ContactForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleChangeGender = props.onChangeProperty.bind(this, 'title');
     this.handleChangeFirstName = this.handleChangeProperty.bind(this, 'firstName');
     this.handleChangeLastName = this.handleChangeProperty.bind(this, 'lastName');
     this.handleChangeEmail = this.handleChangeProperty.bind(this, 'email');
     this.handleChangePhone = this.handleChangeProperty.bind(this, 'phone');
     this.handleChangePostalCode = this.handleChangeProperty.bind(this, 'postalCode');
+    this.handleChangeCommunicationLocale = this.handleChangeProperty.bind(this, 'communicationLocale');
 
     this.renderFirstNameInput = this.renderInputComponent.bind(this, 'firstName');
     this.renderLastNameInput = this.renderInputComponent.bind(this, 'lastName');
     this.renderEmailInput = this.renderInputComponent.bind(this, 'email');
     this.renderPostalCodeInput = this.renderInputComponent.bind(this, 'postalCode');
-    this.genders = [{
-      value: 'male',
-      label: props.texts.male,
-    }, {
-      value: 'female',
-      label: props.texts.female,
-    }];
   }
 
   handleChangeProperty(field, event) {
@@ -43,15 +36,22 @@ class ContactForm extends React.Component {
     return renderInput(inputName);
   }
 
-  renderGenderPicker = () => {
-    const { values: { title } } = this.props;
+  renderLanguageOption = option => (
+    <option value={option.locale} key={option.locale}>
+      {option.name}
+    </option>
+  );
+
+  renderCommunicationLocaleInput = (props) => {
+    const { languages, values } = this.props;
 
     return (
-      <GenderPicker
-        genders={this.genders}
-        onSelect={this.handleChangeGender}
-        selected={title || ''}
-        className={s.genderPickerInputs}
+      <Select
+        options={languages}
+        value={values.communicationLocale}
+        renderOption={this.renderLanguageOption}
+        onChange={this.handleChangeCommunicationLocale}
+        {...props}
       />
     );
   };
@@ -86,13 +86,15 @@ class ContactForm extends React.Component {
       secondSectionClassName,
       withCountryFlag,
       RootComponent,
+      showCommunicationLocaleInput,
       ...cardProps
     } = this.props;
     const {
       newDriver,
-      civility,
       firstName,
       firstNamePlaceholder,
+      communicationLocale,
+      communicationLocalePlaceholder,
       lastName,
       lastNamePlaceholder,
       email,
@@ -113,12 +115,6 @@ class ContactForm extends React.Component {
         <div className={[s.columns, contentClassName].join(' ')}>
           <div className={[s.firstSection, firstSectionClassName].join(' ')}>
             <InputLabel
-              label={civility}
-              left={labelPosition === 'left'}
-              InputComponent={this.renderGenderPicker}
-              className={[labelPosition === 'left' ? s.leftGenderPickerField : s.topGenderPickerField, s.contactFormInput].join(' ')}
-            />
-            <InputLabel
               left={labelPosition === 'left'}
               type="text"
               name="firstName"
@@ -136,24 +132,6 @@ class ContactForm extends React.Component {
             />
             <InputLabel
               left={labelPosition === 'left'}
-              label={lastName}
-              mandatory
-              name="lastName"
-              type="text"
-              id="last-name"
-              placeholder={lastNamePlaceholder}
-              onFocus={onInputFocus}
-              onBlur={onInputBlur}
-              onChange={this.handleChangeLastName}
-              value={values.lastName || ''}
-              error={errors.lastName}
-              className={s.contactFormInput}
-              InputComponent={this.renderLastNameInput}
-            />
-          </div>
-          <div className={[s.secondSection, secondSectionClassName].join(' ')}>
-            <InputLabel
-              left={labelPosition === 'left'}
               label={email}
               mandatory
               name="email"
@@ -167,6 +145,41 @@ class ContactForm extends React.Component {
               error={errors.email}
               className={s.contactFormInput}
               InputComponent={this.renderEmailInput}
+            />
+            {showCommunicationLocaleInput && (
+              <InputLabel
+                left={labelPosition === 'left'}
+                label={communicationLocale}
+                mandatory
+                name="communicationLocale"
+                type="text"
+                id="communication-locale"
+                placeholder={communicationLocalePlaceholder}
+                onFocus={onInputFocus}
+                onBlur={onInputBlur}
+                value={values.communicationLocale || ''}
+                error={errors.communicationLocale}
+                className={s.contactFormInput}
+                InputComponent={this.renderCommunicationLocaleInput}
+              />
+            )}
+          </div>
+          <div className={[s.secondSection, secondSectionClassName].join(' ')}>
+            <InputLabel
+              left={labelPosition === 'left'}
+              label={lastName}
+              mandatory
+              name="lastName"
+              type="text"
+              id="last-name"
+              placeholder={lastNamePlaceholder}
+              onFocus={onInputFocus}
+              onBlur={onInputBlur}
+              onChange={this.handleChangeLastName}
+              value={values.lastName || ''}
+              error={errors.lastName}
+              className={s.contactFormInput}
+              InputComponent={this.renderLastNameInput}
             />
             <PhoneInput
               label={phone}
@@ -211,7 +224,6 @@ ContactForm.defaultProps = {
   texts: DefaultTexts,
   onChangeProperty: () => {},
   values: {
-    gender: null,
     firstName: null,
     lastName: null,
     email: null,
@@ -219,7 +231,6 @@ ContactForm.defaultProps = {
     postalCode: null,
   },
   errors: {
-    gender: null,
     firstName: null,
     lastName: null,
     email: null,
@@ -238,28 +249,30 @@ ContactForm.defaultProps = {
   withCountryFlag: true,
   renderInput: () => null,
   FooterComponent: () => null,
+  showCommunicationLocaleInput: false,
   // eslint-disable-next-line react/prop-types
   RootComponent: ({ children, ...cardProps }) => (<Card {...cardProps}>{children}</Card>),
+  languages: [],
 };
 
 ContactForm.propTypes = {
   texts: TextsType,
   onChangeProperty: PropTypes.func,
   values: PropTypes.shape({
-    title: PropTypes.oneOf(['male', 'female', null, '']),
     firstName: PropTypes.string,
     lastName: PropTypes.string,
     email: PropTypes.string,
     phoneNumber: PropTypes.string,
     postalCode: PropTypes.string,
+    communicationLocale: PropTypes.string,
   }),
   errors: PropTypes.shape({
-    title: PropTypes.string,
     firstName: PropTypes.string,
     lastName: PropTypes.string,
     email: PropTypes.string,
     phoneNumber: PropTypes.string,
     postalCode: PropTypes.string,
+    communicationLocale: PropTypes.string,
   }),
   onInputFocus: PropTypes.func,
   onInputBlur: PropTypes.func,
@@ -274,6 +287,11 @@ ContactForm.propTypes = {
   renderInput: PropTypes.func,
   FooterComponent: PropTypes.func,
   RootComponent: PropTypes.func,
+  showCommunicationLocaleInput: PropTypes.bool,
+  languages: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string,
+    locale: PropTypes.string,
+  })),
 };
 
 export default ContactForm;

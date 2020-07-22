@@ -38,3 +38,7 @@
 .disabled {
   background-color: var(--lightGrey);
 }
+
+.inputWithError {
+  border-color: var(--red) !important;
+}

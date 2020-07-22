@@ -16,6 +16,7 @@ export default PropTypes.shape({
   postCodePlaceholder: PropTypes.string,
   male: PropTypes.string,
   female: PropTypes.string,
+  communicationLocale: PropTypes.string,
 });
 
 export const DefaultTexts = {
@@ -34,4 +35,5 @@ export const DefaultTexts = {
   postCodePlaceholder: '44 100',
   male: 'M',
   female: 'Mme',
+  communicationLocale: 'Langue préférentielle',
 };

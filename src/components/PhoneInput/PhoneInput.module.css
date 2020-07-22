@@ -9,7 +9,7 @@
   flex: 1 0 var(--marginXLarge);
 }
 
-.phoneInput input {
+.inputContainer {
   margin-left: var(--marginSmall);
 }
 

@@ -10,12 +10,12 @@ const renderSelectOption = option => (
 
 const Select = (props) => {
   const {
-    value, options, children, className, renderOption, ...selectProps
+    value, options, children, className, hasError, renderOption, ...selectProps
   } = props;
   const optionRenderer = renderOption || renderSelectOption;
 
   return (
-    <div className={[s.select, selectProps.disabled ? s.disabled : undefined, className].join(' ')}>
+    <div className={[s.select, selectProps.disabled ? s.disabled : undefined, hasError ? s.inputWithError : '', className].join(' ')}>
       <select value={value} {...selectProps}>
         { options.map(optionRenderer) }
       </select>
@@ -37,6 +37,7 @@ Select.defaultProps = {
   className: '',
   renderOption: null,
   disabled: false,
+  hasError: false,
 };
 
 Select.propTypes = {
@@ -46,6 +47,7 @@ Select.propTypes = {
   className: PropTypes.string,
   renderOption: PropTypes.func,
   disabled: PropTypes.bool,
+  hasError: PropTypes.bool,
 };
 
 export default Select;
