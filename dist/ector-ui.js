@@ -2334,12 +2334,15 @@ function (_React$Component) {
       var _this$props = _this.props,
           languages = _this$props.languages,
           values = _this$props.values;
+      var selectedLanguage = languages.find(function (language) {
+        return language.locale === values.communicationLocale;
+      });
       return React__default.createElement(Select, _extends({
         options: languages,
         value: values.communicationLocale,
         renderOption: _this.renderLanguageOption,
         onChange: _this.handleChangeCommunicationLocale
-      }, props));
+      }, props), selectedLanguage ? selectedLanguage.name : null);
     });
 
     _defineProperty(_assertThisInitialized(_this), "renderFooter", function (footerProps) {
@@ -2406,7 +2409,8 @@ function (_React$Component) {
           withCountryFlag = _this$props3.withCountryFlag,
           RootComponent = _this$props3.RootComponent,
           showCommunicationLocaleInput = _this$props3.showCommunicationLocaleInput,
-          cardProps = _objectWithoutProperties(_this$props3, ["texts", "values", "selected", "onInputBlur", "onInputFocus", "errors", "labelPosition", "countries", "contentClassName", "firstSectionClassName", "secondSectionClassName", "withCountryFlag", "RootComponent", "showCommunicationLocaleInput"]);
+          languages = _this$props3.languages,
+          cardProps = _objectWithoutProperties(_this$props3, ["texts", "values", "selected", "onInputBlur", "onInputFocus", "errors", "labelPosition", "countries", "contentClassName", "firstSectionClassName", "secondSectionClassName", "withCountryFlag", "RootComponent", "showCommunicationLocaleInput", "languages"]);
 
       var newDriver = texts.newDriver,
           firstName = texts.firstName,
@@ -2459,7 +2463,7 @@ function (_React$Component) {
         error: errors.email,
         className: s$r.contactFormInput,
         InputComponent: this.renderEmailInput
-      }), showCommunicationLocaleInput && React__default.createElement(InputLabel, {
+      }), showCommunicationLocaleInput && languages.length > 0 && React__default.createElement(InputLabel, {
         left: labelPosition === 'left',
         label: communicationLocale,
         mandatory: true,
@@ -3970,9 +3974,7 @@ var Select = function Select(props) {
     className: [s$L.select, selectProps.disabled ? s$L.disabled : undefined, hasError ? s$L.inputWithError : '', className].join(' ')
   }, React__default.createElement("select", _extends({
     value: value
-  }, selectProps), options.map(optionRenderer)), children !== null ? children : React__default.createElement("span", {
-    className: s$L.label
-  }, value));
+  }, selectProps), options.map(optionRenderer)), children !== null ? children : null);
 };
 
 Select.defaultProps = {

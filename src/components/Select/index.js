@@ -23,9 +23,7 @@ const Select = (props) => {
         children !== null ? (
           children
         ) : (
-          <span className={s.label}>
-            {value}
-          </span>
+          null
         )
       }
     </div>
