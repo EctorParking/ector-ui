@@ -2213,7 +2213,8 @@ var TextsType$3 = PropTypes$1.shape({
   postCodePlaceholder: PropTypes$1.string,
   male: PropTypes$1.string,
   female: PropTypes$1.string,
-  communicationLocale: PropTypes$1.string
+  communicationLocale: PropTypes$1.string,
+  communicationLocalePlaceholder: PropTypes$1.string
 });
 var DefaultTexts$3 = {
   newDriver: 'Ajouter un nouveau conducteur',
@@ -2231,7 +2232,8 @@ var DefaultTexts$3 = {
   postCodePlaceholder: '44 100',
   male: 'M',
   female: 'Mme',
-  communicationLocale: 'Langue préférentielle'
+  communicationLocale: 'Langue de préférence de contact',
+  communicationLocalePlaceholder: 'Choix de la langue'
 };
 
 var _ref =
@@ -2334,15 +2336,12 @@ function (_React$Component) {
       var _this$props = _this.props,
           languages = _this$props.languages,
           values = _this$props.values;
-      var selectedLanguage = languages.find(function (language) {
-        return language.locale === values.communicationLocale;
-      });
       return React__default.createElement(Select, _extends({
         options: languages,
         value: values.communicationLocale,
         renderOption: _this.renderLanguageOption,
         onChange: _this.handleChangeCommunicationLocale
-      }, props), selectedLanguage ? selectedLanguage.name : null);
+      }, props));
     });
 
     _defineProperty(_assertThisInitialized(_this), "renderFooter", function (footerProps) {
@@ -3949,8 +3948,8 @@ var SelectValueType = PropTypes$1.shape({
   image: PropTypes$1.string
 });
 
-var css$L = ".Select-module_select__3oApo {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  border-radius: 3px;\n  border: 2px solid #d5d6d7;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #163457;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: 40px;\n  height: 40px;\n  height: 2.5rem;\n  margin-top: 4px;\n  margin-top: 4px;\n  margin-top: 0.25rem;\n  padding: 8px;\n  padding: 8px;\n  padding: 0.5rem;\n  position: relative;\n}\n\n.Select-module_select__3oApo:after {\n  content: '\\E954';\n  font-family: 'icomoon';\n  font-size: 80%;\n  margin-right: 10px;\n  position: absolute;\n  right: 0;\n}\n\n.Select-module_select__3oApo select {\n  position: absolute;\n  opacity: 0;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n}\n\n.Select-module_select__3oApo select:disabled {\n  cursor: not-allowed;\n}\n\n.Select-module_disabled__1fHPm {\n  background-color: #eceff6;\n}\n\n.Select-module_inputWithError__20ymI {\n  border-color: #ff5757 !important;\n}\n";
-var s$L = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","select":"Select-module_select__3oApo","disabled":"Select-module_disabled__1fHPm","inputWithError":"Select-module_inputWithError__20ymI"};
+var css$L = ".Select-module_select__3oApo {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  border-radius: 3px;\n  border: 2px solid #d5d6d7;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #163457;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: 40px;\n  height: 40px;\n  height: 2.5rem;\n  margin-top: 4px;\n  margin-top: 4px;\n  margin-top: 0.25rem;\n  padding: 8px;\n  padding: 8px;\n  padding: 0.5rem;\n  position: relative;\n}\n\n.Select-module_select__3oApo:after {\n  content: '\\E954';\n  font-family: 'icomoon';\n  font-size: 80%;\n  margin-right: 10px;\n  position: absolute;\n  right: 0;\n}\n\n.Select-module_select__3oApo select {\n  position: absolute;\n  border: none;\n  color: #163457;\n  padding-left: 10px;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  outline: none;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  text-indent: 1px;\n  text-overflow: '';\n}\n\n.Select-module_opacity__evv4E select {\n  opacity: 0;\n}\n\n.Select-module_placeholderColor__1dYJm select {\n  color: #dededf;\n}\n\n.Select-module_select__3oApo select::-ms-expand {\n  display: none;\n}\n\n.Select-module_select__3oApo select:disabled {\n  cursor: not-allowed;\n}\n\n.Select-module_disabled__1fHPm {\n  background-color: #eceff6;\n}\n\n.Select-module_inputWithError__20ymI {\n  border-color: #ff5757 !important;\n}\n";
+var s$L = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","select":"Select-module_select__3oApo","opacity":"Select-module_opacity__evv4E","placeholderColor":"Select-module_placeholderColor__1dYJm","disabled":"Select-module_disabled__1fHPm","inputWithError":"Select-module_inputWithError__20ymI"};
 styleInject(css$L);
 
 var renderSelectOption = function renderSelectOption(option) {
@@ -3966,15 +3965,19 @@ var Select = function Select(props) {
       children = props.children,
       className = props.className,
       hasError = props.hasError,
+      placeholder = props.placeholder,
       renderOption = props.renderOption,
-      selectProps = _objectWithoutProperties(props, ["value", "options", "children", "className", "hasError", "renderOption"]);
+      selectProps = _objectWithoutProperties(props, ["value", "options", "children", "className", "hasError", "placeholder", "renderOption"]);
 
   var optionRenderer = renderOption || renderSelectOption;
   return React__default.createElement("div", {
-    className: [s$L.select, selectProps.disabled ? s$L.disabled : undefined, hasError ? s$L.inputWithError : '', className].join(' ')
+    className: [s$L.select, children !== null ? s$L.opacity : undefined, selectProps.disabled ? s$L.disabled : undefined, !value ? s$L.placeholderColor : undefined, hasError ? s$L.inputWithError : '', className].join(' ')
   }, React__default.createElement("select", _extends({
     value: value
-  }, selectProps), options.map(optionRenderer)), children !== null ? children : null);
+  }, selectProps), placeholder && React__default.createElement("option", {
+    value: "",
+    key: "default"
+  }, placeholder), options.map(optionRenderer)), children !== null ? children : null);
 };
 
 Select.defaultProps = {
@@ -3982,13 +3985,15 @@ Select.defaultProps = {
   className: '',
   renderOption: null,
   disabled: false,
-  hasError: false
+  hasError: false,
+  placeholder: null
 };
 Select.propTypes = {
   options: PropTypes$1.arrayOf(SelectValueType).isRequired,
   value: PropTypes$1.string.isRequired,
   children: PropTypes$1.node,
   className: PropTypes$1.string,
+  placeholder: PropTypes$1.string,
   renderOption: PropTypes$1.func,
   disabled: PropTypes$1.bool,
   hasError: PropTypes$1.bool

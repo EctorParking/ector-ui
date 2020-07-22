@@ -44,9 +44,6 @@ class ContactForm extends React.Component {
 
   renderCommunicationLocaleInput = (props) => {
     const { languages, values } = this.props;
-    const selectedLanguage = languages.find(
-      language => language.locale === values.communicationLocale,
-    );
 
     return (
       <Select
@@ -55,9 +52,7 @@ class ContactForm extends React.Component {
         renderOption={this.renderLanguageOption}
         onChange={this.handleChangeCommunicationLocale}
         {...props}
-      >
-        {selectedLanguage ? selectedLanguage.name : null}
-      </Select>
+      />
     );
   };
 
