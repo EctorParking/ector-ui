@@ -3,6 +3,7 @@
 .tooltipContainer {
     font-size: var(--iconFontSize);
     text-align: center;
+    display: flex;
     position: relative;
     &:hover {
         &>.tooltipText {

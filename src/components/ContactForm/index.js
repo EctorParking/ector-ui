@@ -88,6 +88,8 @@ class ContactForm extends React.Component {
       RootComponent,
       showCommunicationLocaleInput,
       languages,
+      tooltip,
+      tooltipIcon,
       ...cardProps
     } = this.props;
     const {
@@ -162,6 +164,8 @@ class ContactForm extends React.Component {
                 error={errors.communicationLocale}
                 className={s.contactFormInput}
                 InputComponent={this.renderCommunicationLocaleInput}
+                tooltip={tooltip}
+                {...tooltipIcon ? { tooltipIcon } : {}}
               />
             )}
           </div>
@@ -248,6 +252,8 @@ ContactForm.defaultProps = {
   firstSectionClassName: '',
   secondSectionClassName: '',
   withCountryFlag: true,
+  tooltip: null,
+  tooltipIcon: null,
   renderInput: () => null,
   FooterComponent: () => null,
   showCommunicationLocaleInput: false,
@@ -288,6 +294,8 @@ ContactForm.propTypes = {
   renderInput: PropTypes.func,
   FooterComponent: PropTypes.func,
   RootComponent: PropTypes.func,
+  tooltip: PropTypes.string,
+  tooltipIcon: PropTypes.string,
   showCommunicationLocaleInput: PropTypes.bool,
   languages: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string,

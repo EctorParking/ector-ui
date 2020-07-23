@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import centered from '@storybook/addon-centered';
 import {
-  withKnobs, object, select, boolean,
+  withKnobs, object, select, boolean, text,
 } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { DefaultTexts } from './ContactFormTextsType';
@@ -23,6 +23,7 @@ storiesOf('ContactForm', module)
   .add('normal', () => {
     const props = {
       texts: object('Textes', DefaultTexts),
+      tooltip: text('Tooltip', 'test'),
       languages: [{ locale: 'fr', name: 'Français' }, { locale: 'en', name: 'English' }],
       showCommunicationLocaleInput: boolean('Voir champs langue', true),
       values: object('Values', {

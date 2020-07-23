@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import s from './InputLabel.module.css';
 
 import Input from '../Input';
+import Tooltip from '../Tooltip';
 
 const InputLabel = ({
   label,
@@ -22,10 +23,15 @@ const InputLabel = ({
   LabelFooterComponent,
   errorClassName,
   onKeyDown,
+  tooltip,
+  tooltipIcon,
   ...inputProps
 }) => {
   const labelClassName = mandatory ? s.mandatory : '';
 
+  if (tooltip) {
+    console.log('tooltipIcon', tooltipIcon);
+  }
   return (
     <div className={[left ? s.leftContainer : s.container, className].join(' ')}>
       {
@@ -34,9 +40,17 @@ const InputLabel = ({
         ) : (
           <label
             htmlFor={id}
-            className={[left ? s.leftLabel : undefined, labelClassName].join(' ')}
+            className={[s.label, left ? s.leftLabel : undefined, labelClassName].join(' ')}
           >
             {label}
+            {tooltip && (
+              <Tooltip
+                text={tooltip}
+                position="top"
+                className={s.tooltip}
+                iconClassName={tooltipIcon}
+              />
+            )}
           </label>
         )
       }
@@ -88,6 +102,8 @@ InputLabel.defaultProps = {
   inputContainerClassName: '',
   LabelFooterComponent: null,
   errorClassName: '',
+  tooltip: null,
+  tooltipIcon: 'icon-ec-info',
   onKeyDown: () => {},
 };
 
@@ -107,6 +123,8 @@ InputLabel.propTypes = {
   LabelComponent: PropTypes.func,
   LabelFooterComponent: PropTypes.func,
   errorClassName: PropTypes.string,
+  tooltip: PropTypes.string,
+  tooltipIcon: PropTypes.string,
   onKeyDown: PropTypes.func,
 };
 
