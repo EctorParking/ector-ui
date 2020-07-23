@@ -107,6 +107,7 @@ class PhoneInput extends React.Component {
         </Select>
         <Input
           placeholder="06 07 08 09 00" // Here to override the placeholder
+          containerClassName={s.inputContainer}
           {...phoneInputProps}
           className={inputClassName}
           hasError={!!error && error.length > 0}

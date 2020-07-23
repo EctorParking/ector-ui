@@ -33,6 +33,7 @@ storiesOf('Input.Label', module)
       id: text('Id', 'Input'),
       left: boolean('Left', false),
       error: text('Error', ''),
+      tooltip: text('Tooltip', ''),
     };
 
     return (

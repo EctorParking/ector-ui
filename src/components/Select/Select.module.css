@@ -24,11 +24,30 @@
 
 .select select {
   position: absolute;
-  opacity: 0;
+  border: none;
+  color: var(--deepBlue);
+  padding-left: var(--marginSmall);
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+}
+
+.opacity select {
+  opacity: 0;
+}
+
+.placeholderColor select {
+  color: var(--lightMetalGrey);
+}
+
+.select select::-ms-expand {
+  display: none;
 }
 
 .select select:disabled {
@@ -37,4 +56,8 @@
 
 .disabled {
   background-color: var(--lightGrey);
+}
+
+.inputWithError {
+  border-color: var(--red) !important;
 }
