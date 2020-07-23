@@ -38,11 +38,13 @@ const InputLabel = ({
         LabelComponent !== null && typeof LabelComponent === 'function' && LabelComponent() ? (
           <LabelComponent className={[left ? s.leftLabel : undefined, labelClassName].join(' ')} />
         ) : (
-          <label
-            htmlFor={id}
-            className={[s.label, left ? s.leftLabel : undefined, labelClassName].join(' ')}
-          >
-            {label}
+          <div className={s.label}>
+            <label
+              htmlFor={id}
+              className={[left ? s.leftLabel : undefined, labelClassName].join(' ')}
+            >
+              {label}
+            </label>
             {tooltip && (
               <Tooltip
                 text={tooltip}
@@ -51,7 +53,7 @@ const InputLabel = ({
                 iconClassName={tooltipIcon}
               />
             )}
-          </label>
+          </div>
         )
       }
       {

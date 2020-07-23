@@ -2473,7 +2473,22 @@ function (_React$Component) {
         tooltip: tooltip
       }, tooltipIcon ? {
         tooltipIcon: tooltipIcon
-      } : {}))), React__default.createElement("div", {
+      } : {})), (!showCommunicationLocaleInput || languages.length === 0) && React__default.createElement(InputLabel, {
+        left: labelPosition === 'left',
+        label: postCode,
+        type: "text",
+        id: "postal-code",
+        name: "postalCode",
+        placeholder: postCodePlaceholder,
+        onFocus: onInputFocus,
+        onBlur: onInputBlur,
+        onChange: this.handleChangePostalCode,
+        value: values.postalCode || '',
+        error: errors.postalCode,
+        className: s$r.contactFormInput,
+        inputClassName: s$r.postalCodeInput,
+        InputComponent: this.renderPostalCodeInput
+      })), React__default.createElement("div", {
         className: [s$r.secondSection, secondSectionClassName].join(' ')
       }, React__default.createElement(InputLabel, {
         left: labelPosition === 'left',
@@ -2505,7 +2520,7 @@ function (_React$Component) {
         id: "phone-number",
         name: "phoneNumber",
         withFlag: withCountryFlag
-      }), React__default.createElement(InputLabel, {
+      }), showCommunicationLocaleInput && languages.length > 0 && React__default.createElement(InputLabel, {
         left: labelPosition === 'left',
         label: postCode,
         type: "text",
@@ -2974,10 +2989,12 @@ var InputLabel = function InputLabel(_ref) {
     className: [left ? s$x.leftContainer : s$x.container, className].join(' ')
   }, LabelComponent !== null && typeof LabelComponent === 'function' && LabelComponent() ? React__default.createElement(LabelComponent, {
     className: [left ? s$x.leftLabel : undefined, labelClassName].join(' ')
-  }) : React__default.createElement("label", {
+  }) : React__default.createElement("div", {
+    className: s$x.label
+  }, React__default.createElement("label", {
     htmlFor: id,
-    className: [s$x.label, left ? s$x.leftLabel : undefined, labelClassName].join(' ')
-  }, label, tooltip && React__default.createElement(Tooltip, {
+    className: [left ? s$x.leftLabel : undefined, labelClassName].join(' ')
+  }, label), tooltip && React__default.createElement(Tooltip, {
     text: tooltip,
     position: "top",
     className: s$x.tooltip,

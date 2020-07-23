@@ -168,6 +168,24 @@ class ContactForm extends React.Component {
                 {...tooltipIcon ? { tooltipIcon } : {}}
               />
             )}
+            {(!showCommunicationLocaleInput || languages.length === 0) && (
+              <InputLabel
+                left={labelPosition === 'left'}
+                label={postCode}
+                type="text"
+                id="postal-code"
+                name="postalCode"
+                placeholder={postCodePlaceholder}
+                onFocus={onInputFocus}
+                onBlur={onInputBlur}
+                onChange={this.handleChangePostalCode}
+                value={values.postalCode || ''}
+                error={errors.postalCode}
+                className={s.contactFormInput}
+                inputClassName={s.postalCodeInput}
+                InputComponent={this.renderPostalCodeInput}
+              />
+            )}
           </div>
           <div className={[s.secondSection, secondSectionClassName].join(' ')}>
             <InputLabel
@@ -202,22 +220,24 @@ class ContactForm extends React.Component {
               name="phoneNumber"
               withFlag={withCountryFlag}
             />
-            <InputLabel
-              left={labelPosition === 'left'}
-              label={postCode}
-              type="text"
-              id="postal-code"
-              name="postalCode"
-              placeholder={postCodePlaceholder}
-              onFocus={onInputFocus}
-              onBlur={onInputBlur}
-              onChange={this.handleChangePostalCode}
-              value={values.postalCode || ''}
-              error={errors.postalCode}
-              className={s.contactFormInput}
-              inputClassName={s.postalCodeInput}
-              InputComponent={this.renderPostalCodeInput}
-            />
+            {showCommunicationLocaleInput && languages.length > 0 && (
+              <InputLabel
+                left={labelPosition === 'left'}
+                label={postCode}
+                type="text"
+                id="postal-code"
+                name="postalCode"
+                placeholder={postCodePlaceholder}
+                onFocus={onInputFocus}
+                onBlur={onInputBlur}
+                onChange={this.handleChangePostalCode}
+                value={values.postalCode || ''}
+                error={errors.postalCode}
+                className={s.contactFormInput}
+                inputClassName={s.postalCodeInput}
+                InputComponent={this.renderPostalCodeInput}
+              />
+            )}
           </div>
         </div>
       </RootComponent>
