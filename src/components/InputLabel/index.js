@@ -29,9 +29,6 @@ const InputLabel = ({
 }) => {
   const labelClassName = mandatory ? s.mandatory : '';
 
-  if (tooltip) {
-    console.log('tooltipIcon', tooltipIcon);
-  }
   return (
     <div className={[left ? s.leftContainer : s.container, className].join(' ')}>
       {
