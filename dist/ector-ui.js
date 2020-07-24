@@ -2988,11 +2988,6 @@ var InputLabel = function InputLabel(_ref) {
       inputProps = _objectWithoutProperties(_ref, ["label", "id", "mandatory", "placeholder", "type", "className", "inputClassName", "error", "left", "children", "InputComponent", "LabelComponent", "inputContainerClassName", "LabelFooterComponent", "errorClassName", "onKeyDown", "tooltip", "tooltipIcon"]);
 
   var labelClassName = mandatory ? s$x.mandatory : '';
-
-  if (tooltip) {
-    console.log('tooltipIcon', tooltipIcon);
-  }
-
   return React__default.createElement("div", {
     className: [left ? s$x.leftContainer : s$x.container, className].join(' ')
   }, LabelComponent !== null && typeof LabelComponent === 'function' && LabelComponent() ? React__default.createElement(LabelComponent, {
