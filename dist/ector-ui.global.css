@@ -4081,6 +4081,38 @@
 }
 
 
+.LanguageSelector-module_select__1pF-L {
+  min-width: 250px;
+}
+
+.LanguageSelector-module_optionContainer__3oYPz {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 10px;
+}
+
+.LanguageSelector-module_singleValueContainer__2OW9Q {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.LanguageSelector-module_flag__1cI59, .LanguageSelector-module_flagInput__29gE1 {
+  width: 24px;
+  height: 16px;
+}
+
+.LanguageSelector-module_flagInput__29gE1 {
+  margin-right: 10px;
+}
+
 .DateTimePicker-module_calendar__1m3vk {
   position: relative;
   width: 100%;

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import s from './ContactForm.module.css';
 import TextsType, { DefaultTexts } from './ContactFormTextsType';
 import {
-  Card, LinkUnderlined, CardTitle, InputLabel, PhoneInput, Select,
+  Card, LinkUnderlined, CardTitle, InputLabel, PhoneInput, LanguageSelector,
 } from '..';
 import { CountryPropType } from '../PhoneInput/PhoneInputCountries';
 
@@ -16,7 +16,6 @@ class ContactForm extends React.Component {
     this.handleChangeEmail = this.handleChangeProperty.bind(this, 'email');
     this.handleChangePhone = this.handleChangeProperty.bind(this, 'phone');
     this.handleChangePostalCode = this.handleChangeProperty.bind(this, 'postalCode');
-    this.handleChangeCommunicationLocale = this.handleChangeProperty.bind(this, 'communicationLocale');
 
     this.renderFirstNameInput = this.renderInputComponent.bind(this, 'firstName');
     this.renderLastNameInput = this.renderInputComponent.bind(this, 'lastName');
@@ -36,21 +35,27 @@ class ContactForm extends React.Component {
     return renderInput(inputName);
   }
 
-  renderLanguageOption = option => (
-    <option value={option.locale} key={option.locale}>
-      {option.name}
-    </option>
-  );
-
   renderCommunicationLocaleInput = (props) => {
-    const { languages, values } = this.props;
+    const {
+      onChangeProperty,
+      values,
+      languages,
+      texts: {
+        communicationLocale,
+        communicationLocalePlaceholder,
+      },
+    } = this.props;
 
     return (
-      <Select
-        options={languages}
-        value={values.communicationLocale}
-        renderOption={this.renderLanguageOption}
-        onChange={this.handleChangeCommunicationLocale}
+      <LanguageSelector
+        id="communication-locale"
+        languages={languages}
+        value={values.communicationLocale || ''}
+        label={communicationLocale}
+        onChange={value => onChangeProperty('communicationLocale', value)}
+        placeholder={communicationLocalePlaceholder}
+        className={s.contactFormInput}
+        mandatory
         {...props}
       />
     );

@@ -1,0 +1,25 @@
+@import '../../style/variable.global.css';
+
+.select {
+  min-width: 250px;
+}
+
+.optionContainer {
+  display: flex;
+  align-items: center;
+  padding-left: var(--marginSmall);
+}
+
+.singleValueContainer {
+  display: flex;
+  align-items: center;
+}
+
+.flag, .flagInput {
+  width: 24px;
+  height: 16px;
+}
+
+.flagInput {
+  margin-right: var(--marginSmall);
+}

@@ -59,3 +59,4 @@ export { default as IconButton } from './IconButton';
 export { default as Box } from './Box';
 export { default as SavedCardsLine } from './SavedCardsLine';
 export { default as SavedCardsPicker } from './SavedCardsPicker';
+export { default as LanguageSelector } from './LanguageSelector';
