@@ -3,9 +3,8 @@ import PropTypes from 'prop-types';
 import s from './ContactForm.module.css';
 import TextsType, { DefaultTexts } from './ContactFormTextsType';
 import {
-  Card, LinkUnderlined, CardTitle, InputLabel, PhoneInput,
+  Card, LinkUnderlined, CardTitle, InputLabel, PhoneInput, LanguageSelector,
 } from '..';
-import LanguageSelector from '../LanguageSelector';
 import { CountryPropType } from '../PhoneInput/PhoneInputCountries';
 
 class ContactForm extends React.Component {
