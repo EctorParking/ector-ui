@@ -4030,8 +4030,8 @@ var SelectValueType = PropTypes$1.shape({
   image: PropTypes$1.string
 });
 
-var css$M = ".Select-module_select__3oApo {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  border-radius: 3px;\n  border: 2px solid #d5d6d7;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #163457;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: 40px;\n  height: 40px;\n  height: 2.5rem;\n  margin-top: 4px;\n  margin-top: 4px;\n  margin-top: 0.25rem;\n  padding: 8px;\n  padding: 8px;\n  padding: 0.5rem;\n  position: relative;\n}\n\n.Select-module_select__3oApo:after {\n  content: '\\E954';\n  font-family: 'icomoon';\n  font-size: 80%;\n  margin-right: 10px;\n  position: absolute;\n  right: 0;\n}\n\n.Select-module_select__3oApo select {\n  position: absolute;\n  border: none;\n  color: #163457;\n  padding-left: 10px;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  outline: none;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  text-indent: 1px;\n  text-overflow: '';\n}\n\n.Select-module_opacity__evv4E select {\n  opacity: 0;\n}\n\n.Select-module_placeholderColor__1dYJm select {\n  color: #dededf;\n}\n\n.Select-module_select__3oApo select::-ms-expand {\n  display: none;\n}\n\n.Select-module_select__3oApo select:disabled {\n  cursor: not-allowed;\n}\n\n.Select-module_disabled__1fHPm {\n  background-color: #eceff6;\n}\n\n.Select-module_inputWithError__20ymI {\n  border-color: #ff5757 !important;\n}\n";
-var s$M = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","select":"Select-module_select__3oApo","opacity":"Select-module_opacity__evv4E","placeholderColor":"Select-module_placeholderColor__1dYJm","disabled":"Select-module_disabled__1fHPm","inputWithError":"Select-module_inputWithError__20ymI"};
+var css$M = ".Select-module_select__3oApo {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  border-radius: 3px;\n  border: 2px solid #d5d6d7;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #163457;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: 40px;\n  height: 40px;\n  height: 2.5rem;\n  margin-top: 4px;\n  margin-top: 4px;\n  margin-top: 0.25rem;\n  padding: 8px;\n  padding: 8px;\n  padding: 0.5rem;\n  position: relative;\n}\n\n.Select-module_select__3oApo:after {\n  content: '\\E954';\n  font-family: 'icomoon';\n  font-size: 80%;\n  margin-right: 10px;\n  position: absolute;\n  right: 0;\n}\n\n.Select-module_select__3oApo select {\n  position: absolute;\n  opacity: 0;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n}\n\n.Select-module_select__3oApo select:disabled {\n  cursor: not-allowed;\n}\n\n.Select-module_disabled__1fHPm {\n  background-color: #eceff6;\n}\n";
+var s$M = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","select":"Select-module_select__3oApo","disabled":"Select-module_disabled__1fHPm"};
 styleInject(css$M);
 
 var renderSelectOption = function renderSelectOption(option) {
@@ -4046,39 +4046,32 @@ var Select = function Select(props) {
       options = props.options,
       children = props.children,
       className = props.className,
-      hasError = props.hasError,
-      placeholder = props.placeholder,
       renderOption = props.renderOption,
-      selectProps = _objectWithoutProperties(props, ["value", "options", "children", "className", "hasError", "placeholder", "renderOption"]);
+      selectProps = _objectWithoutProperties(props, ["value", "options", "children", "className", "renderOption"]);
 
   var optionRenderer = renderOption || renderSelectOption;
   return React__default.createElement("div", {
-    className: [s$M.select, children !== null ? s$M.opacity : undefined, selectProps.disabled ? s$M.disabled : undefined, !value ? s$M.placeholderColor : undefined, hasError ? s$M.inputWithError : '', className].join(' ')
+    className: [s$M.select, selectProps.disabled ? s$M.disabled : undefined, className].join(' ')
   }, React__default.createElement("select", _extends({
     value: value
-  }, selectProps), placeholder && React__default.createElement("option", {
-    value: "",
-    key: "default"
-  }, placeholder), options.map(optionRenderer)), children !== null ? children : null);
+  }, selectProps), options.map(optionRenderer)), children !== null ? children : React__default.createElement("span", {
+    className: s$M.label
+  }, value));
 };
 
 Select.defaultProps = {
   children: null,
   className: '',
   renderOption: null,
-  disabled: false,
-  hasError: false,
-  placeholder: null
+  disabled: false
 };
 Select.propTypes = {
   options: PropTypes$1.arrayOf(SelectValueType).isRequired,
   value: PropTypes$1.string.isRequired,
   children: PropTypes$1.node,
   className: PropTypes$1.string,
-  placeholder: PropTypes$1.string,
   renderOption: PropTypes$1.func,
-  disabled: PropTypes$1.bool,
-  hasError: PropTypes$1.bool
+  disabled: PropTypes$1.bool
 };
 
 var css$N = ".ServiceCard-module_card__2WAwR {\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n    background-color: #eceff6;\n    border-radius: 8px;\n    padding: 5px;\n    margin-top: 25px;\n    position: relative;\n    width: 250px;\n    height: 260px;\n}\n\n.ServiceCard-module_optionCardContainerSelected__1EDYO {\n    background-color: #ffcd02;\n}\n\n.ServiceCard-module_labelContainer__14NKR {\n    position: absolute;\n    top: -10px;\n    right: 8%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n\n@media (max-width: 1232px) {\n    .ServiceCard-module_card__2WAwR {\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-flex: 1;\n            -ms-flex: 1 1 auto;\n                flex: 1 1 auto;\n        height: auto;\n        margin-right: 0;\n        width: 100%;\n    }\n}\n";
@@ -11051,7 +11044,9 @@ var menuCSS = function menuCSS(_ref2) {
       borderRadius = _ref2$theme.borderRadius,
       spacing = _ref2$theme.spacing,
       colors = _ref2$theme.colors;
-  return _ref3 = {}, _defineProperty$1(_ref3, alignToControl(placement), '100%'), _defineProperty$1(_ref3, "backgroundColor", colors.neutral0), _defineProperty$1(_ref3, "borderRadius", borderRadius), _defineProperty$1(_ref3, "boxShadow", '0 0 0 1px hsla(0, 0%, 0%, 0.1), 0 4px 11px hsla(0, 0%, 0%, 0.1)'), _defineProperty$1(_ref3, "marginBottom", spacing.menuGutter), _defineProperty$1(_ref3, "marginTop", spacing.menuGutter), _defineProperty$1(_ref3, "position", 'absolute'), _defineProperty$1(_ref3, "width", '100%'), _defineProperty$1(_ref3, "zIndex", 1), _ref3;
+  return _ref3 = {
+    label: 'menu'
+  }, _defineProperty$1(_ref3, alignToControl(placement), '100%'), _defineProperty$1(_ref3, "backgroundColor", colors.neutral0), _defineProperty$1(_ref3, "borderRadius", borderRadius), _defineProperty$1(_ref3, "boxShadow", '0 0 0 1px hsla(0, 0%, 0%, 0.1), 0 4px 11px hsla(0, 0%, 0%, 0.1)'), _defineProperty$1(_ref3, "marginBottom", spacing.menuGutter), _defineProperty$1(_ref3, "marginTop", spacing.menuGutter), _defineProperty$1(_ref3, "position", 'absolute'), _defineProperty$1(_ref3, "width", '100%'), _defineProperty$1(_ref3, "zIndex", 1), _ref3;
 }; // NOTE: internal only
 
 var MenuPlacer =
@@ -11738,6 +11733,7 @@ var A11yText = function A11yText(props) {
 
     /*#__PURE__*/
     css$15({
+      label: 'a11yText',
       zIndex: 9999,
       border: 0,
       clip: 'rect(1px, 1px, 1px, 1px)',
@@ -11786,6 +11782,7 @@ function (_Component) {
 
         /*#__PURE__*/
         css$15({
+          label: 'dummyInput',
           // get rid of any default styles
           background: 0,
           border: 0,
@@ -12351,6 +12348,7 @@ var containerCSS = function containerCSS(_ref) {
   var isDisabled = _ref.isDisabled,
       isRtl = _ref.isRtl;
   return {
+    label: 'container',
     direction: isRtl ? 'rtl' : null,
     pointerEvents: isDisabled ? 'none' : null,
     // cancel mouse events when disabled
@@ -12500,6 +12498,7 @@ var baseCSS = function baseCSS(_ref2) {
       baseUnit = _ref2$theme.spacing.baseUnit,
       colors = _ref2$theme.colors;
   return {
+    label: 'indicatorContainer',
     color: isFocused ? colors.neutral60 : colors.neutral20,
     display: 'flex',
     padding: baseUnit * 2,
@@ -12551,6 +12550,7 @@ var indicatorSeparatorCSS = function indicatorSeparatorCSS(_ref3) {
       baseUnit = _ref3$theme.spacing.baseUnit,
       colors = _ref3$theme.colors;
   return {
+    label: 'indicatorSeparator',
     alignSelf: 'stretch',
     backgroundColor: isDisabled ? colors.neutral10 : colors.neutral20,
     marginBottom: baseUnit * 2,
@@ -12583,6 +12583,7 @@ var loadingIndicatorCSS = function loadingIndicatorCSS(_ref4) {
       colors = _ref4$theme.colors,
       baseUnit = _ref4$theme.spacing.baseUnit;
   return {
+    label: 'loadingIndicator',
     color: isFocused ? colors.neutral60 : colors.neutral20,
     display: 'flex',
     padding: baseUnit * 2,
@@ -12671,6 +12672,7 @@ var css$1$1 = function css$$1(_ref) {
       borderRadius = _ref$theme.borderRadius,
       spacing = _ref$theme.spacing;
   return {
+    label: 'control',
     alignItems: 'center',
     backgroundColor: isDisabled ? colors.neutral5 : colors.neutral0,
     borderColor: isDisabled ? colors.neutral10 : isFocused ? colors.primary : colors.neutral20,
@@ -12750,6 +12752,7 @@ var Group = function Group(props) {
 var groupHeadingCSS = function groupHeadingCSS(_ref2) {
   var spacing = _ref2.theme.spacing;
   return {
+    label: 'group',
     color: '#999',
     cursor: 'default',
     display: 'block',
@@ -12796,6 +12799,7 @@ var inputCSS = function inputCSS(_ref) {
 
 var inputStyle = function inputStyle(isHidden) {
   return {
+    label: 'input',
     background: 0,
     border: 0,
     fontSize: 'inherit',
@@ -12841,6 +12845,7 @@ var multiValueCSS = function multiValueCSS(_ref) {
       borderRadius = _ref$theme.borderRadius,
       colors = _ref$theme.colors;
   return {
+    label: 'multiValue',
     backgroundColor: colors.neutral10,
     borderRadius: borderRadius / 2,
     display: 'flex',
@@ -13002,6 +13007,7 @@ var optionCSS = function optionCSS(_ref) {
       spacing = _ref$theme.spacing,
       colors = _ref$theme.colors;
   return {
+    label: 'option',
     backgroundColor: isSelected ? colors.primary : isFocused ? colors.primary25 : 'transparent',
     color: isDisabled ? colors.neutral20 : isSelected ? colors.neutral0 : 'inherit',
     cursor: 'default',
@@ -13013,7 +13019,7 @@ var optionCSS = function optionCSS(_ref) {
     WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
     // provide some affordance on touch devices
     ':active': {
-      backgroundColor: isSelected ? colors.primary : colors.primary50
+      backgroundColor: !isDisabled && (isSelected ? colors.primary : colors.primary50)
     }
   };
 };
@@ -13046,6 +13052,7 @@ var placeholderCSS = function placeholderCSS(_ref) {
       spacing = _ref$theme.spacing,
       colors = _ref$theme.colors;
   return {
+    label: 'placeholder',
     color: colors.neutral50,
     marginLeft: spacing.baseUnit / 2,
     marginRight: spacing.baseUnit / 2,
@@ -13076,6 +13083,7 @@ var css$2$1 = function css$$1(_ref) {
       spacing = _ref$theme.spacing,
       colors = _ref$theme.colors;
   return {
+    label: 'singleValue',
     color: isDisabled ? colors.neutral40 : colors.neutral80,
     marginLeft: spacing.baseUnit / 2,
     marginRight: spacing.baseUnit / 2,
@@ -13275,7 +13283,6 @@ function (_Component) {
       focusedValue: null,
       inputIsHidden: false,
       isFocused: false,
-      isComposing: false,
       menuOptions: {
         render: [],
         focusable: []
@@ -13284,6 +13291,8 @@ function (_Component) {
     });
 
     _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "blockOptionHover", false);
+
+    _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "isComposing", false);
 
     _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "clearFocusValueOnUpdate", false);
 
@@ -13635,15 +13644,11 @@ function (_Component) {
     });
 
     _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "onCompositionStart", function () {
-      _this.setState({
-        isComposing: true
-      });
+      _this.isComposing = true;
     });
 
     _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "onCompositionEnd", function () {
-      _this.setState({
-        isComposing: false
-      });
+      _this.isComposing = false;
     });
 
     _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "onTouchStart", function (_ref4) {
@@ -13800,7 +13805,6 @@ function (_Component) {
           tabSelectsValue = _this$props7.tabSelectsValue,
           openMenuOnFocus = _this$props7.openMenuOnFocus;
       var _this$state2 = _this.state,
-          isComposing = _this$state2.isComposing,
           focusedOption = _this$state2.focusedOption,
           focusedValue = _this$state2.focusedValue,
           selectValue = _this$state2.selectValue;
@@ -13851,7 +13855,7 @@ function (_Component) {
           break;
 
         case 'Tab':
-          if (isComposing) return;
+          if (_this.isComposing) return;
 
           if (event.shiftKey || !menuIsOpen || !tabSelectsValue || !focusedOption || // don't capture the event if the menu opens on focus and the focused
           // option is already selected; it breaks the flow of navigation
@@ -13864,9 +13868,15 @@ function (_Component) {
           break;
 
         case 'Enter':
+          if (event.keyCode === 229) {
+            // ignore the keydown event from an Input Method Editor(IME)
+            // ref. https://www.w3.org/TR/uievents/#determine-keydown-keyup-keyCode
+            break;
+          }
+
           if (menuIsOpen) {
             if (!focusedOption) return;
-            if (isComposing) return;
+            if (_this.isComposing) return;
 
             _this.selectOption(focusedOption);
 
@@ -14665,14 +14675,14 @@ function (_Component) {
 
       if (isMulti) {
         var selectValues = selectValue.map(function (opt) {
-          var isFocused = opt === focusedValue;
+          var isOptionFocused = opt === focusedValue;
           return React__default.createElement(MultiValue, _extends$1({}, commonProps, {
             components: {
               Container: MultiValueContainer,
               Label: MultiValueLabel,
               Remove: MultiValueRemove
             },
-            isFocused: isFocused,
+            isFocused: isOptionFocused,
             isDisabled: isDisabled,
             key: _this4.getOptionValue(opt),
             removeProps: {

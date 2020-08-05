@@ -2190,30 +2190,11 @@
 
 .Select-module_select__3oApo select {
   position: absolute;
-  border: none;
-  color: #163457;
-  padding-left: 10px;
+  opacity: 0;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  outline: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  text-indent: 1px;
-  text-overflow: '';
-}
-
-.Select-module_opacity__evv4E select {
-  opacity: 0;
-}
-
-.Select-module_placeholderColor__1dYJm select {
-  color: #dededf;
-}
-
-.Select-module_select__3oApo select::-ms-expand {
-  display: none;
 }
 
 .Select-module_select__3oApo select:disabled {
@@ -2222,10 +2203,6 @@
 
 .Select-module_disabled__1fHPm {
   background-color: #eceff6;
-}
-
-.Select-module_inputWithError__20ymI {
-  border-color: #ff5757 !important;
 }
 
 .ServiceCard-module_card__2WAwR {
