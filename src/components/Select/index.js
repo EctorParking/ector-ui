@@ -10,30 +10,22 @@ const renderSelectOption = option => (
 
 const Select = (props) => {
   const {
-    value, options, children, className, hasError, placeholder, renderOption, ...selectProps
+    value, options, children, className, renderOption, ...selectProps
   } = props;
   const optionRenderer = renderOption || renderSelectOption;
 
   return (
-    <div
-      className={[
-        s.select,
-        children !== null ? s.opacity : undefined,
-        selectProps.disabled ? s.disabled : undefined,
-        !value ? s.placeholderColor : undefined,
-        hasError ? s.inputWithError : '',
-        className,
-      ].join(' ')}
-    >
+    <div className={[s.select, selectProps.disabled ? s.disabled : undefined, className].join(' ')}>
       <select value={value} {...selectProps}>
-        {placeholder && <option value="" key="default">{placeholder}</option>}
         { options.map(optionRenderer) }
       </select>
       {
         children !== null ? (
           children
         ) : (
-          null
+          <span className={s.label}>
+            {value}
+          </span>
         )
       }
     </div>
@@ -45,8 +37,6 @@ Select.defaultProps = {
   className: '',
   renderOption: null,
   disabled: false,
-  hasError: false,
-  placeholder: null,
 };
 
 Select.propTypes = {
@@ -54,10 +44,8 @@ Select.propTypes = {
   value: PropTypes.string.isRequired,
   children: PropTypes.node,
   className: PropTypes.string,
-  placeholder: PropTypes.string,
   renderOption: PropTypes.func,
   disabled: PropTypes.bool,
-  hasError: PropTypes.bool,
 };
 
 export default Select;
