@@ -4215,72 +4215,6 @@ var css$P = ".ServiceCardFooter-module_footerContainer__3xZao {\n    -webkit-box
 var s$P = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","footerContainer":"ServiceCardFooter-module_footerContainer__3xZao","price":"ServiceCardFooter-module_price__1o6fm","deleteButton":"ServiceCardFooter-module_deleteButton__W6dqf"};
 styleInject(css$P);
 
-var formatPrice = function formatPrice(price) {
-  var showDecimals = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-  var countDecimals;
-
-  if (!showDecimals) {
-    countDecimals = !Number.isInteger(Number(price)) ? 2 : 0;
-  } else {
-    countDecimals = showDecimals ? 2 : 0;
-  }
-
-  var displayPrice = price || 0;
-  return parseFloat(displayPrice).toFixed(countDecimals);
-};
-
-var HtmlPrice = function HtmlPrice(_ref) {
-  var price = _ref.price,
-      currency = _ref.currency,
-      showDecimals = _ref.showDecimals,
-      className = _ref.className,
-      separator = _ref.separator,
-      PriceAppendComponent = _ref.PriceAppendComponent,
-      appendix = _ref.appendix;
-  var splitPrice = "".concat(formatPrice(price, showDecimals)).split('.');
-  return splitPrice[1] ? React__default.createElement("span", {
-    className: className
-  }, "".concat(splitPrice[0]).concat(separator), React__default.createElement(PriceAppendComponent, {
-    value: splitPrice[1],
-    currency: currency,
-    appendix: appendix
-  })) : React__default.createElement("span", {
-    className: className
-  }, "".concat(splitPrice[0]), React__default.createElement(PriceAppendComponent, {
-    value: "",
-    currency: currency,
-    appendix: appendix
-  }));
-};
-
-var PriceAppendDefaultComponent = function PriceAppendDefaultComponent(_ref2) {
-  var value = _ref2.value,
-      currency = _ref2.currency;
-  return React__default.createElement("small", null, "".concat(value).concat(currency));
-};
-
-PriceAppendDefaultComponent.propTypes = {
-  value: PropTypes$1.string.isRequired,
-  currency: PropTypes$1.string.isRequired
-};
-HtmlPrice.defaultProps = {
-  currency: '€',
-  className: undefined,
-  showDecimals: false,
-  separator: '.',
-  appendix: '',
-  PriceAppendComponent: PriceAppendDefaultComponent
-};
-HtmlPrice.propTypes = {
-  price: PropTypes$1.string.isRequired,
-  showDecimals: PropTypes$1.bool,
-  currency: PropTypes$1.string,
-  className: PropTypes$1.string,
-  separator: PropTypes$1.string,
-  appendix: PropTypes$1.string,
-  PriceAppendComponent: PropTypes$1.func
-};
-
 var ServiceCardFooter = function ServiceCardFooter(_ref) {
   var price = _ref.price,
       actionFooter = _ref.actionFooter,
@@ -4290,10 +4224,9 @@ var ServiceCardFooter = function ServiceCardFooter(_ref) {
       showButton = _ref.showButton;
   return React__default.createElement("div", {
     className: s$P.footerContainer
-  }, React__default.createElement(HtmlPrice, {
-    price: price,
+  }, React__default.createElement("span", {
     className: s$P.price
-  }), !isSubscribed && React__default.createElement(LinkUnderlined, {
+  }, price), !isSubscribed && React__default.createElement(LinkUnderlined, {
     onClick: actionFooter,
     testid: testid
   }, buttonLabelFooter), isSubscribed && showButton && React__default.createElement("button", {
@@ -5054,6 +4987,72 @@ RegistrationForm.propTypes = {
   labelFooterPassword: PropTypes$1.string,
   onKeyDownEmail: PropTypes$1.func,
   countries: PropTypes$1.shape(CountryPropType)
+};
+
+var formatPrice = function formatPrice(price) {
+  var showDecimals = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+  var countDecimals;
+
+  if (!showDecimals) {
+    countDecimals = !Number.isInteger(Number(price)) ? 2 : 0;
+  } else {
+    countDecimals = showDecimals ? 2 : 0;
+  }
+
+  var displayPrice = price || 0;
+  return parseFloat(displayPrice).toFixed(countDecimals);
+};
+
+var HtmlPrice = function HtmlPrice(_ref) {
+  var price = _ref.price,
+      currency = _ref.currency,
+      showDecimals = _ref.showDecimals,
+      className = _ref.className,
+      separator = _ref.separator,
+      PriceAppendComponent = _ref.PriceAppendComponent,
+      appendix = _ref.appendix;
+  var splitPrice = "".concat(formatPrice(price, showDecimals)).split('.');
+  return splitPrice[1] ? React__default.createElement("span", {
+    className: className
+  }, "".concat(splitPrice[0]).concat(separator), React__default.createElement(PriceAppendComponent, {
+    value: splitPrice[1],
+    currency: currency,
+    appendix: appendix
+  })) : React__default.createElement("span", {
+    className: className
+  }, "".concat(splitPrice[0]), React__default.createElement(PriceAppendComponent, {
+    value: "",
+    currency: currency,
+    appendix: appendix
+  }));
+};
+
+var PriceAppendDefaultComponent = function PriceAppendDefaultComponent(_ref2) {
+  var value = _ref2.value,
+      currency = _ref2.currency;
+  return React__default.createElement("small", null, "".concat(value).concat(currency));
+};
+
+PriceAppendDefaultComponent.propTypes = {
+  value: PropTypes$1.string.isRequired,
+  currency: PropTypes$1.string.isRequired
+};
+HtmlPrice.defaultProps = {
+  currency: '€',
+  className: undefined,
+  showDecimals: false,
+  separator: '.',
+  appendix: '',
+  PriceAppendComponent: PriceAppendDefaultComponent
+};
+HtmlPrice.propTypes = {
+  price: PropTypes$1.string.isRequired,
+  showDecimals: PropTypes$1.bool,
+  currency: PropTypes$1.string,
+  className: PropTypes$1.string,
+  separator: PropTypes$1.string,
+  appendix: PropTypes$1.string,
+  PriceAppendComponent: PropTypes$1.func
 };
 
 var css$Z = ".Picker-module_container__3AVzP {\n  position: relative;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #163457;\n  border: none;\n  border-radius: 5px;\n  display: block;\n  height: 50px;\n  padding: 0;\n  z-index: 1\n}\n\n.Picker-module_container__3AVzP.Picker-module_active__2IBbO {\n  z-index: 4;\n}\n\n.Picker-module_shadowWrapper__1yU5l {\n  background-color: #fefefe;\n  border-radius: 5px;\n  -webkit-box-shadow: 0 4px 8px 2px rgba(0, 0, 0, .25);\n          box-shadow: 0 4px 8px 2px rgba(0, 0, 0, .25);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative;\n  z-index: 2;\n}\n\n.Picker-module_pickerInputContainer__2EiaS {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: 0 35px 0 15px;\n  width: 100%;\n  z-index: 2;\n}\n\n.Picker-module_pickerInput__1P5_a {\n  border-radius: 5px;\n  height: 50px;\n  padding: 0;\n  border: none;\n  margin-top: 0;\n  font-size: 15px;\n}\n\n.Picker-module_inputError__37bTz {\n  color: #c73637;\n}\n\n.Picker-module_splitPickerInputContainer__2QVF3 {\n  border-left: 1px solid rgba(191, 196, 212, .52);\n}\n\n.Picker-module_suggestionsContainer__20x1U {\n  min-height: 150px;\n  background-color: black;\n  position: absolute;\n  width: 150%;\n  top: 56px;\n  top: 56px;\n  top: 3.5rem;\n  left: -25%;\n  border-radius: 8px;\n  border-width: 1px;\n}\n\n.Picker-module_error__3Mp0C, .Picker-module_info__IVLnU {\n  display: inline-table;\n  background-color: #c73637;\n  border-top-left-radius: 8px;\n  border-top-right-radius: 8px;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #fefefe;\n  height: 45px;\n  left: 0;\n  opacity: 0;\n  padding: 10px;\n  position: absolute;\n  top: 5px;\n  -webkit-transform: none;\n          transform: none;\n  -webkit-transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;\n  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  width: 100%;\n  font-size: 14px;\n  font-weight: 700;\n  word-break: break-word;\n  -webkit-hyphens: auto;\n      -ms-hyphens: auto;\n          hyphens: auto;\n}\n\n.Picker-module_info__IVLnU {\n  background-color: #32a0c5;\n  color: #fefefe;\n}\n\n.Picker-module_errorVisible__3Fa-X, .Picker-module_infoVisible__2IbCs {\n  opacity: 1;\n  -webkit-transform: translateY(-100%);\n          transform: translateY(-100%);\n}\n";
@@ -11036,9 +11035,7 @@ var menuCSS = function menuCSS(_ref2) {
       borderRadius = _ref2$theme.borderRadius,
       spacing = _ref2$theme.spacing,
       colors = _ref2$theme.colors;
-  return _ref3 = {
-    label: 'menu'
-  }, _defineProperty$1(_ref3, alignToControl(placement), '100%'), _defineProperty$1(_ref3, "backgroundColor", colors.neutral0), _defineProperty$1(_ref3, "borderRadius", borderRadius), _defineProperty$1(_ref3, "boxShadow", '0 0 0 1px hsla(0, 0%, 0%, 0.1), 0 4px 11px hsla(0, 0%, 0%, 0.1)'), _defineProperty$1(_ref3, "marginBottom", spacing.menuGutter), _defineProperty$1(_ref3, "marginTop", spacing.menuGutter), _defineProperty$1(_ref3, "position", 'absolute'), _defineProperty$1(_ref3, "width", '100%'), _defineProperty$1(_ref3, "zIndex", 1), _ref3;
+  return _ref3 = {}, _defineProperty$1(_ref3, alignToControl(placement), '100%'), _defineProperty$1(_ref3, "backgroundColor", colors.neutral0), _defineProperty$1(_ref3, "borderRadius", borderRadius), _defineProperty$1(_ref3, "boxShadow", '0 0 0 1px hsla(0, 0%, 0%, 0.1), 0 4px 11px hsla(0, 0%, 0%, 0.1)'), _defineProperty$1(_ref3, "marginBottom", spacing.menuGutter), _defineProperty$1(_ref3, "marginTop", spacing.menuGutter), _defineProperty$1(_ref3, "position", 'absolute'), _defineProperty$1(_ref3, "width", '100%'), _defineProperty$1(_ref3, "zIndex", 1), _ref3;
 }; // NOTE: internal only
 
 var MenuPlacer =
@@ -11725,7 +11722,6 @@ var A11yText = function A11yText(props) {
 
     /*#__PURE__*/
     css$15({
-      label: 'a11yText',
       zIndex: 9999,
       border: 0,
       clip: 'rect(1px, 1px, 1px, 1px)',
@@ -11774,7 +11770,6 @@ function (_Component) {
 
         /*#__PURE__*/
         css$15({
-          label: 'dummyInput',
           // get rid of any default styles
           background: 0,
           border: 0,
@@ -12340,7 +12335,6 @@ var containerCSS = function containerCSS(_ref) {
   var isDisabled = _ref.isDisabled,
       isRtl = _ref.isRtl;
   return {
-    label: 'container',
     direction: isRtl ? 'rtl' : null,
     pointerEvents: isDisabled ? 'none' : null,
     // cancel mouse events when disabled
@@ -12490,7 +12484,6 @@ var baseCSS = function baseCSS(_ref2) {
       baseUnit = _ref2$theme.spacing.baseUnit,
       colors = _ref2$theme.colors;
   return {
-    label: 'indicatorContainer',
     color: isFocused ? colors.neutral60 : colors.neutral20,
     display: 'flex',
     padding: baseUnit * 2,
@@ -12542,7 +12535,6 @@ var indicatorSeparatorCSS = function indicatorSeparatorCSS(_ref3) {
       baseUnit = _ref3$theme.spacing.baseUnit,
       colors = _ref3$theme.colors;
   return {
-    label: 'indicatorSeparator',
     alignSelf: 'stretch',
     backgroundColor: isDisabled ? colors.neutral10 : colors.neutral20,
     marginBottom: baseUnit * 2,
@@ -12575,7 +12567,6 @@ var loadingIndicatorCSS = function loadingIndicatorCSS(_ref4) {
       colors = _ref4$theme.colors,
       baseUnit = _ref4$theme.spacing.baseUnit;
   return {
-    label: 'loadingIndicator',
     color: isFocused ? colors.neutral60 : colors.neutral20,
     display: 'flex',
     padding: baseUnit * 2,
@@ -12664,7 +12655,6 @@ var css$1$1 = function css$$1(_ref) {
       borderRadius = _ref$theme.borderRadius,
       spacing = _ref$theme.spacing;
   return {
-    label: 'control',
     alignItems: 'center',
     backgroundColor: isDisabled ? colors.neutral5 : colors.neutral0,
     borderColor: isDisabled ? colors.neutral10 : isFocused ? colors.primary : colors.neutral20,
@@ -12744,7 +12734,6 @@ var Group = function Group(props) {
 var groupHeadingCSS = function groupHeadingCSS(_ref2) {
   var spacing = _ref2.theme.spacing;
   return {
-    label: 'group',
     color: '#999',
     cursor: 'default',
     display: 'block',
@@ -12791,7 +12780,6 @@ var inputCSS = function inputCSS(_ref) {
 
 var inputStyle = function inputStyle(isHidden) {
   return {
-    label: 'input',
     background: 0,
     border: 0,
     fontSize: 'inherit',
@@ -12837,7 +12825,6 @@ var multiValueCSS = function multiValueCSS(_ref) {
       borderRadius = _ref$theme.borderRadius,
       colors = _ref$theme.colors;
   return {
-    label: 'multiValue',
     backgroundColor: colors.neutral10,
     borderRadius: borderRadius / 2,
     display: 'flex',
@@ -12999,7 +12986,6 @@ var optionCSS = function optionCSS(_ref) {
       spacing = _ref$theme.spacing,
       colors = _ref$theme.colors;
   return {
-    label: 'option',
     backgroundColor: isSelected ? colors.primary : isFocused ? colors.primary25 : 'transparent',
     color: isDisabled ? colors.neutral20 : isSelected ? colors.neutral0 : 'inherit',
     cursor: 'default',
@@ -13011,7 +12997,7 @@ var optionCSS = function optionCSS(_ref) {
     WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
     // provide some affordance on touch devices
     ':active': {
-      backgroundColor: !isDisabled && (isSelected ? colors.primary : colors.primary50)
+      backgroundColor: isSelected ? colors.primary : colors.primary50
     }
   };
 };
@@ -13044,7 +13030,6 @@ var placeholderCSS = function placeholderCSS(_ref) {
       spacing = _ref$theme.spacing,
       colors = _ref$theme.colors;
   return {
-    label: 'placeholder',
     color: colors.neutral50,
     marginLeft: spacing.baseUnit / 2,
     marginRight: spacing.baseUnit / 2,
@@ -13075,7 +13060,6 @@ var css$2$1 = function css$$1(_ref) {
       spacing = _ref$theme.spacing,
       colors = _ref$theme.colors;
   return {
-    label: 'singleValue',
     color: isDisabled ? colors.neutral40 : colors.neutral80,
     marginLeft: spacing.baseUnit / 2,
     marginRight: spacing.baseUnit / 2,
@@ -13275,6 +13259,7 @@ function (_Component) {
       focusedValue: null,
       inputIsHidden: false,
       isFocused: false,
+      isComposing: false,
       menuOptions: {
         render: [],
         focusable: []
@@ -13283,8 +13268,6 @@ function (_Component) {
     });
 
     _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "blockOptionHover", false);
-
-    _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "isComposing", false);
 
     _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "clearFocusValueOnUpdate", false);
 
@@ -13636,11 +13619,15 @@ function (_Component) {
     });
 
     _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "onCompositionStart", function () {
-      _this.isComposing = true;
+      _this.setState({
+        isComposing: true
+      });
     });
 
     _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "onCompositionEnd", function () {
-      _this.isComposing = false;
+      _this.setState({
+        isComposing: false
+      });
     });
 
     _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "onTouchStart", function (_ref4) {
@@ -13797,6 +13784,7 @@ function (_Component) {
           tabSelectsValue = _this$props7.tabSelectsValue,
           openMenuOnFocus = _this$props7.openMenuOnFocus;
       var _this$state2 = _this.state,
+          isComposing = _this$state2.isComposing,
           focusedOption = _this$state2.focusedOption,
           focusedValue = _this$state2.focusedValue,
           selectValue = _this$state2.selectValue;
@@ -13847,7 +13835,7 @@ function (_Component) {
           break;
 
         case 'Tab':
-          if (_this.isComposing) return;
+          if (isComposing) return;
 
           if (event.shiftKey || !menuIsOpen || !tabSelectsValue || !focusedOption || // don't capture the event if the menu opens on focus and the focused
           // option is already selected; it breaks the flow of navigation
@@ -13860,15 +13848,9 @@ function (_Component) {
           break;
 
         case 'Enter':
-          if (event.keyCode === 229) {
-            // ignore the keydown event from an Input Method Editor(IME)
-            // ref. https://www.w3.org/TR/uievents/#determine-keydown-keyup-keyCode
-            break;
-          }
-
           if (menuIsOpen) {
             if (!focusedOption) return;
-            if (_this.isComposing) return;
+            if (isComposing) return;
 
             _this.selectOption(focusedOption);
 
@@ -14667,14 +14649,14 @@ function (_Component) {
 
       if (isMulti) {
         var selectValues = selectValue.map(function (opt) {
-          var isOptionFocused = opt === focusedValue;
+          var isFocused = opt === focusedValue;
           return React__default.createElement(MultiValue, _extends$1({}, commonProps, {
             components: {
               Container: MultiValueContainer,
               Label: MultiValueLabel,
               Remove: MultiValueRemove
             },
-            isFocused: isOptionFocused,
+            isFocused: isFocused,
             isDisabled: isDisabled,
             key: _this4.getOptionValue(opt),
             removeProps: {

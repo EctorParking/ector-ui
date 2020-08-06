@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import s from './ServiceCardFooter.module.css';
 import LinkUnderline from '../LinkUnderlined';
-import HtmlPrice from '../HtmlPrice';
 
 const ServiceCardFooter = ({
   price,
@@ -15,7 +14,7 @@ const ServiceCardFooter = ({
 }) => (
 
   <div className={s.footerContainer}>
-    <HtmlPrice price={price} className={s.price} />
+    <span className={s.price}>{price}</span>
     {!isSubscribed && (
       <LinkUnderline
         onClick={actionFooter}
