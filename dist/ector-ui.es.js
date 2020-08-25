@@ -1,6 +1,6 @@
 import 'react-dates/initialize';
 import moment from 'moment';
-import React__default, { Fragment, Component, PureComponent, createElement, createRef } from 'react';
+import React__default, { Fragment, Component, PureComponent, createElement, createRef, useState, useEffect } from 'react';
 import PropTypes$1 from 'prop-types';
 import { DayPickerRangeController } from 'react-dates';
 import Levenshtein from 'fast-levenshtein';
@@ -2185,7 +2185,7 @@ ContactCard.defaultProps = {
   }
 };
 
-var css$r = ".ContactForm-module_title__3ved4 {\n  color: #32a0c5;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 22px;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  margin-top: -0.75em;\n  margin-bottom: 20px;\n}\n\n.ContactForm-module_hidden__qeLf1 {\n  display: none;\n}\n\n.ContactForm-module_columns__2X9Q2 {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.ContactForm-module_columns__2X9Q2 > div {\n  -webkit-box-flex: 1;\n      -ms-flex: 1 1 auto;\n          flex: 1 1 auto;\n}\n\n.ContactForm-module_firstSection__2-PaO {\n  margin-right: 30px;\n}\n\n.ContactForm-module_secondSection__3Tyz5 {\n  margin-left: 30px;\n}\n\n.ContactForm-module_footer__1tHfE {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n\n.ContactForm-module_leftGenderPickerField__35PAF {\n  height: 44px;\n}\n\n.ContactForm-module_topGenderPickerField__4HrA9 {\n  height: 66px;\n}\n\n.ContactForm-module_genderPickerInputs__JKZh- {\n  height: 100%;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.ContactForm-module_contactFormInput__2qQIC {\n  margin-top: 10px;\n}\n\n.ContactForm-module_postalCodeInput__2kGf4 {\n  max-width: 42%;\n}\n\n.ContactForm-module_phoneInput__AIWcI {\n  width: 100%;\n}\n";
+var css$r = ".ContactForm-module_title__3ved4 {\n  color: #32a0c5;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 22px;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  margin-top: -0.75em;\n  margin-bottom: 20px;\n}\n\n.ContactForm-module_hidden__qeLf1 {\n  display: none;\n}\n\n.ContactForm-module_columns__2X9Q2 {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.ContactForm-module_columns__2X9Q2 > div {\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n}\n\n.ContactForm-module_firstSection__2-PaO {\n  margin-right: 30px;\n}\n\n.ContactForm-module_secondSection__3Tyz5 {\n  margin-left: 30px;\n}\n\n.ContactForm-module_footer__1tHfE {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n\n.ContactForm-module_leftGenderPickerField__35PAF {\n  height: 44px;\n}\n\n.ContactForm-module_topGenderPickerField__4HrA9 {\n  height: 66px;\n}\n\n.ContactForm-module_genderPickerInputs__JKZh- {\n  height: 100%;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.ContactForm-module_contactFormInput__2qQIC {\n  margin-top: 10px;\n}\n\n.ContactForm-module_postalCodeInput__2kGf4 {\n  max-width: 42%;\n}\n\n.ContactForm-module_phoneInput__AIWcI {\n  width: 100%;\n}\n";
 var s$r = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","title":"ContactForm-module_title__3ved4","hidden":"ContactForm-module_hidden__qeLf1","-webkit-columns":"ContactForm-module_columns__2X9Q2","columns":"ContactForm-module_columns__2X9Q2","firstSection":"ContactForm-module_firstSection__2-PaO","secondSection":"ContactForm-module_secondSection__3Tyz5","footer":"ContactForm-module_footer__1tHfE","leftGenderPickerField":"ContactForm-module_leftGenderPickerField__35PAF","topGenderPickerField":"ContactForm-module_topGenderPickerField__4HrA9","genderPickerInputs":"ContactForm-module_genderPickerInputs__JKZh-","contactFormInput":"ContactForm-module_contactFormInput__2qQIC","postalCodeInput":"ContactForm-module_postalCodeInput__2kGf4","phoneInput":"ContactForm-module_phoneInput__AIWcI"};
 styleInject(css$r);
 
@@ -2204,7 +2204,9 @@ var TextsType$3 = PropTypes$1.shape({
   emailPlaceholder: PropTypes$1.string,
   postCodePlaceholder: PropTypes$1.string,
   male: PropTypes$1.string,
-  female: PropTypes$1.string
+  female: PropTypes$1.string,
+  communicationLocale: PropTypes$1.string,
+  communicationLocalePlaceholder: PropTypes$1.string
 });
 var DefaultTexts$3 = {
   newDriver: 'Ajouter un nouveau conducteur',
@@ -2220,8 +2222,10 @@ var DefaultTexts$3 = {
   notMandatory: 'facultatif',
   emailPlaceholder: 'alain.prost@gmail.com',
   postCodePlaceholder: '44 100',
-  male: 'Mr',
-  female: 'Mme'
+  male: 'M',
+  female: 'Mme',
+  communicationLocale: 'Langue de préférence de contact',
+  communicationLocalePlaceholder: 'Choix de la langue'
 };
 
 var _ref =
@@ -2306,28 +2310,40 @@ var ContactForm =
 function (_React$Component) {
   _inherits(ContactForm, _React$Component);
 
-  function ContactForm(props) {
+  function ContactForm(_props) {
     var _this;
 
     _classCallCheck(this, ContactForm);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(ContactForm).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ContactForm).call(this, _props));
 
-    _defineProperty(_assertThisInitialized(_this), "renderGenderPicker", function () {
-      var title = _this.props.values.title;
-      return React__default.createElement(GenderPicker, {
-        genders: _this.genders,
-        onSelect: _this.handleChangeGender,
-        selected: title || '',
-        className: s$r.genderPickerInputs
-      });
+    _defineProperty(_assertThisInitialized(_this), "renderCommunicationLocaleInput", function (props) {
+      var _this$props = _this.props,
+          onChangeProperty = _this$props.onChangeProperty,
+          values = _this$props.values,
+          languages = _this$props.languages,
+          _this$props$texts = _this$props.texts,
+          communicationLocale = _this$props$texts.communicationLocale,
+          communicationLocalePlaceholder = _this$props$texts.communicationLocalePlaceholder;
+      return React__default.createElement(LanguageSelector, _extends({
+        id: "communication-locale",
+        languages: languages,
+        value: values.communicationLocale || '',
+        label: communicationLocale,
+        onChange: function onChange(value) {
+          return onChangeProperty('communicationLocale', value);
+        },
+        placeholder: communicationLocalePlaceholder,
+        className: s$r.contactFormInput,
+        mandatory: true
+      }, props));
     });
 
     _defineProperty(_assertThisInitialized(_this), "renderFooter", function (footerProps) {
-      var _this$props = _this.props,
-          FooterComponent = _this$props.FooterComponent,
-          texts = _this$props.texts,
-          onSubmit = _this$props.onSubmit;
+      var _this$props2 = _this.props,
+          FooterComponent = _this$props2.FooterComponent,
+          texts = _this$props2.texts,
+          onSubmit = _this$props2.onSubmit;
 
       if (FooterComponent === null) {
         return null;
@@ -2344,7 +2360,6 @@ function (_React$Component) {
       }, texts.addDriver));
     });
 
-    _this.handleChangeGender = props.onChangeProperty.bind(_assertThisInitialized(_this), 'title');
     _this.handleChangeFirstName = _this.handleChangeProperty.bind(_assertThisInitialized(_this), 'firstName');
     _this.handleChangeLastName = _this.handleChangeProperty.bind(_assertThisInitialized(_this), 'lastName');
     _this.handleChangeEmail = _this.handleChangeProperty.bind(_assertThisInitialized(_this), 'email');
@@ -2354,13 +2369,6 @@ function (_React$Component) {
     _this.renderLastNameInput = _this.renderInputComponent.bind(_assertThisInitialized(_this), 'lastName');
     _this.renderEmailInput = _this.renderInputComponent.bind(_assertThisInitialized(_this), 'email');
     _this.renderPostalCodeInput = _this.renderInputComponent.bind(_assertThisInitialized(_this), 'postalCode');
-    _this.genders = [{
-      value: 'male',
-      label: props.texts.male
-    }, {
-      value: 'female',
-      label: props.texts.female
-    }];
     return _this;
   }
 
@@ -2379,26 +2387,31 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this$props2 = this.props,
-          texts = _this$props2.texts,
-          values = _this$props2.values,
-          selected = _this$props2.selected,
-          onInputBlur = _this$props2.onInputBlur,
-          onInputFocus = _this$props2.onInputFocus,
-          errors = _this$props2.errors,
-          labelPosition = _this$props2.labelPosition,
-          countries = _this$props2.countries,
-          contentClassName = _this$props2.contentClassName,
-          firstSectionClassName = _this$props2.firstSectionClassName,
-          secondSectionClassName = _this$props2.secondSectionClassName,
-          withCountryFlag = _this$props2.withCountryFlag,
-          RootComponent = _this$props2.RootComponent,
-          cardProps = _objectWithoutProperties(_this$props2, ["texts", "values", "selected", "onInputBlur", "onInputFocus", "errors", "labelPosition", "countries", "contentClassName", "firstSectionClassName", "secondSectionClassName", "withCountryFlag", "RootComponent"]);
+      var _this$props3 = this.props,
+          texts = _this$props3.texts,
+          values = _this$props3.values,
+          selected = _this$props3.selected,
+          onInputBlur = _this$props3.onInputBlur,
+          onInputFocus = _this$props3.onInputFocus,
+          errors = _this$props3.errors,
+          labelPosition = _this$props3.labelPosition,
+          countries = _this$props3.countries,
+          contentClassName = _this$props3.contentClassName,
+          firstSectionClassName = _this$props3.firstSectionClassName,
+          secondSectionClassName = _this$props3.secondSectionClassName,
+          withCountryFlag = _this$props3.withCountryFlag,
+          RootComponent = _this$props3.RootComponent,
+          showCommunicationLocaleInput = _this$props3.showCommunicationLocaleInput,
+          languages = _this$props3.languages,
+          tooltip = _this$props3.tooltip,
+          tooltipIcon = _this$props3.tooltipIcon,
+          cardProps = _objectWithoutProperties(_this$props3, ["texts", "values", "selected", "onInputBlur", "onInputFocus", "errors", "labelPosition", "countries", "contentClassName", "firstSectionClassName", "secondSectionClassName", "withCountryFlag", "RootComponent", "showCommunicationLocaleInput", "languages", "tooltip", "tooltipIcon"]);
 
       var newDriver = texts.newDriver,
-          civility = texts.civility,
           firstName = texts.firstName,
           firstNamePlaceholder = texts.firstNamePlaceholder,
+          communicationLocale = texts.communicationLocale,
+          communicationLocalePlaceholder = texts.communicationLocalePlaceholder,
           lastName = texts.lastName,
           lastNamePlaceholder = texts.lastNamePlaceholder,
           email = texts.email,
@@ -2416,11 +2429,6 @@ function (_React$Component) {
       }, React__default.createElement("div", {
         className: [s$r.firstSection, firstSectionClassName].join(' ')
       }, React__default.createElement(InputLabel, {
-        label: civility,
-        left: labelPosition === 'left',
-        InputComponent: this.renderGenderPicker,
-        className: [labelPosition === 'left' ? s$r.leftGenderPickerField : s$r.topGenderPickerField, s$r.contactFormInput].join(' ')
-      }), React__default.createElement(InputLabel, {
         left: labelPosition === 'left',
         type: "text",
         name: "firstName",
@@ -2437,23 +2445,6 @@ function (_React$Component) {
         InputComponent: this.renderFirstNameInput
       }), React__default.createElement(InputLabel, {
         left: labelPosition === 'left',
-        label: lastName,
-        mandatory: true,
-        name: "lastName",
-        type: "text",
-        id: "last-name",
-        placeholder: lastNamePlaceholder,
-        onFocus: onInputFocus,
-        onBlur: onInputBlur,
-        onChange: this.handleChangeLastName,
-        value: values.lastName || '',
-        error: errors.lastName,
-        className: s$r.contactFormInput,
-        InputComponent: this.renderLastNameInput
-      })), React__default.createElement("div", {
-        className: [s$r.secondSection, secondSectionClassName].join(' ')
-      }, React__default.createElement(InputLabel, {
-        left: labelPosition === 'left',
         label: email,
         mandatory: true,
         name: "email",
@@ -2467,6 +2458,55 @@ function (_React$Component) {
         error: errors.email,
         className: s$r.contactFormInput,
         InputComponent: this.renderEmailInput
+      }), showCommunicationLocaleInput && languages.length > 0 && React__default.createElement(InputLabel, _extends({
+        left: labelPosition === 'left',
+        label: communicationLocale,
+        mandatory: true,
+        name: "communicationLocale",
+        type: "text",
+        id: "communication-locale",
+        placeholder: communicationLocalePlaceholder,
+        onFocus: onInputFocus,
+        onBlur: onInputBlur,
+        value: values.communicationLocale || '',
+        error: errors.communicationLocale,
+        className: s$r.contactFormInput,
+        InputComponent: this.renderCommunicationLocaleInput,
+        tooltip: tooltip
+      }, tooltipIcon ? {
+        tooltipIcon: tooltipIcon
+      } : {})), (!showCommunicationLocaleInput || languages.length === 0) && React__default.createElement(InputLabel, {
+        left: labelPosition === 'left',
+        label: postCode,
+        type: "text",
+        id: "postal-code",
+        name: "postalCode",
+        placeholder: postCodePlaceholder,
+        onFocus: onInputFocus,
+        onBlur: onInputBlur,
+        onChange: this.handleChangePostalCode,
+        value: values.postalCode || '',
+        error: errors.postalCode,
+        className: s$r.contactFormInput,
+        inputClassName: s$r.postalCodeInput,
+        InputComponent: this.renderPostalCodeInput
+      })), React__default.createElement("div", {
+        className: [s$r.secondSection, secondSectionClassName].join(' ')
+      }, React__default.createElement(InputLabel, {
+        left: labelPosition === 'left',
+        label: lastName,
+        mandatory: true,
+        name: "lastName",
+        type: "text",
+        id: "last-name",
+        placeholder: lastNamePlaceholder,
+        onFocus: onInputFocus,
+        onBlur: onInputBlur,
+        onChange: this.handleChangeLastName,
+        value: values.lastName || '',
+        error: errors.lastName,
+        className: s$r.contactFormInput,
+        InputComponent: this.renderLastNameInput
       }), React__default.createElement(PhoneInput, {
         label: phone,
         mandatory: true,
@@ -2482,7 +2522,7 @@ function (_React$Component) {
         id: "phone-number",
         name: "phoneNumber",
         withFlag: withCountryFlag
-      }), React__default.createElement(InputLabel, {
+      }), showCommunicationLocaleInput && languages.length > 0 && React__default.createElement(InputLabel, {
         left: labelPosition === 'left',
         label: postCode,
         type: "text",
@@ -2508,7 +2548,6 @@ ContactForm.defaultProps = {
   texts: DefaultTexts$3,
   onChangeProperty: function onChangeProperty() {},
   values: {
-    gender: null,
     firstName: null,
     lastName: null,
     email: null,
@@ -2516,7 +2555,6 @@ ContactForm.defaultProps = {
     postalCode: null
   },
   errors: {
-    gender: null,
     firstName: null,
     lastName: null,
     email: null,
@@ -2533,38 +2571,42 @@ ContactForm.defaultProps = {
   firstSectionClassName: '',
   secondSectionClassName: '',
   withCountryFlag: true,
+  tooltip: null,
+  tooltipIcon: null,
   renderInput: function renderInput() {
     return null;
   },
   FooterComponent: function FooterComponent() {
     return null;
   },
+  showCommunicationLocaleInput: false,
   // eslint-disable-next-line react/prop-types
   RootComponent: function RootComponent(_ref) {
     var children = _ref.children,
         cardProps = _objectWithoutProperties(_ref, ["children"]);
 
     return React__default.createElement(Card, cardProps, children);
-  }
+  },
+  languages: []
 };
 ContactForm.propTypes = {
   texts: TextsType$3,
   onChangeProperty: PropTypes$1.func,
   values: PropTypes$1.shape({
-    title: PropTypes$1.oneOf(['male', 'female', null, '']),
     firstName: PropTypes$1.string,
     lastName: PropTypes$1.string,
     email: PropTypes$1.string,
     phoneNumber: PropTypes$1.string,
-    postalCode: PropTypes$1.string
+    postalCode: PropTypes$1.string,
+    communicationLocale: PropTypes$1.string
   }),
   errors: PropTypes$1.shape({
-    title: PropTypes$1.string,
     firstName: PropTypes$1.string,
     lastName: PropTypes$1.string,
     email: PropTypes$1.string,
     phoneNumber: PropTypes$1.string,
-    postalCode: PropTypes$1.string
+    postalCode: PropTypes$1.string,
+    communicationLocale: PropTypes$1.string
   }),
   onInputFocus: PropTypes$1.func,
   onInputBlur: PropTypes$1.func,
@@ -2578,7 +2620,14 @@ ContactForm.propTypes = {
   withCountryFlag: PropTypes$1.bool,
   renderInput: PropTypes$1.func,
   FooterComponent: PropTypes$1.func,
-  RootComponent: PropTypes$1.func
+  RootComponent: PropTypes$1.func,
+  tooltip: PropTypes$1.string,
+  tooltipIcon: PropTypes$1.string,
+  showCommunicationLocaleInput: PropTypes$1.bool,
+  languages: PropTypes$1.arrayOf(PropTypes$1.shape({
+    name: PropTypes$1.string,
+    locale: PropTypes$1.string
+  }))
 };
 
 var GenderType = PropTypes$1.shape({
@@ -2864,9 +2913,52 @@ InputCheckbox.propTypes = {
   checkmarkClassName: PropTypes$1.string
 };
 
-var css$x = ".InputLabel-module_container__204V9 {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n\n.InputLabel-module_leftContainer__VGF5O {\n  display: grid;\n  grid-template-columns: 10em auto;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.InputLabel-module_leftLabel__2ToOM {\n  padding-right: 1em;\n}\n\n.InputLabel-module_input__2fkjR {\n  display: block;\n  width: 100%;\n  margin-top: 0;\n}\n\n.InputLabel-module_error__2vD-d {\n  text-align: left;\n  color: #ff5757;\n}\n\n.InputLabel-module_mandatory__2bVGW {\n  font-weight: 700;\n}\n\n.InputLabel-module_mandatory__2bVGW:after {\n  content: '*';\n}\n\n.InputLabel-module_leftText__1seAt {\n  grid-column-start: 2;\n}\n";
-var s$x = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","container":"InputLabel-module_container__204V9","leftContainer":"InputLabel-module_leftContainer__VGF5O","leftLabel":"InputLabel-module_leftLabel__2ToOM","input":"InputLabel-module_input__2fkjR","error":"InputLabel-module_error__2vD-d","mandatory":"InputLabel-module_mandatory__2bVGW","leftText":"InputLabel-module_leftText__1seAt"};
+var css$x = ".InputLabel-module_container__204V9 {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n\n.InputLabel-module_leftContainer__VGF5O {\n  display: grid;\n  grid-template-columns: 10em auto;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.InputLabel-module_label__1XJ6K {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.InputLabel-module_leftLabel__2ToOM {\n  padding-right: 1em;\n}\n\n.InputLabel-module_input__2fkjR {\n  display: block;\n  width: 100%;\n  margin-top: 0;\n}\n\n.InputLabel-module_error__2vD-d {\n  text-align: left;\n  color: #ff5757;\n}\n\n.InputLabel-module_mandatory__2bVGW {\n  font-weight: 700;\n}\n\n.InputLabel-module_mandatory__2bVGW:after {\n  content: '*';\n}\n\n.InputLabel-module_leftText__1seAt {\n  grid-column-start: 2;\n}\n\n.InputLabel-module_tooltip__3vvY4 {\n  margin-left: 5px;\n}\n";
+var s$x = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","container":"InputLabel-module_container__204V9","leftContainer":"InputLabel-module_leftContainer__VGF5O","label":"InputLabel-module_label__1XJ6K","leftLabel":"InputLabel-module_leftLabel__2ToOM","input":"InputLabel-module_input__2fkjR","error":"InputLabel-module_error__2vD-d","mandatory":"InputLabel-module_mandatory__2bVGW","leftText":"InputLabel-module_leftText__1seAt","tooltip":"InputLabel-module_tooltip__3vvY4"};
 styleInject(css$x);
+
+var css$y = ".Tooltip-module_tooltipContainer__15s8H {\n    font-size: 2em;\n    text-align: center;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    position: relative\n}\n\n.Tooltip-module_tooltipContainer__15s8H:hover>.Tooltip-module_tooltipText__1buoM {\n    visibility: visible;\n}\n\n.Tooltip-module_tooltipContainer__15s8H > i {\n    font-size: 18px;\n}\n\n.Tooltip-module_tooltipContainer__15s8H > i:before {\n    color: #163457 !important;\n}\n\n.Tooltip-module_tooltipText__1buoM {\n    display: block;\n    position: absolute;\n    z-index: 10;\n    padding: 10px;\n    border-radius: 8px;\n    text-align: left;\n    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .25);\n            box-shadow: 0 0 10px rgba(0, 0, 0, .25);\n    background-color: #fefefe;\n    color: #163457;\n    font-size: 16px;\n}\n\n.Tooltip-module_hiddenTooltip__173uY {\n    visibility: hidden;\n}\n\n.Tooltip-module_visibleTooltip__3zTRG {\n    visibility: visible;\n}\n\n.Tooltip-module_tooltipText__1buoM:after {\n    border: solid transparent;\n    content: \" \";\n    height: 0;\n    width: 0;\n    position: absolute;\n    pointer-events: none;\n    border-color: transparent;\n    border-width: 8px;\n}\n\n.Tooltip-module_right__1nw9g {\n    -webkit-transform: translateY(-50%);\n            transform: translateY(-50%);\n    left: 30px;\n    top: 12px;\n}\n\n.Tooltip-module_tooltipText__1buoM.Tooltip-module_right__1nw9g:after {\n    right: 100%;\n    top: 50%;\n    margin-top: -8px;\n    border-right-color: #fefefe;\n}\n\n.Tooltip-module_left__3nypM {\n    -webkit-transform: translateY(-50%) translateX(-100%);\n            transform: translateY(-50%) translateX(-100%);\n    top: 12px;\n    left: -15px;\n}\n\n.Tooltip-module_tooltipText__1buoM.Tooltip-module_left__3nypM:after {\n    left: 100%;\n    top: 50%;\n    margin-top: -8px;\n    border-left-color: #fefefe;\n}\n\n.Tooltip-module_bottom__2SGDR {\n    -webkit-transform: translateX(-50%);\n            transform: translateX(-50%);\n    left: 8px;\n    top: 35px;\n}\n\n.Tooltip-module_tooltipText__1buoM.Tooltip-module_bottom__2SGDR:after {\n    bottom: 100%;\n    left: 50%;\n    margin-left: -8px;\n    border-bottom-color: #fefefe;\n}\n\n.Tooltip-module_top__239MH {\n    -webkit-transform: translateX(-50%) translateY(-100%);\n            transform: translateX(-50%) translateY(-100%);\n    left: 8px;\n    top: -8px;\n}\n\n.Tooltip-module_tooltipText__1buoM.Tooltip-module_top__239MH:after {\n    top: 100%;\n    left: 50%;\n    margin-left: -8px;\n    border-top-color: #fefefe;\n}\n\n.Tooltip-module_xSmall__p7rPd {\n    width: 100px;\n}\n\n.Tooltip-module_small__1IS1m {\n    width: 200px;\n}\n\n.Tooltip-module_medium__hRcmQ {\n    width: 400px;\n}\n\n.Tooltip-module_large__paGda {\n    width: 600px;\n\n}\n";
+var s$y = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","tooltipContainer":"Tooltip-module_tooltipContainer__15s8H","tooltipText":"Tooltip-module_tooltipText__1buoM","hiddenTooltip":"Tooltip-module_hiddenTooltip__173uY","visibleTooltip":"Tooltip-module_visibleTooltip__3zTRG","right":"Tooltip-module_right__1nw9g","left":"Tooltip-module_left__3nypM","bottom":"Tooltip-module_bottom__2SGDR","top":"Tooltip-module_top__239MH","xSmall":"Tooltip-module_xSmall__p7rPd","small":"Tooltip-module_small__1IS1m","medium":"Tooltip-module_medium__hRcmQ","large":"Tooltip-module_large__paGda"};
+styleInject(css$y);
+
+var Tooltip = function Tooltip(_ref) {
+  var iconClassName = _ref.iconClassName,
+      text = _ref.text,
+      className = _ref.className,
+      tooltipClassName = _ref.tooltipClassName,
+      position = _ref.position,
+      tooltipSize = _ref.tooltipSize,
+      IconComponent = _ref.IconComponent,
+      visible = _ref.visible;
+  var computedTooltipClassName = [s$y.tooltipText, s$y[position], s$y[tooltipSize], tooltipClassName, visible ? s$y.visibleTooltip : s$y.hiddenTooltip];
+  return React__default.createElement("div", {
+    className: [s$y.tooltipContainer, className].join(' ')
+  }, IconComponent !== null && typeof IconComponent === 'function' && IconComponent() ? React__default.createElement(IconComponent, null) : React__default.createElement("i", {
+    className: iconClassName
+  }), React__default.createElement("span", {
+    className: computedTooltipClassName.join(' ')
+  }, text));
+};
+
+Tooltip.defaultProps = {
+  className: '',
+  tooltipClassName: '',
+  position: 'bottom',
+  tooltipSize: 'medium',
+  IconComponent: null,
+  iconClassName: '',
+  visible: false
+};
+Tooltip.propTypes = {
+  iconClassName: PropTypes$1.string,
+  text: PropTypes$1.string.isRequired,
+  className: PropTypes$1.string,
+  tooltipClassName: PropTypes$1.string,
+  position: PropTypes$1.oneOf(['left', 'top', 'right', 'bottom']),
+  tooltipSize: PropTypes$1.oneOf(['xSmall', 'small', 'medium', 'large']),
+  IconComponent: PropTypes$1.func,
+  visible: PropTypes$1.bool
+};
 
 var InputLabel = function InputLabel(_ref) {
   var label = _ref.label,
@@ -2885,17 +2977,26 @@ var InputLabel = function InputLabel(_ref) {
       LabelFooterComponent = _ref.LabelFooterComponent,
       errorClassName = _ref.errorClassName,
       onKeyDown = _ref.onKeyDown,
-      inputProps = _objectWithoutProperties(_ref, ["label", "id", "mandatory", "placeholder", "type", "className", "inputClassName", "error", "left", "children", "InputComponent", "LabelComponent", "inputContainerClassName", "LabelFooterComponent", "errorClassName", "onKeyDown"]);
+      tooltip = _ref.tooltip,
+      tooltipIcon = _ref.tooltipIcon,
+      inputProps = _objectWithoutProperties(_ref, ["label", "id", "mandatory", "placeholder", "type", "className", "inputClassName", "error", "left", "children", "InputComponent", "LabelComponent", "inputContainerClassName", "LabelFooterComponent", "errorClassName", "onKeyDown", "tooltip", "tooltipIcon"]);
 
   var labelClassName = mandatory ? s$x.mandatory : '';
   return React__default.createElement("div", {
     className: [left ? s$x.leftContainer : s$x.container, className].join(' ')
   }, LabelComponent !== null && typeof LabelComponent === 'function' && LabelComponent() ? React__default.createElement(LabelComponent, {
     className: [left ? s$x.leftLabel : undefined, labelClassName].join(' ')
-  }) : React__default.createElement("label", {
+  }) : React__default.createElement("div", {
+    className: s$x.label
+  }, React__default.createElement("label", {
     htmlFor: id,
     className: [left ? s$x.leftLabel : undefined, labelClassName].join(' ')
-  }, label), InputComponent !== null && typeof InputComponent === 'function' && InputComponent() ? React__default.createElement(InputComponent, _extends({
+  }, label), tooltip && React__default.createElement(Tooltip, {
+    text: tooltip,
+    position: "top",
+    className: s$x.tooltip,
+    iconClassName: tooltipIcon
+  })), InputComponent !== null && typeof InputComponent === 'function' && InputComponent() ? React__default.createElement(InputComponent, _extends({
     className: [s$x.input, inputClassName].join(' '),
     placeholder: placeholder,
     type: type,
@@ -2929,6 +3030,8 @@ InputLabel.defaultProps = {
   inputContainerClassName: '',
   LabelFooterComponent: null,
   errorClassName: '',
+  tooltip: null,
+  tooltipIcon: 'icon-ec-info',
   onKeyDown: function onKeyDown() {}
 };
 InputLabel.propTypes = {
@@ -2947,12 +3050,14 @@ InputLabel.propTypes = {
   LabelComponent: PropTypes$1.func,
   LabelFooterComponent: PropTypes$1.func,
   errorClassName: PropTypes$1.string,
+  tooltip: PropTypes$1.string,
+  tooltipIcon: PropTypes$1.string,
   onKeyDown: PropTypes$1.func
 };
 
-var css$y = ".Label-module_labelContainer__22ERg {\n    border-radius: 3px;\n    color: #fefefe;\n    font-size: 11px;\n    padding: 0 5px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n\n.Label-module_text__147Rh {\n    padding: 0 5px;\n    font-weight: 500;\n    letter-spacing: 1px;\n}\n\n.Label-module_deepBlueColor__1ehlD {\n    background-color: #163457;\n}\n\n.Label-module_greenColor__2tK-0 {\n    background-color: #59c871;\n}\n\n.Label-module_redColor__3vBA4 {\n    background-color: #ff5757;\n}\n\n.Label-module_melroseColor__hhiPS {\n    background-color: #9ca3ff;\n}\n\n.Label-module_blueColor__1dgmE {\n    background-color: #32a0c5;\n}\n\n.Label-module_lightGreyColor__1GS0a {\n    background-color: #eceff6;\n}\n\n.Label-module_metalGreyColor__2t5Or {\n    background-color: #d5d6d7;\n}\n\n.Label-module_darkMetalGreyColor__-9Z3n {\n    background-color: rgb(206, 206, 206);\n}\n\n.Label-module_aquaHazeGreyColor__t4pra {\n    background-color: #9eb3c2;\n}\n\n.Label-module_orangeColor__1uCN4 {\n    background-color: #f39c12;\n}\n";
-var s$y = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","labelContainer":"Label-module_labelContainer__22ERg","text":"Label-module_text__147Rh","deepBlueColor":"Label-module_deepBlueColor__1ehlD","greenColor":"Label-module_greenColor__2tK-0","redColor":"Label-module_redColor__3vBA4","melroseColor":"Label-module_melroseColor__hhiPS","blueColor":"Label-module_blueColor__1dgmE","lightGreyColor":"Label-module_lightGreyColor__1GS0a","metalGreyColor":"Label-module_metalGreyColor__2t5Or","darkMetalGreyColor":"Label-module_darkMetalGreyColor__-9Z3n","aquaHazeGreyColor":"Label-module_aquaHazeGreyColor__t4pra","orangeColor":"Label-module_orangeColor__1uCN4"};
-styleInject(css$y);
+var css$z = ".Label-module_labelContainer__22ERg {\n    border-radius: 3px;\n    color: #fefefe;\n    font-size: 11px;\n    padding: 0 5px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n\n.Label-module_text__147Rh {\n    padding: 0 5px;\n    font-weight: 500;\n    letter-spacing: 1px;\n}\n\n.Label-module_deepBlueColor__1ehlD {\n    background-color: #163457;\n}\n\n.Label-module_greenColor__2tK-0 {\n    background-color: #59c871;\n}\n\n.Label-module_redColor__3vBA4 {\n    background-color: #ff5757;\n}\n\n.Label-module_melroseColor__hhiPS {\n    background-color: #9ca3ff;\n}\n\n.Label-module_blueColor__1dgmE {\n    background-color: #32a0c5;\n}\n\n.Label-module_lightGreyColor__1GS0a {\n    background-color: #eceff6;\n}\n\n.Label-module_metalGreyColor__2t5Or {\n    background-color: #d5d6d7;\n}\n\n.Label-module_darkMetalGreyColor__-9Z3n {\n    background-color: rgb(206, 206, 206);\n}\n\n.Label-module_aquaHazeGreyColor__t4pra {\n    background-color: #9eb3c2;\n}\n\n.Label-module_orangeColor__1uCN4 {\n    background-color: #f39c12;\n}\n";
+var s$z = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","labelContainer":"Label-module_labelContainer__22ERg","text":"Label-module_text__147Rh","deepBlueColor":"Label-module_deepBlueColor__1ehlD","greenColor":"Label-module_greenColor__2tK-0","redColor":"Label-module_redColor__3vBA4","melroseColor":"Label-module_melroseColor__hhiPS","blueColor":"Label-module_blueColor__1dgmE","lightGreyColor":"Label-module_lightGreyColor__1GS0a","metalGreyColor":"Label-module_metalGreyColor__2t5Or","darkMetalGreyColor":"Label-module_darkMetalGreyColor__-9Z3n","aquaHazeGreyColor":"Label-module_aquaHazeGreyColor__t4pra","orangeColor":"Label-module_orangeColor__1uCN4"};
+styleInject(css$z);
 
 var Label = function Label(_ref) {
   var label = _ref.label,
@@ -2960,11 +3065,11 @@ var Label = function Label(_ref) {
       className = _ref.className,
       color = _ref.color;
   return React__default.createElement("div", {
-    className: [s$y.labelContainer, s$y["".concat(color, "Color")], className].join(' ')
+    className: [s$z.labelContainer, s$z["".concat(color, "Color")], className].join(' ')
   }, React__default.createElement("span", {
     className: "icon-ec-".concat(logo)
   }), React__default.createElement("span", {
-    className: s$y.text
+    className: s$z.text
   }, label));
 };
 
@@ -2978,9 +3083,9 @@ Label.propTypes = {
   color: PropTypes$1.string.isRequired
 };
 
-var css$z = ".Loader-module_loader__N9Oko {\n    border: 16px solid #32a0c5;\n    border-top: 16px solid #163457;\n    border-radius: 50%;\n    -webkit-animation: Loader-module_spin__MH2Fo 2s linear infinite;\n            animation: Loader-module_spin__MH2Fo 2s linear infinite;\n    -ms-flex-item-align: center;\n        align-self: center;\n    margin: 15px auto;\n}\n\n.Loader-module_large__9YkjD {\n    width: 120px;\n    height: 120px;\n    border-width: 16px;\n}\n\n.Loader-module_medium__TWZ7Q {\n    width: 60px;\n    height: 60px;\n    border-width: 8px;\n}\n\n.Loader-module_small__3uXVP {\n    width: 30px;\n    height: 30px;\n    border-width: 4px;\n}\n\n.Loader-module_xSmall__3N8aP {\n    width: 15px;\n    height: 15px;\n    border-width: 2px;\n}\n\n@-webkit-keyframes Loader-module_spin__MH2Fo {\n    0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }\n    100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }\n}\n\n@keyframes Loader-module_spin__MH2Fo {\n    0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }\n    100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }\n}\n";
-var s$z = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","loader":"Loader-module_loader__N9Oko","spin":"Loader-module_spin__MH2Fo","large":"Loader-module_large__9YkjD","medium":"Loader-module_medium__TWZ7Q","small":"Loader-module_small__3uXVP","xSmall":"Loader-module_xSmall__3N8aP"};
-styleInject(css$z);
+var css$A = ".Loader-module_loader__N9Oko {\n    border: 16px solid #32a0c5;\n    border-top: 16px solid #163457;\n    border-radius: 50%;\n    -webkit-animation: Loader-module_spin__MH2Fo 2s linear infinite;\n            animation: Loader-module_spin__MH2Fo 2s linear infinite;\n    -ms-flex-item-align: center;\n        align-self: center;\n    margin: 15px auto;\n}\n\n.Loader-module_large__9YkjD {\n    width: 120px;\n    height: 120px;\n    border-width: 16px;\n}\n\n.Loader-module_medium__TWZ7Q {\n    width: 60px;\n    height: 60px;\n    border-width: 8px;\n}\n\n.Loader-module_small__3uXVP {\n    width: 30px;\n    height: 30px;\n    border-width: 4px;\n}\n\n.Loader-module_xSmall__3N8aP {\n    width: 15px;\n    height: 15px;\n    border-width: 2px;\n}\n\n@-webkit-keyframes Loader-module_spin__MH2Fo {\n    0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }\n    100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }\n}\n\n@keyframes Loader-module_spin__MH2Fo {\n    0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }\n    100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }\n}\n";
+var s$A = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","loader":"Loader-module_loader__N9Oko","spin":"Loader-module_spin__MH2Fo","large":"Loader-module_large__9YkjD","medium":"Loader-module_medium__TWZ7Q","small":"Loader-module_small__3uXVP","xSmall":"Loader-module_xSmall__3N8aP"};
+styleInject(css$A);
 
 var Loader = function Loader(_ref) {
   var size = _ref.size,
@@ -2988,7 +3093,7 @@ var Loader = function Loader(_ref) {
       testid = _ref.testid;
   return React__default.createElement("div", {
     testid: testid,
-    className: [s$z.loader, s$z[size], className].join(' ')
+    className: [s$A.loader, s$A[size], className].join(' ')
   });
 };
 
@@ -3003,9 +3108,9 @@ Loader.propTypes = {
   testid: PropTypes$1.string
 };
 
-var css$A = ".LoginForm-module_card__3_T4d {\n  width: 400px;\n}\n\n.LoginForm-module_contentCard__2LMaI {\n  -webkit-box-align: start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  padding: 16px 32px;\n  padding: 16px 32px;\n  padding: 1rem 2rem;\n}\n\n.LoginForm-module_input__3Vyuc {\n  margin-bottom: 10px;\n  width: 100%;\n}\n\n.LoginForm-module_button__2JEzi {\n  margin: 10px 0;\n}\n\n.LoginForm-module_error__2-jaK {\n  color: #ff5757;\n}\n\n.LoginForm-module_inputError__1QmRY {\n  border-color: #ff5757;\n}\n\n.LoginForm-module_forgottenPasswordLink__3N7WZ {\n  -ms-flex-item-align: end;\n      align-self: flex-end;\n}\n";
-var s$A = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","card":"LoginForm-module_card__3_T4d","contentCard":"LoginForm-module_contentCard__2LMaI","input":"LoginForm-module_input__3Vyuc","button":"LoginForm-module_button__2JEzi","error":"LoginForm-module_error__2-jaK","inputError":"LoginForm-module_inputError__1QmRY","forgottenPasswordLink":"LoginForm-module_forgottenPasswordLink__3N7WZ"};
-styleInject(css$A);
+var css$B = ".LoginForm-module_card__3_T4d {\n  width: 400px;\n}\n\n.LoginForm-module_contentCard__2LMaI {\n  -webkit-box-align: start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  padding: 16px 32px;\n  padding: 16px 32px;\n  padding: 1rem 2rem;\n}\n\n.LoginForm-module_input__3Vyuc {\n  margin-bottom: 10px;\n  width: 100%;\n}\n\n.LoginForm-module_button__2JEzi {\n  margin: 10px 0;\n}\n\n.LoginForm-module_error__2-jaK {\n  color: #ff5757;\n}\n\n.LoginForm-module_inputError__1QmRY {\n  border-color: #ff5757;\n}\n\n.LoginForm-module_forgottenPasswordLink__3N7WZ {\n  -ms-flex-item-align: end;\n      align-self: flex-end;\n}\n";
+var s$B = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","card":"LoginForm-module_card__3_T4d","contentCard":"LoginForm-module_contentCard__2LMaI","input":"LoginForm-module_input__3Vyuc","button":"LoginForm-module_button__2JEzi","error":"LoginForm-module_error__2-jaK","inputError":"LoginForm-module_inputError__1QmRY","forgottenPasswordLink":"LoginForm-module_forgottenPasswordLink__3N7WZ"};
+styleInject(css$B);
 
 var TextsType$4 = PropTypes$1.shape({
   email: PropTypes$1.string,
@@ -3051,10 +3156,10 @@ var LoginForm = function LoginForm(_ref) {
       cardProps = _objectWithoutProperties(_ref, ["className", "values", "errors", "texts", "onChangeEmail", "onChangePassword", "onSubmit", "emailInputClassName", "passwordInputClassName", "contentClassName", "buttonClassName", "fetching", "errorLogin", "buttonTestid", "RootComponent", "SubmitButtonComponent", "onClickPasswordForgotten", "shouldDisplayEmailField"]);
 
   return React__default.createElement(RootComponent, _extends({}, cardProps, {
-    className: [s$A.card, className].join(' '),
-    contentClassName: [s$A.contentCard, contentClassName].join(' ')
+    className: [s$B.card, className].join(' '),
+    contentClassName: [s$B.contentCard, contentClassName].join(' ')
   }), shouldDisplayEmailField && React__default.createElement(InputLabel, {
-    className: [s$A.input, emailInputClassName].join(''),
+    className: [s$B.input, emailInputClassName].join(''),
     hasError: !!errors.email || typeof errorLogin !== 'undefined' && errorLogin !== '',
     label: texts.email,
     mandatory: true,
@@ -3064,7 +3169,7 @@ var LoginForm = function LoginForm(_ref) {
     onChange: onChangeEmail,
     error: errors.email
   }), React__default.createElement(InputLabel, {
-    className: [s$A.input, passwordInputClassName].join(' '),
+    className: [s$B.input, passwordInputClassName].join(' '),
     hasError: !!errors.password || typeof errorLogin !== 'undefined' && errorLogin !== '',
     label: texts.password,
     mandatory: true,
@@ -3075,13 +3180,13 @@ var LoginForm = function LoginForm(_ref) {
     error: errors.password
   }), onClickPasswordForgotten && React__default.createElement(ActionLink, {
     label: texts.onClickPasswordForgottenLabel,
-    className: s$A.forgottenPasswordLink,
+    className: s$B.forgottenPasswordLink,
     onClick: onClickPasswordForgotten
   }), typeof errorLogin !== 'undefined' && errorLogin !== '' && React__default.createElement("div", {
-    className: s$A.error
+    className: s$B.error
   }, errorLogin), React__default.createElement(SubmitButtonComponent, {
     onClick: onSubmit,
-    className: [s$A.button, buttonClassName].join(' '),
+    className: [s$B.button, buttonClassName].join(' '),
     fetching: fetching,
     testid: buttonTestid
   }, React__default.createElement("span", null, texts.submitButton)));
@@ -3136,9 +3241,9 @@ LoginForm.propTypes = {
   shouldDisplayEmailField: PropTypes$1.bool
 };
 
-var css$B = ".PaymentMethodCard-module_card__1P35E {\n  position: relative;\n}\n\n.PaymentMethodCard-module_cardContent__CnD6V {\n  padding: 10px;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\n\n.PaymentMethodCard-module_header__pGvBe {\n  position: absolute;\n  width: 100%;\n  top: 20px;\n  right: 20px;\n}\n\n.PaymentMethodCard-module_pendingDeletion__-WJj3 {\n  background-color: #eceff6;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  padding: 20px;\n  text-align: center;\n}\n\n.PaymentMethodCard-module_footer__2mmr8 {\n  display: block;\n}\n";
-var s$B = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","card":"PaymentMethodCard-module_card__1P35E","cardContent":"PaymentMethodCard-module_cardContent__CnD6V","header":"PaymentMethodCard-module_header__pGvBe","pendingDeletion":"PaymentMethodCard-module_pendingDeletion__-WJj3","footer":"PaymentMethodCard-module_footer__2mmr8"};
-styleInject(css$B);
+var css$C = ".PaymentMethodCard-module_card__1P35E {\n  position: relative;\n}\n\n.PaymentMethodCard-module_cardContent__CnD6V {\n  padding: 10px;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\n\n.PaymentMethodCard-module_header__pGvBe {\n  position: absolute;\n  width: 100%;\n  top: 20px;\n  right: 20px;\n}\n\n.PaymentMethodCard-module_pendingDeletion__-WJj3 {\n  background-color: #eceff6;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  padding: 20px;\n  text-align: center;\n}\n\n.PaymentMethodCard-module_footer__2mmr8 {\n  display: block;\n}\n";
+var s$C = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","card":"PaymentMethodCard-module_card__1P35E","cardContent":"PaymentMethodCard-module_cardContent__CnD6V","header":"PaymentMethodCard-module_header__pGvBe","pendingDeletion":"PaymentMethodCard-module_pendingDeletion__-WJj3","footer":"PaymentMethodCard-module_footer__2mmr8"};
+styleInject(css$C);
 
 var DefaultTexts$5 = {
   select: 'Sélectionner',
@@ -3293,9 +3398,9 @@ React__default.createElement("g", {
 
 var iconTotal = "data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%3Csvg%20version%3D%221.1%22%20%20id%3D%22svg24%22%20inkscape%3Aversion%3D%220.92.4%20%285da689c313%2C%202019-01-14%29%22%20sodipodi%3Adocname%3D%22TOTAL_SA_logo.svg%22%20xmlns%3Acc%3D%22http%3A%2F%2Fcreativecommons.org%2Fns%23%22%20xmlns%3Adc%3D%22http%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%22%20xmlns%3Ainkscape%3D%22http%3A%2F%2Fwww.inkscape.org%2Fnamespaces%2Finkscape%22%20xmlns%3Ardf%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%22%20xmlns%3Asodipodi%3D%22http%3A%2F%2Fsodipodi.sourceforge.net%2FDTD%2Fsodipodi-0.dtd%22%20xmlns%3Asvg%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%20viewBox%3D%220%200%2090.3%2028.5%22%20%20style%3D%22enable-background%3Anew%200%200%2090.3%2028.5%3B%22%20xml%3Aspace%3D%22preserve%22%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%20.st0%7Bfill%3A%23E4032E%3B%7D%20.st1%7Bfill%3A%23F49600%3B%7D%20.st2%7Bfill%3A%23164194%3B%7D%20.st3%7Bfill%3A%234A96D2%3B%7D%3C%2Fstyle%3E%3Csodipodi%3Anamedview%20%20bordercolor%3D%22%23666666%22%20borderopacity%3D%221%22%20fit-margin-bottom%3D%220%22%20fit-margin-left%3D%220%22%20fit-margin-right%3D%220%22%20fit-margin-top%3D%220%22%20gridtolerance%3D%2210%22%20guidetolerance%3D%2210%22%20id%3D%22namedview26%22%20inkscape%3Acurrent-layer%3D%22svg24%22%20inkscape%3Acx%3D%221672.5126%22%20inkscape%3Acy%3D%22411.77806%22%20inkscape%3Apageopacity%3D%220%22%20inkscape%3Apageshadow%3D%222%22%20inkscape%3Awindow-height%3D%221001%22%20inkscape%3Awindow-maximized%3D%221%22%20inkscape%3Awindow-width%3D%221920%22%20inkscape%3Awindow-x%3D%22-9%22%20inkscape%3Awindow-y%3D%22-9%22%20inkscape%3Azoom%3D%220.25%22%20objecttolerance%3D%2210%22%20pagecolor%3D%22%23ffffff%22%20showgrid%3D%22false%22%3E%20%3C%2Fsodipodi%3Anamedview%3E%3Cg%20id%3D%22g12%22%20transform%3D%22matrix%286.4121534%2C0%2C0%2C6.4121534%2C-8.4827436%2C-8.4827551%29%22%3E%20%3Cpath%20id%3D%22path2%22%20inkscape%3Aconnector-curvature%3D%220%22%20class%3D%22st0%22%20d%3D%22M9.2%2C3.4C8.6%2C3.4%2C8.3%2C3.6%2C8.3%2C4c0%2C0.4%2C0.3%2C0.7%2C0.9%2C0.7%20%20c0.6%2C0%2C0.9-0.2%2C0.9-0.7C10.1%2C3.6%2C9.8%2C3.4%2C9.2%2C3.4%20M9.2%2C4.4C8.9%2C4.4%2C8.7%2C4.3%2C8.7%2C4c0-0.2%2C0.2-0.4%2C0.5-0.4c0.3%2C0%2C0.5%2C0.1%2C0.5%2C0.4%20%20C9.7%2C4.3%2C9.5%2C4.4%2C9.2%2C4.4%22%2F%3E%20%3Cpath%20id%3D%22path4%22%20inkscape%3Aconnector-curvature%3D%220%22%20class%3D%22st0%22%20d%3D%22M10.2%2C3.4v0.3h0.5v0.9c0%2C0.1%2C0.1%2C0.1%2C0.2%2C0.1%20%20c0.1%2C0%2C0.2%2C0%2C0.2-0.1V3.7h0.5V3.4H10.2z%22%2F%3E%20%3Cpath%20id%3D%22path6%22%20inkscape%3Aconnector-curvature%3D%220%22%20class%3D%22st0%22%20d%3D%22M14.7%2C4.4c-0.1%2C0-0.2%2C0-0.3-0.1c-0.1-0.1-0.1-0.1-0.1-0.2V3.5%20%20c0-0.1-0.1-0.1-0.2-0.1c-0.1%2C0-0.2%2C0-0.2%2C0.1v0.6c0%2C0.2%2C0.1%2C0.4%2C0.2%2C0.5c0.2%2C0.1%2C0.5%2C0.1%2C0.8%2C0.1h0.4l0-0.1V4.4L14.7%2C4.4z%22%2F%3E%20%3Cpath%20id%3D%22path8%22%20inkscape%3Aconnector-curvature%3D%220%22%20class%3D%22st0%22%20d%3D%22M7.3%2C4.3c0%2C0.2%2C0.2%2C0.4%2C0.5%2C0.4V3.3h0.7V3H6.6v0.3h0.7V4.3z%22%2F%3E%20%3Cpath%20id%3D%22path10%22%20inkscape%3Aconnector-curvature%3D%220%22%20class%3D%22st0%22%20d%3D%22M13.7%2C4.7L13.7%2C4.7c-0.1-0.6-0.7-1.2-0.8-1.3c0%2C0-0.1%2C0-0.1%2C0%20%20c-0.1%2C0-0.1%2C0-0.1%2C0c-0.1%2C0.1-0.7%2C0.7-0.8%2C1.2l0%2C0.1h0.4l0%2C0c0-0.1%2C0-0.2%2C0.1-0.2h0.9c0%2C0.1%2C0.1%2C0.2%2C0.1%2C0.2l0%2C0H13.7z%20M12.4%2C4.1%20%20c0.1-0.1%2C0.2-0.3%2C0.3-0.4C12.9%2C3.9%2C13%2C4%2C13.1%2C4.1H12.4z%22%2F%3E%3C%2Fg%3E%3Cpath%20id%3D%22path14%22%20inkscape%3Aconnector-curvature%3D%220%22%20class%3D%22st1%22%20d%3D%22M26%2C15.8c0-0.1%2C0-0.1-0.1-0.2c-2%2C2.3-7%2C3.8-11.5%2C3.5%20c-2.6-0.2-7.5-1.6-10-3.1c2.6%2C2.5%2C5.7%2C4.4%2C9.1%2C5.4c4.1%2C1.2%2C8.5%2C1.1%2C10.9-0.1C26.3%2C20.1%2C26.7%2C18%2C26%2C15.8%22%2F%3E%3Cpath%20id%3D%22path16%22%20inkscape%3Aconnector-curvature%3D%220%22%20class%3D%22st2%22%20d%3D%22M20.3%2C1.3c8.1%2C4.8%2C3.3%2C19.8-3.2%2C24.6c-6%2C4.5-12.3%2C2.4-13.7-1.7%20c1.2%2C1.8%2C3.6%2C2.4%2C5.7%2C1.7c5.9-2.4%2C8.9-13.1%2C9.3-16.8c0.3-3.2-0.2-5.3-1.3-6.7c-1.3-1.3-3.2-2-6.1-1.1C13.1-0.3%2C17.3-0.5%2C20.3%2C1.3%22%2F%3E%3Cpath%20id%3D%22path18%22%20inkscape%3Aconnector-curvature%3D%220%22%20class%3D%22st0%22%20d%3D%22M24.8%2C21.1C24.9%2C21.1%2C24.9%2C21.1%2C24.8%2C21.1%20c0.1-0.1%2C0.1-0.1%2C0.1-0.1c0.2-0.1%2C0.3-0.2%2C0.5-0.4c0.1-0.1%2C0.1-0.1%2C0.2-0.2c3.1-3.2%2C3.8-12-3.9-16.2C19%2C2.7%2C12.6%2C0.7%2C6.2%2C3.9%20c-2.1%2C1.1-4.3%2C3.3-5.5%2C6.3C1.6%2C8.7%2C3.1%2C7.8%2C6%2C7.4C9%2C7%2C13%2C7.4%2C17%2C8.8c2.6%2C0.9%2C4.6%2C2.1%2C6.3%2C3.4c1.3%2C1.1%2C2.2%2C2.2%2C2.6%2C3.4%20c0%2C0.1%2C0%2C0.1%2C0.1%2C0.2c0.7%2C2.1%2C0.3%2C4.3-1.5%2C5.5c0%2C0%2C0%2C0%2C0%2C0c0.1%2C0%2C0.2-0.1%2C0.3-0.1C24.7%2C21.2%2C24.8%2C21.2%2C24.8%2C21.1%20C24.8%2C21.2%2C24.8%2C21.2%2C24.8%2C21.1%22%2F%3E%3Cpath%20id%3D%22path20%22%20inkscape%3Aconnector-curvature%3D%220%22%20class%3D%22st1%22%20d%3D%22M1.7%2C15.3c0.1%2C0.2%2C0.5%2C0.6%2C0.7%2C0.9c1.6-3.6%2C10-6%2C12.6-6%20c-5.6-1.8-11.1-0.9-13.4%2C1C0.8%2C12%2C0.5%2C13.4%2C1.7%2C15.3%22%2F%3E%3Cpath%20id%3D%22path22%22%20inkscape%3Aconnector-curvature%3D%220%22%20class%3D%22st3%22%20d%3D%22M18.3%2C23.5c-4.5-0.3-11.1-2-15.8-7.3c0%2C0-0.1-0.1-0.1-0.1%20c-0.2-0.3-0.6-0.7-0.7-0.9c-1.2-1.9-0.9-3.2-0.1-4.1c-0.1%2C0.1-0.3%2C0.3-0.5%2C0.6c-1.2%2C1.5-1.3%2C4.1-0.5%2C6.7c1.8%2C5.8%2C9.6%2C9.2%2C15.9%2C8.3%20c4-0.6%2C6.6-2.9%2C7.6-3.8C21.8%2C23.6%2C20.1%2C23.6%2C18.3%2C23.5%22%2F%3E%3C%2Fsvg%3E";
 
-var css$C = ".PaymentMethodCardContentRead-module_content__2127O {\n  display: block;\n  color: #163457;\n  text-align: center;\n}\n\n.PaymentMethodCardContentRead-module_brandIcon__3r5qJ {\n  width: 75px;\n  -ms-flex-item-align: center;\n      align-self: center;\n  margin-bottom: 10px;\n}\n\n.PaymentMethodCardContentRead-module_contentHalfLine__ZEtn4 {\n  line-height: .70em;\n}\n";
-var s$C = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","content":"PaymentMethodCardContentRead-module_content__2127O","brandIcon":"PaymentMethodCardContentRead-module_brandIcon__3r5qJ","contentHalfLine":"PaymentMethodCardContentRead-module_contentHalfLine__ZEtn4"};
-styleInject(css$C);
+var css$D = ".PaymentMethodCardContentRead-module_content__2127O {\n  display: block;\n  color: #163457;\n  text-align: center;\n}\n\n.PaymentMethodCardContentRead-module_brandIcon__3r5qJ {\n  width: 75px;\n  -ms-flex-item-align: center;\n      align-self: center;\n  margin-bottom: 10px;\n}\n\n.PaymentMethodCardContentRead-module_contentHalfLine__ZEtn4 {\n  line-height: .70em;\n}\n";
+var s$D = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","content":"PaymentMethodCardContentRead-module_content__2127O","brandIcon":"PaymentMethodCardContentRead-module_brandIcon__3r5qJ","contentHalfLine":"PaymentMethodCardContentRead-module_contentHalfLine__ZEtn4"};
+styleInject(css$D);
 
 var creditCardBrandIcons = {
   visa: iconVisa,
@@ -3313,19 +3418,19 @@ var PaymentMethodCardContentRead = function PaymentMethodCardContentRead(_ref) {
   var paymentMethod = _ref.paymentMethod,
       texts = _ref.texts;
   return React__default.createElement(Fragment, null, (paymentMethod.type === paymentMethodType.card || paymentMethod.type === paymentMethodType.total) && React__default.createElement("img", {
-    className: s$C.brandIcon,
+    className: s$D.brandIcon,
     src: creditCardBrandIcons[paymentMethod.brand],
     alt: paymentMethod.brand
   }), !paymentMethod.cardName ? React__default.createElement("span", {
-    className: s$C.contentHalfLine
+    className: s$D.contentHalfLine
   }, React__default.createElement("br", null)) : React__default.createElement("span", {
-    className: s$C.content
+    className: s$D.content
   }, paymentMethod.cardName), React__default.createElement("span", {
-    className: s$C.content
+    className: s$D.content
   }, "\xB7\xB7\xB7\xB7\xA0\xB7\xB7\xB7\xB7\xA0\xB7\xB7\xB7\xB7\xA0", paymentMethod.last4digits), React__default.createElement("span", {
-    className: s$C.content
+    className: s$D.content
   }, texts.expireAt, "\xA0:\xA0", paymentMethod.expireAt), !paymentMethod.cardName && React__default.createElement("span", {
-    className: s$C.contentHalfLine
+    className: s$D.contentHalfLine
   }, React__default.createElement("br", null)));
 };
 
@@ -3334,20 +3439,20 @@ PaymentMethodCardContentRead.propTypes = {
   texts: TextsType$5.isRequired
 };
 
-var css$D = ".PaymentmethodCardContentDelete-module_container__2q5zt {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n\n.PaymentmethodCardContentDelete-module_sentence__4dwCI {\n  margin: 10px 0;\n  width: 100%;\n}\n\n.PaymentmethodCardContentDelete-module_buttons__1lGiu {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: distribute;\n      justify-content: space-around;\n  width: 100%;\n}\n";
-var s$D = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","container":"PaymentmethodCardContentDelete-module_container__2q5zt","sentence":"PaymentmethodCardContentDelete-module_sentence__4dwCI","buttons":"PaymentmethodCardContentDelete-module_buttons__1lGiu"};
-styleInject(css$D);
+var css$E = ".PaymentmethodCardContentDelete-module_container__2q5zt {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n\n.PaymentmethodCardContentDelete-module_sentence__4dwCI {\n  margin: 10px 0;\n  width: 100%;\n}\n\n.PaymentmethodCardContentDelete-module_buttons__1lGiu {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: distribute;\n      justify-content: space-around;\n  width: 100%;\n}\n";
+var s$E = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","container":"PaymentmethodCardContentDelete-module_container__2q5zt","sentence":"PaymentmethodCardContentDelete-module_sentence__4dwCI","buttons":"PaymentmethodCardContentDelete-module_buttons__1lGiu"};
+styleInject(css$E);
 
 var PaymentmethodCardContentDelete = function PaymentmethodCardContentDelete(_ref) {
   var texts = _ref.texts,
       onConfirmDeletion = _ref.onConfirmDeletion,
       onCancelDeletion = _ref.onCancelDeletion;
   return React__default.createElement("div", {
-    className: s$D.container
+    className: s$E.container
   }, React__default.createElement("strong", null, texts.confirmDeletionTitle), React__default.createElement("p", {
-    className: s$D.sentence
+    className: s$E.sentence
   }, texts.confirmDeletionSentence), React__default.createElement("div", {
-    className: s$D.buttons
+    className: s$E.buttons
   }, React__default.createElement(LinkUnderlined, {
     onClick: onCancelDeletion
   }, React__default.createElement("strong", null, texts.cancel)), React__default.createElement(LinkUnderlined, {
@@ -3376,9 +3481,9 @@ PaymentMethodCardContent.propTypes = {
   onCancelDeletion: PropTypes$1.func.isRequired
 };
 
-var css$E = ".PaymentMethodCardFooter-module_container__iE-kv {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.PaymentMethodCardFooter-module_checkIcon__xbtB2 {\n  color: #fefefe;\n  font-size: 22px;\n}\n";
-var s$E = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","container":"PaymentMethodCardFooter-module_container__iE-kv","checkIcon":"PaymentMethodCardFooter-module_checkIcon__xbtB2"};
-styleInject(css$E);
+var css$F = ".PaymentMethodCardFooter-module_container__iE-kv {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.PaymentMethodCardFooter-module_checkIcon__xbtB2 {\n  color: #fefefe;\n  font-size: 22px;\n}\n";
+var s$F = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","container":"PaymentMethodCardFooter-module_container__iE-kv","checkIcon":"PaymentMethodCardFooter-module_checkIcon__xbtB2"};
+styleInject(css$F);
 
 var PaymentMethodCardFooter = function PaymentMethodCardFooter(_ref) {
   var className = _ref.className,
@@ -3387,9 +3492,9 @@ var PaymentMethodCardFooter = function PaymentMethodCardFooter(_ref) {
       onClick = _ref.onClick,
       testid = _ref.testid;
   return React__default.createElement("div", {
-    className: [s$E.container, className].join(' ')
+    className: [s$F.container, className].join(' ')
   }, selected ? React__default.createElement("i", {
-    className: "icon-checkmark ".concat(s$E.checkIcon)
+    className: "icon-checkmark ".concat(s$F.checkIcon)
   }) : React__default.createElement(LinkUnderlined, {
     onClick: onClick,
     testid: "".concat(testid, "Button")
@@ -3408,9 +3513,9 @@ PaymentMethodCardFooter.propTypes = {
   testid: PropTypes$1.string
 };
 
-var css$F = ".PaymentMethodCardHeader-module_container__1NB8- {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  font-size: 22px;\n}\n\n.PaymentMethodCardHeader-module_icon__Rh3J2 {\n  -webkit-text-fill-color: #32a0c5;\n  fill: #32a0c5;\n}\n\n.PaymentMethodCardHeader-module_button__L01aa {\n  background: none;\n  border: 0;\n  margin: 0;\n  padding: 0;\n}\n";
-var s$F = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","container":"PaymentMethodCardHeader-module_container__1NB8-","icon":"PaymentMethodCardHeader-module_icon__Rh3J2","button":"PaymentMethodCardHeader-module_button__L01aa"};
-styleInject(css$F);
+var css$G = ".PaymentMethodCardHeader-module_container__1NB8- {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  font-size: 22px;\n}\n\n.PaymentMethodCardHeader-module_icon__Rh3J2 {\n  -webkit-text-fill-color: #32a0c5;\n  fill: #32a0c5;\n}\n\n.PaymentMethodCardHeader-module_button__L01aa {\n  background: none;\n  border: 0;\n  margin: 0;\n  padding: 0;\n}\n";
+var s$G = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","container":"PaymentMethodCardHeader-module_container__1NB8-","icon":"PaymentMethodCardHeader-module_icon__Rh3J2","button":"PaymentMethodCardHeader-module_button__L01aa"};
+styleInject(css$G);
 
 var PaymentMethodCardHeader = function PaymentMethodCardHeader(_ref) {
   var onDelete = _ref.onDelete,
@@ -3418,13 +3523,13 @@ var PaymentMethodCardHeader = function PaymentMethodCardHeader(_ref) {
       pendingDeletion = _ref.pendingDeletion,
       className = _ref.className;
   return pendingDeletion ? null : React__default.createElement("div", {
-    className: [s$F.container, className].join(' ')
+    className: [s$G.container, className].join(' ')
   }, React__default.createElement("button", {
-    className: s$F.button,
+    className: s$G.button,
     title: texts.remove,
     onClick: onDelete
   }, React__default.createElement("i", {
-    className: "icon-bin ".concat(s$F.icon)
+    className: "icon-bin ".concat(s$G.icon)
   })));
 };
 
@@ -3513,12 +3618,12 @@ function (_React$Component) {
         pendingDeletion: pendingDeletion
       };
       return React__default.createElement(Card, _extends({}, cardProps, {
-        className: [s$B.card, className].join(' '),
+        className: [s$C.card, className].join(' '),
         FooterComponent: this.renderFooter,
         isSelected: selected,
-        contentClassName: [s$B.cardContent, pendingDeletion ? s$B.pendingDeletion : undefined, contentClassName].join(' ')
+        contentClassName: [s$C.cardContent, pendingDeletion ? s$C.pendingDeletion : undefined, contentClassName].join(' ')
       }), deletable && React__default.createElement(PaymentMethodCardHeader, _extends({}, cardHeaderProps, {
-        className: s$B.header
+        className: s$C.header
       })), children === null ? React__default.createElement(PaymentMethodCardContent, cardContentProps) : children);
     }
   }]);
@@ -3560,9 +3665,9 @@ PaymentMethodCard.propTypes = {
   testid: PropTypes$1.string
 };
 
-var css$G = ".PhoneInput-module_phoneInput__28kFN {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 1;\n      -ms-flex: 1 1 auto;\n          flex: 1 1 auto;\n}\n\n.PhoneInput-module_phoneInputCountryCode__1qz3Z {\n  -webkit-box-flex: 1;\n      -ms-flex: 1 0 50px;\n          flex: 1 0 50px;\n}\n\n.PhoneInput-module_phoneInput__28kFN input {\n  margin-left: 10px;\n}\n\n.PhoneInput-module_selectImage__2afak {\n  margin-right: 10px;\n  max-height: 24px;\n  max-width: 24px;\n}\n\n";
-var s$G = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","phoneInput":"PhoneInput-module_phoneInput__28kFN","phoneInputCountryCode":"PhoneInput-module_phoneInputCountryCode__1qz3Z","selectImage":"PhoneInput-module_selectImage__2afak"};
-styleInject(css$G);
+var css$H = ".PhoneInput-module_phoneInput__28kFN {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 1;\n      -ms-flex: 1 1 auto;\n          flex: 1 1 auto;\n}\n\n.PhoneInput-module_phoneInputCountryCode__1qz3Z {\n  -webkit-box-flex: 1;\n      -ms-flex: 1 0 50px;\n          flex: 1 0 50px;\n}\n\n.PhoneInput-module_inputContainer__3-cxE {\n  margin-left: 10px;\n}\n\n.PhoneInput-module_selectImage__2afak {\n  margin-right: 10px;\n  max-height: 24px;\n  max-width: 24px;\n}\n\n";
+var s$H = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","phoneInput":"PhoneInput-module_phoneInput__28kFN","phoneInputCountryCode":"PhoneInput-module_phoneInputCountryCode__1qz3Z","inputContainer":"PhoneInput-module_inputContainer__3-cxE","selectImage":"PhoneInput-module_selectImage__2afak"};
+styleInject(css$H);
 
 var PhoneInput =
 /*#__PURE__*/
@@ -3597,21 +3702,24 @@ function (_React$Component) {
           country = _this$state.country,
           phone = _this$state.phone;
       return React__default.createElement("div", {
-        className: s$G.phoneInput
+        className: s$H.phoneInput
       }, React__default.createElement(Select, {
         options: countries,
         value: country.value,
         renderOption: _this.renderSelectOption,
         onChange: _this.onCountryCodeChange,
-        className: s$G.phoneInputCountryCode
+        className: s$H.phoneInputCountryCode
       }, withFlag && React__default.createElement("img", {
         src: country.image,
-        className: s$G.selectImage,
+        className: s$H.selectImage,
         alt: country.label
-      }), React__default.createElement("span", null, country.label)), React__default.createElement(Input, _extends({}, phoneInputProps, {
+      }), React__default.createElement("span", null, country.label)), React__default.createElement(Input, _extends({
+        placeholder: "06 07 08 09 00" // Here to override the placeholder
+        ,
+        containerClassName: s$H.inputContainer
+      }, phoneInputProps, {
         className: inputClassName,
         hasError: !!error && error.length > 0,
-        placeholder: "06 07 08 09 00",
         type: "text",
         onChange: _this.onPhoneNumberChange,
         value: phone
@@ -3752,22 +3860,22 @@ PhoneInput.propTypes = {
   inputClassName: PropTypes$1.string
 };
 
-var css$H = ".PricingSummaryOption-module_option__1G-X7 {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  color: #163457;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n}\n\n.PricingSummaryOption-module_label__goVjq {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.PricingSummaryOption-module_label__goVjq i {\n  font-size: 0.9em;\n  margin-left: 10px;\n}\n\n.PricingSummaryOption-module_label__goVjq i:before {\n  color: #163457;\n}\n\n.PricingSummaryOption-module_price__2ZK97 {\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  font-weight: 700;\n}\n\n.PricingSummaryOption-module_currency-after__3ttKX {\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n}\n\n.PricingSummaryOption-module_currency-before__1lVgh {\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: reverse;\n      -ms-flex-direction: row-reverse;\n          flex-direction: row-reverse;\n}\n";
-var s$H = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","option":"PricingSummaryOption-module_option__1G-X7","label":"PricingSummaryOption-module_label__goVjq","price":"PricingSummaryOption-module_price__2ZK97","currency-after":"PricingSummaryOption-module_currency-after__3ttKX","currency-before":"PricingSummaryOption-module_currency-before__1lVgh"};
-styleInject(css$H);
+var css$I = ".PricingSummaryOption-module_option__1G-X7 {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  color: #163457;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n}\n\n.PricingSummaryOption-module_label__goVjq {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.PricingSummaryOption-module_label__goVjq i {\n  font-size: 0.9em;\n  margin-left: 10px;\n}\n\n.PricingSummaryOption-module_label__goVjq i:before {\n  color: #163457;\n}\n\n.PricingSummaryOption-module_price__2ZK97 {\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  font-weight: 700;\n}\n\n.PricingSummaryOption-module_currency-after__3ttKX {\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n}\n\n.PricingSummaryOption-module_currency-before__1lVgh {\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: reverse;\n      -ms-flex-direction: row-reverse;\n          flex-direction: row-reverse;\n}\n";
+var s$I = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","option":"PricingSummaryOption-module_option__1G-X7","label":"PricingSummaryOption-module_label__goVjq","price":"PricingSummaryOption-module_price__2ZK97","currency-after":"PricingSummaryOption-module_currency-after__3ttKX","currency-before":"PricingSummaryOption-module_currency-before__1lVgh"};
+styleInject(css$I);
 
 var PricingSummaryOption = function PricingSummaryOption(_ref) {
   var currency = _ref.currency,
       currencyPosition = _ref.currencyPosition,
       option = _ref.option;
   return React__default.createElement("div", {
-    className: s$H.option
+    className: s$I.option
   }, React__default.createElement("span", {
-    className: s$H.label
+    className: s$I.label
   }, option.label, React__default.createElement("i", {
     className: "icon icon-ec-info"
   })), React__default.createElement("span", {
-    className: "".concat(s$H.price, " ").concat(s$H["currency-".concat(currencyPosition)])
+    className: "".concat(s$I.price, " ").concat(s$I["currency-".concat(currencyPosition)])
   }, React__default.createElement("span", null, option.price), React__default.createElement("span", null, currency)));
 };
 
@@ -3780,9 +3888,9 @@ PricingSummaryOption.propTypes = {
   option: PricingSummaryOptionType.isRequired
 };
 
-var css$I = ".PricingSummary-module_pricingSummary__2eJwY {\n  width: 250px;\n}\n\n.PricingSummary-module_total__2vek1 {\n  -webkit-box-align: end;\n      -ms-flex-align: end;\n          align-items: flex-end;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  margin-top: 20px;\n}\n\n.PricingSummary-module_totalLabel__2o3Rh {\n  font-weight: 700;\n  text-transform: uppercase;\n}\n\n.PricingSummary-module_totalPrice__1_-UG {\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  font-size: 40px;\n  line-height: 1;\n}\n\n.PricingSummary-module_currency-after__27MYY {\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n}\n\n.PricingSummary-module_currency-before__345FN {\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: reverse;\n      -ms-flex-direction: row-reverse;\n          flex-direction: row-reverse;\n}\n\n.PricingSummary-module_add__2494l {\n  border: 0;\n  color: rgb(206, 206, 206);\n  padding: 0;\n  margin: 0;\n  background: transparent;\n}\n\n.PricingSummary-module_add__2494l span {\n  margin-left: 5px;\n  text-decoration: underline;\n}\n";
-var s$I = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","pricingSummary":"PricingSummary-module_pricingSummary__2eJwY","total":"PricingSummary-module_total__2vek1","totalLabel":"PricingSummary-module_totalLabel__2o3Rh","totalPrice":"PricingSummary-module_totalPrice__1_-UG","currency-after":"PricingSummary-module_currency-after__27MYY","currency-before":"PricingSummary-module_currency-before__345FN","add":"PricingSummary-module_add__2494l"};
-styleInject(css$I);
+var css$J = ".PricingSummary-module_pricingSummary__2eJwY {\n  width: 250px;\n}\n\n.PricingSummary-module_total__2vek1 {\n  -webkit-box-align: end;\n      -ms-flex-align: end;\n          align-items: flex-end;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  margin-top: 20px;\n}\n\n.PricingSummary-module_totalLabel__2o3Rh {\n  font-weight: 700;\n  text-transform: uppercase;\n}\n\n.PricingSummary-module_totalPrice__1_-UG {\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  font-size: 40px;\n  line-height: 1;\n}\n\n.PricingSummary-module_currency-after__27MYY {\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n}\n\n.PricingSummary-module_currency-before__345FN {\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: reverse;\n      -ms-flex-direction: row-reverse;\n          flex-direction: row-reverse;\n}\n\n.PricingSummary-module_add__2494l {\n  border: 0;\n  color: rgb(206, 206, 206);\n  padding: 0;\n  margin: 0;\n  background: transparent;\n}\n\n.PricingSummary-module_add__2494l span {\n  margin-left: 5px;\n  text-decoration: underline;\n}\n";
+var s$J = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","pricingSummary":"PricingSummary-module_pricingSummary__2eJwY","total":"PricingSummary-module_total__2vek1","totalLabel":"PricingSummary-module_totalLabel__2o3Rh","totalPrice":"PricingSummary-module_totalPrice__1_-UG","currency-after":"PricingSummary-module_currency-after__27MYY","currency-before":"PricingSummary-module_currency-before__345FN","add":"PricingSummary-module_add__2494l"};
+styleInject(css$J);
 
 var PricingSummary = function PricingSummary(_ref) {
   var currency = _ref.currency,
@@ -3792,9 +3900,9 @@ var PricingSummary = function PricingSummary(_ref) {
       onAddClick = _ref.onAddClick,
       className = _ref.className;
   return React__default.createElement("div", {
-    className: "".concat(s$I.pricingSummary, " ").concat(className)
+    className: "".concat(s$J.pricingSummary, " ").concat(className)
   }, React__default.createElement("div", {
-    className: s$I.options
+    className: s$J.options
   }, options.map(function (option) {
     return React__default.createElement(PricingSummaryOption, {
       currency: currency,
@@ -3804,13 +3912,13 @@ var PricingSummary = function PricingSummary(_ref) {
     });
   })), React__default.createElement("button", {
     onClick: onAddClick,
-    className: s$I.add
+    className: s$J.add
   }, "+", React__default.createElement("span", null, texts.addOption)), React__default.createElement("div", {
-    className: s$I.total
+    className: s$J.total
   }, React__default.createElement("span", {
-    className: s$I.totalLabel
+    className: s$J.totalLabel
   }, texts.total), React__default.createElement("span", {
-    className: "".concat(s$I.totalPrice, " ").concat(s$I["currency-".concat(currencyPosition)])
+    className: "".concat(s$J.totalPrice, " ").concat(s$J["currency-".concat(currencyPosition)])
   }, React__default.createElement("span", null, options.reduce(function (acc, val) {
     return acc + val.price;
   }, 0)), React__default.createElement("span", null, currency))));
@@ -3840,15 +3948,15 @@ var defaultTexts$3 = {
   description: 'Devenez parrain Ector et faites profiter à votre filleul de 10€ offert lors de sa première réservation'
 };
 
-var css$J = ".ReferralCard-module_referralCard__2OSJ1 {\n  background-color: #eceff6;\n  border-radius: 8px;\n  color: #163457;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  max-width: 320px;\n  padding: 20px;\n}\n\n.ReferralCard-module_referralCard__2OSJ1 i {\n  margin-right: 20px;\n}\n\n.ReferralCard-module_referralCard__2OSJ1 p {\n  margin: 0;\n}\n";
-var s$J = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","referralCard":"ReferralCard-module_referralCard__2OSJ1"};
-styleInject(css$J);
+var css$K = ".ReferralCard-module_referralCard__2OSJ1 {\n  background-color: #eceff6;\n  border-radius: 8px;\n  color: #163457;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  max-width: 320px;\n  padding: 20px;\n}\n\n.ReferralCard-module_referralCard__2OSJ1 i {\n  margin-right: 20px;\n}\n\n.ReferralCard-module_referralCard__2OSJ1 p {\n  margin: 0;\n}\n";
+var s$K = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","referralCard":"ReferralCard-module_referralCard__2OSJ1"};
+styleInject(css$K);
 
 var ReferralCard = function ReferralCard(_ref) {
   var texts = _ref.texts,
       className = _ref.className;
   return React__default.createElement("div", {
-    className: "".concat(s$J.referralCard, " ").concat(className)
+    className: "".concat(s$K.referralCard, " ").concat(className)
   }, React__default.createElement("i", {
     className: "icon icon-ec-referral"
   }), React__default.createElement("div", null, React__default.createElement("strong", null, texts.title), React__default.createElement("p", null, texts.description)));
@@ -3876,24 +3984,24 @@ var defaultTexts$4 = {
   travelingNumber: 'N° Vol/Train: Non Renseigné'
 };
 
-var css$K = ".RideSummary-module_rideSummary__2oiET {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n\n.RideSummary-module_rideSummaryTitle__1uusE {\n  color: #32a0c5;\n  font-size: 22px;\n  margin: 0;\n}\n\n.RideSummary-module_rideSummaryText__1cZNU {\n  margin: 0;\n  color: #163457;\n}\n";
-var s$K = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","rideSummary":"RideSummary-module_rideSummary__2oiET","rideSummaryTitle":"RideSummary-module_rideSummaryTitle__1uusE","rideSummaryText":"RideSummary-module_rideSummaryText__1cZNU"};
-styleInject(css$K);
+var css$L = ".RideSummary-module_rideSummary__2oiET {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n\n.RideSummary-module_rideSummaryTitle__1uusE {\n  color: #32a0c5;\n  font-size: 22px;\n  margin: 0;\n}\n\n.RideSummary-module_rideSummaryText__1cZNU {\n  margin: 0;\n  color: #163457;\n}\n";
+var s$L = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","rideSummary":"RideSummary-module_rideSummary__2oiET","rideSummaryTitle":"RideSummary-module_rideSummaryTitle__1uusE","rideSummaryText":"RideSummary-module_rideSummaryText__1cZNU"};
+styleInject(css$L);
 
 var RideSummary = function RideSummary(_ref) {
   var texts = _ref.texts,
       className = _ref.className,
       type = _ref.type;
   return React__default.createElement("div", {
-    className: "".concat(s$K.rideSummary, " ").concat(className)
+    className: "".concat(s$L.rideSummary, " ").concat(className)
   }, React__default.createElement("p", {
-    className: s$K.rideSummaryTitle
+    className: s$L.rideSummaryTitle
   }, texts.title), React__default.createElement("p", {
-    className: s$K.rideSummaryText
+    className: s$L.rideSummaryText
   }, texts.date), React__default.createElement("p", {
-    className: s$K.rideSummaryText
+    className: s$L.rideSummaryText
   }, texts.spot), type === 'out' && React__default.createElement("p", {
-    className: s$K.rideSummaryText
+    className: s$L.rideSummaryText
   }, texts.travelingNumber));
 };
 
@@ -3914,9 +4022,9 @@ var SelectValueType = PropTypes$1.shape({
   image: PropTypes$1.string
 });
 
-var css$L = ".Select-module_select__3oApo {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  border-radius: 3px;\n  border: 2px solid #d5d6d7;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #163457;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: 40px;\n  height: 40px;\n  height: 2.5rem;\n  margin-top: 4px;\n  margin-top: 4px;\n  margin-top: 0.25rem;\n  padding: 8px;\n  padding: 8px;\n  padding: 0.5rem;\n  position: relative;\n}\n\n.Select-module_select__3oApo:after {\n  content: '\\E954';\n  font-family: 'icomoon';\n  font-size: 80%;\n  margin-right: 10px;\n  position: absolute;\n  right: 0;\n}\n\n.Select-module_select__3oApo select {\n  position: absolute;\n  opacity: 0;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n}\n\n.Select-module_select__3oApo select:disabled {\n  cursor: not-allowed;\n}\n\n.Select-module_disabled__1fHPm {\n  background-color: #eceff6;\n}\n";
-var s$L = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","select":"Select-module_select__3oApo","disabled":"Select-module_disabled__1fHPm"};
-styleInject(css$L);
+var css$M = ".Select-module_select__3oApo {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  border-radius: 3px;\n  border: 2px solid #d5d6d7;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #163457;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: 40px;\n  height: 40px;\n  height: 2.5rem;\n  margin-top: 4px;\n  margin-top: 4px;\n  margin-top: 0.25rem;\n  padding: 8px;\n  padding: 8px;\n  padding: 0.5rem;\n  position: relative;\n}\n\n.Select-module_select__3oApo:after {\n  content: '\\E954';\n  font-family: 'icomoon';\n  font-size: 80%;\n  margin-right: 10px;\n  position: absolute;\n  right: 0;\n}\n\n.Select-module_select__3oApo select {\n  position: absolute;\n  opacity: 0;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n}\n\n.Select-module_select__3oApo select:disabled {\n  cursor: not-allowed;\n}\n\n.Select-module_disabled__1fHPm {\n  background-color: #eceff6;\n}\n";
+var s$M = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","select":"Select-module_select__3oApo","disabled":"Select-module_disabled__1fHPm"};
+styleInject(css$M);
 
 var renderSelectOption = function renderSelectOption(option) {
   return React__default.createElement("option", {
@@ -3935,11 +4043,11 @@ var Select = function Select(props) {
 
   var optionRenderer = renderOption || renderSelectOption;
   return React__default.createElement("div", {
-    className: [s$L.select, selectProps.disabled ? s$L.disabled : undefined, className].join(' ')
+    className: [s$M.select, selectProps.disabled ? s$M.disabled : undefined, className].join(' ')
   }, React__default.createElement("select", _extends({
     value: value
   }, selectProps), options.map(optionRenderer)), children !== null ? children : React__default.createElement("span", {
-    className: s$L.label
+    className: s$M.label
   }, value));
 };
 
@@ -3958,9 +4066,9 @@ Select.propTypes = {
   disabled: PropTypes$1.bool
 };
 
-var css$M = ".ServiceCard-module_card__2WAwR {\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n    background-color: #eceff6;\n    border-radius: 8px;\n    padding: 5px;\n    margin-top: 25px;\n    position: relative;\n    width: 250px;\n    height: 260px;\n}\n\n.ServiceCard-module_optionCardContainerSelected__1EDYO {\n    background-color: #ffcd02;\n}\n\n.ServiceCard-module_labelContainer__14NKR {\n    position: absolute;\n    top: -10px;\n    right: 8%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n\n@media (max-width: 1232px) {\n    .ServiceCard-module_card__2WAwR {\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-flex: 1;\n            -ms-flex: 1 1 auto;\n                flex: 1 1 auto;\n        height: auto;\n        margin-right: 0;\n        width: 100%;\n    }\n}\n";
-var s$M = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","card":"ServiceCard-module_card__2WAwR","optionCardContainerSelected":"ServiceCard-module_optionCardContainerSelected__1EDYO","labelContainer":"ServiceCard-module_labelContainer__14NKR"};
-styleInject(css$M);
+var css$N = ".ServiceCard-module_card__2WAwR {\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n    background-color: #eceff6;\n    border-radius: 8px;\n    padding: 5px;\n    margin-top: 25px;\n    position: relative;\n    width: 250px;\n    height: 260px;\n}\n\n.ServiceCard-module_optionCardContainerSelected__1EDYO {\n    background-color: #ffcd02;\n}\n\n.ServiceCard-module_labelContainer__14NKR {\n    position: absolute;\n    top: -10px;\n    right: 8%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n\n@media (max-width: 1232px) {\n    .ServiceCard-module_card__2WAwR {\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-flex: 1;\n            -ms-flex: 1 1 auto;\n                flex: 1 1 auto;\n        height: auto;\n        margin-right: 0;\n        width: 100%;\n    }\n}\n";
+var s$N = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","card":"ServiceCard-module_card__2WAwR","optionCardContainerSelected":"ServiceCard-module_optionCardContainerSelected__1EDYO","labelContainer":"ServiceCard-module_labelContainer__14NKR"};
+styleInject(css$N);
 
 var commonjsGlobal = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
@@ -4055,9 +4163,9 @@ wordwrap.hard = function (start, stop) {
 };
 });
 
-var css$N = ".ServiceCardBody-module_cardContent__1u4QW {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  background-color: #fefefe;\n  height: 197px;\n  padding: 10px;\n}\n\n.ServiceCardBody-module_title__18Brj {\n  color: #32a0c5;\n  font-weight: 300;\n  font-size: 22px;\n  -webkit-box-sizing: content-box;\n          box-sizing: content-box;\n  margin: 0 20px 0 0;\n}\n\n.ServiceCardBody-module_description__3F2b6 {\n  color: #163457;\n}\n\n.ServiceCardBody-module_icon__3pkKY{\n  height: 45px;\n  width: 45px;\n}\n\n.ServiceCardBody-module_knowMore__3FUFJ {\n    color: #9ca3ff;\n    cursor: pointer;\n    display: block;\n    padding: 0;\n    text-decoration: underline;\n}\n\n.ServiceCardBody-module_punctuationKnowMore__1aKtN:after {\n    content: '\\2026';\n}\n\n@media (max-width: 1232px) {\n    .ServiceCardBody-module_cardContent__1u4QW {\n        -webkit-box-flex: 7;\n            -ms-flex: 7;\n                flex: 7;\n        height: auto;\n        padding: 10px;\n    }\n\n    .ServiceCardBody-module_title__18Brj {\n        font-size: 20px;\n        margin-right: 0;\n    }\n\n    .ServiceCardBody-module_icon__3pkKY {\n        display: none;\n    }\n}\n";
-var s$N = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","cardContent":"ServiceCardBody-module_cardContent__1u4QW","title":"ServiceCardBody-module_title__18Brj","description":"ServiceCardBody-module_description__3F2b6","icon":"ServiceCardBody-module_icon__3pkKY","knowMore":"ServiceCardBody-module_knowMore__3FUFJ","punctuationKnowMore":"ServiceCardBody-module_punctuationKnowMore__1aKtN"};
-styleInject(css$N);
+var css$O = ".ServiceCardBody-module_cardContent__1u4QW {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  background-color: #fefefe;\n  height: 197px;\n  padding: 10px;\n}\n\n.ServiceCardBody-module_title__18Brj {\n  color: #32a0c5;\n  font-weight: 300;\n  font-size: 22px;\n  -webkit-box-sizing: content-box;\n          box-sizing: content-box;\n  margin: 0 20px 0 0;\n}\n\n.ServiceCardBody-module_description__3F2b6 {\n  color: #163457;\n}\n\n.ServiceCardBody-module_icon__3pkKY{\n  height: 45px;\n  width: 45px;\n}\n\n.ServiceCardBody-module_knowMore__3FUFJ {\n    color: #9ca3ff;\n    cursor: pointer;\n    display: block;\n    padding: 0;\n    text-decoration: underline;\n}\n\n.ServiceCardBody-module_punctuationKnowMore__1aKtN:after {\n    content: '\\2026';\n}\n\n@media (max-width: 1232px) {\n    .ServiceCardBody-module_cardContent__1u4QW {\n        -webkit-box-flex: 7;\n            -ms-flex: 7;\n                flex: 7;\n        height: auto;\n        padding: 10px;\n    }\n\n    .ServiceCardBody-module_title__18Brj {\n        font-size: 20px;\n        margin-right: 0;\n    }\n\n    .ServiceCardBody-module_icon__3pkKY {\n        display: none;\n    }\n}\n";
+var s$O = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","cardContent":"ServiceCardBody-module_cardContent__1u4QW","title":"ServiceCardBody-module_title__18Brj","description":"ServiceCardBody-module_description__3F2b6","icon":"ServiceCardBody-module_icon__3pkKY","knowMore":"ServiceCardBody-module_knowMore__3FUFJ","punctuationKnowMore":"ServiceCardBody-module_punctuationKnowMore__1aKtN"};
+styleInject(css$O);
 
 var ServiceCardBody = function ServiceCardBody(_ref) {
   var image = _ref.image,
@@ -4076,13 +4184,13 @@ var ServiceCardBody = function ServiceCardBody(_ref) {
   }
 
   return React__default.createElement("div", {
-    className: "".concat(s$N.cardContent, " ").concat(contentClassName)
+    className: "".concat(s$O.cardContent, " ").concat(contentClassName)
   }, image, React__default.createElement("h2", {
-    className: s$N.title
+    className: s$O.title
   }, title), React__default.createElement("span", {
-    className: "".concat(s$N.description, " ").concat(showKnowMoreLink ? s$N.punctuationKnowMore : '')
+    className: "".concat(s$O.description, " ").concat(showKnowMoreLink ? s$O.punctuationKnowMore : '')
   }, descriptionFormatted), showKnowMoreLink && React__default.createElement("button", {
-    className: s$N.knowMore,
+    className: s$O.knowMore,
     onClick: openShowMore,
     type: "button"
   }, React__default.createElement("span", null, knowMoreLabel)));
@@ -4103,9 +4211,9 @@ ServiceCardBody.propTypes = {
   knowMoreLabel: PropTypes$1.string
 };
 
-var css$O = ".ServiceCardFooter-module_footerContainer__3xZao {\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n    padding: 20px 10px;\n}\n\n.ServiceCardFooter-module_price__1o6fm {\n    color: #163457;\n    font-size: 35px;\n    font-weight: 500;\n}\n\n.ServiceCardFooter-module_deleteButton__W6dqf {\n    background: none;\n    border: 0;\n    color: #32a0c5;\n    padding: 0;\n    text-decoration: underline;\n    font-style: italic;\n    font-weight: 300;\n    text-align: end;\n}\n\n@media (max-width: 1232px) {\n    .ServiceCardFooter-module_footerContainer__3xZao {\n        -webkit-box-align: center;\n            -ms-flex-align: center;\n                align-items: center;\n        -webkit-box-flex: 3;\n            -ms-flex: 3;\n                flex: 3;\n        height: auto;\n        height: initial;\n        -webkit-box-orient: vertical;\n        -webkit-box-direction: normal;\n            -ms-flex-direction: column;\n                flex-direction: column;\n        -webkit-box-pack: center;\n            -ms-flex-pack: center;\n                justify-content: center;\n        padding: 10px;\n    }\n\n    .ServiceCardFooter-module_price__1o6fm {\n        font-size: 22px;\n        line-height: 1;\n    }\n\n    .ServiceCardFooter-module_price__1o6fm small {\n        font-size: 70%;\n    }\n}\n";
-var s$O = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","footerContainer":"ServiceCardFooter-module_footerContainer__3xZao","price":"ServiceCardFooter-module_price__1o6fm","deleteButton":"ServiceCardFooter-module_deleteButton__W6dqf"};
-styleInject(css$O);
+var css$P = ".ServiceCardFooter-module_footerContainer__3xZao {\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n    padding: 20px 10px;\n}\n\n.ServiceCardFooter-module_price__1o6fm {\n    color: #163457;\n    font-size: 35px;\n    font-weight: 500;\n}\n\n.ServiceCardFooter-module_deleteButton__W6dqf {\n    background: none;\n    border: 0;\n    color: #32a0c5;\n    padding: 0;\n    text-decoration: underline;\n    font-style: italic;\n    font-weight: 300;\n    text-align: end;\n}\n\n@media (max-width: 1232px) {\n    .ServiceCardFooter-module_footerContainer__3xZao {\n        -webkit-box-align: center;\n            -ms-flex-align: center;\n                align-items: center;\n        -webkit-box-flex: 3;\n            -ms-flex: 3;\n                flex: 3;\n        height: auto;\n        height: initial;\n        -webkit-box-orient: vertical;\n        -webkit-box-direction: normal;\n            -ms-flex-direction: column;\n                flex-direction: column;\n        -webkit-box-pack: center;\n            -ms-flex-pack: center;\n                justify-content: center;\n        padding: 10px;\n    }\n\n    .ServiceCardFooter-module_price__1o6fm {\n        font-size: 22px;\n        line-height: 1;\n    }\n\n    .ServiceCardFooter-module_price__1o6fm small {\n        font-size: 70%;\n    }\n}\n";
+var s$P = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","footerContainer":"ServiceCardFooter-module_footerContainer__3xZao","price":"ServiceCardFooter-module_price__1o6fm","deleteButton":"ServiceCardFooter-module_deleteButton__W6dqf"};
+styleInject(css$P);
 
 var ServiceCardFooter = function ServiceCardFooter(_ref) {
   var PriceComponent = _ref.PriceComponent,
@@ -4115,15 +4223,15 @@ var ServiceCardFooter = function ServiceCardFooter(_ref) {
       testid = _ref.testid,
       showButton = _ref.showButton;
   return React__default.createElement("div", {
-    className: s$O.footerContainer
+    className: s$P.footerContainer
   }, React__default.createElement("span", {
-    className: s$O.price
+    className: s$P.price
   }, PriceComponent), !isSubscribed && React__default.createElement(LinkUnderlined, {
     onClick: actionFooter,
     testid: testid
   }, buttonLabelFooter), isSubscribed && showButton && React__default.createElement("button", {
     testid: testid,
-    className: s$O.deleteButton,
+    className: s$P.deleteButton,
     onClick: actionFooter,
     type: "button"
   }, buttonLabelFooter));
@@ -4159,14 +4267,14 @@ var ServiceCard = function ServiceCard(_ref) {
       id = _ref.id,
       showButton = _ref.showButton,
       knowMoreLabel = _ref.knowMoreLabel;
-  var cardClassName = "\n        ".concat(s$M.card, "\n        ").concat(className, "\n        ").concat(isSubscribed ? s$M.optionCardContainerSelected : '', "\n    ");
+  var cardClassName = "\n        ".concat(s$N.card, "\n        ").concat(className, "\n        ").concat(isSubscribed ? s$N.optionCardContainerSelected : '', "\n    ");
   return React__default.createElement("div", {
     className: cardClassName
   }, labelColor !== '' && labelLogo !== '' && labelText !== '' && React__default.createElement(Label, {
     logo: labelLogo,
     label: labelText,
     color: labelColor,
-    className: s$M.labelContainer
+    className: s$N.labelContainer
   }), React__default.createElement(ServiceCardBody, {
     image: image,
     title: title,
@@ -4218,19 +4326,19 @@ ServiceCard.propTypes = {
   knowMoreLabel: PropTypes$1.string
 };
 
-var css$P = ".Subtitle-module_subtitle__3qud- {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  margin-bottom: 30px;\n}\n\n.Subtitle-module_h2__3Utt_ {\n  color: #163457;\n  font-size: 22px;\n  font-weight: 500;\n  line-height: 1;\n  margin: 0 0 10px;\n}\n\n.Subtitle-module_hr__2cWQK {\n  border: 0;\n  border-top: 2px dotted #9eb3c2;\n  margin: 0;\n  width: 50px;\n}\n\n@media (max-width: 1130px) {\n  .Subtitle-module_h2__3Utt_ {\n    margin: 0 0 5px;\n  }\n}\n";
-var s$P = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","subtitle":"Subtitle-module_subtitle__3qud-","h2":"Subtitle-module_h2__3Utt_","hr":"Subtitle-module_hr__2cWQK"};
-styleInject(css$P);
+var css$Q = ".Subtitle-module_subtitle__3qud- {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  margin-bottom: 30px;\n}\n\n.Subtitle-module_h2__3Utt_ {\n  color: #163457;\n  font-size: 22px;\n  font-weight: 500;\n  line-height: 1;\n  margin: 0 0 10px;\n}\n\n.Subtitle-module_hr__2cWQK {\n  border: 0;\n  border-top: 2px dotted #9eb3c2;\n  margin: 0;\n  width: 50px;\n}\n\n@media (max-width: 1130px) {\n  .Subtitle-module_h2__3Utt_ {\n    margin: 0 0 5px;\n  }\n}\n";
+var s$Q = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","subtitle":"Subtitle-module_subtitle__3qud-","h2":"Subtitle-module_h2__3Utt_","hr":"Subtitle-module_hr__2cWQK"};
+styleInject(css$Q);
 
 var Subtitle = function Subtitle(_ref) {
   var label = _ref.label,
       className = _ref.className;
   return React__default.createElement("div", {
-    className: "".concat(s$P.subtitle, " ").concat(className)
+    className: "".concat(s$Q.subtitle, " ").concat(className)
   }, React__default.createElement("h2", {
-    className: s$P.h2
+    className: s$Q.h2
   }, label), React__default.createElement("hr", {
-    className: s$P.hr
+    className: s$Q.hr
   }));
 };
 
@@ -4242,9 +4350,9 @@ Subtitle.propTypes = {
   className: PropTypes$1.string
 };
 
-var css$Q = ".Title-module_title__gpPet {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  margin-bottom: 30px;\n}\n\n.Title-module_title__gpPet .Title-module_element__1EYDR {\n  color: #163457;\n  font-size: 40px;\n  font-weight: 500;\n  line-height: 1;\n  margin: 0 0 10px;\n}\n\n.Title-module_newTitle__3v8No {\n  color: #32a0c5;\n  font-size: 30px;\n  font-weight: 700;\n  line-height: 1;\n  margin: 0;\n}\n\n.Title-module_title__gpPet .Title-module_horizontalRule__1wwO9 {\n  border: 0;\n  border-top: 2px solid #32a0c5;\n  margin: 0;\n  width: 50px;\n}\n\n@media (max-width: 480px) {\n  .Title-module_title__gpPet .Title-module_element__1EYDR, .Title-module_newTitle__3v8No {\n    font-size: 22px;\n  }\n}\n";
-var s$Q = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","title":"Title-module_title__gpPet","element":"Title-module_element__1EYDR","newTitle":"Title-module_newTitle__3v8No","horizontalRule":"Title-module_horizontalRule__1wwO9"};
-styleInject(css$Q);
+var css$R = ".Title-module_title__gpPet {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  margin-bottom: 30px;\n}\n\n.Title-module_title__gpPet .Title-module_element__1EYDR {\n  color: #163457;\n  font-size: 40px;\n  font-weight: 500;\n  line-height: 1;\n  margin: 0 0 10px;\n}\n\n.Title-module_newTitle__3v8No {\n  color: #32a0c5;\n  font-size: 30px;\n  font-weight: 700;\n  line-height: 1;\n  margin: 0;\n}\n\n.Title-module_title__gpPet .Title-module_horizontalRule__1wwO9 {\n  border: 0;\n  border-top: 2px solid #32a0c5;\n  margin: 0;\n  width: 50px;\n}\n\n@media (max-width: 480px) {\n  .Title-module_title__gpPet .Title-module_element__1EYDR, .Title-module_newTitle__3v8No {\n    font-size: 22px;\n  }\n}\n";
+var s$R = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","title":"Title-module_title__gpPet","element":"Title-module_element__1EYDR","newTitle":"Title-module_newTitle__3v8No","horizontalRule":"Title-module_horizontalRule__1wwO9"};
+styleInject(css$R);
 
 var TitleVariants = {
   underlined: 'underlined',
@@ -4261,18 +4369,18 @@ var Title = function Title(_ref) {
 
   if (variant === TitleVariants.underlined) {
     return React__default.createElement("div", {
-      className: "".concat(s$Q.title, " ").concat(className),
+      className: "".concat(s$R.title, " ").concat(className),
       testid: testid
     }, React__default.createElement(htmlElement, {
-      className: [s$Q.element, elementClassName].join(' ')
+      className: [s$R.element, elementClassName].join(' ')
     }, label), React__default.createElement("hr", {
-      className: s$Q.horizontalRule
+      className: s$R.horizontalRule
     }));
   }
 
   if (variant === TitleVariants.none) {
     return React__default.createElement(htmlElement, {
-      className: "".concat(s$Q.newTitle, " ").concat(className)
+      className: "".concat(s$R.newTitle, " ").concat(className)
     }, label, testid);
   }
 
@@ -4295,9 +4403,9 @@ Title.propTypes = {
   elementClassName: PropTypes$1.string
 };
 
-var css$R = "/**\n* This element has to be wrapped in a .steps div to increment the counter\n*/\n\n.TitleStep-module_steps__1Ryhp {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  counter-reset: steps;\n}\n\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0:before,\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0 + .TitleStep-module_step_button__1xXOY:before,\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0 + .TitleStep-module_step_button__1xXOY + .TitleStep-module_step_button__1xXOY:before {\n  content: counter(steps);\n}\n\n.TitleStep-module_step_button__1xXOY {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  color: #9eb3c2;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 17.6px;\n  font-size: 17.6px;\n  font-size: 1.1rem;\n  margin-right: 48px;\n  margin-right: 48px;\n  margin-right: 3rem;\n  position: relative;\n  background-color: transparent;\n  border: 0;\n  counter-increment: steps;\n  cursor: pointer;\n  font-weight: 300;\n  -webkit-transition: all 0.3s ease-in-out;\n  transition: all 0.3s ease-in-out;\n  opacity: 1\n}\n\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0 {\n  color: #ffcd02;\n  cursor: default;\n}\n\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0:before {\n  background-color: #fefefe;\n}\n\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0:after {\n  border-right: 2px solid #fefefe;\n  content: '';\n  height: 35px;\n  left: 19px;\n  position: absolute;\n  top: 26px;\n}\n\n.TitleStep-module_step_button__1xXOY.TitleStep-module_done__1vIiB:before {\n  content: '\\2713';\n}\n\n.TitleStep-module_step_button__1xXOY:before {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  background-color: #9eb3c2;\n  border-radius: 50%;\n  color: #163457;\n  content: '7';\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 13px;\n  font-weight: bold;\n  height: 25px;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  margin-right: 10px;\n  width: 25px;\n}\n\n.TitleStep-module_step_button__1xXOY:before, .TitleStep-module_step_button__1xXOY:after {\n  -webkit-transition: all 0.3s ease-in-out;\n  transition: all 0.3s ease-in-out;\n}\n\n.TitleStep-module_step_button__1xXOY:hover {\n  color: #fefefe;\n}\n\n.TitleStep-module_step_button__1xXOY:hover:before, .TitleStep-module_step_button__1xXOY:hover:after {\n  background-color: #fefefe;\n}\n\n.TitleStep-module_step_button__1xXOY:hover:active {\n  -webkit-transition: all 0s ease-in-out;\n  transition: all 0s ease-in-out;\n  opacity: 0.6;\n}\n";
-var s$R = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","steps":"TitleStep-module_steps__1Ryhp","step_button":"TitleStep-module_step_button__1xXOY","active":"TitleStep-module_active__3zKP0","done":"TitleStep-module_done__1vIiB"};
-styleInject(css$R);
+var css$S = "/**\n* This element has to be wrapped in a .steps div to increment the counter\n*/\n\n.TitleStep-module_steps__1Ryhp {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  counter-reset: steps;\n}\n\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0:before,\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0 + .TitleStep-module_step_button__1xXOY:before,\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0 + .TitleStep-module_step_button__1xXOY + .TitleStep-module_step_button__1xXOY:before {\n  content: counter(steps);\n}\n\n.TitleStep-module_step_button__1xXOY {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  color: #9eb3c2;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 17.6px;\n  font-size: 17.6px;\n  font-size: 1.1rem;\n  margin-right: 48px;\n  margin-right: 48px;\n  margin-right: 3rem;\n  position: relative;\n  background-color: transparent;\n  border: 0;\n  counter-increment: steps;\n  cursor: pointer;\n  font-weight: 300;\n  -webkit-transition: all 0.3s ease-in-out;\n  transition: all 0.3s ease-in-out;\n  opacity: 1\n}\n\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0 {\n  color: #ffcd02;\n  cursor: default;\n}\n\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0:before {\n  background-color: #fefefe;\n}\n\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0:after {\n  border-right: 2px solid #fefefe;\n  content: '';\n  height: 35px;\n  left: 19px;\n  position: absolute;\n  top: 26px;\n}\n\n.TitleStep-module_step_button__1xXOY.TitleStep-module_done__1vIiB:before {\n  content: '\\2713';\n}\n\n.TitleStep-module_step_button__1xXOY:before {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  background-color: #9eb3c2;\n  border-radius: 50%;\n  color: #163457;\n  content: '7';\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 13px;\n  font-weight: bold;\n  height: 25px;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  margin-right: 10px;\n  width: 25px;\n}\n\n.TitleStep-module_step_button__1xXOY:before, .TitleStep-module_step_button__1xXOY:after {\n  -webkit-transition: all 0.3s ease-in-out;\n  transition: all 0.3s ease-in-out;\n}\n\n.TitleStep-module_step_button__1xXOY:hover {\n  color: #fefefe;\n}\n\n.TitleStep-module_step_button__1xXOY:hover:before, .TitleStep-module_step_button__1xXOY:hover:after {\n  background-color: #fefefe;\n}\n\n.TitleStep-module_step_button__1xXOY:hover:active {\n  -webkit-transition: all 0s ease-in-out;\n  transition: all 0s ease-in-out;\n  opacity: 0.6;\n}\n";
+var s$S = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","steps":"TitleStep-module_steps__1Ryhp","step_button":"TitleStep-module_step_button__1xXOY","active":"TitleStep-module_active__3zKP0","done":"TitleStep-module_done__1vIiB"};
+styleInject(css$S);
 
 var TitleStep = function TitleStep(_ref) {
   var Active = _ref.Active,
@@ -4305,7 +4413,7 @@ var TitleStep = function TitleStep(_ref) {
       Done = _ref.Done,
       onClick = _ref.onClick,
       className = _ref.className;
-  var classNameString = "\n        ".concat(s$R.step_button, "\n        ").concat(Done ? s$R.done : '', "\n        ").concat(Active ? s$R.active : '', "\n        ").concat(className, "\n    ");
+  var classNameString = "\n        ".concat(s$S.step_button, "\n        ").concat(Done ? s$S.done : '', "\n        ").concat(Active ? s$S.active : '', "\n        ").concat(className, "\n    ");
   return React__default.createElement("button", {
     className: classNameString,
     onClick: onClick
@@ -4323,49 +4431,6 @@ TitleStep.propTypes = {
   Done: PropTypes$1.bool,
   onClick: PropTypes$1.func.isRequired,
   className: PropTypes$1.string
-};
-
-var css$S = ".Tooltip-module_tooltipContainer__15s8H {\n    font-size: 2em;\n    text-align: center;\n    position: relative\n}\n\n.Tooltip-module_tooltipContainer__15s8H:hover>.Tooltip-module_tooltipText__1buoM {\n    visibility: visible;\n}\n\n.Tooltip-module_tooltipContainer__15s8H > i {\n    font-size: 18px;\n}\n\n.Tooltip-module_tooltipContainer__15s8H > i:before {\n    color: #163457 !important;\n}\n\n.Tooltip-module_tooltipText__1buoM {\n    display: block;\n    position: absolute;\n    z-index: 10;\n    padding: 10px;\n    border-radius: 8px;\n    text-align: left;\n    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .25);\n            box-shadow: 0 0 10px rgba(0, 0, 0, .25);\n    background-color: #fefefe;\n    color: #163457;\n    font-size: 16px;\n}\n\n.Tooltip-module_hiddenTooltip__173uY {\n    visibility: hidden;\n}\n\n.Tooltip-module_visibleTooltip__3zTRG {\n    visibility: visible;\n}\n\n.Tooltip-module_tooltipText__1buoM:after {\n    border: solid transparent;\n    content: \" \";\n    height: 0;\n    width: 0;\n    position: absolute;\n    pointer-events: none;\n    border-color: transparent;\n    border-width: 8px;\n}\n\n.Tooltip-module_right__1nw9g {\n    -webkit-transform: translateY(-50%);\n            transform: translateY(-50%);\n    left: 30px;\n    top: 12px;\n}\n\n.Tooltip-module_tooltipText__1buoM.Tooltip-module_right__1nw9g:after {\n    right: 100%;\n    top: 50%;\n    margin-top: -8px;\n    border-right-color: #fefefe;\n}\n\n.Tooltip-module_left__3nypM {\n    -webkit-transform: translateY(-50%) translateX(-100%);\n            transform: translateY(-50%) translateX(-100%);\n    top: 12px;\n    left: -15px;\n}\n\n.Tooltip-module_tooltipText__1buoM.Tooltip-module_left__3nypM:after {\n    left: 100%;\n    top: 50%;\n    margin-top: -8px;\n    border-left-color: #fefefe;\n}\n\n.Tooltip-module_bottom__2SGDR {\n    -webkit-transform: translateX(-50%);\n            transform: translateX(-50%);\n    left: 8px;\n    top: 35px;\n}\n\n.Tooltip-module_tooltipText__1buoM.Tooltip-module_bottom__2SGDR:after {\n    bottom: 100%;\n    left: 50%;\n    margin-left: -8px;\n    border-bottom-color: #fefefe;\n}\n\n.Tooltip-module_top__239MH {\n    -webkit-transform: translateX(-50%) translateY(-100%);\n            transform: translateX(-50%) translateY(-100%);\n    left: 8px;\n    top: -8px;\n}\n\n.Tooltip-module_tooltipText__1buoM.Tooltip-module_top__239MH:after {\n    top: 100%;\n    left: 50%;\n    margin-left: -8px;\n    border-top-color: #fefefe;\n}\n\n.Tooltip-module_xSmall__p7rPd {\n    width: 100px;\n}\n\n.Tooltip-module_small__1IS1m {\n    width: 200px;\n}\n\n.Tooltip-module_medium__hRcmQ {\n    width: 400px;\n}\n\n.Tooltip-module_large__paGda {\n    width: 600px;\n\n}\n";
-var s$S = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","tooltipContainer":"Tooltip-module_tooltipContainer__15s8H","tooltipText":"Tooltip-module_tooltipText__1buoM","hiddenTooltip":"Tooltip-module_hiddenTooltip__173uY","visibleTooltip":"Tooltip-module_visibleTooltip__3zTRG","right":"Tooltip-module_right__1nw9g","left":"Tooltip-module_left__3nypM","bottom":"Tooltip-module_bottom__2SGDR","top":"Tooltip-module_top__239MH","xSmall":"Tooltip-module_xSmall__p7rPd","small":"Tooltip-module_small__1IS1m","medium":"Tooltip-module_medium__hRcmQ","large":"Tooltip-module_large__paGda"};
-styleInject(css$S);
-
-var Tooltip = function Tooltip(_ref) {
-  var iconClassName = _ref.iconClassName,
-      text = _ref.text,
-      className = _ref.className,
-      tooltipClassName = _ref.tooltipClassName,
-      position = _ref.position,
-      tooltipSize = _ref.tooltipSize,
-      IconComponent = _ref.IconComponent,
-      visible = _ref.visible;
-  var computedTooltipClassName = [s$S.tooltipText, s$S[position], s$S[tooltipSize], tooltipClassName, visible ? s$S.visibleTooltip : s$S.hiddenTooltip];
-  return React__default.createElement("div", {
-    className: [s$S.tooltipContainer, className].join(' ')
-  }, IconComponent !== null && typeof IconComponent === 'function' && IconComponent() ? React__default.createElement(IconComponent, null) : React__default.createElement("i", {
-    className: iconClassName
-  }), React__default.createElement("span", {
-    className: computedTooltipClassName.join(' ')
-  }, text));
-};
-
-Tooltip.defaultProps = {
-  className: '',
-  tooltipClassName: '',
-  position: 'bottom',
-  tooltipSize: 'medium',
-  IconComponent: null,
-  iconClassName: '',
-  visible: false
-};
-Tooltip.propTypes = {
-  iconClassName: PropTypes$1.string,
-  text: PropTypes$1.string.isRequired,
-  className: PropTypes$1.string,
-  tooltipClassName: PropTypes$1.string,
-  position: PropTypes$1.oneOf(['left', 'top', 'right', 'bottom']),
-  tooltipSize: PropTypes$1.oneOf(['xSmall', 'small', 'medium', 'large']),
-  IconComponent: PropTypes$1.func,
-  visible: PropTypes$1.bool
 };
 
 var css$T = ".RewardCard-module_card__1Znmy {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: 0;\n  max-height: 100%;\n  border-radius: 8px;\n  background-color: #fefefe;\n  -webkit-box-shadow: 0px 0px 38px -2px rgba(0, 0, 0, .15);\n          box-shadow: 0px 0px 38px -2px rgba(0, 0, 0, .15);\n}\n\n.RewardCard-module_left__3Vghj {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n\n.RewardCard-module_imageContainer__ZBjX1 {\n  background-position: center center;\n  background-repeat: no-repeat;\n  background-size: 100% 100%;\n  border-bottom-right-radius: 8px;\n  border-top-right-radius: 8px;\n  width: 30px;\n}\n\n.RewardCard-module_imageContainerBig__7BCdx {\n  width: 65px;\n}\n\n@media (max-width: 480px) {\n  .RewardCard-module_imageContainer__ZBjX1 {\n    display: none;\n  }\n}\n";
@@ -4692,7 +4757,7 @@ var RegistrationFormTextTypes = PropTypes$1.shape({
   title: PropTypes$1.string
 });
 var defaultTexts$5 = {
-  male: 'Mr',
+  male: 'M',
   female: 'Mme',
   firstName: 'Prénom',
   lastName: 'Nom',
@@ -4702,10 +4767,6 @@ var defaultTexts$5 = {
   password: 'Mot de passe',
   passwordConfirmation: 'Confirmation de mot de passe',
   title: 'Civilité'
-};
-var radioDefaultValues = {
-  male: 'Mr',
-  female: 'Mme'
 };
 var ValuesType = PropTypes$1.shape({
   firstName: PropTypes$1.string,
@@ -4777,10 +4838,10 @@ function (_React$Component) {
     _this.handleChangePasswordConfirmation = _this.handleChangeProperty.bind(_assertThisInitialized(_this), 'passwordConfirmation');
     _this.genders = [{
       value: 'male',
-      label: radioDefaultValues.male
+      label: props.texts.male
     }, {
       value: 'female',
-      label: radioDefaultValues.female
+      label: props.texts.female
     }];
     return _this;
   }
@@ -5123,12 +5184,19 @@ var PickerSuggestions = function PickerSuggestions(_ref) {
       className = _ref.className,
       ArrowComponent = _ref.ArrowComponent,
       split = _ref.split,
-      rest = _objectWithoutProperties(_ref, ["visible", "children", "className", "ArrowComponent", "split"]);
+      containerOffset = _ref.containerOffset,
+      rest = _objectWithoutProperties(_ref, ["visible", "children", "className", "ArrowComponent", "split", "containerOffset"]);
 
   return React__default.createElement("div", _extends({
-    className: [s$_.container, visible ? s$_.visible : undefined, split ? s$_.splitContainer : undefined, className].join(' ')
+    className: [s$_.container, visible ? s$_.visible : undefined, split ? s$_.splitContainer : undefined, className].join(' '),
+    style: {
+      left: "calc(50% - ".concat(containerOffset + 130, "px)")
+    }
   }, rest), React__default.createElement("div", {
-    className: s$_.arrowContainer
+    className: s$_.arrowContainer,
+    style: {
+      left: "".concat(containerOffset, "px")
+    }
   }, React__default.createElement(ArrowComponent, {
     position: "top",
     className: [s$_.arrow, visible ? s$_.visible : undefined].join(' ')
@@ -5142,7 +5210,8 @@ PickerSuggestions.defaultProps = {
   className: undefined,
   ArrowComponent: function ArrowComponent(props) {
     return React__default.createElement(Arrow, props);
-  }
+  },
+  containerOffset: 0
 };
 PickerSuggestions.propTypes = {
   visible: PropTypes$1.bool,
@@ -5150,7 +5219,8 @@ PickerSuggestions.propTypes = {
   // eslint-disable-line
   className: PropTypes$1.string,
   ArrowComponent: PropTypes$1.func,
-  split: PropTypes$1.bool
+  split: PropTypes$1.bool,
+  containerOffset: PropTypes$1.number
 };
 
 var _ZoneTypesToIconName;
@@ -15613,9 +15683,15 @@ var InputSelect = function InputSelect(_ref) {
       onChange = _ref.onChange,
       value = _ref.value,
       error = _ref.error,
-      props = _objectWithoutProperties(_ref, ["options", "classname", "onChange", "value", "error"]);
+      modal = _ref.modal,
+      props = _objectWithoutProperties(_ref, ["options", "classname", "onChange", "value", "error", "modal"]);
 
   var ectorStyles = {
+    menuPortal: function menuPortal(base) {
+      return _objectSpread({}, base, {
+        zIndex: 9999
+      });
+    },
     option: function option(styles, _ref2) {
       var isSelected = _ref2.isSelected,
           isFocused = _ref2.isFocused;
@@ -15642,6 +15718,12 @@ var InputSelect = function InputSelect(_ref) {
       });
     }
   };
+  var modalProps = modal ? {
+    menuPosition: 'absolute',
+    menuPlacement: 'auto',
+    // eslint-disable-next-line no-undef
+    menuPortalTarget: document.body
+  } : {};
   return React__default.createElement(index$1$1, _extends({
     className: [s$15.select, classname].join(' '),
     options: options,
@@ -15653,14 +15735,15 @@ var InputSelect = function InputSelect(_ref) {
       ignoreAccents: false
     }) // https://github.com/JedWatson/react-select/issues/3128#issuecomment-487256349
 
-  }, props));
+  }, modalProps, props));
 };
 
 InputSelect.defaultProps = {
   options: [],
   classname: undefined,
   value: undefined,
-  error: null
+  error: null,
+  modal: false
 };
 InputSelect.propTypes = {
   options: PropTypes$1.arrayOf(PropTypes$1.shape({
@@ -15673,7 +15756,8 @@ InputSelect.propTypes = {
   }),
   error: PropTypes$1.string,
   classname: PropTypes$1.string,
-  onChange: PropTypes$1.func.isRequired
+  onChange: PropTypes$1.func.isRequired,
+  modal: PropTypes$1.bool
 };
 
 var css$18 = ".RatingStars-module_container__3pCeB {\n  position: relative;\n}\n\n.RatingStars-module_activeStars__1LEHa {\n  position: absolute;\n  top: 0;\n  overflow: hidden;\n}\n";
@@ -16043,7 +16127,8 @@ function (_React$PureComponent) {
           className = _this$props.className,
           buttonClassName = _this$props.buttonClassName,
           suggestionsClassName = _this$props.suggestionsClassName,
-          disabled = _this$props.disabled;
+          disabled = _this$props.disabled,
+          suggestionContainerOffset = _this$props.suggestionContainerOffset;
       var _this$state = this.state,
           visible = _this$state.visible,
           isMouseHover = _this$state.isMouseHover;
@@ -16060,7 +16145,8 @@ function (_React$PureComponent) {
         isActive: !!SuggestionsComponent && visible || isMouseHover
       })), SuggestionsComponent && React__default.createElement(PickerSuggestions, {
         visible: visible,
-        className: [s$18.suggestions, suggestionsClassName].join(' ')
+        className: [s$18.suggestions, suggestionsClassName].join(' '),
+        containerOffset: suggestionContainerOffset
       }, React__default.createElement(SuggestionsComponent, null)));
     }
   }]);
@@ -16076,7 +16162,8 @@ MenuButton.defaultProps = {
   onClick: function onClick() {
     return null;
   },
-  disabled: false
+  disabled: false,
+  suggestionContainerOffset: 0
 };
 MenuButton.propTypes = {
   LabelComponent: PropTypes$1.func.isRequired,
@@ -16085,7 +16172,8 @@ MenuButton.propTypes = {
   className: PropTypes$1.string,
   buttonClassName: PropTypes$1.string,
   suggestionsClassName: PropTypes$1.string,
-  disabled: PropTypes$1.bool
+  disabled: PropTypes$1.bool,
+  suggestionContainerOffset: PropTypes$1.number
 };
 
 var css$1b = ".TextIcon-module_container__3uZXq {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.TextIcon-module_icon__3DoI9 {\n  height: 2em;\n  width: 2em;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.TextIcon-module_text__1v24r {}";
@@ -16665,9 +16753,125 @@ SavedCardsPicker.defaultProps = {
   fetching: false
 };
 
-var css$1k = ".DateTimePicker-module_calendar__1m3vk {\n  position: relative;\n  width: 100%;\n  height: 300px;\n}\n\n.DateTimePicker-module_calendarArrow__SvtwN {\n  display: none;\n}\n\n.DateTimePicker-module_datePickerPopper__2V2oe {\n  -webkit-transform: none !important;\n          transform: none !important;\n  width: 100%;\n  margin-top: 0 !important;\n}\n\n.DateTimePicker-module_hidden__OvFBm {\n  display: none !important;\n}\n\n.DateTimePicker-module_pickerSuggestions__38iqg {\n  width: 610px !important;\n  margin-left: -300px;\n  left: 50%;\n  height: 265px !important\n}\n\n.DateTimePicker-module_pickerSuggestions__38iqg:before {\n  display: none;\n}\n\n.DateTimePicker-module_suggestionsArrow__2RcKh {\n  margin-left: -9px;\n}\n\n.DateTimePicker-module_picker__3d7nO {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  height: auto;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP {\n  background: none;\n  padding-left: 40px;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::-webkit-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::-ms-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.datePickerInput::-webkit-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.datePickerInput::-ms-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.DateTimePicker-module_fixedWidthDateInput__3lrKo {\n  min-width: 160px;\n  width: 160px;\n  max-width: 160px;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU {\n  border: none !important;\n  border-radius: 8px;\n  max-width: 100px;\n  padding-left: 35px;\n  margin-right: 1px;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::-webkit-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::-ms-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.timePickerInput::-webkit-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.timePickerInput::-ms-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInputContainer__ROeTv::before {\n  background-color: rgba(191, 196, 212, .52);\n  content: '';\n  height: 20px;\n  margin-top: -10px;\n  position: absolute;\n  top: 50%;\n  width: 1px;\n}\n\n.DateTimePicker-module_timeSuggestions__3aCiQ {\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  position: relative;\n}\n\n.DateTimePicker-module_timeSuggestionsContainer__3Pe8K:nth-child(1) {\n  width: 300px;\n  min-width: 300px;\n}\n\n.DateTimePicker-module_timeSuggestionsContainer__3Pe8K {\n  width: 100%;\n}\n\n.DateTimePicker-module_inputIcon__178Nw {\n  font-size: 19.2px;\n  font-size: 19.2px;\n  font-size: 1.2rem;\n  left: 10px;\n}\n\n.DateTimePicker-module_inputError__2-au6 {\n  color: #ff5757;\n}\n\n.DateTimePicker-module_inputError__2-au6::-webkit-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputError__2-au6::-ms-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.inputError::-webkit-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.inputError::-ms-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputError__2-au6::placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputError__2-au6:-ms-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputError__2-au6::-ms-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputContainer__1FIAJ {\n  padding: 0;\n}\n\n.DateTimePicker-module_splitInputContainer__1fsjs {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  width: 50%\n}\n\n.DateTimePicker-module_splitInputContainer__1fsjs:first-child {\n  border-right: 1px solid rgba(191, 196, 212, .52);\n}\n\n.DateTimePicker-module_month__2AwNj {\n  color: #163457;\n}\n\n.DateTimePicker-module_hr__1p2EJ {\n  height: 85%;\n  width: 1px;\n  position: absolute;\n  left: 300px;\n  background-color: rgba(191, 196, 212, .52);\n  top: 7.5%;\n}\n";
-var s$1i = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","calendar":"DateTimePicker-module_calendar__1m3vk","calendarArrow":"DateTimePicker-module_calendarArrow__SvtwN","datePickerPopper":"DateTimePicker-module_datePickerPopper__2V2oe","hidden":"DateTimePicker-module_hidden__OvFBm","pickerSuggestions":"DateTimePicker-module_pickerSuggestions__38iqg","suggestionsArrow":"DateTimePicker-module_suggestionsArrow__2RcKh","picker":"DateTimePicker-module_picker__3d7nO","datePickerInput":"DateTimePicker-module_datePickerInput__1JwcP","fixedWidthDateInput":"DateTimePicker-module_fixedWidthDateInput__3lrKo","timePickerInput":"DateTimePicker-module_timePickerInput__1vkhU","timePickerInputContainer":"DateTimePicker-module_timePickerInputContainer__ROeTv","timeSuggestions":"DateTimePicker-module_timeSuggestions__3aCiQ","timeSuggestionsContainer":"DateTimePicker-module_timeSuggestionsContainer__3Pe8K","inputIcon":"DateTimePicker-module_inputIcon__178Nw","inputError":"DateTimePicker-module_inputError__2-au6","inputContainer":"DateTimePicker-module_inputContainer__1FIAJ","splitInputContainer":"DateTimePicker-module_splitInputContainer__1fsjs","month":"DateTimePicker-module_month__2AwNj","hr":"DateTimePicker-module_hr__1p2EJ"};
+var css$1k = ".LanguageSelector-module_select__1pF-L {\n  min-width: 250px;\n}\n\n.LanguageSelector-module_optionContainer__3oYPz {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding-left: 10px;\n}\n\n.LanguageSelector-module_singleValueContainer__2OW9Q {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.LanguageSelector-module_flag__1cI59, .LanguageSelector-module_flagInput__29gE1 {\n  width: 24px;\n  height: 16px;\n}\n\n.LanguageSelector-module_flagInput__29gE1 {\n  margin-right: 10px;\n}\n";
+var s$1i = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","select":"LanguageSelector-module_select__1pF-L","optionContainer":"LanguageSelector-module_optionContainer__3oYPz","singleValueContainer":"LanguageSelector-module_singleValueContainer__2OW9Q","flag":"LanguageSelector-module_flag__1cI59","flagInput":"LanguageSelector-module_flagInput__29gE1"};
 styleInject(css$1k);
+
+var LanguageType = PropTypes$1.shape({
+  name: PropTypes$1.string.isRequired,
+  locale: PropTypes$1.string.isRequired,
+  image: PropTypes$1.string.isRequired
+});
+
+var LanguageSelector = function LanguageSelector(_ref) {
+  var languages = _ref.languages,
+      value = _ref.value,
+      _onChange = _ref.onChange,
+      id = _ref.id,
+      className = _ref.className,
+      selectProps = _objectWithoutProperties(_ref, ["languages", "value", "onChange", "id", "className"]);
+
+  var getSelectValueFromLocale = function getSelectValueFromLocale(localeValue) {
+    return languages.map(function (_ref2) {
+      var image = _ref2.image,
+          name = _ref2.name,
+          locale = _ref2.locale;
+      return {
+        value: locale,
+        label: name,
+        image: image
+      };
+    }).find(function (language) {
+      return language.value === localeValue;
+    });
+  };
+
+  var _useState = useState(value ? getSelectValueFromLocale(value) : undefined),
+      _useState2 = _slicedToArray(_useState, 2),
+      selectValue = _useState2[0],
+      setSelectValue = _useState2[1];
+
+  useEffect(function () {
+    setSelectValue(getSelectValueFromLocale(value));
+  }, [value]);
+
+  var Option = function Option(_ref3) {
+    var data = _ref3.data,
+        props = _objectWithoutProperties(_ref3, ["data"]);
+
+    return React__default.createElement("div", {
+      className: s$1i.optionContainer
+    }, React__default.createElement("img", {
+      className: s$1i.flag,
+      src: data.image,
+      alt: "flag-".concat(data.locale)
+    }), React__default.createElement(components.Option, _extends({}, props, {
+      data: data
+    })));
+  };
+
+  var SingleValue = function SingleValue(_ref4) {
+    var children = _ref4.children,
+        data = _ref4.data,
+        props = _objectWithoutProperties(_ref4, ["children", "data"]);
+
+    return React__default.createElement(components.SingleValue, _extends({}, props, {
+      data: data
+    }), React__default.createElement("div", {
+      className: s$1i.singleValueContainer
+    }, React__default.createElement("img", {
+      className: s$1i.flagInput,
+      src: data.image,
+      alt: "flag-".concat(data.locale)
+    }), children));
+  };
+
+  Option.propTypes = {
+    data: PropTypes$1.shape(LanguageType).isRequired
+  };
+  SingleValue.propTypes = {
+    data: PropTypes$1.shape(LanguageType).isRequired,
+    children: PropTypes$1.node.isRequired
+  };
+  return React__default.createElement(InputSelect, _extends({
+    id: id,
+    options: languages.map(function (_ref5) {
+      var locale = _ref5.locale,
+          name = _ref5.name,
+          image = _ref5.image;
+      return {
+        value: locale,
+        label: name,
+        image: image
+      };
+    }),
+    onChange: function onChange(option) {
+      return _onChange(option.value);
+    },
+    components: {
+      Option: Option,
+      SingleValue: SingleValue
+    },
+    value: selectValue,
+    classname: [s$1i.select, className].join(' ')
+  }, selectProps));
+};
+
+LanguageSelector.defaultProps = {
+  id: 'communication-locale',
+  className: undefined
+};
+LanguageSelector.propTypes = {
+  languages: PropTypes$1.arrayOf(LanguageType).isRequired,
+  value: PropTypes$1.string.isRequired,
+  onChange: PropTypes$1.func.isRequired,
+  id: PropTypes$1.string,
+  className: PropTypes$1.string
+};
+
+var css$1l = ".DateTimePicker-module_calendar__1m3vk {\n  position: relative;\n  width: 100%;\n  height: 300px;\n}\n\n.DateTimePicker-module_calendarArrow__SvtwN {\n  display: none;\n}\n\n.DateTimePicker-module_datePickerPopper__2V2oe {\n  -webkit-transform: none !important;\n          transform: none !important;\n  width: 100%;\n  margin-top: 0 !important;\n}\n\n.DateTimePicker-module_hidden__OvFBm {\n  display: none !important;\n}\n\n.DateTimePicker-module_pickerSuggestions__38iqg {\n  width: 610px !important;\n  margin-left: -300px;\n  left: 50%;\n  height: 265px !important\n}\n\n.DateTimePicker-module_pickerSuggestions__38iqg:before {\n  display: none;\n}\n\n.DateTimePicker-module_suggestionsArrow__2RcKh {\n  margin-left: -9px;\n}\n\n.DateTimePicker-module_picker__3d7nO {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  height: auto;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP {\n  background: none;\n  padding-left: 40px;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::-webkit-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::-ms-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.datePickerInput::-webkit-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.datePickerInput::-ms-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.DateTimePicker-module_datePickerInput__1JwcP::placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.DateTimePicker-module_fixedWidthDateInput__3lrKo {\n  min-width: 160px;\n  width: 160px;\n  max-width: 160px;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU {\n  border: none !important;\n  border-radius: 8px;\n  max-width: 100px;\n  padding-left: 35px;\n  margin-right: 1px;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::-webkit-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::-ms-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.timePickerInput::-webkit-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.timePickerInput::-ms-input-placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInput__1vkhU::placeholder {\n  color: #a9b3c5;\n  font-style: italic;\n}\n\n.DateTimePicker-module_timePickerInputContainer__ROeTv::before {\n  background-color: rgba(191, 196, 212, .52);\n  content: '';\n  height: 20px;\n  margin-top: -10px;\n  position: absolute;\n  top: 50%;\n  width: 1px;\n}\n\n.DateTimePicker-module_timeSuggestions__3aCiQ {\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  position: relative;\n}\n\n.DateTimePicker-module_timeSuggestionsContainer__3Pe8K:nth-child(1) {\n  width: 300px;\n  min-width: 300px;\n}\n\n.DateTimePicker-module_timeSuggestionsContainer__3Pe8K {\n  width: 100%;\n}\n\n.DateTimePicker-module_inputIcon__178Nw {\n  font-size: 19.2px;\n  font-size: 19.2px;\n  font-size: 1.2rem;\n  left: 10px;\n}\n\n.DateTimePicker-module_inputError__2-au6 {\n  color: #ff5757;\n}\n\n.DateTimePicker-module_inputError__2-au6::-webkit-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputError__2-au6::-ms-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.inputError::-webkit-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.inputError::-ms-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputError__2-au6::placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputError__2-au6:-ms-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputError__2-au6::-ms-input-placeholder {\n  color: #ff5757;\n  opacity: 0.5;\n}\n\n.DateTimePicker-module_inputContainer__1FIAJ {\n  padding: 0;\n}\n\n.DateTimePicker-module_splitInputContainer__1fsjs {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  width: 50%\n}\n\n.DateTimePicker-module_splitInputContainer__1fsjs:first-child {\n  border-right: 1px solid rgba(191, 196, 212, .52);\n}\n\n.DateTimePicker-module_month__2AwNj {\n  color: #163457;\n}\n\n.DateTimePicker-module_hr__1p2EJ {\n  height: 85%;\n  width: 1px;\n  position: absolute;\n  left: 300px;\n  background-color: rgba(191, 196, 212, .52);\n  top: 7.5%;\n}\n";
+var s$1j = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","calendar":"DateTimePicker-module_calendar__1m3vk","calendarArrow":"DateTimePicker-module_calendarArrow__SvtwN","datePickerPopper":"DateTimePicker-module_datePickerPopper__2V2oe","hidden":"DateTimePicker-module_hidden__OvFBm","pickerSuggestions":"DateTimePicker-module_pickerSuggestions__38iqg","suggestionsArrow":"DateTimePicker-module_suggestionsArrow__2RcKh","picker":"DateTimePicker-module_picker__3d7nO","datePickerInput":"DateTimePicker-module_datePickerInput__1JwcP","fixedWidthDateInput":"DateTimePicker-module_fixedWidthDateInput__3lrKo","timePickerInput":"DateTimePicker-module_timePickerInput__1vkhU","timePickerInputContainer":"DateTimePicker-module_timePickerInputContainer__ROeTv","timeSuggestions":"DateTimePicker-module_timeSuggestions__3aCiQ","timeSuggestionsContainer":"DateTimePicker-module_timeSuggestionsContainer__3Pe8K","inputIcon":"DateTimePicker-module_inputIcon__178Nw","inputError":"DateTimePicker-module_inputError__2-au6","inputContainer":"DateTimePicker-module_inputContainer__1FIAJ","splitInputContainer":"DateTimePicker-module_splitInputContainer__1fsjs","month":"DateTimePicker-module_month__2AwNj","hr":"DateTimePicker-module_hr__1p2EJ"};
+styleInject(css$1l);
 
 var TextsType$9 = PropTypes$1.shape({
   startPlaceholder: PropTypes$1.string,
@@ -16692,9 +16896,9 @@ var DefaultTexts$9 = {
   toTimeSecondDescription: 'au dépose minute'
 };
 
-var css$1l = ".TimeSuggestions-module_container__1FI_D {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n}\n\n.TimeSuggestions-module_timeContainer__cmXVx {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n}\n\n.TimeSuggestions-module_timeDescription__1KSio {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  width: 70%;\n  text-align: right;\n  padding-right: 15px;\n  padding-top: 20px;\n}\n\n.TimeSuggestions-module_timeDescriptionTitle__1CASr {\n  font-weight: bold;\n}\n";
-var s$1j = {"container":"TimeSuggestions-module_container__1FI_D","timeContainer":"TimeSuggestions-module_timeContainer__cmXVx","timeDescription":"TimeSuggestions-module_timeDescription__1KSio","timeDescriptionTitle":"TimeSuggestions-module_timeDescriptionTitle__1CASr"};
-styleInject(css$1l);
+var css$1m = ".TimeSuggestions-module_container__1FI_D {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n}\n\n.TimeSuggestions-module_timeContainer__cmXVx {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n}\n\n.TimeSuggestions-module_timeDescription__1KSio {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  width: 70%;\n  text-align: right;\n  padding-right: 15px;\n  padding-top: 20px;\n}\n\n.TimeSuggestions-module_timeDescriptionTitle__1CASr {\n  font-weight: bold;\n}\n";
+var s$1k = {"container":"TimeSuggestions-module_container__1FI_D","timeContainer":"TimeSuggestions-module_timeContainer__cmXVx","timeDescription":"TimeSuggestions-module_timeDescription__1KSio","timeDescriptionTitle":"TimeSuggestions-module_timeDescriptionTitle__1CASr"};
+styleInject(css$1m);
 
 var TimeSuggestions = function TimeSuggestions(_ref) {
   var className = _ref.className,
@@ -16736,13 +16940,13 @@ var TimeSuggestions = function TimeSuggestions(_ref) {
       endToHourRange = _toHourRange[1];
 
   return React__default.createElement("div", {
-    className: [s$1j.container, className].join(' ')
+    className: [s$1k.container, className].join(' ')
   }, React__default.createElement("div", {
-    className: [s$1j.timeContainer, containerClassName].join(' ')
+    className: [s$1k.timeContainer, containerClassName].join(' ')
   }, React__default.createElement("div", {
-    className: s$1j.timeDescription
+    className: s$1k.timeDescription
   }, React__default.createElement("span", {
-    className: s$1j.timeDescriptionTitle
+    className: s$1k.timeDescriptionTitle
   }, texts.fromTimeTitle), React__default.createElement("span", null, texts.fromTimeFirstDescription), React__default.createElement("span", null, texts.fromTimeSecondDescription)), React__default.createElement(TimeRange, {
     onSelect: onSelectStartTime,
     hour: startHour,
@@ -16754,11 +16958,11 @@ var TimeSuggestions = function TimeSuggestions(_ref) {
     endHour: endFromHourRange,
     ArrowIcon: ArrowIcon
   })), React__default.createElement("div", {
-    className: [s$1j.timeContainer, containerClassName].join(' ')
+    className: [s$1k.timeContainer, containerClassName].join(' ')
   }, React__default.createElement("div", {
-    className: s$1j.timeDescription
+    className: s$1k.timeDescription
   }, React__default.createElement("span", {
-    className: s$1j.timeDescriptionTitle
+    className: s$1k.timeDescriptionTitle
   }, texts.toTimeTitle), React__default.createElement("span", null, texts.toTimeFirstDescription), React__default.createElement("span", null, texts.toTimeSecondDescription)), React__default.createElement(TimeRange, {
     onSelect: onSelectEndTime,
     hour: endHour,
@@ -16935,7 +17139,7 @@ function (_React$PureComponent) {
     _defineProperty(_assertThisInitialized(_this), "renderMonthElement", function (_ref2) {
       var month = _ref2.month;
       return createElement("div", {
-        className: s$1i.month
+        className: s$1j.month
       }, month.format('MMMM YYYY'));
     });
 
@@ -16944,7 +17148,7 @@ function (_React$PureComponent) {
           props = _objectWithoutProperties(_ref3, ["className"]);
 
       return createElement(Icon, _extends({}, props, {
-        className: [s$1i.inputIcon, className].join(' '),
+        className: [s$1j.inputIcon, className].join(' '),
         src: error ? iconCalendarRed : iconCalendar
       }));
     });
@@ -16964,7 +17168,7 @@ function (_React$PureComponent) {
           props = _objectWithoutProperties(_ref4, ["className"]);
 
       return createElement(Icon, _extends({}, props, {
-        className: [s$1i.inputIcon, className].join(' '),
+        className: [s$1j.inputIcon, className].join(' '),
         src: error ? iconClockRed : iconClock
       }));
     });
@@ -17003,18 +17207,18 @@ function (_React$PureComponent) {
       }
 
       return createElement("div", {
-        className: s$1i.splitInputContainer
+        className: s$1j.splitInputContainer
       }, createElement(Input, _extends({}, inputProps, {
         onFocus: _this.handleStartDateFocus,
-        className: [s$1i.datePickerInput, showTimeInputs ? s$1i.fixedWidthDateInput : undefined, hasStartDateError ? s$1i.inputError : undefined, inputClassName].join(' '),
-        containerClassName: s$1i.inputContainer,
+        className: [s$1j.datePickerInput, showTimeInputs ? s$1j.fixedWidthDateInput : undefined, hasStartDateError ? s$1j.inputError : undefined, inputClassName].join(' '),
+        containerClassName: s$1j.inputContainer,
         value: startDate ? startDate.format('ddd DD/MM/YYYY') : '',
         placeholder: texts.startPlaceholder,
         LeftComponent: _this.renderStartDateInputLeftElement
       })), showTimeInputs && createElement(Input, _extends({}, inputProps, {
         onFocus: _this.handleTimeFocus,
-        containerClassName: s$1i.timePickerInputContainer,
-        className: [s$1i.timePickerInput, hasStartTimeError ? s$1i.inputError : undefined, inputClassName].join(' '),
+        containerClassName: s$1j.timePickerInputContainer,
+        className: [s$1j.timePickerInput, hasStartTimeError ? s$1j.inputError : undefined, inputClassName].join(' '),
         value: displayedTime,
         placeholder: texts.timePlaceholder,
         LeftComponent: _this.renderStartTimeInputLeftElement
@@ -17066,18 +17270,18 @@ function (_React$PureComponent) {
       }
 
       return createElement("div", {
-        className: s$1i.splitInputContainer
+        className: s$1j.splitInputContainer
       }, createElement(Input, _extends({}, inputProps, {
-        className: [s$1i.datePickerInput, showTimeInputs ? s$1i.fixedWidthDateInput : undefined, hasEndDateError ? s$1i.inputError : undefined, inputClassName].join(' '),
-        containerClassName: s$1i.inputContainer,
+        className: [s$1j.datePickerInput, showTimeInputs ? s$1j.fixedWidthDateInput : undefined, hasEndDateError ? s$1j.inputError : undefined, inputClassName].join(' '),
+        containerClassName: s$1j.inputContainer,
         onFocus: _this.onEndDateFocus,
         onBlur: _this.handleEndDateTimeBlur,
         value: endDate ? endDate.format('ddd DD/MM/YYYY') : '',
         placeholder: texts.endPlaceholder,
         LeftComponent: _this.renderEndDateInputLeftElement
       })), showTimeInputs && createElement(Input, _extends({}, inputProps, {
-        containerClassName: s$1i.timePickerInputContainer,
-        className: [s$1i.timePickerInput, hasEndTimeError ? s$1i.inputError : undefined, inputClassName].join(' '),
+        containerClassName: s$1j.timePickerInputContainer,
+        className: [s$1j.timePickerInput, hasEndTimeError ? s$1j.inputError : undefined, inputClassName].join(' '),
         onFocus: _this.onEndTimeFocus,
         onBlur: _this.handleEndDateTimeBlur,
         value: displayedTime,
@@ -17091,7 +17295,7 @@ function (_React$PureComponent) {
           props = _objectWithoutProperties(_ref7, ["className"]);
 
       return createElement(Arrow, _extends({}, props, {
-        className: [s$1i.suggestionsArrow, className].join(' ')
+        className: [s$1j.suggestionsArrow, className].join(' ')
       }));
     });
 
@@ -17118,10 +17322,10 @@ function (_React$PureComponent) {
           ArrowIcon = _this$props5.ArrowIcon;
       return createElement(PickerSuggestions, _extends({}, rest, {
         visible: visible,
-        className: [s$1i.pickerSuggestions, className].join(' '),
+        className: [s$1j.pickerSuggestions, className].join(' '),
         ArrowComponent: _this.renderPickerSuggestionsArrow
       }), createElement("div", {
-        className: visiblePicker !== DateTimePicker.datePicker ? s$1i.hidden : undefined
+        className: visiblePicker !== DateTimePicker.datePicker ? s$1j.hidden : undefined
       }, createElement(DayPickerRangeController, {
         verticalBorderSpacing: 1,
         horizontalMonthPadding: 25,
@@ -17142,10 +17346,10 @@ function (_React$PureComponent) {
         isDayBlocked: _this.isDayBlocked,
         isDayHighlighted: _this.isDayHighlighted
       })), createElement("div", {
-        className: s$1i.hr
+        className: s$1j.hr
       }), visiblePicker === DateTimePicker.timePicker && createElement(TimeSuggestions, {
-        className: s$1i.timeSuggestions,
-        containerClassName: s$1i.timeSuggestionsContainer,
+        className: s$1j.timeSuggestions,
+        containerClassName: s$1j.timeSuggestionsContainer,
         onSelect: _this.handleTimeSelect,
         startMinutes: startMinutes,
         startHour: startHour,
@@ -17250,7 +17454,7 @@ function (_React$PureComponent) {
         FirstInputComponent: this.renderStartDateTimeInputComponent,
         SecondInputComponent: this.renderEndDateTimeInputComponent,
         SuggestionsComponent: this.renderSuggestionsComponent,
-        className: [s$1i.picker, className].join(' '),
+        className: [s$1j.picker, className].join(' '),
         onSuggestionsHide: onSuggestionsHide,
         error: error,
         info: info
@@ -17406,5 +17610,5 @@ DateTimePicker.defaultProps = {
 var index$2 = './components';
 
 export default index$2;
-export { ActionLink, AddItemCard, Alert, AlternativeTimeCard, ApplicationCard, Arrow, BookingCard, BookingModificationSummary, BookingSteps, Box, Button, CarCard, Card, CardTitle, CardTravelInformation, ColorPicker, ContactCard, ContactForm, DateTimePicker, FlightInformationForm, GenderPicker, Header, Icon, IconButton, IconPatched, InformationAlert, Input, InputButton, InputCheckbox, InputLabel, InputSelect, Label, LinkUnderlined, Loader, LoginForm, MenuButton, PaymentMethodCard, PhoneInput, Picker, PickerSuggestions, PricingSummary, RadioButton, RatingStars, ReferralCard, RegistrationForm, RewardCard, RideSummary, RoundedButton, SavedCardsLine, SavedCardsPicker, ScrollArrow, Select, ServiceCard, Subtitle, TextIcon, TimeRange, Title, TitleStep, Tooltip, ZonesPicker, arbitraryUnsetMinutesValue };
+export { ActionLink, AddItemCard, Alert, AlternativeTimeCard, ApplicationCard, Arrow, BookingCard, BookingModificationSummary, BookingSteps, Box, Button, CarCard, Card, CardTitle, CardTravelInformation, ColorPicker, ContactCard, ContactForm, DateTimePicker, FlightInformationForm, GenderPicker, Header, Icon, IconButton, IconPatched, InformationAlert, Input, InputButton, InputCheckbox, InputLabel, InputSelect, Label, LanguageSelector, LinkUnderlined, Loader, LoginForm, MenuButton, PaymentMethodCard, PhoneInput, Picker, PickerSuggestions, PricingSummary, RadioButton, RatingStars, ReferralCard, RegistrationForm, RewardCard, RideSummary, RoundedButton, SavedCardsLine, SavedCardsPicker, ScrollArrow, Select, ServiceCard, Subtitle, TextIcon, TimeRange, Title, TitleStep, Tooltip, ZonesPicker, arbitraryUnsetMinutesValue };
 //# sourceMappingURL=ector-ui.es.js.map

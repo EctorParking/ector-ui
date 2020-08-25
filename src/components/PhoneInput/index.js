@@ -106,10 +106,11 @@ class PhoneInput extends React.Component {
           </span>
         </Select>
         <Input
+          placeholder="06 07 08 09 00" // Here to override the placeholder
+          containerClassName={s.inputContainer}
           {...phoneInputProps}
           className={inputClassName}
           hasError={!!error && error.length > 0}
-          placeholder="06 07 08 09 00"
           type="text"
           onChange={this.onPhoneNumberChange}
           value={phone}

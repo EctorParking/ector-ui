@@ -12,7 +12,7 @@ export default PropTypes.shape({
 });
 
 const defaultTexts = {
-  male: 'Mr',
+  male: 'M',
   female: 'Mme',
   firstName: 'Prénom',
   lastName: 'Nom',
@@ -22,11 +22,6 @@ const defaultTexts = {
   password: 'Mot de passe',
   passwordConfirmation: 'Confirmation de mot de passe',
   title: 'Civilité',
-};
-
-const radioDefaultValues = {
-  male: 'Mr',
-  female: 'Mme',
 };
 
 const ValuesType = PropTypes.shape({
@@ -76,7 +71,6 @@ const defaultErrors = {
 
 export {
   defaultTexts,
-  radioDefaultValues,
   ValuesType,
   ErrorsType,
   defaultValues,
