@@ -4216,7 +4216,7 @@ var s$P = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a
 styleInject(css$P);
 
 var ServiceCardFooter = function ServiceCardFooter(_ref) {
-  var price = _ref.price,
+  var PriceComponent = _ref.PriceComponent,
       actionFooter = _ref.actionFooter,
       buttonLabelFooter = _ref.buttonLabelFooter,
       isSubscribed = _ref.isSubscribed,
@@ -4226,7 +4226,7 @@ var ServiceCardFooter = function ServiceCardFooter(_ref) {
     className: s$P.footerContainer
   }, React__default.createElement("span", {
     className: s$P.price
-  }, price), !isSubscribed && React__default.createElement(LinkUnderlined, {
+  }, PriceComponent), !isSubscribed && React__default.createElement(LinkUnderlined, {
     onClick: actionFooter,
     testid: testid
   }, buttonLabelFooter), isSubscribed && showButton && React__default.createElement("button", {
@@ -4242,7 +4242,7 @@ ServiceCardFooter.defaultProps = {
   showButton: true
 };
 ServiceCardFooter.propTypes = {
-  price: PropTypes$1.oneOfType([PropTypes$1.string, PropTypes$1.number]).isRequired,
+  PriceComponent: PropTypes$1.node.isRequired,
   actionFooter: PropTypes$1.func.isRequired,
   buttonLabelFooter: PropTypes$1.string.isRequired,
   isSubscribed: PropTypes$1.bool.isRequired,
@@ -4256,7 +4256,7 @@ var ServiceCard = function ServiceCard(_ref) {
       image = _ref.image,
       title = _ref.title,
       description = _ref.description,
-      price = _ref.price,
+      PriceComponent = _ref.PriceComponent,
       actionFooter = _ref.actionFooter,
       openShowMore = _ref.openShowMore,
       isSubscribed = _ref.isSubscribed,
@@ -4283,7 +4283,7 @@ var ServiceCard = function ServiceCard(_ref) {
     knowMoreLabel: knowMoreLabel
   }), React__default.createElement(ServiceCardFooter, {
     testid: "serviceCard".concat(id).concat(isSubscribed ? 'Selected' : ''),
-    price: price,
+    PriceComponent: PriceComponent,
     actionFooter: actionFooter,
     buttonLabelFooter: buttonLabelFooter,
     isSubscribed: isSubscribed,
@@ -4297,7 +4297,7 @@ ServiceCard.defaultProps = {
   image: null,
   title: '',
   description: '',
-  price: 0,
+  PriceComponent: React__default.createElement("span", null),
   openShowMore: function openShowMore() {},
   isSubscribed: false,
   labelText: '',
@@ -4313,7 +4313,7 @@ ServiceCard.propTypes = {
   image: PropTypes$1.node,
   title: PropTypes$1.string,
   description: PropTypes$1.string,
-  price: PropTypes$1.oneOfType([PropTypes$1.number, PropTypes$1.string]),
+  PriceComponent: PropTypes$1.node,
   actionFooter: PropTypes$1.func.isRequired,
   openShowMore: PropTypes$1.func,
   isSubscribed: PropTypes$1.bool,
@@ -4987,72 +4987,6 @@ RegistrationForm.propTypes = {
   labelFooterPassword: PropTypes$1.string,
   onKeyDownEmail: PropTypes$1.func,
   countries: PropTypes$1.shape(CountryPropType)
-};
-
-var formatPrice = function formatPrice(price) {
-  var showDecimals = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-  var countDecimals;
-
-  if (!showDecimals) {
-    countDecimals = !Number.isInteger(Number(price)) ? 2 : 0;
-  } else {
-    countDecimals = showDecimals ? 2 : 0;
-  }
-
-  var displayPrice = price || 0;
-  return parseFloat(displayPrice).toFixed(countDecimals);
-};
-
-var HtmlPrice = function HtmlPrice(_ref) {
-  var price = _ref.price,
-      currency = _ref.currency,
-      showDecimals = _ref.showDecimals,
-      className = _ref.className,
-      separator = _ref.separator,
-      PriceAppendComponent = _ref.PriceAppendComponent,
-      appendix = _ref.appendix;
-  var splitPrice = "".concat(formatPrice(price, showDecimals)).split('.');
-  return splitPrice[1] ? React__default.createElement("span", {
-    className: className
-  }, "".concat(splitPrice[0]).concat(separator), React__default.createElement(PriceAppendComponent, {
-    value: splitPrice[1],
-    currency: currency,
-    appendix: appendix
-  })) : React__default.createElement("span", {
-    className: className
-  }, "".concat(splitPrice[0]), React__default.createElement(PriceAppendComponent, {
-    value: "",
-    currency: currency,
-    appendix: appendix
-  }));
-};
-
-var PriceAppendDefaultComponent = function PriceAppendDefaultComponent(_ref2) {
-  var value = _ref2.value,
-      currency = _ref2.currency;
-  return React__default.createElement("small", null, "".concat(value).concat(currency));
-};
-
-PriceAppendDefaultComponent.propTypes = {
-  value: PropTypes$1.string.isRequired,
-  currency: PropTypes$1.string.isRequired
-};
-HtmlPrice.defaultProps = {
-  currency: '€',
-  className: undefined,
-  showDecimals: false,
-  separator: '.',
-  appendix: '',
-  PriceAppendComponent: PriceAppendDefaultComponent
-};
-HtmlPrice.propTypes = {
-  price: PropTypes$1.string.isRequired,
-  showDecimals: PropTypes$1.bool,
-  currency: PropTypes$1.string,
-  className: PropTypes$1.string,
-  separator: PropTypes$1.string,
-  appendix: PropTypes$1.string,
-  PriceAppendComponent: PropTypes$1.func
 };
 
 var css$Z = ".Picker-module_container__3AVzP {\n  position: relative;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #163457;\n  border: none;\n  border-radius: 5px;\n  display: block;\n  height: 50px;\n  padding: 0;\n  z-index: 1\n}\n\n.Picker-module_container__3AVzP.Picker-module_active__2IBbO {\n  z-index: 4;\n}\n\n.Picker-module_shadowWrapper__1yU5l {\n  background-color: #fefefe;\n  border-radius: 5px;\n  -webkit-box-shadow: 0 4px 8px 2px rgba(0, 0, 0, .25);\n          box-shadow: 0 4px 8px 2px rgba(0, 0, 0, .25);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative;\n  z-index: 2;\n}\n\n.Picker-module_pickerInputContainer__2EiaS {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: 0 35px 0 15px;\n  width: 100%;\n  z-index: 2;\n}\n\n.Picker-module_pickerInput__1P5_a {\n  border-radius: 5px;\n  height: 50px;\n  padding: 0;\n  border: none;\n  margin-top: 0;\n  font-size: 15px;\n}\n\n.Picker-module_inputError__37bTz {\n  color: #c73637;\n}\n\n.Picker-module_splitPickerInputContainer__2QVF3 {\n  border-left: 1px solid rgba(191, 196, 212, .52);\n}\n\n.Picker-module_suggestionsContainer__20x1U {\n  min-height: 150px;\n  background-color: black;\n  position: absolute;\n  width: 150%;\n  top: 56px;\n  top: 56px;\n  top: 3.5rem;\n  left: -25%;\n  border-radius: 8px;\n  border-width: 1px;\n}\n\n.Picker-module_error__3Mp0C, .Picker-module_info__IVLnU {\n  display: inline-table;\n  background-color: #c73637;\n  border-top-left-radius: 8px;\n  border-top-right-radius: 8px;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #fefefe;\n  height: 45px;\n  left: 0;\n  opacity: 0;\n  padding: 10px;\n  position: absolute;\n  top: 5px;\n  -webkit-transform: none;\n          transform: none;\n  -webkit-transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;\n  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  width: 100%;\n  font-size: 14px;\n  font-weight: 700;\n  word-break: break-word;\n  -webkit-hyphens: auto;\n      -ms-hyphens: auto;\n          hyphens: auto;\n}\n\n.Picker-module_info__IVLnU {\n  background-color: #32a0c5;\n  color: #fefefe;\n}\n\n.Picker-module_errorVisible__3Fa-X, .Picker-module_infoVisible__2IbCs {\n  opacity: 1;\n  -webkit-transform: translateY(-100%);\n          transform: translateY(-100%);\n}\n";
@@ -17676,5 +17610,5 @@ DateTimePicker.defaultProps = {
 var index$2 = './components';
 
 export default index$2;
-export { ActionLink, AddItemCard, Alert, AlternativeTimeCard, ApplicationCard, Arrow, BookingCard, BookingModificationSummary, BookingSteps, Box, Button, CarCard, Card, CardTitle, CardTravelInformation, ColorPicker, ContactCard, ContactForm, DateTimePicker, FlightInformationForm, GenderPicker, Header, HtmlPrice, Icon, IconButton, IconPatched, InformationAlert, Input, InputButton, InputCheckbox, InputLabel, InputSelect, Label, LanguageSelector, LinkUnderlined, Loader, LoginForm, MenuButton, PaymentMethodCard, PhoneInput, Picker, PickerSuggestions, PricingSummary, RadioButton, RatingStars, ReferralCard, RegistrationForm, RewardCard, RideSummary, RoundedButton, SavedCardsLine, SavedCardsPicker, ScrollArrow, Select, ServiceCard, Subtitle, TextIcon, TimeRange, Title, TitleStep, Tooltip, ZonesPicker, arbitraryUnsetMinutesValue };
+export { ActionLink, AddItemCard, Alert, AlternativeTimeCard, ApplicationCard, Arrow, BookingCard, BookingModificationSummary, BookingSteps, Box, Button, CarCard, Card, CardTitle, CardTravelInformation, ColorPicker, ContactCard, ContactForm, DateTimePicker, FlightInformationForm, GenderPicker, Header, Icon, IconButton, IconPatched, InformationAlert, Input, InputButton, InputCheckbox, InputLabel, InputSelect, Label, LanguageSelector, LinkUnderlined, Loader, LoginForm, MenuButton, PaymentMethodCard, PhoneInput, Picker, PickerSuggestions, PricingSummary, RadioButton, RatingStars, ReferralCard, RegistrationForm, RewardCard, RideSummary, RoundedButton, SavedCardsLine, SavedCardsPicker, ScrollArrow, Select, ServiceCard, Subtitle, TextIcon, TimeRange, Title, TitleStep, Tooltip, ZonesPicker, arbitraryUnsetMinutesValue };
 //# sourceMappingURL=ector-ui.es.js.map

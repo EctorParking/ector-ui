@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import centered from '@storybook/addon-centered';
 import {
-  withKnobs, text, boolean, number, select,
+  withKnobs, text, boolean, select,
 } from '@storybook/addon-knobs';
 
 import ServiceCard from '.';
@@ -25,7 +25,7 @@ storiesOf('ServiceCard', module)
     <ServiceCard
       title="Option 1"
       description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-      price={120.99}
+      PriceComponent={<span>120,99 €</span>}
       actionFooter={action('add')}
       openShowMore={action('showMore')}
       buttonLabelFooter="Ajouter"
@@ -36,7 +36,7 @@ storiesOf('ServiceCard', module)
     <ServiceCard
       title="Option 1"
       description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-      price={120.00}
+      PriceComponent={<span>120,00 €</span>}
       actionFooter={action('remove')}
       openShowMore={action('showMore')}
       buttonLabelFooter="Supprimer"
@@ -48,7 +48,7 @@ storiesOf('ServiceCard', module)
     <ServiceCard
       title="Option 1"
       description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-      price={120.00}
+      PriceComponent={<span>120,00 €</span>}
       actionFooter={action('remove')}
       openShowMore={action('showMore')}
       buttonLabelFooter="Supprimer"
@@ -61,7 +61,7 @@ storiesOf('ServiceCard', module)
     <ServiceCard
       title="Option 1"
       description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-      price={120.00}
+      PriceComponent={<span>120,00 €</span>}
       actionFooter={action('add')}
       openShowMore={action('showMore')}
       buttonLabelFooter="Ajouter"
@@ -75,7 +75,7 @@ storiesOf('ServiceCard', module)
     <ServiceCard
       title="Option 1"
       description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-      price={120.00}
+      PriceComponent={<span>120,00 €</span>}
       actionFooter={action('remove')}
       buttonLabelFooter="Supprimer"
       labelColor="green"
@@ -89,7 +89,7 @@ storiesOf('ServiceCard', module)
     const props = {
       title: text('Title', 'Option 1'),
       description: text('Description', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'),
-      price: number('Price', 120.99),
+      PriceComponent: <span>120,99 €</span>,
       actionFooter: action('add'),
       openShowMore: action('showMore'),
       buttonLabelFooter: text('Button label footer', 'Ajouter'),

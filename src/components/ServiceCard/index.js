@@ -9,7 +9,7 @@ import Label from '../Label';
 
 const ServiceCard = ({
   className, contentClassName, image, title, description,
-  price, actionFooter, openShowMore, isSubscribed, buttonLabelFooter,
+  PriceComponent, actionFooter, openShowMore, isSubscribed, buttonLabelFooter,
   labelText, labelLogo, labelColor, id, showButton, knowMoreLabel,
 }) => {
   const cardClassName = `
@@ -40,7 +40,7 @@ const ServiceCard = ({
       />
       <ServiceCardFooter
         testid={`serviceCard${id}${isSubscribed ? 'Selected' : ''}`}
-        price={price}
+        PriceComponent={PriceComponent}
         actionFooter={actionFooter}
         buttonLabelFooter={buttonLabelFooter}
         isSubscribed={isSubscribed}
@@ -56,7 +56,7 @@ ServiceCard.defaultProps = {
   image: null,
   title: '',
   description: '',
-  price: 0,
+  PriceComponent: <span />,
   openShowMore: () => {},
   isSubscribed: false,
   labelText: '',
@@ -73,10 +73,7 @@ ServiceCard.propTypes = {
   image: PropTypes.node,
   title: PropTypes.string,
   description: PropTypes.string,
-  price: PropTypes.oneOfType([
-    PropTypes.number,
-    PropTypes.string,
-  ]),
+  PriceComponent: PropTypes.node,
   actionFooter: PropTypes.func.isRequired,
   openShowMore: PropTypes.func,
   isSubscribed: PropTypes.bool,
