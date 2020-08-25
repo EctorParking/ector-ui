@@ -3,19 +3,19 @@ import PropTypes from 'prop-types';
 
 import s from './ServiceCardFooter.module.css';
 import LinkUnderline from '../LinkUnderlined';
-import HtmlPrice from '../HtmlPrice';
 
-const ServiceCardFooter = ({
-  price,
-  actionFooter,
-  buttonLabelFooter,
-  isSubscribed,
-  testid,
-  showButton,
-}) => (
-
+const ServiceCardFooter = (
+  {
+    PriceComponent,
+    actionFooter,
+    buttonLabelFooter,
+    isSubscribed,
+    testid,
+    showButton,
+  },
+) => (
   <div className={s.footerContainer}>
-    <HtmlPrice price={price} className={s.price} />
+    <span className={s.price}>{PriceComponent}</span>
     {!isSubscribed && (
       <LinkUnderline
         onClick={actionFooter}
@@ -35,7 +35,6 @@ const ServiceCardFooter = ({
       </button>
     )}
   </div>
-
 );
 
 ServiceCardFooter.defaultProps = {
@@ -44,10 +43,7 @@ ServiceCardFooter.defaultProps = {
 };
 
 ServiceCardFooter.propTypes = {
-  price: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-  ]).isRequired,
+  PriceComponent: PropTypes.node.isRequired,
   actionFooter: PropTypes.func.isRequired,
   buttonLabelFooter: PropTypes.string.isRequired,
   isSubscribed: PropTypes.bool.isRequired,
