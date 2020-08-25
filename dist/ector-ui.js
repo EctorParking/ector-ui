@@ -4115,74 +4115,8 @@ var css$O = ".ServiceCardFooter-module_footerContainer__3xZao {\n    -webkit-box
 var s$O = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","footerContainer":"ServiceCardFooter-module_footerContainer__3xZao","price":"ServiceCardFooter-module_price__1o6fm","deleteButton":"ServiceCardFooter-module_deleteButton__W6dqf"};
 styleInject(css$O);
 
-var formatPrice = function formatPrice(price) {
-  var showDecimals = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-  var countDecimals;
-
-  if (!showDecimals) {
-    countDecimals = !Number.isInteger(Number(price)) ? 2 : 0;
-  } else {
-    countDecimals = showDecimals ? 2 : 0;
-  }
-
-  var displayPrice = price || 0;
-  return parseFloat(displayPrice).toFixed(countDecimals);
-};
-
-var HtmlPrice = function HtmlPrice(_ref) {
-  var price = _ref.price,
-      currency = _ref.currency,
-      showDecimals = _ref.showDecimals,
-      className = _ref.className,
-      separator = _ref.separator,
-      PriceAppendComponent = _ref.PriceAppendComponent,
-      appendix = _ref.appendix;
-  var splitPrice = "".concat(formatPrice(price, showDecimals)).split('.');
-  return splitPrice[1] ? React__default.createElement("span", {
-    className: className
-  }, "".concat(splitPrice[0]).concat(separator), React__default.createElement(PriceAppendComponent, {
-    value: splitPrice[1],
-    currency: currency,
-    appendix: appendix
-  })) : React__default.createElement("span", {
-    className: className
-  }, "".concat(splitPrice[0]), React__default.createElement(PriceAppendComponent, {
-    value: "",
-    currency: currency,
-    appendix: appendix
-  }));
-};
-
-var PriceAppendDefaultComponent = function PriceAppendDefaultComponent(_ref2) {
-  var value = _ref2.value,
-      currency = _ref2.currency;
-  return React__default.createElement("small", null, "".concat(value).concat(currency));
-};
-
-PriceAppendDefaultComponent.propTypes = {
-  value: PropTypes$1.string.isRequired,
-  currency: PropTypes$1.string.isRequired
-};
-HtmlPrice.defaultProps = {
-  currency: '€',
-  className: undefined,
-  showDecimals: false,
-  separator: '.',
-  appendix: '',
-  PriceAppendComponent: PriceAppendDefaultComponent
-};
-HtmlPrice.propTypes = {
-  price: PropTypes$1.string.isRequired,
-  showDecimals: PropTypes$1.bool,
-  currency: PropTypes$1.string,
-  className: PropTypes$1.string,
-  separator: PropTypes$1.string,
-  appendix: PropTypes$1.string,
-  PriceAppendComponent: PropTypes$1.func
-};
-
 var ServiceCardFooter = function ServiceCardFooter(_ref) {
-  var price = _ref.price,
+  var PriceComponent = _ref.PriceComponent,
       actionFooter = _ref.actionFooter,
       buttonLabelFooter = _ref.buttonLabelFooter,
       isSubscribed = _ref.isSubscribed,
@@ -4190,10 +4124,9 @@ var ServiceCardFooter = function ServiceCardFooter(_ref) {
       showButton = _ref.showButton;
   return React__default.createElement("div", {
     className: s$O.footerContainer
-  }, React__default.createElement(HtmlPrice, {
-    price: price,
+  }, React__default.createElement("span", {
     className: s$O.price
-  }), !isSubscribed && React__default.createElement(LinkUnderlined, {
+  }, PriceComponent), !isSubscribed && React__default.createElement(LinkUnderlined, {
     onClick: actionFooter,
     testid: testid
   }, buttonLabelFooter), isSubscribed && showButton && React__default.createElement("button", {
@@ -4209,7 +4142,7 @@ ServiceCardFooter.defaultProps = {
   showButton: true
 };
 ServiceCardFooter.propTypes = {
-  price: PropTypes$1.oneOfType([PropTypes$1.string, PropTypes$1.number]).isRequired,
+  PriceComponent: PropTypes$1.node.isRequired,
   actionFooter: PropTypes$1.func.isRequired,
   buttonLabelFooter: PropTypes$1.string.isRequired,
   isSubscribed: PropTypes$1.bool.isRequired,
@@ -4223,7 +4156,7 @@ var ServiceCard = function ServiceCard(_ref) {
       image = _ref.image,
       title = _ref.title,
       description = _ref.description,
-      price = _ref.price,
+      PriceComponent = _ref.PriceComponent,
       actionFooter = _ref.actionFooter,
       openShowMore = _ref.openShowMore,
       isSubscribed = _ref.isSubscribed,
@@ -4250,7 +4183,7 @@ var ServiceCard = function ServiceCard(_ref) {
     knowMoreLabel: knowMoreLabel
   }), React__default.createElement(ServiceCardFooter, {
     testid: "serviceCard".concat(id).concat(isSubscribed ? 'Selected' : ''),
-    price: price,
+    PriceComponent: PriceComponent,
     actionFooter: actionFooter,
     buttonLabelFooter: buttonLabelFooter,
     isSubscribed: isSubscribed,
@@ -4264,7 +4197,7 @@ ServiceCard.defaultProps = {
   image: null,
   title: '',
   description: '',
-  price: 0,
+  PriceComponent: React__default.createElement("span", null),
   openShowMore: function openShowMore() {},
   isSubscribed: false,
   labelText: '',
@@ -4280,7 +4213,7 @@ ServiceCard.propTypes = {
   image: PropTypes$1.node,
   title: PropTypes$1.string,
   description: PropTypes$1.string,
-  price: PropTypes$1.oneOfType([PropTypes$1.number, PropTypes$1.string]),
+  PriceComponent: PropTypes$1.node,
   actionFooter: PropTypes$1.func.isRequired,
   openShowMore: PropTypes$1.func,
   isSubscribed: PropTypes$1.bool,
@@ -17502,7 +17435,6 @@ exports.DateTimePicker = DateTimePicker;
 exports.FlightInformationForm = FlightInformationForm;
 exports.GenderPicker = GenderPicker;
 exports.Header = Header;
-exports.HtmlPrice = HtmlPrice;
 exports.Icon = Icon;
 exports.IconButton = IconButton;
 exports.IconPatched = IconPatched;
