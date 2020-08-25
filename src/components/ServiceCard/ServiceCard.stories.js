@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import centered from '@storybook/addon-centered';
 import {
-  withKnobs, text, boolean, number, select,
+  withKnobs, text, boolean, select,
 } from '@storybook/addon-knobs';
 
 import ServiceCard from '.';
