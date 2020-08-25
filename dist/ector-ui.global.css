@@ -2424,7 +2424,7 @@
 .Tooltip-module_tooltipText__1buoM {
     display: block;
     position: absolute;
-    z-index: 1;
+    z-index: 10;
     padding: 10px;
     border-radius: 8px;
     text-align: left;
