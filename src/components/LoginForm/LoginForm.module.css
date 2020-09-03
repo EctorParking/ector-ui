@@ -29,3 +29,9 @@
 .forgottenPasswordLink {
   align-self: flex-end;
 }
+
+.emailTextContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
