@@ -3116,8 +3116,8 @@ Loader.propTypes = {
   testid: PropTypes$1.string
 };
 
-var css$B = ".LoginForm-module_card__3_T4d {\n  width: 400px;\n}\n\n.LoginForm-module_contentCard__2LMaI {\n  -webkit-box-align: start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  padding: 16px 32px;\n  padding: 16px 32px;\n  padding: 1rem 2rem;\n}\n\n.LoginForm-module_input__3Vyuc {\n  margin-bottom: 10px;\n  width: 100%;\n}\n\n.LoginForm-module_button__2JEzi {\n  margin: 10px 0;\n}\n\n.LoginForm-module_error__2-jaK {\n  color: #ff5757;\n}\n\n.LoginForm-module_inputError__1QmRY {\n  border-color: #ff5757;\n}\n\n.LoginForm-module_forgottenPasswordLink__3N7WZ {\n  -ms-flex-item-align: end;\n      align-self: flex-end;\n}\n";
-var s$B = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","card":"LoginForm-module_card__3_T4d","contentCard":"LoginForm-module_contentCard__2LMaI","input":"LoginForm-module_input__3Vyuc","button":"LoginForm-module_button__2JEzi","error":"LoginForm-module_error__2-jaK","inputError":"LoginForm-module_inputError__1QmRY","forgottenPasswordLink":"LoginForm-module_forgottenPasswordLink__3N7WZ"};
+var css$B = ".LoginForm-module_card__3_T4d {\n  width: 400px;\n}\n\n.LoginForm-module_contentCard__2LMaI {\n  -webkit-box-align: start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  padding: 16px 32px;\n  padding: 16px 32px;\n  padding: 1rem 2rem;\n}\n\n.LoginForm-module_input__3Vyuc {\n  margin-bottom: 10px;\n  width: 100%;\n}\n\n.LoginForm-module_button__2JEzi {\n  margin: 10px 0;\n}\n\n.LoginForm-module_error__2-jaK {\n  color: #ff5757;\n}\n\n.LoginForm-module_inputError__1QmRY {\n  border-color: #ff5757;\n}\n\n.LoginForm-module_forgottenPasswordLink__3N7WZ {\n  -ms-flex-item-align: end;\n      align-self: flex-end;\n}\n\n.LoginForm-module_emailTextContainer__313VG {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n";
+var s$B = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","card":"LoginForm-module_card__3_T4d","contentCard":"LoginForm-module_contentCard__2LMaI","input":"LoginForm-module_input__3Vyuc","button":"LoginForm-module_button__2JEzi","error":"LoginForm-module_error__2-jaK","inputError":"LoginForm-module_inputError__1QmRY","forgottenPasswordLink":"LoginForm-module_forgottenPasswordLink__3N7WZ","emailTextContainer":"LoginForm-module_emailTextContainer__313VG"};
 styleInject(css$B);
 
 var TextsType$4 = PropTypes$1.shape({
@@ -3150,6 +3150,7 @@ var LoginForm = function LoginForm(_ref) {
       onChangeEmail = _ref.onChangeEmail,
       onChangePassword = _ref.onChangePassword,
       onSubmit = _ref.onSubmit,
+      onClickEditEmail = _ref.onClickEditEmail,
       emailInputClassName = _ref.emailInputClassName,
       passwordInputClassName = _ref.passwordInputClassName,
       contentClassName = _ref.contentClassName,
@@ -3161,18 +3162,40 @@ var LoginForm = function LoginForm(_ref) {
       SubmitButtonComponent = _ref.SubmitButtonComponent,
       onClickPasswordForgotten = _ref.onClickPasswordForgotten,
       shouldDisplayEmailField = _ref.shouldDisplayEmailField,
-      cardProps = _objectWithoutProperties(_ref, ["className", "values", "errors", "texts", "onChangeEmail", "onChangePassword", "onSubmit", "emailInputClassName", "passwordInputClassName", "contentClassName", "buttonClassName", "fetching", "errorLogin", "buttonTestid", "RootComponent", "SubmitButtonComponent", "onClickPasswordForgotten", "shouldDisplayEmailField"]);
+      shouldDisplayEmailText = _ref.shouldDisplayEmailText,
+      cardProps = _objectWithoutProperties(_ref, ["className", "values", "errors", "texts", "onChangeEmail", "onChangePassword", "onSubmit", "onClickEditEmail", "emailInputClassName", "passwordInputClassName", "contentClassName", "buttonClassName", "fetching", "errorLogin", "buttonTestid", "RootComponent", "SubmitButtonComponent", "onClickPasswordForgotten", "shouldDisplayEmailField", "shouldDisplayEmailText"]);
 
   return React__default.createElement(RootComponent, _extends({}, cardProps, {
     className: [s$B.card, className].join(' '),
     contentClassName: [s$B.contentCard, contentClassName].join(' ')
-  }), shouldDisplayEmailField && React__default.createElement(InputLabel, {
+  }), shouldDisplayEmailField && !shouldDisplayEmailText && React__default.createElement(InputLabel, {
     className: [s$B.input, emailInputClassName].join(''),
     hasError: !!errors.email || typeof errorLogin !== 'undefined' && errorLogin !== '',
     label: texts.email,
     mandatory: true,
     type: "email",
     id: "loginFormEmailInput",
+    value: values.email || '',
+    onChange: onChangeEmail,
+    error: errors.email
+  }), shouldDisplayEmailText && React__default.createElement(InputLabel, {
+    className: [s$B.input, emailInputClassName].join(''),
+    hasError: !!errors.email || typeof errorLogin !== 'undefined' && errorLogin !== '',
+    label: texts.email,
+    mandatory: true,
+    type: "email",
+    id: "loginFormEmailInput",
+    InputComponent: function InputComponent() {
+      return React__default.createElement("div", {
+        className: s$B.emailTextContainer
+      }, values.email, ' ', React__default.createElement("button", {
+        onClick: onClickEditEmail,
+        id: "EditEmailButton"
+      }, React__default.createElement("i", {
+        className: "icon-edit ",
+        id: "EditIcon"
+      })));
+    },
     value: values.email || '',
     onChange: onChangeEmail,
     error: errors.email
@@ -3224,8 +3247,10 @@ LoginForm.defaultProps = {
 
     return React__default.createElement(LinkUnderlined, buttonProps, children);
   },
+  onClickEditEmail: function onClickEditEmail() {},
   onClickPasswordForgotten: undefined,
   shouldDisplayEmailField: true,
+  shouldDisplayEmailText: false,
   onSubmit: undefined
 };
 LoginForm.propTypes = {
@@ -3234,6 +3259,7 @@ LoginForm.propTypes = {
   errorLogin: PropTypes$1.string,
   onChangeEmail: PropTypes$1.func.isRequired,
   onChangePassword: PropTypes$1.func.isRequired,
+  onClickEditEmail: PropTypes$1.func,
   onSubmit: PropTypes$1.func,
   texts: TextsType$4,
   className: PropTypes$1.string,
@@ -3246,7 +3272,8 @@ LoginForm.propTypes = {
   RootComponent: PropTypes$1.func,
   SubmitButtonComponent: PropTypes$1.func,
   onClickPasswordForgotten: PropTypes$1.func,
-  shouldDisplayEmailField: PropTypes$1.bool
+  shouldDisplayEmailField: PropTypes$1.bool,
+  shouldDisplayEmailText: PropTypes$1.bool
 };
 
 var css$C = ".PaymentMethodCard-module_card__1P35E {\n  position: relative;\n}\n\n.PaymentMethodCard-module_cardContent__CnD6V {\n  padding: 10px;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\n\n.PaymentMethodCard-module_header__pGvBe {\n  position: absolute;\n  width: 100%;\n  top: 20px;\n  right: 20px;\n}\n\n.PaymentMethodCard-module_pendingDeletion__-WJj3 {\n  background-color: #eceff6;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  padding: 20px;\n  text-align: center;\n}\n\n.PaymentMethodCard-module_footer__2mmr8 {\n  display: block;\n}\n";
@@ -10977,7 +11004,9 @@ var menuCSS = function menuCSS(_ref2) {
       borderRadius = _ref2$theme.borderRadius,
       spacing = _ref2$theme.spacing,
       colors = _ref2$theme.colors;
-  return _ref3 = {}, _defineProperty$1(_ref3, alignToControl(placement), '100%'), _defineProperty$1(_ref3, "backgroundColor", colors.neutral0), _defineProperty$1(_ref3, "borderRadius", borderRadius), _defineProperty$1(_ref3, "boxShadow", '0 0 0 1px hsla(0, 0%, 0%, 0.1), 0 4px 11px hsla(0, 0%, 0%, 0.1)'), _defineProperty$1(_ref3, "marginBottom", spacing.menuGutter), _defineProperty$1(_ref3, "marginTop", spacing.menuGutter), _defineProperty$1(_ref3, "position", 'absolute'), _defineProperty$1(_ref3, "width", '100%'), _defineProperty$1(_ref3, "zIndex", 1), _ref3;
+  return _ref3 = {
+    label: 'menu'
+  }, _defineProperty$1(_ref3, alignToControl(placement), '100%'), _defineProperty$1(_ref3, "backgroundColor", colors.neutral0), _defineProperty$1(_ref3, "borderRadius", borderRadius), _defineProperty$1(_ref3, "boxShadow", '0 0 0 1px hsla(0, 0%, 0%, 0.1), 0 4px 11px hsla(0, 0%, 0%, 0.1)'), _defineProperty$1(_ref3, "marginBottom", spacing.menuGutter), _defineProperty$1(_ref3, "marginTop", spacing.menuGutter), _defineProperty$1(_ref3, "position", 'absolute'), _defineProperty$1(_ref3, "width", '100%'), _defineProperty$1(_ref3, "zIndex", 1), _ref3;
 }; // NOTE: internal only
 
 var MenuPlacer =
@@ -11664,6 +11693,7 @@ var A11yText = function A11yText(props) {
 
     /*#__PURE__*/
     css$15({
+      label: 'a11yText',
       zIndex: 9999,
       border: 0,
       clip: 'rect(1px, 1px, 1px, 1px)',
@@ -11712,6 +11742,7 @@ function (_Component) {
 
         /*#__PURE__*/
         css$15({
+          label: 'dummyInput',
           // get rid of any default styles
           background: 0,
           border: 0,
@@ -12277,6 +12308,7 @@ var containerCSS = function containerCSS(_ref) {
   var isDisabled = _ref.isDisabled,
       isRtl = _ref.isRtl;
   return {
+    label: 'container',
     direction: isRtl ? 'rtl' : null,
     pointerEvents: isDisabled ? 'none' : null,
     // cancel mouse events when disabled
@@ -12426,6 +12458,7 @@ var baseCSS = function baseCSS(_ref2) {
       baseUnit = _ref2$theme.spacing.baseUnit,
       colors = _ref2$theme.colors;
   return {
+    label: 'indicatorContainer',
     color: isFocused ? colors.neutral60 : colors.neutral20,
     display: 'flex',
     padding: baseUnit * 2,
@@ -12477,6 +12510,7 @@ var indicatorSeparatorCSS = function indicatorSeparatorCSS(_ref3) {
       baseUnit = _ref3$theme.spacing.baseUnit,
       colors = _ref3$theme.colors;
   return {
+    label: 'indicatorSeparator',
     alignSelf: 'stretch',
     backgroundColor: isDisabled ? colors.neutral10 : colors.neutral20,
     marginBottom: baseUnit * 2,
@@ -12509,6 +12543,7 @@ var loadingIndicatorCSS = function loadingIndicatorCSS(_ref4) {
       colors = _ref4$theme.colors,
       baseUnit = _ref4$theme.spacing.baseUnit;
   return {
+    label: 'loadingIndicator',
     color: isFocused ? colors.neutral60 : colors.neutral20,
     display: 'flex',
     padding: baseUnit * 2,
@@ -12597,6 +12632,7 @@ var css$1$1 = function css$$1(_ref) {
       borderRadius = _ref$theme.borderRadius,
       spacing = _ref$theme.spacing;
   return {
+    label: 'control',
     alignItems: 'center',
     backgroundColor: isDisabled ? colors.neutral5 : colors.neutral0,
     borderColor: isDisabled ? colors.neutral10 : isFocused ? colors.primary : colors.neutral20,
@@ -12676,6 +12712,7 @@ var Group = function Group(props) {
 var groupHeadingCSS = function groupHeadingCSS(_ref2) {
   var spacing = _ref2.theme.spacing;
   return {
+    label: 'group',
     color: '#999',
     cursor: 'default',
     display: 'block',
@@ -12722,6 +12759,7 @@ var inputCSS = function inputCSS(_ref) {
 
 var inputStyle = function inputStyle(isHidden) {
   return {
+    label: 'input',
     background: 0,
     border: 0,
     fontSize: 'inherit',
@@ -12767,6 +12805,7 @@ var multiValueCSS = function multiValueCSS(_ref) {
       borderRadius = _ref$theme.borderRadius,
       colors = _ref$theme.colors;
   return {
+    label: 'multiValue',
     backgroundColor: colors.neutral10,
     borderRadius: borderRadius / 2,
     display: 'flex',
@@ -12928,6 +12967,7 @@ var optionCSS = function optionCSS(_ref) {
       spacing = _ref$theme.spacing,
       colors = _ref$theme.colors;
   return {
+    label: 'option',
     backgroundColor: isSelected ? colors.primary : isFocused ? colors.primary25 : 'transparent',
     color: isDisabled ? colors.neutral20 : isSelected ? colors.neutral0 : 'inherit',
     cursor: 'default',
@@ -12939,7 +12979,7 @@ var optionCSS = function optionCSS(_ref) {
     WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
     // provide some affordance on touch devices
     ':active': {
-      backgroundColor: isSelected ? colors.primary : colors.primary50
+      backgroundColor: !isDisabled && (isSelected ? colors.primary : colors.primary50)
     }
   };
 };
@@ -12972,6 +13012,7 @@ var placeholderCSS = function placeholderCSS(_ref) {
       spacing = _ref$theme.spacing,
       colors = _ref$theme.colors;
   return {
+    label: 'placeholder',
     color: colors.neutral50,
     marginLeft: spacing.baseUnit / 2,
     marginRight: spacing.baseUnit / 2,
@@ -13002,6 +13043,7 @@ var css$2$1 = function css$$1(_ref) {
       spacing = _ref$theme.spacing,
       colors = _ref$theme.colors;
   return {
+    label: 'singleValue',
     color: isDisabled ? colors.neutral40 : colors.neutral80,
     marginLeft: spacing.baseUnit / 2,
     marginRight: spacing.baseUnit / 2,
@@ -13201,7 +13243,6 @@ function (_Component) {
       focusedValue: null,
       inputIsHidden: false,
       isFocused: false,
-      isComposing: false,
       menuOptions: {
         render: [],
         focusable: []
@@ -13210,6 +13251,8 @@ function (_Component) {
     });
 
     _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "blockOptionHover", false);
+
+    _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "isComposing", false);
 
     _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "clearFocusValueOnUpdate", false);
 
@@ -13561,15 +13604,11 @@ function (_Component) {
     });
 
     _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "onCompositionStart", function () {
-      _this.setState({
-        isComposing: true
-      });
+      _this.isComposing = true;
     });
 
     _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "onCompositionEnd", function () {
-      _this.setState({
-        isComposing: false
-      });
+      _this.isComposing = false;
     });
 
     _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "onTouchStart", function (_ref4) {
@@ -13726,7 +13765,6 @@ function (_Component) {
           tabSelectsValue = _this$props7.tabSelectsValue,
           openMenuOnFocus = _this$props7.openMenuOnFocus;
       var _this$state2 = _this.state,
-          isComposing = _this$state2.isComposing,
           focusedOption = _this$state2.focusedOption,
           focusedValue = _this$state2.focusedValue,
           selectValue = _this$state2.selectValue;
@@ -13777,7 +13815,7 @@ function (_Component) {
           break;
 
         case 'Tab':
-          if (isComposing) return;
+          if (_this.isComposing) return;
 
           if (event.shiftKey || !menuIsOpen || !tabSelectsValue || !focusedOption || // don't capture the event if the menu opens on focus and the focused
           // option is already selected; it breaks the flow of navigation
@@ -13790,9 +13828,15 @@ function (_Component) {
           break;
 
         case 'Enter':
+          if (event.keyCode === 229) {
+            // ignore the keydown event from an Input Method Editor(IME)
+            // ref. https://www.w3.org/TR/uievents/#determine-keydown-keyup-keyCode
+            break;
+          }
+
           if (menuIsOpen) {
             if (!focusedOption) return;
-            if (isComposing) return;
+            if (_this.isComposing) return;
 
             _this.selectOption(focusedOption);
 
@@ -14591,14 +14635,14 @@ function (_Component) {
 
       if (isMulti) {
         var selectValues = selectValue.map(function (opt) {
-          var isFocused = opt === focusedValue;
+          var isOptionFocused = opt === focusedValue;
           return React__default.createElement(MultiValue, _extends$1({}, commonProps, {
             components: {
               Container: MultiValueContainer,
               Label: MultiValueLabel,
               Remove: MultiValueRemove
             },
-            isFocused: isFocused,
+            isFocused: isOptionFocused,
             isDisabled: isDisabled,
             key: _this4.getOptionValue(opt),
             removeProps: {

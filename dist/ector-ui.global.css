@@ -1855,6 +1855,18 @@
       align-self: flex-end;
 }
 
+.LoginForm-module_emailTextContainer__313VG {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .PaymentMethodCard-module_card__1P35E {
   position: relative;
 }

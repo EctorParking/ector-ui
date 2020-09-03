@@ -16,6 +16,7 @@ const LoginForm = ({
   onChangeEmail,
   onChangePassword,
   onSubmit,
+  onClickEditEmail,
   emailInputClassName,
   passwordInputClassName,
   contentClassName,
@@ -27,10 +28,11 @@ const LoginForm = ({
   SubmitButtonComponent,
   onClickPasswordForgotten,
   shouldDisplayEmailField,
+  shouldDisplayEmailText,
   ...cardProps
 }) => (
   <RootComponent {...cardProps} className={[s.card, className].join(' ')} contentClassName={[s.contentCard, contentClassName].join(' ')}>
-    {shouldDisplayEmailField && (
+    {shouldDisplayEmailField && !shouldDisplayEmailText && (
       <InputLabel
         className={[s.input, emailInputClassName].join('')}
         hasError={!!errors.email || (typeof errorLogin !== 'undefined' && errorLogin !== '')}
@@ -38,6 +40,32 @@ const LoginForm = ({
         mandatory
         type="email"
         id="loginFormEmailInput"
+        value={values.email || ''}
+        onChange={onChangeEmail}
+        error={errors.email}
+      />
+    )
+    }
+    {shouldDisplayEmailText && (
+      <InputLabel
+        className={[s.input, emailInputClassName].join('')}
+        hasError={!!errors.email || (typeof errorLogin !== 'undefined' && errorLogin !== '')}
+        label={texts.email}
+        mandatory
+        type="email"
+        id="loginFormEmailInput"
+        InputComponent={() => (
+          <div className={s.emailTextContainer}>
+            {values.email}
+            {' '}
+            <button
+              onClick={onClickEditEmail}
+              id="EditEmailButton"
+            >
+              <i className="icon-edit " id="EditIcon" />
+            </button>
+          </div>
+        )}
         value={values.email || ''}
         onChange={onChangeEmail}
         error={errors.email}
@@ -85,8 +113,10 @@ LoginForm.defaultProps = {
   RootComponent: ({ children, ...cardProps }) => (<Card {...cardProps}>{children}</Card>),
   // eslint-disable-next-line
   SubmitButtonComponent: ({ children, ...buttonProps }) => (<LinkUnderlined {...buttonProps}>{children}</LinkUnderlined>),
+  onClickEditEmail: () => {},
   onClickPasswordForgotten: undefined,
   shouldDisplayEmailField: true,
+  shouldDisplayEmailText: false,
   onSubmit: undefined,
 };
 
@@ -96,6 +126,7 @@ LoginForm.propTypes = {
   errorLogin: PropTypes.string,
   onChangeEmail: PropTypes.func.isRequired,
   onChangePassword: PropTypes.func.isRequired,
+  onClickEditEmail: PropTypes.func,
   onSubmit: PropTypes.func,
   texts: TextsType,
   className: PropTypes.string,
@@ -109,6 +140,7 @@ LoginForm.propTypes = {
   SubmitButtonComponent: PropTypes.func,
   onClickPasswordForgotten: PropTypes.func,
   shouldDisplayEmailField: PropTypes.bool,
+  shouldDisplayEmailText: PropTypes.bool,
 };
 
 export default LoginForm;
