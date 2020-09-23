@@ -10996,9 +10996,7 @@ var menuCSS = function menuCSS(_ref2) {
       borderRadius = _ref2$theme.borderRadius,
       spacing = _ref2$theme.spacing,
       colors = _ref2$theme.colors;
-  return _ref3 = {
-    label: 'menu'
-  }, _defineProperty$1(_ref3, alignToControl(placement), '100%'), _defineProperty$1(_ref3, "backgroundColor", colors.neutral0), _defineProperty$1(_ref3, "borderRadius", borderRadius), _defineProperty$1(_ref3, "boxShadow", '0 0 0 1px hsla(0, 0%, 0%, 0.1), 0 4px 11px hsla(0, 0%, 0%, 0.1)'), _defineProperty$1(_ref3, "marginBottom", spacing.menuGutter), _defineProperty$1(_ref3, "marginTop", spacing.menuGutter), _defineProperty$1(_ref3, "position", 'absolute'), _defineProperty$1(_ref3, "width", '100%'), _defineProperty$1(_ref3, "zIndex", 1), _ref3;
+  return _ref3 = {}, _defineProperty$1(_ref3, alignToControl(placement), '100%'), _defineProperty$1(_ref3, "backgroundColor", colors.neutral0), _defineProperty$1(_ref3, "borderRadius", borderRadius), _defineProperty$1(_ref3, "boxShadow", '0 0 0 1px hsla(0, 0%, 0%, 0.1), 0 4px 11px hsla(0, 0%, 0%, 0.1)'), _defineProperty$1(_ref3, "marginBottom", spacing.menuGutter), _defineProperty$1(_ref3, "marginTop", spacing.menuGutter), _defineProperty$1(_ref3, "position", 'absolute'), _defineProperty$1(_ref3, "width", '100%'), _defineProperty$1(_ref3, "zIndex", 1), _ref3;
 }; // NOTE: internal only
 
 var MenuPlacer =
@@ -11685,7 +11683,6 @@ var A11yText = function A11yText(props) {
 
     /*#__PURE__*/
     css$15({
-      label: 'a11yText',
       zIndex: 9999,
       border: 0,
       clip: 'rect(1px, 1px, 1px, 1px)',
@@ -11734,7 +11731,6 @@ function (_Component) {
 
         /*#__PURE__*/
         css$15({
-          label: 'dummyInput',
           // get rid of any default styles
           background: 0,
           border: 0,
@@ -12300,7 +12296,6 @@ var containerCSS = function containerCSS(_ref) {
   var isDisabled = _ref.isDisabled,
       isRtl = _ref.isRtl;
   return {
-    label: 'container',
     direction: isRtl ? 'rtl' : null,
     pointerEvents: isDisabled ? 'none' : null,
     // cancel mouse events when disabled
@@ -12450,7 +12445,6 @@ var baseCSS = function baseCSS(_ref2) {
       baseUnit = _ref2$theme.spacing.baseUnit,
       colors = _ref2$theme.colors;
   return {
-    label: 'indicatorContainer',
     color: isFocused ? colors.neutral60 : colors.neutral20,
     display: 'flex',
     padding: baseUnit * 2,
@@ -12502,7 +12496,6 @@ var indicatorSeparatorCSS = function indicatorSeparatorCSS(_ref3) {
       baseUnit = _ref3$theme.spacing.baseUnit,
       colors = _ref3$theme.colors;
   return {
-    label: 'indicatorSeparator',
     alignSelf: 'stretch',
     backgroundColor: isDisabled ? colors.neutral10 : colors.neutral20,
     marginBottom: baseUnit * 2,
@@ -12535,7 +12528,6 @@ var loadingIndicatorCSS = function loadingIndicatorCSS(_ref4) {
       colors = _ref4$theme.colors,
       baseUnit = _ref4$theme.spacing.baseUnit;
   return {
-    label: 'loadingIndicator',
     color: isFocused ? colors.neutral60 : colors.neutral20,
     display: 'flex',
     padding: baseUnit * 2,
@@ -12624,7 +12616,6 @@ var css$1$1 = function css$$1(_ref) {
       borderRadius = _ref$theme.borderRadius,
       spacing = _ref$theme.spacing;
   return {
-    label: 'control',
     alignItems: 'center',
     backgroundColor: isDisabled ? colors.neutral5 : colors.neutral0,
     borderColor: isDisabled ? colors.neutral10 : isFocused ? colors.primary : colors.neutral20,
@@ -12704,7 +12695,6 @@ var Group = function Group(props) {
 var groupHeadingCSS = function groupHeadingCSS(_ref2) {
   var spacing = _ref2.theme.spacing;
   return {
-    label: 'group',
     color: '#999',
     cursor: 'default',
     display: 'block',
@@ -12751,7 +12741,6 @@ var inputCSS = function inputCSS(_ref) {
 
 var inputStyle = function inputStyle(isHidden) {
   return {
-    label: 'input',
     background: 0,
     border: 0,
     fontSize: 'inherit',
@@ -12797,7 +12786,6 @@ var multiValueCSS = function multiValueCSS(_ref) {
       borderRadius = _ref$theme.borderRadius,
       colors = _ref$theme.colors;
   return {
-    label: 'multiValue',
     backgroundColor: colors.neutral10,
     borderRadius: borderRadius / 2,
     display: 'flex',
@@ -12959,7 +12947,6 @@ var optionCSS = function optionCSS(_ref) {
       spacing = _ref$theme.spacing,
       colors = _ref$theme.colors;
   return {
-    label: 'option',
     backgroundColor: isSelected ? colors.primary : isFocused ? colors.primary25 : 'transparent',
     color: isDisabled ? colors.neutral20 : isSelected ? colors.neutral0 : 'inherit',
     cursor: 'default',
@@ -12971,7 +12958,7 @@ var optionCSS = function optionCSS(_ref) {
     WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
     // provide some affordance on touch devices
     ':active': {
-      backgroundColor: !isDisabled && (isSelected ? colors.primary : colors.primary50)
+      backgroundColor: isSelected ? colors.primary : colors.primary50
     }
   };
 };
@@ -13004,7 +12991,6 @@ var placeholderCSS = function placeholderCSS(_ref) {
       spacing = _ref$theme.spacing,
       colors = _ref$theme.colors;
   return {
-    label: 'placeholder',
     color: colors.neutral50,
     marginLeft: spacing.baseUnit / 2,
     marginRight: spacing.baseUnit / 2,
@@ -13035,7 +13021,6 @@ var css$2$1 = function css$$1(_ref) {
       spacing = _ref$theme.spacing,
       colors = _ref$theme.colors;
   return {
-    label: 'singleValue',
     color: isDisabled ? colors.neutral40 : colors.neutral80,
     marginLeft: spacing.baseUnit / 2,
     marginRight: spacing.baseUnit / 2,
@@ -13235,6 +13220,7 @@ function (_Component) {
       focusedValue: null,
       inputIsHidden: false,
       isFocused: false,
+      isComposing: false,
       menuOptions: {
         render: [],
         focusable: []
@@ -13243,8 +13229,6 @@ function (_Component) {
     });
 
     _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "blockOptionHover", false);
-
-    _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "isComposing", false);
 
     _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "clearFocusValueOnUpdate", false);
 
@@ -13596,11 +13580,15 @@ function (_Component) {
     });
 
     _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "onCompositionStart", function () {
-      _this.isComposing = true;
+      _this.setState({
+        isComposing: true
+      });
     });
 
     _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "onCompositionEnd", function () {
-      _this.isComposing = false;
+      _this.setState({
+        isComposing: false
+      });
     });
 
     _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "onTouchStart", function (_ref4) {
@@ -13757,6 +13745,7 @@ function (_Component) {
           tabSelectsValue = _this$props7.tabSelectsValue,
           openMenuOnFocus = _this$props7.openMenuOnFocus;
       var _this$state2 = _this.state,
+          isComposing = _this$state2.isComposing,
           focusedOption = _this$state2.focusedOption,
           focusedValue = _this$state2.focusedValue,
           selectValue = _this$state2.selectValue;
@@ -13807,7 +13796,7 @@ function (_Component) {
           break;
 
         case 'Tab':
-          if (_this.isComposing) return;
+          if (isComposing) return;
 
           if (event.shiftKey || !menuIsOpen || !tabSelectsValue || !focusedOption || // don't capture the event if the menu opens on focus and the focused
           // option is already selected; it breaks the flow of navigation
@@ -13820,15 +13809,9 @@ function (_Component) {
           break;
 
         case 'Enter':
-          if (event.keyCode === 229) {
-            // ignore the keydown event from an Input Method Editor(IME)
-            // ref. https://www.w3.org/TR/uievents/#determine-keydown-keyup-keyCode
-            break;
-          }
-
           if (menuIsOpen) {
             if (!focusedOption) return;
-            if (_this.isComposing) return;
+            if (isComposing) return;
 
             _this.selectOption(focusedOption);
 
@@ -14627,14 +14610,14 @@ function (_Component) {
 
       if (isMulti) {
         var selectValues = selectValue.map(function (opt) {
-          var isOptionFocused = opt === focusedValue;
+          var isFocused = opt === focusedValue;
           return React__default.createElement(MultiValue, _extends$1({}, commonProps, {
             components: {
               Container: MultiValueContainer,
               Label: MultiValueLabel,
               Remove: MultiValueRemove
             },
-            isFocused: isOptionFocused,
+            isFocused: isFocused,
             isDisabled: isDisabled,
             key: _this4.getOptionValue(opt),
             removeProps: {
@@ -16581,12 +16564,12 @@ SavedCardsLine.defaultProps = {
   card: null
 };
 
-var css$1i = ".SavedCardsPicker-module_card__3Lo7m {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  border-radius: 8px;\n  background-color: #fefefe;\n  margin: 0 0 15px 0;\n  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .15);\n          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .15);\n  max-width: -webkit-fit-content;\n  max-width: -moz-fit-content;\n  max-width: fit-content;\n  overflow-x: auto;\n  padding: 0;\n  max-height: 100%;\n}\n\n.SavedCardsPicker-module_left__vjeNi {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  min-width: -webkit-fit-content;\n  min-width: -moz-fit-content;\n  min-width: fit-content;\n}\n\n.SavedCardsPicker-module_informationTotalRefund__2Obh8 {\n  border-top: 2px solid #eceff6;\n  padding: 10px 25px 0 25px;\n}\n\n.SavedCardsPicker-module_paymentMethodBox__1oVXr {\n  padding: 10px 0 10px 0;\n  max-width: 720px;\n  -ms-flex-item-align: center;\n      align-self: center;\n  max-height: 100%;\n  border-radius: 8px;\n  background-color: #fefefe;\n  margin : 0 0 0 0;\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n  overflow-x: auto;\n}\n\n.SavedCardsPicker-module_paymentCardsTable__Qpt3G {\n  display: table;\n  overflow-x: auto;\n  white-space: nowrap;\n  width: 100%;\n}\n\n.SavedCardsPicker-module_paymentCardsHeader__19KgR {\n  padding: 10px 40px 10px 0;\n}\n\n.SavedCardsPicker-module_paymentTableFooter__1lBCH {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding: 10px;\n}\n\n.SavedCardsPicker-module_addPaymentCardIcon__VUpeM {\n  width: 20px;\n  height: 20px;\n}\n\n.SavedCardsPicker-module_addCardButton__1FlP7 {\n  vertical-align: middle;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n";
+var css$1i = ".SavedCardsPicker-module_card__3Lo7m {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  border-radius: 8px;\n  background-color: #fefefe;\n  margin: 0 0 15px 0;\n  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .15);\n          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .15);\n  overflow-x: auto;\n  padding: 0;\n  max-height: 100%;\n  max-width: 100%;\n}\n\n.SavedCardsPicker-module_left__vjeNi {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  min-width: -webkit-fit-content;\n  min-width: -moz-fit-content;\n  min-width: fit-content;\n}\n\n.SavedCardsPicker-module_informationTotalRefund__2Obh8 {\n  border-top: 2px solid #eceff6;\n  padding: 10px 25px 0 25px;\n}\n\n.SavedCardsPicker-module_paymentMethodBox__1oVXr {\n  padding: 10px 0 10px 0;\n  max-width: 720px;\n  -ms-flex-item-align: center;\n      align-self: center;\n  max-height: 100%;\n  border-radius: 8px;\n  background-color: #fefefe;\n  margin : 0 0 0 0;\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n  overflow-x: auto;\n  overflow-y: hidden;\n}\n\n.SavedCardsPicker-module_paymentCardsTable__Qpt3G {\n  display: table;\n  overflow-x: auto;\n  white-space: nowrap;\n  width: 100%;\n}\n\n.SavedCardsPicker-module_paymentCardsHeader__19KgR {\n  padding: 10px 40px 10px 0;\n}\n\n.SavedCardsPicker-module_paymentTableFooter__1lBCH {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding: 10px;\n}\n\n.SavedCardsPicker-module_addPaymentCardIcon__VUpeM {\n  width: 20px;\n  height: 20px;\n}\n\n.SavedCardsPicker-module_addCardButton__1FlP7 {\n  vertical-align: middle;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n";
 var s$1g = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","card":"SavedCardsPicker-module_card__3Lo7m","left":"SavedCardsPicker-module_left__vjeNi","informationTotalRefund":"SavedCardsPicker-module_informationTotalRefund__2Obh8","paymentMethodBox":"SavedCardsPicker-module_paymentMethodBox__1oVXr","paymentCardsTable":"SavedCardsPicker-module_paymentCardsTable__Qpt3G","paymentCardsHeader":"SavedCardsPicker-module_paymentCardsHeader__19KgR","paymentTableFooter":"SavedCardsPicker-module_paymentTableFooter__1lBCH","addPaymentCardIcon":"SavedCardsPicker-module_addPaymentCardIcon__VUpeM","addCardButton":"SavedCardsPicker-module_addCardButton__1FlP7"};
 styleInject(css$1i);
 
-var css$1j = ".SavedCardsPickerHeader-module_header__2Px_I {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: 40px;\n  padding: 10px;\n  margin-left: 10px;\n  cursor: pointer;\n}\n\n.SavedCardsPickerHeader-module_text__CJFVs {\n  -webkit-box-align: start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n}\n\n.SavedCardsPickerHeader-module_availableCards__drqAA {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  margin-left: 20px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.SavedCardsPickerHeader-module_cardIcon__3OlwR {\n  height: 24px;\n  margin: 0 2px;\n}\n\n.SavedCardsPickerHeader-module_cardIconSmaller__3Rwc_ {\n  width: 30px;\n}\n\n.SavedCardsPickerHeader-module_cardIconBigger__2Pt6B {\n  width: 50px;\n}\n\n.SavedCardsPickerHeader-module_cardIconBusinessEdenred__3VfqK {\n  height: 24px;\n}\n\n";
-var s$1h = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","header":"SavedCardsPickerHeader-module_header__2Px_I","text":"SavedCardsPickerHeader-module_text__CJFVs","availableCards":"SavedCardsPickerHeader-module_availableCards__drqAA","cardIcon":"SavedCardsPickerHeader-module_cardIcon__3OlwR","cardIconSmaller":"SavedCardsPickerHeader-module_cardIconSmaller__3Rwc_","cardIconBigger":"SavedCardsPickerHeader-module_cardIconBigger__2Pt6B","cardIconBusinessEdenred":"SavedCardsPickerHeader-module_cardIconBusinessEdenred__3VfqK"};
+var css$1j = ".SavedCardsPickerHeader-module_header__2Px_I {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: auto;\n  padding: 10px;\n  margin-left: 10px;\n  cursor: pointer;\n}\n\n@media (max-width: 480px) {\n  .SavedCardsPickerHeader-module_headerContent__feI-p {\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n  }\n}\n\n.SavedCardsPickerHeader-module_headerContent__feI-p {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.SavedCardsPickerHeader-module_text__CJFVs {\n  -webkit-box-align: start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n}\n\n.SavedCardsPickerHeader-module_availableCards__drqAA {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  margin-left: 20px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n@media (max-width: 480px) {\n  .SavedCardsPickerHeader-module_availableCards__drqAA {\n    margin-left: 0;\n  }\n}\n\n.SavedCardsPickerHeader-module_cardIcon__3OlwR {\n  height: 24px;\n  margin: 0 4px 0 0;\n}\n\n.SavedCardsPickerHeader-module_cardIconSmaller__3Rwc_ {\n  width: 30px;\n}\n\n.SavedCardsPickerHeader-module_cardIconBigger__2Pt6B {\n  width: 50px;\n}\n\n.SavedCardsPickerHeader-module_cardIconBusinessEdenred__3VfqK {\n  height: 24px;\n}\n\n";
+var s$1h = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","header":"SavedCardsPickerHeader-module_header__2Px_I","headerContent":"SavedCardsPickerHeader-module_headerContent__feI-p","text":"SavedCardsPickerHeader-module_text__CJFVs","availableCards":"SavedCardsPickerHeader-module_availableCards__drqAA","cardIcon":"SavedCardsPickerHeader-module_cardIcon__3OlwR","cardIconSmaller":"SavedCardsPickerHeader-module_cardIconSmaller__3Rwc_","cardIconBigger":"SavedCardsPickerHeader-module_cardIconBigger__2Pt6B","cardIconBusinessEdenred":"SavedCardsPickerHeader-module_cardIconBusinessEdenred__3VfqK"};
 styleInject(css$1j);
 
 var SavedCardsPickerTextTypes = PropTypes$1.shape({
@@ -16641,7 +16624,9 @@ var SavedCardsPickerHeader = function SavedCardsPickerHeader(_ref) {
     onSelect: onRadioButtonChange,
     value: cardType,
     name: ""
-  }), React__default.createElement("span", {
+  }), React__default.createElement("div", {
+    className: s$1h.headerContent
+  }, React__default.createElement("span", {
     className: s$1h.text
   }, React__default.createElement("strong", null, getHeaderTitle(cardType, texts))), cardType === CardTypes.stripe && React__default.createElement("div", {
     className: s$1h.availableCards
@@ -16667,7 +16652,7 @@ var SavedCardsPickerHeader = function SavedCardsPickerHeader(_ref) {
     src: texts.iconTotal,
     alt: "Total",
     className: [s$1h.cardIcon, s$1h.cardIconBigger].join(' ')
-  })));
+  }))));
 };
 
 SavedCardsPickerHeader.propTypes = {
