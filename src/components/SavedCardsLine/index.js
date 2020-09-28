@@ -16,11 +16,14 @@ const SavedCardsLine = ({
   onSelectLine,
   checkImg,
 }) => (
-  <tr
+  <div
     onClick={() => onSelectLine(paymentMethod.id)}
+    onKeyDown={() => onSelectLine(paymentMethod.id)}
+    role="button"
     className={[s.tableRow, card === paymentMethod.id ? s.clicked : undefined].join(' ')}
+    tabIndex="0"
   >
-    <td className={s.checkedButton}>
+    <div className={[s.tableCell, s.paddedCell, s.checkedButton].join(' ')}>
       {card === paymentMethod.id && (
         <img
           src={checkImg}
@@ -28,27 +31,29 @@ const SavedCardsLine = ({
           className={s.checkedImg}
         />
       )}
-    </td>
-    <td className={s.paymentCardCell}>
-      <img
-        src={card === paymentMethod.id ? src : srcGrey}
-        alt={alt}
-        className={s.cardIcon}
-      />
-      <span className={s.cardName}>
-        {paymentMethod.cardName || brandText}
-      </span>
-    </td>
-    <td className={s.paymentCardCell}>
-      <span className={s.lastFourDigits}>
-        <span className={s.hiddenDigits}>
-          {'\u2022\u2022\u2022\u2022 '}
-        </span>
-        {paymentMethod.last4digits}
-      </span>
-    </td>
-    <td className={[s.paymentCardCell, s.expireAt].join(' ')}>{moment(paymentMethod.expireAt).format('MM/YY')}</td>
-    <td className={[s.deleteButtonCell, s.paymentCardCell].join(' ')}>
+    </div>
+    <div className={s.mobileTable}>
+      <div className={s.mobileRow1}>
+        <div className={s.tableCell}>
+          <img
+            src={card === paymentMethod.id ? src : srcGrey}
+            alt={alt}
+            className={s.cardIcon}
+          />
+        </div>
+        <div className={[s.tableCell, s.cardName].join(' ')}>{paymentMethod.cardName || brandText}</div>
+      </div>
+      <div className={s.mobileRow2}>
+        <div className={[s.tableCell, s.paddedCell, s.cardDigits].join(' ')}>
+          <span className={s.hiddenDigits}>
+            {'\u2022\u2022\u2022\u2022 '}
+          </span>
+          {paymentMethod.last4digits}
+        </div>
+        <div className={[s.tableCell, s.paddedCell, s.expireAt].join(' ')}>{moment(paymentMethod.expireAt).format('MM/YY')}</div>
+      </div>
+    </div>
+    <div className={[s.tableCell, s.paddedCell, s.deleteButtonCell].join(' ')}>
       <button
         type="button"
         className={s.deleteButton}
@@ -56,8 +61,8 @@ const SavedCardsLine = ({
       >
         <i className={`icon-ec-close ${deleteIconClassName}`} />
       </button>
-    </td>
-  </tr>
+    </div>
+  </div>
 );
 
 SavedCardsLine.propTypes = {

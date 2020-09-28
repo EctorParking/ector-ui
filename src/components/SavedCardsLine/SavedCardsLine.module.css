@@ -3,25 +3,71 @@
 .tableRow {
   color: var(--darkGrey);
   width: fit-content;
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.tableCell {
+  display: flex;
+}
+
+.paddedCell {
+  margin: 0 var(--marginXXLarge) 0 var(--marginSmall);
 }
 
 .tableRow:hover {
   box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.15);
 }
 
+.tableRow:after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: var(--lightGrey);
+  position: absolute;
+  bottom: 0;
+}
+
+.mobileTable, .mobileRow1, .mobileRow2
+{
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+
+@media (max-width: 480px) {
+  .mobileTable
+  {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mobileRow2
+  {
+    margin-bottom: var(--marginSmall);
+  }
+
+
+  .paddedCell {
+    margin: 0 var(--marginXLarge) 0 var(--marginXSmall);
+  }
+
+  .expireAt {
+    margin-right: 0;
+  }
+}
+
 .checkedButton {
-  padding-left: 8px;
+  margin-left: var(--marginXMedium);
+  margin-right: 0;
   vertical-align: middle;
+  width: 33px;
 }
 
 .checkedImg {
   width: 25px;
-}
-
-.paymentCardCell {
-  border-bottom: 2px solid var(--lightGrey);
-  padding: 0 var(--marginXXLarge) 0 var(--marginXMedium);
-  vertical-align: middle;
 }
 
 .cardIcon {
@@ -32,29 +78,17 @@
 }
 
 .cardName {
-  text-align: left;
-  vertical-align: middle;
-}
-
-.lastFourDigits {
-  align-items: center;
-  justify-content: center;
-  vertical-align: middle;
+  flex-grow: 1;
 }
 
 .hiddenDigits {
   font-size: var(--iconFontSize);
   margin-right: var(--marginXSmall);
-  vertical-align: middle;
 }
 
 .deleteButtonCell {
-  border-bottom: 2px solid var(--lightGrey);
-  padding: var(--marginSmall) var(--marginSmall);
-}
-
-.expireAt {
-  text-align: center;
+  border: none !important;
+  margin-right: var(--marginXMedium);
 }
 
 .deleteButton {

@@ -29,28 +29,23 @@ class SavedCardsPicker extends React.PureComponent {
 
     return (
       <div className={s.paymentMethodBox}>
-        <table cellSpacing="0" className={s.paymentCardsTable}>
+        <div className={s.paymentCardsTable}>
           { showHeader && (
-            <thead>
-              <tr>
-                <th />
-                <th className={s.paymentCardsHeader}>
-                  {texts.typeCard}
-                </th>
-                <th className={s.paymentCardsHeader}>{texts.number}</th>
-                <th className={s.paymentCardsHeader}>
-                  {texts.expire}
-                </th>
-              </tr>
-            </thead>
+            <div className={s.paymentCardsHeaderRow}>
+              <div className={[s.typeCardHeader, s.paymentCardsHeader].join(' ')}>
+                {texts.typeCard}
+              </div>
+              <div className={[s.numberHeader, s.paymentCardsHeader].join(' ')}>{texts.number}</div>
+              <div className={[s.expireHeader, s.paymentCardsHeader].join(' ')}>
+                {texts.expire}
+              </div>
+            </div>
           )}
-          <tbody>
-            {paymentMethods.length > 0
-              ? paymentMethods.map(paymentMethod => SavedCardsLineComponent(paymentMethod, card))
-              : <PaymentFormComponent />}
-            {fetching && <Loader size="xSmall" />}
-          </tbody>
-        </table>
+          {paymentMethods.length > 0
+            ? paymentMethods.map(paymentMethod => SavedCardsLineComponent(paymentMethod, card))
+            : <PaymentFormComponent />}
+          {fetching && <Loader size="xSmall" />}
+        </div>
         {paymentMethods.length > 0 && !showForm && (
         <>
           <div className={s.paymentTableFooter}>
