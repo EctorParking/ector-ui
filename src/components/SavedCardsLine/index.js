@@ -18,7 +18,10 @@ const SavedCardsLine = ({
 }) => (
   <div
     onClick={() => onSelectLine(paymentMethod.id)}
+    onKeyDown={() => onSelectLine(paymentMethod.id)}
+    role="button"
     className={[s.tableRow, card === paymentMethod.id ? s.clicked : undefined].join(' ')}
+    tabIndex="0"
   >
     <div className={[s.tableCell, s.paddedCell, s.checkedButton].join(' ')}>
       {card === paymentMethod.id && (

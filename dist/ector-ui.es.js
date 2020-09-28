@@ -16512,7 +16512,12 @@ var SavedCardsLine = function SavedCardsLine(_ref) {
     onClick: function onClick() {
       return onSelectLine(paymentMethod.id);
     },
-    className: [s$1f.tableRow, card === paymentMethod.id ? s$1f.clicked : undefined].join(' ')
+    onKeyDown: function onKeyDown() {
+      return onSelectLine(paymentMethod.id);
+    },
+    role: "button",
+    className: [s$1f.tableRow, card === paymentMethod.id ? s$1f.clicked : undefined].join(' '),
+    tabIndex: "0"
   }, React__default.createElement("div", {
     className: [s$1f.tableCell, s$1f.paddedCell, s$1f.checkedButton].join(' ')
   }, card === paymentMethod.id && React__default.createElement("img", {
