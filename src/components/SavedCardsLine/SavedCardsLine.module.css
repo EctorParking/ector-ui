@@ -32,6 +32,7 @@
   background: var(--lightGrey);
   position: absolute;
   bottom: 0;
+  z-index: 1;
 }
 
 .mobileTable, .mobileRow1, .mobileRow2

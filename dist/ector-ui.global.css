@@ -3892,6 +3892,7 @@
   background: #eceff6;
   position: absolute;
   bottom: 0;
+  z-index: 1;
 }
 
 .SavedCardsLine-module_mobileTable__17NJr, .SavedCardsLine-module_mobileRow1__ckAfr, .SavedCardsLine-module_mobileRow2__2OTZ3
