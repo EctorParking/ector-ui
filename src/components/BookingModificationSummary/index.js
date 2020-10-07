@@ -17,7 +17,7 @@ const BookingModificationSummary = ({ texts, className, bookingModificationSumma
       +bookingModificationSummaryPrice.parkingFee
       || +bookingModificationSummaryPrice.routingFee
       || +bookingModificationSummaryPrice.administrativeFee
-      || +bookingModificationSummaryPrice.yieldFee)
+      || +bookingModificationSummaryPrice.yieldsFee)
       ? (
         <hr className={s.horizontalRule} />
       ) : null
@@ -53,10 +53,10 @@ const BookingModificationSummary = ({ texts, className, bookingModificationSumma
       ) : null
     }
     {
-      +bookingModificationSummaryPrice.yieldFee ? (
+      +bookingModificationSummaryPrice.yieldsFee ? (
         <BookingModificationSummaryRow
-          price={bookingModificationSummaryPrice.yieldFee}
-          text={texts.yieldFee}
+          price={bookingModificationSummaryPrice.yieldsFee}
+          text={texts.yieldsFee}
           isExtra
         />
       ) : null

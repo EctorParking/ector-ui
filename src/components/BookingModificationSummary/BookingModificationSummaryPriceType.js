@@ -6,7 +6,7 @@ export default PropTypes.shape({
   initialPrice: PropTypes.string,
   routingFee: FeePropType,
   parkingFee: FeePropType,
-  yieldFee: FeePropType,
+  yieldsFee: FeePropType,
   administrativeFee: FeePropType,
   countRoutingFee: PropTypes.number,
   countParkingFee: PropTypes.number,
