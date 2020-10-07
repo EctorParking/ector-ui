@@ -892,6 +892,7 @@ var defaultTexts$2 = {
   routingFee: 'Acheminement',
   parkingFee: 'Durée de stationnement supplémentaire',
   administrativeFee: 'Frais de dossier*',
+  yieldsFee: 'Différence de prix',
   total: 'Total reste à payer'
 };
 
@@ -900,6 +901,7 @@ var BookingModificationSummaryPriceType = PropTypes$1.shape({
   initialPrice: PropTypes$1.string,
   routingFee: FeePropType,
   parkingFee: FeePropType,
+  yieldsFee: FeePropType,
   administrativeFee: FeePropType,
   countRoutingFee: PropTypes$1.number,
   countParkingFee: PropTypes$1.number,
@@ -921,7 +923,7 @@ var BookingModificationSummary = function BookingModificationSummary(_ref) {
     price: bookingModificationSummaryPrice.initialPrice,
     text: texts.initialPrice,
     textClassName: s$b.bold
-  }), +bookingModificationSummaryPrice.parkingFee || +bookingModificationSummaryPrice.routingFee || +bookingModificationSummaryPrice.administrativeFee ? React__default.createElement("hr", {
+  }), +bookingModificationSummaryPrice.parkingFee || +bookingModificationSummaryPrice.routingFee || +bookingModificationSummaryPrice.administrativeFee || +bookingModificationSummaryPrice.yieldsFee ? React__default.createElement("hr", {
     className: s$b.horizontalRule
   }) : null, +bookingModificationSummaryPrice.parkingFee ? React__default.createElement(BookingModificationSummaryRow, {
     price: bookingModificationSummaryPrice.parkingFee,
@@ -937,6 +939,10 @@ var BookingModificationSummary = function BookingModificationSummary(_ref) {
     price: bookingModificationSummaryPrice.administrativeFee,
     count: bookingModificationSummaryPrice.countAdministrativeFee,
     text: texts.administrativeFee,
+    isExtra: true
+  }) : null, +bookingModificationSummaryPrice.yieldsFee ? React__default.createElement(BookingModificationSummaryRow, {
+    price: bookingModificationSummaryPrice.yieldsFee,
+    text: texts.yieldsFee,
     isExtra: true
   }) : null, React__default.createElement("hr", {
     className: s$b.horizontalRule
