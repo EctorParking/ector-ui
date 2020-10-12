@@ -3285,7 +3285,6 @@ styleInject(css$C);
 var DefaultTexts$5 = {
   select: 'Sélectionner',
   remove: 'Supprimer',
-  save: 'Enregistrer',
   confirmDeletionTitle: 'Confirmation',
   confirmDeletionSentence: 'Êtes-vous sûr(e) de vouloir supprimer ce moyen de paiement ?',
   cancel: 'Annuler',
@@ -3295,7 +3294,6 @@ var DefaultTexts$5 = {
 var TextsType$5 = PropTypes$1.shape({
   update: PropTypes$1.string,
   remove: PropTypes$1.string,
-  save: PropTypes$1.string,
   confirmDeletionTitle: PropTypes$1.string,
   confirmDeletionSentence: PropTypes$1.string,
   cancel: PropTypes$1.string,
@@ -3480,7 +3478,7 @@ var css$E = ".PaymentmethodCardContentDelete-module_container__2q5zt {\n  -webki
 var s$E = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","container":"PaymentmethodCardContentDelete-module_container__2q5zt","sentence":"PaymentmethodCardContentDelete-module_sentence__4dwCI","buttons":"PaymentmethodCardContentDelete-module_buttons__1lGiu"};
 styleInject(css$E);
 
-var PaymentmethodCardContentDelete = function PaymentmethodCardContentDelete(_ref) {
+var PaymentMethodCardContentDelete = function PaymentMethodCardContentDelete(_ref) {
   var texts = _ref.texts,
       onConfirmDeletion = _ref.onConfirmDeletion,
       onCancelDeletion = _ref.onCancelDeletion;
@@ -3497,7 +3495,7 @@ var PaymentmethodCardContentDelete = function PaymentmethodCardContentDelete(_re
   }, React__default.createElement("strong", null, texts.confirm))));
 };
 
-PaymentmethodCardContentDelete.propTypes = {
+PaymentMethodCardContentDelete.propTypes = {
   texts: TextsType$5.isRequired,
   onConfirmDeletion: PropTypes$1.func.isRequired,
   onCancelDeletion: PropTypes$1.func.isRequired
@@ -3507,7 +3505,7 @@ var PaymentMethodCardContent = function PaymentMethodCardContent(_ref) {
   var pendingDeletion = _ref.pendingDeletion,
       contentProps = _objectWithoutProperties(_ref, ["pendingDeletion"]);
 
-  return pendingDeletion ? React__default.createElement(PaymentmethodCardContentDelete, contentProps) : React__default.createElement(PaymentMethodCardContentRead, contentProps);
+  return pendingDeletion ? React__default.createElement(PaymentMethodCardContentDelete, contentProps) : React__default.createElement(PaymentMethodCardContentRead, contentProps);
 };
 
 PaymentMethodCardContent.propTypes = {
@@ -11006,9 +11004,7 @@ var menuCSS = function menuCSS(_ref2) {
       borderRadius = _ref2$theme.borderRadius,
       spacing = _ref2$theme.spacing,
       colors = _ref2$theme.colors;
-  return _ref3 = {
-    label: 'menu'
-  }, _defineProperty$1(_ref3, alignToControl(placement), '100%'), _defineProperty$1(_ref3, "backgroundColor", colors.neutral0), _defineProperty$1(_ref3, "borderRadius", borderRadius), _defineProperty$1(_ref3, "boxShadow", '0 0 0 1px hsla(0, 0%, 0%, 0.1), 0 4px 11px hsla(0, 0%, 0%, 0.1)'), _defineProperty$1(_ref3, "marginBottom", spacing.menuGutter), _defineProperty$1(_ref3, "marginTop", spacing.menuGutter), _defineProperty$1(_ref3, "position", 'absolute'), _defineProperty$1(_ref3, "width", '100%'), _defineProperty$1(_ref3, "zIndex", 1), _ref3;
+  return _ref3 = {}, _defineProperty$1(_ref3, alignToControl(placement), '100%'), _defineProperty$1(_ref3, "backgroundColor", colors.neutral0), _defineProperty$1(_ref3, "borderRadius", borderRadius), _defineProperty$1(_ref3, "boxShadow", '0 0 0 1px hsla(0, 0%, 0%, 0.1), 0 4px 11px hsla(0, 0%, 0%, 0.1)'), _defineProperty$1(_ref3, "marginBottom", spacing.menuGutter), _defineProperty$1(_ref3, "marginTop", spacing.menuGutter), _defineProperty$1(_ref3, "position", 'absolute'), _defineProperty$1(_ref3, "width", '100%'), _defineProperty$1(_ref3, "zIndex", 1), _ref3;
 }; // NOTE: internal only
 
 var MenuPlacer =
@@ -11695,7 +11691,6 @@ var A11yText = function A11yText(props) {
 
     /*#__PURE__*/
     css$15({
-      label: 'a11yText',
       zIndex: 9999,
       border: 0,
       clip: 'rect(1px, 1px, 1px, 1px)',
@@ -11744,7 +11739,6 @@ function (_Component) {
 
         /*#__PURE__*/
         css$15({
-          label: 'dummyInput',
           // get rid of any default styles
           background: 0,
           border: 0,
@@ -12310,7 +12304,6 @@ var containerCSS = function containerCSS(_ref) {
   var isDisabled = _ref.isDisabled,
       isRtl = _ref.isRtl;
   return {
-    label: 'container',
     direction: isRtl ? 'rtl' : null,
     pointerEvents: isDisabled ? 'none' : null,
     // cancel mouse events when disabled
@@ -12460,7 +12453,6 @@ var baseCSS = function baseCSS(_ref2) {
       baseUnit = _ref2$theme.spacing.baseUnit,
       colors = _ref2$theme.colors;
   return {
-    label: 'indicatorContainer',
     color: isFocused ? colors.neutral60 : colors.neutral20,
     display: 'flex',
     padding: baseUnit * 2,
@@ -12512,7 +12504,6 @@ var indicatorSeparatorCSS = function indicatorSeparatorCSS(_ref3) {
       baseUnit = _ref3$theme.spacing.baseUnit,
       colors = _ref3$theme.colors;
   return {
-    label: 'indicatorSeparator',
     alignSelf: 'stretch',
     backgroundColor: isDisabled ? colors.neutral10 : colors.neutral20,
     marginBottom: baseUnit * 2,
@@ -12545,7 +12536,6 @@ var loadingIndicatorCSS = function loadingIndicatorCSS(_ref4) {
       colors = _ref4$theme.colors,
       baseUnit = _ref4$theme.spacing.baseUnit;
   return {
-    label: 'loadingIndicator',
     color: isFocused ? colors.neutral60 : colors.neutral20,
     display: 'flex',
     padding: baseUnit * 2,
@@ -12634,7 +12624,6 @@ var css$1$1 = function css$$1(_ref) {
       borderRadius = _ref$theme.borderRadius,
       spacing = _ref$theme.spacing;
   return {
-    label: 'control',
     alignItems: 'center',
     backgroundColor: isDisabled ? colors.neutral5 : colors.neutral0,
     borderColor: isDisabled ? colors.neutral10 : isFocused ? colors.primary : colors.neutral20,
@@ -12714,7 +12703,6 @@ var Group = function Group(props) {
 var groupHeadingCSS = function groupHeadingCSS(_ref2) {
   var spacing = _ref2.theme.spacing;
   return {
-    label: 'group',
     color: '#999',
     cursor: 'default',
     display: 'block',
@@ -12761,7 +12749,6 @@ var inputCSS = function inputCSS(_ref) {
 
 var inputStyle = function inputStyle(isHidden) {
   return {
-    label: 'input',
     background: 0,
     border: 0,
     fontSize: 'inherit',
@@ -12807,7 +12794,6 @@ var multiValueCSS = function multiValueCSS(_ref) {
       borderRadius = _ref$theme.borderRadius,
       colors = _ref$theme.colors;
   return {
-    label: 'multiValue',
     backgroundColor: colors.neutral10,
     borderRadius: borderRadius / 2,
     display: 'flex',
@@ -12969,7 +12955,6 @@ var optionCSS = function optionCSS(_ref) {
       spacing = _ref$theme.spacing,
       colors = _ref$theme.colors;
   return {
-    label: 'option',
     backgroundColor: isSelected ? colors.primary : isFocused ? colors.primary25 : 'transparent',
     color: isDisabled ? colors.neutral20 : isSelected ? colors.neutral0 : 'inherit',
     cursor: 'default',
@@ -12981,7 +12966,7 @@ var optionCSS = function optionCSS(_ref) {
     WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
     // provide some affordance on touch devices
     ':active': {
-      backgroundColor: !isDisabled && (isSelected ? colors.primary : colors.primary50)
+      backgroundColor: isSelected ? colors.primary : colors.primary50
     }
   };
 };
@@ -13014,7 +12999,6 @@ var placeholderCSS = function placeholderCSS(_ref) {
       spacing = _ref$theme.spacing,
       colors = _ref$theme.colors;
   return {
-    label: 'placeholder',
     color: colors.neutral50,
     marginLeft: spacing.baseUnit / 2,
     marginRight: spacing.baseUnit / 2,
@@ -13045,7 +13029,6 @@ var css$2$1 = function css$$1(_ref) {
       spacing = _ref$theme.spacing,
       colors = _ref$theme.colors;
   return {
-    label: 'singleValue',
     color: isDisabled ? colors.neutral40 : colors.neutral80,
     marginLeft: spacing.baseUnit / 2,
     marginRight: spacing.baseUnit / 2,
@@ -13245,6 +13228,7 @@ function (_Component) {
       focusedValue: null,
       inputIsHidden: false,
       isFocused: false,
+      isComposing: false,
       menuOptions: {
         render: [],
         focusable: []
@@ -13253,8 +13237,6 @@ function (_Component) {
     });
 
     _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "blockOptionHover", false);
-
-    _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "isComposing", false);
 
     _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "clearFocusValueOnUpdate", false);
 
@@ -13606,11 +13588,15 @@ function (_Component) {
     });
 
     _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "onCompositionStart", function () {
-      _this.isComposing = true;
+      _this.setState({
+        isComposing: true
+      });
     });
 
     _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "onCompositionEnd", function () {
-      _this.isComposing = false;
+      _this.setState({
+        isComposing: false
+      });
     });
 
     _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "onTouchStart", function (_ref4) {
@@ -13767,6 +13753,7 @@ function (_Component) {
           tabSelectsValue = _this$props7.tabSelectsValue,
           openMenuOnFocus = _this$props7.openMenuOnFocus;
       var _this$state2 = _this.state,
+          isComposing = _this$state2.isComposing,
           focusedOption = _this$state2.focusedOption,
           focusedValue = _this$state2.focusedValue,
           selectValue = _this$state2.selectValue;
@@ -13817,7 +13804,7 @@ function (_Component) {
           break;
 
         case 'Tab':
-          if (_this.isComposing) return;
+          if (isComposing) return;
 
           if (event.shiftKey || !menuIsOpen || !tabSelectsValue || !focusedOption || // don't capture the event if the menu opens on focus and the focused
           // option is already selected; it breaks the flow of navigation
@@ -13830,15 +13817,9 @@ function (_Component) {
           break;
 
         case 'Enter':
-          if (event.keyCode === 229) {
-            // ignore the keydown event from an Input Method Editor(IME)
-            // ref. https://www.w3.org/TR/uievents/#determine-keydown-keyup-keyCode
-            break;
-          }
-
           if (menuIsOpen) {
             if (!focusedOption) return;
-            if (_this.isComposing) return;
+            if (isComposing) return;
 
             _this.selectOption(focusedOption);
 
@@ -14637,14 +14618,14 @@ function (_Component) {
 
       if (isMulti) {
         var selectValues = selectValue.map(function (opt) {
-          var isOptionFocused = opt === focusedValue;
+          var isFocused = opt === focusedValue;
           return React__default.createElement(MultiValue, _extends$1({}, commonProps, {
             components: {
               Container: MultiValueContainer,
               Label: MultiValueLabel,
               Remove: MultiValueRemove
             },
-            isFocused: isOptionFocused,
+            isFocused: isFocused,
             isDisabled: isDisabled,
             key: _this4.getOptionValue(opt),
             removeProps: {

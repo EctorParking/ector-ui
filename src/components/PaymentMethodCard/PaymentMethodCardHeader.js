@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import s from './PaymentMethodCardHeader.module.css';
-import PaymentMethodCardTextsType from './PaymentmethodTextsType';
+import PaymentMethodCardTextsType from './PaymentMethodTextsType';
 
 const PaymentMethodCardHeader = ({
   onDelete, texts, pendingDeletion, className,

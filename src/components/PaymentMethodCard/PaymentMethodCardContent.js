@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import PaymentMethodCardContentRead from './PaymentMethodCardContentRead';
 import PaymentMethodCardContentDelete from './PaymentMethodCardContentDelete';
 import PaymentMethodType from './PaymentMethodType';
-import PaymentMethodTextsType from './PaymentmethodTextsType';
+import PaymentMethodTextsType from './PaymentMethodTextsType';
 
 const PaymentMethodCardContent = ({ pendingDeletion, ...contentProps }) => (
   pendingDeletion ? (

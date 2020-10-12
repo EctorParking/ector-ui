@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import PaymentMethodType from './PaymentMethodType';
-import PaymentMethodTextsType from './PaymentmethodTextsType';
+import PaymentMethodTextsType from './PaymentMethodTextsType';
 import iconVisa from '../../assets/images/visa.svg';
 import iconAmerican from '../../assets/images/amercan-express.svg';
 import iconCb from '../../assets/images/cb.svg';
