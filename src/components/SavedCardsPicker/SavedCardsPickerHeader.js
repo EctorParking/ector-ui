@@ -29,6 +29,7 @@ const SavedCardsPickerHeader = ({
     {isRadioButtonVisible && (
       <RadioButton
         label=" "
+        className={s.radioButton}
         checked={isSelected}
         onSelect={onRadioButtonChange}
         value={cardType}
