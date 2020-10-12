@@ -5,7 +5,7 @@ import centered from '@storybook/addon-centered';
 import { withKnobs, object, boolean } from '@storybook/addon-knobs/react';
 
 import PaymentMethodCard from '.';
-import { DefaultTexts } from './PaymentmethodTextsType';
+import { DefaultTexts } from './PaymentMethodTextsType';
 
 storiesOf('PaymentMethodCard', module)
   .addParameters({

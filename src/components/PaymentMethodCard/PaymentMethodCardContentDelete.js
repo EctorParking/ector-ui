@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import PaymentMethodTextsType from './PaymentmethodTextsType';
+import PaymentMethodTextsType from './PaymentMethodTextsType';
 import s from './PaymentmethodCardContentDelete.module.css';
 import { LinkUnderlined } from '..';
 
-const PaymentmethodCardContentDelete = ({ texts, onConfirmDeletion, onCancelDeletion }) => (
+const PaymentMethodCardContentDelete = ({ texts, onConfirmDeletion, onCancelDeletion }) => (
   <div className={s.container}>
     <strong>{texts.confirmDeletionTitle}</strong>
     <p className={s.sentence}>{texts.confirmDeletionSentence}</p>
@@ -19,10 +19,10 @@ const PaymentmethodCardContentDelete = ({ texts, onConfirmDeletion, onCancelDele
   </div>
 );
 
-PaymentmethodCardContentDelete.propTypes = {
+PaymentMethodCardContentDelete.propTypes = {
   texts: PaymentMethodTextsType.isRequired,
   onConfirmDeletion: PropTypes.func.isRequired,
   onCancelDeletion: PropTypes.func.isRequired,
 };
 
-export default PaymentmethodCardContentDelete;
+export default PaymentMethodCardContentDelete;

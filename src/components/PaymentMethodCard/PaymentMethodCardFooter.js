@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import s from './PaymentMethodCardFooter.module.css';
 import { LinkUnderlined } from '..';
-import PaymentMethodTextsType from './PaymentmethodTextsType';
+import PaymentMethodTextsType from './PaymentMethodTextsType';
 
 const PaymentMethodCardFooter = ({
   className, selected, texts, onClick, testid,

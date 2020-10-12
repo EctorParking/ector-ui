@@ -3256,7 +3256,6 @@ styleInject(css$C);
 var DefaultTexts$5 = {
   select: 'Sélectionner',
   remove: 'Supprimer',
-  save: 'Enregistrer',
   confirmDeletionTitle: 'Confirmation',
   confirmDeletionSentence: 'Êtes-vous sûr(e) de vouloir supprimer ce moyen de paiement ?',
   cancel: 'Annuler',
@@ -3266,7 +3265,6 @@ var DefaultTexts$5 = {
 var TextsType$5 = PropTypes$1.shape({
   update: PropTypes$1.string,
   remove: PropTypes$1.string,
-  save: PropTypes$1.string,
   confirmDeletionTitle: PropTypes$1.string,
   confirmDeletionSentence: PropTypes$1.string,
   cancel: PropTypes$1.string,
@@ -3451,7 +3449,7 @@ var css$E = ".PaymentmethodCardContentDelete-module_container__2q5zt {\n  -webki
 var s$E = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","container":"PaymentmethodCardContentDelete-module_container__2q5zt","sentence":"PaymentmethodCardContentDelete-module_sentence__4dwCI","buttons":"PaymentmethodCardContentDelete-module_buttons__1lGiu"};
 styleInject(css$E);
 
-var PaymentmethodCardContentDelete = function PaymentmethodCardContentDelete(_ref) {
+var PaymentMethodCardContentDelete = function PaymentMethodCardContentDelete(_ref) {
   var texts = _ref.texts,
       onConfirmDeletion = _ref.onConfirmDeletion,
       onCancelDeletion = _ref.onCancelDeletion;
@@ -3468,7 +3466,7 @@ var PaymentmethodCardContentDelete = function PaymentmethodCardContentDelete(_re
   }, React__default.createElement("strong", null, texts.confirm))));
 };
 
-PaymentmethodCardContentDelete.propTypes = {
+PaymentMethodCardContentDelete.propTypes = {
   texts: TextsType$5.isRequired,
   onConfirmDeletion: PropTypes$1.func.isRequired,
   onCancelDeletion: PropTypes$1.func.isRequired
@@ -3478,7 +3476,7 @@ var PaymentMethodCardContent = function PaymentMethodCardContent(_ref) {
   var pendingDeletion = _ref.pendingDeletion,
       contentProps = _objectWithoutProperties(_ref, ["pendingDeletion"]);
 
-  return pendingDeletion ? React__default.createElement(PaymentmethodCardContentDelete, contentProps) : React__default.createElement(PaymentMethodCardContentRead, contentProps);
+  return pendingDeletion ? React__default.createElement(PaymentMethodCardContentDelete, contentProps) : React__default.createElement(PaymentMethodCardContentRead, contentProps);
 };
 
 PaymentMethodCardContent.propTypes = {
