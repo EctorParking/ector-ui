@@ -35,42 +35,44 @@ const SavedCardsPickerHeader = ({
         name=""
       />
     )}
-    <span className={s.text}>
-      <strong>{getHeaderTitle(cardType, texts)}</strong>
-    </span>
-    {cardType === CardTypes.stripe && (
-      <div className={s.availableCards}>
-        <img
-          src={texts.iconVisa}
-          alt="Visa"
-          className={[s.cardIcon, s.cardIconBigger].join(' ')}
-        />
-        <img
-          src={texts.iconMastercard}
-          alt="MasterCard"
-          className={[s.cardIcon, s.cardIconSmaller].join(' ')}
-        />
-        <img
-          src={texts.iconAmerican}
-          alt="American Express"
-          className={[s.cardIcon, s.cardIconSmaller].join(' ')}
-        />
-        <img
-          src={texts.iconBusinessEdenRed}
-          alt="Business Edenred"
-          className={[s.cardIcon, s.cardIconBusinessEdenred].join(' ')}
-        />
-      </div>
-    )}
-    {cardType === CardTypes.total && (
-      <div className={s.availableCards}>
-        <img
-          src={texts.iconTotal}
-          alt="Total"
-          className={[s.cardIcon, s.cardIconBigger].join(' ')}
-        />
-      </div>
-    )}
+    <div className={s.headerContent}>
+      <span className={s.text}>
+        <strong>{getHeaderTitle(cardType, texts)}</strong>
+      </span>
+      {cardType === CardTypes.stripe && (
+        <div className={s.availableCards}>
+          <img
+            src={texts.iconVisa}
+            alt="Visa"
+            className={[s.cardIcon, s.cardIconBigger].join(' ')}
+          />
+          <img
+            src={texts.iconMastercard}
+            alt="MasterCard"
+            className={[s.cardIcon, s.cardIconSmaller].join(' ')}
+          />
+          <img
+            src={texts.iconAmerican}
+            alt="American Express"
+            className={[s.cardIcon, s.cardIconSmaller].join(' ')}
+          />
+          <img
+            src={texts.iconBusinessEdenRed}
+            alt="Business Edenred"
+            className={[s.cardIcon, s.cardIconBusinessEdenred].join(' ')}
+          />
+        </div>
+      )}
+      {cardType === CardTypes.total && (
+        <div className={s.availableCards}>
+          <img
+            src={texts.iconTotal}
+            alt="Total"
+            className={[s.cardIcon, s.cardIconBigger].join(' ')}
+          />
+        </div>
+      )}
+    </div>
   </tr>
 );
 

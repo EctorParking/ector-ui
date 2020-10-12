@@ -751,15 +751,11 @@ var BookingSteps = function BookingSteps(_ref) {
   }, React__default.createElement("h3", {
     className: s$8.stepName
   }, pickupTitle), pickupDescriptions.map(function (description) {
-    return React__default.createElement("span", {
-      key: description
-    }, description);
+    return description;
   })), React__default.createElement("div", null, React__default.createElement("h3", {
     className: s$8.stepName
   }, returnTitle), returnDescriptions.map(function (description) {
-    return React__default.createElement("span", {
-      key: description
-    }, description);
+    return description;
   })));
 };
 
@@ -768,9 +764,9 @@ BookingSteps.defaultProps = {
 };
 BookingSteps.propTypes = {
   className: PropTypes$1.string,
-  pickupDescriptions: PropTypes$1.arrayOf(PropTypes$1.string).isRequired,
+  pickupDescriptions: PropTypes$1.arrayOf(PropTypes$1.node).isRequired,
   pickupTitle: PropTypes$1.string.isRequired,
-  returnDescriptions: PropTypes$1.arrayOf(PropTypes$1.string).isRequired,
+  returnDescriptions: PropTypes$1.arrayOf(PropTypes$1.node).isRequired,
   returnTitle: PropTypes$1.string.isRequired
 };
 
@@ -896,6 +892,7 @@ var defaultTexts$2 = {
   routingFee: 'Acheminement',
   parkingFee: 'Durée de stationnement supplémentaire',
   administrativeFee: 'Frais de dossier*',
+  yieldsFee: 'Différence de prix',
   total: 'Total reste à payer'
 };
 
@@ -904,6 +901,7 @@ var BookingModificationSummaryPriceType = PropTypes$1.shape({
   initialPrice: PropTypes$1.string,
   routingFee: FeePropType,
   parkingFee: FeePropType,
+  yieldsFee: FeePropType,
   administrativeFee: FeePropType,
   countRoutingFee: PropTypes$1.number,
   countParkingFee: PropTypes$1.number,
@@ -925,7 +923,7 @@ var BookingModificationSummary = function BookingModificationSummary(_ref) {
     price: bookingModificationSummaryPrice.initialPrice,
     text: texts.initialPrice,
     textClassName: s$b.bold
-  }), +bookingModificationSummaryPrice.parkingFee || +bookingModificationSummaryPrice.routingFee || +bookingModificationSummaryPrice.administrativeFee ? React__default.createElement("hr", {
+  }), +bookingModificationSummaryPrice.parkingFee || +bookingModificationSummaryPrice.routingFee || +bookingModificationSummaryPrice.administrativeFee || +bookingModificationSummaryPrice.yieldsFee ? React__default.createElement("hr", {
     className: s$b.horizontalRule
   }) : null, +bookingModificationSummaryPrice.parkingFee ? React__default.createElement(BookingModificationSummaryRow, {
     price: bookingModificationSummaryPrice.parkingFee,
@@ -941,6 +939,10 @@ var BookingModificationSummary = function BookingModificationSummary(_ref) {
     price: bookingModificationSummaryPrice.administrativeFee,
     count: bookingModificationSummaryPrice.countAdministrativeFee,
     text: texts.administrativeFee,
+    isExtra: true
+  }) : null, +bookingModificationSummaryPrice.yieldsFee ? React__default.createElement(BookingModificationSummaryRow, {
+    price: bookingModificationSummaryPrice.yieldsFee,
+    text: texts.yieldsFee,
     isExtra: true
   }) : null, React__default.createElement("hr", {
     className: s$b.horizontalRule
@@ -3108,8 +3110,8 @@ Loader.propTypes = {
   testid: PropTypes$1.string
 };
 
-var css$B = ".LoginForm-module_card__3_T4d {\n  width: 400px;\n}\n\n.LoginForm-module_contentCard__2LMaI {\n  -webkit-box-align: start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  padding: 16px 32px;\n  padding: 16px 32px;\n  padding: 1rem 2rem;\n}\n\n.LoginForm-module_input__3Vyuc {\n  margin-bottom: 10px;\n  width: 100%;\n}\n\n.LoginForm-module_button__2JEzi {\n  margin: 10px 0;\n}\n\n.LoginForm-module_error__2-jaK {\n  color: #ff5757;\n}\n\n.LoginForm-module_inputError__1QmRY {\n  border-color: #ff5757;\n}\n\n.LoginForm-module_forgottenPasswordLink__3N7WZ {\n  -ms-flex-item-align: end;\n      align-self: flex-end;\n}\n";
-var s$B = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","card":"LoginForm-module_card__3_T4d","contentCard":"LoginForm-module_contentCard__2LMaI","input":"LoginForm-module_input__3Vyuc","button":"LoginForm-module_button__2JEzi","error":"LoginForm-module_error__2-jaK","inputError":"LoginForm-module_inputError__1QmRY","forgottenPasswordLink":"LoginForm-module_forgottenPasswordLink__3N7WZ"};
+var css$B = ".LoginForm-module_card__3_T4d {\n  width: 400px;\n}\n\n.LoginForm-module_contentCard__2LMaI {\n  -webkit-box-align: start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  padding: 16px 32px;\n  padding: 16px 32px;\n  padding: 1rem 2rem;\n}\n\n.LoginForm-module_input__3Vyuc {\n  margin-bottom: 10px;\n  width: 100%;\n}\n\n.LoginForm-module_button__2JEzi {\n  margin: 10px 0;\n}\n\n.LoginForm-module_error__2-jaK {\n  color: #ff5757;\n}\n\n.LoginForm-module_inputError__1QmRY {\n  border-color: #ff5757;\n}\n\n.LoginForm-module_forgottenPasswordLink__3N7WZ {\n  -ms-flex-item-align: end;\n      align-self: flex-end;\n}\n\n.LoginForm-module_emailTextContainer__313VG {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n";
+var s$B = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","card":"LoginForm-module_card__3_T4d","contentCard":"LoginForm-module_contentCard__2LMaI","input":"LoginForm-module_input__3Vyuc","button":"LoginForm-module_button__2JEzi","error":"LoginForm-module_error__2-jaK","inputError":"LoginForm-module_inputError__1QmRY","forgottenPasswordLink":"LoginForm-module_forgottenPasswordLink__3N7WZ","emailTextContainer":"LoginForm-module_emailTextContainer__313VG"};
 styleInject(css$B);
 
 var TextsType$4 = PropTypes$1.shape({
@@ -3142,6 +3144,7 @@ var LoginForm = function LoginForm(_ref) {
       onChangeEmail = _ref.onChangeEmail,
       onChangePassword = _ref.onChangePassword,
       onSubmit = _ref.onSubmit,
+      onClickEditEmail = _ref.onClickEditEmail,
       emailInputClassName = _ref.emailInputClassName,
       passwordInputClassName = _ref.passwordInputClassName,
       contentClassName = _ref.contentClassName,
@@ -3153,18 +3156,40 @@ var LoginForm = function LoginForm(_ref) {
       SubmitButtonComponent = _ref.SubmitButtonComponent,
       onClickPasswordForgotten = _ref.onClickPasswordForgotten,
       shouldDisplayEmailField = _ref.shouldDisplayEmailField,
-      cardProps = _objectWithoutProperties(_ref, ["className", "values", "errors", "texts", "onChangeEmail", "onChangePassword", "onSubmit", "emailInputClassName", "passwordInputClassName", "contentClassName", "buttonClassName", "fetching", "errorLogin", "buttonTestid", "RootComponent", "SubmitButtonComponent", "onClickPasswordForgotten", "shouldDisplayEmailField"]);
+      shouldDisplayEmailText = _ref.shouldDisplayEmailText,
+      cardProps = _objectWithoutProperties(_ref, ["className", "values", "errors", "texts", "onChangeEmail", "onChangePassword", "onSubmit", "onClickEditEmail", "emailInputClassName", "passwordInputClassName", "contentClassName", "buttonClassName", "fetching", "errorLogin", "buttonTestid", "RootComponent", "SubmitButtonComponent", "onClickPasswordForgotten", "shouldDisplayEmailField", "shouldDisplayEmailText"]);
 
   return React__default.createElement(RootComponent, _extends({}, cardProps, {
     className: [s$B.card, className].join(' '),
     contentClassName: [s$B.contentCard, contentClassName].join(' ')
-  }), shouldDisplayEmailField && React__default.createElement(InputLabel, {
+  }), shouldDisplayEmailField && !shouldDisplayEmailText && React__default.createElement(InputLabel, {
     className: [s$B.input, emailInputClassName].join(''),
     hasError: !!errors.email || typeof errorLogin !== 'undefined' && errorLogin !== '',
     label: texts.email,
     mandatory: true,
     type: "email",
     id: "loginFormEmailInput",
+    value: values.email || '',
+    onChange: onChangeEmail,
+    error: errors.email
+  }), shouldDisplayEmailText && React__default.createElement(InputLabel, {
+    className: [s$B.input, emailInputClassName].join(''),
+    hasError: !!errors.email || typeof errorLogin !== 'undefined' && errorLogin !== '',
+    label: texts.email,
+    mandatory: true,
+    type: "email",
+    id: "loginFormEmailInput",
+    InputComponent: function InputComponent() {
+      return React__default.createElement("div", {
+        className: s$B.emailTextContainer
+      }, values.email, ' ', React__default.createElement("button", {
+        onClick: onClickEditEmail,
+        id: "EditEmailButton"
+      }, React__default.createElement("i", {
+        className: "icon-edit ",
+        id: "EditIcon"
+      })));
+    },
     value: values.email || '',
     onChange: onChangeEmail,
     error: errors.email
@@ -3216,8 +3241,10 @@ LoginForm.defaultProps = {
 
     return React__default.createElement(LinkUnderlined, buttonProps, children);
   },
+  onClickEditEmail: function onClickEditEmail() {},
   onClickPasswordForgotten: undefined,
   shouldDisplayEmailField: true,
+  shouldDisplayEmailText: false,
   onSubmit: undefined
 };
 LoginForm.propTypes = {
@@ -3226,6 +3253,7 @@ LoginForm.propTypes = {
   errorLogin: PropTypes$1.string,
   onChangeEmail: PropTypes$1.func.isRequired,
   onChangePassword: PropTypes$1.func.isRequired,
+  onClickEditEmail: PropTypes$1.func,
   onSubmit: PropTypes$1.func,
   texts: TextsType$4,
   className: PropTypes$1.string,
@@ -3238,7 +3266,8 @@ LoginForm.propTypes = {
   RootComponent: PropTypes$1.func,
   SubmitButtonComponent: PropTypes$1.func,
   onClickPasswordForgotten: PropTypes$1.func,
-  shouldDisplayEmailField: PropTypes$1.bool
+  shouldDisplayEmailField: PropTypes$1.bool,
+  shouldDisplayEmailText: PropTypes$1.bool
 };
 
 var css$C = ".PaymentMethodCard-module_card__1P35E {\n  position: relative;\n}\n\n.PaymentMethodCard-module_cardContent__CnD6V {\n  padding: 10px;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\n\n.PaymentMethodCard-module_header__pGvBe {\n  position: absolute;\n  width: 100%;\n  top: 20px;\n  right: 20px;\n}\n\n.PaymentMethodCard-module_pendingDeletion__-WJj3 {\n  background-color: #eceff6;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  padding: 20px;\n  text-align: center;\n}\n\n.PaymentMethodCard-module_footer__2mmr8 {\n  display: block;\n}\n";
@@ -16456,8 +16485,8 @@ IconButton.propTypes = {
   label: PropTypes$1.string.isRequired
 };
 
-var css$1h = ".SavedCardsLine-module_tableRow__8zJ9M {\n  color: #a9b3c5;\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n}\n\n.SavedCardsLine-module_tableRow__8zJ9M:hover {\n  -webkit-box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, .15);\n          box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, .15);\n}\n\n.SavedCardsLine-module_checkedButton__b64Id {\n  padding-left: 8px;\n  vertical-align: middle;\n}\n\n.SavedCardsLine-module_checkedImg__2TnGE {\n  width: 25px;\n}\n\n.SavedCardsLine-module_paymentCardCell__eH68n {\n  border-bottom: 2px solid #eceff6;\n  padding: 0 60px 0 15px;\n  vertical-align: middle;\n}\n\n.SavedCardsLine-module_cardIcon__3atbF {\n  margin: 0 10px 0 0;\n  vertical-align: middle;\n  width: 50px;\n  height: 50px;\n}\n\n.SavedCardsLine-module_cardName__zMJRV {\n  text-align: left;\n  vertical-align: middle;\n}\n\n.SavedCardsLine-module_lastFourDigits__28_QZ {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  vertical-align: middle;\n}\n\n.SavedCardsLine-module_hiddenDigits__2QCDF {\n  font-size: 2em;\n  margin-right: 5px;\n  vertical-align: middle;\n}\n\n.SavedCardsLine-module_deleteButtonCell__2C3NU {\n  border-bottom: 2px solid #eceff6;\n  padding: 10px 10px;\n}\n\n.SavedCardsLine-module_expireAt__39dzO {\n  text-align: center;\n}\n\n.SavedCardsLine-module_deleteButton__2aq34 {\n  background: none;\n  border: 0;\n  padding: 0;\n}\n\n.SavedCardsLine-module_deleteIcon__Hz5ss::before {\n  color: #163457;\n}\n\n.SavedCardsLine-module_deleteIcon__Hz5ss:hover::before {\n  color: #ff5757;\n}\n\n.SavedCardsLine-module_clicked__9z_VH {\n  -webkit-box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, .15);\n          box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, .15);\n  color: #163457;\n}\n";
-var s$1f = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","tableRow":"SavedCardsLine-module_tableRow__8zJ9M","checkedButton":"SavedCardsLine-module_checkedButton__b64Id","checkedImg":"SavedCardsLine-module_checkedImg__2TnGE","paymentCardCell":"SavedCardsLine-module_paymentCardCell__eH68n","cardIcon":"SavedCardsLine-module_cardIcon__3atbF","cardName":"SavedCardsLine-module_cardName__zMJRV","lastFourDigits":"SavedCardsLine-module_lastFourDigits__28_QZ","hiddenDigits":"SavedCardsLine-module_hiddenDigits__2QCDF","deleteButtonCell":"SavedCardsLine-module_deleteButtonCell__2C3NU","expireAt":"SavedCardsLine-module_expireAt__39dzO","deleteButton":"SavedCardsLine-module_deleteButton__2aq34","deleteIcon":"SavedCardsLine-module_deleteIcon__Hz5ss","clicked":"SavedCardsLine-module_clicked__9z_VH"};
+var css$1h = ".SavedCardsLine-module_tableRow__8zJ9M {\n  color: #a9b3c5;\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  position: relative;\n  width: 100%;\n}\n\n.SavedCardsLine-module_tableCell__3cmCb {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.SavedCardsLine-module_paddedCell__19Odo {\n  margin: 0 60px 0 10px;\n}\n\n.SavedCardsLine-module_tableRow__8zJ9M:hover {\n  -webkit-box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, .15);\n          box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, .15);\n}\n\n.SavedCardsLine-module_tableRow__8zJ9M:focus {\n  outline: none;\n}\n\n.SavedCardsLine-module_tableRow__8zJ9M:after {\n  content: '';\n  width: 100%;\n  height: 2px;\n  background: #eceff6;\n  position: absolute;\n  bottom: 0;\n  z-index: 1;\n}\n\n.SavedCardsLine-module_mobileTable__17NJr, .SavedCardsLine-module_mobileRow1__ckAfr, .SavedCardsLine-module_mobileRow2__2OTZ3\n{\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n@media (max-width: 480px) {\n  .SavedCardsLine-module_mobileTable__17NJr\n  {\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -webkit-box-align: start;\n        -ms-flex-align: start;\n            align-items: flex-start;\n  }\n\n  .SavedCardsLine-module_mobileRow2__2OTZ3\n  {\n    margin-bottom: 10px;\n  }\n\n\n  .SavedCardsLine-module_paddedCell__19Odo {\n    margin: 0 50px 0 5px;\n  }\n\n  .SavedCardsLine-module_expireAt__39dzO {\n    margin-right: 0;\n  }\n}\n\n.SavedCardsLine-module_checkedButton__b64Id {\n  margin-left: 15px;\n  margin-right: 0;\n  vertical-align: middle;\n  width: 33px;\n}\n\n.SavedCardsLine-module_checkedImg__2TnGE {\n  width: 25px;\n  max-height: 18px;\n}\n\n.SavedCardsLine-module_cardIcon__3atbF {\n  margin: 0 10px 0 0;\n  vertical-align: middle;\n  width: 50px;\n  height: 50px;\n}\n\n.SavedCardsLine-module_cardName__zMJRV {\n  -webkit-box-flex: 1;\n      -ms-flex-positive: 1;\n          flex-grow: 1;\n}\n\n.SavedCardsLine-module_hiddenDigits__2QCDF {\n  font-size: 2em;\n  margin-right: 5px;\n}\n\n.SavedCardsLine-module_deleteButtonCell__2C3NU {\n  border: none !important;\n  margin-right: 15px;\n}\n\n.SavedCardsLine-module_deleteButton__2aq34 {\n  background: none;\n  border: 0;\n  padding: 0;\n}\n\n.SavedCardsLine-module_deleteIcon__Hz5ss::before {\n  color: #163457;\n}\n\n.SavedCardsLine-module_deleteIcon__Hz5ss:hover::before {\n  color: #ff5757;\n}\n\n.SavedCardsLine-module_clicked__9z_VH {\n  -webkit-box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, .15);\n          box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, .15);\n  color: #163457;\n}\n";
+var s$1f = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","tableRow":"SavedCardsLine-module_tableRow__8zJ9M","tableCell":"SavedCardsLine-module_tableCell__3cmCb","paddedCell":"SavedCardsLine-module_paddedCell__19Odo","mobileTable":"SavedCardsLine-module_mobileTable__17NJr","mobileRow1":"SavedCardsLine-module_mobileRow1__ckAfr","mobileRow2":"SavedCardsLine-module_mobileRow2__2OTZ3","expireAt":"SavedCardsLine-module_expireAt__39dzO","checkedButton":"SavedCardsLine-module_checkedButton__b64Id","checkedImg":"SavedCardsLine-module_checkedImg__2TnGE","cardIcon":"SavedCardsLine-module_cardIcon__3atbF","cardName":"SavedCardsLine-module_cardName__zMJRV","hiddenDigits":"SavedCardsLine-module_hiddenDigits__2QCDF","deleteButtonCell":"SavedCardsLine-module_deleteButtonCell__2C3NU","deleteButton":"SavedCardsLine-module_deleteButton__2aq34","deleteIcon":"SavedCardsLine-module_deleteIcon__Hz5ss","clicked":"SavedCardsLine-module_clicked__9z_VH"};
 styleInject(css$1h);
 
 var PaymentMethodType$1 = PropTypes$1.shape({
@@ -16479,35 +16508,44 @@ var SavedCardsLine = function SavedCardsLine(_ref) {
       deleteIconClassName = _ref.deleteIconClassName,
       onSelectLine = _ref.onSelectLine,
       checkImg = _ref.checkImg;
-  return React__default.createElement("tr", {
+  return React__default.createElement("div", {
     onClick: function onClick() {
       return onSelectLine(paymentMethod.id);
     },
-    className: [s$1f.tableRow, card === paymentMethod.id ? s$1f.clicked : undefined].join(' ')
-  }, React__default.createElement("td", {
-    className: s$1f.checkedButton
+    onKeyDown: function onKeyDown() {
+      return onSelectLine(paymentMethod.id);
+    },
+    role: "button",
+    className: [s$1f.tableRow, card === paymentMethod.id ? s$1f.clicked : undefined].join(' '),
+    tabIndex: "0"
+  }, React__default.createElement("div", {
+    className: [s$1f.tableCell, s$1f.paddedCell, s$1f.checkedButton].join(' ')
   }, card === paymentMethod.id && React__default.createElement("img", {
     src: checkImg,
     alt: "checkedButton",
     className: s$1f.checkedImg
-  })), React__default.createElement("td", {
-    className: s$1f.paymentCardCell
+  })), React__default.createElement("div", {
+    className: s$1f.mobileTable
+  }, React__default.createElement("div", {
+    className: s$1f.mobileRow1
+  }, React__default.createElement("div", {
+    className: s$1f.tableCell
   }, React__default.createElement("img", {
     src: card === paymentMethod.id ? src : srcGrey,
     alt: alt,
     className: s$1f.cardIcon
-  }), React__default.createElement("span", {
-    className: s$1f.cardName
-  }, paymentMethod.cardName || brandText)), React__default.createElement("td", {
-    className: s$1f.paymentCardCell
-  }, React__default.createElement("span", {
-    className: s$1f.lastFourDigits
+  })), React__default.createElement("div", {
+    className: [s$1f.tableCell, s$1f.cardName].join(' ')
+  }, paymentMethod.cardName || brandText)), React__default.createElement("div", {
+    className: s$1f.mobileRow2
+  }, React__default.createElement("div", {
+    className: [s$1f.tableCell, s$1f.paddedCell, s$1f.cardDigits].join(' ')
   }, React__default.createElement("span", {
     className: s$1f.hiddenDigits
-  }, "\u2022\u2022\u2022\u2022 "), paymentMethod.last4digits)), React__default.createElement("td", {
-    className: [s$1f.paymentCardCell, s$1f.expireAt].join(' ')
-  }, moment(paymentMethod.expireAt).format('MM/YY')), React__default.createElement("td", {
-    className: [s$1f.deleteButtonCell, s$1f.paymentCardCell].join(' ')
+  }, "\u2022\u2022\u2022\u2022 "), paymentMethod.last4digits), React__default.createElement("div", {
+    className: [s$1f.tableCell, s$1f.paddedCell, s$1f.expireAt].join(' ')
+  }, moment(paymentMethod.expireAt).format('MM/YY')))), React__default.createElement("div", {
+    className: [s$1f.tableCell, s$1f.paddedCell, s$1f.deleteButtonCell].join(' ')
   }, React__default.createElement("button", {
     type: "button",
     className: s$1f.deleteButton,
@@ -16535,12 +16573,12 @@ SavedCardsLine.defaultProps = {
   card: null
 };
 
-var css$1i = ".SavedCardsPicker-module_card__3Lo7m {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  border-radius: 8px;\n  background-color: #fefefe;\n  margin: 0 0 15px 0;\n  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .15);\n          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .15);\n  max-width: -webkit-fit-content;\n  max-width: -moz-fit-content;\n  max-width: fit-content;\n  overflow-x: auto;\n  padding: 0;\n  max-height: 100%;\n}\n\n.SavedCardsPicker-module_left__vjeNi {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  min-width: -webkit-fit-content;\n  min-width: -moz-fit-content;\n  min-width: fit-content;\n}\n\n.SavedCardsPicker-module_informationTotalRefund__2Obh8 {\n  border-top: 2px solid #eceff6;\n  padding: 10px 25px 0 25px;\n}\n\n.SavedCardsPicker-module_paymentMethodBox__1oVXr {\n  padding: 10px 0 10px 0;\n  max-width: 720px;\n  -ms-flex-item-align: center;\n      align-self: center;\n  max-height: 100%;\n  border-radius: 8px;\n  background-color: #fefefe;\n  margin : 0 0 0 0;\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n  overflow-x: auto;\n}\n\n.SavedCardsPicker-module_paymentCardsTable__Qpt3G {\n  display: table;\n  overflow-x: auto;\n  white-space: nowrap;\n  width: 100%;\n}\n\n.SavedCardsPicker-module_paymentCardsHeader__19KgR {\n  padding: 10px 40px 10px 0;\n}\n\n.SavedCardsPicker-module_paymentTableFooter__1lBCH {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding: 10px;\n}\n\n.SavedCardsPicker-module_addPaymentCardIcon__VUpeM {\n  width: 20px;\n  height: 20px;\n}\n\n.SavedCardsPicker-module_addCardButton__1FlP7 {\n  vertical-align: middle;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n";
-var s$1g = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","card":"SavedCardsPicker-module_card__3Lo7m","left":"SavedCardsPicker-module_left__vjeNi","informationTotalRefund":"SavedCardsPicker-module_informationTotalRefund__2Obh8","paymentMethodBox":"SavedCardsPicker-module_paymentMethodBox__1oVXr","paymentCardsTable":"SavedCardsPicker-module_paymentCardsTable__Qpt3G","paymentCardsHeader":"SavedCardsPicker-module_paymentCardsHeader__19KgR","paymentTableFooter":"SavedCardsPicker-module_paymentTableFooter__1lBCH","addPaymentCardIcon":"SavedCardsPicker-module_addPaymentCardIcon__VUpeM","addCardButton":"SavedCardsPicker-module_addCardButton__1FlP7"};
+var css$1i = ".SavedCardsPicker-module_card__3Lo7m {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  border-radius: 8px;\n  background-color: #fefefe;\n  margin: 0 0 15px 0;\n  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .15);\n          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .15);\n  overflow-x: auto;\n  padding: 0;\n  max-height: 100%;\n  max-width: 100%;\n}\n\n.SavedCardsPicker-module_left__vjeNi {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n\n.SavedCardsPicker-module_informationTotalRefund__2Obh8 {\n  border-top: 2px solid #eceff6;\n  padding: 10px 25px 0 25px;\n}\n\n.SavedCardsPicker-module_paymentMethodBox__1oVXr {\n  padding: 10px 0 10px 0;\n  max-width: 720px;\n  -ms-flex-item-align: center;\n      align-self: center;\n  max-height: 100%;\n  border-radius: 8px;\n  background-color: #fefefe;\n  margin : 0 0 0 0;\n  width: 100%;\n  overflow-x: auto;\n  overflow-y: hidden;\n}\n\n.SavedCardsPicker-module_paymentCardsTable__Qpt3G {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  width: 100%;\n}\n\n.SavedCardsPicker-module_paymentCardsHeaderRow__2V93H {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-weight: 700;\n}\n\n.SavedCardsPicker-module_paymentCardsHeader__19KgR {\n  padding: 10px 40px 10px 0;\n}\n\n.SavedCardsPicker-module_numberHeader__3iCXE {\n  padding-right: 70px;\n}\n\n.SavedCardsPicker-module_expireHeader__1giX1 {\n  padding-right: 130px;\n}\n\n@media (max-width: 480px) {\n  .SavedCardsPicker-module_paymentCardsHeaderRow__2V93H {\n    display: none;\n  }\n}\n\n.SavedCardsPicker-module_typeCardHeader__15vD1 {\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  padding-left: 50px;\n}\n\n.SavedCardsPicker-module_paymentTableFooter__1lBCH {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding: 10px;\n  padding-left: 15px;\n}\n\n.SavedCardsPicker-module_addPaymentCardIcon__VUpeM {\n  width: 20px;\n  height: 20px;\n}\n\n.SavedCardsPicker-module_addCardButton__1FlP7 {\n  vertical-align: middle;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n";
+var s$1g = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","card":"SavedCardsPicker-module_card__3Lo7m","left":"SavedCardsPicker-module_left__vjeNi","informationTotalRefund":"SavedCardsPicker-module_informationTotalRefund__2Obh8","paymentMethodBox":"SavedCardsPicker-module_paymentMethodBox__1oVXr","paymentCardsTable":"SavedCardsPicker-module_paymentCardsTable__Qpt3G","paymentCardsHeaderRow":"SavedCardsPicker-module_paymentCardsHeaderRow__2V93H","paymentCardsHeader":"SavedCardsPicker-module_paymentCardsHeader__19KgR","numberHeader":"SavedCardsPicker-module_numberHeader__3iCXE","expireHeader":"SavedCardsPicker-module_expireHeader__1giX1","typeCardHeader":"SavedCardsPicker-module_typeCardHeader__15vD1","paymentTableFooter":"SavedCardsPicker-module_paymentTableFooter__1lBCH","addPaymentCardIcon":"SavedCardsPicker-module_addPaymentCardIcon__VUpeM","addCardButton":"SavedCardsPicker-module_addCardButton__1FlP7"};
 styleInject(css$1i);
 
-var css$1j = ".SavedCardsPickerHeader-module_header__2Px_I {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: 40px;\n  padding: 10px;\n  margin-left: 10px;\n  cursor: pointer;\n}\n\n.SavedCardsPickerHeader-module_text__CJFVs {\n  -webkit-box-align: start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n}\n\n.SavedCardsPickerHeader-module_availableCards__drqAA {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  margin-left: 20px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.SavedCardsPickerHeader-module_cardIcon__3OlwR {\n  height: 24px;\n  margin: 0 2px;\n}\n\n.SavedCardsPickerHeader-module_cardIconSmaller__3Rwc_ {\n  width: 30px;\n}\n\n.SavedCardsPickerHeader-module_cardIconBigger__2Pt6B {\n  width: 50px;\n}\n\n.SavedCardsPickerHeader-module_cardIconBusinessEdenred__3VfqK {\n  height: 24px;\n}\n\n";
-var s$1h = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","header":"SavedCardsPickerHeader-module_header__2Px_I","text":"SavedCardsPickerHeader-module_text__CJFVs","availableCards":"SavedCardsPickerHeader-module_availableCards__drqAA","cardIcon":"SavedCardsPickerHeader-module_cardIcon__3OlwR","cardIconSmaller":"SavedCardsPickerHeader-module_cardIconSmaller__3Rwc_","cardIconBigger":"SavedCardsPickerHeader-module_cardIconBigger__2Pt6B","cardIconBusinessEdenred":"SavedCardsPickerHeader-module_cardIconBusinessEdenred__3VfqK"};
+var css$1j = ".SavedCardsPickerHeader-module_header__2Px_I {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: auto;\n  padding: 10px;\n  margin-left: 10px;\n  cursor: pointer;\n}\n\n@media (max-width: 480px) {\n  .SavedCardsPickerHeader-module_headerContent__feI-p {\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n  }\n}\n\n.SavedCardsPickerHeader-module_headerContent__feI-p {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.SavedCardsPickerHeader-module_text__CJFVs {\n  -webkit-box-align: start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n}\n\n.SavedCardsPickerHeader-module_availableCards__drqAA {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  margin-left: 20px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n@media (max-width: 480px) {\n  .SavedCardsPickerHeader-module_availableCards__drqAA {\n    margin-left: 0;\n  }\n}\n\n.SavedCardsPickerHeader-module_cardIcon__3OlwR {\n  height: 24px;\n  margin: 0 4px 0 0;\n}\n\n.SavedCardsPickerHeader-module_cardIconSmaller__3Rwc_ {\n  width: 30px;\n}\n\n.SavedCardsPickerHeader-module_cardIconBigger__2Pt6B {\n  width: 50px;\n}\n\n.SavedCardsPickerHeader-module_cardIconBusinessEdenred__3VfqK {\n  height: 24px;\n}\n\n";
+var s$1h = {"deepBlue":"#163457","yellow":"#ffcd02","grey":"#4b4b50","blue":"#32a0c5","melrose":"#9ca3ff","green":"#59c871","white":"#fefefe","metalGrey":"#d5d6d7","lightMetalGrey":"#dededf","aquaHazeGrey":"#9eb3c2","darkGrey":"#a9b3c5","lightGrey":"#eceff6","red":"#ff5757","orange":"#f39c12","header":"SavedCardsPickerHeader-module_header__2Px_I","headerContent":"SavedCardsPickerHeader-module_headerContent__feI-p","text":"SavedCardsPickerHeader-module_text__CJFVs","availableCards":"SavedCardsPickerHeader-module_availableCards__drqAA","cardIcon":"SavedCardsPickerHeader-module_cardIcon__3OlwR","cardIconSmaller":"SavedCardsPickerHeader-module_cardIconSmaller__3Rwc_","cardIconBigger":"SavedCardsPickerHeader-module_cardIconBigger__2Pt6B","cardIconBusinessEdenred":"SavedCardsPickerHeader-module_cardIconBusinessEdenred__3VfqK"};
 styleInject(css$1j);
 
 var SavedCardsPickerTextTypes = PropTypes$1.shape({
@@ -16595,7 +16633,9 @@ var SavedCardsPickerHeader = function SavedCardsPickerHeader(_ref) {
     onSelect: onRadioButtonChange,
     value: cardType,
     name: ""
-  }), React__default.createElement("span", {
+  }), React__default.createElement("div", {
+    className: s$1h.headerContent
+  }, React__default.createElement("span", {
     className: s$1h.text
   }, React__default.createElement("strong", null, getHeaderTitle(cardType, texts))), cardType === CardTypes.stripe && React__default.createElement("div", {
     className: s$1h.availableCards
@@ -16621,7 +16661,7 @@ var SavedCardsPickerHeader = function SavedCardsPickerHeader(_ref) {
     src: texts.iconTotal,
     alt: "Total",
     className: [s$1h.cardIcon, s$1h.cardIconBigger].join(' ')
-  })));
+  }))));
 };
 
 SavedCardsPickerHeader.propTypes = {
@@ -16672,20 +16712,21 @@ function (_React$PureComponent) {
           fetching = _this$props.fetching;
       return React__default.createElement("div", {
         className: s$1g.paymentMethodBox
-      }, React__default.createElement("table", {
-        cellSpacing: "0",
+      }, React__default.createElement("div", {
         className: s$1g.paymentCardsTable
-      }, showHeader && React__default.createElement("thead", null, React__default.createElement("tr", null, React__default.createElement("th", null), React__default.createElement("th", {
-        className: s$1g.paymentCardsHeader
-      }, texts.typeCard), React__default.createElement("th", {
-        className: s$1g.paymentCardsHeader
-      }, texts.number), React__default.createElement("th", {
-        className: s$1g.paymentCardsHeader
-      }, texts.expire))), React__default.createElement("tbody", null, paymentMethods.length > 0 ? paymentMethods.map(function (paymentMethod) {
+      }, showHeader && React__default.createElement("div", {
+        className: s$1g.paymentCardsHeaderRow
+      }, React__default.createElement("div", {
+        className: [s$1g.typeCardHeader, s$1g.paymentCardsHeader].join(' ')
+      }, texts.typeCard), React__default.createElement("div", {
+        className: [s$1g.numberHeader, s$1g.paymentCardsHeader].join(' ')
+      }, texts.number), React__default.createElement("div", {
+        className: [s$1g.expireHeader, s$1g.paymentCardsHeader].join(' ')
+      }, texts.expire)), paymentMethods.length > 0 ? paymentMethods.map(function (paymentMethod) {
         return SavedCardsLineComponent(paymentMethod, card);
       }) : React__default.createElement(PaymentFormComponent, null), fetching && React__default.createElement(Loader, {
         size: "xSmall"
-      }))), paymentMethods.length > 0 && !showForm && React__default.createElement(React__default.Fragment, null, React__default.createElement("div", {
+      })), paymentMethods.length > 0 && !showForm && React__default.createElement(React__default.Fragment, null, React__default.createElement("div", {
         className: s$1g.paymentTableFooter
       }, React__default.createElement("img", {
         src: texts.srcCardIcon,
