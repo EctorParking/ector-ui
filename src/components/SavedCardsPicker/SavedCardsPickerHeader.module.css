@@ -1,7 +1,10 @@
 @import '../../style/variable.global.css';
 
+.radioButton {
+  width: var(--marginLarge);
+}
 .header {
-  align-items: center;
+  align-items: flex-start;
   box-sizing: border-box;
   display: flex;
   height: auto;
@@ -20,12 +23,18 @@
   display: flex;
 }
 
+.subtitle {
+  font-size: var(--fontSizeMedium);
+}
+
 .text {
   align-items: flex-start;
+  display: flex;
+  flex-direction: column;
 }
 
 .availableCards {
-  align-items: center;
+  align-items: flex-start;
   margin-left: var(--marginMedium);
   display: flex;
 }
