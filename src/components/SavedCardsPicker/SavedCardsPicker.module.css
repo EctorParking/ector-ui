@@ -20,17 +20,18 @@
 
 .informationTotalRefund {
   border-top: 2px solid var(--lightGrey);
-  padding: var(--marginSmall) var(--marginMediumXL) 0 0;
+  padding: var(--marginSmall) var(--marginMediumXL) 0 var(--marginMediumXL);
 }
 
 .paymentMethodBox {
-  margin : 0 0 0 0;
-  padding: var(--marginSmall);
-  margin-left: 40px;
+  padding: var(--marginSmall) 0 var(--marginSmall) 0;
   max-width: 720px;
+  align-self: center;
   max-height: 100%;
   border-radius: var(--borderRadius);
   background-color: var(--seventhColor);
+  margin : 0 0 0 0;
+  width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
 }
@@ -62,11 +63,6 @@
   .paymentCardsHeaderRow {
     display: none;
   }
-
-  .paymentMethodBox {
-    margin-left : 0;
-  }
-
 }
 
 .typeCardHeader {
