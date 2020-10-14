@@ -1,8 +1,5 @@
 @import '../../style/variable.global.css';
 
-.radioButton {
-  width: var(--marginLarge);
-}
 .header {
   align-items: flex-start;
   box-sizing: border-box;
