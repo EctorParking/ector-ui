@@ -4020,17 +4020,19 @@
 
 .SavedCardsPicker-module_informationTotalRefund__2Obh8 {
   border-top: 2px solid #eceff6;
-  padding: 10px 25px 0 0;
+  padding: 10px 25px 0 25px;
 }
 
 .SavedCardsPicker-module_paymentMethodBox__1oVXr {
-  margin : 0 0 0 0;
-  padding: 10px;
-  margin-left: 40px;
+  padding: 10px 0 10px 0;
   max-width: 720px;
+  -ms-flex-item-align: center;
+      align-self: center;
   max-height: 100%;
   border-radius: 8px;
   background-color: #fefefe;
+  margin : 0 0 0 0;
+  width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
 }
@@ -4069,11 +4071,6 @@
   .SavedCardsPicker-module_paymentCardsHeaderRow__2V93H {
     display: none;
   }
-
-  .SavedCardsPicker-module_paymentMethodBox__1oVXr {
-    margin-left : 0;
-  }
-
 }
 
 .SavedCardsPicker-module_typeCardHeader__15vD1 {
@@ -4104,10 +4101,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.SavedCardsPickerHeader-module_radioButton__1zcIw {
-  width: 30px;
 }
 
 .SavedCardsPickerHeader-module_header__2Px_I {
