@@ -6236,7 +6236,9 @@ function (_React$Component) {
   }, {
     key: "getCountryAndPhoneFromValue",
     value: function getCountryAndPhoneFromValue(value) {
-      var countries = this.props.countries;
+      var _this$props3 = this.props,
+          countries = _this$props3.countries,
+          defaultCountry = _this$props3.defaultCountry;
       var country = countries.find(function (c) {
         return value.startsWith(c.label);
       });
@@ -6257,19 +6259,19 @@ function (_React$Component) {
       }
 
       return {
-        country: countries[0],
+        country: defaultCountry || countries[0],
         phone: phone
       };
     }
   }, {
     key: "render",
     value: function render() {
-      var _this$props3 = this.props,
-          label = _this$props3.label,
-          error = _this$props3.error,
-          mandatory = _this$props3.mandatory,
-          left = _this$props3.left,
-          className = _this$props3.className;
+      var _this$props4 = this.props,
+          label = _this$props4.label,
+          error = _this$props4.error,
+          mandatory = _this$props4.mandatory,
+          left = _this$props4.left,
+          className = _this$props4.className;
       return React__default.createElement(InputLabel, {
         error: error,
         label: label,
@@ -6296,7 +6298,8 @@ PhoneInput.defaultProps = {
   className: '',
   countries: DefaultCountries,
   withFlag: true,
-  inputClassName: ''
+  inputClassName: '',
+  defaultCountry: null
 };
 PhoneInput.propTypes = {
   onChange: PropTypes$1.func,
@@ -6309,6 +6312,7 @@ PhoneInput.propTypes = {
   left: PropTypes$1.bool,
   className: PropTypes$1.string,
   countries: PropTypes$1.arrayOf(CountryPropType),
+  defaultCountry: CountryPropType,
   withFlag: PropTypes$1.bool,
   inputClassName: PropTypes$1.string
 };
@@ -7305,7 +7309,8 @@ function (_React$Component) {
           onKeyDownEmail = _this$props.onKeyDownEmail,
           countries = _this$props.countries,
           leftColumnClassName = _this$props.leftColumnClassName,
-          cardProps = _objectWithoutProperties(_this$props, ["RootComponent", "className", "contentClassName", "texts", "phoneWithFlags", "values", "errors", "onKeyDownEmail", "countries", "leftColumnClassName"]);
+          defaultCountry = _this$props.defaultCountry,
+          cardProps = _objectWithoutProperties(_this$props, ["RootComponent", "className", "contentClassName", "texts", "phoneWithFlags", "values", "errors", "onKeyDownEmail", "countries", "leftColumnClassName", "defaultCountry"]);
 
       var actualCardProps = _objectSpread({}, cardProps, {
         className: [s$Y.card, className].join(' '),
@@ -7357,6 +7362,7 @@ function (_React$Component) {
         value: values.phone || '',
         error: errors.phone,
         countries: countries,
+        defaultCountry: defaultCountry,
         mandatory: true
       }), React__default.createElement(InputLabel, {
         id: "registrationFormEmailInput",
@@ -7411,7 +7417,8 @@ RegistrationForm.defaultProps = {
   errors: defaultErrors,
   onKeyDownEmail: function onKeyDownEmail() {},
   labelFooterPassword: 'Minimum 8 caractères',
-  countries: DefaultCountries
+  countries: DefaultCountries,
+  defaultCountry: null
 };
 RegistrationForm.propTypes = {
   RootComponent: PropTypes$1.func,
@@ -7425,7 +7432,8 @@ RegistrationForm.propTypes = {
   errors: ErrorsType,
   labelFooterPassword: PropTypes$1.string,
   onKeyDownEmail: PropTypes$1.func,
-  countries: PropTypes$1.shape(CountryPropType)
+  countries: PropTypes$1.shape(CountryPropType),
+  defaultCountry: CountryPropType
 };
 
 var css$Z = ".Picker-module_container__3AVzP {\n  position: relative;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #163457;\n  border: none;\n  border-radius: 5px;\n  display: block;\n  height: 50px;\n  padding: 0;\n  z-index: 1\n}\n\n.Picker-module_container__3AVzP.Picker-module_active__2IBbO {\n  z-index: 4;\n}\n\n.Picker-module_shadowWrapper__1yU5l {\n  background-color: #fefefe;\n  border-radius: 5px;\n  -webkit-box-shadow: 0 4px 8px 2px rgba(0, 0, 0, .25);\n          box-shadow: 0 4px 8px 2px rgba(0, 0, 0, .25);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative;\n  z-index: 2;\n}\n\n.Picker-module_pickerInputContainer__2EiaS {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: 0 35px 0 15px;\n  width: 100%;\n  z-index: 2;\n}\n\n.Picker-module_pickerInput__1P5_a {\n  border-radius: 5px;\n  height: 50px;\n  padding: 0;\n  border: none;\n  margin-top: 0;\n  font-size: 15px;\n}\n\n.Picker-module_inputError__37bTz {\n  color: #c73637;\n}\n\n.Picker-module_splitPickerInputContainer__2QVF3 {\n  border-left: 1px solid rgba(191, 196, 212, .52);\n}\n\n.Picker-module_suggestionsContainer__20x1U {\n  min-height: 150px;\n  background-color: black;\n  position: absolute;\n  width: 150%;\n  top: 56px;\n  top: 56px;\n  top: 3.5rem;\n  left: -25%;\n  border-radius: 8px;\n  border-width: 1px;\n}\n\n.Picker-module_error__3Mp0C, .Picker-module_info__IVLnU {\n  display: inline-table;\n  background-color: #c73637;\n  border-top-left-radius: 8px;\n  border-top-right-radius: 8px;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #fefefe;\n  height: 45px;\n  left: 0;\n  opacity: 0;\n  padding: 10px;\n  position: absolute;\n  top: 5px;\n  -webkit-transform: none;\n          transform: none;\n  -webkit-transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;\n  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  width: 100%;\n  font-size: 14px;\n  font-weight: 700;\n  word-break: break-word;\n  -webkit-hyphens: auto;\n      -ms-hyphens: auto;\n          hyphens: auto;\n}\n\n.Picker-module_info__IVLnU {\n  background-color: #32a0c5;\n  color: #fefefe;\n}\n\n.Picker-module_errorVisible__3Fa-X, .Picker-module_infoVisible__2IbCs {\n  opacity: 1;\n  -webkit-transform: translateY(-100%);\n          transform: translateY(-100%);\n}\n";
