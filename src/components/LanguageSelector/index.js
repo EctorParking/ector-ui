@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { components } from 'react-select';
 import { InputSelect } from '../index';
@@ -26,14 +26,6 @@ const LanguageSelector = ({
         image,
       }))
       .find(language => language.value === localeValue);
-
-  const [selectValue, setSelectValue] = useState(
-    value ? getSelectValueFromLocale(value) : undefined
-  );
-
-  useEffect(() => {
-    setSelectValue(getSelectValueFromLocale(value));
-  }, [value]);
 
   const Option = ({ data, ...props }) => (
     <div className={s.optionContainer}>
@@ -74,7 +66,7 @@ const LanguageSelector = ({
       }))}
       onChange={option => onChange(option.value)}
       components={{ Option, SingleValue }}
-      value={selectValue}
+      value={getSelectValueFromLocale(value)}
       classname={[s.select, className].join(' ')}
       {...selectProps}
     />
