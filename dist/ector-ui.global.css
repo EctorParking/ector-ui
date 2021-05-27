@@ -3122,17 +3122,8 @@
 }
 
 .ZonesPickerSuggestions-module_suggestionsContainer__1ZgOP:before {
-  background: -webkit-gradient(
-      linear,
-      left top, left bottom,
-      from(#fefefe),
-      to(rgba(255, 255, 255, .1))
-    );
-  background: linear-gradient(
-      to bottom,
-      #fefefe,
-      rgba(255, 255, 255, .1)
-    );
+  background: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(rgba(255, 255, 255, .1)));
+  background: linear-gradient(to bottom, #fefefe, rgba(255, 255, 255, .1));
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   top: 0;
@@ -3812,7 +3803,8 @@
   margin-right: 30px;
   background-color: #ebeff6;
   border-left: 5px solid #32a0c5;
-  padding: 10px 25px 5px
+  padding:
+    10px 25px 5px
     15px;
 }
 
