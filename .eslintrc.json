@@ -1,0 +1,44 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["airbnb", "plugin:prettier/recommended"],
+  "env": {
+    "es6": true,
+    "browser": true
+  },
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "rules": {
+    // eslint base rules
+    "func-names": [2, "never"],
+    "no-console": 1,
+    "no-unused-vars": [2, { "args": "none" }],
+
+    // eslint-plugin-import
+    "import/no-cycle": 0,
+    "import/no-extraneous-dependencies": 1,
+
+    // eslint-plugin-react
+    "react/button-has-type": 1,
+    "react/forbid-prop-types": 1,
+    "react/jsx-boolean-value": 1,
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/jsx-props-no-spreading": 0,
+    "react/no-did-update-set-state": 1,
+    "react/prop-types": 1,
+    "react/require-default-props": [1, { "forbidDefaultForRequired": true }],
+    "react/sort-comp": 1,
+    "react/state-in-constructor": 1,
+
+    // eslint-plugin-jsx-a11y
+    "jsx-a11y/control-has-associated-label": 0,
+    "jsx-a11y/label-has-for": [
+      2,
+      {
+        "required": {
+          "some": ["nesting", "id"]
+        }
+      }
+    ]
+  }
+}
