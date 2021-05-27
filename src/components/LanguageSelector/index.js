@@ -13,7 +13,7 @@ const LanguageType = PropTypes.shape({
 const LanguageSelector = ({
   languages, value, onChange, id, className, ...selectProps
 }) => {
-  const getSelectValueFromLocale = localeValue => languages
+  const getSelectValueFromLocale = (localeValue) => languages
     .map(({ image, name, locale }) => ({
       value: locale,
       label: name,
@@ -58,7 +58,7 @@ const LanguageSelector = ({
         label: name,
         image,
       }))}
-      onChange={option => onChange(option.value)}
+      onChange={(option) => onChange(option.value)}
       components={{ Option, SingleValue }}
       value={getSelectValueFromLocale(value)}
       classname={[s.select, className].join(' ')}
