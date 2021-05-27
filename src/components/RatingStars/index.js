@@ -33,7 +33,7 @@ const RatingStars = props => {
 RatingStars.defaultProps = {
   value: 4,
   className: undefined,
-  activeColor: Colors.yellow,
+  activeColor: Colors.accent,
   inactiveColor: Colors.metalGrey,
 };
 

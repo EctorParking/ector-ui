@@ -1,7 +1,7 @@
 @import '../../style/variable.global.css';
 
 .button {
-  background-color: var(--yellow);
+  background-color: var(--accent);
   border-radius: var(--borderRadius);
   cursor: pointer;
   display: block;
@@ -24,7 +24,7 @@
 
 .button .track {
   animation: outFromFetching 0.2s linear forwards;
-  background-color: var(--yellow);
+  background-color: var(--accent);
   border-radius: var(--borderRadius);
   content: '';
   height: 100%;

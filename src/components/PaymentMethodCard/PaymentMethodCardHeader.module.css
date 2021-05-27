@@ -9,8 +9,8 @@
 }
 
 .icon {
-  -webkit-text-fill-color: var(--blue);
-  fill: var(--blue);
+  -webkit-text-fill-color: var(--primary);
+  fill: var(--primary);
 }
 
 .button {

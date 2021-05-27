@@ -5,7 +5,7 @@
   border-radius: var(--inputBorderRadius);
   border: 2px solid var(--metalGrey);
   box-sizing: border-box;
-  color: var(--deepBlue);
+  color: var(--primary);
   display: flex;
   height: 2.5rem;
   margin-top: 0.25rem;
@@ -36,5 +36,5 @@
 }
 
 .disabled {
-  background-color: var(--lightGrey);
+  background-color: var(--lightNeutral);
 }

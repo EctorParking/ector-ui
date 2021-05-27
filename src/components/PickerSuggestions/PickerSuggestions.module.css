@@ -1,7 +1,7 @@
 @import '../../style/variable.global.css';
 
 .container {
-  background-color: var(--white);
+  background-color: var(--background);
   border-radius: var(--marginXSmall);
   box-shadow: var(--pickerBoxShadow);
   height: auto;

@@ -101,21 +101,21 @@
 }
 
 .inputError {
-  color: var(--red);
+  color: var(--error);
 }
 
 .inputError::placeholder {
-  color: var(--red);
+  color: var(--error);
   opacity: 0.5;
 }
 
 .inputError:-ms-input-placeholder {
-  color: var(--red);
+  color: var(--error);
   opacity: 0.5;
 }
 
 .inputError::-ms-input-placeholder {
-  color: var(--red);
+  color: var(--error);
   opacity: 0.5;
 }
 
@@ -134,7 +134,7 @@
 }
 
 .month {
-  color: var(--deepBlue);
+  color: var(--primary);
 }
 
 .hr {

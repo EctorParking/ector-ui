@@ -1,7 +1,7 @@
 @import '../../style/variable.global.css';
 
 .addItemButton {
-  background-color: var(--lightGrey);
+  background-color: var(--lightNeutral);
   padding: 5px;
   border-radius: var(--borderRadius);
   margin-top: 25px;
@@ -9,7 +9,7 @@
   position: relative;
 
   &:hover {
-    background-color: var(--yellow);
+    background-color: var(--accent);
   }
 }
 .forPaymentMethod {
@@ -19,14 +19,14 @@
 }
 
 .addItemButtonContent {
-  background-color: var(--white);
+  background-color: var(--background);
   display: flex;
   flex-direction: column;
   padding: 1rem !important;
 }
 
 .addItemButtonPlus {
-  color: var(--lightGrey);
+  color: var(--lightNeutral);
   font-size: 80px;
   font-weight: var(--fontWeightBold);
   line-height: 0.9;

@@ -4,36 +4,30 @@
   --defaultMargin: 0;
   --containerWidth: 1232px;
 
-  --firstColor: #163457;
-  --secondColor: #ffcd02;
+  --primary: #000031;
+  --lightNeutral: #eceff6;
+  --background: white;
+  --accent: #f7d48a;
+  --lightAccent: #f8e5b6;
+  --action: #9ca3ff;
+  --success: #59c871;
+  --error: #df6262;
+
   --thirdColor: #4b4b50;
-  --fourthColor: #32a0c5;
-  --fifthColor: #9ca3ff;
-  --sixthColor: #59c871;
   --seventhColor: #fefefe;
   --eighthColor: #a2b4c2;
-  --ninthColor: #ebeff6;
 
+  --blue: #32a0c5;
   --metalGrey: #d5d6d7;
   --darkMetalGrey: color(#d5d6d7 blackness(20%));
-  --lightYellow: color(var(--yellow) whiteness(80%));
   --aquaHazeGrey: #9eb3c2;
   --darkGrey: #a9b3c5;
-  --lightGrey: #eceff6;
-  --red: #ff5757;
-  --magenta: #c73637;
   --orange: #f39c12;
   --lightMetalGrey: #dededf;
 
-  --deepBlue: var(--firstColor);
-  --yellow: var(--secondColor);
   --grey: var(--thirdColor);
-  --blue: var(--fourthColor);
-  --melrose: var(--fifthColor);
-  --green: var(--sixthColor);
   --white: var(--seventhColor);
   --bgrey: var(--eighthColor);
-  --bgClearBlue: var(--ninthColor);
   --splitBorderColor: rgba(191, 196, 212, 0.52);
 
   --bpDesktop: var(--containerWidth);
@@ -101,17 +95,18 @@
 @custom-media --minMobile (min-width: 480px);
 @custom-media --minIPhone5 (min-width: 320px);
 
-@value deepBlue: var(--deepBlue);
-@value yellow: var(--yellow);
+@value primary: var(--primary);
+@value accent: var(--accent);
+@value lightAccent: var(--lightAccent);
 @value grey: var(--grey);
 @value blue: var(--blue);
-@value melrose: var(--melrose);
-@value green: var(--green);
+@value action: var(--action);
+@value success: var(--success);
 @value white: var(--white);
 @value metalGrey: var(--metalGrey);
 @value lightMetalGrey: var(--lightMetalGrey);
 @value aquaHazeGrey: var(--aquaHazeGrey);
 @value darkGrey: var(--darkGrey);
-@value lightGrey: var(--lightGrey);
-@value red: var(--red);
+@value lightNeutral: var(--lightNeutral);
+@value error: var(--error);
 @value orange: var(--orange);

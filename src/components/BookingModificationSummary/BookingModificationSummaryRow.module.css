@@ -8,7 +8,7 @@
 }
 
 .summaryRowText {
-  color: var(--deepBlue);
+  color: var(--primary);
   font-size: var(--fontSizeRegular);
   margin: 0;
 }

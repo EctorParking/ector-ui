@@ -1,7 +1,7 @@
 @import '../../style/variable.global.css';
 
 .card {
-  background-color: var(--lightGrey);
+  background-color: var(--lightNeutral);
   display: flex;
   flex-direction: column;
   border-radius: 0.5rem;
@@ -10,13 +10,13 @@
 }
 
 .card_selected {
-  background-color: var(--yellow);
+  background-color: var(--accent);
 }
 
 .card_clickable {
   &:hover {
     cursor: pointer;
-    background-color: var(--yellow);
+    background-color: var(--accent);
 
     &:active {
       cursor: default;

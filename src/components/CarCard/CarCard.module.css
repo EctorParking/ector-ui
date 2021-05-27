@@ -1,7 +1,6 @@
 @import '../../style/variable.global.css';
 
 .carName {
-  color: var(--blue);
   display: flex;
   font-size: var(--fontSizeSubtitle);
   justify-content: space-between;
@@ -31,7 +30,7 @@
   padding: 0;
 }
 .pendingDeletion {
-  background-color: var(--lightGrey);
+  background-color: var(--lightNeutral);
   justify-content: center;
   padding: var(--marginMedium);
 }

@@ -17,7 +17,7 @@
 }
 
 .pendingDeletion {
-  background-color: var(--lightGrey);
+  background-color: var(--lightNeutral);
   justify-content: center;
   padding: var(--marginMedium);
   text-align: center;

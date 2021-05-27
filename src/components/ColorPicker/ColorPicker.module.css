@@ -9,7 +9,7 @@
 .badge {
   background: none;
   border-radius: 15px;
-  border: 1px solid var(--deepBlue);
+  border: 1px solid var(--primary);
   height: 30px;
   margin: 15px;
   overflow: hidden;
@@ -18,13 +18,13 @@
 }
 
 .badgeSelected {
-  border-color: var(--yellow);
+  border-color: var(--accent);
   border-width: 3px;
 }
 
 .transparent:before,
 .transparent:after {
-  background-color: var(--red);
+  background-color: var(--error);
   content: '';
   height: 1px;
   position: absolute;

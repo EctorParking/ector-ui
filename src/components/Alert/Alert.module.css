@@ -13,11 +13,11 @@
 }
 
 .alert.success {
-  background-color: var(--green);
+  background-color: var(--success);
 }
 
 .alert.error {
-  background-color: var(--red);
+  background-color: var(--error);
 }
 
 .alert.warning {
