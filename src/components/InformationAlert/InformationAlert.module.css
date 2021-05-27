@@ -3,8 +3,8 @@
 .alert {
   margin-top: var(--marginMedium);
   margin-right: var(--marginLarge);
-  background-color: var(--bgClearBlue);
-  border-left: 5px solid var(--blue);
+  background-color: var(--lightNeutral);
+  border-left: 5px solid var(--primary);
   padding: var(--marginSmall) var(--marginMediumXL) var(--marginXSmall)
     var(--marginXMedium);
 }

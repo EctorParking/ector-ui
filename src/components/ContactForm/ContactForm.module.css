@@ -1,7 +1,6 @@
 @import '../../style/variable.global.css';
 
 .title {
-  color: var(--blue);
   display: flex;
   font-size: var(--fontSizeSubtitle);
   justify-content: space-between;

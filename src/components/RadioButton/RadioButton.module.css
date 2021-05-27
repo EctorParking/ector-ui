@@ -21,7 +21,7 @@
 }
 
 .button:after {
-  background-color: var(--yellow);
+  background-color: var(--accent);
   border-radius: 50%;
   content: '';
   display: none;

@@ -91,7 +91,7 @@
   border-bottom-right-radius: var(--borderRadius);
   padding-left: 15px;
   height: 15%;
-  background-color: var(--lightGrey);
+  background-color: var(--lightNeutral);
 }
 
 .suggestionActionVisible {

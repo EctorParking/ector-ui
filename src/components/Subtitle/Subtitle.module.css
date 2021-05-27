@@ -7,7 +7,7 @@
 }
 
 .h2 {
-  color: var(--deepBlue);
+  color: var(--primary);
   font-size: var(--fontSizeSubtitle);
   font-weight: var(--fontWeightRegular);
   line-height: 1;

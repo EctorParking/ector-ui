@@ -2,13 +2,12 @@
 
 .cardContent {
   box-sizing: border-box;
-  background-color: var(--white);
+  background-color: var(--background);
   height: 197px;
   padding: var(--marginSmall);
 }
 
 .title {
-  color: var(--blue);
   font-weight: var(--fontWeightLight);
   font-size: var(--fontSizeSubtitle);
   box-sizing: content-box;
@@ -16,7 +15,7 @@
 }
 
 .description {
-  color: var(--deepBlue);
+  color: var(--primary);
 }
 
 .icon {
@@ -25,7 +24,7 @@
 }
 
 .knowMore {
-  color: var(--melrose);
+  color: var(--action);
   cursor: pointer;
   display: block;
   padding: 0;

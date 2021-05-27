@@ -2,7 +2,7 @@
 
 .card {
   box-sizing: border-box;
-  background-color: var(--lightGrey);
+  background-color: var(--lightNeutral);
   border-radius: var(--borderRadius);
   padding: 5px;
   margin-top: 25px;
@@ -12,7 +12,7 @@
 }
 
 .optionCardContainerSelected {
-  background-color: var(--yellow);
+  background-color: var(--accent);
 }
 
 .labelContainer {

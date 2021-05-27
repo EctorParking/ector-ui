@@ -15,42 +15,22 @@
   letter-spacing: 1px;
 }
 
-.deepBlueColor {
-  background-color: var(--deepBlue);
+.primaryColor {
+  background-color: var(--primary);
 }
 
-.greenColor {
-  background-color: var(--green);
+.successColor {
+  background-color: var(--success);
 }
 
-.redColor {
-  background-color: var(--red);
+.errorColor {
+  background-color: var(--error);
 }
 
-.melroseColor {
-  background-color: var(--melrose);
+.actionColor {
+  background-color: var(--action);
 }
 
-.blueColor {
-  background-color: var(--blue);
-}
-
-.lightGreyColor {
-  background-color: var(--lightGrey);
-}
-
-.metalGreyColor {
-  background-color: var(--metalGrey);
-}
-
-.darkMetalGreyColor {
-  background-color: var(--darkMetalGrey);
-}
-
-.aquaHazeGreyColor {
-  background-color: var(--aquaHazeGrey);
-}
-
-.orangeColor {
-  background-color: var(--orange);
+.lightNeutralColor {
+  background-color: var(--lightNeutral);
 }

@@ -28,7 +28,7 @@
 
 .error {
   text-align: left;
-  color: var(--red);
+  color: var(--error);
 }
 
 .mandatory {

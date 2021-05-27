@@ -6,12 +6,12 @@
 
 .CalendarDay__default {
   border-color: transparent !important;
-  color: var(--deepBlue) !important;
+  color: var(--primary) !important;
 }
 
 .CalendarDay__default:not(.CalendarDay__selected):hover {
-  background: var(--lightYellow) !important;
-  border-color: var(--lightYellow) !important;
+  background: var(--lightAccent) !important;
+  border-color: var(--lightAccent) !important;
 }
 
 .CalendarDay__selected_start {
@@ -40,19 +40,19 @@
 }
 
 .CalendarDay__selected_span {
-  background: var(--lightYellow) !important;
-  color: var(--deepBlue) !important;
-  border-color: var(--lightYellow) !important;
+  background: var(--lightAccent) !important;
+  color: var(--primary) !important;
+  border-color: var(--lightAccent) !important;
 }
 
 .CalendarDay__selected {
-  background: var(--yellow) !important;
-  color: var(--deepBlue) !important;
+  background: var(--accent) !important;
+  color: var(--primary) !important;
 }
 
 .CalendarDay__hovered_span {
-  color: var(--deepBlue) !important;
-  background: var(--lightYellow) !important;
+  color: var(--primary) !important;
+  background: var(--lightAccent) !important;
   border-color: var(--white) !important;
 }
 

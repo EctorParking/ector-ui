@@ -27,7 +27,7 @@
 }
 .error {
   text-align: left;
-  color: var(--red);
+  color: var(--error);
 }
 .iconContainer {
   align-items: center;
@@ -43,13 +43,13 @@
   display: none;
 }
 .iconContainerFocussed {
-  border-color: var(--yellow);
+  border-color: var(--accent);
   border-right: 0;
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
 .icon {
-  color: var(--deepBlue);
+  color: var(--primary);
   font-size: var(--fontSizeRegular);
   font-weight: var(--fontWeightRegular);
   margin: 0 var(--marginSmall);

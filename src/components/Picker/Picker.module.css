@@ -3,7 +3,7 @@
 .container {
   position: relative;
   box-sizing: border-box;
-  color: var(--deepBlue);
+  color: var(--primary);
   border: none;
   border-radius: var(--marginXSmall);
   display: block;
@@ -16,7 +16,7 @@
 }
 
 .shadowWrapper {
-  background-color: var(--white);
+  background-color: var(--background);
   border-radius: var(--marginXSmall);
   box-shadow: var(--pickerBoxShadow);
   display: flex;
@@ -41,7 +41,7 @@
 }
 
 .inputError {
-  color: var(--magenta);
+  color: var(--error);
 }
 
 .splitPickerInputContainer {
@@ -62,7 +62,7 @@
 .error,
 .info {
   display: inline-table;
-  background-color: var(--magenta);
+  background-color: var(--error);
   border-top-left-radius: var(--borderRadius);
   border-top-right-radius: var(--borderRadius);
   box-sizing: border-box;

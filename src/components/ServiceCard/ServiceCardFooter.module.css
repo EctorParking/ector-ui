@@ -8,7 +8,7 @@
 }
 
 .price {
-  color: var(--deepBlue);
+  color: var(--primary);
   font-size: 35px;
   font-weight: var(--fontWeightRegular);
 }
@@ -16,7 +16,6 @@
 .deleteButton {
   background: none;
   border: 0;
-  color: var(--blue);
   padding: 0;
   text-decoration: underline;
   font-style: italic;

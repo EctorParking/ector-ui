@@ -8,17 +8,17 @@ const ectorTheme = theme => ({
   ...theme,
   colors: {
     ...theme.colors,
-    primary: Colors.yellow,
+    primary: Colors.accent,
     primary25: Colors.white,
     primary50: Colors.white,
     neutral20: Colors.metalGrey,
     neutral30: Colors.metalGrey,
     neutral40: Colors.metalGrey,
     neutral50: Colors.metalGrey,
-    neutral60: Colors.deepBlue,
-    neutral70: Colors.deepBlue,
-    neutral80: Colors.deepBlue,
-    neutral90: Colors.deepBlue,
+    neutral60: Colors.primary,
+    neutral70: Colors.primary,
+    neutral80: Colors.primary,
+    neutral90: Colors.primary,
   },
 });
 
@@ -35,17 +35,17 @@ const InputSelect = ({
     menuPortal: base => ({ ...base, zIndex: 9999 }),
     option: (styles, { isSelected, isFocused }) => ({
       ...styles,
-      color: Colors.deepBlue,
+      color: Colors.primary,
       fontWeight: isSelected || isFocused ? 'bold' : undefined,
       backgroundColor: Colors.white,
     }),
     control: styles => ({
       ...styles,
-      'borderColor': error ? Colors.red : styles.borderColor,
+      'borderColor': error ? Colors.error : styles.borderColor,
       'borderWidth': 2,
       'boxShadow': 'none',
       '&:hover': {
-        borderColor: error ? Colors.red : styles.borderColor,
+        borderColor: error ? Colors.error : styles.borderColor,
       },
     }),
     placeholder: styles => ({

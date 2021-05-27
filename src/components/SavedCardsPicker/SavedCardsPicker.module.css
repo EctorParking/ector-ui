@@ -19,7 +19,7 @@
 }
 
 .informationTotalRefund {
-  border-top: 2px solid var(--lightGrey);
+  border-top: 2px solid var(--lightNeutral);
   padding: var(--marginSmall) var(--marginMediumXL) 0 var(--marginMediumXL);
 }
 

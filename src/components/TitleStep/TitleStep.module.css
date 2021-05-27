@@ -32,7 +32,7 @@
   opacity: 1;
 
   &.active {
-    color: var(--yellow);
+    color: var(--accent);
     cursor: default;
     &:before {
       background-color: white;
@@ -57,7 +57,7 @@
     align-items: center;
     background-color: #9eb3c2;
     border-radius: 50%;
-    color: var(--deepBlue);
+    color: var(--primary);
     content: '7';
     display: flex;
     font-size: 13px;

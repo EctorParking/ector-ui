@@ -3,7 +3,7 @@
 .selected {
   border-radius: 100%;
   color: var(--seventhColor);
-  background-color: var(--secondColor);
+  background-color: var(--accent);
   width: 27px;
   height: 27px;
   display: flex;

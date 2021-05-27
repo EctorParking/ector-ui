@@ -57,7 +57,7 @@
 }
 
 .menuItemText {
-  color: var(--deepBlue);
+  color: var(--primary);
   margin-left: var(--marginSmall);
 }
 
@@ -77,7 +77,7 @@
 
 .suggestion {
   margin: var(--marginSmall) 0;
-  color: var(--deepBlue);
+  color: var(--primary);
   align-self: flex-start;
 }
 

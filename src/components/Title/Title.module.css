@@ -7,7 +7,6 @@
 }
 
 .title .element {
-  color: var(--deepBlue);
   font-size: var(--fontSizeTitle);
   font-weight: var(--fontWeightRegular);
   line-height: 1;
@@ -15,7 +14,6 @@
 }
 
 .newTitle {
-  color: var(--blue);
   font-size: var(--fontSizeNewTitle);
   font-weight: var(--fontWeightBold);
   line-height: 1;
@@ -24,7 +22,7 @@
 
 .title .horizontalRule {
   border: 0;
-  border-top: 2px solid var(--blue);
+  border-top: 2px solid var(--primary);
   margin: 0;
   width: var(--titleHrWidth);
 }

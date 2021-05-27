@@ -17,7 +17,7 @@
 }
 
 .tooltipContainer > i:before {
-  color: var(--deepBlue) !important;
+  color: var(--primary) !important;
 }
 
 .tooltipText {
@@ -28,8 +28,8 @@
   border-radius: var(--borderRadius);
   text-align: left;
   box-shadow: 0 0 var(--marginSmall) rgba(0, 0, 0, 0.25);
-  background-color: var(--white);
-  color: var(--deepBlue);
+  background-color: var(--background);
+  color: var(--primary);
   font-size: var(--fontSizeRegular);
 }
 
