@@ -58,7 +58,7 @@ class PhoneInput extends React.Component {
   }
 
   getCountryAndPhoneFromValue(value) {
-    const { countries } = this.props;
+    const { countries, defaultCountry } = this.props;
     const country = countries.find(c => value.startsWith(c.label));
     let phone = '';
     let countryCode; // eslint-disable-line no-unused-vars
@@ -71,7 +71,7 @@ class PhoneInput extends React.Component {
       };
     }
     return {
-      country: countries[0],
+      country: defaultCountry || countries[0],
       phone,
     };
   }
@@ -154,6 +154,7 @@ PhoneInput.defaultProps = {
   countries: DefaultCountries,
   withFlag: true,
   inputClassName: '',
+  defaultCountry: null,
 };
 
 PhoneInput.propTypes = {
@@ -167,6 +168,7 @@ PhoneInput.propTypes = {
   left: PropTypes.bool,
   className: PropTypes.string,
   countries: PropTypes.arrayOf(CountryPropType),
+  defaultCountry: CountryPropType,
   withFlag: PropTypes.bool,
   inputClassName: PropTypes.string,
 };

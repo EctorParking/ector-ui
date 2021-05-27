@@ -41,6 +41,11 @@ const SavedCardsPickerHeader = ({
     <div className={s.headerContent}>
       <span className={s.text}>
         <strong>{getHeaderTitle(cardType, texts)}</strong>
+        <span className={s.subtitle}>
+          {texts.secured}
+          &nbsp;
+          <img src={texts.lock} alt="Lock" className={s.subtitle} />
+        </span>
       </span>
       {cardType === CardTypes.stripe && (
         <div className={s.availableCards}>

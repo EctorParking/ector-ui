@@ -80,6 +80,7 @@ class RegistrationForm extends React.Component {
       onKeyDownEmail,
       countries,
       leftColumnClassName,
+      defaultCountry,
       ...cardProps
     } = this.props;
 
@@ -139,6 +140,7 @@ class RegistrationForm extends React.Component {
               value={values.phone || ''}
               error={errors.phone}
               countries={countries}
+              defaultCountry={defaultCountry}
               mandatory
             />
             <InputLabel
@@ -195,6 +197,7 @@ RegistrationForm.defaultProps = {
   onKeyDownEmail: () => {},
   labelFooterPassword: 'Minimum 8 caractères',
   countries: DefaultCountries,
+  defaultCountry: null,
 };
 
 RegistrationForm.propTypes = {
@@ -210,6 +213,7 @@ RegistrationForm.propTypes = {
   labelFooterPassword: PropTypes.string,
   onKeyDownEmail: PropTypes.func,
   countries: PropTypes.shape(CountryPropType),
+  defaultCountry: CountryPropType,
 };
 
 export default RegistrationForm;
