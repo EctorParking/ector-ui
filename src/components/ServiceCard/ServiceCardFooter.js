@@ -4,23 +4,18 @@ import PropTypes from 'prop-types';
 import s from './ServiceCardFooter.module.css';
 import LinkUnderline from '../LinkUnderlined';
 
-const ServiceCardFooter = (
-  {
-    PriceComponent,
-    actionFooter,
-    buttonLabelFooter,
-    isSubscribed,
-    testid,
-    showButton,
-  },
-) => (
+const ServiceCardFooter = ({
+  PriceComponent,
+  actionFooter,
+  buttonLabelFooter,
+  isSubscribed,
+  testid,
+  showButton,
+}) => (
   <div className={s.footerContainer}>
     <span className={s.price}>{PriceComponent}</span>
     {!isSubscribed && (
-      <LinkUnderline
-        onClick={actionFooter}
-        testid={testid}
-      >
+      <LinkUnderline onClick={actionFooter} testid={testid}>
         {buttonLabelFooter}
       </LinkUnderline>
     )}

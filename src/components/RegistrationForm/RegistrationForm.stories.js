@@ -8,11 +8,8 @@ import { defaultValues } from './RegistrationFormTextTypes';
 import RegistrationForm from '.';
 
 storiesOf('RegistrationForm', module)
-
   .addParameters({
-    backgrounds: [
-      { name: 'header', value: 'white', default: true },
-    ],
+    backgrounds: [{ name: 'header', value: 'white', default: true }],
   })
   .addDecorator(centered)
   .addDecorator(withKnobs)

@@ -39,8 +39,11 @@ class Picker extends React.PureComponent {
     document.removeEventListener('mousedown', this.handleClickOutside);
   }
 
-  handleClickOutside = (e) => {
-    if (this.containerRef.current && !this.containerRef.current.contains(e.target)) {
+  handleClickOutside = e => {
+    if (
+      this.containerRef.current &&
+      !this.containerRef.current.contains(e.target)
+    ) {
       this.hideSuggestions();
 
       const { onSuggestionsHide } = this.props;
@@ -69,20 +72,33 @@ class Picker extends React.PureComponent {
       error,
       info,
     } = this.props;
-    const {
-      infoVisible,
-      errorVisible,
-      suggestionsVisible,
-    } = this.state;
+    const { infoVisible, errorVisible, suggestionsVisible } = this.state;
     const hasInfo = info && info !== '';
     const hasError = error && error !== '';
 
     return (
-      <div className={[s.container, suggestionsVisible ? s.active : undefined, className].join(' ')} ref={this.containerRef}>
-        <div className={[s.error, hasError && errorVisible ? s.errorVisible : undefined].join(' ')}>
+      <div
+        className={[
+          s.container,
+          suggestionsVisible ? s.active : undefined,
+          className,
+        ].join(' ')}
+        ref={this.containerRef}
+      >
+        <div
+          className={[
+            s.error,
+            hasError && errorVisible ? s.errorVisible : undefined,
+          ].join(' ')}
+        >
           {error}
         </div>
-        <div className={[s.info, hasInfo && !hasError && infoVisible ? s.infoVisible : undefined].join(' ')}>
+        <div
+          className={[
+            s.info,
+            hasInfo && !hasError && infoVisible ? s.infoVisible : undefined,
+          ].join(' ')}
+        >
           {info}
         </div>
         <div className={s.shadowWrapper}>
@@ -92,16 +108,17 @@ class Picker extends React.PureComponent {
             containerClassName={s.pickerInputContainer}
             onFocus={this.handleFocus}
           />
-          {
-            split && (
-              <SecondInputComponent
-                value={secondValue}
-                className={s.pickerInput}
-                containerClassName={[s.pickerInputContainer, s.splitPickerInputContainer].join(' ')}
-                onFocus={this.handleFocus}
-              />
-            )
-          }
+          {split && (
+            <SecondInputComponent
+              value={secondValue}
+              className={s.pickerInput}
+              containerClassName={[
+                s.pickerInputContainer,
+                s.splitPickerInputContainer,
+              ].join(' ')}
+              onFocus={this.handleFocus}
+            />
+          )}
         </div>
         <SuggestionsComponent visible={suggestionsVisible} split={split} />
       </div>

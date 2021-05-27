@@ -7,12 +7,7 @@ import phoneImg from '../../assets/images/phone.png';
 
 import s from './ApplicationCard.module.css';
 
-const ApplicationCard = ({
-  title,
-  description,
-  urls,
-  className,
-}) => (
+const ApplicationCard = ({ title, description, urls, className }) => (
   <div className={`${s.applicationCard} ${className}`}>
     <div>
       <h2>{title}</h2>
@@ -20,24 +15,15 @@ const ApplicationCard = ({
 
       <div className={s.icons}>
         <a href={urls.googlePlay}>
-          <img
-            src={playStoreImg}
-            alt="Google Play"
-          />
+          <img src={playStoreImg} alt="Google Play" />
         </a>
         <a href={urls.appStore}>
-          <img
-            src={appStoreImg}
-            alt="App Store"
-          />
+          <img src={appStoreImg} alt="App Store" />
         </a>
       </div>
     </div>
     <div>
-      <img
-        src={phoneImg}
-        alt="Phone"
-      />
+      <img src={phoneImg} alt="Phone" />
     </div>
   </div>
 );

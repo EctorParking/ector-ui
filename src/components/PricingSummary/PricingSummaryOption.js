@@ -4,11 +4,7 @@ import PricingSummaryOptionType from './PricingSummaryOptionType';
 
 import s from './PricingSummaryOption.module.css';
 
-const PricingSummaryOption = ({
-  currency,
-  currencyPosition,
-  option,
-}) => (
+const PricingSummaryOption = ({ currency, currencyPosition, option }) => (
   <div className={s.option}>
     <span className={s.label}>
       {option.label}

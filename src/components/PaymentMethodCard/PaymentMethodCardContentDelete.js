@@ -4,7 +4,11 @@ import PaymentMethodTextsType from './PaymentMethodTextsType';
 import s from './PaymentmethodCardContentDelete.module.css';
 import { LinkUnderlined } from '..';
 
-const PaymentMethodCardContentDelete = ({ texts, onConfirmDeletion, onCancelDeletion }) => (
+const PaymentMethodCardContentDelete = ({
+  texts,
+  onConfirmDeletion,
+  onCancelDeletion,
+}) => (
   <div className={s.container}>
     <strong>{texts.confirmDeletionTitle}</strong>
     <p className={s.sentence}>{texts.confirmDeletionSentence}</p>

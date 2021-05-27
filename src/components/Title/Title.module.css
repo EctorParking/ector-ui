@@ -30,7 +30,8 @@
 }
 
 @media (--maxMobile) {
-  .title .element, .newTitle {
+  .title .element,
+  .newTitle {
     font-size: var(--fontSizeSubtitle);
   }
 }

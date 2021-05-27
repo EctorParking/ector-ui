@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 import s from './RewardCardContent.module.css';
 
 const RewardCardContent = ({ children, className }) => (
-  <div className={[s.content, className].join(' ')}>
-    {children}
-  </div>
+  <div className={[s.content, className].join(' ')}>{children}</div>
 );
 
 RewardCardContent.propTypes = {
@@ -17,6 +15,5 @@ RewardCardContent.defaultProps = {
   children: null,
   className: undefined,
 };
-
 
 export default RewardCardContent;

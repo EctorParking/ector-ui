@@ -59,7 +59,8 @@
   border-width: 1px;
 }
 
-.error, .info {
+.error,
+.info {
   display: inline-table;
   background-color: var(--magenta);
   border-top-left-radius: var(--borderRadius);
@@ -86,7 +87,8 @@
   color: var(--white);
 }
 
-.errorVisible, .infoVisible {
+.errorVisible,
+.infoVisible {
   opacity: 1;
   transform: translateY(-100%);
 }

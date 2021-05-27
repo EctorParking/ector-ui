@@ -3,14 +3,13 @@ import PropTypes from 'prop-types';
 import AlternativeTimeCardTextsType from './AlternativeTimeCardTextsType';
 import LinkUnderlined from '../LinkUnderlined';
 
-const AlternativeTimeCardFooter = ({
-  texts,
-  mode,
-  onSelect,
-  testid,
-}) => {
+const AlternativeTimeCardFooter = ({ texts, mode, onSelect, testid }) => {
   if (mode === 'normal') {
-    return <LinkUnderlined testid={testid} onClick={onSelect}>{texts.select}</LinkUnderlined>;
+    return (
+      <LinkUnderlined testid={testid} onClick={onSelect}>
+        {texts.select}
+      </LinkUnderlined>
+    );
   }
 
   return null;
@@ -18,7 +17,11 @@ const AlternativeTimeCardFooter = ({
 
 AlternativeTimeCardFooter.propTypes = {
   texts: AlternativeTimeCardTextsType.isRequired,
-  mode: PropTypes.oneOf(['normal', 'selectedWithFooter', 'selectedWithoutFooter']).isRequired,
+  mode: PropTypes.oneOf([
+    'normal',
+    'selectedWithFooter',
+    'selectedWithoutFooter',
+  ]).isRequired,
   onSelect: PropTypes.func.isRequired,
   testid: PropTypes.string,
 };

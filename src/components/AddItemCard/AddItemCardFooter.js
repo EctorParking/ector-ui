@@ -3,12 +3,7 @@ import PropTypes from 'prop-types';
 import s from './AddItemCard.module.css';
 import LinkUnderlined from '../LinkUnderlined';
 
-const AddItemCardFooter = ({
-  label,
-  onClick,
-  testid,
-  className,
-}) => {
+const AddItemCardFooter = ({ label, onClick, testid, className }) => {
   const linkClass = [s.addItemButtonLink, s.linkCenter];
 
   return (

@@ -3,20 +3,15 @@ import { storiesOf } from '@storybook/react';
 
 import { action } from '@storybook/addon-actions';
 import centered from '@storybook/addon-centered';
-import {
-  withKnobs, text, boolean, select,
-} from '@storybook/addon-knobs';
+import { withKnobs, text, boolean, select } from '@storybook/addon-knobs';
 
 import ServiceCard from '.';
 
 const colors = ['deepBlue', 'green', 'red', 'melrose', 'blue'];
 
 storiesOf('ServiceCard', module)
-
   .addParameters({
-    backgrounds: [
-      { name: 'header', value: 'white', default: true },
-    ],
+    backgrounds: [{ name: 'header', value: 'white', default: true }],
   })
   .addDecorator(centered)
   .addDecorator(withKnobs)
@@ -88,7 +83,10 @@ storiesOf('ServiceCard', module)
   .add('with knobs', () => {
     const props = {
       title: text('Title', 'Option 1'),
-      description: text('Description', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'),
+      description: text(
+        'Description',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+      ),
       PriceComponent: <span>120,99 €</span>,
       actionFooter: action('add'),
       openShowMore: action('showMore'),

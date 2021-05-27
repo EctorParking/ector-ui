@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Card, BookingSteps, PricingSummary } from '..';
-import BookingStepsTextsType, { defaultTexts as bookingStepsDefaultTexts } from '../BookingSteps/BookingStepsTextsType';
+import BookingStepsTextsType, {
+  defaultTexts as bookingStepsDefaultTexts,
+} from '../BookingSteps/BookingStepsTextsType';
 import PricingSummaryOptionType from '../PricingSummary/PricingSummaryOptionType';
 import PricingSummaryTextsType from '../PricingSummary/PricingSummaryTextsType';
 import BookingCardFooter from './BookingCardFooter';
@@ -21,17 +23,11 @@ const BookingCard = ({
   className,
 }) => {
   const footer = (
-    <BookingCardFooter
-      leftActions={leftActions}
-      rightAction={rightAction}
-    />
+    <BookingCardFooter leftActions={leftActions} rightAction={rightAction} />
   );
 
   return (
-    <Card
-      className={className}
-      FooterChildren={footer}
-    >
+    <Card className={className} FooterChildren={footer}>
       <div className={s.container}>
         <div className={s.bookingSteps}>
           <BookingSteps

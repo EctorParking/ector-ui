@@ -34,13 +34,9 @@ class TimeRangeStory extends React.Component {
   }
 }
 
-
 storiesOf('TimeRange', module)
-
   .addParameters({
-    backgrounds: [
-      { name: 'header', value: 'white', default: true },
-    ],
+    backgrounds: [{ name: 'header', value: 'white', default: true }],
   })
   .addDecorator(centered)
   .addDecorator(withKnobs)
@@ -53,7 +49,5 @@ storiesOf('TimeRange', module)
       endMinute: number('End minute', 60),
     };
 
-    return (
-      <TimeRangeStory {...props} />
-    );
+    return <TimeRangeStory {...props} />;
   });

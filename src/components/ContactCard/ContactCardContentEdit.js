@@ -5,11 +5,29 @@ import { InputLabel } from '..';
 import s from './ContactCardContentEdit.module.css';
 
 const ContactCardContentEdit = ({
-  onChangeEmail, onChangePhoneNumber, values, errors, id,
+  onChangeEmail,
+  onChangePhoneNumber,
+  values,
+  errors,
+  id,
 }) => (
   <div className={s.column} id={id}>
-    <InputLabel label="" type="text" id="contactEmailInput" value={values.email} onChange={onChangeEmail} error={errors.email} />
-    <InputLabel label="" type="text" id="contactPhoneInput" value={values.phone} onChange={onChangePhoneNumber} error={errors.phone} />
+    <InputLabel
+      label=""
+      type="text"
+      id="contactEmailInput"
+      value={values.email}
+      onChange={onChangeEmail}
+      error={errors.email}
+    />
+    <InputLabel
+      label=""
+      type="text"
+      id="contactPhoneInput"
+      value={values.phone}
+      onChange={onChangePhoneNumber}
+      error={errors.phone}
+    />
   </div>
 );
 

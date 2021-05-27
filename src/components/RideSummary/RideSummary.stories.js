@@ -8,11 +8,8 @@ import RideSummary from '.';
 import { defaultTexts } from './RideSummaryTextsType';
 
 storiesOf('RideSummary', module)
-
   .addParameters({
-    backgrounds: [
-      { name: 'header', value: 'white', default: true },
-    ],
+    backgrounds: [{ name: 'header', value: 'white', default: true }],
   })
   .addDecorator(centered)
   .addDecorator(withKnobs)
@@ -23,5 +20,5 @@ storiesOf('RideSummary', module)
       type: select('Type', ['in', 'out'], 'in'),
     };
 
-    return (<RideSummary {...props} />);
+    return <RideSummary {...props} />;
   });

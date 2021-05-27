@@ -9,7 +9,9 @@ class ScrollArrow extends PureComponent {
     if (!container) {
       return 0;
     }
-    return container.scrollHeight - container.offsetTop - container.offsetHeight;
+    return (
+      container.scrollHeight - container.offsetTop - container.offsetHeight
+    );
   }
 
   handleMouseLeave = () => {
@@ -21,7 +23,12 @@ class ScrollArrow extends PureComponent {
 
   handleScrollHover = () => {
     const {
-      scrollInterval, getScrollTop, scrollTo, scrollOffset, getBottomScrollLimit, direction,
+      scrollInterval,
+      getScrollTop,
+      scrollTo,
+      scrollOffset,
+      getBottomScrollLimit,
+      direction,
     } = this.props;
 
     if (!scrollTo) {
@@ -47,13 +54,14 @@ class ScrollArrow extends PureComponent {
         top,
         behavior: 'smooth',
       });
-    },
-    scrollInterval);
+    }, scrollInterval);
   };
 
   resetScroll = () => {
     const { scrollTo, direction, getBottomScrollLimit } = this.props;
-    const scrollValue = { top: direction === ScrollArrow.up ? 0 : getBottomScrollLimit() };
+    const scrollValue = {
+      top: direction === ScrollArrow.up ? 0 : getBottomScrollLimit(),
+    };
 
     if (this.scrollInterval) {
       clearInterval(this.scrollInterval);
@@ -67,21 +75,31 @@ class ScrollArrow extends PureComponent {
   };
 
   render() {
-    const {
-      visible, direction, className, style, Icon,
-    } = this.props;
+    const { visible, direction, className, style, Icon } = this.props;
 
     return (
       <div
         role="presentation"
         style={style}
-        className={[s.container, visible ? s.visible : s.hidden, className].join(' ')}
+        className={[
+          s.container,
+          visible ? s.visible : s.hidden,
+          className,
+        ].join(' ')}
         onMouseLeave={this.handleMouseLeave}
         onMouseEnter={this.handleScrollHover}
         onClick={this.resetScroll}
       >
-        {Icon() ? <Icon direction={direction} visible={visible} /> : (
-          <i className={[`icon icon-chevron-thin-${direction}`, s.arrowIcon, visible ? undefined : s.hiddenIcon].join(' ')} />
+        {Icon() ? (
+          <Icon direction={direction} visible={visible} />
+        ) : (
+          <i
+            className={[
+              `icon icon-chevron-thin-${direction}`,
+              s.arrowIcon,
+              visible ? undefined : s.hiddenIcon,
+            ].join(' ')}
+          />
         )}
       </div>
     );

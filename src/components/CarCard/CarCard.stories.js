@@ -11,9 +11,7 @@ import CarCard from '.';
 
 storiesOf('CarCard', module)
   .addParameters({
-    backgrounds: [
-      { name: 'header', value: 'white', default: true },
-    ],
+    backgrounds: [{ name: 'header', value: 'white', default: true }],
   })
   .addDecorator(centered)
   .addDecorator(withKnobs)
@@ -33,7 +31,5 @@ storiesOf('CarCard', module)
       onClick: action('clicked'),
     };
 
-    return (
-      <CarCard {...props} />
-    );
+    return <CarCard {...props} />;
   });

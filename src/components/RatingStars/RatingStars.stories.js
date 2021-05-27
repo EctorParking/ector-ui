@@ -7,12 +7,9 @@ import centered from '@storybook/addon-centered';
 import RatingStars from '.';
 
 storiesOf('RatingStars', module)
-
   .addDecorator(withKnobs)
   .addParameters({
-    backgrounds: [
-      { name: 'header', value: 'white', default: true },
-    ],
+    backgrounds: [{ name: 'header', value: 'white', default: true }],
   })
   .addDecorator(centered)
 
@@ -21,7 +18,5 @@ storiesOf('RatingStars', module)
       value: number('Valeur', 3),
     };
 
-    return (
-      <RatingStars {...props} />
-    );
+    return <RatingStars {...props} />;
   });

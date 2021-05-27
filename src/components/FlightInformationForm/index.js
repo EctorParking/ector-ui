@@ -1,12 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  Card,
-  InputLabel,
-  InputSelect,
-  ActionLink,
-  Tooltip,
-} from '..';
+import { Card, InputLabel, InputSelect, ActionLink, Tooltip } from '..';
 import s from './FlightInformationForm.module.css';
 import { SpotType } from './SpotType';
 import { TextsType, DefaultTexts } from './FlightInformationFormTexts';
@@ -14,12 +8,18 @@ import { TextsType, DefaultTexts } from './FlightInformationFormTexts';
 class FlightInformationForm extends React.Component {
   static getDerivedStateFromProps(props, state) {
     const {
-      shouldDisplayReturnFlightInformation: propShouldDisplayReturnFlightInformation,
+      shouldDisplayReturnFlightInformation:
+        propShouldDisplayReturnFlightInformation,
     } = props;
     let { shouldDisplayReturnFlightInformation } = state;
 
-    if (typeof propShouldDisplayReturnFlightInformation === 'boolean' && propShouldDisplayReturnFlightInformation !== shouldDisplayReturnFlightInformation) {
-      shouldDisplayReturnFlightInformation = propShouldDisplayReturnFlightInformation;
+    if (
+      typeof propShouldDisplayReturnFlightInformation === 'boolean' &&
+      propShouldDisplayReturnFlightInformation !==
+        shouldDisplayReturnFlightInformation
+    ) {
+      shouldDisplayReturnFlightInformation =
+        propShouldDisplayReturnFlightInformation;
     }
     return { shouldDisplayReturnFlightInformation };
   }
@@ -29,31 +29,52 @@ class FlightInformationForm extends React.Component {
 
     this.renderFromZoneTerminal = this.renderTerminalSelect.bind(this, 'from');
     this.renderToZoneTerminal = this.renderTerminalSelect.bind(this, 'to');
-    this.onChangeTravelingNumberTo = this.onChange.bind(this, 'travelingNumberTo');
-    this.onChangeReturnFlightOrigin = this.onChange.bind(this, 'returnFlightOrigin');
-    this.onChangeReturnFlightCompany = this.onChangeSelect.bind(this, 'returnFlightCompany');
+    this.onChangeTravelingNumberTo = this.onChange.bind(
+      this,
+      'travelingNumberTo'
+    );
+    this.onChangeReturnFlightOrigin = this.onChange.bind(
+      this,
+      'returnFlightOrigin'
+    );
+    this.onChangeReturnFlightCompany = this.onChangeSelect.bind(
+      this,
+      'returnFlightCompany'
+    );
     this.onChangeFromSpot = this.onChangeSelect.bind(this, 'fromSpot');
     this.onChangeToSpot = this.onChangeSelect.bind(this, 'toSpot');
 
     this.onFocusTravelingNumberToInput = this.setTooltipVisibility.bind(
-      this, 'showTravelingNumberToTooltip', true,
+      this,
+      'showTravelingNumberToTooltip',
+      true
     );
     this.onBlurTravelingNumberToInput = this.setTooltipVisibility.bind(
-      this, 'showTravelingNumberToTooltip', false,
+      this,
+      'showTravelingNumberToTooltip',
+      false
     );
 
     this.onFocusReturnFlightCompanyInput = this.setTooltipVisibility.bind(
-      this, 'showReturnFlightCompanyTooltip', true,
+      this,
+      'showReturnFlightCompanyTooltip',
+      true
     );
     this.onBlurReturnFlightCompanyInput = this.setTooltipVisibility.bind(
-      this, 'showReturnFlightCompanyTooltip', false,
+      this,
+      'showReturnFlightCompanyTooltip',
+      false
     );
 
     this.onFocusReturnFlightOriginInput = this.setTooltipVisibility.bind(
-      this, 'showReturnFlightOriginTooltip', true,
+      this,
+      'showReturnFlightOriginTooltip',
+      true
     );
     this.onBlurReturnFlightOriginInput = this.setTooltipVisibility.bind(
-      this, 'showReturnFlightOriginTooltip', false,
+      this,
+      'showReturnFlightOriginTooltip',
+      false
     );
 
     this.state = {
@@ -84,7 +105,7 @@ class FlightInformationForm extends React.Component {
     this.setState({ [tooltip]: visible });
   }
 
-  renderTerminalSelect = (fromOrTo) => {
+  renderTerminalSelect = fromOrTo => {
     const {
       [`${fromOrTo}SpotsAvailable`]: spots,
       values: { [`${fromOrTo}Spot`]: selectedSpot },
@@ -94,10 +115,28 @@ class FlightInformationForm extends React.Component {
 
     return (
       <InputSelect
-        options={spots.map(spot => ({ value: spot, label: `${spot.type === 'airport' ? texts.spotAirport : texts.spotTrain} ${spot.shortName}` }))}
-        value={selectedSpot ? { value: selectedSpot, label: `${selectedSpot.type === 'airport' ? texts.spotAirport : texts.spotTrain} ${selectedSpot.shortName}` } : null}
+        options={spots.map(spot => ({
+          value: spot,
+          label: `${
+            spot.type === 'airport' ? texts.spotAirport : texts.spotTrain
+          } ${spot.shortName}`,
+        }))}
+        value={
+          selectedSpot
+            ? {
+                value: selectedSpot,
+                label: `${
+                  selectedSpot.type === 'airport'
+                    ? texts.spotAirport
+                    : texts.spotTrain
+                } ${selectedSpot.shortName}`,
+              }
+            : null
+        }
         placeholder={texts.placeholderSpot}
-        onChange={fromOrTo === 'from' ? this.onChangeFromSpot : this.onChangeToSpot}
+        onChange={
+          fromOrTo === 'from' ? this.onChangeFromSpot : this.onChangeToSpot
+        }
         isSearchable={false}
         isClearable
         error={selectedSpotError}
@@ -112,8 +151,16 @@ class FlightInformationForm extends React.Component {
       errors: { returnFlightCompany: returnFlightCompanyError },
       texts,
     } = this.props;
-    const { shouldDisplayReturnFlightInformation, showReturnFlightCompanyTooltip } = this.state;
-    const selectedAirline = airlines.find(airline => airline.value && airline.value.toLowerCase() === (returnFlightCompany ? returnFlightCompany.toLowerCase() : ''));
+    const {
+      shouldDisplayReturnFlightInformation,
+      showReturnFlightCompanyTooltip,
+    } = this.state;
+    const selectedAirline = airlines.find(
+      airline =>
+        airline.value &&
+        airline.value.toLowerCase() ===
+          (returnFlightCompany ? returnFlightCompany.toLowerCase() : '')
+    );
 
     return (
       <>
@@ -132,7 +179,11 @@ class FlightInformationForm extends React.Component {
           isClearable
           isSearchable
           noOptionsMessage={() => texts.noResult}
-          error={shouldDisplayReturnFlightInformation ? returnFlightCompanyError : null}
+          error={
+            shouldDisplayReturnFlightInformation
+              ? returnFlightCompanyError
+              : null
+          }
           onFocus={this.onFocusReturnFlightCompanyInput}
           onBlur={this.onBlurReturnFlightCompanyInput}
         />
@@ -147,24 +198,33 @@ class FlightInformationForm extends React.Component {
     onDisplayFlightInformationClick();
   };
 
-  getLabelSpot = (spot) => {
+  getLabelSpot = spot => {
     const { texts } = this.props;
 
     if (!spot) {
       return texts.spotLabelUnknown;
     }
 
-    return spot.type === 'airport' ? texts.spotLabelAirport : texts.spotLabelUnknown;
+    return spot.type === 'airport'
+      ? texts.spotLabelAirport
+      : texts.spotLabelUnknown;
   };
 
-  renderTravelingNumberToInputComponent = (props) => {
-    const { texts, values: { toSpot } } = this.props;
+  renderTravelingNumberToInputComponent = props => {
+    const {
+      texts,
+      values: { toSpot },
+    } = this.props;
     const { showTravelingNumberToTooltip } = this.state;
 
     return (
       <>
         <Tooltip
-          text={toSpot && toSpot.type === 'airport' ? texts.travelingFlightNumberToTooltip : texts.travelingTrainNumberToTooltip}
+          text={
+            toSpot && toSpot.type === 'airport'
+              ? texts.travelingFlightNumberToTooltip
+              : texts.travelingTrainNumberToTooltip
+          }
           visible={showTravelingNumberToTooltip}
           position="top"
           tooltipClassName={s.inputTooltip}
@@ -174,14 +234,21 @@ class FlightInformationForm extends React.Component {
     );
   };
 
-  renderReturnFlightOriginInputComponent = (props) => {
-    const { texts, values: { toSpot } } = this.props;
+  renderReturnFlightOriginInputComponent = props => {
+    const {
+      texts,
+      values: { toSpot },
+    } = this.props;
     const { showReturnFlightOriginTooltip } = this.state;
 
     return (
       <>
         <Tooltip
-          text={toSpot && toSpot.type === 'airport' ? texts.returnFlightAirportOriginTooltip : texts.returnFlightStationOriginTooltip}
+          text={
+            toSpot && toSpot.type === 'airport'
+              ? texts.returnFlightAirportOriginTooltip
+              : texts.returnFlightStationOriginTooltip
+          }
           visible={showReturnFlightOriginTooltip}
           position="top"
           size="small"
@@ -237,12 +304,18 @@ class FlightInformationForm extends React.Component {
           </div>
         )}
         <>
-          {fromSpotsAvailable.length > 1 && (<h2 className={s.title}>{texts.outTitle}</h2>)}
-          <div className={[
-            s.row,
-            !toSpot || (toSpotsAvailable.length <= 1 && toSpot.type !== 'station') ? s.halfWidth : undefined,
-            fromSpotsAvailable.length <= 1 ? s.noMargin : undefined,
-          ].join(' ')}
+          {fromSpotsAvailable.length > 1 && (
+            <h2 className={s.title}>{texts.outTitle}</h2>
+          )}
+          <div
+            className={[
+              s.row,
+              !toSpot ||
+              (toSpotsAvailable.length <= 1 && toSpot.type !== 'station')
+                ? s.halfWidth
+                : undefined,
+              fromSpotsAvailable.length <= 1 ? s.noMargin : undefined,
+            ].join(' ')}
           >
             {toSpotsAvailable.length > 1 && (
               <InputLabel
@@ -256,47 +329,81 @@ class FlightInformationForm extends React.Component {
             )}
             {toSpot && (
               <InputLabel
-                label={toSpot.type === 'airport' ? texts.travelingNumberToLabel : texts.travelingNumberToLabelTrain}
-                placeholder={toSpot.type === 'airport' ? texts.travelingNumberToPlaceholder : texts.travelingNumberToPlaceholderTrain}
+                label={
+                  toSpot.type === 'airport'
+                    ? texts.travelingNumberToLabel
+                    : texts.travelingNumberToLabelTrain
+                }
+                placeholder={
+                  toSpot.type === 'airport'
+                    ? texts.travelingNumberToPlaceholder
+                    : texts.travelingNumberToPlaceholderTrain
+                }
                 value={travelingNumberTo}
                 mandatory={!shouldDisplayReturnFlightInformation}
-                className={[s.input, toSpotsAvailable.length > 1 ? s.secondColumn : s.firstColumn].join(' ')}
+                className={[
+                  s.input,
+                  toSpotsAvailable.length > 1 ? s.secondColumn : s.firstColumn,
+                ].join(' ')}
                 onChange={this.onChangeTravelingNumberTo}
                 autoComplete="off"
-                error={!shouldDisplayReturnFlightInformation ? errors.travelingNumberTo : null}
+                error={
+                  !shouldDisplayReturnFlightInformation
+                    ? errors.travelingNumberTo
+                    : null
+                }
                 onFocus={this.onFocusTravelingNumberToInput}
                 onBlur={this.onBlurTravelingNumberToInput}
                 InputComponent={this.renderTravelingNumberToInputComponent}
                 {...travelingNumberToInputProps}
               />
             )}
-            {toSpotsAvailable.length <= 1 && toSpot && toSpot.type === 'station' && shouldDisplayReturnFlightInformation && (
-              <InputLabel
-                label={texts.returnFlightOriginLabel}
-                placeholder={texts.returnFlightOriginPlaceholder}
-                value={returnFlightOrigin}
-                onChange={this.onChangeReturnFlightOrigin}
-                className={[s.input, s.firstColumn].join(' ')}
-                mandatory={shouldDisplayReturnFlightInformation}
-                autoComplete="off"
-                error={shouldDisplayReturnFlightInformation ? errors.returnFlightOrigin : null}
-              />
-            )}
+            {toSpotsAvailable.length <= 1 &&
+              toSpot &&
+              toSpot.type === 'station' &&
+              shouldDisplayReturnFlightInformation && (
+                <InputLabel
+                  label={texts.returnFlightOriginLabel}
+                  placeholder={texts.returnFlightOriginPlaceholder}
+                  value={returnFlightOrigin}
+                  onChange={this.onChangeReturnFlightOrigin}
+                  className={[s.input, s.firstColumn].join(' ')}
+                  mandatory={shouldDisplayReturnFlightInformation}
+                  autoComplete="off"
+                  error={
+                    shouldDisplayReturnFlightInformation
+                      ? errors.returnFlightOrigin
+                      : null
+                  }
+                />
+              )}
           </div>
           {toSpot && !shouldDisplayReturnFlightInformation && (
             <ActionLink
               label={texts.unknown}
-              className={[s.actionLink, toSpotsAvailable.length <= 1 ? s.flexStart : s.flexEnd].join(' ')}
+              className={[
+                s.actionLink,
+                toSpotsAvailable.length <= 1 ? s.flexStart : s.flexEnd,
+              ].join(' ')}
               onClick={this.showExtraFields}
             />
           )}
           {toSpot && shouldDisplayReturnFlightInformation && (
             <ReturnFlightInformationComponent className={s.description}>
-              <span>{toSpot.type === 'airport' ? texts.switchMandatoryAirportDescription : texts.switchMandatoryStationDescription}</span>
+              <span>
+                {toSpot.type === 'airport'
+                  ? texts.switchMandatoryAirportDescription
+                  : texts.switchMandatoryStationDescription}
+              </span>
             </ReturnFlightInformationComponent>
           )}
           {toSpot && shouldDisplayReturnFlightInformation && (
-            <div className={[s.row, toSpot.type === 'station' ? s.halfWidth : undefined].join(' ')}>
+            <div
+              className={[
+                s.row,
+                toSpot.type === 'station' ? s.halfWidth : undefined,
+              ].join(' ')}
+            >
               {(toSpot.type !== 'station' || toSpotsAvailable.length > 1) && (
                 <InputLabel
                   label={texts.returnFlightOriginLabel}
@@ -306,24 +413,38 @@ class FlightInformationForm extends React.Component {
                   className={[s.input, s.firstColumn].join(' ')}
                   mandatory={shouldDisplayReturnFlightInformation}
                   autoComplete="off"
-                  error={shouldDisplayReturnFlightInformation ? errors.returnFlightOrigin : null}
+                  error={
+                    shouldDisplayReturnFlightInformation
+                      ? errors.returnFlightOrigin
+                      : null
+                  }
                   InputComponent={this.renderReturnFlightOriginInputComponent}
                   onFocus={this.onFocusReturnFlightOriginInput}
                   onBlur={this.onBlurReturnFlightOriginInput}
                 />
               )}
-              {toSpot.type === 'airport' && shouldDisplayReturnFlightInformation && (
-                <InputLabel
-                  label={texts.returnFlightCompanyLabel}
-                  value={returnFlightCompany}
-                  className={[s.input, toSpotsAvailable.length > 1 ? s.secondColumn : s.firstColumn].join(' ')}
-                  InputComponent={this.renderAirlinesSelect}
-                  mandatory={shouldDisplayReturnFlightInformation}
-                  error={shouldDisplayReturnFlightInformation ? errors.returnFlightCompany : null}
-                  onFocus={this.onFocusReturnFlightCompanyInput}
-                  onBlur={this.onBlurReturnFlightCompanyInput}
-                />
-              )}
+              {toSpot.type === 'airport' &&
+                shouldDisplayReturnFlightInformation && (
+                  <InputLabel
+                    label={texts.returnFlightCompanyLabel}
+                    value={returnFlightCompany}
+                    className={[
+                      s.input,
+                      toSpotsAvailable.length > 1
+                        ? s.secondColumn
+                        : s.firstColumn,
+                    ].join(' ')}
+                    InputComponent={this.renderAirlinesSelect}
+                    mandatory={shouldDisplayReturnFlightInformation}
+                    error={
+                      shouldDisplayReturnFlightInformation
+                        ? errors.returnFlightCompany
+                        : null
+                    }
+                    onFocus={this.onFocusReturnFlightCompanyInput}
+                    onBlur={this.onBlurReturnFlightCompanyInput}
+                  />
+                )}
             </div>
           )}
         </>
@@ -334,7 +455,9 @@ class FlightInformationForm extends React.Component {
 
 FlightInformationForm.defaultProps = {
   // eslint-disable-next-line react/prop-types
-  RootComponent: ({ children, ...cardProps }) => (<Card {...cardProps}>{children}</Card>),
+  RootComponent: ({ children, ...cardProps }) => (
+    <Card {...cardProps}>{children}</Card>
+  ),
   className: undefined,
   contentClassName: undefined,
   airlines: [],
@@ -366,10 +489,12 @@ FlightInformationForm.propTypes = {
     returnFlightCompany: PropTypes.string,
     returnFlightOrigin: PropTypes.string,
   }).isRequired,
-  airlines: PropTypes.arrayOf(PropTypes.shape({
-    value: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
-  })),
+  airlines: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+    })
+  ),
   texts: TextsType,
   onChange: PropTypes.func.isRequired,
   onClear: PropTypes.func.isRequired,

@@ -7,7 +7,8 @@ export default PropTypes.shape({
 
 const defaultTexts = {
   title: 'Aidez Ector à conquérir le monde',
-  description: 'Devenez parrain Ector et faites profiter à votre filleul de 10€ offert lors de sa première réservation',
+  description:
+    'Devenez parrain Ector et faites profiter à votre filleul de 10€ offert lors de sa première réservation',
 };
 
 export { defaultTexts };

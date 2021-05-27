@@ -5,17 +5,14 @@ import { action } from '@storybook/addon-actions';
 import MenuButton from '.';
 
 storiesOf('Button.MenuButton', module)
-
   .addParameters({
-    backgrounds: [
-      { name: 'header', value: 'white', default: true },
-    ],
+    backgrounds: [{ name: 'header', value: 'white', default: true }],
   })
   .addDecorator(centered)
 
   .add('with knobs', () => {
     const props = {
-      LabelComponent: () => (<span>Aide</span>),
+      LabelComponent: () => <span>Aide</span>,
       SuggestionsComponent: () => (
         <div>
           <button>Questions fréquentes</button>
@@ -30,7 +27,7 @@ storiesOf('Button.MenuButton', module)
 
   .add('with offset', () => {
     const props = {
-      LabelComponent: () => (<span>Aide</span>),
+      LabelComponent: () => <span>Aide</span>,
       SuggestionsComponent: () => (
         <div>
           <button>Questions fréquentes</button>

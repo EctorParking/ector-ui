@@ -7,11 +7,8 @@ import centered from '@storybook/addon-centered';
 import RadioButton from '.';
 
 storiesOf('RadioButton', module)
-
   .addParameters({
-    backgrounds: [
-      { name: 'header', value: 'white', default: true },
-    ],
+    backgrounds: [{ name: 'header', value: 'white', default: true }],
   })
   .addDecorator(centered)
 

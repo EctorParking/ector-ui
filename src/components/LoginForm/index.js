@@ -2,9 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import s from './LoginForm.module.css';
-import {
-  InputLabel, Card, LinkUnderlined, ActionLink,
-} from '..';
+import { InputLabel, Card, LinkUnderlined, ActionLink } from '..';
 import TextsType, { DefaultTexts } from './LoginFormTextsType';
 import { LoginFormErrorsType, LoginFormValuesType } from './LoginType';
 
@@ -31,11 +29,18 @@ const LoginForm = ({
   shouldDisplayEmailText,
   ...cardProps
 }) => (
-  <RootComponent {...cardProps} className={[s.card, className].join(' ')} contentClassName={[s.contentCard, contentClassName].join(' ')}>
+  <RootComponent
+    {...cardProps}
+    className={[s.card, className].join(' ')}
+    contentClassName={[s.contentCard, contentClassName].join(' ')}
+  >
     {shouldDisplayEmailField && !shouldDisplayEmailText && (
       <InputLabel
         className={[s.input, emailInputClassName].join('')}
-        hasError={!!errors.email || (typeof errorLogin !== 'undefined' && errorLogin !== '')}
+        hasError={
+          !!errors.email ||
+          (typeof errorLogin !== 'undefined' && errorLogin !== '')
+        }
         label={texts.email}
         mandatory
         type="email"
@@ -44,24 +49,22 @@ const LoginForm = ({
         onChange={onChangeEmail}
         error={errors.email}
       />
-    )
-    }
+    )}
     {shouldDisplayEmailText && (
       <InputLabel
         className={[s.input, emailInputClassName].join('')}
-        hasError={!!errors.email || (typeof errorLogin !== 'undefined' && errorLogin !== '')}
+        hasError={
+          !!errors.email ||
+          (typeof errorLogin !== 'undefined' && errorLogin !== '')
+        }
         label={texts.email}
         mandatory
         type="email"
         id="loginFormEmailInput"
         InputComponent={() => (
           <div className={s.emailTextContainer}>
-            {values.email}
-            {' '}
-            <button
-              onClick={onClickEditEmail}
-              id="EditEmailButton"
-            >
+            {values.email}{' '}
+            <button onClick={onClickEditEmail} id="EditEmailButton">
               <i className="icon-edit " id="EditIcon" />
             </button>
           </div>
@@ -70,11 +73,13 @@ const LoginForm = ({
         onChange={onChangeEmail}
         error={errors.email}
       />
-    )
-    }
+    )}
     <InputLabel
       className={[s.input, passwordInputClassName].join(' ')}
-      hasError={!!errors.password || (typeof errorLogin !== 'undefined' && errorLogin !== '')}
+      hasError={
+        !!errors.password ||
+        (typeof errorLogin !== 'undefined' && errorLogin !== '')
+      }
       label={texts.password}
       mandatory
       type="password"
@@ -83,17 +88,22 @@ const LoginForm = ({
       onChange={onChangePassword}
       error={errors.password}
     />
-    {
-      onClickPasswordForgotten && (
-        <ActionLink
-          label={texts.onClickPasswordForgottenLabel}
-          className={s.forgottenPasswordLink}
-          onClick={onClickPasswordForgotten}
-        />
-      )
-    }
-    {typeof errorLogin !== 'undefined' && errorLogin !== '' && <div className={s.error}>{errorLogin}</div>}
-    <SubmitButtonComponent onClick={onSubmit} className={[s.button, buttonClassName].join(' ')} fetching={fetching} testid={buttonTestid}>
+    {onClickPasswordForgotten && (
+      <ActionLink
+        label={texts.onClickPasswordForgottenLabel}
+        className={s.forgottenPasswordLink}
+        onClick={onClickPasswordForgotten}
+      />
+    )}
+    {typeof errorLogin !== 'undefined' && errorLogin !== '' && (
+      <div className={s.error}>{errorLogin}</div>
+    )}
+    <SubmitButtonComponent
+      onClick={onSubmit}
+      className={[s.button, buttonClassName].join(' ')}
+      fetching={fetching}
+      testid={buttonTestid}
+    >
       <span>{texts.submitButton}</span>
     </SubmitButtonComponent>
   </RootComponent>
@@ -110,9 +120,13 @@ LoginForm.defaultProps = {
   errorLogin: undefined,
   buttonTestid: undefined,
   // eslint-disable-next-line react/prop-types
-  RootComponent: ({ children, ...cardProps }) => (<Card {...cardProps}>{children}</Card>),
+  RootComponent: ({ children, ...cardProps }) => (
+    <Card {...cardProps}>{children}</Card>
+  ),
   // eslint-disable-next-line
-  SubmitButtonComponent: ({ children, ...buttonProps }) => (<LinkUnderlined {...buttonProps}>{children}</LinkUnderlined>),
+  SubmitButtonComponent: ({ children, ...buttonProps }) => (
+    <LinkUnderlined {...buttonProps}>{children}</LinkUnderlined>
+  ),
   onClickEditEmail: () => {},
   onClickPasswordForgotten: undefined,
   shouldDisplayEmailField: true,

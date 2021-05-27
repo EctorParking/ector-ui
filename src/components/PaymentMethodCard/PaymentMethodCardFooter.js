@@ -5,18 +5,20 @@ import { LinkUnderlined } from '..';
 import PaymentMethodTextsType from './PaymentMethodTextsType';
 
 const PaymentMethodCardFooter = ({
-  className, selected, texts, onClick, testid,
+  className,
+  selected,
+  texts,
+  onClick,
+  testid,
 }) => (
   <div className={[s.container, className].join(' ')}>
-    {
-      selected ? (
-        <i className={`icon-checkmark ${s.checkIcon}`} />
-      ) : (
-        <LinkUnderlined onClick={onClick} testid={`${testid}Button`}>
-          <strong>{texts.select}</strong>
-        </LinkUnderlined>
-      )
-    }
+    {selected ? (
+      <i className={`icon-checkmark ${s.checkIcon}`} />
+    ) : (
+      <LinkUnderlined onClick={onClick} testid={`${testid}Button`}>
+        <strong>{texts.select}</strong>
+      </LinkUnderlined>
+    )}
   </div>
 );
 

@@ -34,14 +34,14 @@
 .arrow {
   color: transparent;
   &.visible {
-     color: var(--white);
-     text-shadow: 0 -5px 15px var(--darkMetalGrey);
+    color: var(--white);
+    text-shadow: 0 -5px 15px var(--darkMetalGrey);
   }
 }
 
 .splitContainer:before {
   background-color: var(--splitBorderColor);
-  content: "";
+  content: '';
   height: calc(75% - var(--marginMLarge));
   left: 50%;
   position: absolute;

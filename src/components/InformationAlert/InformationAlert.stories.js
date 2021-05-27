@@ -7,11 +7,8 @@ import { withKnobs, text } from '@storybook/addon-knobs';
 import InformationAlert from '.';
 
 storiesOf('InformationAlert', module)
-
   .addParameters({
-    backgrounds: [
-      { name: 'header', value: 'white', default: true },
-    ],
+    backgrounds: [{ name: 'header', value: 'white', default: true }],
   })
   .addDecorator(centered)
   .addDecorator(withKnobs)
@@ -19,12 +16,8 @@ storiesOf('InformationAlert', module)
   .add('with knobs', () => {
     const props = {
       title: text('Title', 'Information Alert'),
-      description: text('Description', 'Description de l\'information'),
+      description: text('Description', "Description de l'information"),
     };
 
-    return (
-      <InformationAlert
-        {...props}
-      />
-    );
+    return <InformationAlert {...props} />;
   });

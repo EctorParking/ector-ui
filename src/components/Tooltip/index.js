@@ -22,16 +22,14 @@ const Tooltip = ({
   ];
 
   return (
-    <div
-      className={[s.tooltipContainer, className].join(' ')}
-    >
-      {
-        IconComponent !== null && typeof IconComponent === 'function' && IconComponent() ? (
-          <IconComponent />
-        ) : (
-          <i className={iconClassName} />
-        )
-      }
+    <div className={[s.tooltipContainer, className].join(' ')}>
+      {IconComponent !== null &&
+      typeof IconComponent === 'function' &&
+      IconComponent() ? (
+        <IconComponent />
+      ) : (
+        <i className={iconClassName} />
+      )}
       <span className={computedTooltipClassName.join(' ')}>{text}</span>
     </div>
   );
@@ -57,6 +55,5 @@ Tooltip.propTypes = {
   IconComponent: PropTypes.func,
   visible: PropTypes.bool,
 };
-
 
 export default Tooltip;

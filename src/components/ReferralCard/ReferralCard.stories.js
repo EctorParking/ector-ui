@@ -8,11 +8,8 @@ import ReferralCard from '.';
 import { defaultTexts } from './ReferralCardTextsType';
 
 storiesOf('ReferralCard', module)
-
   .addParameters({
-    backgrounds: [
-      { name: 'header', value: 'white', default: true },
-    ],
+    backgrounds: [{ name: 'header', value: 'white', default: true }],
   })
   .addDecorator(centered)
   .addDecorator(withKnobs)

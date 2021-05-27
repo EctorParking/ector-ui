@@ -3,19 +3,14 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import centered from '@storybook/addon-centered';
-import {
-  withKnobs, object, boolean, text,
-} from '@storybook/addon-knobs/react';
+import { withKnobs, object, boolean, text } from '@storybook/addon-knobs/react';
 import Colors from './Colors';
 
 import ColorPicker from '.';
 
 storiesOf('ColorPicker', module)
-
   .addParameters({
-    backgrounds: [
-      { name: 'header', value: 'white', default: true },
-    ],
+    backgrounds: [{ name: 'header', value: 'white', default: true }],
   })
   .addDecorator(withKnobs)
   .addDecorator(centered)
@@ -27,10 +22,5 @@ storiesOf('ColorPicker', module)
       value: text('Value', Colors[3].hexadecimalCode),
     };
 
-    return (
-      <ColorPicker
-        onSelect={action('chosen')}
-        {...props}
-      />
-    );
+    return <ColorPicker onSelect={action('chosen')} {...props} />;
   });

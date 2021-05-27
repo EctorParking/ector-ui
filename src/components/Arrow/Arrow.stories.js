@@ -6,11 +6,8 @@ import { withKnobs, select } from '@storybook/addon-knobs';
 import Arrow from '.';
 
 storiesOf('Arrow', module)
-
   .addParameters({
-    backgrounds: [
-      { name: 'header', value: 'white', default: true },
-    ],
+    backgrounds: [{ name: 'header', value: 'white', default: true }],
   })
   .addDecorator(centered)
   .addDecorator(withKnobs)

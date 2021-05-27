@@ -7,13 +7,9 @@ import { DefaultTexts } from './CardTravelInformationTextsType';
 
 import CardTravelInformation from '.';
 
-
 storiesOf('CardTravelInformation', module)
-
   .addParameters({
-    backgrounds: [
-      { name: 'header', value: 'white', default: true },
-    ],
+    backgrounds: [{ name: 'header', value: 'white', default: true }],
   })
   .addDecorator(centered)
   .addDecorator(withKnobs)
@@ -33,7 +29,5 @@ storiesOf('CardTravelInformation', module)
       }),
     };
 
-    return (
-      <CardTravelInformation {...props} />
-    );
+    return <CardTravelInformation {...props} />;
   });

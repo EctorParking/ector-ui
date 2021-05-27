@@ -3,13 +3,7 @@ import PropTypes from 'prop-types';
 
 import s from './TitleStep.module.css';
 
-const TitleStep = ({
-  Active,
-  children,
-  Done,
-  onClick,
-  className,
-}) => {
+const TitleStep = ({ Active, children, Done, onClick, className }) => {
   const classNameString = `
         ${s.step_button}
         ${Done ? s.done : ''}
@@ -18,11 +12,8 @@ const TitleStep = ({
     `;
 
   return (
-    <button
-      className={classNameString}
-      onClick={onClick}
-    >
-      { children }
+    <button className={classNameString} onClick={onClick}>
+      {children}
     </button>
   );
 };
@@ -40,6 +31,5 @@ TitleStep.propTypes = {
   onClick: PropTypes.func.isRequired,
   className: PropTypes.string,
 };
-
 
 export default TitleStep;

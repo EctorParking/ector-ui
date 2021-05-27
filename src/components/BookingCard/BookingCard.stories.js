@@ -20,14 +20,13 @@ const leftActions = [
   <ActionLink label="Annuler" />,
 ];
 
-const rightAction = <LinkUnderlined onClick={() => {}}>Télécharger la facture</LinkUnderlined>;
+const rightAction = (
+  <LinkUnderlined onClick={() => {}}>Télécharger la facture</LinkUnderlined>
+);
 
 storiesOf('BookingCard', module)
-
   .addParameters({
-    backgrounds: [
-      { name: 'header', value: 'white', default: true },
-    ],
+    backgrounds: [{ name: 'header', value: 'white', default: true }],
   })
   .addDecorator(centered)
   .addDecorator(withKnobs)
@@ -40,7 +39,10 @@ storiesOf('BookingCard', module)
       endAt: text('End at', 'Dim. 22 avril à 15:00'),
       bookingStepsTexts: object('Texts', defaultBookingStepsTexts),
       options: object('Options', options),
-      pricingSummaryTexts: object('Pricing summary texts', defaultPricingSummaryTexts),
+      pricingSummaryTexts: object(
+        'Pricing summary texts',
+        defaultPricingSummaryTexts
+      ),
       leftActions,
       rightAction,
     };

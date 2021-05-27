@@ -4,11 +4,7 @@ import PropTypes from 'prop-types';
 import s from './Card.module.css';
 
 const CardFooter = ({ className, FooterChildren }) => (
-
-  <div className={`${s.card_footer} ${className}`}>
-    { FooterChildren }
-  </div>
-
+  <div className={`${s.card_footer} ${className}`}>{FooterChildren}</div>
 );
 
 CardFooter.defaultProps = {
@@ -21,12 +17,7 @@ CardFooter.propTypes = {
   className: PropTypes.string,
 };
 
-const CardHeader = ({ HeaderChildren }) => (
-  <div>
-    { HeaderChildren }
-  </div>
-
-);
+const CardHeader = ({ HeaderChildren }) => <div>{HeaderChildren}</div>;
 
 CardHeader.defaultProps = {
   HeaderChildren: null,
@@ -66,25 +57,15 @@ const Card = ({
       onClick={onClick}
       testid={testid}
     >
-      { HeaderChildren
-        && (
-          <CardHeader
-            HeaderChildren={HeaderChildren}
-          />
-        )
-      }
+      {HeaderChildren && <CardHeader HeaderChildren={HeaderChildren} />}
       <LabelComponent className={s.label} />
-      <div className={`${s.card_content} ${contentClassName}`}>
-        { children }
-      </div>
-      { FooterChildren
-        && (
-          <CardFooter
-            className={footerClassName}
-            FooterChildren={FooterChildren}
-          />
-        )
-      }
+      <div className={`${s.card_content} ${contentClassName}`}>{children}</div>
+      {FooterChildren && (
+        <CardFooter
+          className={footerClassName}
+          FooterChildren={FooterChildren}
+        />
+      )}
       <FooterComponent className={`${s.card_footer} ${s.footerComponent}`} />
     </RootComponent>
   );
@@ -121,6 +102,5 @@ Card.propTypes = {
   FooterComponent: PropTypes.func,
   RootComponent: PropTypes.func,
 };
-
 
 export default Card;

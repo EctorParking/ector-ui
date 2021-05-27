@@ -7,11 +7,8 @@ import { withKnobs, text } from '@storybook/addon-knobs';
 import Subtitle from '.';
 
 storiesOf('Subtitle', module)
-
   .addParameters({
-    backgrounds: [
-      { name: 'header', value: 'white', default: true },
-    ],
+    backgrounds: [{ name: 'header', value: 'white', default: true }],
   })
   .addDecorator(centered)
   .addDecorator(withKnobs)

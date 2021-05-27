@@ -30,48 +30,58 @@ class SavedCardsPicker extends React.PureComponent {
     return (
       <div className={s.paymentMethodBox}>
         <div className={s.paymentCardsTable}>
-          { showHeader && (
+          {showHeader && (
             <div className={s.paymentCardsHeaderRow}>
-              <div className={[s.typeCardHeader, s.paymentCardsHeader].join(' ')}>
+              <div
+                className={[s.typeCardHeader, s.paymentCardsHeader].join(' ')}
+              >
                 {texts.typeCard}
               </div>
-              <div className={[s.numberHeader, s.paymentCardsHeader].join(' ')}>{texts.number}</div>
+              <div className={[s.numberHeader, s.paymentCardsHeader].join(' ')}>
+                {texts.number}
+              </div>
               <div className={[s.expireHeader, s.paymentCardsHeader].join(' ')}>
                 {texts.expire}
               </div>
             </div>
           )}
-          {paymentMethods.length > 0
-            ? paymentMethods.map(paymentMethod => SavedCardsLineComponent(paymentMethod, card))
-            : <PaymentFormComponent />}
+          {paymentMethods.length > 0 ? (
+            paymentMethods.map(paymentMethod =>
+              SavedCardsLineComponent(paymentMethod, card)
+            )
+          ) : (
+            <PaymentFormComponent />
+          )}
           {fetching && <Loader size="xSmall" />}
         </div>
         {paymentMethods.length > 0 && !showForm && (
-        <>
-          <div className={s.paymentTableFooter}>
-            <img
-              src={texts.srcCardIcon}
-              className={s.addPaymentCardIcon}
-              alt=""
-            />
-            <LinkUnderlined onClick={onClickAddCard} className={s.addCardButton}>
-              <strong>
-                {cardType === CardTypes.stripe
-                  ? texts.addCard
-                  : texts.addTotalCard}
-              </strong>
-            </LinkUnderlined>
-          </div>
-        </>
+          <>
+            <div className={s.paymentTableFooter}>
+              <img
+                src={texts.srcCardIcon}
+                className={s.addPaymentCardIcon}
+                alt=""
+              />
+              <LinkUnderlined
+                onClick={onClickAddCard}
+                className={s.addCardButton}
+              >
+                <strong>
+                  {cardType === CardTypes.stripe
+                    ? texts.addCard
+                    : texts.addTotalCard}
+                </strong>
+              </LinkUnderlined>
+            </div>
+          </>
         )}
-        {showForm && (<PaymentFormComponent />)}
+        {showForm && <PaymentFormComponent />}
         <div>
-          {cardType === CardTypes.total
-                && (
-                  <p className={s.informationTotalRefund}>
-                    {texts.informationTotalRefund}
-                  </p>
-                )}
+          {cardType === CardTypes.total && (
+            <p className={s.informationTotalRefund}>
+              {texts.informationTotalRefund}
+            </p>
+          )}
         </div>
       </div>
     );
@@ -130,6 +140,5 @@ SavedCardsPicker.defaultProps = {
   isRadioButtonVisible: true,
   fetching: false,
 };
-
 
 export default SavedCardsPicker;

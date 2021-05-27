@@ -8,7 +8,12 @@ import { Tooltip } from '..';
 class ColorPicker extends PureComponent {
   renderColorBadge = (color, index) => {
     const {
-      onSelect, tooltipClassName, showTooltip, value, badgeClassName, tooltipSize,
+      onSelect,
+      tooltipClassName,
+      showTooltip,
+      value,
+      badgeClassName,
+      tooltipSize,
     } = this.props;
     const tooltipContainerClassName = showTooltip ? s.tooltip : '';
     const badgeClassNames = [
@@ -39,9 +44,7 @@ class ColorPicker extends PureComponent {
   };
 
   render() {
-    const {
-      colorsList, className, testid,
-    } = this.props;
+    const { colorsList, className, testid } = this.props;
 
     return (
       <div className={[s.colorPicker, className].join(' ')} testid={testid}>

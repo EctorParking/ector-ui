@@ -20,16 +20,15 @@ const SavedCardsLine = ({
     onClick={() => onSelectLine(paymentMethod.id)}
     onKeyDown={() => onSelectLine(paymentMethod.id)}
     role="button"
-    className={[s.tableRow, card === paymentMethod.id ? s.clicked : undefined].join(' ')}
+    className={[
+      s.tableRow,
+      card === paymentMethod.id ? s.clicked : undefined,
+    ].join(' ')}
     tabIndex="0"
   >
     <div className={[s.tableCell, s.paddedCell, s.checkedButton].join(' ')}>
       {card === paymentMethod.id && (
-        <img
-          src={checkImg}
-          alt="checkedButton"
-          className={s.checkedImg}
-        />
+        <img src={checkImg} alt="checkedButton" className={s.checkedImg} />
       )}
     </div>
     <div className={s.mobileTable}>
@@ -41,16 +40,18 @@ const SavedCardsLine = ({
             className={s.cardIcon}
           />
         </div>
-        <div className={[s.tableCell, s.cardName].join(' ')}>{paymentMethod.cardName || brandText}</div>
+        <div className={[s.tableCell, s.cardName].join(' ')}>
+          {paymentMethod.cardName || brandText}
+        </div>
       </div>
       <div className={s.mobileRow2}>
         <div className={[s.tableCell, s.paddedCell, s.cardDigits].join(' ')}>
-          <span className={s.hiddenDigits}>
-            {'\u2022\u2022\u2022\u2022 '}
-          </span>
+          <span className={s.hiddenDigits}>{'\u2022\u2022\u2022\u2022 '}</span>
           {paymentMethod.last4digits}
         </div>
-        <div className={[s.tableCell, s.paddedCell, s.expireAt].join(' ')}>{moment(paymentMethod.expireAt).format('MM/YY')}</div>
+        <div className={[s.tableCell, s.paddedCell, s.expireAt].join(' ')}>
+          {moment(paymentMethod.expireAt).format('MM/YY')}
+        </div>
       </div>
     </div>
     <div className={[s.tableCell, s.paddedCell, s.deleteButtonCell].join(' ')}>
@@ -83,6 +84,5 @@ SavedCardsLine.defaultProps = {
   alt: '',
   card: null,
 };
-
 
 export default SavedCardsLine;

@@ -8,18 +8,32 @@ export const TitleVariants = {
 };
 
 const Title = ({
-  label, className, htmlElement, testid, variant, elementClassName,
+  label,
+  className,
+  htmlElement,
+  testid,
+  variant,
+  elementClassName,
 }) => {
   if (variant === TitleVariants.underlined) {
     return (
       <div className={`${s.title} ${className}`} testid={testid}>
-        {React.createElement(htmlElement, { className: [s.element, elementClassName].join(' ') }, label)}
+        {React.createElement(
+          htmlElement,
+          { className: [s.element, elementClassName].join(' ') },
+          label
+        )}
         <hr className={s.horizontalRule} />
       </div>
     );
   }
   if (variant === TitleVariants.none) {
-    return React.createElement(htmlElement, { className: `${s.newTitle} ${className}` }, label, testid);
+    return React.createElement(
+      htmlElement,
+      { className: `${s.newTitle} ${className}` },
+      label,
+      testid
+    );
   }
   return null;
 };
@@ -33,10 +47,7 @@ Title.defaultProps = {
 };
 
 Title.propTypes = {
-  label: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.element,
-  ]).isRequired,
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
   className: PropTypes.string,
   htmlElement: PropTypes.string,
   testid: PropTypes.string,

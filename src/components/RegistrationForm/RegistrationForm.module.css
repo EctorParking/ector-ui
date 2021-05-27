@@ -12,7 +12,7 @@
   justify-content: space-between;
 }
 
-.columns > div> *  {
+.columns > div > * {
   height: 50px;
 }
 
@@ -53,12 +53,6 @@
   font-style: italic;
   font-size: var(--fontSizeLabel);
 }
-
-.card {}
-
-.contentCard {}
-
-.emailInputLabel {}
 
 @media (--maxMobile) {
   .card {

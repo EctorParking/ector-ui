@@ -27,7 +27,7 @@ const RadioButton = ({
     />
 
     <span className={s.button} />
-    {label && <span className={`${s.label} ${labelClassName}`}>{label}</span> }
+    {label && <span className={`${s.label} ${labelClassName}`}>{label}</span>}
   </label>
 );
 

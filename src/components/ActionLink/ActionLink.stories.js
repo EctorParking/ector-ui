@@ -11,11 +11,8 @@ const onClick = () => {
 };
 
 storiesOf('ActionLink', module)
-
   .addParameters({
-    backgrounds: [
-      { name: 'header', value: 'white', default: true },
-    ],
+    backgrounds: [{ name: 'header', value: 'white', default: true }],
   })
   .addDecorator(centered)
   .addDecorator(withKnobs)
@@ -27,9 +24,5 @@ storiesOf('ActionLink', module)
       icon: text('Icon', 'faq'),
     };
 
-    return (
-      <ActionLink
-        {...props}
-      />
-    );
+    return <ActionLink {...props} />;
   });

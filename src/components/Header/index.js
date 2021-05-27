@@ -15,7 +15,6 @@ const DefaultRightComponent = ({ texts, className, disabledButtons }) => {
       variant={isActive && !disabledButtons ? 'yellow' : 'white'}
       position="right"
       backgroundClassName={s.backgroundTextIcon}
-
     >
       {texts.needHelp}
     </TextIcon>
@@ -42,22 +41,26 @@ const DefaultRightComponent = ({ texts, className, disabledButtons }) => {
   const renderSuggestions = () => (
     <div className={s.helpSuggestions}>
       <button className={s.suggestion}>{texts.faq}</button>
-      <button className={s.suggestion}>
-        {texts.customerService}
-      </button>
+      <button className={s.suggestion}>{texts.customerService}</button>
     </div>
   );
 
   return (
     <div className={[s.menuItemsContainer, className].join(' ')}>
       <MenuButton
-        buttonClassName={[s.menuItem, disabledButtons ? s.menuItemNotHovered : s.menuItemHovered].join(' ')}
+        buttonClassName={[
+          s.menuItem,
+          disabledButtons ? s.menuItemNotHovered : s.menuItemHovered,
+        ].join(' ')}
         LabelComponent={renderHelpButton}
         SuggestionsComponent={renderSuggestions}
         disabled={disabledButtons}
       />
       <MenuButton
-        buttonClassName={[s.menuItem, disabledButtons ? s.menuItemNotHovered : s.menuItemHovered].join(' ')}
+        buttonClassName={[
+          s.menuItem,
+          disabledButtons ? s.menuItemNotHovered : s.menuItemHovered,
+        ].join(' ')}
         LabelComponent={renderConnectionButton}
         disabled={disabledButtons}
       />
@@ -88,12 +91,16 @@ const DefaultMiddleComponent = ({ texts, className, disabledButtons }) => {
   };
 
   // eslint-disable-next-line
-  const onClick = () => window.open('https://business.ectorparking.com', '_blank');
+  const onClick = () =>
+    window.open('https://business.ectorparking.com', '_blank');
 
   return (
     <div className={[s.middleMenuItemsContainer, className].join(' ')}>
       <MenuButton
-        buttonClassName={[s.menuItem, disabledButtons ? s.menuItemNotHovered : s.menuItemHovered].join(' ')}
+        buttonClassName={[
+          s.menuItem,
+          disabledButtons ? s.menuItemNotHovered : s.menuItemHovered,
+        ].join(' ')}
         LabelComponent={renderBusinessButton}
         onClick={onClick}
         disabled={disabledButtons}

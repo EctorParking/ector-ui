@@ -2,9 +2,7 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import { DayPickerRangeController } from 'react-dates';
-import {
-  Picker, Input, PickerSuggestions, Arrow, Icon, TimeRange,
-} from '..';
+import { Picker, Input, PickerSuggestions, Arrow, Icon, TimeRange } from '..';
 import s from './DateTimePicker.module.css';
 import { DefaultTexts, TextsType } from './DateTimePickerTexts';
 import TimeSuggestions from './TimeSuggestions';
@@ -26,7 +24,7 @@ class DateTimePicker extends React.PureComponent {
 
   static datePicker = 'datePicker';
 
-  static parseTimeRange = (timeRange) => {
+  static parseTimeRange = timeRange => {
     if (!timeRange || !Array.isArray(timeRange) || timeRange.length !== 2) {
       return {};
     }
@@ -54,8 +52,14 @@ class DateTimePicker extends React.PureComponent {
     super();
 
     this.ectorPicker = React.createRef();
-    this.handleStartDateFocus = this.handleDateFocus.bind(this, DateTimePicker.startDate);
-    this.handleEndDateFocus = this.handleDateFocus.bind(this, DateTimePicker.endDate);
+    this.handleStartDateFocus = this.handleDateFocus.bind(
+      this,
+      DateTimePicker.startDate
+    );
+    this.handleEndDateFocus = this.handleDateFocus.bind(
+      this,
+      DateTimePicker.endDate
+    );
     this.state = {
       startDate: undefined,
       endDate: undefined,
@@ -100,14 +104,10 @@ class DateTimePicker extends React.PureComponent {
     endHour = endDate ? endDate.format('HH') : undefined;
     showTimeInputs = !!endDate || !!startDate;
 
-    const {
-      hourRange: fromHourRange,
-      minuteRange: fromMinuteRange,
-    } = DateTimePicker.parseTimeRange(fromTimeRange);
-    const {
-      hourRange: toHourRange,
-      minuteRange: toMinuteRange,
-    } = DateTimePicker.parseTimeRange(toTimeRange);
+    const { hourRange: fromHourRange, minuteRange: fromMinuteRange } =
+      DateTimePicker.parseTimeRange(fromTimeRange);
+    const { hourRange: toHourRange, minuteRange: toMinuteRange } =
+      DateTimePicker.parseTimeRange(toTimeRange);
     return {
       showTimeInputs,
       startDate,
@@ -150,26 +150,32 @@ class DateTimePicker extends React.PureComponent {
       onEndDateChange(endDate);
     }
 
-    this.setState({
-      startDate,
-      endDate,
-      focusedDateInput: startDate
-        ? DateTimePicker.endDate
-        : DateTimePicker.startDate,
-      visiblePicker: visiblePicker === DateTimePicker.datePicker && endDate && startDate
-        ? DateTimePicker.timePicker
-        : visiblePicker,
-      showTimeInputs: !!(stateEndDate || endDate),
-    }, () => {
-      this.isDayHighlighted = this.isDayHighlightedFactory();
-    });
+    this.setState(
+      {
+        startDate,
+        endDate,
+        focusedDateInput: startDate
+          ? DateTimePicker.endDate
+          : DateTimePicker.startDate,
+        visiblePicker:
+          visiblePicker === DateTimePicker.datePicker && endDate && startDate
+            ? DateTimePicker.timePicker
+            : visiblePicker,
+        showTimeInputs: !!(stateEndDate || endDate),
+      },
+      () => {
+        this.isDayHighlighted = this.isDayHighlightedFactory();
+      }
+    );
   };
 
   handleTimeSelect = (type, units, value) => {
     const { onStartTimeChange, onEndTimeChange } = this.props;
     const unitsToStateVariable = {
-      [TimeRange.minutes]: type === TimeSuggestions.startTime ? 'startMinutes' : 'endMinutes',
-      [TimeRange.hour]: type === TimeSuggestions.startTime ? 'startHour' : 'endHour',
+      [TimeRange.minutes]:
+        type === TimeSuggestions.startTime ? 'startMinutes' : 'endMinutes',
+      [TimeRange.hour]:
+        type === TimeSuggestions.startTime ? 'startHour' : 'endHour',
     };
 
     this.setState({
@@ -184,7 +190,7 @@ class DateTimePicker extends React.PureComponent {
 
   isDayBlocked = day => day.startOf('day').isBefore(now.startOf('day'));
 
-  isDayHighlightedFactory = () => (day) => {
+  isDayHighlightedFactory = () => day => {
     const { startDate, endDate } = this.state;
 
     if (!startDate || !endDate) {
@@ -198,11 +204,13 @@ class DateTimePicker extends React.PureComponent {
     this.setState({ visiblePicker: DateTimePicker.timePicker });
   };
 
-  handleFocusChange = (focusedDateInput) => {
+  handleFocusChange = focusedDateInput => {
     this.setState({ focusedDateInput });
   };
 
-  renderMonthElement = ({ month }) => <div className={s.month}>{month.format('MMMM YYYY')}</div>;
+  renderMonthElement = ({ month }) => (
+    <div className={s.month}>{month.format('MMMM YYYY')}</div>
+  );
 
   renderDateInputLeftElement = ({ className, ...props }, error) => (
     <Icon
@@ -212,13 +220,13 @@ class DateTimePicker extends React.PureComponent {
     />
   );
 
-  renderStartDateInputLeftElement = (props) => {
+  renderStartDateInputLeftElement = props => {
     const { hasStartDateError } = this.props;
 
     return this.renderDateInputLeftElement(props, hasStartDateError);
   };
 
-  renderEndDateInputLeftElement = (props) => {
+  renderEndDateInputLeftElement = props => {
     const { hasEndDateError } = this.props;
 
     return this.renderDateInputLeftElement(props, hasEndDateError);
@@ -232,22 +240,23 @@ class DateTimePicker extends React.PureComponent {
     />
   );
 
-  renderStartTimeInputLeftElement = (props) => {
+  renderStartTimeInputLeftElement = props => {
     const { hasStartTimeError } = this.props;
 
     return this.renderTimeInputLeftElement(props, hasStartTimeError);
   };
 
-  renderEndTimeInputLeftElement = (props) => {
+  renderEndTimeInputLeftElement = props => {
     const { hasEndTimeError } = this.props;
 
     return this.renderTimeInputLeftElement(props, hasEndTimeError);
   };
 
-  renderStartDateTimeInputComponent = ({ className: inputClassName, ...inputProps }) => {
-    const {
-      startDate, showTimeInputs, startMinutes, startHour,
-    } = this.state;
+  renderStartDateTimeInputComponent = ({
+    className: inputClassName,
+    ...inputProps
+  }) => {
+    const { startDate, showTimeInputs, startMinutes, startHour } = this.state;
     const { texts, hasStartDateError, hasStartTimeError } = this.props;
 
     let displayedTime = '';
@@ -264,25 +273,32 @@ class DateTimePicker extends React.PureComponent {
         <Input
           {...inputProps}
           onFocus={this.handleStartDateFocus}
-          className={[s.datePickerInput, showTimeInputs ? s.fixedWidthDateInput : undefined, hasStartDateError ? s.inputError : undefined, inputClassName].join(' ')}
+          className={[
+            s.datePickerInput,
+            showTimeInputs ? s.fixedWidthDateInput : undefined,
+            hasStartDateError ? s.inputError : undefined,
+            inputClassName,
+          ].join(' ')}
           containerClassName={s.inputContainer}
           value={startDate ? startDate.format('ddd DD/MM/YYYY') : ''}
           placeholder={texts.startPlaceholder}
           LeftComponent={this.renderStartDateInputLeftElement}
         />
-        {
-          showTimeInputs && (
-            <Input
-              {...inputProps}
-              onFocus={this.handleTimeFocus}
-              containerClassName={s.timePickerInputContainer}
-              className={[s.timePickerInput, hasStartTimeError ? s.inputError : undefined, inputClassName].join(' ')}
-              value={displayedTime}
-              placeholder={texts.timePlaceholder}
-              LeftComponent={this.renderStartTimeInputLeftElement}
-            />
-          )
-        }
+        {showTimeInputs && (
+          <Input
+            {...inputProps}
+            onFocus={this.handleTimeFocus}
+            containerClassName={s.timePickerInputContainer}
+            className={[
+              s.timePickerInput,
+              hasStartTimeError ? s.inputError : undefined,
+              inputClassName,
+            ].join(' ')}
+            value={displayedTime}
+            placeholder={texts.timePlaceholder}
+            LeftComponent={this.renderStartTimeInputLeftElement}
+          />
+        )}
       </div>
     );
   };
@@ -318,10 +334,11 @@ class DateTimePicker extends React.PureComponent {
     this.ectorPicker.current.hideSuggestions();
   }
 
-  renderEndDateTimeInputComponent = ({ className: inputClassName, ...inputProps }) => {
-    const {
-      endDate, showTimeInputs, endHour, endMinutes,
-    } = this.state;
+  renderEndDateTimeInputComponent = ({
+    className: inputClassName,
+    ...inputProps
+  }) => {
+    const { endDate, showTimeInputs, endHour, endMinutes } = this.state;
     const { texts, hasEndDateError, hasEndTimeError } = this.props;
 
     let displayedTime = '';
@@ -337,7 +354,12 @@ class DateTimePicker extends React.PureComponent {
       <div className={s.splitInputContainer}>
         <Input
           {...inputProps}
-          className={[s.datePickerInput, showTimeInputs ? s.fixedWidthDateInput : undefined, hasEndDateError ? s.inputError : undefined, inputClassName].join(' ')}
+          className={[
+            s.datePickerInput,
+            showTimeInputs ? s.fixedWidthDateInput : undefined,
+            hasEndDateError ? s.inputError : undefined,
+            inputClassName,
+          ].join(' ')}
           containerClassName={s.inputContainer}
           onFocus={this.onEndDateFocus}
           onBlur={this.handleEndDateTimeBlur}
@@ -345,20 +367,22 @@ class DateTimePicker extends React.PureComponent {
           placeholder={texts.endPlaceholder}
           LeftComponent={this.renderEndDateInputLeftElement}
         />
-        {
-          showTimeInputs && (
-            <Input
-              {...inputProps}
-              containerClassName={s.timePickerInputContainer}
-              className={[s.timePickerInput, hasEndTimeError ? s.inputError : undefined, inputClassName].join(' ')}
-              onFocus={this.onEndTimeFocus}
-              onBlur={this.handleEndDateTimeBlur}
-              value={displayedTime}
-              placeholder={texts.timePlaceholder}
-              LeftComponent={this.renderEndTimeInputLeftElement}
-            />
-          )
-        }
+        {showTimeInputs && (
+          <Input
+            {...inputProps}
+            containerClassName={s.timePickerInputContainer}
+            className={[
+              s.timePickerInput,
+              hasEndTimeError ? s.inputError : undefined,
+              inputClassName,
+            ].join(' ')}
+            onFocus={this.onEndTimeFocus}
+            onBlur={this.handleEndDateTimeBlur}
+            value={displayedTime}
+            placeholder={texts.timePlaceholder}
+            LeftComponent={this.renderEndTimeInputLeftElement}
+          />
+        )}
       </div>
     );
   };
@@ -391,7 +415,11 @@ class DateTimePicker extends React.PureComponent {
         className={[s.pickerSuggestions, className].join(' ')}
         ArrowComponent={this.renderPickerSuggestionsArrow}
       >
-        <div className={visiblePicker !== DateTimePicker.datePicker ? s.hidden : undefined}>
+        <div
+          className={
+            visiblePicker !== DateTimePicker.datePicker ? s.hidden : undefined
+          }
+        >
           <DayPickerRangeController
             verticalBorderSpacing={1}
             horizontalMonthPadding={25}
@@ -414,39 +442,47 @@ class DateTimePicker extends React.PureComponent {
           />
         </div>
         <div className={s.hr} />
-        {
-          visiblePicker === DateTimePicker.timePicker && (
-            <TimeSuggestions
-              className={s.timeSuggestions}
-              containerClassName={s.timeSuggestionsContainer}
-              onSelect={this.handleTimeSelect}
-              startMinutes={startMinutes}
-              startHour={startHour}
-              endMinutes={endMinutes}
-              endHour={endHour}
-              texts={texts}
-              fromHourRange={fromHourRange}
-              toHourRange={toHourRange}
-              fromMinuteRange={fromMinuteRange}
-              toMinuteRange={toMinuteRange}
-              ArrowIcon={ArrowIcon}
-            />
-          )
-        }
+        {visiblePicker === DateTimePicker.timePicker && (
+          <TimeSuggestions
+            className={s.timeSuggestions}
+            containerClassName={s.timeSuggestionsContainer}
+            onSelect={this.handleTimeSelect}
+            startMinutes={startMinutes}
+            startHour={startHour}
+            endMinutes={endMinutes}
+            endHour={endHour}
+            texts={texts}
+            fromHourRange={fromHourRange}
+            toHourRange={toHourRange}
+            fromMinuteRange={fromMinuteRange}
+            toMinuteRange={toMinuteRange}
+            ArrowIcon={ArrowIcon}
+          />
+        )}
       </PickerSuggestions>
     );
   };
 
   render() {
     const {
-      startDate, endDate, visiblePicker, startHour, startMinutes, endMinutes, endHour,
+      startDate,
+      endDate,
+      visiblePicker,
+      startHour,
+      startMinutes,
+      endMinutes,
+      endHour,
     } = this.state;
     const extraData = {
-      visiblePicker, startDate, endDate, startMinutes, endMinutes, startHour, endHour,
+      visiblePicker,
+      startDate,
+      endDate,
+      startMinutes,
+      endMinutes,
+      startHour,
+      endHour,
     };
-    const {
-      error, info, className, onSuggestionsHide,
-    } = this.props;
+    const { error, info, className, onSuggestionsHide } = this.props;
 
     return (
       <Picker
@@ -480,8 +516,12 @@ DateTimePicker.propTypes = {
   onEndDateTimeBlur: PropTypes.func,
   onSuggestionsHide: PropTypes.func,
   ArrowIcon: PropTypes.func,
-  fromTimeRange: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])),
-  toTimeRange: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])),
+  fromTimeRange: PropTypes.arrayOf(
+    PropTypes.oneOfType([PropTypes.number, PropTypes.string])
+  ),
+  toTimeRange: PropTypes.arrayOf(
+    PropTypes.oneOfType([PropTypes.number, PropTypes.string])
+  ),
   hasStartDateError: PropTypes.bool,
   hasStartTimeError: PropTypes.bool,
   hasEndDateError: PropTypes.bool,

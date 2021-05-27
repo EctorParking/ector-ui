@@ -44,27 +44,29 @@ const CarCard = ({
     mode += '-selected';
   }
 
-  const footer = mode.indexOf('delete') === 0 ? null : (
-    <CarCardFooter
-      texts={texts}
-      mode={mode}
-      onClick={onClick}
-      onSubmit={onSubmit}
-      id={`${idPrefix}Footer`}
-    />
-  );
+  const footer =
+    mode.indexOf('delete') === 0 ? null : (
+      <CarCardFooter
+        texts={texts}
+        mode={mode}
+        onClick={onClick}
+        onSubmit={onSubmit}
+        id={`${idPrefix}Footer`}
+      />
+    );
 
   let header = null;
-  let content = mode.indexOf('read') === 0 ? (
-    <CarCardContentRead car={car} id={`${idPrefix}ContentRead`} />
-  ) : (
-    <CarCardContentEdit
-      car={car}
-      onChangeColor={onChangeColor}
-      onChangeNumberPlate={onChangeNumberPlate}
-      id={`${idPrefix}ContentEdit`}
-    />
-  );
+  let content =
+    mode.indexOf('read') === 0 ? (
+      <CarCardContentRead car={car} id={`${idPrefix}ContentRead`} />
+    ) : (
+      <CarCardContentEdit
+        car={car}
+        onChangeColor={onChangeColor}
+        onChangeNumberPlate={onChangeNumberPlate}
+        id={`${idPrefix}ContentEdit`}
+      />
+    );
 
   if (mode.indexOf('delete') === 0) {
     content = (
@@ -95,7 +97,10 @@ const CarCard = ({
     <Card
       FooterChildren={footer}
       isSelected={selected}
-      contentClassName={[pendingModification ? s.pendingModification : '', pendingDeletion ? s.pendingDeletion : ''].join(' ')}
+      contentClassName={[
+        pendingModification ? s.pendingModification : '',
+        pendingDeletion ? s.pendingDeletion : '',
+      ].join(' ')}
       className={className}
       {...cardProps}
     >

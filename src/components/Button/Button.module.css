@@ -6,7 +6,7 @@
   cursor: pointer;
   display: block;
   font-size: var(--fontSizeRegular);
-  font-weight: 700;
+  font-weight: bold;
   line-height: 1;
   margin: 0;
   outline: none;
@@ -40,8 +40,8 @@
   cursor: not-allowed;
 
   &:hover {
-   background-color: #7890a3;
- }
+    background-color: #7890a3;
+  }
 }
 
 .button.fetching {
@@ -49,28 +49,28 @@
 }
 
 .track.fetchingTrack {
-  animation: fetching 3s cubic-bezier(.33,.6,.3,.69) forwards;
+  animation: fetching 3s cubic-bezier(0.33, 0.6, 0.3, 0.69) forwards;
   opacity: 1;
 }
 
 @keyframes fetching {
-    from {
-      width: 0%;
-    }
+  from {
+    width: 0%;
+  }
 
-    to {
-      width: 100%;
-    }
+  to {
+    width: 100%;
+  }
 }
 
 @keyframes outFromFetching {
-    from {
-      opacity: 1;
-      width: 100%;
-    }
+  from {
+    opacity: 1;
+    width: 100%;
+  }
 
-    to {
-      opacity: 0;
-      width: 100%;
-    }
+  to {
+    opacity: 0;
+    width: 100%;
+  }
 }

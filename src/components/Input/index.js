@@ -20,7 +20,9 @@ const Input = ({
   <div className={[s.container, containerClassName].join(' ')}>
     <LeftComponent className={s.inputPrepend} />
     <input
-      className={[s.input, hasError ? s.inputWithError : '', className].join(' ')}
+      className={[s.input, hasError ? s.inputWithError : '', className].join(
+        ' '
+      )}
       onFocus={onFocus}
       onBlur={onBlur}
       onChange={onChange}
@@ -31,7 +33,6 @@ const Input = ({
     />
     <RightComponent className={s.inputAppend} />
   </div>
-
 );
 
 Input.defaultProps = {
@@ -67,6 +68,5 @@ Input.propTypes = {
   RightComponent: PropTypes.func,
   containerClassName: PropTypes.string,
 };
-
 
 export default Input;

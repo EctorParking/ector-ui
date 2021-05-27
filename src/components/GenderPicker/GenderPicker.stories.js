@@ -11,14 +11,9 @@ const genders = [
 ];
 
 storiesOf('GenderPicker', module)
-
   .addParameters({
-    backgrounds: [
-      { name: 'header', value: 'white', default: true },
-    ],
+    backgrounds: [{ name: 'header', value: 'white', default: true }],
   })
   .addDecorator(centered)
 
-  .add('normal', () => (
-    <GenderPicker genders={genders} />
-  ));
+  .add('normal', () => <GenderPicker genders={genders} />);

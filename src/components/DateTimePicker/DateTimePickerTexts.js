@@ -17,9 +17,9 @@ export const DefaultTexts = {
   endPlaceholder: 'Retour',
   timePlaceholder: 'Heure',
   fromTimeTitle: 'Départ',
-  fromTimeFirstDescription: 'Heure d\'arrivée',
+  fromTimeFirstDescription: "Heure d'arrivée",
   fromTimeSecondDescription: 'de votre avion',
   toTimeTitle: 'Retour',
-  toTimeFirstDescription: 'Heure d\'arrivée',
+  toTimeFirstDescription: "Heure d'arrivée",
   toTimeSecondDescription: 'au dépose minute',
 };

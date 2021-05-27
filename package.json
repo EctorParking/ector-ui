@@ -20,8 +20,8 @@
     "start": "rimraf dist/* && rollup -c -w --environment BUILD:development",
     "start:storybook": "start-storybook -p 6006 -c .storybook watch-css -s ./src",
     "build:storybook": "build-storybook -c .storybook -o .out",
-    "lint": "eslint ./src --ext .js && prettier --check --ignore-unknown .",
-    "lint:fix": "eslint ./src --ext .js --fix && prettier --write --ignore-unknown ."
+    "lint": "eslint src/ --ext .js && stylelint \"src/**/*.css\" && prettier --check --ignore-unknown .",
+    "lint:fix": "eslint src/ --ext .js --fix && stylelint --fix \"src/**/*.css\" && prettier --write --ignore-unknown ."
   },
   "peerDependencies": {
     "fast-levenshtein": "^2.0.6",

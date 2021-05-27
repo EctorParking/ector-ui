@@ -8,9 +8,7 @@ import ContactCard from '.';
 
 storiesOf('ContactCard', module)
   .addParameters({
-    backgrounds: [
-      { name: 'header', value: 'white', default: true },
-    ],
+    backgrounds: [{ name: 'header', value: 'white', default: true }],
   })
   .addDecorator(centered)
   .addDecorator(withKnobs)
@@ -40,8 +38,5 @@ storiesOf('ContactCard', module)
       selected: boolean('Selected', false),
     };
 
-
-    return (
-      <ContactCard {...props} />
-    );
+    return <ContactCard {...props} />;
   });

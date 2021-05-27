@@ -13,7 +13,8 @@ export const DefaultTexts = {
   modify: 'Changer',
   save: 'Enregistrer',
   confirmDeletionTitle: 'Confirmation',
-  confirmDeletionSentence: 'Êtes-vous sûr(e) de vouloir supprimer ce véhicule ?',
+  confirmDeletionSentence:
+    'Êtes-vous sûr(e) de vouloir supprimer ce véhicule ?',
   cancel: 'Annuler',
   confirm: 'Confirmer',
 };

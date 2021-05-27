@@ -1,11 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import Levenshtein from 'fast-levenshtein';
-import {
-  Picker,
-  Input,
-  Icon,
-} from '..';
+import { Picker, Input, Icon } from '..';
 import { Type as ZoneType, ZoneTypesToIconName, ZoneTypes } from './ZoneType';
 import ZonesPickerSuggestions from './ZonesPickerSuggestions';
 import s from './ZonesPicker.module.css';
@@ -14,37 +10,45 @@ import { DefaultTexts, TextsType } from './ZonePickerTexts';
 import iconSearch from '../../assets/images/search.svg';
 import iconClear from '../../assets/images/clear.svg';
 
-const getZoneSuggestionsFromValue = (zoneSuggestions, value) => zoneSuggestions.map((zone) => {
-  const zoneSuggestion = {
-    ...zone,
-    disabled: value.length > 0,
-    similarity: 1,
-  };
-  if (zone.name.toLowerCase().includes(value.toLowerCase())) {
-    zoneSuggestion.disabled = false;
-    zoneSuggestion.similarity = Levenshtein.get(
-      zone.name.toLowerCase(),
-      value.toLowerCase(),
-      { useCollator: true },
-    ) / zone.name.length;
-  }
-  return zoneSuggestion;
-}).sort((zoneSuggestionA, zoneSuggestionB) => {
-  if (zoneSuggestionA.name.indexOf(value) > -1
-      && zoneSuggestionA.name.indexOf(value) < zoneSuggestionB.name.indexOf(value)) {
-    return -1;
-  }
+const getZoneSuggestionsFromValue = (zoneSuggestions, value) =>
+  zoneSuggestions
+    .map(zone => {
+      const zoneSuggestion = {
+        ...zone,
+        disabled: value.length > 0,
+        similarity: 1,
+      };
+      if (zone.name.toLowerCase().includes(value.toLowerCase())) {
+        zoneSuggestion.disabled = false;
+        zoneSuggestion.similarity =
+          Levenshtein.get(zone.name.toLowerCase(), value.toLowerCase(), {
+            useCollator: true,
+          }) / zone.name.length;
+      }
+      return zoneSuggestion;
+    })
+    .sort((zoneSuggestionA, zoneSuggestionB) => {
+      if (
+        zoneSuggestionA.name.indexOf(value) > -1 &&
+        zoneSuggestionA.name.indexOf(value) <
+          zoneSuggestionB.name.indexOf(value)
+      ) {
+        return -1;
+      }
 
-  if (zoneSuggestionB.name.indexOf(value) > -1
-      && zoneSuggestionB.name.indexOf(value) < zoneSuggestionA.name.indexOf(value)) {
-    return 1;
-  }
+      if (
+        zoneSuggestionB.name.indexOf(value) > -1 &&
+        zoneSuggestionB.name.indexOf(value) <
+          zoneSuggestionA.name.indexOf(value)
+      ) {
+        return 1;
+      }
 
-  if (zoneSuggestionA.similarity === zoneSuggestionB.similarity) {
-    return 0;
-  }
-  return zoneSuggestionA.similarity > zoneSuggestionB.similarity ? 1 : -1;
-});
+      if (zoneSuggestionA.similarity === zoneSuggestionB.similarity) {
+        return 0;
+      }
+      return zoneSuggestionA.similarity > zoneSuggestionB.similarity ? 1 : -1;
+    });
 
 class ZonesPicker extends React.PureComponent {
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -59,13 +63,15 @@ class ZonesPicker extends React.PureComponent {
 
     if (!fromZoneValue && fromZoneProp && fromZoneSuggestions.length) {
       const fromZone = fromZoneSuggestions.find(
-        suggestion => suggestion.name === fromZoneProp.name,
+        suggestion => suggestion.name === fromZoneProp.name
       );
       fromZoneValue = fromZone ? fromZone.name : '';
     }
 
     if (!toZoneValue && toZoneProp && toZoneSuggestions.length) {
-      const toZone = toZoneSuggestions.find(suggestion => suggestion.name === toZoneProp.name);
+      const toZone = toZoneSuggestions.find(
+        suggestion => suggestion.name === toZoneProp.name
+      );
       toZoneValue = toZone ? toZone.name : '';
     }
     if (typeof propSplit !== 'undefined') {
@@ -76,8 +82,14 @@ class ZonesPicker extends React.PureComponent {
       split,
       fromZoneValue,
       toZoneValue,
-      fromZoneSuggestions: getZoneSuggestionsFromValue(fromZoneSuggestions, fromZoneValue),
-      toZoneSuggestions: getZoneSuggestionsFromValue(toZoneSuggestions, toZoneValue),
+      fromZoneSuggestions: getZoneSuggestionsFromValue(
+        fromZoneSuggestions,
+        fromZoneValue
+      ),
+      toZoneSuggestions: getZoneSuggestionsFromValue(
+        toZoneSuggestions,
+        toZoneValue
+      ),
     };
   }
 
@@ -107,7 +119,7 @@ class ZonesPicker extends React.PureComponent {
     }
   }
 
-  handleFromZoneClick = (zone) => {
+  handleFromZoneClick = zone => {
     const { onSelect } = this.props;
     const { split } = this.state;
     const newState = {};
@@ -121,12 +133,13 @@ class ZonesPicker extends React.PureComponent {
     onSelect(zone, ZonesPicker.fromZone);
   };
 
-  handleToZoneClick = (zone) => {
+  handleToZoneClick = zone => {
     const { onSelect } = this.props;
     const { fromZoneValue, fromZoneSuggestions } = this.state;
 
     if (
-      fromZoneValue && fromZoneSuggestions.find(suggestion => suggestion.name === fromZoneValue)
+      fromZoneValue &&
+      fromZoneSuggestions.find(suggestion => suggestion.name === fromZoneValue)
     ) {
       this.picker.current.handleClickOutside({});
     }
@@ -134,8 +147,10 @@ class ZonesPicker extends React.PureComponent {
     onSelect(zone, ZonesPicker.toZone);
   };
 
-  handleFromZoneChange = (event) => {
-    const { currentTarget: { value } } = event;
+  handleFromZoneChange = event => {
+    const {
+      currentTarget: { value },
+    } = event;
     const { onSelect } = this.props;
 
     if (!value) {
@@ -146,8 +161,10 @@ class ZonesPicker extends React.PureComponent {
     }
   };
 
-  handleToZoneChange = (event) => {
-    const { currentTarget: { value } } = event;
+  handleToZoneChange = event => {
+    const {
+      currentTarget: { value },
+    } = event;
     const { onSelect } = this.props;
 
     if (!value) {
@@ -181,14 +198,14 @@ class ZonesPicker extends React.PureComponent {
   handleSplitSuggestions = () => {
     const { onSplitSuggestions } = this.props;
 
-    this.setState((prevState) => {
+    this.setState(prevState => {
       const split = !prevState.split;
 
       onSplitSuggestions(split);
-      return ({
+      return {
         split,
         toZoneValue: '',
-      });
+      };
     });
   };
 
@@ -200,7 +217,9 @@ class ZonesPicker extends React.PureComponent {
     }
     return (
       <Icon
-        IconComponent={props => this.renderInputLeftIconComponent(props, fromZone.type)}
+        IconComponent={props =>
+          this.renderInputLeftIconComponent(props, fromZone.type)
+        }
         name={ZoneTypesToIconName[fromZone.type]}
         variant="yellow"
         className={[s.inputIcon, s.leftInputIcon, className].join(' ')}
@@ -213,14 +232,22 @@ class ZonesPicker extends React.PureComponent {
 
     if (fromZoneValue.length === 0) {
       return (
-        <Icon src={iconSearch} className={[s.inputIcon, s.rightInputIconContainer, className].join(' ')} iconClassName={s.rightInputIcon} />
+        <Icon
+          src={iconSearch}
+          className={[s.inputIcon, s.rightInputIconContainer, className].join(
+            ' '
+          )}
+          iconClassName={s.rightInputIcon}
+        />
       );
     }
     return (
       <Icon
         src={iconClear}
         role="presentation"
-        className={[s.inputAction, s.rightInputIconContainer, className].join(' ')}
+        className={[s.inputAction, s.rightInputIconContainer, className].join(
+          ' '
+        )}
         iconClassName={s.rightInputIcon}
         onClick={this.handleFromZoneReset}
       />
@@ -256,9 +283,7 @@ class ZonesPicker extends React.PureComponent {
       className = [className, s.stationIcon].join(' ');
     }
 
-    return (
-      <i className={className} />
-    );
+    return <i className={className} />;
   };
 
   renderToInputLeftComponent = ({ className }) => {
@@ -269,7 +294,9 @@ class ZonesPicker extends React.PureComponent {
     }
     return (
       <Icon
-        IconComponent={props => this.renderInputLeftIconComponent(props, toZone.type)}
+        IconComponent={props =>
+          this.renderInputLeftIconComponent(props, toZone.type)
+        }
         name={ZoneTypesToIconName[toZone.type]}
         variant="yellow"
         className={[s.inputIcon, s.leftInputIcon, className].join(' ')}
@@ -282,14 +309,22 @@ class ZonesPicker extends React.PureComponent {
 
     if (toZoneValue.length === 0) {
       return (
-        <Icon src={iconSearch} className={[s.inputIcon, s.rightInputIconContainer, className].join(' ')} iconClassName={s.rightInputIcon} />
+        <Icon
+          src={iconSearch}
+          className={[s.inputIcon, s.rightInputIconContainer, className].join(
+            ' '
+          )}
+          iconClassName={s.rightInputIcon}
+        />
       );
     }
     return (
       <Icon
         src={iconClear}
         role="presentation"
-        className={[s.inputAction, s.rightInputIconContainer, className].join(' ')}
+        className={[s.inputAction, s.rightInputIconContainer, className].join(
+          ' '
+        )}
         iconClassName={s.rightInputIcon}
         onClick={this.handleToZoneReset}
       />
@@ -312,7 +347,7 @@ class ZonesPicker extends React.PureComponent {
     );
   };
 
-  renderSuggestionsComponent = (pickerSuggestionsProps) => {
+  renderSuggestionsComponent = pickerSuggestionsProps => {
     const { texts, ZoneSuggestionIcon, ArrowIcon } = this.props;
     const {
       split,
@@ -342,9 +377,7 @@ class ZonesPicker extends React.PureComponent {
 
   render() {
     const { split, fromZoneValue, toZoneValue } = this.state;
-    const {
-      error, className, fromZone, toZone, texts,
-    } = this.props;
+    const { error, className, fromZone, toZone, texts } = this.props;
 
     return (
       <Picker

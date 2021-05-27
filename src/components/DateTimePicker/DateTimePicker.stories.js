@@ -5,11 +5,8 @@ import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 import DateTimePicker from '.';
 
 storiesOf('DateTimePicker', module)
-
   .addParameters({
-    backgrounds: [
-      { name: 'header', value: 'white', default: true },
-    ],
+    backgrounds: [{ name: 'header', value: 'white', default: true }],
   })
   .addDecorator(centered)
   .addDecorator(withKnobs)

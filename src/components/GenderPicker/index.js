@@ -5,13 +5,7 @@ import RadioButton from '../RadioButton';
 
 import s from './GenderPicker.module.css';
 
-const GenderPicker = ({
-  genders,
-  onSelect,
-  selected,
-  className,
-  error,
-}) => (
+const GenderPicker = ({ genders, onSelect, selected, className, error }) => (
   <div>
     <div className={[s.genderPicker, className].join(' ')}>
       {genders.map(gender => (
@@ -25,11 +19,7 @@ const GenderPicker = ({
         />
       ))}
     </div>
-    {
-      !!error && (
-        <div className={s.error}>{error}</div>
-      )
-    }
+    {!!error && <div className={s.error}>{error}</div>}
   </div>
 );
 

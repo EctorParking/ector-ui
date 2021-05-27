@@ -9,9 +9,7 @@ import { DefaultTexts } from './PaymentMethodTextsType';
 
 storiesOf('PaymentMethodCard', module)
   .addParameters({
-    backgrounds: [
-      { name: 'header', value: 'white', default: true },
-    ],
+    backgrounds: [{ name: 'header', value: 'white', default: true }],
   })
   .addDecorator(centered)
   .addDecorator(withKnobs)
@@ -30,7 +28,5 @@ storiesOf('PaymentMethodCard', module)
       pendingDeletion: boolean('Pending deletion', false),
     };
 
-    return (
-      <PaymentMethodCard {...props} FooterComponent={() => null} />
-    );
+    return <PaymentMethodCard {...props} FooterComponent={() => null} />;
   });

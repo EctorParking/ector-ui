@@ -1,7 +1,9 @@
+/* stylelint-disable */
+
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?ui3449');
-  src:  url('fonts/icomoon.eot?ui3449#iefix') format('embedded-opentype'),
+  src: url('fonts/icomoon.eot?ui3449');
+  src: url('fonts/icomoon.eot?ui3449#iefix') format('embedded-opentype'),
     url('fonts/icomoon.ttf?ui3449') format('truetype'),
     url('fonts/icomoon.woff?ui3449') format('woff'),
     url('fonts/icomoon.svg?ui3449#icomoon') format('svg');
@@ -9,7 +11,8 @@
   font-style: normal;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^='icon-'],
+[class*=' icon-'] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -25,484 +28,484 @@
 }
 
 .icon-ec-adaptability:before {
-  content: "\e96b";
+  content: '\e96b';
 }
 .icon-ec-economic:before {
-  content: "\e96d";
+  content: '\e96d';
 }
 .icon-ec-security:before {
-  content: "\e96f";
+  content: '\e96f';
 }
 .icon-ec-airport-station:before {
-  content: "\e969";
+  content: '\e969';
 }
 .icon-ec-airport:before {
-  content: "\e96a";
+  content: '\e96a';
 }
 .icon-ec-google-star:before {
-  content: "\e967";
+  content: '\e967';
 }
 .icon-ec-cashback:before {
-  content: "\e963";
+  content: '\e963';
 }
 .icon-ec-badges:before {
-  content: "\e962";
+  content: '\e962';
 }
 .icon-ec-brand-p:before {
-  content: "\e95e";
+  content: '\e95e';
   color: #23395c;
 }
 .icon-ec-folder-p:before {
-  content: "\e95f";
+  content: '\e95f';
 }
 .icon-ec-logo-p:before {
-  content: "\e960";
+  content: '\e960';
 }
 .icon-ec-user-p:before {
-  content: "\e961";
+  content: '\e961';
   color: #23395c;
 }
 .icon-commandes:before {
-  content: "\e958";
+  content: '\e958';
 }
 .icon-fidelite:before {
-  content: "\e959";
+  content: '\e959';
 }
 .icon-recherche:before {
-  content: "\e95a";
+  content: '\e95a';
 }
 .icon-ector-e:before {
-  content: "\e977";
+  content: '\e977';
   color: #ffcd19;
 }
 .icon-ec-clock:before {
-  content: "\e957";
+  content: '\e957';
 }
 .icon-ec-euros:before {
-  content: "\e96c";
+  content: '\e96c';
   color: #319fc5;
 }
 .icon-ec-fidelity:before {
-  content: "\e955";
+  content: '\e955';
   color: #fff;
 }
 .icon-ec-loc:before {
-  content: "\e974";
+  content: '\e974';
   color: #319fc5;
 }
 .icon-ec-options:before {
-  content: "\e975";
+  content: '\e975';
 }
 .icon-ec-stationnement:before {
-  content: "\e976";
+  content: '\e976';
   color: #319fc5;
 }
 .icon-ec-on-time:before {
-  content: "\e956";
+  content: '\e956';
   color: #fff;
 }
 .icon-ec-connect-on:before {
-  content: "\e952";
+  content: '\e952';
   color: #fff;
 }
 .icon-edit:before {
-  content: "\e951";
+  content: '\e951';
   color: #9ca0ff;
 }
 .icon-sort-asc:before {
-  content: "\e950";
+  content: '\e950';
 }
 .icon-caret-down:before {
-  content: "\e94f";
+  content: '\e94f';
 }
 .icon-flag:before {
-  content: "\f024";
+  content: '\f024';
 }
 .icon-thumbs-o-up:before {
-  content: "\f087";
+  content: '\f087';
 }
 .icon-home:before {
-  content: "\f015";
+  content: '\f015';
 }
 .icon-check:before {
-  content: "\f00c";
+  content: '\f00c';
 }
 .icon-ec-station:before {
-  content: "\e91f";
+  content: '\e91f';
 }
 .icon-ec-calendar:before {
-  content: "\e968";
+  content: '\e968';
   color: #bfc4d4;
 }
 .icon-ec-status:before {
-  content: "\e966";
+  content: '\e966';
   color: #fff;
 }
 .icon-ec-cancel:before {
-  content: "\e964";
+  content: '\e964';
   color: #fff;
 }
 .icon-ec-maintenance:before {
-  content: "\e965";
+  content: '\e965';
   color: #fff;
 }
 .icon-ec-car:before {
-  content: "\e94e";
+  content: '\e94e';
 }
 .icon-present:before {
-  content: "\e948";
+  content: '\e948';
   color: #fff;
 }
 .icon-add:before {
-  content: "\e94a";
+  content: '\e94a';
   color: #9ca0ff;
 }
 .icon-cancel:before {
-  content: "\e94b";
+  content: '\e94b';
   color: #9ca0ff;
 }
 .icon-facture:before {
-  content: "\e94c";
+  content: '\e94c';
   color: #9ca0ff;
 }
 .icon-mail:before {
-  content: "\e94d";
+  content: '\e94d';
   color: #9ca0ff;
 }
 .icon-lock:before {
-  content: "\e949";
+  content: '\e949';
 }
 .icon-connect:before {
-  content: "\e946";
+  content: '\e946';
   color: #fff;
 }
 .icon-mic:before {
-  content: "\e947";
+  content: '\e947';
   color: #32a0c5;
 }
 .icon-ec-annulation_1:before {
-  content: "\e931";
+  content: '\e931';
   color: #072b4e;
 }
 .icon-ec-changement-pneu_1:before {
-  content: "\e932";
+  content: '\e932';
   color: #072b4e;
 }
 .icon-ec-chat:before {
-  content: "\e933";
+  content: '\e933';
   color: #9ca0ff;
 }
 .icon-ec-climatisation_1:before {
-  content: "\e934";
+  content: '\e934';
   color: #072b4e;
 }
 .icon-ec-contact:before {
-  content: "\e935";
+  content: '\e935';
   color: #9ca0ff;
 }
 .icon-faq:before {
-  content: "\e936";
+  content: '\e936';
   color: #9ca0ff;
 }
 .icon-ec-frein_1:before {
-  content: "\e937";
+  content: '\e937';
   color: #072b4e;
 }
 .icon-ec-heart:before {
-  content: "\e938";
+  content: '\e938';
   color: #fff;
 }
 .icon-ec-lavage-complet_1:before {
-  content: "\e939";
+  content: '\e939';
   color: #072b4e;
 }
 .icon-ec-lavage-exterieur_1:before {
-  content: "\e93a";
+  content: '\e93a';
   color: #072b4e;
 }
 .icon-ec-lavage-integral_1:before {
-  content: "\e93b";
+  content: '\e93b';
   color: #072b4e;
 }
 .icon-ec-lavage-interieur_1:before {
-  content: "\e93c";
+  content: '\e93c';
   color: #072b4e;
 }
 .icon-ec-liquide-lave-glace_1:before {
-  content: "\e93d";
+  content: '\e93d';
   color: #072b4e;
 }
 .icon-ec-parking-couvert_1:before {
-  content: "\e93e";
+  content: '\e93e';
   color: #072b4e;
 }
 .icon-ec-plein_1:before {
-  content: "\e93f";
+  content: '\e93f';
   color: #072b4e;
 }
 .icon-ec-plus:before {
-  content: "\e940";
+  content: '\e940';
   color: #fff;
 }
 .icon-ec-pneu_1:before {
-  content: "\e941";
+  content: '\e941';
   color: #072b4e;
 }
 .icon-ec-recharge-elec_1:before {
-  content: "\e942";
+  content: '\e942';
   color: #072b4e;
 }
 .icon-ec-revision_1:before {
-  content: "\e943";
+  content: '\e943';
   color: #072b4e;
 }
 .icon-ec-star:before {
-  content: "\e944";
+  content: '\e944';
   color: #fff;
 }
 .icon-ec-vidange_1:before {
-  content: "\e945";
+  content: '\e945';
   color: #072b4e;
 }
 .icon-arrow_down:before {
-  content: "\e92d";
+  content: '\e92d';
 }
 .icon-arrow_left:before {
-  content: "\e92e";
+  content: '\e92e';
 }
 .icon-arrow_right:before {
-  content: "\e92f";
+  content: '\e92f';
 }
 .icon-arrow_up:before {
-  content: "\e930";
+  content: '\e930';
 }
 .icon-ec-adaptable:before {
-  content: "\e92c";
+  content: '\e92c';
 }
 .icon-ec-burger:before {
-  content: "\e920";
+  content: '\e920';
   color: #eceff6;
 }
 .icon-ec-close:before {
-  content: "\e921";
+  content: '\e921';
   color: #eceff6;
 }
 .icon-ec-connect:before {
-  content: "\e922";
+  content: '\e922';
   color: #fff;
 }
 .icon-ec-facebook:before {
-  content: "\e923";
+  content: '\e923';
   color: #fff;
 }
 .icon-ec-faq:before {
-  content: "\e924";
+  content: '\e924';
   color: #fff;
 }
 .icon-ec-helpdesk:before {
-  content: "\e925";
+  content: '\e925';
   color: #fff;
 }
 .icon-ec-instagram:before {
-  content: "\e926";
+  content: '\e926';
   color: #fff;
 }
 .icon-ec-leftQuote:before {
-  content: "\e927";
+  content: '\e927';
   color: #289ec7;
 }
 .icon-ec-logo-ector:before {
-  content: "\e928";
+  content: '\e928';
   color: #ffcd1a;
 }
 .icon-ec-parking:before {
-  content: "\e929";
+  content: '\e929';
   color: #ffba00;
 }
 .icon-ec-rightQuote:before {
-  content: "\e92a";
+  content: '\e92a';
   color: #289ec7;
 }
 .icon-ec-twitter:before {
-  content: "\e92b";
+  content: '\e92b';
   color: #fff;
 }
 .icon-ec-arrival:before {
-  content: "\e900";
+  content: '\e900';
 }
 .icon-ec-arrow_down:before {
-  content: "\e901";
+  content: '\e901';
 }
 .icon-ec-arrow_left:before {
-  content: "\e902";
+  content: '\e902';
 }
 .icon-ec-arrow_right:before {
-  content: "\e903";
+  content: '\e903';
 }
 .icon-ec-arrow_up:before {
-  content: "\e904";
+  content: '\e904';
 }
 .icon-ec-dateA:before {
-  content: "\e905";
+  content: '\e905';
 }
 .icon-ec-dateB:before {
-  content: "\e906";
+  content: '\e906';
 }
 .icon-ec-departure:before {
-  content: "\e907";
+  content: '\e907';
 }
 .icon-ec-economique:before {
-  content: "\e908";
+  content: '\e908';
   color: #fff;
 }
 .icon-ec-fast:before {
-  content: "\e909";
+  content: '\e909';
   color: #fff;
 }
 .icon-ec-frein:before {
-  content: "\e90a";
+  content: '\e90a';
   color: #072b4e;
 }
 .icon-ec-info:before {
-  content: "\e90b";
+  content: '\e90b';
   color: #fff;
 }
 .icon-ec-infos:before {
-  content: "\e90c";
+  content: '\e90c';
 }
 .icon-ec-lavage-exterieur:before {
-  content: "\e90d";
+  content: '\e90d';
   color: #072b4e;
 }
 .icon-ec-lavage-interieur:before {
-  content: "\e90e";
+  content: '\e90e';
   color: #072b4e;
 }
 .icon-ec-plane:before {
-  content: "\e90f";
+  content: '\e90f';
 }
 .icon-ec-play:before {
-  content: "\e910";
+  content: '\e910';
 }
 .icon-ec-plein:before {
-  content: "\e911";
+  content: '\e911';
   color: #072b4e;
 }
 .icon-ec-pneu:before {
-  content: "\e912";
+  content: '\e912';
   color: #072b4e;
 }
 .icon-ec-revision:before {
-  content: "\e913";
+  content: '\e913';
   color: #072b4e;
 }
 .icon-ec-schemaCCC .path1:before {
-  content: "\e914";
+  content: '\e914';
   color: rgb(49, 159, 197);
 }
 .icon-ec-schemaCCC .path2:before {
-  content: "\e915";
+  content: '\e915';
   margin-left: -2.2197265625em;
   color: rgb(49, 159, 197);
 }
 .icon-ec-schemaCCC .path3:before {
-  content: "\e916";
+  content: '\e916';
   margin-left: -2.2197265625em;
   color: rgb(49, 159, 197);
 }
 .icon-ec-schemaCCC .path4:before {
-  content: "\e917";
+  content: '\e917';
   margin-left: -2.2197265625em;
   color: rgb(49, 159, 197);
 }
 .icon-ec-schemaCCC .path5:before {
-  content: "\e918";
+  content: '\e918';
   margin-left: -2.2197265625em;
   color: rgb(49, 159, 197);
 }
 .icon-ec-schemaCCC .path6:before {
-  content: "\e919";
+  content: '\e919';
   margin-left: -2.2197265625em;
   color: rgb(49, 159, 197);
 }
 .icon-ec-schemaCCC .path7:before {
-  content: "\e91a";
+  content: '\e91a';
   margin-left: -2.2197265625em;
   color: rgb(49, 159, 197);
 }
 .icon-ec-schemaCCC .path8:before {
-  content: "\e91b";
+  content: '\e91b';
   margin-left: -2.2197265625em;
   color: rgb(255, 205, 25);
 }
 .icon-ec-schemaCCC .path9:before {
-  content: "\e91c";
+  content: '\e91c';
   margin-left: -2.2197265625em;
   color: rgb(255, 205, 25);
 }
 .icon-ec-schemaCCC .path10:before {
-  content: "\e91d";
+  content: '\e91d';
   margin-left: -2.2197265625em;
   color: rgb(255, 205, 25);
 }
 .icon-ec-securise:before {
-  content: "\e91e";
+  content: '\e91e';
   color: #fff;
 }
 .icon-bolt:before {
-  content: "\f0e7";
+  content: '\f0e7';
 }
 .icon-error:before {
-  content: "\e95b";
+  content: '\e95b';
 }
 .icon-question_answer:before {
-  content: "\e8af";
+  content: '\e8af';
 }
 .icon-tag_faces:before {
-  content: "\e420";
+  content: '\e420';
 }
 .icon-chevron-thin-up:before {
-  content: "\e953";
+  content: '\e953';
 }
 .icon-chevron-thin-down:before {
-  content: "\e954";
+  content: '\e954';
 }
 .icon-history:before {
-  content: "\e95d";
+  content: '\e95d';
 }
 .icon-bubble2:before {
-  content: "\e96e";
+  content: '\e96e';
 }
 .icon-power:before {
-  content: "\e9b5";
+  content: '\e9b5';
 }
 .icon-clipboard:before {
-  content: "\e9b8";
+  content: '\e9b8';
 }
 .icon-hour-glass:before {
-  content: "\e979";
+  content: '\e979';
 }
 .icon-accessibility:before {
-  content: "\e9b2";
+  content: '\e9b2';
 }
 .icon-cancel-circle:before {
-  content: "\ea0d";
+  content: '\ea0d';
 }
 .icon-user-tie:before {
-  content: "\e978";
+  content: '\e978';
 }
 .icon-error-outline:before {
-  content: "\e95c";
+  content: '\e95c';
 }
 .icon-info:before {
-  content: "\f059";
+  content: '\f059';
 }
 .icon-spinner:before {
-  content: "\e97c";
+  content: '\e97c';
 }
 .icon-checkmark:before {
-  content: "\ea10";
+  content: '\ea10';
 }
 .icon-bin:before {
-  content: "\e9ac";
+  content: '\e9ac';
 }

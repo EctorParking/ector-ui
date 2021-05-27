@@ -5,9 +5,7 @@ import s from './ContactCardFooter.module.css';
 import ContactCardTextsType from './ContactCardTextsType';
 import ContactType from './ContactType';
 
-const ContactCardFooter = ({
-  texts, contact, mode, onClick, onSubmit, id,
-}) => {
+const ContactCardFooter = ({ texts, contact, mode, onClick, onSubmit, id }) => {
   let what;
 
   if (mode.indexOf('delete') === 0) {
@@ -21,13 +19,14 @@ const ContactCardFooter = ({
       </LinkUnderlined>
     );
   } else {
-    what = mode.indexOf('selected') !== -1 ? (
-      <i className={`icon-checkmark ${s.checkIcon}`} id={`${id}Icon`} />
-    ) : (
-      <LinkUnderlined onClick={onClick} id={`${id}Link`}>
-        <strong>{texts.modify}</strong>
-      </LinkUnderlined>
-    );
+    what =
+      mode.indexOf('selected') !== -1 ? (
+        <i className={`icon-checkmark ${s.checkIcon}`} id={`${id}Icon`} />
+      ) : (
+        <LinkUnderlined onClick={onClick} id={`${id}Link`}>
+          <strong>{texts.modify}</strong>
+        </LinkUnderlined>
+      );
   }
 
   return (

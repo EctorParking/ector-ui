@@ -19,36 +19,36 @@
   color: var(--deepBlue);
 }
 
-.icon{
+.icon {
   height: 45px;
   width: 45px;
 }
 
 .knowMore {
-    color: var(--melrose);
-    cursor: pointer;
-    display: block;
-    padding: 0;
-    text-decoration: underline;
+  color: var(--melrose);
+  cursor: pointer;
+  display: block;
+  padding: 0;
+  text-decoration: underline;
 }
 
 .punctuationKnowMore:after {
-    content: '…';
+  content: '…';
 }
 
 @media (max-width: 1232px) {
-    .cardContent {
-        flex: 7;
-        height: auto;
-        padding: var(--marginSmall);
-    }
+  .cardContent {
+    flex: 7;
+    height: auto;
+    padding: var(--marginSmall);
+  }
 
-    .title {
-        font-size: 20px;
-        margin-right: 0;
-    }
+  .title {
+    font-size: 20px;
+    margin-right: 0;
+  }
 
-    .icon {
-        display: none;
-    }
+  .icon {
+    display: none;
+  }
 }

@@ -16,11 +16,8 @@ const bookingModificationSummaryPrice = {
 };
 
 storiesOf('BookingModificationSummary', module)
-
   .addParameters({
-    backgrounds: [
-      { name: 'header', value: 'white', default: true },
-    ],
+    backgrounds: [{ name: 'header', value: 'white', default: true }],
   })
   .addDecorator(centered)
   .addDecorator(withKnobs)
@@ -28,8 +25,11 @@ storiesOf('BookingModificationSummary', module)
   .add('with knobs', () => {
     const props = {
       texts: object('Texts', defaultTexts),
-      bookingModificationSummaryPrice: object('Booking modifications', bookingModificationSummaryPrice),
+      bookingModificationSummaryPrice: object(
+        'Booking modifications',
+        bookingModificationSummaryPrice
+      ),
     };
 
-    return (<BookingModificationSummary {...props} />);
+    return <BookingModificationSummary {...props} />;
   });

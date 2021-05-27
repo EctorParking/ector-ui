@@ -1,37 +1,47 @@
-[{
-  "name": "Paris Orly",
-  "code": "ORY",
-  "type": "airport"
-}, {
-  "name": "Paris CDG",
-  "code": "CDG",
-  "type": "airport"
-}, {
-  "name": "Lyon",
-  "code": "ADL",
-  "type": "airport"
-}, {
-  "name": "Gare de Lyon",
-  "code": "GDL",
-  "type": "station"
-}, {
-  "name": "Marseille",
-  "code": "MAR",
-  "type": "airport"
-}, {
-  "name": "Marseille2",
-  "code": "MAR2",
-  "type": "airport"
-}, {
-  "name": "Marseille3",
-  "code": "MAR3",
-  "type": "airport"
-}, {
-  "name": "Marseille4",
-  "code": "MAR4",
-  "type": "airport"
-}, {
-  "name": "Marseille5",
-  "code": "MAR5",
-  "type": "airport"
-}]
+[
+  {
+    "name": "Paris Orly",
+    "code": "ORY",
+    "type": "airport"
+  },
+  {
+    "name": "Paris CDG",
+    "code": "CDG",
+    "type": "airport"
+  },
+  {
+    "name": "Lyon",
+    "code": "ADL",
+    "type": "airport"
+  },
+  {
+    "name": "Gare de Lyon",
+    "code": "GDL",
+    "type": "station"
+  },
+  {
+    "name": "Marseille",
+    "code": "MAR",
+    "type": "airport"
+  },
+  {
+    "name": "Marseille2",
+    "code": "MAR2",
+    "type": "airport"
+  },
+  {
+    "name": "Marseille3",
+    "code": "MAR3",
+    "type": "airport"
+  },
+  {
+    "name": "Marseille4",
+    "code": "MAR4",
+    "type": "airport"
+  },
+  {
+    "name": "Marseille5",
+    "code": "MAR5",
+    "type": "airport"
+  }
+]

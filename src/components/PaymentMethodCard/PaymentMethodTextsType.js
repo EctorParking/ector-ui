@@ -4,7 +4,8 @@ export const DefaultTexts = {
   select: 'Sélectionner',
   remove: 'Supprimer',
   confirmDeletionTitle: 'Confirmation',
-  confirmDeletionSentence: 'Êtes-vous sûr(e) de vouloir supprimer ce moyen de paiement ?',
+  confirmDeletionSentence:
+    'Êtes-vous sûr(e) de vouloir supprimer ce moyen de paiement ?',
   cancel: 'Annuler',
   confirm: 'Confirmer',
   expireAt: 'Exp',

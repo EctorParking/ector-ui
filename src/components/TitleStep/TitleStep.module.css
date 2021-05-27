@@ -68,13 +68,15 @@
     width: 25px;
   }
 
-  &:before, &:after {
+  &:before,
+  &:after {
     transition: all var(--animationDuration) ease-in-out;
   }
 
   &:hover {
     color: white;
-    &:before, &:after {
+    &:before,
+    &:after {
       background-color: white;
     }
 

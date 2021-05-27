@@ -7,11 +7,8 @@ import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 import LinkUnderlined from '.';
 
 storiesOf('Link.Underlined', module)
-
   .addParameters({
-    backgrounds: [
-      { name: 'header', value: 'white', default: true },
-    ],
+    backgrounds: [{ name: 'header', value: 'white', default: true }],
   })
   .addDecorator(centered)
   .addDecorator(withKnobs)

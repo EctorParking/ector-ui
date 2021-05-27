@@ -15,7 +15,8 @@
   margin-left: var(--marginSmall);
 }
 
-.selected, .hovered:hover {
+.selected,
+.hovered:hover {
   font-weight: bold;
 }
 

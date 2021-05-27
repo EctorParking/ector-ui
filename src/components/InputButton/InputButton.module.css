@@ -1,6 +1,5 @@
 @import '../../style/variable.global.css';
 
-
 .inputButtonContainerClassName {
   display: flex;
   margin: 0 auto;
@@ -13,7 +12,8 @@
   width: 100%;
   margin: 0 auto;
 }
-.input, .button {
+.input,
+.button {
   height: var(--fontSizeTitle);
 }
 .button {

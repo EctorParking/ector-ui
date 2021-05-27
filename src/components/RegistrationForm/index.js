@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  Card, InputLabel, GenderPicker, PhoneInput,
-} from '..';
+import { Card, InputLabel, GenderPicker, PhoneInput } from '..';
 import s from './RegistrationForm.module.css';
 import RegistrationFormTextTypes, {
   defaultTexts,
@@ -11,28 +9,49 @@ import RegistrationFormTextTypes, {
   defaultValues,
   defaultErrors,
 } from './RegistrationFormTextTypes';
-import { CountryPropType, DefaultCountries } from '../PhoneInput/PhoneInputCountries';
+import {
+  CountryPropType,
+  DefaultCountries,
+} from '../PhoneInput/PhoneInputCountries';
 
 class RegistrationForm extends React.Component {
   constructor(props) {
     super(props);
 
     this.handleChangeGender = props.onChangeProperty.bind(this, 'title');
-    this.handleChangeFirstName = this.handleChangeProperty.bind(this, 'firstName');
-    this.handleChangeLastName = this.handleChangeProperty.bind(this, 'lastName');
+    this.handleChangeFirstName = this.handleChangeProperty.bind(
+      this,
+      'firstName'
+    );
+    this.handleChangeLastName = this.handleChangeProperty.bind(
+      this,
+      'lastName'
+    );
     this.handleChangeEmail = this.handleChangeProperty.bind(this, 'email');
     this.handleChangePhone = this.handleChangeProperty.bind(this, 'phone');
-    this.handleChangePostalCode = this.handleChangeProperty.bind(this, 'postalCode');
-    this.handleChangePassword = this.handleChangeProperty.bind(this, 'password');
-    this.handleChangePasswordConfirmation = this.handleChangeProperty.bind(this, 'passwordConfirmation');
+    this.handleChangePostalCode = this.handleChangeProperty.bind(
+      this,
+      'postalCode'
+    );
+    this.handleChangePassword = this.handleChangeProperty.bind(
+      this,
+      'password'
+    );
+    this.handleChangePasswordConfirmation = this.handleChangeProperty.bind(
+      this,
+      'passwordConfirmation'
+    );
 
-    this.genders = [{
-      value: 'male',
-      label: props.texts.male,
-    }, {
-      value: 'female',
-      label: props.texts.female,
-    }];
+    this.genders = [
+      {
+        value: 'male',
+        label: props.texts.male,
+      },
+      {
+        value: 'female',
+        label: props.texts.female,
+      },
+    ];
   }
 
   handleChangeProperty(field, event) {
@@ -44,15 +63,23 @@ class RegistrationForm extends React.Component {
   renderLabelFooterPasswordComponent = () => {
     const { labelFooterPassword } = this.props;
 
-    return labelFooterPassword
-      ? (<div className={s.footerLabel}>{labelFooterPassword}</div>)
-      : null;
+    return labelFooterPassword ? (
+      <div className={s.footerLabel}>{labelFooterPassword}</div>
+    ) : null;
   };
 
   render() {
     const {
-      RootComponent, className, contentClassName,
-      texts, phoneWithFlags, values, errors, onKeyDownEmail, countries, leftColumnClassName,
+      RootComponent,
+      className,
+      contentClassName,
+      texts,
+      phoneWithFlags,
+      values,
+      errors,
+      onKeyDownEmail,
+      countries,
+      leftColumnClassName,
       ...cardProps
     } = this.props;
 
@@ -154,7 +181,9 @@ class RegistrationForm extends React.Component {
 
 RegistrationForm.defaultProps = {
   // eslint-disable-next-line react/prop-types
-  RootComponent: ({ children, ...cardProps }) => (<Card {...cardProps}>{children}</Card>),
+  RootComponent: ({ children, ...cardProps }) => (
+    <Card {...cardProps}>{children}</Card>
+  ),
   className: undefined,
   contentClassName: undefined,
   leftColumnClassName: undefined,

@@ -1,9 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
-import {
-  Card, CardTitle, InputLabel, ActionLink,
-} from '..';
+import { Card, CardTitle, InputLabel, ActionLink } from '..';
 import TextsType, { DefaultTexts } from './CardTravelInformationTextsType';
 
 import s from './CardTravelInformation.module.css';
@@ -12,8 +10,14 @@ class CardTravelInformation extends Component {
   constructor(props) {
     super(props);
 
-    this.handleChangeTravelingNumberFrom = this.handleChange.bind(this, 'travelingNumberFrom');
-    this.handleChangeTravelingNumberTo = this.handleChange.bind(this, 'travelingNumberTo');
+    this.handleChangeTravelingNumberFrom = this.handleChange.bind(
+      this,
+      'travelingNumberFrom'
+    );
+    this.handleChangeTravelingNumberTo = this.handleChange.bind(
+      this,
+      'travelingNumberTo'
+    );
   }
 
   handleChange(field, event) {
@@ -29,15 +33,15 @@ class CardTravelInformation extends Component {
       return null;
     }
     return (
-      <Fragment>
+      <>
         <div>
           {texts.travelingNumberTo}
-&nbsp;:&nbsp;
+          &nbsp;:&nbsp;
           {values.travelingNumberTo || texts.blank}
         </div>
         <div>
           {texts.returnFlightCompany}
-&nbsp;:&nbsp;
+          &nbsp;:&nbsp;
           {values.returnFlightCompany}
         </div>
         <div>
@@ -45,7 +49,7 @@ class CardTravelInformation extends Component {
           &nbsp;:&nbsp;
           {values.returnFlightOrigin || texts.blank}
         </div>
-      </Fragment>
+      </>
     );
   };
 
@@ -62,21 +66,23 @@ class CardTravelInformation extends Component {
       ...cardProps
     } = this.props;
 
-    const hasFilledReturnFlightCompany = values.returnFlightCompany !== null
-      && values.returnFlightCompany.length > 0;
+    const hasFilledReturnFlightCompany =
+      values.returnFlightCompany !== null &&
+      values.returnFlightCompany.length > 0;
 
     return (
       <Card {...cardProps}>
-        <CardTitle className={s.title}>
-          {texts.title}
-        </CardTitle>
+        <CardTitle className={s.title}>{texts.title}</CardTitle>
 
         <div className={s.inputsRow}>
           <InputLabel
             placeholder={texts.travelingNumberFromPlaceholder}
             label={texts.travelingNumberFromLabel}
             onChange={this.handleChangeTravelingNumberFrom}
-            className={[s.travelingNumberFromInputLabel, travelingNumberFromClassName].join(' ')}
+            className={[
+              s.travelingNumberFromInputLabel,
+              travelingNumberFromClassName,
+            ].join(' ')}
             inputClassName={inputClassName}
             value={values.travelingNumberFrom || ''}
             error={errors.travelingNumberFrom}
@@ -89,18 +95,27 @@ class CardTravelInformation extends Component {
             onChange={this.handleChangeTravelingNumberTo}
             value={values.travelingNumberTo || ''}
             error={errors.travelingNumberTo}
-            className={[s.travelingNumberToInputLabel, travelingNumberToClassName].join(' ')}
+            className={[
+              s.travelingNumberToInputLabel,
+              travelingNumberToClassName,
+            ].join(' ')}
             inputClassName={inputClassName}
             id="travelingNumberToInput"
             InputComponent={this.renderReturnFlightCompany}
           />
         </div>
-        <div className={[s.unknownTravelingNumberTo, unknownTravelingNumberToClassName].join(' ')}>
+        <div
+          className={[
+            s.unknownTravelingNumberTo,
+            unknownTravelingNumberToClassName,
+          ].join(' ')}
+        >
           <ActionLink
             className={s.unknownTravelingNumberToButton}
-            label={hasFilledReturnFlightCompany
-              ? texts.updateReturnFlightCompany
-              : texts.unknownTravelingNumberTo
+            label={
+              hasFilledReturnFlightCompany
+                ? texts.updateReturnFlightCompany
+                : texts.unknownTravelingNumberTo
             }
             onClick={onClickUnknownTravelingNumberTo}
             id="unknownFlightNumberButton"
@@ -152,6 +167,5 @@ CardTravelInformation.propTypes = {
   travelingNumberToClassName: PropTypes.string,
   travelingNumberFromClassName: PropTypes.string,
 };
-
 
 export default CardTravelInformation;

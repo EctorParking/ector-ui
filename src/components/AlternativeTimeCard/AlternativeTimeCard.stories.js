@@ -20,11 +20,8 @@ const alternative = {
 const modes = ['normal', 'selectedWithFooter', 'selectedWithoutFooter'];
 
 storiesOf('AlternativeTimeCard', module)
-
   .addParameters({
-    backgrounds: [
-      { name: 'header', value: 'white', default: true },
-    ],
+    backgrounds: [{ name: 'header', value: 'white', default: true }],
   })
   .addDecorator(centered)
   .addDecorator(withKnobs)
@@ -36,10 +33,5 @@ storiesOf('AlternativeTimeCard', module)
       mode: select('Mode', modes, 'normal'),
     };
 
-    return (
-      <AlternativeTimeCard
-        onSelect={action('Selected')}
-        {...props}
-      />
-    );
+    return <AlternativeTimeCard onSelect={action('Selected')} {...props} />;
   });

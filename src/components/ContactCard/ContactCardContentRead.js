@@ -8,8 +8,12 @@ const ContactCardContentRead = ({ contact, id }) => {
 
   return (
     <div className={s.column} id={id}>
-      <span className={s.text} id="contactEmail">{email}</span>
-      <span className={s.text} id="contactPhone">{phone}</span>
+      <span className={s.text} id="contactEmail">
+        {email}
+      </span>
+      <span className={s.text} id="contactPhone">
+        {phone}
+      </span>
     </div>
   );
 };

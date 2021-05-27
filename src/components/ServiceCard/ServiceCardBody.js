@@ -17,7 +17,10 @@ const ServiceCardBody = ({
 
   if (description.length > 70) {
     descriptionFormatted = wordwrap(65)(descriptionFormatted);
-    descriptionFormatted = descriptionFormatted.substring(0, descriptionFormatted.indexOf('\n'));
+    descriptionFormatted = descriptionFormatted.substring(
+      0,
+      descriptionFormatted.indexOf('\n')
+    );
     showKnowMoreLink = true;
   }
 
@@ -33,11 +36,7 @@ const ServiceCardBody = ({
         {descriptionFormatted}
       </span>
       {showKnowMoreLink && (
-        <button
-          className={s.knowMore}
-          onClick={openShowMore}
-          type="button"
-        >
+        <button className={s.knowMore} onClick={openShowMore} type="button">
           <span>{knowMoreLabel}</span>
         </button>
       )}

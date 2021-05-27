@@ -8,7 +8,9 @@ const CarCardContentRead = ({ car, id }) => {
 
   return (
     <div className={s.column} id={id}>
-      <span className={s.text} id="carNumberPlate">{numberPlate}</span>
+      <span className={s.text} id="carNumberPlate">
+        {numberPlate}
+      </span>
     </div>
   );
 };

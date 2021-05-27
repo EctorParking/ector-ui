@@ -8,12 +8,7 @@ const icons = {
   warning: 'warning',
 };
 
-const Alert = ({
-  children,
-  type,
-  title,
-  className,
-}) => (
+const Alert = ({ children, type, title, className }) => (
   <div className={`${s.alert} ${s[type]} ${className}`}>
     <i className={`icon-${icons[type]} ${s.icon}`} />
 

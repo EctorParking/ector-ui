@@ -68,11 +68,4 @@ const defaultErrors = {
   title: null,
 };
 
-
-export {
-  defaultTexts,
-  ValuesType,
-  ErrorsType,
-  defaultValues,
-  defaultErrors,
-};
+export { defaultTexts, ValuesType, ErrorsType, defaultValues, defaultErrors };

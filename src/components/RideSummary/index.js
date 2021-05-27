@@ -9,7 +9,9 @@ const RideSummary = ({ texts, className, type }) => (
     <p className={s.rideSummaryTitle}>{texts.title}</p>
     <p className={s.rideSummaryText}>{texts.date}</p>
     <p className={s.rideSummaryText}>{texts.spot}</p>
-    {type === 'out' && <p className={s.rideSummaryText}>{texts.travelingNumber}</p>}
+    {type === 'out' && (
+      <p className={s.rideSummaryText}>{texts.travelingNumber}</p>
+    )}
   </div>
 );
 

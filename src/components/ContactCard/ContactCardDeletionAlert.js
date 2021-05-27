@@ -4,9 +4,7 @@ import LinkUnderlined from '../LinkUnderlined';
 import TextsType, { DefaultTexts } from './ContactCardTextsType';
 import s from './ContactCardDeletionAlert.module.css';
 
-const ContactCardDeletionAlert = ({
-  texts, onConfirm, onCancel, id,
-}) => (
+const ContactCardDeletionAlert = ({ texts, onConfirm, onCancel, id }) => (
   <div className={s.deletionAlert} id={id}>
     <strong>{texts.confirmDeletionTitle}</strong>
     <p>{texts.confirmDeletionSentence}</p>

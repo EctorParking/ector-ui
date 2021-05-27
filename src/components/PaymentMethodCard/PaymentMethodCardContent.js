@@ -5,13 +5,12 @@ import PaymentMethodCardContentDelete from './PaymentMethodCardContentDelete';
 import PaymentMethodType from './PaymentMethodType';
 import PaymentMethodTextsType from './PaymentMethodTextsType';
 
-const PaymentMethodCardContent = ({ pendingDeletion, ...contentProps }) => (
+const PaymentMethodCardContent = ({ pendingDeletion, ...contentProps }) =>
   pendingDeletion ? (
     <PaymentMethodCardContentDelete {...contentProps} />
   ) : (
     <PaymentMethodCardContentRead {...contentProps} />
-  )
-);
+  );
 
 PaymentMethodCardContent.propTypes = {
   paymentMethod: PaymentMethodType.isRequired,

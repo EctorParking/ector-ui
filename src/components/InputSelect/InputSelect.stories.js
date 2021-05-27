@@ -2,20 +2,15 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import centered from '@storybook/addon-centered';
-import {
-  withKnobs, boolean, text, select,
-} from '@storybook/addon-knobs';
+import { withKnobs, boolean, text, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import InputSelect from '.';
 import s from './InputSelect.module.css';
 
 storiesOf('Input.Select', module)
-
   .addParameters({
-    backgrounds: [
-      { name: 'header', value: 'white', default: true },
-    ],
+    backgrounds: [{ name: 'header', value: 'white', default: true }],
   })
   .addDecorator(centered)
   .addDecorator(withKnobs)
@@ -28,7 +23,11 @@ storiesOf('Input.Select', module)
       jobAir: { value: '3B', label: 'Job Air' },
     };
     const props = {
-      options: [{ value: 'AF', label: 'Air France' }, { value: 'U2', label: 'EasyJet' }, { value: '3B', label: 'Job Air' }],
+      options: [
+        { value: 'AF', label: 'Air France' },
+        { value: 'U2', label: 'EasyJet' },
+        { value: '3B', label: 'Job Air' },
+      ],
       isSearchable: boolean('Recherchable', true),
       isClearable: boolean('Effaçable', true),
       placeholder: text('Placeholder', 'Ex: Air France'),
@@ -37,9 +36,5 @@ storiesOf('Input.Select', module)
       onChange: action('Action onChange'),
     };
 
-    return (
-      <InputSelect
-        {...props}
-      />
-    );
+    return <InputSelect {...props} />;
   });

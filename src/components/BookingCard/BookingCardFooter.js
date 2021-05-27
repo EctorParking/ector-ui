@@ -11,12 +11,8 @@ const renderLeftAction = (leftAction, index) => {
 
 const BookingCardFooter = ({ leftActions, rightAction }) => (
   <div className={s.footer}>
-    <div className={s.left}>
-      {leftActions.map(renderLeftAction)}
-    </div>
-    <div>
-      {rightAction}
-    </div>
+    <div className={s.left}>{leftActions.map(renderLeftAction)}</div>
+    <div>{rightAction}</div>
   </div>
 );
 

@@ -5,11 +5,8 @@ import { withKnobs, text } from '@storybook/addon-knobs';
 import Picker from '.';
 
 storiesOf('Picker', module)
-
   .addParameters({
-    backgrounds: [
-      { name: 'header', value: 'white', default: true },
-    ],
+    backgrounds: [{ name: 'header', value: 'white', default: true }],
   })
   .addDecorator(centered)
   .addDecorator(withKnobs)

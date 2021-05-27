@@ -5,14 +5,27 @@ import { Input } from '..';
 import s from './CarCardContentEdit.module.css';
 
 const CarCardContentEdit = ({
-  car, onChangeNumberPlate, onChangeColor, id,
+  car,
+  onChangeNumberPlate,
+  onChangeColor,
+  id,
 }) => {
   const { name, color } = car;
 
   return (
     <div className={s.column} id={id}>
-      <Input type="text" value={name} onChange={onChangeNumberPlate} id="carNameInput" />
-      <Input type="text" value={color} onChange={onChangeColor} id="carColorInput" />
+      <Input
+        type="text"
+        value={name}
+        onChange={onChangeNumberPlate}
+        id="carNameInput"
+      />
+      <Input
+        type="text"
+        value={color}
+        onChange={onChangeColor}
+        id="carColorInput"
+      />
     </div>
   );
 };

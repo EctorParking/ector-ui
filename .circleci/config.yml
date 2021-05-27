@@ -2,35 +2,35 @@ version: 2
 jobs:
   build:
     docker:
-    - image: ectorparking/ector-docker-rn-cp:0.0.1
+      - image: ectorparking/ector-docker-rn-cp:0.0.1
     steps:
-    - checkout
-    - restore_cache:
-        name: Restore Yarn Package Cache
-        keys:
-          - yarn-packages-{{ checksum "yarn.lock" }}
-    - run:
-        name: Install Dependencies
-        command: yarn install --frozen-lockfile
-    - run:
-        name: Lint
-        command: yarn lint
-    - run:
-        name: Build
-        command: yarn build:storybook
-    - save_cache:
-        name: Save Yarn Package Cache
-        key: yarn-packages-{{ checksum "yarn.lock" }}
-        paths:
-          - ~/.cache/yarn
-    - deploy:
-        name: Deploy
-        filters:
-          branches:
-            only:
-              - master
-              - staging
-        command: |
-          if [ "${CIRCLE_BRANCH}" == "master" ]; then
-            bash ./deploy.sh
-          fi
+      - checkout
+      - restore_cache:
+          name: Restore Yarn Package Cache
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install Dependencies
+          command: yarn install --frozen-lockfile
+      - run:
+          name: Lint
+          command: yarn lint
+      - run:
+          name: Build
+          command: yarn build:storybook
+      - save_cache:
+          name: Save Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+      - deploy:
+          name: Deploy
+          filters:
+            branches:
+              only:
+                - master
+                - staging
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              bash ./deploy.sh
+            fi

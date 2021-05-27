@@ -23,7 +23,13 @@ const ectorTheme = theme => ({
 });
 
 const InputSelect = ({
-  options, classname, onChange, value, error, modal, ...props
+  options,
+  classname,
+  onChange,
+  value,
+  error,
+  modal,
+  ...props
 }) => {
   const ectorStyles = {
     menuPortal: base => ({ ...base, zIndex: 9999 }),
@@ -35,9 +41,9 @@ const InputSelect = ({
     }),
     control: styles => ({
       ...styles,
-      borderColor: error ? Colors.red : styles.borderColor,
-      borderWidth: 2,
-      boxShadow: 'none',
+      'borderColor': error ? Colors.red : styles.borderColor,
+      'borderWidth': 2,
+      'boxShadow': 'none',
       '&:hover': {
         borderColor: error ? Colors.red : styles.borderColor,
       },
@@ -49,12 +55,14 @@ const InputSelect = ({
     }),
   };
 
-  const modalProps = modal ? {
-    menuPosition: 'absolute',
-    menuPlacement: 'auto',
-    // eslint-disable-next-line no-undef
-    menuPortalTarget: document.body,
-  } : {};
+  const modalProps = modal
+    ? {
+        menuPosition: 'absolute',
+        menuPlacement: 'auto',
+        // eslint-disable-next-line no-undef
+        menuPortalTarget: document.body,
+      }
+    : {};
 
   return (
     <Select
@@ -80,10 +88,12 @@ InputSelect.defaultProps = {
 };
 
 InputSelect.propTypes = {
-  options: PropTypes.arrayOf(PropTypes.shape({
-    value: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
-  })),
+  options: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+    })
+  ),
   value: PropTypes.shape({
     value: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,

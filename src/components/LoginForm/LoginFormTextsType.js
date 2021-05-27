@@ -11,5 +11,5 @@ export const DefaultTexts = {
   email: 'Email',
   password: 'Mot de passe',
   submitButton: 'Se connecter',
-  onClickPasswordForgottenLabel: 'je l\'ai oublié',
+  onClickPasswordForgottenLabel: "je l'ai oublié",
 };

@@ -1,45 +1,45 @@
 @import '../../style/variable.global.css';
 
 .footerContainer {
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-    padding: var(--marginMedium) var(--marginSmall);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  padding: var(--marginMedium) var(--marginSmall);
 }
 
 .price {
-    color: var(--deepBlue);
-    font-size: 35px;
-    font-weight: var(--fontWeightRegular);
+  color: var(--deepBlue);
+  font-size: 35px;
+  font-weight: var(--fontWeightRegular);
 }
 
 .deleteButton {
-    background: none;
-    border: 0;
-    color: var(--blue);
-    padding: 0;
-    text-decoration: underline;
-    font-style: italic;
-    font-weight: var(--fontWeightLight);
-    text-align: end;
+  background: none;
+  border: 0;
+  color: var(--blue);
+  padding: 0;
+  text-decoration: underline;
+  font-style: italic;
+  font-weight: var(--fontWeightLight);
+  text-align: end;
 }
 
 @media (max-width: 1232px) {
-    .footerContainer {
-        align-items: center;
-        flex: 3;
-        height: initial;
-        flex-direction: column;
-        justify-content: center;
-        padding: var(--marginSmall);
-    }
+  .footerContainer {
+    align-items: center;
+    flex: 3;
+    height: initial;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--marginSmall);
+  }
 
-    .price {
-        font-size: var(--fontSizeSubtitle);
-        line-height: 1;
-    }
+  .price {
+    font-size: var(--fontSizeSubtitle);
+    line-height: 1;
+  }
 
-    .price small {
-        font-size: 70%;
-    }
+  .price small {
+    font-size: 70%;
+  }
 }

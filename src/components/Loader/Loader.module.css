@@ -1,39 +1,43 @@
 @import '../../style/variable.global.css';
 
 .loader {
-    border: 16px solid var(--blue);
-    border-top: 16px solid var(--deepBlue);
-    border-radius: 50%;
-    animation: spin 2s linear infinite;
-    align-self: center;
-    margin: 15px auto;
+  border: 16px solid var(--blue);
+  border-top: 16px solid var(--deepBlue);
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+  align-self: center;
+  margin: 15px auto;
 }
 
 .large {
-    width: 120px;
-    height: 120px;
-    border-width: 16px;
+  width: 120px;
+  height: 120px;
+  border-width: 16px;
 }
 
 .medium {
-    width: 60px;
-    height: 60px;
-    border-width: 8px;
+  width: 60px;
+  height: 60px;
+  border-width: 8px;
 }
 
 .small {
-    width: 30px;
-    height: 30px;
-    border-width: 4px;
+  width: 30px;
+  height: 30px;
+  border-width: 4px;
 }
 
 .xSmall {
-    width: 15px;
-    height: 15px;
-    border-width: 2px;
+  width: 15px;
+  height: 15px;
+  border-width: 2px;
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

@@ -5,11 +5,8 @@ import { withKnobs } from '@storybook/addon-knobs';
 import Header from '.';
 
 storiesOf('Header', module)
-
   .addParameters({
-    backgrounds: [
-      { name: 'header', value: 'white', default: true },
-    ],
+    backgrounds: [{ name: 'header', value: 'white', default: true }],
   })
   .addDecorator(centered)
   .addDecorator(withKnobs)

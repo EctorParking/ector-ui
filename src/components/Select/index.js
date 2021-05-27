@@ -5,29 +5,28 @@ import SelectValueType from './SelectValueType';
 import s from './Select.module.css';
 
 const renderSelectOption = option => (
-  <option value={option} key={option}>{option}</option>
+  <option value={option} key={option}>
+    {option}
+  </option>
 );
 
-const Select = (props) => {
-  const {
-    value, options, children, className, renderOption, ...selectProps
-  } = props;
+const Select = props => {
+  const { value, options, children, className, renderOption, ...selectProps } =
+    props;
   const optionRenderer = renderOption || renderSelectOption;
 
   return (
-    <div className={[s.select, selectProps.disabled ? s.disabled : undefined, className].join(' ')}>
+    <div
+      className={[
+        s.select,
+        selectProps.disabled ? s.disabled : undefined,
+        className,
+      ].join(' ')}
+    >
       <select value={value} {...selectProps}>
-        { options.map(optionRenderer) }
+        {options.map(optionRenderer)}
       </select>
-      {
-        children !== null ? (
-          children
-        ) : (
-          <span className={s.label}>
-            {value}
-          </span>
-        )
-      }
+      {children !== null ? children : <span className={s.label}>{value}</span>}
     </div>
   );
 };

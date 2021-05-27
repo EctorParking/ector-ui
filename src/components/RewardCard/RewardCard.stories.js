@@ -3,7 +3,11 @@ import { storiesOf } from '@storybook/react';
 
 import centered from '@storybook/addon-centered';
 import {
-  withKnobs, text, select, boolean, object,
+  withKnobs,
+  text,
+  select,
+  boolean,
+  object,
 } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import RewardCard from '.';
@@ -12,20 +16,12 @@ import cashback from '../../assets/images/cashback.png';
 import flyingBlue from '../../assets/images/flyingBlue.png';
 import flyingBlueSmall from '../../assets/images/flyingBlueSmall.png';
 
-const options = [
-  cashback,
-  flyingBlue,
-  flyingBlueSmall,
-];
+const options = [cashback, flyingBlue, flyingBlueSmall];
 const rewardValue = '+4.60€';
 
-
 storiesOf('RewardCard', module)
-
   .addParameters({
-    backgrounds: [
-      { name: 'header', value: 'white', default: true },
-    ],
+    backgrounds: [{ name: 'header', value: 'white', default: true }],
   })
   .addDecorator(centered)
   .addDecorator(withKnobs)
@@ -38,7 +34,8 @@ storiesOf('RewardCard', module)
         rewardTextMobile: 'de cagnotte fidélité',
         footerButtonText: 'Choisir',
         buttonTextLogin: 'Connexion',
-        loginText: 'Pour profiter de cette récompense, la connexion est requise',
+        loginText:
+          'Pour profiter de cette récompense, la connexion est requise',
         rewardTooltip: 'Ceci est un tooltip',
         updateExternalCard: 'Modifier',
       }),

@@ -7,11 +7,8 @@ import centered from '@storybook/addon-centered';
 import PhoneInput from '.';
 
 storiesOf('PhoneInput', module)
-
   .addParameters({
-    backgrounds: [
-      { name: 'header', value: 'white', default: true },
-    ],
+    backgrounds: [{ name: 'header', value: 'white', default: true }],
   })
   .addDecorator(centered)
 

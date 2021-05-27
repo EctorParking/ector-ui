@@ -21,13 +21,14 @@
 
 .unknownTravelingNumberTo {
   display: inline-block;
-  &>.unknownTravelingNumberToButton {
+  & > .unknownTravelingNumberToButton {
     float: right;
   }
 }
 
 @media (--maxTablet) {
-  .travelingNumberFromInputLabel, .travelingNumberToInputLabel {
+  .travelingNumberFromInputLabel,
+  .travelingNumberToInputLabel {
     margin: var(--marginSmall) auto;
   }
 }

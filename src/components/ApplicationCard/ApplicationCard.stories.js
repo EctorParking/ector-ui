@@ -12,11 +12,8 @@ const urls = {
 };
 
 storiesOf('ApplicationCard', module)
-
   .addParameters({
-    backgrounds: [
-      { name: 'header', value: 'white', default: true },
-    ],
+    backgrounds: [{ name: 'header', value: 'white', default: true }],
   })
   .addDecorator(centered)
   .addDecorator(withKnobs)
@@ -24,13 +21,12 @@ storiesOf('ApplicationCard', module)
   .add('with knobs', () => {
     const props = {
       title: text('Title', 'Téléchargez l’application'),
-      description: text('Description', 'Gérez vos réservations plus facilement depuis l’application.'),
+      description: text(
+        'Description',
+        'Gérez vos réservations plus facilement depuis l’application.'
+      ),
       urls: object('URLs', urls),
     };
 
-    return (
-      <ApplicationCard
-        {...props}
-      />
-    );
+    return <ApplicationCard {...props} />;
   });

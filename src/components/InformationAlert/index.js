@@ -4,9 +4,7 @@ import PropTypes from 'prop-types';
 import s from './InformationAlert.module.css';
 import Icon from '../Icon';
 
-const InformationAlert = ({
-  className, classNameIcon, title, description,
-}) => (
+const InformationAlert = ({ className, classNameIcon, title, description }) => (
   <div className={[s.alert, className].join(' ')}>
     <span className={s.alertTitle}>
       <Icon
@@ -34,6 +32,5 @@ InformationAlert.propTypes = {
   className: PropTypes.string,
   classNameIcon: PropTypes.string,
 };
-
 
 export default InformationAlert;

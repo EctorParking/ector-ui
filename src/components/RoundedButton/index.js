@@ -2,16 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import s from './RoundedButton.module.css';
 
-const RoundedButton = ({
-  text,
-  onClick,
-  testid,
-  className,
-  fetching,
-}) => (
+const RoundedButton = ({ text, onClick, testid, className, fetching }) => (
   <button
     onClick={onClick}
-    className={[s.buttonContainer, className, fetching ? s.fetching : undefined].join(' ')}
+    className={[
+      s.buttonContainer,
+      className,
+      fetching ? s.fetching : undefined,
+    ].join(' ')}
     textid={testid}
   >
     {text.toUpperCase()}

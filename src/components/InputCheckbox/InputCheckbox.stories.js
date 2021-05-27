@@ -7,7 +7,6 @@ import { action } from '@storybook/addon-actions';
 import InputCheckbox from '.';
 
 storiesOf('Input.Checkbox', module)
-
   .addParameters({
     backgrounds: [
       { name: 'header', value: 'white', default: true },
@@ -18,12 +17,12 @@ storiesOf('Input.Checkbox', module)
 
   .add('basic', () => (
     <InputCheckbox onChange={action('onChange')}>
-            Voyage professionnel
+      Voyage professionnel
     </InputCheckbox>
   ))
 
   .add('checked', () => (
     <InputCheckbox onChange={action('onChange')} checked>
-            Voyage professionnel
+      Voyage professionnel
     </InputCheckbox>
   ));

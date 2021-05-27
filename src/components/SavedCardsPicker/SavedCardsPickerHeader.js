@@ -11,10 +11,13 @@ const CardTypes = {
 
 const getHeaderTitle = (value, texts) => {
   switch (value) {
-  case CardTypes.stripe: return texts.titleStripe;
-  case CardTypes.total: return texts.titleTotal;
+    case CardTypes.stripe:
+      return texts.titleStripe;
+    case CardTypes.total:
+      return texts.titleTotal;
 
-  default: return null;
+    default:
+      return null;
   }
 };
 

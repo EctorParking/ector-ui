@@ -2,7 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Card from '../Card';
 import s from './ContactCard.module.css';
-import ContactType, { ContactFormValuesType, ContactFormErrorsType } from './ContactType';
+import ContactType, {
+  ContactFormValuesType,
+  ContactFormErrorsType,
+} from './ContactType';
 import TextsType, { DefaultTexts } from './ContactCardTextsType';
 import ContactCardDeletionAlert from './ContactCardDeletionAlert';
 import ContactCardHeader from './ContactCardHeader';
@@ -45,30 +48,32 @@ const ContactCard = ({
     mode += '-selected';
   }
 
-  const footer = mode.indexOf('delete') === 0 ? null : (
-    <ContactCardFooter
-      texts={texts}
-      mode={mode}
-      contact={contact}
-      onClick={onClick}
-      onSubmit={onSubmit}
-      id={`${idPrefix}Footer`}
-    />
-  );
+  const footer =
+    mode.indexOf('delete') === 0 ? null : (
+      <ContactCardFooter
+        texts={texts}
+        mode={mode}
+        contact={contact}
+        onClick={onClick}
+        onSubmit={onSubmit}
+        id={`${idPrefix}Footer`}
+      />
+    );
 
   let header = null;
-  let content = mode.indexOf('read') === 0 ? (
-    <ContactCardContentRead contact={contact} id={`${idPrefix}ContentRead`} />
-  ) : (
-    <ContactCardContentEdit
-      contact={contact}
-      onChangeEmail={onChangeEmail}
-      onChangePhoneNumber={onChangePhoneNumber}
-      values={formValues}
-      errors={formErrors}
-      id={`${idPrefix}ContentEdit`}
-    />
-  );
+  let content =
+    mode.indexOf('read') === 0 ? (
+      <ContactCardContentRead contact={contact} id={`${idPrefix}ContentRead`} />
+    ) : (
+      <ContactCardContentEdit
+        contact={contact}
+        onChangeEmail={onChangeEmail}
+        onChangePhoneNumber={onChangePhoneNumber}
+        values={formValues}
+        errors={formErrors}
+        id={`${idPrefix}ContentEdit`}
+      />
+    );
 
   if (mode.indexOf('delete') === 0) {
     content = (
@@ -99,7 +104,10 @@ const ContactCard = ({
     <Card
       FooterChildren={footer}
       isSelected={selected}
-      contentClassName={[pendingModification ? s.pendingModification : '', pendingDeletion ? s.pendingDeletion : ''].join(' ')}
+      contentClassName={[
+        pendingModification ? s.pendingModification : '',
+        pendingDeletion ? s.pendingDeletion : '',
+      ].join(' ')}
       {...cardProps}
     >
       {header}

@@ -3,11 +3,7 @@ import PropTypes from 'prop-types';
 
 import s from './Loader.module.css';
 
-const Loader = ({
-  size,
-  className,
-  testid,
-}) => (
+const Loader = ({ size, className, testid }) => (
   <div testid={testid} className={[s.loader, s[size], className].join(' ')} />
 );
 
@@ -22,6 +18,5 @@ Loader.propTypes = {
   className: PropTypes.string,
   testid: PropTypes.string,
 };
-
 
 export default Loader;

@@ -4,20 +4,18 @@ import s from './PaymentMethodCardHeader.module.css';
 import PaymentMethodCardTextsType from './PaymentMethodTextsType';
 
 const PaymentMethodCardHeader = ({
-  onDelete, texts, pendingDeletion, className,
-}) => (
+  onDelete,
+  texts,
+  pendingDeletion,
+  className,
+}) =>
   pendingDeletion ? null : (
     <div className={[s.container, className].join(' ')}>
-      <button
-        className={s.button}
-        title={texts.remove}
-        onClick={onDelete}
-      >
+      <button className={s.button} title={texts.remove} onClick={onDelete}>
         <i className={`icon-bin ${s.icon}`} />
       </button>
     </div>
-  )
-);
+  );
 
 PaymentMethodCardHeader.defaultProps = {
   className: undefined,

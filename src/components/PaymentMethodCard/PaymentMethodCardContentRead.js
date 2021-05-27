@@ -22,45 +22,37 @@ const paymentMethodType = {
 };
 
 const PaymentMethodCardContentRead = ({ paymentMethod, texts }) => (
-  <Fragment>
-    {
-      (paymentMethod.type === paymentMethodType.card
-        || paymentMethod.type === paymentMethodType.total) && (
-        <img
-          className={s.brandIcon}
-          src={creditCardBrandIcons[paymentMethod.brand]}
-          alt={paymentMethod.brand}
-        />
-      )
-    }
-    {
-      !paymentMethod.cardName ? (
-        <span className={s.contentHalfLine}>
-          <br />
-        </span>
-      ) : (
-        <span className={s.content}>
-          {paymentMethod.cardName}
-        </span>
-      )
-    }
+  <>
+    {(paymentMethod.type === paymentMethodType.card ||
+      paymentMethod.type === paymentMethodType.total) && (
+      <img
+        className={s.brandIcon}
+        src={creditCardBrandIcons[paymentMethod.brand]}
+        alt={paymentMethod.brand}
+      />
+    )}
+    {!paymentMethod.cardName ? (
+      <span className={s.contentHalfLine}>
+        <br />
+      </span>
+    ) : (
+      <span className={s.content}>{paymentMethod.cardName}</span>
+    )}
     <span className={s.content}>
       &#183;&#183;&#183;&#183;&nbsp;&#183;&#183;&#183;&#183;&nbsp;&#183;&#183;&#183;&#183;&nbsp;
       {paymentMethod.last4digits}
     </span>
     <span className={s.content}>
       {texts.expireAt}
-&nbsp;:&nbsp;
+      &nbsp;:&nbsp;
       {paymentMethod.expireAt}
     </span>
-    {
-      !paymentMethod.cardName && (
-        <span className={s.contentHalfLine}>
-          <br />
-        </span>
-      )
-    }
-  </Fragment>
+    {!paymentMethod.cardName && (
+      <span className={s.contentHalfLine}>
+        <br />
+      </span>
+    )}
+  </>
 );
 
 PaymentMethodCardContentRead.propTypes = {

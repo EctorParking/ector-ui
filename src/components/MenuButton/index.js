@@ -25,8 +25,11 @@ class MenuButton extends React.PureComponent {
     document.removeEventListener('mousedown', this.handleClickOutside);
   }
 
-  handleClickOutside = (e) => {
-    if (this.containerRef.current && !this.containerRef.current.contains(e.target)) {
+  handleClickOutside = e => {
+    if (
+      this.containerRef.current &&
+      !this.containerRef.current.contains(e.target)
+    ) {
       this.setState({ visible: false });
     }
   };
@@ -61,7 +64,7 @@ class MenuButton extends React.PureComponent {
 
     return (
       <div
-        className={[s.container, className].join((' '))}
+        className={[s.container, className].join(' ')}
         ref={this.containerRef}
       >
         <button
@@ -71,10 +74,16 @@ class MenuButton extends React.PureComponent {
           onMouseLeave={this.onLeave}
           disabled={disabled}
         >
-          <LabelComponent isActive={(!!SuggestionsComponent && visible) || isMouseHover} />
+          <LabelComponent
+            isActive={(!!SuggestionsComponent && visible) || isMouseHover}
+          />
         </button>
         {SuggestionsComponent && (
-          <PickerSuggestions visible={visible} className={[s.suggestions, suggestionsClassName].join(' ')} containerOffset={suggestionContainerOffset}>
+          <PickerSuggestions
+            visible={visible}
+            className={[s.suggestions, suggestionsClassName].join(' ')}
+            containerOffset={suggestionContainerOffset}
+          >
             <SuggestionsComponent />
           </PickerSuggestions>
         )}

@@ -15,7 +15,8 @@
   align-items: center;
 }
 
-.flag, .flagInput {
+.flag,
+.flagInput {
   width: 24px;
   height: 16px;
 }

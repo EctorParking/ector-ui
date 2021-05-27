@@ -8,13 +8,9 @@ import { Label } from '..';
 
 import Card from '.';
 
-
 storiesOf('Card', module)
-
   .addParameters({
-    backgrounds: [
-      { name: 'header', value: 'white', default: true },
-    ],
+    backgrounds: [{ name: 'header', value: 'white', default: true }],
   })
   .addDecorator(centered)
   .addDecorator(withKnobs)
@@ -26,11 +22,7 @@ storiesOf('Card', module)
       onClick: action('clicked'),
     };
 
-    return (
-      <Card {...props}>
-        Content
-      </Card>
-    );
+    return <Card {...props}>Content</Card>;
   })
   .add('with label', () => {
     const props = {
@@ -38,7 +30,12 @@ storiesOf('Card', module)
     };
 
     return (
-      <Card {...props} LabelComponent={labelProps => <Label label="label" logo="star" color="green" {...labelProps} />}>
+      <Card
+        {...props}
+        LabelComponent={labelProps => (
+          <Label label="label" logo="star" color="green" {...labelProps} />
+        )}
+      >
         Content
       </Card>
     );

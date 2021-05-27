@@ -7,13 +7,9 @@ import { action } from '@storybook/addon-actions';
 
 import RoundedButton from '.';
 
-
 storiesOf('RoundedButton', module)
-
   .addParameters({
-    backgrounds: [
-      { name: 'header', value: 'white', default: true },
-    ],
+    backgrounds: [{ name: 'header', value: 'white', default: true }],
   })
   .addDecorator(centered)
   .addDecorator(withKnobs)
@@ -26,5 +22,5 @@ storiesOf('RoundedButton', module)
       onClick: action('clicked'),
     };
 
-    return (<RoundedButton {...props} />);
+    return <RoundedButton {...props} />;
   });

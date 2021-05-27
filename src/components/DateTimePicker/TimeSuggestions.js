@@ -19,16 +19,10 @@ const TimeSuggestions = ({
   toHourRange,
   ArrowIcon,
 }) => {
-  const onSelectStartTime = (timeUnits, value) => onSelect(
-    TimeSuggestions.startTime,
-    timeUnits,
-    value,
-  );
-  const onSelectEndTime = (timeUnits, value) => onSelect(
-    TimeSuggestions.endTime,
-    timeUnits,
-    value,
-  );
+  const onSelectStartTime = (timeUnits, value) =>
+    onSelect(TimeSuggestions.startTime, timeUnits, value);
+  const onSelectEndTime = (timeUnits, value) =>
+    onSelect(TimeSuggestions.endTime, timeUnits, value);
   const [startFromMinuteRange, endFromMinuteRange] = fromMinuteRange;
   const [startFromHourRange, endFromHourRange] = fromHourRange;
   const [startToMinuteRange, endToMinuteRange] = toMinuteRange;

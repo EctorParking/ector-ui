@@ -19,27 +19,33 @@ const InputButton = ({
   SubTextComponent,
   ...inputProps
 }) => (
-  <div className={[s.inputButtonContainerClassName, inputButtonContainerClassName].join(' ')}>
+  <div
+    className={[
+      s.inputButtonContainerClassName,
+      inputButtonContainerClassName,
+    ].join(' ')}
+  >
     <div className={inputContainerClassName}>
       <Input
         placeholder={placeholder}
-        className={[buttonVisible ? s.input : undefined, inputClassName].join(' ')}
+        className={[buttonVisible ? s.input : undefined, inputClassName].join(
+          ' '
+        )}
         id={id}
         type={inputType}
         hasError={hasError}
         {...inputProps}
-        RightComponent={({ className }) => <IconComponent className={[className, s.icon].join(' ')} />}
+        RightComponent={({ className }) => (
+          <IconComponent className={[className, s.icon].join(' ')} />
+        )}
       />
       <SubTextComponent />
     </div>
     {buttonVisible && (
-      <ButtonComponent className={s.button}>
-        {buttonText}
-      </ButtonComponent>
+      <ButtonComponent className={s.button}>{buttonText}</ButtonComponent>
     )}
   </div>
 );
-
 
 InputButton.defaultProps = {
   inputButtonContainerClassName: '',
@@ -51,7 +57,9 @@ InputButton.defaultProps = {
   inputType: 'text',
   inputContainerClassName: '',
   IconComponent: () => null,
-  ButtonComponent: props => (<Button {...props} component="button" title="button" />),
+  ButtonComponent: props => (
+    <Button {...props} component="button" title="button" />
+  ),
   SubTextComponent: () => null,
 };
 

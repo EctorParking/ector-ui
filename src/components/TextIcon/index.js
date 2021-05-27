@@ -5,7 +5,11 @@ import { Icon } from '..';
 import s from './TextIcon.module.css';
 
 const TextIcon = ({
-  children, imageUrl, className, iconClassName, ...iconProps
+  children,
+  imageUrl,
+  className,
+  iconClassName,
+  ...iconProps
 }) => (
   <div className={[s.container, className].join(' ')}>
     <Icon

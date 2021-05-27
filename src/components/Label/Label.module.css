@@ -1,56 +1,56 @@
 @import '../../style/variable.global.css';
 
 .labelContainer {
-    border-radius: var(--inputBorderRadius);
-    color: var(--white);
-    font-size: var(--fontSizeLabel);
-    padding: 0 var(--marginXSmall);
-    display: flex;
-    align-items: center;
+  border-radius: var(--inputBorderRadius);
+  color: var(--white);
+  font-size: var(--fontSizeLabel);
+  padding: 0 var(--marginXSmall);
+  display: flex;
+  align-items: center;
 }
 
 .text {
-    padding: 0 var(--marginXSmall);
-    font-weight: var(--fontWeightRegular);
-    letter-spacing: 1px;
+  padding: 0 var(--marginXSmall);
+  font-weight: var(--fontWeightRegular);
+  letter-spacing: 1px;
 }
 
 .deepBlueColor {
-    background-color: var(--deepBlue);
+  background-color: var(--deepBlue);
 }
 
 .greenColor {
-    background-color: var(--green);
+  background-color: var(--green);
 }
 
 .redColor {
-    background-color: var(--red);
+  background-color: var(--red);
 }
 
 .melroseColor {
-    background-color: var(--melrose);
+  background-color: var(--melrose);
 }
 
 .blueColor {
-    background-color: var(--blue);
+  background-color: var(--blue);
 }
 
 .lightGreyColor {
-    background-color: var(--lightGrey);
+  background-color: var(--lightGrey);
 }
 
 .metalGreyColor {
-    background-color: var(--metalGrey);
+  background-color: var(--metalGrey);
 }
 
 .darkMetalGreyColor {
-    background-color: var(--darkMetalGrey);
+  background-color: var(--darkMetalGrey);
 }
 
 .aquaHazeGreyColor {
-    background-color: var(--aquaHazeGrey);
+  background-color: var(--aquaHazeGrey);
 }
 
 .orangeColor {
-    background-color: var(--orange);
+  background-color: var(--orange);
 }

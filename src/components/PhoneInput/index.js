@@ -24,7 +24,9 @@ class PhoneInput extends React.Component {
   }
 
   onCountryCodeChange(event) {
-    const { currentTarget: { value: countryCode } } = event;
+    const {
+      currentTarget: { value: countryCode },
+    } = event;
     const { countries, onChange } = this.props;
     const { phone } = this.state;
     const country = countries.find(option => option.value === countryCode);
@@ -42,7 +44,9 @@ class PhoneInput extends React.Component {
   onPhoneNumberChange(event) {
     const { onChange } = this.props;
     const { country } = this.state;
-    const { currentTarget: { value } } = event;
+    const {
+      currentTarget: { value },
+    } = event;
 
     onChange({
       ...event,
@@ -60,7 +64,7 @@ class PhoneInput extends React.Component {
     let countryCode; // eslint-disable-line no-unused-vars
 
     if (country) {
-      [countryCode, phone] = value.split(country.label);
+      [, phone] = value.split(country.label);
       return {
         country,
         phone,
@@ -81,7 +85,11 @@ class PhoneInput extends React.Component {
   renderPhoneInputs = () => {
     const {
       // eslint-disable-next-line no-unused-vars
-      error, mandatory, left, countries, withFlag, inputClassName, ...phoneInputProps
+      error,
+      countries,
+      withFlag,
+      inputClassName,
+      ...phoneInputProps
     } = this.props;
     const { country, phone } = this.state;
 
@@ -101,9 +109,7 @@ class PhoneInput extends React.Component {
               alt={country.label}
             />
           )}
-          <span>
-            {country.label}
-          </span>
+          <span>{country.label}</span>
         </Select>
         <Input
           placeholder="06 07 08 09 00" // Here to override the placeholder
@@ -120,9 +126,7 @@ class PhoneInput extends React.Component {
   };
 
   render() {
-    const {
-      label, error, mandatory, left, className,
-    } = this.props;
+    const { label, error, mandatory, left, className } = this.props;
 
     return (
       <InputLabel

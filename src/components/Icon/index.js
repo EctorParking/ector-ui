@@ -27,18 +27,12 @@ const BackgroundImages = {
 
 const Positions = ['left', 'right', 'top', 'bottom'];
 
-const IconComponent = ({
-  src, name, children, className,
-}) => {
+const IconComponent = ({ src, name, children, className }) => {
   if (src) {
-    return (
-      <img src={src} alt="icon" className={className} />
-    );
+    return <img src={src} alt="icon" className={className} />;
   }
   if (name) {
-    return (
-      <i className={[`icon icon-${name}`, className].join(' ')} />
-    );
+    return <i className={[`icon icon-${name}`, className].join(' ')} />;
   }
   return children;
 };
@@ -76,10 +70,13 @@ const Icon = ({
 
   return (
     <span {...containerProps}>
-      {hasBackground
-        ? (<img src={BackgroundImages[variant]} alt="icon background" className={[s.background, backgroundClassName].join(' ')} />)
-        : null
-      }
+      {hasBackground ? (
+        <img
+          src={BackgroundImages[variant]}
+          alt="icon background"
+          className={[s.background, backgroundClassName].join(' ')}
+        />
+      ) : null}
       <Component
         src={src}
         name={name}

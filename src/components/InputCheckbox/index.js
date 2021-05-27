@@ -12,12 +12,8 @@ const InputCheckbox = ({
   checkmarkClassName,
   ...restOfProps
 }) => (
-  <label
-    htmlFor={`${id}`}
-    className={`${s.input_checkbox} ${className}`}
-  >
-
-    { children }
+  <label htmlFor={`${id}`} className={`${s.input_checkbox} ${className}`}>
+    {children}
 
     <input
       type="checkbox"
@@ -27,7 +23,6 @@ const InputCheckbox = ({
       {...restOfProps}
     />
     <span className={[s.checkmark, checkmarkClassName].join(' ')} />
-
   </label>
 );
 

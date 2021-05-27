@@ -4,14 +4,21 @@ import PropTypes from 'prop-types';
 import s from './BookingModificationSummaryRow.module.css';
 
 const BookingModificationSummaryRow = ({
-  text, price, isExtra, className, textClassName, priceClassName, count,
+  text,
+  price,
+  isExtra,
+  className,
+  textClassName,
+  priceClassName,
+  count,
 }) => (
   <div className={`${s.summaryRow} ${className}`}>
-    <p className={`${s.summaryRowText} ${textClassName}`}>{`${text}${count > 1 ? `(x${count})` : ''}`}</p>
+    <p className={`${s.summaryRowText} ${textClassName}`}>{`${text}${
+      count > 1 ? `(x${count})` : ''
+    }`}</p>
     <p className={`${s.summaryRowPrice} ${priceClassName}`}>
       {isExtra ? '+' : ''}
-      {parseFloat(price).toFixed(2)}
-€
+      {parseFloat(price).toFixed(2)}€
     </p>
   </div>
 );

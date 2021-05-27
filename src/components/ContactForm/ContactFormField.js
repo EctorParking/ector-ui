@@ -7,9 +7,7 @@ const ContactFormField = ({ children, label, mandatory }) => (
     htmlFor="civility"
     className={`${s.field} ${mandatory ? s.mandatory : ''}`}
   >
-    <span className={s.label}>
-      {label}
-    </span>
+    <span className={s.label}>{label}</span>
 
     {children}
   </label>

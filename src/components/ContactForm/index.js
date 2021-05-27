@@ -3,7 +3,12 @@ import PropTypes from 'prop-types';
 import s from './ContactForm.module.css';
 import TextsType, { DefaultTexts } from './ContactFormTextsType';
 import {
-  Card, LinkUnderlined, CardTitle, InputLabel, PhoneInput, LanguageSelector,
+  Card,
+  LinkUnderlined,
+  CardTitle,
+  InputLabel,
+  PhoneInput,
+  LanguageSelector,
 } from '..';
 import { CountryPropType } from '../PhoneInput/PhoneInputCountries';
 
@@ -11,16 +16,31 @@ class ContactForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleChangeFirstName = this.handleChangeProperty.bind(this, 'firstName');
-    this.handleChangeLastName = this.handleChangeProperty.bind(this, 'lastName');
+    this.handleChangeFirstName = this.handleChangeProperty.bind(
+      this,
+      'firstName'
+    );
+    this.handleChangeLastName = this.handleChangeProperty.bind(
+      this,
+      'lastName'
+    );
     this.handleChangeEmail = this.handleChangeProperty.bind(this, 'email');
     this.handleChangePhone = this.handleChangeProperty.bind(this, 'phone');
-    this.handleChangePostalCode = this.handleChangeProperty.bind(this, 'postalCode');
+    this.handleChangePostalCode = this.handleChangeProperty.bind(
+      this,
+      'postalCode'
+    );
 
-    this.renderFirstNameInput = this.renderInputComponent.bind(this, 'firstName');
+    this.renderFirstNameInput = this.renderInputComponent.bind(
+      this,
+      'firstName'
+    );
     this.renderLastNameInput = this.renderInputComponent.bind(this, 'lastName');
     this.renderEmailInput = this.renderInputComponent.bind(this, 'email');
-    this.renderPostalCodeInput = this.renderInputComponent.bind(this, 'postalCode');
+    this.renderPostalCodeInput = this.renderInputComponent.bind(
+      this,
+      'postalCode'
+    );
   }
 
   handleChangeProperty(field, event) {
@@ -35,15 +55,12 @@ class ContactForm extends React.Component {
     return renderInput(inputName);
   }
 
-  renderCommunicationLocaleInput = (props) => {
+  renderCommunicationLocaleInput = props => {
     const {
       onChangeProperty,
       values,
       languages,
-      texts: {
-        communicationLocale,
-        communicationLocalePlaceholder,
-      },
+      texts: { communicationLocale, communicationLocalePlaceholder },
     } = this.props;
 
     return (
@@ -61,12 +78,13 @@ class ContactForm extends React.Component {
     );
   };
 
-  renderFooter = (footerProps) => {
+  renderFooter = footerProps => {
     const { FooterComponent, texts, onSubmit } = this.props;
 
     if (FooterComponent === null) {
       return null;
-    } if (typeof FooterComponent === 'function' && FooterComponent(footerProps)) {
+    }
+    if (typeof FooterComponent === 'function' && FooterComponent(footerProps)) {
       return FooterComponent(footerProps);
     }
     return (
@@ -118,7 +136,9 @@ class ContactForm extends React.Component {
         isSelected={selected}
         FooterComponent={this.renderFooter}
       >
-        <CardTitle className={!newDriver ? s.hidden : ''}>{newDriver}</CardTitle>
+        <CardTitle className={!newDriver ? s.hidden : ''}>
+          {newDriver}
+        </CardTitle>
 
         <div className={[s.columns, contentClassName].join(' ')}>
           <div className={[s.firstSection, firstSectionClassName].join(' ')}>
@@ -170,7 +190,7 @@ class ContactForm extends React.Component {
                 className={s.contactFormInput}
                 InputComponent={this.renderCommunicationLocaleInput}
                 tooltip={tooltip}
-                {...tooltipIcon ? { tooltipIcon } : {}}
+                {...(tooltipIcon ? { tooltipIcon } : {})}
               />
             )}
             {(!showCommunicationLocaleInput || languages.length === 0) && (
@@ -283,7 +303,9 @@ ContactForm.defaultProps = {
   FooterComponent: () => null,
   showCommunicationLocaleInput: false,
   // eslint-disable-next-line react/prop-types
-  RootComponent: ({ children, ...cardProps }) => (<Card {...cardProps}>{children}</Card>),
+  RootComponent: ({ children, ...cardProps }) => (
+    <Card {...cardProps}>{children}</Card>
+  ),
   languages: [],
 };
 
@@ -322,10 +344,12 @@ ContactForm.propTypes = {
   tooltip: PropTypes.string,
   tooltipIcon: PropTypes.string,
   showCommunicationLocaleInput: PropTypes.bool,
-  languages: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string,
-    locale: PropTypes.string,
-  })),
+  languages: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      locale: PropTypes.string,
+    })
+  ),
 };
 
 export default ContactForm;

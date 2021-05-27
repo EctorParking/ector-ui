@@ -3,9 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import centered from '@storybook/addon-centered';
-import {
-  withKnobs, object, select, text,
-} from '@storybook/addon-knobs';
+import { withKnobs, object, select, text } from '@storybook/addon-knobs';
 
 import PricingSummary from '.';
 import { defaultTexts } from './PricingSummaryTextsType';
@@ -17,11 +15,8 @@ const options = [
 ];
 
 storiesOf('PricingSummary', module)
-
   .addParameters({
-    backgrounds: [
-      { name: 'header', value: 'white', default: true },
-    ],
+    backgrounds: [{ name: 'header', value: 'white', default: true }],
   })
   .addDecorator(centered)
   .addDecorator(withKnobs)
@@ -29,7 +24,11 @@ storiesOf('PricingSummary', module)
   .add('with knobs', () => {
     const props = {
       currency: text('Currency symbol', '€'),
-      currencyPosition: select('Currency position', ['before', 'after'], 'after'),
+      currencyPosition: select(
+        'Currency position',
+        ['before', 'after'],
+        'after'
+      ),
       texts: object('Texts', defaultTexts),
       onAddClick: action('Add option clicked'),
       options,

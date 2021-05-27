@@ -17,11 +17,7 @@ const Button = ({
   disabled,
 }) => {
   const props = {
-    className: [
-      s.button,
-      fetching ? s.fetching : '',
-      className,
-    ].join(' '),
+    className: [s.button, fetching ? s.fetching : '', className].join(' '),
     ...(!fetching && onClick ? { onClick } : {}),
     ...(type ? { type } : {}),
     ...(href ? { href } : {}),

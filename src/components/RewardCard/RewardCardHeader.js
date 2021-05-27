@@ -23,12 +23,8 @@ const RewardCardHeader = ({
 
     <span className={s.text}>
       <strong className={s.rewardValue}>{rewardValue}</strong>
-      <span className={s.textDesktop}>
-        {texts.rewardText}
-      </span>
-      <span className={s.textMobile}>
-        {texts.rewardTextMobile}
-      </span>
+      <span className={s.textDesktop}>{texts.rewardText}</span>
+      <span className={s.textMobile}>{texts.rewardTextMobile}</span>
 
       <Tooltip
         className={s.tooltip}

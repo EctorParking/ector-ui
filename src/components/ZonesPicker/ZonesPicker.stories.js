@@ -18,9 +18,11 @@ class ZonePickerStory extends React.PureComponent {
     if (zoneType === ZonesPicker.fromZone) {
       this.setState({
         fromZone: zone,
-        toZoneSuggestions: zone ? Suggestions.filter(suggestion => (
-          zone.name ? suggestion.name.includes(zone.name) : true
-        )) : Suggestions,
+        toZoneSuggestions: zone
+          ? Suggestions.filter(suggestion =>
+              zone.name ? suggestion.name.includes(zone.name) : true
+            )
+          : Suggestions,
       });
     } else {
       this.setState({
@@ -30,9 +32,8 @@ class ZonePickerStory extends React.PureComponent {
   };
 
   render() {
-    const {
-      fromZone, toZone, fromZoneSuggestions, toZoneSuggestions,
-    } = this.state;
+    const { fromZone, toZone, fromZoneSuggestions, toZoneSuggestions } =
+      this.state;
     const { error } = this.props;
 
     return (
@@ -57,11 +58,8 @@ ZonePickerStory.defaultProps = {
 };
 
 storiesOf('ZonesPicker', module)
-
   .addParameters({
-    backgrounds: [
-      { name: 'header', value: 'white', default: true },
-    ],
+    backgrounds: [{ name: 'header', value: 'white', default: true }],
   })
   .addDecorator(centered)
   .addDecorator(withKnobs)

@@ -17,16 +17,17 @@
   &.right {
     left: auto;
     right: 12px;
-   }
+  }
   &.top {
     top: 0;
   }
   &.bottom {
     bottom: 0;
-   }
+  }
 }
 
-.hours, .minutes {
+.hours,
+.minutes {
   flex-direction: column;
   overflow: scroll;
   position: relative;
@@ -38,21 +39,23 @@
   }
 }
 
-.hour, .minute {
+.hour,
+.minute {
   min-width: 40px;
   padding: 5px 10px;
-  transition: text-shadow .3s;
+  transition: text-shadow 0.3s;
   text-align: center;
-  &:hover, &.selected {
+  &:hover,
+  &.selected {
     border-radius: var(--marginXSmall);
     cursor: pointer;
     font-weight: bold;
   }
   &:hover {
-     background-color: var(--lightYellow);
+    background-color: var(--lightYellow);
   }
   &.selected {
-     background-color: var(--yellow);
+    background-color: var(--yellow);
   }
   &.disabled {
     color: var(--darkGrey);

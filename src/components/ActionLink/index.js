@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 
 import s from './ActionLink.module.css';
 
-const ActionLink = ({
-  icon, label, onClick, className, id, type,
-}) => {
+const ActionLink = ({ icon, label, onClick, className, id, type }) => {
   const labelStyle = icon ? s.labelWithIcon : s.labelWithoutIcon;
 
   return (
@@ -15,11 +13,9 @@ const ActionLink = ({
       id={id}
       type={type}
     >
-      { icon && <i className={`icon-${icon}`} /> }
+      {icon && <i className={`icon-${icon}`} />}
 
-      <span className={`${s.commonLabelStyle} ${labelStyle}`}>
-        { label }
-      </span>
+      <span className={`${s.commonLabelStyle} ${labelStyle}`}>{label}</span>
     </button>
   );
 };
@@ -40,6 +36,5 @@ ActionLink.propTypes = {
   id: PropTypes.string,
   type: PropTypes.string,
 };
-
 
 export default ActionLink;

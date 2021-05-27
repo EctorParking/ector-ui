@@ -16,14 +16,15 @@ const AlternativeTimeCard = ({
   className,
   ...cardProps
 }) => {
-  const footer = mode !== 'selectedWithoutFooter' ? (
-    <AlternativeTimeCardFooter
-      mode={mode}
-      texts={texts}
-      onSelect={onSelect}
-      testid={testid}
-    />
-  ) : null;
+  const footer =
+    mode !== 'selectedWithoutFooter' ? (
+      <AlternativeTimeCardFooter
+        mode={mode}
+        texts={texts}
+        onSelect={onSelect}
+        testid={testid}
+      />
+    ) : null;
 
   const header = (
     <div className={s.header}>
@@ -51,7 +52,11 @@ const AlternativeTimeCard = ({
 AlternativeTimeCard.propTypes = {
   texts: AlternativeTimeCardTextsType,
   alternative: AlternativeTimeCardAlternativeType.isRequired,
-  mode: PropTypes.oneOf(['normal', 'selectedWithFooter', 'selectedWithoutFooter']).isRequired,
+  mode: PropTypes.oneOf([
+    'normal',
+    'selectedWithFooter',
+    'selectedWithoutFooter',
+  ]).isRequired,
   onSelect: PropTypes.func.isRequired,
   testid: PropTypes.string,
   className: PropTypes.string,

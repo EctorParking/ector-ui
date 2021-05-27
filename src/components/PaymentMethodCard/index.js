@@ -9,14 +9,13 @@ import PaymentMethodCardHeader from './PaymentMethodCardHeader';
 import { Card } from '..';
 
 class PaymentMethodCard extends React.Component {
-  renderFooter = (footerProps) => {
-    const {
-      texts, onClick, selected, FooterComponent, testid,
-    } = this.props;
+  renderFooter = footerProps => {
+    const { texts, onClick, selected, FooterComponent, testid } = this.props;
 
     if (typeof FooterComponent !== 'undefined' && !FooterComponent) {
       return null;
-    } if (typeof FooterComponent === 'function') {
+    }
+    if (typeof FooterComponent === 'function') {
       return FooterComponent(footerProps);
     }
     return (
@@ -46,10 +45,16 @@ class PaymentMethodCard extends React.Component {
       ...cardProps
     } = this.props;
     const cardContentProps = {
-      paymentMethod, texts, pendingDeletion, onConfirmDeletion, onCancelDeletion,
+      paymentMethod,
+      texts,
+      pendingDeletion,
+      onConfirmDeletion,
+      onCancelDeletion,
     };
     const cardHeaderProps = {
-      onDelete, texts, pendingDeletion,
+      onDelete,
+      texts,
+      pendingDeletion,
     };
 
     return (
@@ -58,18 +63,20 @@ class PaymentMethodCard extends React.Component {
         className={[s.card, className].join(' ')}
         FooterComponent={this.renderFooter}
         isSelected={selected}
-        contentClassName={[s.cardContent, pendingDeletion ? s.pendingDeletion : undefined, contentClassName].join(' ')}
+        contentClassName={[
+          s.cardContent,
+          pendingDeletion ? s.pendingDeletion : undefined,
+          contentClassName,
+        ].join(' ')}
       >
-        {
-          deletable && (
-            <PaymentMethodCardHeader {...cardHeaderProps} className={s.header} />
-          )
-        }
-        {
-          children === null ? (
-            <PaymentMethodCardContent {...cardContentProps} />
-          ) : children
-        }
+        {deletable && (
+          <PaymentMethodCardHeader {...cardHeaderProps} className={s.header} />
+        )}
+        {children === null ? (
+          <PaymentMethodCardContent {...cardContentProps} />
+        ) : (
+          children
+        )}
       </Card>
     );
   }

@@ -7,14 +7,10 @@ import InputButton from '.';
 import s from './InputButton.module.css';
 
 storiesOf('InputButton', module)
-
   .addParameters({
-    backgrounds: [
-      { name: 'header', value: 'white', default: true },
-    ],
+    backgrounds: [{ name: 'header', value: 'white', default: true }],
   })
   .addDecorator(centered)
-
 
   .add('with help text', () => (
     <InputButton
@@ -22,7 +18,9 @@ storiesOf('InputButton', module)
       placeholder="Entrez une adresse mail"
       hasError={false}
       IconComponent={({ className }) => <span className={className}>€</span>}
-      SubTextComponent={() => (<p className={s.helpTextClassname}>Cliquez sur envoyer</p>)}
+      SubTextComponent={() => (
+        <p className={s.helpTextClassname}>Cliquez sur envoyer</p>
+      )}
     />
   ))
 
@@ -38,8 +36,6 @@ storiesOf('InputButton', module)
       buttonText="Envoyez 20€"
       placeholder="Entrez une adresse mail"
       hasError
-      SubTextComponent={() => (<div className={s.error}>Email invalide</div>)}
+      SubTextComponent={() => <div className={s.error}>Email invalide</div>}
     />
-
-
   ));

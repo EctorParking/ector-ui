@@ -44,9 +44,9 @@
 .tooltip {
   position: relative;
   &:hover {
-      &>.tooltipText {
-          visibility: visible;
-      }
+    & > .tooltipText {
+      visibility: visible;
+    }
   }
 }
 

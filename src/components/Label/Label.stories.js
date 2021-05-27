@@ -6,14 +6,22 @@ import { withKnobs, select, text } from '@storybook/addon-knobs';
 
 import Label from '.';
 
-const colors = ['deepBlue', 'green', 'red', 'melrose', 'blue', 'lightGrey', 'metalGrey', 'darkMetalGrey', 'aquaHazeGrey', 'orange'];
+const colors = [
+  'deepBlue',
+  'green',
+  'red',
+  'melrose',
+  'blue',
+  'lightGrey',
+  'metalGrey',
+  'darkMetalGrey',
+  'aquaHazeGrey',
+  'orange',
+];
 
 storiesOf('Label', module)
-
   .addParameters({
-    backgrounds: [
-      { name: 'header', value: 'white', default: true },
-    ],
+    backgrounds: [{ name: 'header', value: 'white', default: true }],
   })
   .addDecorator(centered)
   .addDecorator(withKnobs)

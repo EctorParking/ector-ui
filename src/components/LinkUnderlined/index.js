@@ -4,16 +4,28 @@ import PropTypes from 'prop-types';
 import s from './LinkUnderlined.module.css';
 
 const LinkUnderlined = ({
-  children, onClick, testid, className, id, fetching,
+  children,
+  onClick,
+  testid,
+  className,
+  id,
+  fetching,
 }) => (
-  <div className={[s.link_underlined, fetching ? s.link_underlined_fetching : undefined, className].join(' ')} id={id}>
+  <div
+    className={[
+      s.link_underlined,
+      fetching ? s.link_underlined_fetching : undefined,
+      className,
+    ].join(' ')}
+    id={id}
+  >
     <button
       testid={testid}
       onClick={onClick}
       id={id === LinkUnderlined.defaultProps.id ? '' : `${id}Button`}
       className={[s.button, fetching ? s.fetching : ''].join(' ')}
     >
-      { children }
+      {children}
     </button>
   </div>
 );

@@ -6,11 +6,23 @@ import ServiceCardBody from './ServiceCardBody';
 import ServiceCardFooter from './ServiceCardFooter';
 import Label from '../Label';
 
-
 const ServiceCard = ({
-  className, contentClassName, image, title, description,
-  PriceComponent, actionFooter, openShowMore, isSubscribed, buttonLabelFooter,
-  labelText, labelLogo, labelColor, id, showButton, knowMoreLabel,
+  className,
+  contentClassName,
+  image,
+  title,
+  description,
+  PriceComponent,
+  actionFooter,
+  openShowMore,
+  isSubscribed,
+  buttonLabelFooter,
+  labelText,
+  labelLogo,
+  labelColor,
+  id,
+  showButton,
+  knowMoreLabel,
 }) => {
   const cardClassName = `
         ${s.card}
@@ -20,17 +32,14 @@ const ServiceCard = ({
 
   return (
     <div className={cardClassName}>
-      {
-        labelColor !== '' && labelLogo !== '' && labelText !== ''
-        && (
-          <Label
-            logo={labelLogo}
-            label={labelText}
-            color={labelColor}
-            className={s.labelContainer}
-          />
-        )
-      }
+      {labelColor !== '' && labelLogo !== '' && labelText !== '' && (
+        <Label
+          logo={labelLogo}
+          label={labelText}
+          color={labelColor}
+          className={s.labelContainer}
+        />
+      )}
       <ServiceCardBody
         image={image}
         title={title}

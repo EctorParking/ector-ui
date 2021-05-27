@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 import s from './Box.module.css';
 
 const Box = ({ className, children }) => (
-  <div className={[s.box, className].join(' ')}>
-    {children}
-  </div>
+  <div className={[s.box, className].join(' ')}>{children}</div>
 );
 
 Box.defaultProps = {

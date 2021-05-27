@@ -4,7 +4,10 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import centered from '@storybook/addon-centered';
 import {
-  withKnobs, select, object, boolean,
+  withKnobs,
+  select,
+  object,
+  boolean,
 } from '@storybook/addon-knobs/react';
 import frFlag from '../../assets/images/flags/fr.svg';
 import gbFlag from '../../assets/images/flags/gb.svg';
@@ -21,11 +24,8 @@ const renderSelectOption = option => (
 );
 
 storiesOf('Select', module)
-
   .addParameters({
-    backgrounds: [
-      { name: 'header', value: 'white', default: true },
-    ],
+    backgrounds: [{ name: 'header', value: 'white', default: true }],
   })
   .addDecorator(withKnobs)
   .addDecorator(centered)
@@ -37,9 +37,7 @@ storiesOf('Select', module)
       disabled: boolean('Disabled', false),
     };
 
-    return (
-      <Select {...props} onChange={action('change')} />
-    );
+    return <Select {...props} onChange={action('change')} />;
   })
 
   .add('With custom child', () => {
@@ -63,9 +61,7 @@ storiesOf('Select', module)
           className={s.selectImage}
           alt={country.label}
         />
-        <span>
-          {country.label}
-        </span>
+        <span>{country.label}</span>
       </Select>
     );
   });

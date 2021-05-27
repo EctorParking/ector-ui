@@ -32,7 +32,7 @@
 }
 
 .menuItem {
-  transition: text-shadow .3s;
+  transition: text-shadow 0.3s;
 }
 
 .menuItemNotHovered {
@@ -45,7 +45,8 @@
   cursor: pointer !important;
 }
 
-.visible, .suggestion:hover {
+.visible,
+.suggestion:hover {
   font-weight: var(--fontWeightBold);
 }
 

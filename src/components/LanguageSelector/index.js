@@ -11,18 +11,24 @@ const LanguageType = PropTypes.shape({
 });
 
 const LanguageSelector = ({
-  languages, value, onChange, id, className, ...selectProps
+  languages,
+  value,
+  onChange,
+  id,
+  className,
+  ...selectProps
 }) => {
-  const getSelectValueFromLocale = localeValue => languages
-    .map(({ image, name, locale }) => ({
-      value: locale,
-      label: name,
-      image,
-    }))
-    .find(language => language.value === localeValue);
+  const getSelectValueFromLocale = localeValue =>
+    languages
+      .map(({ image, name, locale }) => ({
+        value: locale,
+        label: name,
+        image,
+      }))
+      .find(language => language.value === localeValue);
 
   const [selectValue, setSelectValue] = useState(
-    value ? getSelectValueFromLocale(value) : undefined,
+    value ? getSelectValueFromLocale(value) : undefined
   );
 
   useEffect(() => {

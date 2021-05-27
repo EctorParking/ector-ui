@@ -11,11 +11,12 @@ const iconNameToMarginClassName = {
 };
 
 const IconComponent = ({ name, className: iconClassName }) => (
-  <i className={[
-    iconNameToMarginClassName[name],
-    `icon icon-${name}`,
-    iconClassName,
-  ].join(' ')}
+  <i
+    className={[
+      iconNameToMarginClassName[name],
+      `icon icon-${name}`,
+      iconClassName,
+    ].join(' ')}
   />
 );
 
@@ -25,14 +26,26 @@ IconComponent.propTypes = {
 };
 
 const ZoneSuggestion = ({
-  value, onClick, selected, disabled, className, search, Icon: IconProps, ...rest
+  value,
+  onClick,
+  selected,
+  disabled,
+  className,
+  search,
+  Icon: IconProps,
+  ...rest
 }) => {
   const IconComputed = IconProps() ? IconProps : Icon;
 
   return (
     <span
       role="presentation"
-      className={[s.suggestion, selected ? s.selected : undefined, disabled ? s.disabled : undefined, className].join(' ')}
+      className={[
+        s.suggestion,
+        selected ? s.selected : undefined,
+        disabled ? s.disabled : undefined,
+        className,
+      ].join(' ')}
       onClick={onClick}
       {...rest}
     >
@@ -48,7 +61,10 @@ const ZoneSuggestion = ({
         className={s.zoneName}
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{
-          __html: value.name.replace(new RegExp(`(${search})`, 'i'), '<strong>$1</strong>'),
+          __html: value.name.replace(
+            new RegExp(`(${search})`, 'i'),
+            '<strong>$1</strong>'
+          ),
         }}
       />
     </span>

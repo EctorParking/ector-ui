@@ -1,140 +1,142 @@
 @import '../../style/variable.global.css';
 
 .card {
-    width: 650px;
+  width: 650px;
 }
 
-.contentCard {}
-
 .formContainer {
-    margin-bottom: var(--marginMedium);
+  margin-bottom: var(--marginMedium);
 }
 
 .title {
-    margin: 0;
-    font-weight: var(--fontWeightLight);
-    color: var(--blue);
+  margin: 0;
+  font-weight: var(--fontWeightLight);
+  color: var(--blue);
 }
 
 .firstColumn {
-    padding-right: var(--marginMedium);
+  padding-right: var(--marginMedium);
 }
 
 .secondColumn {
-    padding-left: var(--marginMedium);
+  padding-left: var(--marginMedium);
 }
 
 .halfWidth {
-    width: 50%;
+  width: 50%;
 }
 
 .row {
-    margin-top: var(--marginSmall);
-    display: flex;
+  margin-top: var(--marginSmall);
+  display: flex;
 }
 
 .noMargin {
-    margin: 0;
+  margin: 0;
 }
 
 .input {
-    flex: 1;
+  flex: 1;
 }
 
 .select {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 .defaultOption {
-    color: var(--metalGrey);
+  color: var(--metalGrey);
 }
 
 .actionLink {
-    margin-top: var(--marginXSmall);
+  margin-top: var(--marginXSmall);
 }
 
 .flexStart {
-    display: flex;
-    justify-content: flex-start;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .flexEnd {
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .description {
-    margin-top: var(--marginSmall);
+  margin-top: var(--marginSmall);
 }
 
 .inputTooltip {
-    left: 50%;
-    top: -25px;
+  left: 50%;
+  top: -25px;
 }
 
 @media (--maxPurchaseCanalMinWidth) {
-    .card {
-        width: min-content;
-    }
-    .input {
-        min-width: 275px;
-        max-width: 275px;
-        margin: var(--marginXSmall) var(--marginSmall) 0 var(--marginSmall);
-    }
-    .firstColumn, .secondColumn {
-        padding: 0;
-    }
-    .actionLink, .description {
-        margin-right: var(--marginSmall);
-        margin-left: var(--marginSmall);
-    }
-    .title {
-        margin-left: var(--marginSmall);
-    }
-    .row {
-        flex-wrap: wrap;
-    }
+  .card {
+    width: min-content;
+  }
+  .input {
+    min-width: 275px;
+    max-width: 275px;
+    margin: var(--marginXSmall) var(--marginSmall) 0 var(--marginSmall);
+  }
+  .firstColumn,
+  .secondColumn {
+    padding: 0;
+  }
+  .actionLink,
+  .description {
+    margin-right: var(--marginSmall);
+    margin-left: var(--marginSmall);
+  }
+  .title {
+    margin-left: var(--marginSmall);
+  }
+  .row {
+    flex-wrap: wrap;
+  }
 }
 
 @media (--maxTablet) {
-    .card {
-        width: 100%;
-    }
-    .input {
-        max-width: none;
-    }
-
+  .card {
+    width: 100%;
+  }
+  .input {
+    max-width: none;
+  }
 }
 
 @media (--maxMobile) {
-    .card {
-        width: 100%;
-    }
-    .contentCard {
-        padding: var(--marginMedium);
-    }
-    .halfWidth, .input {
-        width: 100%;
-    }
-    .input {
-        flex: none;
-        margin: var(--marginXSmall) 0 0 0;
-        min-width: 0;
-    }
-    .title, .actionLink {
-        margin: 0;
-    }
-    .row {
-        margin: 0;
-        flex-wrap: wrap;
-    }
-    .firstColumn, .secondColumn {
-        padding: 0;
-    }
-    .title {
-        font-size: var(--fontSizeSubtitle);
-    }
-    .description {
-        margin: calc(var(--marginSmall) + var(--marginXSmall)) 0;
-    }
+  .card {
+    width: 100%;
+  }
+  .contentCard {
+    padding: var(--marginMedium);
+  }
+  .halfWidth,
+  .input {
+    width: 100%;
+  }
+  .input {
+    flex: none;
+    margin: var(--marginXSmall) 0 0 0;
+    min-width: 0;
+  }
+  .title,
+  .actionLink {
+    margin: 0;
+  }
+  .row {
+    margin: 0;
+    flex-wrap: wrap;
+  }
+  .firstColumn,
+  .secondColumn {
+    padding: 0;
+  }
+  .title {
+    font-size: var(--fontSizeSubtitle);
+  }
+  .description {
+    margin: calc(var(--marginSmall) + var(--marginXSmall)) 0;
+  }
 }
