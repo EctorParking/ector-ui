@@ -1,7 +1,7 @@
 @import '../../style/variable.global.css';
 
 .labelContainer {
-  border-radius: var(--inputBorderRadius);
+  border-radius: var(--radiusSmall);
   color: var(--white);
   font-size: var(--fontSizeSmall);
   padding: 0 var(--marginXSmall);

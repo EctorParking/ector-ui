@@ -36,7 +36,9 @@
 
   /* Radiuses */
   --borderRadius: 8px;
-  --inputBorderRadius: 3px;
+  
+  --radiusSmall: 15px;
+  --radiusMedium: 30px;
 
   /* Spaces */
   --marginXSmall: 5px;

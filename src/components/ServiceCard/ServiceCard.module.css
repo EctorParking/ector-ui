@@ -3,7 +3,7 @@
 .card {
   box-sizing: border-box;
   background-color: var(--lightNeutral);
-  border-radius: var(--borderRadius);
+  border-radius: var(--radiusMedium);
   padding: 5px;
   margin-top: 25px;
   position: relative;

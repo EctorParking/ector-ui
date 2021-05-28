@@ -2,7 +2,7 @@
 
 .applicationCard {
   background-color: var(--primary);
-  border-radius: var(--borderRadius);
+  border-radius: var(--radiusMedium);
   box-sizing: border-box;
   display: flex;
   padding: 0 var(--marginMedium);

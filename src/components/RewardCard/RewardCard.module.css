@@ -4,7 +4,7 @@
   display: flex;
   padding: 0;
   max-height: 100%;
-  border-radius: var(--borderRadius);
+  border-radius: var(--radiusMedium);
   background-color: var(--background);
   box-shadow: 0 0 38px -2px rgba(0, 0, 0, 0.15);
 }

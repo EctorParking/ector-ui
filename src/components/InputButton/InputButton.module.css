@@ -33,8 +33,8 @@
   align-items: center;
   border: 2px solid var(--metalGrey);
   border-left: 0;
-  border-bottom-right-radius: var(--inputBorderRadius);
-  border-top-right-radius: var(--inputBorderRadius);
+  border-bottom-right-radius: var(--radiusMedium);
+  border-top-right-radius: var(--radiusMedium);
   box-sizing: border-box;
   display: flex;
   height: var(--marginMLarge);

@@ -2,7 +2,7 @@
 
 .card {
   display: flex;
-  border-radius: var(--borderRadius);
+  border-radius: var(--radiusMedium);
   background-color: var(--background);
   margin: 0 0 var(--marginXMedium) 0;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
