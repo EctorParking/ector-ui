@@ -26,7 +26,7 @@
 }
 
 .row {
-  margin-top: var(--marginSmall);
+  margin-top: var(--spaceExtraSmall);
   display: flex;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .defaultOption {
-  color: var(--metalGrey);
+  color: var(--neutral);
 }
 
 .actionLink {
@@ -61,7 +61,7 @@
 }
 
 .description {
-  margin-top: var(--marginSmall);
+  margin-top: var(--spaceExtraSmall);
 }
 
 .inputTooltip {
@@ -76,7 +76,7 @@
   .input {
     min-width: 275px;
     max-width: 275px;
-    margin: var(--marginXSmall) var(--marginSmall) 0 var(--marginSmall);
+    margin: var(--marginXSmall) var(--spaceExtraSmall) 0 var(--spaceExtraSmall);
   }
   .firstColumn,
   .secondColumn {
@@ -84,11 +84,11 @@
   }
   .actionLink,
   .description {
-    margin-right: var(--marginSmall);
-    margin-left: var(--marginSmall);
+    margin-right: var(--spaceExtraSmall);
+    margin-left: var(--spaceExtraSmall);
   }
   .title {
-    margin-left: var(--marginSmall);
+    margin-left: var(--spaceExtraSmall);
   }
   .row {
     flex-wrap: wrap;
@@ -136,6 +136,6 @@
     font-size: var(--fontSizeSubtitle);
   }
   .description {
-    margin: calc(var(--marginSmall) + var(--marginXSmall)) 0;
+    margin: calc(var(--spaceExtraSmall) + var(--marginXSmall)) 0;
   }
 }

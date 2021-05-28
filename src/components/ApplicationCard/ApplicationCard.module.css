@@ -27,7 +27,7 @@
 .applicationCard h2 {
   color: var(--accent);
   font-weight: var(--fontWeightRegular);
-  margin: 0 0 var(--marginSmall);
+  margin: 0 0 var(--spaceExtraSmall);
 }
 
 .applicationCard p {
@@ -44,7 +44,7 @@
 
 .icons {
   display: flex;
-  margin-top: var(--marginLarge);
+  margin-top: var(--spaceLarge);
 }
 
 .icons img {

@@ -7,7 +7,7 @@
   color: var(--white);
   display: flex;
   flex: 1;
-  margin-bottom: var(--marginLarge);
+  margin-bottom: var(--spaceLarge);
   padding: var(--marginMedium);
   width: 100%;
 }

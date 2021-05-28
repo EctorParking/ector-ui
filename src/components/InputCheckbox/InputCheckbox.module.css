@@ -40,7 +40,7 @@
   height: 22px;
   width: 22px;
   border-radius: 0.25rem;
-  border: 2px solid var(--metalGrey);
+  border: 2px solid var(--neutral);
 }
 
 /* On mouse-over, add a grey background color */

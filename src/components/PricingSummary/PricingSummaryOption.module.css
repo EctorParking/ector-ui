@@ -14,7 +14,7 @@
 
 .label i {
   font-size: 0.9em;
-  margin-left: var(--marginSmall);
+  margin-left: var(--spaceExtraSmall);
 }
 
 .label i:before {

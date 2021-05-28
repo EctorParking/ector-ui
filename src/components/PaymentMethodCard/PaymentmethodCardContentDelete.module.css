@@ -7,7 +7,7 @@
 }
 
 .sentence {
-  margin: var(--marginSmall) 0;
+  margin: var(--spaceExtraSmall) 0;
   width: 100%;
 }
 

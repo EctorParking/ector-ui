@@ -21,7 +21,7 @@
   border-top-left-radius: 0;
 }
 .helpTextClassname {
-  color: var(--metalGrey);
+  color: var(--neutral);
   font-style: italic;
   margin: 0;
 }
@@ -31,13 +31,13 @@
 }
 .iconContainer {
   align-items: center;
-  border: 2px solid var(--metalGrey);
+  border: 2px solid var(--neutral);
   border-left: 0;
   border-bottom-right-radius: var(--radiusMedium);
   border-top-right-radius: var(--radiusMedium);
   box-sizing: border-box;
   display: flex;
-  height: var(--marginMLarge);
+  height: var(--spaceExtraLarge);
 }
 .iconContainer:empty {
   display: none;
@@ -52,5 +52,5 @@
   color: var(--primary);
   font-size: var(--fontSizeNormal);
   font-weight: var(--fontWeightRegular);
-  margin: 0 var(--marginSmall);
+  margin: 0 var(--spaceExtraSmall);
 }

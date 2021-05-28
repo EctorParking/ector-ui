@@ -20,11 +20,11 @@
 
 .informationTotalRefund {
   border-top: 2px solid var(--lightNeutral);
-  padding: var(--marginSmall) var(--marginMediumXL) 0 var(--marginMediumXL);
+  padding: var(--spaceExtraSmall) var(--spaceMedium) 0 var(--spaceMedium);
 }
 
 .paymentMethodBox {
-  padding: var(--marginSmall) 0 var(--marginSmall) 0;
+  padding: var(--spaceExtraSmall) 0 var(--spaceExtraSmall) 0;
   max-width: 720px;
   align-self: center;
   max-height: 100%;
@@ -48,7 +48,7 @@
 }
 
 .paymentCardsHeader {
-  padding: var(--marginSmall) var(--marginMLarge) var(--marginSmall) 0;
+  padding: var(--spaceExtraSmall) var(--spaceExtraLarge) var(--spaceExtraSmall) 0;
 }
 
 .numberHeader {
@@ -73,7 +73,7 @@
 .paymentTableFooter {
   display: flex;
   align-items: center;
-  padding: var(--marginSmall);
+  padding: var(--spaceExtraSmall);
   padding-left: var(--marginXMedium);
 }
 

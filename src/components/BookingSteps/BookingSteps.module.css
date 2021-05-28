@@ -1,22 +1,22 @@
 @import '../../style/variable.global.css';
 
 .bookingSteps {
-  padding-left: var(--marginLarge);
+  padding-left: var(--spaceLarge);
   font-size: var(--fontSizeNormal);
 }
 
 .firstBookingStep {
-  padding-bottom: var(--marginSmall);
+  padding-bottom: var(--spaceExtraSmall);
   position: relative;
 }
 
 .firstBookingStep:before {
   content: '';
   position: absolute;
-  top: var(--marginSmall);
+  top: var(--spaceExtraSmall);
   left: calc(var(--marginMedium) * -1);
   margin-left: calc(var(--marginXSmall) - 1px);
-  bottom: calc(var(--marginSmall) * -1);
+  bottom: calc(var(--spaceExtraSmall) * -1);
   border-right: 2px dotted var(--primary);
 }
 
@@ -31,8 +31,8 @@
 .stepName:before {
   position: absolute;
   content: '';
-  width: var(--marginSmall);
-  height: var(--marginSmall);
+  width: var(--spaceExtraSmall);
+  height: var(--spaceExtraSmall);
   top: 50%;
   left: calc(var(--marginMedium) * -1);
   border-radius: 50%;
@@ -46,7 +46,7 @@
   font-size: 0.9em;
 }
 .bookingSteps div span i {
-  /* margin-right: var(--marginSmall); */
+  /* margin-right: var(--spaceExtraSmall); */
   font-size: 0.7em;
-  width: var(--marginLarge);
+  width: var(--spaceLarge);
 }

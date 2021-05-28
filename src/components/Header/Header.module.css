@@ -58,7 +58,7 @@
 
 .menuItemText {
   color: var(--primary);
-  margin-left: var(--marginSmall);
+  margin-left: var(--spaceExtraSmall);
 }
 
 .suggestions {
@@ -76,7 +76,7 @@
 }
 
 .suggestion {
-  margin: var(--marginSmall) 0;
+  margin: var(--spaceExtraSmall) 0;
   color: var(--primary);
   align-self: flex-start;
 }

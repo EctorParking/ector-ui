@@ -3,14 +3,14 @@
 .title {
   display: flex;
   flex-direction: column;
-  margin-bottom: var(--marginLarge);
+  margin-bottom: var(--spaceLarge);
 }
 
 .title .element {
   font-size: 40px;
   font-weight: var(--fontWeightRegular);
   line-height: 1;
-  margin: 0 0 var(--marginSmall);
+  margin: 0 0 var(--spaceExtraSmall);
 }
 
 .newTitle {
@@ -22,7 +22,7 @@
 
 .title .horizontalRule {
   border: 0;
-  border-top: 2px solid var(--primary);
+  border-top: 2px solid var(--lightPrimary);
   margin: 0;
   width: var(--titleHrWidth);
 }

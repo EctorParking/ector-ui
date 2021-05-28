@@ -7,18 +7,18 @@
 .input {
   box-sizing: border-box;
   color: var(--primary);
-  border: 2px solid var(--metalGrey);
+  border: 1px solid var(--neutral);
   border-radius: var(--radiusMedium);
   display: block;
-  height: 2.5rem;
-  padding: 0.5rem;
+  height: 40px;
+  padding: var(--spaceExtraSmall) var(--spaceSmall);
   flex: 1;
   flex-basis: auto;
-  margin-top: 0.25rem;
+  margin-top: calc(var(--spaceExtraSmall) / 2);
 
   &::placeholder {
     opacity: 0.8;
-    color: var(--metalGrey);
+    color: var(--neutral);
   }
 
   &:focus {
@@ -37,7 +37,7 @@
 
 .inputPrepend {
   align-items: center;
-  color: var(--darkGrey);
+  color: var(--darkNeutral);
   display: flex;
   font-size: 2rem;
   height: 100%;
@@ -48,7 +48,7 @@
 
 .inputAppend {
   align-items: center;
-  color: var(--darkGrey);
+  color: var(--darkNeutral);
   display: flex;
   font-size: 2rem;
   height: 100%;

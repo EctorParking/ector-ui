@@ -4,8 +4,8 @@
   background-color: var(--lightNeutral);
   display: flex;
   flex-direction: column;
-  border-radius: 0.5rem;
-  padding: 0.3rem;
+  border-radius: var(--radiusSmall);
+  padding: var(--spaceExtraSmall);
   position: relative;
 }
 
@@ -27,10 +27,10 @@
   flex: 1;
   flex-basis: auto;
   background-color: var(--background);
-  border-radius: 0.3rem;
+  border-radius: var(--radiusSmall);
   display: flex;
   flex-direction: column;
-  padding: 2rem 1.5rem;
+  padding: var(--spaceLarge) var(--spaceSmall);
 }
 
 .card_footer {

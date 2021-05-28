@@ -13,11 +13,11 @@
 }
 
 .columns > div > * {
-  height: 50px;
+  height: 55px;
 }
 
 .leftColumn {
-  margin-right: var(--marginSmall);
+  margin-right: var(--spaceExtraSmall);
 }
 
 .columns:nth-child(2) {
@@ -29,11 +29,11 @@
 }
 
 .leftRadio {
-  margin-right: var(--marginSmall);
+  margin-right: var(--spaceExtraSmall);
 }
 
 .inputLabel {
-  margin-top: var(--marginMLarge);
+  margin-top: var(--spaceExtraLarge);
 }
 
 .titleRadio {
@@ -41,7 +41,7 @@
 }
 
 .genderPicker {
-  margin-top: var(--marginSmall);
+  margin-top: var(--spaceExtraSmall);
 }
 
 .error {
@@ -69,10 +69,10 @@
     height: auto;
   }
   .leftColumn {
-    margin: 0 0 var(--marginSmall);
+    margin: 0 0 var(--spaceExtraSmall);
   }
   .inputLabel {
-    margin-top: var(--marginSmall);
+    margin-top: var(--spaceExtraSmall);
   }
   .emailInputLabel {
     display: none;

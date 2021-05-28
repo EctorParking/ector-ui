@@ -36,7 +36,7 @@
 }
 
 .DayPicker_weekHeader_li {
-  color: var(--metalGrey) !important;
+  color: var(--neutral) !important;
 }
 
 .CalendarDay__selected_span {
@@ -61,7 +61,7 @@
 .CalendarDay__blocked_calendar:hover {
   background-color: transparent !important;
   border: transparent !important;
-  color: var(--darkGrey) !important;
+  color: var(--darkNeutral) !important;
 }
 
 .CalendarDay__selected_start,

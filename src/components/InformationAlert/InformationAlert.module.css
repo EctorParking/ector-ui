@@ -2,11 +2,11 @@
 
 .alert {
   margin-top: var(--marginMedium);
-  margin-right: var(--marginLarge);
+  margin-right: var(--spaceLarge);
   background-color: var(--lightNeutral);
   border-left: 5px solid var(--primary);
   padding:
-    var(--marginSmall) var(--marginMediumXL) var(--marginXSmall)
+    var(--spaceExtraSmall) var(--spaceMedium) var(--marginXSmall)
     var(--marginXMedium);
 }
 
@@ -17,7 +17,7 @@
 
 .alertIconContainer {
   font-size: var(--fontSizeHeading);
-  margin-right: var(--marginSmall);
+  margin-right: var(--spaceExtraSmall);
 }
 
 .alertDescription {

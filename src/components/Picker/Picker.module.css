@@ -7,7 +7,7 @@
   border: none;
   border-radius: var(--marginXSmall);
   display: block;
-  height: var(--marginXLarge);
+  height: 50px;
   padding: 0;
   z-index: 1;
   &.active {
@@ -33,7 +33,7 @@
 
 .pickerInput {
   border-radius: var(--marginXSmall);
-  height: var(--marginXLarge);
+  height: 50px;
   padding: 0;
   border: none;
   margin-top: 0;
@@ -70,7 +70,7 @@
   height: 45px;
   left: 0;
   opacity: 0;
-  padding: var(--marginSmall);
+  padding: var(--spaceExtraSmall);
   position: absolute;
   top: 5px;
   transform: none;

@@ -3,12 +3,11 @@
 .card {
   box-sizing: border-box;
   background-color: var(--lightNeutral);
-  border-radius: var(--radiusMedium);
-  padding: 5px;
-  margin-top: 25px;
+  border-radius: var(--radiusSmall);
+  padding: var(--spaceExtraSmall);
+  margin-top: var(--spaceMedium);
   position: relative;
-  width: 250px;
-  height: 260px;
+  max-width: 250px;
 }
 
 .optionCardContainerSelected {

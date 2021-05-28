@@ -2,6 +2,7 @@
 
 .select {
   width: 100%;
+  margin-top: calc(var(--spaceExtraSmall) / 2);
 }
 
 .defaultClassName {

@@ -21,7 +21,7 @@
   background-size: 100% 100%;
   border-bottom-right-radius: var(--borderRadius);
   border-top-right-radius: var(--borderRadius);
-  width: var(--marginLarge);
+  width: var(--spaceLarge);
 }
 
 .imageContainerBig {

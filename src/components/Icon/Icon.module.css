@@ -14,5 +14,5 @@
 }
 
 .withBackground.left {
-  margin-left: var(--marginSmall);
+  margin-left: var(--spaceExtraSmall);
 }

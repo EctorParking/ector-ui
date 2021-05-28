@@ -4,7 +4,7 @@
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
-  padding: var(--marginMedium) var(--marginSmall);
+  padding: var(--spaceSmall) var(--spaceExtraSmall);
 }
 
 .price {
@@ -30,7 +30,7 @@
     height: initial;
     flex-direction: column;
     justify-content: center;
-    padding: var(--marginSmall);
+    padding: var(--spaceExtraSmall);
   }
 
   .price {

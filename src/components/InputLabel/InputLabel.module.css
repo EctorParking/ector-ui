@@ -29,6 +29,7 @@
 .error {
   text-align: left;
   color: var(--error);
+  margin-left: var(--spaceExtraSmall);
 }
 
 .mandatory {

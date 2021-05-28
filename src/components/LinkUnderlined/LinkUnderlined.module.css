@@ -3,7 +3,7 @@
 .link_underlined {
   display: flex;
   position: relative;
-  padding: 0 2px;
+  padding: 0 var(--spaceExtraSmall);
   align-items: flex-end;
   z-index: 0;
   cursor: pointer;
@@ -14,7 +14,7 @@
     content: '';
     position: absolute;
     left: 0;
-    bottom: -1px;
+    bottom: 0;
     width: 100%;
     height: 8px;
     background-color: var(--accent);

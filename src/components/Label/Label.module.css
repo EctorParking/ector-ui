@@ -1,8 +1,8 @@
 @import '../../style/variable.global.css';
 
 .labelContainer {
-  border-radius: var(--radiusSmall);
   color: var(--white);
+  border-radius: var(--radiusMedium);
   font-size: var(--fontSizeSmall);
   padding: 0 var(--marginXSmall);
   display: flex;

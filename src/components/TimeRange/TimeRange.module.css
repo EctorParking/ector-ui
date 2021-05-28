@@ -58,6 +58,6 @@
     background-color: var(--accent);
   }
   &.disabled {
-    color: var(--darkGrey);
+    color: var(--darkNeutral);
   }
 }

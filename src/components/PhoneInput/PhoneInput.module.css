@@ -6,15 +6,15 @@
 }
 
 .phoneInputCountryCode {
-  flex: 1 0 var(--marginXLarge);
+  flex: 1 0 50px;
 }
 
 .inputContainer {
-  margin-left: var(--marginSmall);
+  margin-left: var(--spaceExtraSmall);
 }
 
 .selectImage {
-  margin-right: var(--marginSmall);
+  margin-right: var(--spaceExtraSmall);
   max-height: var(--maxImageSize);
   max-width: var(--maxImageSize);
 }

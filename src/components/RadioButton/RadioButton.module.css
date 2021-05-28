@@ -13,11 +13,11 @@
 .button {
   align-items: center;
   border-radius: 50%;
-  border: 2px solid var(--darkMetalGrey);
+  border: 2px solid var(--neutral);
   display: flex;
-  height: 14px;
+  height: 24px;
+  width: 24px;
   justify-content: center;
-  width: 14px;
 }
 
 .button:after {
@@ -25,8 +25,8 @@
   border-radius: 50%;
   content: '';
   display: none;
-  height: 6px;
-  width: 6px;
+  height: 14px;
+  width: 14px;
 }
 
 .input {
@@ -39,5 +39,5 @@
 }
 
 .label {
-  margin-left: var(--marginSmall);
+  margin-left: var(--spaceExtraSmall);
 }

@@ -40,7 +40,7 @@
 
 .addItemButtonLink {
   justify-self: flex-end;
-  margin-bottom: var(--marginSmall);
+  margin-bottom: var(--spaceExtraSmall);
 }
 
 .text {

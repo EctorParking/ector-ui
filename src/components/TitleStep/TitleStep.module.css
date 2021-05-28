@@ -18,7 +18,7 @@
 
 .step_button {
   align-items: center;
-  color: var(--aquaHazeGrey);
+  color: var(--darkNeutral);
   display: flex;
   font-size: 1.1rem;
   margin-right: 3rem;

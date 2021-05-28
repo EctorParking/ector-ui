@@ -3,13 +3,13 @@
 .select {
   align-items: center;
   border-radius: var(--radiusMedium);
-  border: 2px solid var(--metalGrey);
+  border: 1px solid var(--neutral);
   box-sizing: border-box;
   color: var(--primary);
   display: flex;
-  height: 2.5rem;
-  margin-top: 0.25rem;
-  padding: 0.5rem;
+  height: 40px;
+  margin-top: calc(var(--spaceExtraSmall) / 2);
+  padding: var(--spaceExtraSmall) var(--spaceSmall);
   position: relative;
 }
 
@@ -17,7 +17,7 @@
   content: '\e954';
   font-family: 'icomoon';
   font-size: 80%;
-  margin-right: var(--marginSmall);
+  margin-right: var(--spaceExtraSmall);
   position: absolute;
   right: 0;
 }

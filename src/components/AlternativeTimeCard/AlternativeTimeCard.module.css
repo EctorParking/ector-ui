@@ -15,20 +15,20 @@
   justify-content: center;
   flex-direction: row;
   align-items: center;
-  padding: var(--marginMedium) var(--marginLarge);
+  padding: var(--marginMedium) var(--spaceLarge);
   font-size: 30px;
   font-weight: var(--fontWeightBold);
 }
 
 .content i {
-  margin-right: var(--marginSmall);
+  margin-right: var(--spaceExtraSmall);
 }
 
 .header {
   display: flex;
   flex-direction: column;
   line-height: 1;
-  padding: var(--marginXSmall) var(--marginSmall) var(--marginSmall);
+  padding: var(--marginXSmall) var(--spaceExtraSmall) var(--spaceExtraSmall);
 }
 
 .footerContainer {

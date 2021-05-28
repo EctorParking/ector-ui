@@ -3,8 +3,9 @@
 .cardContent {
   box-sizing: border-box;
   background-color: var(--background);
-  height: 197px;
-  padding: var(--marginSmall);
+  height: 220px;
+  padding: var(--spaceSmall);
+  border-radius: var(--radiusSmall);
 }
 
 .title {
@@ -39,7 +40,7 @@
   .cardContent {
     flex: 7;
     height: auto;
-    padding: var(--marginSmall);
+    padding: var(--spaceExtraSmall);
   }
 
   .title {

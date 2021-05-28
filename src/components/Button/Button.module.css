@@ -11,7 +11,7 @@
   margin: 0;
   outline: none;
   overflow: hidden;
-  padding: 0.8em 1.1em;
+  padding: var(--spaceSmall) var(--spaceLarge);
   position: relative;
   text-decoration: none;
   text-transform: uppercase;

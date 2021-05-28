@@ -5,7 +5,7 @@
 }
 
 .cardContent {
-  padding: var(--marginSmall);
+  padding: var(--spaceExtraSmall);
   justify-content: center;
 }
 
