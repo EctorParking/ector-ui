@@ -2,7 +2,7 @@
 
 .bookingSteps {
   padding-left: var(--marginLarge);
-  font-size: var(--fontSizeRegular);
+  font-size: var(--fontSizeNormal);
 }
 
 .firstBookingStep {

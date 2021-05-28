@@ -3,7 +3,7 @@
 .labelContainer {
   border-radius: var(--inputBorderRadius);
   color: var(--white);
-  font-size: var(--fontSizeLabel);
+  font-size: var(--fontSizeSmall);
   padding: 0 var(--marginXSmall);
   display: flex;
   align-items: center;

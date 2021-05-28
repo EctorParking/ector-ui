@@ -9,7 +9,7 @@
 
 .summaryRowText {
   color: var(--primary);
-  font-size: var(--fontSizeRegular);
+  font-size: var(--fontSizeNormal);
   margin: 0;
 }
 

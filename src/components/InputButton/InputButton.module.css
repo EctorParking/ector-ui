@@ -14,7 +14,7 @@
 }
 .input,
 .button {
-  height: var(--fontSizeTitle);
+  height: 40px;
 }
 .button {
   border-bottom-left-radius: 0;
@@ -50,7 +50,7 @@
 }
 .icon {
   color: var(--primary);
-  font-size: var(--fontSizeRegular);
+  font-size: var(--fontSizeNormal);
   font-weight: var(--fontWeightRegular);
   margin: 0 var(--marginSmall);
 }

@@ -5,7 +5,7 @@
   border-radius: var(--borderRadius);
   cursor: pointer;
   display: block;
-  font-size: var(--fontSizeRegular);
+  font-size: var(--fontSizeNormal);
   font-weight: bold;
   line-height: 1;
   margin: 0;
@@ -36,16 +36,16 @@
 }
 
 .button[disabled] {
-  background-color: #7890a3;
+  background-color: #7890A3;
   cursor: not-allowed;
 
   &:hover {
-    background-color: #7890a3;
+    background-color: #7890A3;
   }
 }
 
 .button.fetching {
-  background-color: #ffcd026b;
+  background-color: #FFCD026B;
 }
 
 .track.fetchingTrack {

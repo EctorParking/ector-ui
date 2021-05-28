@@ -16,7 +16,7 @@
 }
 
 .alertIconContainer {
-  font-size: var(--fontSizeRegularBig);
+  font-size: var(--fontSizeHeading);
   margin-right: var(--marginSmall);
 }
 

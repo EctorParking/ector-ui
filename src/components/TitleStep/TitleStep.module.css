@@ -35,10 +35,10 @@
     color: var(--accent);
     cursor: default;
     &:before {
-      background-color: white;
+      background-color: var(--background);
     }
     &:after {
-      border-right: 2px solid white;
+      border-right: 2px solid var(--white);
       content: '';
       height: 35px;
       left: 19px;
@@ -55,7 +55,7 @@
 
   &:before {
     align-items: center;
-    background-color: #9eb3c2;
+    background-color: #9EB3C2;
     border-radius: 50%;
     color: var(--primary);
     content: '7';
@@ -74,10 +74,10 @@
   }
 
   &:hover {
-    color: white;
+    color: var(--white);
     &:before,
     &:after {
-      background-color: white;
+      background-color: var(--background);
     }
 
     &:active {

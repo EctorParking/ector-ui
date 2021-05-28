@@ -27,5 +27,5 @@
 }
 
 .bigPrice {
-  font-size: var(--fontSizeTotalPrice);
+  font-size: var(--fontSizeTitle);
 }

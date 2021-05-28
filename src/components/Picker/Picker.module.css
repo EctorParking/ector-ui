@@ -50,7 +50,7 @@
 
 .suggestionsContainer {
   min-height: 150px;
-  background-color: black;
+  background-color: #000000;
   position: absolute;
   width: 150%;
   top: 3.5rem;
@@ -76,7 +76,7 @@
   transform: none;
   transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
   width: 100%;
-  font-size: var(--fontSizeMedium);
+  font-size: var(--fontSizeNormal);
   font-weight: var(--fontWeightBold);
   word-break: break-word;
   hyphens: auto;

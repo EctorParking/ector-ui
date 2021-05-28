@@ -7,14 +7,14 @@
 }
 
 .title .element {
-  font-size: var(--fontSizeTitle);
+  font-size: 40px;
   font-weight: var(--fontWeightRegular);
   line-height: 1;
   margin: 0 0 var(--marginSmall);
 }
 
 .newTitle {
-  font-size: var(--fontSizeNewTitle);
+  font-size: var(--fontSizeTitle);
   font-weight: var(--fontWeightBold);
   line-height: 1;
   margin: 0;

@@ -13,9 +13,9 @@
 */
 
 body {
-  font-family: 'gt_walsheim', 'Arial', 'Helvetica', sans-serif;
-  font-size: var(--fontSizeRegular);
   color: var(--primary);
+  font-family: 'gt_walsheim', 'Arial', 'Helvetica', sans-serif;
+  font-size: var(--fontSizeNormal);
   line-height: var(--lineHeight);
 }
 

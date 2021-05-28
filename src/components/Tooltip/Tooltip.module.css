@@ -30,7 +30,7 @@
   box-shadow: 0 0 var(--marginSmall) rgba(0, 0, 0, 0.25);
   background-color: var(--background);
   color: var(--primary);
-  font-size: var(--fontSizeRegular);
+  font-size: var(--fontSizeNormal);
 }
 
 .hiddenTooltip {

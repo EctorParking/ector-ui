@@ -21,7 +21,7 @@
   }
 
   &:before {
-    background-color: #ffe8ad;
+    background-color: #FFE8AD;
     border-radius: 2px;
     content: '';
     height: 4px;
@@ -34,7 +34,7 @@
 
   &:after {
     animation: fetching 3s linear infinite;
-    background-color: #ffb201;
+    background-color: #FFB201;
     border-radius: 2px;
     content: '';
     height: 4px;

@@ -51,7 +51,7 @@
 
 .footerLabel {
   font-style: italic;
-  font-size: var(--fontSizeLabel);
+  font-size: var(--fontSizeSmall);
 }
 
 @media (--maxMobile) {
