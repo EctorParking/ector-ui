@@ -7609,8 +7609,8 @@ Arrow.propTypes = {
   className: PropTypes$1.string
 };
 
-var css$_ = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.PickerSuggestions-module_container__1Oq6m {\n  background-color: #FFFFFF;\n  border-radius: 5px;\n  -webkit-box-shadow: 0 4px 8px 2px rgba(0, 0, 0, .25);\n          box-shadow: 0 4px 8px 2px rgba(0, 0, 0, .25);\n  height: auto;\n  left: -10%;\n  min-height: 0;\n  opacity: 0;\n  pointer-events: none;\n  position: absolute;\n  top: 65px;\n  -webkit-transform: translateY(-50px);\n          transform: translateY(-50px);\n  -webkit-transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;\n  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  width: 120%\n}\n\n.PickerSuggestions-module_container__1Oq6m.PickerSuggestions-module_visible__4ey8N {\n  opacity: 1;\n  pointer-events: auto;\n  -webkit-transform: none;\n          transform: none;\n}\n\n.PickerSuggestions-module_arrowContainer__2SiPV {\n  position: absolute;\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  left: 0;\n  top: -15px;\n}\n\n.PickerSuggestions-module_arrow__JgXgd {\n  color: transparent\n}\n\n.PickerSuggestions-module_arrow__JgXgd.PickerSuggestions-module_visible__4ey8N {\n  color: #FFFFFF;\n  text-shadow: 0 -5px 15px rgb(206, 206, 206);\n}\n\n.PickerSuggestions-module_splitContainer__3P0nJ:before {\n  background-color: rgba(191, 196, 212, .52);\n  content: '';\n  height: calc(75% - 40px);\n  left: 50%;\n  position: absolute;\n  top: 20px;\n  width: 1px;\n}\n";
-var s$_ = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","container":"PickerSuggestions-module_container__1Oq6m","visible":"PickerSuggestions-module_visible__4ey8N","arrowContainer":"PickerSuggestions-module_arrowContainer__2SiPV","arrow":"PickerSuggestions-module_arrow__JgXgd","splitContainer":"PickerSuggestions-module_splitContainer__3P0nJ"};
+var css$_ = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.PickerSuggestions-module_container__1Oq6m {\n  background-color: #FFFFFF;\n  border-radius: 15px;\n  height: auto;\n  left: -10%;\n  min-height: 0;\n  opacity: 0;\n  pointer-events: none;\n  position: absolute;\n  top: 65px;\n  -webkit-transform: translateY(-50px);\n          transform: translateY(-50px);\n  -webkit-transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;\n  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  width: 120%\n}\n\n.PickerSuggestions-module_container__1Oq6m.PickerSuggestions-module_visible__4ey8N {\n  opacity: 1;\n  pointer-events: auto;\n  -webkit-transform: none;\n          transform: none;\n}\n\n.PickerSuggestions-module_splitContainer__3P0nJ:before {\n  background-color: rgba(191, 196, 212, .52);\n  content: '';\n  height: calc(75% - 40px);\n  left: 50%;\n  position: absolute;\n  top: 20px;\n  width: 1px;\n}\n";
+var s$_ = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","container":"PickerSuggestions-module_container__1Oq6m","visible":"PickerSuggestions-module_visible__4ey8N","splitContainer":"PickerSuggestions-module_splitContainer__3P0nJ"};
 styleInject(css$_);
 
 var PickerSuggestions = function PickerSuggestions(_ref) {
@@ -7627,15 +7627,7 @@ var PickerSuggestions = function PickerSuggestions(_ref) {
     style: {
       left: "calc(50% - ".concat(containerOffset + 130, "px)")
     }
-  }, rest), React__default.createElement("div", {
-    className: s$_.arrowContainer,
-    style: {
-      left: "".concat(containerOffset, "px")
-    }
-  }, React__default.createElement(ArrowComponent, {
-    position: "top",
-    className: [s$_.arrow, visible ? s$_.visible : undefined].join(' ')
-  })), children);
+  }, rest), children);
 };
 
 PickerSuggestions.defaultProps = {
@@ -19010,7 +19002,7 @@ Header.propTypes = {
   disabledButtons: PropTypes$1.bool
 };
 
-var css$1a = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.MenuButton-module_container__3f-Es {\n  position: relative;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.MenuButton-module_button__2FZz3 {\n  color: #000031;\n  padding: 0;\n}\n\n.MenuButton-module_suggestions__3pzou {\n  top: 100%;\n  width: 220px;\n  padding: 20px;\n  margin-top: 20px;\n  left: calc(50% - 130px);\n  min-height: 0;\n  height: auto;\n}\n";
+var css$1a = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.MenuButton-module_container__3f-Es {\n  position: relative;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.MenuButton-module_button__2FZz3 {\n  color: #000031;\n  padding: 0;\n}\n\n.MenuButton-module_suggestions__3pzou {\n  top: 100%;\n  width: 220px;\n  padding: 16px;\n  margin-top: 16px;\n  left: calc(50% - 130px);\n  min-height: 0;\n  height: auto;\n}\n";
 var s$18 = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","container":"MenuButton-module_container__3f-Es","button":"MenuButton-module_button__2FZz3","suggestions":"MenuButton-module_suggestions__3pzou"};
 styleInject(css$1a);
 
@@ -19134,7 +19126,7 @@ MenuButton.propTypes = {
   suggestionContainerOffset: PropTypes$1.number
 };
 
-var css$1b = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.TextIcon-module_container__3uZXq {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.TextIcon-module_icon__3DoI9 {\n  height: 2em;\n  width: 2em;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n";
+var css$1b = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.TextIcon-module_container__3uZXq {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.TextIcon-module_icon__3DoI9 {\n  height: 24px;\n  width: 24px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  margin-right: 8px;\n}\n";
 var s$19 = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","container":"TextIcon-module_container__3uZXq","icon":"TextIcon-module_icon__3DoI9"};
 styleInject(css$1b);
 

@@ -7,8 +7,9 @@
 }
 
 .icon {
-  height: var(--iconFontSize);
-  width: var(--iconFontSize);
+  height: var(--spaceMedium);
+  width: var(--spaceMedium);
   display: flex;
   align-items: center;
+  margin-right: var(--spaceExtraSmall);
 }

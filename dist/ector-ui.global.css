@@ -3995,9 +3995,7 @@
 
 .PickerSuggestions-module_container__1Oq6m {
   background-color: #FFFFFF;
-  border-radius: 5px;
-  -webkit-box-shadow: 0 4px 8px 2px rgba(0, 0, 0, .25);
-          box-shadow: 0 4px 8px 2px rgba(0, 0, 0, .25);
+  border-radius: 15px;
   height: auto;
   left: -10%;
   min-height: 0;
@@ -4019,28 +4017,6 @@
   pointer-events: auto;
   -webkit-transform: none;
           transform: none;
-}
-
-.PickerSuggestions-module_arrowContainer__2SiPV {
-  position: absolute;
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  left: 0;
-  top: -15px;
-}
-
-.PickerSuggestions-module_arrow__JgXgd {
-  color: transparent
-}
-
-.PickerSuggestions-module_arrow__JgXgd.PickerSuggestions-module_visible__4ey8N {
-  color: #FFFFFF;
-  text-shadow: 0 -5px 15px rgb(206, 206, 206);
 }
 
 .PickerSuggestions-module_splitContainer__3P0nJ:before {
@@ -4888,8 +4864,8 @@
 .MenuButton-module_suggestions__3pzou {
   top: 100%;
   width: 220px;
-  padding: 20px;
-  margin-top: 20px;
+  padding: 16px;
+  margin-top: 16px;
   left: calc(50% - 130px);
   min-height: 0;
   height: auto;
@@ -4925,14 +4901,15 @@
 }
 
 .TextIcon-module_icon__3DoI9 {
-  height: 2em;
-  width: 2em;
+  height: 24px;
+  width: 24px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-right: 8px;
 }
 
 :root {

@@ -13,8 +13,8 @@
 .suggestions {
   top: 100%;
   width: 220px;
-  padding: var(--marginMedium);
-  margin-top: var(--marginMedium);
+  padding: var(--spaceSmall);
+  margin-top: var(--spaceSmall);
   left: calc(50% - 130px);
   min-height: 0;
   height: auto;
