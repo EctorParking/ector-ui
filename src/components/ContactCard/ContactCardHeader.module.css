@@ -2,11 +2,19 @@
 
 .name {
   display: flex;
+  color: var(--lightPrimary);
   font-size: var(--fontSizeSubtitle);
   justify-content: space-between;
 }
 
 .editIcon:before,
 .deleteIcon:before {
-  color: var(--primary);
+  color: var(--lightPrimary);
+}
+
+.editButton {
+  position: absolute;
+  top: var(--spaceExtraSmall);
+  right: var(--spaceExtraSmall);
+  font-size: var(--fontSizeHeading);
 }

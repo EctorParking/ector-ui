@@ -69,9 +69,7 @@ class PaymentMethodCard extends React.Component {
           contentClassName,
         ].join(' ')}
       >
-        {deletable && (
-          <PaymentMethodCardHeader {...cardHeaderProps} className={s.header} />
-        )}
+        {deletable && <PaymentMethodCardHeader {...cardHeaderProps} />}
         {children === null ? (
           <PaymentMethodCardContent {...cardContentProps} />
         ) : (

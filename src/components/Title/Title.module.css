@@ -14,6 +14,7 @@
 }
 
 .newTitle {
+  color: var(--lightPrimary);
   font-size: var(--fontSizeTitle);
   font-weight: var(--fontWeightBold);
   line-height: 1;

@@ -21,24 +21,35 @@ const CarCardHeader = ({
 
   if (editable && !pendingModification) {
     button = (
-      <button title={texts.modify} onClick={onEdit} id={`${id}Button`}>
+      <button
+        className={s.editButton}
+        title={texts.modify}
+        onClick={onEdit}
+        id={`${id}Button`}
+      >
         <i className={`icon-edit ${s.editIcon}`} id={`${id}Icon`} />
       </button>
     );
   } else if (deletable && !pendingDeletion) {
     button = (
-      <button title={texts.delete} onClick={onDelete} id={`${id}Button`}>
+      <button
+        className={s.editButton}
+        title={texts.delete}
+        onClick={onDelete}
+        id={`${id}Button`}
+      >
         <i className={`icon-bin ${s.deleteIcon}`} id={`${id}Icon`} />
       </button>
     );
   }
 
   return (
-    <span className={s.name} id={id}>
-      {name}
-
+    <>
+      <span className={s.name} id={id}>
+        {name}
+      </span>
       {button}
-    </span>
+    </>
   );
 };
 

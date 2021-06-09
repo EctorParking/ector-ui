@@ -9,13 +9,6 @@
   justify-content: center;
 }
 
-.header {
-  position: absolute;
-  width: 100%;
-  top: var(--spaceSmall);
-  right: var(--spaceSmall);
-}
-
 .pendingDeletion {
   background-color: var(--lightNeutral);
   justify-content: center;

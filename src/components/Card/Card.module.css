@@ -27,11 +27,12 @@
 .card_content {
   flex: 1;
   flex-basis: auto;
+  position: relative;
   background-color: var(--background);
   border-radius: var(--radiusSmall);
   display: flex;
   flex-direction: column;
-  padding: var(--spaceExtraSmall);
+  padding: var(--spaceSmall);
 }
 
 .card_footer {

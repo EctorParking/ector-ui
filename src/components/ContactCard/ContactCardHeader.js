@@ -21,24 +21,35 @@ const ContactCardHeader = ({
 
   if (editable && !pendingModification) {
     button = (
-      <button title={texts.modify} onClick={onEdit} id={`${id}Button`}>
+      <button
+        className={s.editButton}
+        title={texts.modify}
+        onClick={onEdit}
+        id={`${id}Button`}
+      >
         <i className={`icon-edit ${s.editIcon}`} />
       </button>
     );
   } else if (deletable && !pendingDeletion) {
     button = (
-      <button title={texts.delete} onClick={onDelete} id={`${id}Button`}>
+      <button
+        className={s.editButton}
+        title={texts.delete}
+        onClick={onDelete}
+        id={`${id}Button`}
+      >
         <i className={`icon-bin ${s.deleteIcon}`} />
       </button>
     );
   }
 
   return (
-    <span className={s.name} id={id}>
-      {`${firstName} ${lastName}`}
-
+    <>
+      <span className={s.name} id={id}>
+        {`${firstName} ${lastName}`}
+      </span>
       {button}
-    </span>
+    </>
   );
 };
 

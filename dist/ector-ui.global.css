@@ -169,6 +169,7 @@
           flex: 1;
   -ms-flex-preferred-size: auto;
       flex-basis: auto;
+  position: relative;
   background-color: #FFFFFF;
   border-radius: 15px;
   display: -webkit-box;
@@ -178,7 +179,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 8px;
+  padding: 16px;
 }
 
 .Card-module_card_footer__3Nao4 {
@@ -1044,6 +1045,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  color: #708399;
   font-size: 24px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -1052,7 +1054,14 @@
 
 .CarCardHeader-module_editIcon__3m80I:before,
 .CarCardHeader-module_deleteIcon__3YQd_:before {
-  color: #000031;
+  color: #708399;
+}
+
+.CarCardHeader-module_editButton__1G4OQ {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 20px;
 }
 
 :root {
@@ -1407,6 +1416,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  color: #708399;
   font-size: 24px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -1415,7 +1425,14 @@
 
 .ContactCardHeader-module_editIcon__1sOu6:before,
 .ContactCardHeader-module_deleteIcon__35WZv:before {
-  color: #000031;
+  color: #708399;
+}
+
+.ContactCardHeader-module_editButton__5yJha {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 20px;
 }
 
 :root {
@@ -2426,13 +2443,6 @@
           justify-content: center;
 }
 
-.PaymentMethodCard-module_header__pGvBe {
-  position: absolute;
-  width: 100%;
-  top: 16px;
-  right: 16px;
-}
-
 .PaymentMethodCard-module_pendingDeletion__-WJj3 {
   background-color: #ECEFF6;
   -webkit-box-pack: center;
@@ -2580,32 +2590,14 @@
 }
 
 .PaymentMethodCardHeader-module_container__1NB8- {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 24px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 20px;
 }
 
 .PaymentMethodCardHeader-module_icon__Rh3J2 {
-  -webkit-text-fill-color: #000031;
-  fill: #000031;
-}
-
-.PaymentMethodCardHeader-module_button__L01aa {
-  background: none;
-  border: 0;
-  margin: 0;
-  padding: 0;
+  fill: #708399;
 }
 
 :root {
@@ -2640,8 +2632,8 @@
 
 .PhoneInput-module_inputContainer__3-cxE {
   -webkit-box-flex: 1;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
+      -ms-flex: 1;
+          flex: 1;
   margin-left: 8px;
 }
 
@@ -3221,6 +3213,7 @@
 }
 
 .Title-module_newTitle__3v8No {
+  color: #708399;
   font-size: 32px;
   font-weight: 700;
   line-height: 1;
@@ -4834,7 +4827,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-right: 8px;
+  margin-right: 16px;
 }
 
 .MenuButton-module_button__2FZz3 {

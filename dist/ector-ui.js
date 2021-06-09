@@ -1543,7 +1543,7 @@ _export({ target: 'Array', proto: true, forced: NEGATIVE_ZERO || !STRICT_METHOD$
   }
 });
 
-var css$2 = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.Card-module_card__3FjBB {\n  background-color: #ECEFF6;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  border-radius: 15px;\n  padding: 8px;\n  position: relative;\n}\n\n.Card-module_card_selected__2gCWh {\n  background-color: #F7D48A;\n}\n\n.Card-module_card_clickable__2aWr0:hover {\n  cursor: pointer;\n  background-color: #F7D48A;\n}\n\n.Card-module_card_clickable__2aWr0:hover:active {\n  cursor: default;\n}\n\n.Card-module_card_content__3eV9O {\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  -ms-flex-preferred-size: auto;\n      flex-basis: auto;\n  background-color: #FFFFFF;\n  border-radius: 15px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  padding: 8px;\n}\n\n.Card-module_card_footer__3Nao4 {\n  background-color: transparent;\n  height: 48px;\n  height: 48px;\n  height: 3rem;\n  position: relative;\n}\n\n.Card-module_footerComponent__2kcfz {\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n\n.Card-module_label__EcoX3 {\n  position: absolute;\n  top: -10px;\n  right: 20px;\n}\n";
+var css$2 = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.Card-module_card__3FjBB {\n  background-color: #ECEFF6;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  border-radius: 15px;\n  padding: 8px;\n  position: relative;\n}\n\n.Card-module_card_selected__2gCWh {\n  background-color: #F7D48A;\n}\n\n.Card-module_card_clickable__2aWr0:hover {\n  cursor: pointer;\n  background-color: #F7D48A;\n}\n\n.Card-module_card_clickable__2aWr0:hover:active {\n  cursor: default;\n}\n\n.Card-module_card_content__3eV9O {\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  -ms-flex-preferred-size: auto;\n      flex-basis: auto;\n  position: relative;\n  background-color: #FFFFFF;\n  border-radius: 15px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  padding: 16px;\n}\n\n.Card-module_card_footer__3Nao4 {\n  background-color: transparent;\n  height: 48px;\n  height: 48px;\n  height: 3rem;\n  position: relative;\n}\n\n.Card-module_footerComponent__2kcfz {\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n\n.Card-module_label__EcoX3 {\n  position: absolute;\n  top: -10px;\n  right: 20px;\n}\n";
 var s$2 = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","card":"Card-module_card__3FjBB","card_selected":"Card-module_card_selected__2gCWh","card_clickable":"Card-module_card_clickable__2aWr0","card_content":"Card-module_card_content__3eV9O","card_footer":"Card-module_card_footer__3Nao4","footerComponent":"Card-module_footerComponent__2kcfz","label":"Card-module_label__EcoX3"};
 styleInject(css$2);
 
@@ -3032,8 +3032,8 @@ if (descriptors && !(NAME in FunctionPrototype)) {
   });
 }
 
-var css$e = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.CarCardHeader-module_name__FBdn8 {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 24px;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n}\n\n.CarCardHeader-module_editIcon__3m80I:before,\n.CarCardHeader-module_deleteIcon__3YQd_:before {\n  color: #000031;\n}\n";
-var s$e = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","name":"CarCardHeader-module_name__FBdn8","editIcon":"CarCardHeader-module_editIcon__3m80I","deleteIcon":"CarCardHeader-module_deleteIcon__3YQd_"};
+var css$e = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.CarCardHeader-module_name__FBdn8 {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  color: #708399;\n  font-size: 24px;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n}\n\n.CarCardHeader-module_editIcon__3m80I:before,\n.CarCardHeader-module_deleteIcon__3YQd_:before {\n  color: #708399;\n}\n\n.CarCardHeader-module_editButton__1G4OQ {\n  position: absolute;\n  top: 8px;\n  right: 8px;\n  font-size: 20px;\n}\n";
+var s$e = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","name":"CarCardHeader-module_name__FBdn8","editIcon":"CarCardHeader-module_editIcon__3m80I","deleteIcon":"CarCardHeader-module_deleteIcon__3YQd_","editButton":"CarCardHeader-module_editButton__1G4OQ"};
 styleInject(css$e);
 
 var CarCardHeader = function CarCardHeader(_ref) {
@@ -3051,6 +3051,7 @@ var CarCardHeader = function CarCardHeader(_ref) {
 
   if (editable && !pendingModification) {
     button = React__default.createElement("button", {
+      className: s$e.editButton,
       title: texts.modify,
       onClick: onEdit,
       id: "".concat(id, "Button")
@@ -3060,6 +3061,7 @@ var CarCardHeader = function CarCardHeader(_ref) {
     }));
   } else if (deletable && !pendingDeletion) {
     button = React__default.createElement("button", {
+      className: s$e.editButton,
       title: texts.delete,
       onClick: onDelete,
       id: "".concat(id, "Button")
@@ -3069,10 +3071,10 @@ var CarCardHeader = function CarCardHeader(_ref) {
     }));
   }
 
-  return React__default.createElement("span", {
+  return React__default.createElement(React__default.Fragment, null, React__default.createElement("span", {
     className: s$e.name,
     id: id
-  }, name, button);
+  }, name), button);
 };
 
 CarCardHeader.defaultProps = {
@@ -4237,8 +4239,8 @@ ContactCardDeletionAlert.propTypes = {
   id: PropTypes$1.string.isRequired
 };
 
-var css$n = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.ContactCardHeader-module_name__33JVE {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 24px;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n}\n\n.ContactCardHeader-module_editIcon__1sOu6:before,\n.ContactCardHeader-module_deleteIcon__35WZv:before {\n  color: #000031;\n}\n";
-var s$n = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","name":"ContactCardHeader-module_name__33JVE","editIcon":"ContactCardHeader-module_editIcon__1sOu6","deleteIcon":"ContactCardHeader-module_deleteIcon__35WZv"};
+var css$n = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.ContactCardHeader-module_name__33JVE {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  color: #708399;\n  font-size: 24px;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n}\n\n.ContactCardHeader-module_editIcon__1sOu6:before,\n.ContactCardHeader-module_deleteIcon__35WZv:before {\n  color: #708399;\n}\n\n.ContactCardHeader-module_editButton__5yJha {\n  position: absolute;\n  top: 8px;\n  right: 8px;\n  font-size: 20px;\n}\n";
+var s$n = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","name":"ContactCardHeader-module_name__33JVE","editIcon":"ContactCardHeader-module_editIcon__1sOu6","deleteIcon":"ContactCardHeader-module_deleteIcon__35WZv","editButton":"ContactCardHeader-module_editButton__5yJha"};
 styleInject(css$n);
 
 var ContactCardHeader = function ContactCardHeader(_ref) {
@@ -4257,6 +4259,7 @@ var ContactCardHeader = function ContactCardHeader(_ref) {
 
   if (editable && !pendingModification) {
     button = React__default.createElement("button", {
+      className: s$n.editButton,
       title: texts.modify,
       onClick: onEdit,
       id: "".concat(id, "Button")
@@ -4265,6 +4268,7 @@ var ContactCardHeader = function ContactCardHeader(_ref) {
     }));
   } else if (deletable && !pendingDeletion) {
     button = React__default.createElement("button", {
+      className: s$n.editButton,
       title: texts.delete,
       onClick: onDelete,
       id: "".concat(id, "Button")
@@ -4273,10 +4277,10 @@ var ContactCardHeader = function ContactCardHeader(_ref) {
     }));
   }
 
-  return React__default.createElement("span", {
+  return React__default.createElement(React__default.Fragment, null, React__default.createElement("span", {
     className: s$n.name,
     id: id
-  }, "".concat(firstName, " ").concat(lastName), button);
+  }, "".concat(firstName, " ").concat(lastName)), button);
 };
 
 ContactCardHeader.propTypes = {
@@ -5618,8 +5622,8 @@ LoginForm.propTypes = {
   shouldDisplayEmailText: PropTypes$1.bool
 };
 
-var css$C = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.PaymentMethodCard-module_card__1P35E {\n  position: relative;\n}\n\n.PaymentMethodCard-module_cardContent__CnD6V {\n  position: relative;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\n\n.PaymentMethodCard-module_header__pGvBe {\n  position: absolute;\n  width: 100%;\n  top: 16px;\n  right: 16px;\n}\n\n.PaymentMethodCard-module_pendingDeletion__-WJj3 {\n  background-color: #ECEFF6;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  padding: 20px;\n  text-align: center;\n}\n\n.PaymentMethodCard-module_footer__2mmr8 {\n  display: block;\n}\n";
-var s$C = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","card":"PaymentMethodCard-module_card__1P35E","cardContent":"PaymentMethodCard-module_cardContent__CnD6V","header":"PaymentMethodCard-module_header__pGvBe","pendingDeletion":"PaymentMethodCard-module_pendingDeletion__-WJj3","footer":"PaymentMethodCard-module_footer__2mmr8"};
+var css$C = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.PaymentMethodCard-module_card__1P35E {\n  position: relative;\n}\n\n.PaymentMethodCard-module_cardContent__CnD6V {\n  position: relative;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\n\n.PaymentMethodCard-module_pendingDeletion__-WJj3 {\n  background-color: #ECEFF6;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  padding: 20px;\n  text-align: center;\n}\n\n.PaymentMethodCard-module_footer__2mmr8 {\n  display: block;\n}\n";
+var s$C = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","card":"PaymentMethodCard-module_card__1P35E","cardContent":"PaymentMethodCard-module_cardContent__CnD6V","pendingDeletion":"PaymentMethodCard-module_pendingDeletion__-WJj3","footer":"PaymentMethodCard-module_footer__2mmr8"};
 styleInject(css$C);
 
 var DefaultTexts$5 = {
@@ -5888,8 +5892,8 @@ PaymentMethodCardFooter.propTypes = {
   testid: PropTypes$1.string
 };
 
-var css$G = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.PaymentMethodCardHeader-module_container__1NB8- {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  font-size: 24px;\n}\n\n.PaymentMethodCardHeader-module_icon__Rh3J2 {\n  -webkit-text-fill-color: #000031;\n  fill: #000031;\n}\n\n.PaymentMethodCardHeader-module_button__L01aa {\n  background: none;\n  border: 0;\n  margin: 0;\n  padding: 0;\n}\n";
-var s$G = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","container":"PaymentMethodCardHeader-module_container__1NB8-","icon":"PaymentMethodCardHeader-module_icon__Rh3J2","button":"PaymentMethodCardHeader-module_button__L01aa"};
+var css$G = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.PaymentMethodCardHeader-module_container__1NB8- {\n  position: absolute;\n  top: 8px;\n  right: 8px;\n  font-size: 20px;\n}\n\n.PaymentMethodCardHeader-module_icon__Rh3J2 {\n  fill: #708399;\n}\n";
+var s$G = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","container":"PaymentMethodCardHeader-module_container__1NB8-","icon":"PaymentMethodCardHeader-module_icon__Rh3J2"};
 styleInject(css$G);
 
 var PaymentMethodCardHeader = function PaymentMethodCardHeader(_ref) {
@@ -5900,7 +5904,6 @@ var PaymentMethodCardHeader = function PaymentMethodCardHeader(_ref) {
   return pendingDeletion ? null : React__default.createElement("div", {
     className: [s$G.container, className].join(' ')
   }, React__default.createElement("button", {
-    className: s$G.button,
     title: texts.remove,
     onClick: onDelete
   }, React__default.createElement("i", {
@@ -5997,9 +6000,7 @@ function (_React$Component) {
         FooterComponent: this.renderFooter,
         isSelected: selected,
         contentClassName: [s$C.cardContent, pendingDeletion ? s$C.pendingDeletion : undefined, contentClassName].join(' ')
-      }), deletable && React__default.createElement(PaymentMethodCardHeader, _extends({}, cardHeaderProps, {
-        className: s$C.header
-      })), children === null ? React__default.createElement(PaymentMethodCardContent, cardContentProps) : children);
+      }), deletable && React__default.createElement(PaymentMethodCardHeader, cardHeaderProps), children === null ? React__default.createElement(PaymentMethodCardContent, cardContentProps) : children);
     }
   }]);
 
@@ -6114,7 +6115,7 @@ _export({ target: 'String', proto: true, forced: !MDN_POLYFILL_BUG && !CORRECT_I
   }
 });
 
-var css$H = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.PhoneInput-module_phoneInput__28kFN {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 1;\n      -ms-flex: 1 1 auto;\n          flex: 1 1 auto;\n}\n\n.PhoneInput-module_countryLabel__vyRg- {\n  padding-right: 16px;\n}\n\n.PhoneInput-module_inputContainer__3-cxE {\n  -webkit-box-flex: 1;\n      -ms-flex: 1 0 auto;\n          flex: 1 0 auto;\n  margin-left: 8px;\n}\n\n.PhoneInput-module_selectImage__2afak {\n  margin-right: 8px;\n  max-height: 24px;\n  max-width: 24px;\n}\n";
+var css$H = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.PhoneInput-module_phoneInput__28kFN {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 1;\n      -ms-flex: 1 1 auto;\n          flex: 1 1 auto;\n}\n\n.PhoneInput-module_countryLabel__vyRg- {\n  padding-right: 16px;\n}\n\n.PhoneInput-module_inputContainer__3-cxE {\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  margin-left: 8px;\n}\n\n.PhoneInput-module_selectImage__2afak {\n  margin-right: 8px;\n  max-height: 24px;\n  max-width: 24px;\n}\n";
 var s$H = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","phoneInput":"PhoneInput-module_phoneInput__28kFN","countryLabel":"PhoneInput-module_countryLabel__vyRg-","inputContainer":"PhoneInput-module_inputContainer__3-cxE","selectImage":"PhoneInput-module_selectImage__2afak"};
 styleInject(css$H);
 
@@ -6787,7 +6788,7 @@ Subtitle.propTypes = {
   className: PropTypes$1.string
 };
 
-var css$R = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.Title-module_title__gpPet {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  margin-bottom: 32px;\n}\n\n.Title-module_title__gpPet .Title-module_element__1EYDR {\n  font-size: 40px;\n  font-weight: 400;\n  line-height: 1;\n  margin: 0 0 8px;\n}\n\n.Title-module_newTitle__3v8No {\n  font-size: 32px;\n  font-weight: 700;\n  line-height: 1;\n  margin: 0;\n}\n\n.Title-module_title__gpPet .Title-module_horizontalRule__1wwO9 {\n  border: 0;\n  border-top: 2px solid #708399;\n  margin: 0;\n  width: 50px;\n}\n\n@media (max-width: 480px) {\n  .Title-module_title__gpPet .Title-module_element__1EYDR,\n  .Title-module_newTitle__3v8No {\n    font-size: 24px;\n  }\n}\n";
+var css$R = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.Title-module_title__gpPet {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  margin-bottom: 32px;\n}\n\n.Title-module_title__gpPet .Title-module_element__1EYDR {\n  font-size: 40px;\n  font-weight: 400;\n  line-height: 1;\n  margin: 0 0 8px;\n}\n\n.Title-module_newTitle__3v8No {\n  color: #708399;\n  font-size: 32px;\n  font-weight: 700;\n  line-height: 1;\n  margin: 0;\n}\n\n.Title-module_title__gpPet .Title-module_horizontalRule__1wwO9 {\n  border: 0;\n  border-top: 2px solid #708399;\n  margin: 0;\n  width: 50px;\n}\n\n@media (max-width: 480px) {\n  .Title-module_title__gpPet .Title-module_element__1EYDR,\n  .Title-module_newTitle__3v8No {\n    font-size: 24px;\n  }\n}\n";
 var s$R = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","title":"Title-module_title__gpPet","element":"Title-module_element__1EYDR","newTitle":"Title-module_newTitle__3v8No","horizontalRule":"Title-module_horizontalRule__1wwO9"};
 styleInject(css$R);
 
@@ -18997,7 +18998,7 @@ Header.propTypes = {
   disabledButtons: PropTypes$1.bool
 };
 
-var css$1a = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.MenuButton-module_container__3f-Es {\n  position: relative;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  margin-right: 8px;\n}\n\n.MenuButton-module_button__2FZz3 {\n  color: #000031;\n  padding: 0;\n}\n\n.MenuButton-module_suggestions__3pzou {\n  top: 100%;\n  width: 220px;\n  padding: 16px;\n  margin-top: 16px;\n  left: calc(50% - 130px);\n  min-height: 0;\n  height: auto;\n}\n";
+var css$1a = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.MenuButton-module_container__3f-Es {\n  position: relative;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  margin-right: 16px;\n}\n\n.MenuButton-module_button__2FZz3 {\n  color: #000031;\n  padding: 0;\n}\n\n.MenuButton-module_suggestions__3pzou {\n  top: 100%;\n  width: 220px;\n  padding: 16px;\n  margin-top: 16px;\n  left: calc(50% - 130px);\n  min-height: 0;\n  height: auto;\n}\n";
 var s$18 = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","container":"MenuButton-module_container__3f-Es","button":"MenuButton-module_button__2FZz3","suggestions":"MenuButton-module_suggestions__3pzou"};
 styleInject(css$1a);
 
