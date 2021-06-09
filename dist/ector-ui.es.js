@@ -1535,7 +1535,7 @@ _export({ target: 'Array', proto: true, forced: NEGATIVE_ZERO || !STRICT_METHOD$
   }
 });
 
-var css$2 = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.Card-module_card__3FjBB {\n  background-color: #ECEFF6;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  border-radius: 15px;\n  padding: 8px;\n  position: relative;\n}\n\n.Card-module_card_selected__2gCWh {\n  background-color: #F7D48A;\n}\n\n.Card-module_card_clickable__2aWr0:hover {\n  cursor: pointer;\n  background-color: #F7D48A;\n}\n\n.Card-module_card_clickable__2aWr0:hover:active {\n  cursor: default;\n}\n\n.Card-module_card_content__3eV9O {\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  -ms-flex-preferred-size: auto;\n      flex-basis: auto;\n  background-color: #FFFFFF;\n  border-radius: 15px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  padding: 32px 16px;\n}\n\n.Card-module_card_footer__3Nao4 {\n  background-color: transparent;\n  height: 48px;\n  height: 48px;\n  height: 3rem;\n  position: relative;\n}\n\n.Card-module_footerComponent__2kcfz {\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n\n.Card-module_label__EcoX3 {\n  position: absolute;\n  top: -10px;\n  right: 20px;\n}\n";
+var css$2 = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.Card-module_card__3FjBB {\n  background-color: #ECEFF6;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  border-radius: 15px;\n  padding: 8px;\n  position: relative;\n}\n\n.Card-module_card_selected__2gCWh {\n  background-color: #F7D48A;\n}\n\n.Card-module_card_clickable__2aWr0:hover {\n  cursor: pointer;\n  background-color: #F7D48A;\n}\n\n.Card-module_card_clickable__2aWr0:hover:active {\n  cursor: default;\n}\n\n.Card-module_card_content__3eV9O {\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  -ms-flex-preferred-size: auto;\n      flex-basis: auto;\n  background-color: #FFFFFF;\n  border-radius: 15px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  padding: 8px;\n}\n\n.Card-module_card_footer__3Nao4 {\n  background-color: transparent;\n  height: 48px;\n  height: 48px;\n  height: 3rem;\n  position: relative;\n}\n\n.Card-module_footerComponent__2kcfz {\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n\n.Card-module_label__EcoX3 {\n  position: absolute;\n  top: -10px;\n  right: 20px;\n}\n";
 var s$2 = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","card":"Card-module_card__3FjBB","card_selected":"Card-module_card_selected__2gCWh","card_clickable":"Card-module_card_clickable__2aWr0","card_content":"Card-module_card_content__3eV9O","card_footer":"Card-module_card_footer__3Nao4","footerComponent":"Card-module_footerComponent__2kcfz","label":"Card-module_label__EcoX3"};
 styleInject(css$2);
 
@@ -1640,7 +1640,7 @@ var AlternativeTimeCardTextsType = {
   select: PropTypes$1.string
 };
 
-var css$3 = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.LinkUnderlined-module_link_underlined__4pJUb {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative;\n  padding: 0 8px;\n  -webkit-box-align: end;\n      -ms-flex-align: end;\n          align-items: flex-end;\n  z-index: 0;\n  cursor: pointer;\n  opacity: 1;\n  -webkit-transition: all 0s ease-in-out;\n  transition: all 0s ease-in-out\n}\n\n.LinkUnderlined-module_link_underlined__4pJUb:before {\n  content: '';\n  position: absolute;\n  left: 0;\n  bottom: 0;\n  width: 100%;\n  height: 8px;\n  background-color: #F7D48A;\n  border-radius: 30px;\n  -webkit-transform-origin: 0 100%;\n          transform-origin: 0 100%;\n  -webkit-transition: all 0.3s ease-in;\n  transition: all 0.3s ease-in;\n  -webkit-transform: translate3d(0, 0, 0) scaleY(1);\n          transform: translate3d(0, 0, 0) scaleY(1);\n  z-index: -1;\n}\n\n.LinkUnderlined-module_link_underlined__4pJUb:hover:before {\n  -webkit-transform: translate3d(0, 4px, 0) scaleY(0.6);\n          transform: translate3d(0, 4px, 0) scaleY(0.6);\n  -webkit-transition-delay: 0s;\n          transition-delay: 0s;\n  -webkit-transition-timing-function: ease-out;\n          transition-timing-function: ease-out;\n}\n\n.LinkUnderlined-module_link_underlined__4pJUb:hover:active {\n  opacity: 0.6\n}\n\n.LinkUnderlined-module_link_underlined__4pJUb:hover:active:before {\n  -webkit-transform: translate3d(0, 4px, 0) scaleY(0.2);\n          transform: translate3d(0, 4px, 0) scaleY(0.2);\n  -webkit-transition-duration: 0s;\n          transition-duration: 0s;\n}\n\n.LinkUnderlined-module_link_underlined_fetching__3nZHt:before {\n  background-color: transparent;\n  cursor: not-allowed;\n}\n\n.LinkUnderlined-module_link_underlined_fetching__3nZHt:hover:active {\n  opacity: 1;\n}\n\n.LinkUnderlined-module_button__1I5iS {\n  color: #000031;\n}\n\n.LinkUnderlined-module_fetching__30v4g {\n  background: none;\n  background-color: transparent !important;\n  color: transparent !important;\n  cursor: not-allowed !important;\n  opacity: 1 !important;\n  overflow: hidden;\n  position: relative\n}\n\n.LinkUnderlined-module_fetching__30v4g:hover {\n  background-color: transparent;\n}\n\n.LinkUnderlined-module_fetching__30v4g:before {\n  background-color: #FFE8AD;\n  border-radius: 2px;\n  content: '';\n  height: 4px;\n  position: absolute;\n  top: 50%;\n  left: 0;\n  right: 0;\n  margin-top: -2px;\n}\n\n.LinkUnderlined-module_fetching__30v4g:after {\n  -webkit-animation: LinkUnderlined-module_fetching__30v4g 3s linear infinite;\n          animation: LinkUnderlined-module_fetching__30v4g 3s linear infinite;\n  background-color: #FFB201;\n  border-radius: 2px;\n  content: '';\n  height: 4px;\n  position: absolute;\n  top: 50%;\n  margin-top: -2px;\n  left: 0;\n  width: 20%;\n}\n\n@-webkit-keyframes LinkUnderlined-module_fetching__30v4g {\n  from {\n    -webkit-transform: translateX(-100%);\n            transform: translateX(-100%);\n  }\n\n  to {\n    -webkit-transform: translateX(500%);\n            transform: translateX(500%);\n  }\n}\n\n@keyframes LinkUnderlined-module_fetching__30v4g {\n  from {\n    -webkit-transform: translateX(-100%);\n            transform: translateX(-100%);\n  }\n\n  to {\n    -webkit-transform: translateX(500%);\n            transform: translateX(500%);\n  }\n}\n";
+var css$3 = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.LinkUnderlined-module_link_underlined__4pJUb {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative;\n  padding: 0 8px;\n  -webkit-box-align: end;\n      -ms-flex-align: end;\n          align-items: flex-end;\n  z-index: 0;\n  cursor: pointer;\n  opacity: 1;\n  -webkit-transition: all 0s ease-in-out;\n  transition: all 0s ease-in-out\n}\n\n.LinkUnderlined-module_link_underlined__4pJUb:before {\n  content: '';\n  position: absolute;\n  left: 0;\n  bottom: 2px;\n  width: 100%;\n  height: 8px;\n  background-color: #F7D48A;\n  border-radius: 30px;\n  -webkit-transform-origin: 0 100%;\n          transform-origin: 0 100%;\n  -webkit-transition: all 0.3s ease-in;\n  transition: all 0.3s ease-in;\n  -webkit-transform: translate3d(0, 0, 0) scaleY(1);\n          transform: translate3d(0, 0, 0) scaleY(1);\n  z-index: -1;\n}\n\n.LinkUnderlined-module_link_underlined__4pJUb:hover:before {\n  -webkit-transform: translate3d(0, 4px, 0) scaleY(0.6);\n          transform: translate3d(0, 4px, 0) scaleY(0.6);\n  -webkit-transition-delay: 0s;\n          transition-delay: 0s;\n  -webkit-transition-timing-function: ease-out;\n          transition-timing-function: ease-out;\n}\n\n.LinkUnderlined-module_link_underlined__4pJUb:hover:active {\n  opacity: 0.6\n}\n\n.LinkUnderlined-module_link_underlined__4pJUb:hover:active:before {\n  -webkit-transform: translate3d(0, 4px, 0) scaleY(0.2);\n          transform: translate3d(0, 4px, 0) scaleY(0.2);\n  -webkit-transition-duration: 0s;\n          transition-duration: 0s;\n}\n\n.LinkUnderlined-module_link_underlined_fetching__3nZHt:before {\n  background-color: transparent;\n  cursor: not-allowed;\n}\n\n.LinkUnderlined-module_link_underlined_fetching__3nZHt:hover:active {\n  opacity: 1;\n}\n\n.LinkUnderlined-module_button__1I5iS {\n  color: #000031;\n}\n\n.LinkUnderlined-module_fetching__30v4g {\n  background: none;\n  background-color: transparent !important;\n  color: transparent !important;\n  cursor: not-allowed !important;\n  opacity: 1 !important;\n  overflow: hidden;\n  position: relative\n}\n\n.LinkUnderlined-module_fetching__30v4g:hover {\n  background-color: transparent;\n}\n\n.LinkUnderlined-module_fetching__30v4g:before {\n  background-color: #FFE8AD;\n  border-radius: 2px;\n  content: '';\n  height: 4px;\n  position: absolute;\n  top: 50%;\n  left: 0;\n  right: 0;\n  margin-top: -2px;\n}\n\n.LinkUnderlined-module_fetching__30v4g:after {\n  -webkit-animation: LinkUnderlined-module_fetching__30v4g 3s linear infinite;\n          animation: LinkUnderlined-module_fetching__30v4g 3s linear infinite;\n  background-color: #FFB201;\n  border-radius: 2px;\n  content: '';\n  height: 4px;\n  position: absolute;\n  top: 50%;\n  margin-top: -2px;\n  left: 0;\n  width: 20%;\n}\n\n@-webkit-keyframes LinkUnderlined-module_fetching__30v4g {\n  from {\n    -webkit-transform: translateX(-100%);\n            transform: translateX(-100%);\n  }\n\n  to {\n    -webkit-transform: translateX(500%);\n            transform: translateX(500%);\n  }\n}\n\n@keyframes LinkUnderlined-module_fetching__30v4g {\n  from {\n    -webkit-transform: translateX(-100%);\n            transform: translateX(-100%);\n  }\n\n  to {\n    -webkit-transform: translateX(500%);\n            transform: translateX(500%);\n  }\n}\n";
 var s$3 = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","link_underlined":"LinkUnderlined-module_link_underlined__4pJUb","link_underlined_fetching":"LinkUnderlined-module_link_underlined_fetching__3nZHt","button":"LinkUnderlined-module_button__1I5iS","fetching":"LinkUnderlined-module_fetching__30v4g"};
 styleInject(css$3);
 
@@ -3024,8 +3024,8 @@ if (descriptors && !(NAME in FunctionPrototype)) {
   });
 }
 
-var css$e = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.CarCardHeader-module_name__FBdn8 {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 24px;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  margin-top: -0.75em;\n}\n\n.CarCardHeader-module_editIcon__3m80I:before,\n.CarCardHeader-module_deleteIcon__3YQd_:before {\n  color: #000031;\n}\n\n.CarCardHeader-module_editButton__1G4OQ {\n  background: none;\n  border: 0;\n  margin: 0;\n  margin-right: -0.75em;\n  padding: 0;\n}\n";
-var s$e = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","name":"CarCardHeader-module_name__FBdn8","editIcon":"CarCardHeader-module_editIcon__3m80I","deleteIcon":"CarCardHeader-module_deleteIcon__3YQd_","editButton":"CarCardHeader-module_editButton__1G4OQ"};
+var css$e = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.CarCardHeader-module_name__FBdn8 {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 24px;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n}\n\n.CarCardHeader-module_editIcon__3m80I:before,\n.CarCardHeader-module_deleteIcon__3YQd_:before {\n  color: #000031;\n}\n";
+var s$e = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","name":"CarCardHeader-module_name__FBdn8","editIcon":"CarCardHeader-module_editIcon__3m80I","deleteIcon":"CarCardHeader-module_deleteIcon__3YQd_"};
 styleInject(css$e);
 
 var CarCardHeader = function CarCardHeader(_ref) {
@@ -3043,7 +3043,6 @@ var CarCardHeader = function CarCardHeader(_ref) {
 
   if (editable && !pendingModification) {
     button = React__default.createElement("button", {
-      className: s$e.editButton,
       title: texts.modify,
       onClick: onEdit,
       id: "".concat(id, "Button")
@@ -3053,7 +3052,6 @@ var CarCardHeader = function CarCardHeader(_ref) {
     }));
   } else if (deletable && !pendingDeletion) {
     button = React__default.createElement("button", {
-      className: s$e.editButton,
       title: texts.delete,
       onClick: onDelete,
       id: "".concat(id, "Button")
@@ -4231,8 +4229,8 @@ ContactCardDeletionAlert.propTypes = {
   id: PropTypes$1.string.isRequired
 };
 
-var css$n = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.ContactCardHeader-module_name__33JVE {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 24px;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  margin-top: -0.75em;\n}\n\n.ContactCardHeader-module_editIcon__1sOu6:before,\n.ContactCardHeader-module_deleteIcon__35WZv:before {\n  color: #000031;\n}\n\n.ContactCardHeader-module_editButton__5yJha {\n  background: none;\n  border: 0;\n  margin: 0;\n  margin-right: -0.75em;\n  padding: 0;\n}\n";
-var s$n = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","name":"ContactCardHeader-module_name__33JVE","editIcon":"ContactCardHeader-module_editIcon__1sOu6","deleteIcon":"ContactCardHeader-module_deleteIcon__35WZv","editButton":"ContactCardHeader-module_editButton__5yJha"};
+var css$n = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.ContactCardHeader-module_name__33JVE {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 24px;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n}\n\n.ContactCardHeader-module_editIcon__1sOu6:before,\n.ContactCardHeader-module_deleteIcon__35WZv:before {\n  color: #000031;\n}\n";
+var s$n = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","name":"ContactCardHeader-module_name__33JVE","editIcon":"ContactCardHeader-module_editIcon__1sOu6","deleteIcon":"ContactCardHeader-module_deleteIcon__35WZv"};
 styleInject(css$n);
 
 var ContactCardHeader = function ContactCardHeader(_ref) {
@@ -4251,7 +4249,6 @@ var ContactCardHeader = function ContactCardHeader(_ref) {
 
   if (editable && !pendingModification) {
     button = React__default.createElement("button", {
-      className: s$n.editButton,
       title: texts.modify,
       onClick: onEdit,
       id: "".concat(id, "Button")
@@ -4260,7 +4257,6 @@ var ContactCardHeader = function ContactCardHeader(_ref) {
     }));
   } else if (deletable && !pendingDeletion) {
     button = React__default.createElement("button", {
-      className: s$n.editButton,
       title: texts.delete,
       onClick: onDelete,
       id: "".concat(id, "Button")
@@ -4287,7 +4283,7 @@ ContactCardHeader.propTypes = {
   id: PropTypes$1.string.isRequired
 };
 
-var css$o = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.ContactCardFooter-module_footer__2NOL8 {\n  -webkit-box-align: end;\n      -ms-flex-align: end;\n          align-items: flex-end;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n  padding: 0 32px;\n  padding: 0 32px;\n  padding: 0 2rem;\n  height: 32px;\n  height: 32px;\n  height: 2rem;\n}\n\n.ContactCardFooter-module_checkIcon__4bk-O {\n  color: #FFFFFF;\n  font-size: 24px;\n}\n";
+var css$o = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.ContactCardFooter-module_footer__2NOL8 {\n  -webkit-box-align: end;\n      -ms-flex-align: end;\n          align-items: flex-end;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n  padding: 16px;\n}\n\n.ContactCardFooter-module_checkIcon__4bk-O {\n  color: #FFFFFF;\n  font-size: 24px;\n}\n";
 var s$o = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","footer":"ContactCardFooter-module_footer__2NOL8","checkIcon":"ContactCardFooter-module_checkIcon__4bk-O"};
 styleInject(css$o);
 
@@ -5614,7 +5610,7 @@ LoginForm.propTypes = {
   shouldDisplayEmailText: PropTypes$1.bool
 };
 
-var css$C = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.PaymentMethodCard-module_card__1P35E {\n  position: relative;\n}\n\n.PaymentMethodCard-module_cardContent__CnD6V {\n  padding: 8px;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\n\n.PaymentMethodCard-module_header__pGvBe {\n  position: absolute;\n  width: 100%;\n  top: 20px;\n  right: 20px;\n}\n\n.PaymentMethodCard-module_pendingDeletion__-WJj3 {\n  background-color: #ECEFF6;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  padding: 20px;\n  text-align: center;\n}\n\n.PaymentMethodCard-module_footer__2mmr8 {\n  display: block;\n}\n";
+var css$C = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.PaymentMethodCard-module_card__1P35E {\n  position: relative;\n}\n\n.PaymentMethodCard-module_cardContent__CnD6V {\n  position: relative;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\n\n.PaymentMethodCard-module_header__pGvBe {\n  position: absolute;\n  width: 100%;\n  top: 16px;\n  right: 16px;\n}\n\n.PaymentMethodCard-module_pendingDeletion__-WJj3 {\n  background-color: #ECEFF6;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  padding: 20px;\n  text-align: center;\n}\n\n.PaymentMethodCard-module_footer__2mmr8 {\n  display: block;\n}\n";
 var s$C = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","card":"PaymentMethodCard-module_card__1P35E","cardContent":"PaymentMethodCard-module_cardContent__CnD6V","header":"PaymentMethodCard-module_header__pGvBe","pendingDeletion":"PaymentMethodCard-module_pendingDeletion__-WJj3","footer":"PaymentMethodCard-module_footer__2mmr8"};
 styleInject(css$C);
 
@@ -6110,8 +6106,8 @@ _export({ target: 'String', proto: true, forced: !MDN_POLYFILL_BUG && !CORRECT_I
   }
 });
 
-var css$H = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.PhoneInput-module_phoneInput__28kFN {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 1;\n      -ms-flex: 1 1 auto;\n          flex: 1 1 auto;\n}\n\n.PhoneInput-module_phoneInputCountryCode__1qz3Z {\n  -webkit-box-flex: 1;\n      -ms-flex: 1 0 50px;\n          flex: 1 0 50px;\n}\n\n.PhoneInput-module_inputContainer__3-cxE {\n  margin-left: 8px;\n}\n\n.PhoneInput-module_selectImage__2afak {\n  margin-right: 8px;\n  max-height: 24px;\n  max-width: 24px;\n}\n";
-var s$H = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","phoneInput":"PhoneInput-module_phoneInput__28kFN","phoneInputCountryCode":"PhoneInput-module_phoneInputCountryCode__1qz3Z","inputContainer":"PhoneInput-module_inputContainer__3-cxE","selectImage":"PhoneInput-module_selectImage__2afak"};
+var css$H = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.PhoneInput-module_phoneInput__28kFN {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 1;\n      -ms-flex: 1 1 auto;\n          flex: 1 1 auto;\n}\n\n.PhoneInput-module_countryLabel__vyRg- {\n  padding-right: 16px;\n}\n\n.PhoneInput-module_inputContainer__3-cxE {\n  -webkit-box-flex: 1;\n      -ms-flex: 1 0 auto;\n          flex: 1 0 auto;\n  margin-left: 8px;\n}\n\n.PhoneInput-module_selectImage__2afak {\n  margin-right: 8px;\n  max-height: 24px;\n  max-width: 24px;\n}\n";
+var s$H = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","phoneInput":"PhoneInput-module_phoneInput__28kFN","countryLabel":"PhoneInput-module_countryLabel__vyRg-","inputContainer":"PhoneInput-module_inputContainer__3-cxE","selectImage":"PhoneInput-module_selectImage__2afak"};
 styleInject(css$H);
 
 var PhoneInput =
@@ -6156,7 +6152,9 @@ function (_React$Component) {
         src: country.image,
         className: s$H.selectImage,
         alt: country.label
-      }), React__default.createElement("span", null, country.label)), React__default.createElement(Input, _extends({
+      }), React__default.createElement("span", {
+        className: s$H.countryLabel
+      }, country.label)), React__default.createElement(Input, _extends({
         placeholder: "06 07 08 09 00" // Here to override the placeholder
         ,
         containerClassName: s$H.inputContainer
@@ -7424,7 +7422,7 @@ RegistrationForm.propTypes = {
   defaultCountry: CountryPropType
 };
 
-var css$Z = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.Picker-module_container__3AVzP {\n  position: relative;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #000031;\n  border: none;\n  border-radius: 5px;\n  display: block;\n  height: 50px;\n  padding: 0;\n  z-index: 1\n}\n\n.Picker-module_container__3AVzP.Picker-module_active__2IBbO {\n  z-index: 4;\n}\n\n.Picker-module_shadowWrapper__1yU5l {\n  background-color: #FFFFFF;\n  border-radius: 5px;\n  -webkit-box-shadow: 0 4px 8px 2px rgba(0, 0, 0, .25);\n          box-shadow: 0 4px 8px 2px rgba(0, 0, 0, .25);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative;\n  z-index: 2;\n}\n\n.Picker-module_pickerInputContainer__2EiaS {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: 0 35px 0 15px;\n  width: 100%;\n  z-index: 2;\n}\n\n.Picker-module_pickerInput__1P5_a {\n  border-radius: 5px;\n  height: 50px;\n  padding: 0;\n  border: none;\n  margin-top: 0;\n  font-size: 15px;\n}\n\n.Picker-module_inputError__37bTz {\n  color: #DF6262;\n}\n\n.Picker-module_splitPickerInputContainer__2QVF3 {\n  border-left: 1px solid rgba(191, 196, 212, .52);\n}\n\n.Picker-module_suggestionsContainer__20x1U {\n  min-height: 150px;\n  background-color: #000000;\n  position: absolute;\n  width: 150%;\n  top: 56px;\n  top: 56px;\n  top: 3.5rem;\n  left: -25%;\n  border-radius: 8px;\n  border-width: 1px;\n}\n\n.Picker-module_var__27YMj(\\--error),\n.Picker-module_var__27YMj(\\--info) {\n  display: inline-table;\n  background-color: #DF6262;\n  border-top-left-radius: 8px;\n  border-top-right-radius: 8px;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #FFFFFF;\n  height: 45px;\n  left: 0;\n  opacity: 0;\n  padding: 8px;\n  position: absolute;\n  top: 5px;\n  -webkit-transform: none;\n          transform: none;\n  -webkit-transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;\n  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  width: 100%;\n  font-size: 16px;\n  font-weight: 700;\n  word-break: break-word;\n  -webkit-hyphens: auto;\n      -ms-hyphens: auto;\n          hyphens: auto;\n}\n\n.Picker-module_var__27YMj(\\--info) {\n  background-color: #32A0C5;\n  color: #FFFFFF;\n}\n\n.Picker-module_errorVisible__3Fa-X,\n.Picker-module_infoVisible__2IbCs {\n  opacity: 1;\n  -webkit-transform: translateY(-100%);\n          transform: translateY(-100%);\n}\n";
+var css$Z = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.Picker-module_container__3AVzP {\n  position: relative;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #000031;\n  border: none;\n  border-radius: 5px;\n  display: block;\n  height: 50px;\n  padding: 0;\n  z-index: 1\n}\n\n.Picker-module_container__3AVzP.Picker-module_active__2IBbO {\n  z-index: 4;\n}\n\n.Picker-module_shadowWrapper__1yU5l {\n  background-color: #FFFFFF;\n  border-radius: 5px;\n  -webkit-box-shadow: 0 4px 19px rgba(0, 0, 0, .1);\n          box-shadow: 0 4px 19px rgba(0, 0, 0, .1);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  position: relative;\n  z-index: 2;\n}\n\n.Picker-module_pickerInputContainer__2EiaS {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: 0 35px 0 15px;\n  width: 100%;\n  z-index: 2;\n}\n\n.Picker-module_pickerInput__1P5_a {\n  border-radius: 5px;\n  height: 50px;\n  padding: 0;\n  border: none;\n  margin-top: 0;\n  font-size: 15px;\n}\n\n.Picker-module_inputError__37bTz {\n  color: #DF6262;\n}\n\n.Picker-module_splitPickerInputContainer__2QVF3 {\n  border-left: 1px solid rgba(191, 196, 212, .52);\n}\n\n.Picker-module_suggestionsContainer__20x1U {\n  min-height: 150px;\n  background-color: #000000;\n  position: absolute;\n  width: 150%;\n  top: 56px;\n  top: 56px;\n  top: 3.5rem;\n  left: -25%;\n  border-radius: 8px;\n  border-width: 1px;\n}\n\n.Picker-module_var__27YMj(\\--error),\n.Picker-module_var__27YMj(\\--info) {\n  display: inline-table;\n  background-color: #DF6262;\n  border-top-left-radius: 8px;\n  border-top-right-radius: 8px;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #FFFFFF;\n  height: 45px;\n  left: 0;\n  opacity: 0;\n  padding: 8px;\n  position: absolute;\n  top: 5px;\n  -webkit-transform: none;\n          transform: none;\n  -webkit-transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;\n  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  width: 100%;\n  font-size: 16px;\n  font-weight: 700;\n  word-break: break-word;\n  -webkit-hyphens: auto;\n      -ms-hyphens: auto;\n          hyphens: auto;\n}\n\n.Picker-module_var__27YMj(\\--info) {\n  background-color: #32A0C5;\n  color: #FFFFFF;\n}\n\n.Picker-module_errorVisible__3Fa-X,\n.Picker-module_infoVisible__2IbCs {\n  opacity: 1;\n  -webkit-transform: translateY(-100%);\n          transform: translateY(-100%);\n}\n";
 var s$Z = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","container":"Picker-module_container__3AVzP","active":"Picker-module_active__2IBbO","shadowWrapper":"Picker-module_shadowWrapper__1yU5l","pickerInputContainer":"Picker-module_pickerInputContainer__2EiaS","pickerInput":"Picker-module_pickerInput__1P5_a","inputError":"Picker-module_inputError__37bTz","splitPickerInputContainer":"Picker-module_splitPickerInputContainer__2QVF3","suggestionsContainer":"Picker-module_suggestionsContainer__20x1U","var":"Picker-module_var__27YMj","errorVisible":"Picker-module_errorVisible__3Fa-X","infoVisible":"Picker-module_infoVisible__2IbCs"};
 styleInject(css$Z);
 
@@ -7609,7 +7607,7 @@ Arrow.propTypes = {
   className: PropTypes$1.string
 };
 
-var css$_ = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.PickerSuggestions-module_container__1Oq6m {\n  background-color: #FFFFFF;\n  border-radius: 15px;\n  height: auto;\n  left: -10%;\n  min-height: 0;\n  opacity: 0;\n  pointer-events: none;\n  position: absolute;\n  top: 65px;\n  -webkit-transform: translateY(-50px);\n          transform: translateY(-50px);\n  -webkit-transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;\n  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  width: 120%\n}\n\n.PickerSuggestions-module_container__1Oq6m.PickerSuggestions-module_visible__4ey8N {\n  opacity: 1;\n  pointer-events: auto;\n  -webkit-transform: none;\n          transform: none;\n}\n\n.PickerSuggestions-module_splitContainer__3P0nJ:before {\n  background-color: rgba(191, 196, 212, .52);\n  content: '';\n  height: calc(75% - 40px);\n  left: 50%;\n  position: absolute;\n  top: 20px;\n  width: 1px;\n}\n";
+var css$_ = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.PickerSuggestions-module_container__1Oq6m {\n  background-color: #FFFFFF;\n  border-radius: 15px;\n  -webkit-box-shadow: 0 4px 19px rgba(0, 0, 0, .1);\n          box-shadow: 0 4px 19px rgba(0, 0, 0, .1);\n  height: auto;\n  left: -10%;\n  min-height: 0;\n  opacity: 0;\n  pointer-events: none;\n  position: absolute;\n  top: 65px;\n  -webkit-transform: translateY(-50px);\n          transform: translateY(-50px);\n  -webkit-transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;\n  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;\n  width: 120%\n}\n\n.PickerSuggestions-module_container__1Oq6m.PickerSuggestions-module_visible__4ey8N {\n  opacity: 1;\n  pointer-events: auto;\n  -webkit-transform: none;\n          transform: none;\n}\n\n.PickerSuggestions-module_splitContainer__3P0nJ:before {\n  background-color: rgba(191, 196, 212, .52);\n  content: '';\n  height: calc(75% - 40px);\n  left: 50%;\n  position: absolute;\n  top: 20px;\n  width: 1px;\n}\n";
 var s$_ = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","container":"PickerSuggestions-module_container__1Oq6m","visible":"PickerSuggestions-module_visible__4ey8N","splitContainer":"PickerSuggestions-module_splitContainer__3P0nJ"};
 styleInject(css$_);
 
@@ -8609,7 +8607,6 @@ function (_React$PureComponent) {
           return _this.renderInputLeftIconComponent(props, fromZone.type);
         },
         name: ZoneTypesToIconName[fromZone.type],
-        variant: "yellow",
         className: [s$11.inputIcon, s$11.leftInputIcon, className].join(' ')
       });
     });
@@ -8685,7 +8682,6 @@ function (_React$PureComponent) {
           return _this.renderInputLeftIconComponent(props, toZone.type);
         },
         name: ZoneTypesToIconName[toZone.type],
-        variant: "yellow",
         className: [s$11.inputIcon, s$11.leftInputIcon, className].join(' ')
       });
     });
@@ -18843,21 +18839,17 @@ var DefaultRightComponent = function DefaultRightComponent(_ref) {
       className = _ref.className,
       disabledButtons = _ref.disabledButtons;
 
-  var renderHelpButton = function renderHelpButton(_ref2) {
-    var isActive = _ref2.isActive;
+  var renderHelpButton = function renderHelpButton() {
     return React__default.createElement(TextIcon, {
       imageUrl: faqIcon,
-      variant: isActive && !disabledButtons ? 'yellow' : 'white',
       position: "right",
       backgroundClassName: s$17.backgroundTextIcon
     }, texts.needHelp);
   };
 
-  var renderConnectionButton = function renderConnectionButton(_ref3) {
-    var isActive = _ref3.isActive;
+  var renderConnectionButton = function renderConnectionButton() {
     return React__default.createElement(TextIcon, {
       imageUrl: headIcon,
-      variant: isActive ? 'yellow' : 'white',
       backgroundClassName: s$17.backgroundTextIcon
     }, texts.login);
   };
@@ -18899,24 +18891,19 @@ DefaultRightComponent.propTypes = {
   disabledButtons: PropTypes$1.bool.isRequired
 };
 
-var DefaultMiddleComponent = function DefaultMiddleComponent(_ref4) {
-  var texts = _ref4.texts,
-      className = _ref4.className,
-      disabledButtons = _ref4.disabledButtons;
+var DefaultMiddleComponent = function DefaultMiddleComponent(_ref2) {
+  var texts = _ref2.texts,
+      className = _ref2.className,
+      disabledButtons = _ref2.disabledButtons;
 
-  var renderBusinessButton = function renderBusinessButton(_ref5) {
-    var isActive = _ref5.isActive;
+  var renderBusinessButton = function renderBusinessButton() {
     return React__default.createElement(TextIcon, {
       imageUrl: businessIcon,
-      variant: isActive && !disabledButtons ? 'yellow' : 'melrose',
       position: "right",
       backgroundClassName: s$17.backgroundTextIcon
     }, texts.business);
-  };
-
-  renderBusinessButton.propTypes = {
-    isActive: PropTypes$1.bool.isRequired
   }; // eslint-disable-next-line
+
 
   var onClick = function onClick() {
     return window.open('https://business.ectorparking.com', '_blank');
@@ -18938,18 +18925,18 @@ DefaultMiddleComponent.propTypes = {
   disabledButtons: PropTypes$1.bool.isRequired
 };
 
-var Header = function Header(_ref6) {
-  var className = _ref6.className,
-      containerClassName = _ref6.containerClassName,
-      logoClassName = _ref6.logoClassName,
-      middleComponentClassName = _ref6.middleComponentClassName,
-      rightComponentClassName = _ref6.rightComponentClassName,
-      LogoComponent = _ref6.LogoComponent,
-      MiddleComponent = _ref6.MiddleComponent,
-      RightComponent = _ref6.RightComponent,
-      texts = _ref6.texts,
-      onClickLogo = _ref6.onClickLogo,
-      disabledButtons = _ref6.disabledButtons;
+var Header = function Header(_ref3) {
+  var className = _ref3.className,
+      containerClassName = _ref3.containerClassName,
+      logoClassName = _ref3.logoClassName,
+      middleComponentClassName = _ref3.middleComponentClassName,
+      rightComponentClassName = _ref3.rightComponentClassName,
+      LogoComponent = _ref3.LogoComponent,
+      MiddleComponent = _ref3.MiddleComponent,
+      RightComponent = _ref3.RightComponent,
+      texts = _ref3.texts,
+      onClickLogo = _ref3.onClickLogo,
+      disabledButtons = _ref3.disabledButtons;
   return React__default.createElement("div", {
     className: [s$17.wrapper, className].join(' ')
   }, React__default.createElement("div", {
@@ -19002,7 +18989,7 @@ Header.propTypes = {
   disabledButtons: PropTypes$1.bool
 };
 
-var css$1a = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.MenuButton-module_container__3f-Es {\n  position: relative;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.MenuButton-module_button__2FZz3 {\n  color: #000031;\n  padding: 0;\n}\n\n.MenuButton-module_suggestions__3pzou {\n  top: 100%;\n  width: 220px;\n  padding: 16px;\n  margin-top: 16px;\n  left: calc(50% - 130px);\n  min-height: 0;\n  height: auto;\n}\n";
+var css$1a = ":root {\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Margins */\n\n  /* Dimensions */\n}\n\n.MenuButton-module_container__3f-Es {\n  position: relative;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  margin-right: 8px;\n}\n\n.MenuButton-module_button__2FZz3 {\n  color: #000031;\n  padding: 0;\n}\n\n.MenuButton-module_suggestions__3pzou {\n  top: 100%;\n  width: 220px;\n  padding: 16px;\n  margin-top: 16px;\n  left: calc(50% - 130px);\n  min-height: 0;\n  height: auto;\n}\n";
 var s$18 = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","container":"MenuButton-module_container__3f-Es","button":"MenuButton-module_button__2FZz3","suggestions":"MenuButton-module_suggestions__3pzou"};
 styleInject(css$1a);
 
@@ -19325,7 +19312,6 @@ var InformationAlert = function InformationAlert(_ref) {
     className: s$1b.alertTitle
   }, React__default.createElement(Icon, {
     name: "ec-info",
-    variant: "none",
     className: s$1b.alertIconContainer,
     iconClassName: classNameIcon
   }), title), React__default.createElement("p", {

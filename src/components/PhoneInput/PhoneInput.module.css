@@ -5,11 +5,12 @@
   flex: 1 1 auto;
 }
 
-.phoneInputCountryCode {
-  flex: 1 0 50px;
+.countryLabel {
+  padding-right: var(--spaceSmall);
 }
 
 .inputContainer {
+  flex: 1 0 auto;
   margin-left: var(--spaceExtraSmall);
 }
 

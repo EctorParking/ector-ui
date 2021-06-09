@@ -5,15 +5,15 @@
 }
 
 .cardContent {
-  padding: var(--spaceExtraSmall);
+  position: relative;
   justify-content: center;
 }
 
 .header {
   position: absolute;
   width: 100%;
-  top: var(--marginMedium);
-  right: var(--marginMedium);
+  top: var(--spaceSmall);
+  right: var(--spaceSmall);
 }
 
 .pendingDeletion {

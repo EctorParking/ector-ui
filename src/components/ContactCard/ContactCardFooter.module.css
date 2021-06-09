@@ -4,8 +4,7 @@
   align-items: flex-end;
   display: flex;
   justify-content: flex-end;
-  padding: 0 2rem;
-  height: 2rem;
+  padding: var(--spaceSmall);
 }
 
 .checkIcon {
