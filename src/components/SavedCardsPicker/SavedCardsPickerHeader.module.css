@@ -6,7 +6,6 @@
   display: flex;
   height: auto;
   padding: var(--spaceExtraSmall);
-  margin-left: var(--spaceExtraSmall);
   cursor: pointer;
 }
 

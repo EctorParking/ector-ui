@@ -1,13 +1,14 @@
 @import '../../style/variable.global.css';
 
 .card {
-  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
   background-color: var(--lightNeutral);
-  border-radius: var(--radiusSmall);
+  border-radius: var(--radiusMedium);
   padding: var(--spaceExtraSmall);
   margin-top: var(--spaceMedium);
   position: relative;
-  max-width: 250px;
+  width: 250px;
 }
 
 .optionCardContainerSelected {
@@ -25,6 +26,7 @@
 @media (max-width: 1232px) {
   .card {
     display: flex;
+    flex-direction: row;
     flex: 1 1 auto;
     height: auto;
     margin-right: 0;

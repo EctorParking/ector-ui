@@ -4,16 +4,11 @@
   background-color: var(--accent);
   border-radius: var(--radiusMedium);
   cursor: pointer;
-  display: block;
-  font-size: var(--fontSizeNormal);
   font-weight: bold;
-  line-height: 1;
-  margin: 0;
   outline: none;
   overflow: hidden;
   padding: var(--spaceSmall) var(--spaceLarge);
   position: relative;
-  text-decoration: none;
   text-transform: uppercase;
   transition: background-color 0.2s ease-in-out;
 }
@@ -45,7 +40,7 @@
 }
 
 .button.fetching {
-  background-color: #FFCD026B;
+  background-color: var(--lightAccent);
 }
 
 .track.fetchingTrack {
