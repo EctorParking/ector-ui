@@ -4,13 +4,13 @@
   color: var(--white);
   border-radius: var(--radiusMedium);
   font-size: var(--fontSizeSmall);
-  padding: 0 var(--marginXSmall);
+  padding: 0 var(--spaceExtraSmall);
   display: flex;
   align-items: center;
 }
 
 .text {
-  padding: 0 var(--marginXSmall);
+  padding: 0 var(--spaceExtraSmall);
   font-weight: var(--fontWeightRegular);
   letter-spacing: 1px;
 }

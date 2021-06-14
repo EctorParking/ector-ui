@@ -15,13 +15,13 @@
 }
 
 .CalendarDay__selected_start {
-  border-top-left-radius: var(--marginXSmall);
-  border-bottom-left-radius: var(--marginXSmall);
+  border-top-left-radius: var(--spaceExtraSmall);
+  border-bottom-left-radius: var(--spaceExtraSmall);
 }
 
 .CalendarDay__selected_end {
-  border-top-right-radius: var(--marginXSmall);
-  border-bottom-right-radius: var(--marginXSmall);
+  border-top-right-radius: var(--spaceExtraSmall);
+  border-bottom-right-radius: var(--spaceExtraSmall);
 }
 
 .DayPickerNavigation_button__default,

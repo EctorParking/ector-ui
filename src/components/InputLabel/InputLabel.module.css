@@ -45,5 +45,5 @@
 }
 
 .tooltip {
-  margin-left: var(--marginXSmall);
+  margin-left: var(--spaceExtraSmall);
 }

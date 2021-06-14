@@ -14,7 +14,6 @@
 }
 
 .newTitle {
-  color: var(--lightPrimary);
   font-size: var(--fontSizeTitle);
   font-weight: var(--fontWeightBold);
   line-height: 1;
@@ -23,7 +22,7 @@
 
 .title .horizontalRule {
   border: 0;
-  border-top: 2px solid var(--lightPrimary);
+  border-top: 2px solid var(--accent);
   margin: 0;
   width: var(--titleHrWidth);
 }

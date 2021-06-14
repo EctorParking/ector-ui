@@ -28,7 +28,7 @@
   display: flex;
   flex-direction: column;
   line-height: 1;
-  padding: var(--marginXSmall) var(--spaceExtraSmall) var(--spaceExtraSmall);
+  padding: var(--spaceExtraSmall) var(--spaceExtraSmall) var(--spaceExtraSmall);
 }
 
 .footerContainer {
@@ -37,6 +37,6 @@
   justify-content: flex-end;
   height: 31px;
   line-height: 1;
-  padding: var(--marginXSmall);
+  padding: var(--spaceExtraSmall);
   margin-top: 3px;
 }

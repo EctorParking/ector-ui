@@ -60,7 +60,7 @@
   border: none !important;
   border-radius: var(--radiusMedium);
   max-width: 100px;
-  padding-left: calc(var(--spaceLarge) + var(--marginXSmall));
+  padding-left: calc(var(--spaceLarge) + var(--spaceExtraSmall));
   margin-right: 1px;
 }
 

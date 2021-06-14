@@ -30,12 +30,12 @@
 
 .ActionLink-module_commonLabelStyle__3qrLp {
   color: #9CA3FF;
-  font-size: 0.8em;
+  font-size: 12px;
 }
 
 .ActionLink-module_labelWithIcon__370D_ {
   font-weight: 400;
-  margin-left: 5px;
+  margin-left: 8px;
 }
 
 .ActionLink-module_labelWithoutIcon__1-sRR {
@@ -112,7 +112,7 @@
 
 .Alert-module_title__8QSrA {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
 .Alert-module_alert__r0hVZ p {
@@ -172,6 +172,8 @@
   position: relative;
   background-color: #FFFFFF;
   border-radius: 15px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -415,7 +417,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   line-height: 1;
-  padding: 5px 8px 8px;
+  padding: 8px 8px 8px;
 }
 
 .AlternativeTimeCard-module_footerContainer__2mb4P {
@@ -429,7 +431,7 @@
           justify-content: flex-end;
   height: 31px;
   line-height: 1;
-  padding: 5px;
+  padding: 8px;
   margin-top: 3px;
 }
 
@@ -509,11 +511,11 @@
 }
 
 .ApplicationCard-module_icons__1tF4n a:first-child {
-  margin-right: 5px;
+  margin-right: 8px;
 }
 
 .ApplicationCard-module_icons__1tF4n a:last-child {
-  margin-left: 5px;
+  margin-left: 8px;
 }
 
 :root {
@@ -627,9 +629,9 @@
   position: absolute;
   top: 8px;
   left: -20px;
-  margin-left: 4px;
+  margin-left: 7px;
   bottom: -8px;
-  border-right: 2px dotted #000031;
+  border-right: 2px dotted #F7D48A;
 }
 
 .BookingSteps-module_stepName__3dA-f {
@@ -648,8 +650,8 @@
   top: 50%;
   left: -20px;
   border-radius: 50%;
-  background-color: #000031;
-  margin-top: -5px;
+  background-color: #F7D48A;
+  margin-top: -8px;
 }
 
 .BookingSteps-module_bookingSteps__6TCaf div span {
@@ -688,9 +690,8 @@
 .Button-module_button__6y6Zv {
   background-color: #F7D48A;
   border-radius: 30px;
-  cursor: pointer;
-  font-weight: bold;
-  outline: none;
+  font-weight: 700;
+  line-height: 16px;
   overflow: hidden;
   padding: 16px 32px;
   position: relative;
@@ -1041,7 +1042,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  color: #708399;
+  color: #F7D48A;
   font-size: 24px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -1050,7 +1051,7 @@
 
 .CarCardHeader-module_editIcon__3m80I:before,
 .CarCardHeader-module_deleteIcon__3YQd_:before {
-  color: #708399;
+  color: #C7CDDA;
 }
 
 .CarCardHeader-module_editButton__1G4OQ {
@@ -1412,7 +1413,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  color: #708399;
+  color: #F7D48A;
   font-size: 24px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -1421,7 +1422,7 @@
 
 .ContactCardHeader-module_editIcon__1sOu6:before,
 .ContactCardHeader-module_deleteIcon__35WZv:before {
-  color: #708399;
+  color: #C7CDDA;
 }
 
 .ContactCardHeader-module_editButton__5yJha {
@@ -1826,9 +1827,6 @@
 }
 
 .InputButton-module_input__3lwQJ {
-  border-bottom-right-radius: 0;
-  border-right: 0;
-  border-top-right-radius: 0;
   width: 100%;
   margin: 0 auto;
 }
@@ -1839,8 +1837,8 @@
 }
 
 .InputButton-module_button__3YbuH {
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0;
+  margin-left: 24px;
+  padding: 8px 32px;
 }
 
 .InputButton-module_helpTextClassname__3BmMr {
@@ -2071,7 +2069,7 @@
 }
 
 .InputLabel-module_tooltip__3vvY4 {
-  margin-left: 5px;
+  margin-left: 8px;
 }
 
 :root {
@@ -2238,7 +2236,7 @@
   color: #FFFFFF;
   border-radius: 30px;
   font-size: 12px;
-  padding: 0 5px;
+  padding: 0 8px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2248,7 +2246,7 @@
 }
 
 .Label-module_text__147Rh {
-  padding: 0 5px;
+  padding: 0 8px;
   font-weight: 400;
   letter-spacing: 1px;
 }
@@ -2592,8 +2590,8 @@
   font-size: 20px;
 }
 
-.PaymentMethodCardHeader-module_icon__Rh3J2 {
-  fill: #708399;
+.PaymentMethodCardHeader-module_icon__Rh3J2::before {
+  color: #C7CDDA;
 }
 
 :root {
@@ -2778,7 +2776,7 @@
 }
 
 .PricingSummary-module_add__2494l span {
-  margin-left: 5px;
+  margin-left: 8px;
   text-decoration: underline;
 }
 
@@ -3182,14 +3180,14 @@
 
 .Subtitle-module_hr__2cWQK {
   border: 0;
-  border-top: 2px dotted #A9B3C5;
+  border-top: 2px dotted #F7D48A;
   margin: 0;
   width: 50px;
 }
 
 @media (max-width: 1130px) {
   .Subtitle-module_h2__3Utt_ {
-    margin: 0 0 5px;
+    margin: 0 0 8px;
   }
 }
 
@@ -3229,7 +3227,6 @@
 }
 
 .Title-module_newTitle__3v8No {
-  color: #708399;
   font-size: 32px;
   font-weight: 700;
   line-height: 1;
@@ -3238,7 +3235,7 @@
 
 .Title-module_title__gpPet .Title-module_horizontalRule__1wwO9 {
   border: 0;
-  border-top: 2px solid #708399;
+  border-top: 2px solid #F7D48A;
   margin: 0;
   width: 50px;
 }
@@ -3563,7 +3560,7 @@
 .RoundedButton-module_buttonContainer__1mUSj {
   border: 2px solid;
   border-radius: 15px;
-  padding: 5px 20px;
+  padding: 8px 20px;
   font-weight: bold;
 }
 
@@ -3859,7 +3856,7 @@
           box-sizing: border-box;
   color: #000031;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   display: block;
   height: 50px;
   padding: 0;
@@ -3872,7 +3869,7 @@
 
 .Picker-module_shadowWrapper__1yU5l {
   background-color: #FFFFFF;
-  border-radius: 5px;
+  border-radius: 8px;
   -webkit-box-shadow: 0 4px 19px rgba(0, 0, 0, .1);
           box-shadow: 0 4px 19px rgba(0, 0, 0, .1);
   display: -webkit-box;
@@ -3892,7 +3889,7 @@
 }
 
 .Picker-module_pickerInput__1P5_a {
-  border-radius: 5px;
+  border-radius: 8px;
   height: 50px;
   padding: 0;
   border: none;
@@ -4066,8 +4063,8 @@
 .ZonesPickerSuggestions-module_suggestionsContainer__1ZgOP:before {
   background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(rgba(255, 255, 255, .1)));
   background: linear-gradient(to bottom, #FFFFFF, rgba(255, 255, 255, .1));
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
   top: 0;
 }
 
@@ -4410,7 +4407,7 @@
           flex-direction: column;
   overflow: scroll;
   position: relative;
-  margin: 0 5px;
+  margin: 0 8px;
   scrollbar-width: none;
   -ms-overflow-style: none
 }
@@ -4432,7 +4429,7 @@
   .TimeRange-module_hour__XiHg6.TimeRange-module_selected__1EEqQ,
   .TimeRange-module_minute__32J9f:hover,
   .TimeRange-module_minute__32J9f.TimeRange-module_selected__1EEqQ {
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
 }
@@ -4517,7 +4514,7 @@
 }
 
 .FlightInformationForm-module_actionLink__nzpW1 {
-  margin-top: 5px;
+  margin-top: 8px;
 }
 
 .FlightInformationForm-module_flexStart__3he4R {
@@ -4556,7 +4553,7 @@
   .FlightInformationForm-module_input__1QJpa {
     min-width: 275px;
     max-width: 275px;
-    margin: 5px 8px 0 8px;
+    margin: 8px 8px 0 8px;
   }
   .FlightInformationForm-module_firstColumn__3dXcq,
   .FlightInformationForm-module_secondColumn__1tg-R {
@@ -4600,7 +4597,7 @@
     -webkit-box-flex: 0;
         -ms-flex: none;
             flex: none;
-    margin: 5px 0 0 0;
+    margin: 8px 0 0 0;
     min-width: 0;
   }
   .FlightInformationForm-module_title__3yTDe,
@@ -4620,7 +4617,7 @@
     font-size: 24px;
   }
   .FlightInformationForm-module_description__38HJs {
-    margin: 13px 0;
+    margin: 16px 0;
   }
 }
 
@@ -4967,8 +4964,8 @@
   background-color: #ECEFF6;
   border-left: 5px solid #000031;
   padding:
-    8px 24px 5px
-    15px;
+    8px 24px 8px
+    16px;
 }
 
 .InformationAlert-module_alertTitle__3gVaH {
@@ -5032,7 +5029,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 15px;
+  padding: 16px;
   width: 100%;
 }
 
@@ -5151,7 +5148,7 @@
   }
 
   .SavedCardsLine-module_paddedCell__19Odo {
-    margin: 0 50px 0 5px;
+    margin: 0 50px 0 8px;
   }
 
   .SavedCardsLine-module_expireAt__39dzO {
@@ -5160,7 +5157,7 @@
 }
 
 .SavedCardsLine-module_checkedButton__b64Id {
-  margin-left: 15px;
+  margin-left: 16px;
   margin-right: 0;
   vertical-align: middle;
   width: 33px;
@@ -5186,12 +5183,12 @@
 
 .SavedCardsLine-module_hiddenDigits__2QCDF {
   font-size: 2em;
-  margin-right: 5px;
+  margin-right: 8px;
 }
 
 .SavedCardsLine-module_deleteButtonCell__2C3NU {
   border: none !important;
-  margin-right: 15px;
+  margin-right: 16px;
 }
 
 .SavedCardsLine-module_deleteButton__2aq34 {
@@ -5237,7 +5234,7 @@
   display: flex;
   border-radius: 30px;
   background-color: #FFFFFF;
-  margin: 0 0 15px 0;
+  margin: 0 0 16px 0;
   -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, .15);
           box-shadow: 0 0 10px 0 rgba(0, 0, 0, .15);
   overflow-x: auto;
@@ -5329,7 +5326,7 @@
       -ms-flex-align: center;
           align-items: center;
   padding: 8px;
-  padding-left: 15px;
+  padding-left: 16px;
 }
 
 .SavedCardsPicker-module_addPaymentCardIcon__VUpeM {
@@ -5589,7 +5586,7 @@
   border: none !important;
   border-radius: 30px;
   max-width: 100px;
-  padding-left: 37px;
+  padding-left: 40px;
   margin-right: 1px;
 }
 

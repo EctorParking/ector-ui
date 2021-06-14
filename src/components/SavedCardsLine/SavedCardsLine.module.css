@@ -53,7 +53,7 @@
   }
 
   .paddedCell {
-    margin: 0 var(--marginXLarge) 0 var(--marginXSmall);
+    margin: 0 var(--marginXLarge) 0 var(--spaceExtraSmall);
   }
 
   .expireAt {
@@ -62,7 +62,7 @@
 }
 
 .checkedButton {
-  margin-left: var(--marginXMedium);
+  margin-left: var(--spaceSmall);
   margin-right: 0;
   vertical-align: middle;
   width: 33px;
@@ -86,12 +86,12 @@
 
 .hiddenDigits {
   font-size: var(--iconFontSize);
-  margin-right: var(--marginXSmall);
+  margin-right: var(--spaceExtraSmall);
 }
 
 .deleteButtonCell {
   border: none !important;
-  margin-right: var(--marginXMedium);
+  margin-right: var(--spaceSmall);
 }
 
 .deleteButton {

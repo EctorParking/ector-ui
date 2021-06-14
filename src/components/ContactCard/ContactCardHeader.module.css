@@ -2,14 +2,14 @@
 
 .name {
   display: flex;
-  color: var(--lightPrimary);
+  color: var(--accent);
   font-size: var(--fontSizeSubtitle);
   justify-content: space-between;
 }
 
 .editIcon:before,
 .deleteIcon:before {
-  color: var(--lightPrimary);
+  color: var(--neutral);
 }
 
 .editButton {

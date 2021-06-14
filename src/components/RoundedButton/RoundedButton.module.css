@@ -3,7 +3,7 @@
 .buttonContainer {
   border: 2px solid;
   border-radius: 15px;
-  padding: var(--marginXSmall) var(--marginMedium);
+  padding: var(--spaceExtraSmall) var(--marginMedium);
   font-weight: bold;
 }
 

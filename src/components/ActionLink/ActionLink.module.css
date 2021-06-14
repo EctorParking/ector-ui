@@ -11,12 +11,12 @@
 
 .commonLabelStyle {
   color: var(--action);
-  font-size: var(--defaultFontSize);
+  font-size: var(--fontSizeSmall);
 }
 
 .labelWithIcon {
   font-weight: var(--fontWeightRegular);
-  margin-left: var(--marginXSmall);
+  margin-left: var(--spaceExtraSmall);
 }
 
 .labelWithoutIcon {

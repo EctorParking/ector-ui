@@ -4,7 +4,7 @@
   display: flex;
   border-radius: var(--radiusMedium);
   background-color: var(--background);
-  margin: 0 0 var(--marginXMedium) 0;
+  margin: 0 0 var(--spaceSmall) 0;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
   overflow-x: auto;
   padding: var(--spaceExtraSmall);
@@ -74,7 +74,7 @@
   display: flex;
   align-items: center;
   padding: var(--spaceExtraSmall);
-  padding-left: var(--marginXMedium);
+  padding-left: var(--spaceSmall);
 }
 
 .addPaymentCardIcon {

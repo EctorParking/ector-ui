@@ -31,7 +31,7 @@
   flex-direction: column;
   overflow: scroll;
   position: relative;
-  margin: 0 var(--marginXSmall);
+  margin: 0 var(--spaceExtraSmall);
   scrollbar-width: none;
   -ms-overflow-style: none;
   &::-webkit-scrollbar {
@@ -47,7 +47,7 @@
   text-align: center;
   &:hover,
   &.selected {
-    border-radius: var(--marginXSmall);
+    border-radius: var(--spaceExtraSmall);
     cursor: pointer;
     font-weight: bold;
   }

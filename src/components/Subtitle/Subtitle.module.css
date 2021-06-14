@@ -16,13 +16,13 @@
 
 .hr {
   border: 0;
-  border-top: 2px dotted var(--darkNeutral);
+  border-top: 2px dotted var(--accent);
   margin: 0;
   width: var(--titleHrWidth);
 }
 
 @media (--maxPurchaseCanalMinWidth) {
   .h2 {
-    margin: 0 0 var(--marginXSmall);
+    margin: 0 0 var(--spaceExtraSmall);
   }
 }

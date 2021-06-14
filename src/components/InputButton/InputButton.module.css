@@ -5,30 +5,33 @@
   margin: 0 auto;
   width: 100%;
 }
+
 .input {
-  border-bottom-right-radius: 0;
-  border-right: 0;
-  border-top-right-radius: 0;
   width: 100%;
   margin: 0 auto;
 }
+
 .input,
 .button {
   height: 40px;
 }
+
 .button {
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0;
+  margin-left: var(--spaceMedium);
+  padding: var(--spaceExtraSmall) var(--spaceLarge);
 }
+
 .helpTextClassname {
   color: var(--neutral);
   font-style: italic;
   margin: 0;
 }
+
 .error {
   text-align: left;
   color: var(--error);
 }
+
 .iconContainer {
   align-items: center;
   border: 2px solid var(--neutral);
@@ -39,15 +42,18 @@
   display: flex;
   height: var(--spaceExtraLarge);
 }
+
 .iconContainer:empty {
   display: none;
 }
+
 .iconContainerFocussed {
   border-color: var(--accent);
   border-right: 0;
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
+
 .icon {
   color: var(--primary);
   font-size: var(--fontSizeNormal);

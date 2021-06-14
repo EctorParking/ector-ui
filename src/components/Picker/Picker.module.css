@@ -5,7 +5,7 @@
   box-sizing: border-box;
   color: var(--primary);
   border: none;
-  border-radius: var(--marginXSmall);
+  border-radius: var(--spaceExtraSmall);
   display: block;
   height: 50px;
   padding: 0;
@@ -18,7 +18,7 @@
 
 .shadowWrapper {
   background-color: var(--background);
-  border-radius: var(--marginXSmall);
+  border-radius: var(--spaceExtraSmall);
   box-shadow: var(--pickerBoxShadow);
   display: flex;
   position: relative;
@@ -33,7 +33,7 @@
 }
 
 .pickerInput {
-  border-radius: var(--marginXSmall);
+  border-radius: var(--spaceExtraSmall);
   height: 50px;
   padding: 0;
   border: none;

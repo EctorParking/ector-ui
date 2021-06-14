@@ -52,8 +52,6 @@
   --spaceExtraLarge: 40px;
 
   /* Margins */
-  --marginXSmall: 5px;
-  --marginXMedium: 15px;
   --marginMedium: 20px;
   --marginXLarge: 50px;
   --marginXXLarge: 60px;
@@ -62,7 +60,6 @@
   --alertIconSize: 40px;
   --bpMobileIPhoneFive: 320px;
   --containerWidth: 1232px;
-  --defaultFontSize: 0.8em;
   --headerHeight: 60px;
   --iconFontSize: 2em;
   --maxImageSize: 24px;

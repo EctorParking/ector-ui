@@ -38,7 +38,7 @@
 
 .title {
   display: block;
-  margin-bottom: var(--marginXSmall);
+  margin-bottom: var(--spaceExtraSmall);
 }
 
 .alert p {

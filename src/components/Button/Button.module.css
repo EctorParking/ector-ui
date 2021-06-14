@@ -3,9 +3,8 @@
 .button {
   background-color: var(--accent);
   border-radius: var(--radiusMedium);
-  cursor: pointer;
-  font-weight: bold;
-  outline: none;
+  font-weight: var(--fontWeightBold);
+  line-height: var(--fontSizeNormal);
   overflow: hidden;
   padding: var(--spaceSmall) var(--spaceLarge);
   position: relative;

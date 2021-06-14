@@ -47,7 +47,7 @@
 }
 
 .actionLink {
-  margin-top: var(--marginXSmall);
+  margin-top: var(--spaceExtraSmall);
 }
 
 .flexStart {
@@ -76,7 +76,7 @@
   .input {
     min-width: 275px;
     max-width: 275px;
-    margin: var(--marginXSmall) var(--spaceExtraSmall) 0 var(--spaceExtraSmall);
+    margin: var(--spaceExtraSmall) var(--spaceExtraSmall) 0 var(--spaceExtraSmall);
   }
   .firstColumn,
   .secondColumn {
@@ -117,7 +117,7 @@
   }
   .input {
     flex: none;
-    margin: var(--marginXSmall) 0 0 0;
+    margin: var(--spaceExtraSmall) 0 0 0;
     min-width: 0;
   }
   .title,
@@ -136,6 +136,6 @@
     font-size: var(--fontSizeSubtitle);
   }
   .description {
-    margin: calc(var(--spaceExtraSmall) + var(--marginXSmall)) 0;
+    margin: calc(var(--spaceExtraSmall) + var(--spaceExtraSmall)) 0;
   }
 }
