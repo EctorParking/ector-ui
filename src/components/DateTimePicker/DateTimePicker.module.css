@@ -58,7 +58,7 @@
 
 .timePickerInput {
   border: none !important;
-  border-radius: var(--radiusMedium);
+  border-radius: var(--radiusLarge);
   max-width: 100px;
   padding-left: calc(var(--spaceLarge) + var(--spaceExtraSmall));
   margin-right: 1px;

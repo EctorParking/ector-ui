@@ -2,7 +2,7 @@
 
 .alert {
   align-items: center;
-  border-radius: var(--radiusMedium);
+  border-radius: var(--radiusLarge);
   box-sizing: border-box;
   color: var(--white);
   display: flex;

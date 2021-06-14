@@ -2,7 +2,7 @@
 
 .referralCard {
   background-color: var(--lightNeutral);
-  border-radius: var(--radiusMedium);
+  border-radius: var(--radiusLarge);
   color: var(--primary);
   display: flex;
   max-width: var(--bpMobileIPhoneFive);

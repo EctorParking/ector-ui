@@ -2,7 +2,7 @@
 
 .labelContainer {
   color: var(--white);
-  border-radius: var(--radiusMedium);
+  border-radius: var(--radiusLarge);
   font-size: var(--fontSizeSmall);
   padding: 0 var(--spaceExtraSmall);
   display: flex;

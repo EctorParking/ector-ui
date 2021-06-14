@@ -2,7 +2,7 @@
 
 .button {
   background-color: var(--accent);
-  border-radius: var(--radiusMedium);
+  border-radius: var(--radiusLarge);
   font-weight: var(--fontWeightBold);
   line-height: var(--fontSizeNormal);
   overflow: hidden;
@@ -19,7 +19,7 @@
 .button .track {
   animation: outFromFetching 0.2s linear forwards;
   background-color: var(--accent);
-  border-radius: var(--radiusMedium);
+  border-radius: var(--radiusLarge);
   content: '';
   height: 100%;
   left: 0;

@@ -3,7 +3,7 @@
 .addItemButton {
   background-color: var(--lightNeutral);
   padding: 5px;
-  border-radius: var(--radiusMedium);
+  border-radius: var(--radiusLarge);
   margin-top: 25px;
   margin-right: 25px;
   position: relative;

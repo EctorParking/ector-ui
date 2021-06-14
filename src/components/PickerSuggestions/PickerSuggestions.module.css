@@ -2,7 +2,7 @@
 
 .container {
   background-color: var(--background);
-  border-radius: var(--radiusSmall);
+  border-radius: var(--radiusMedium);
   box-shadow: var(--pickerBoxShadow);
   height: auto;
   left: -10%;

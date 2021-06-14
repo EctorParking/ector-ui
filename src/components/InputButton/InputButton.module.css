@@ -36,8 +36,8 @@
   align-items: center;
   border: 2px solid var(--neutral);
   border-left: 0;
-  border-bottom-right-radius: var(--radiusMedium);
-  border-top-right-radius: var(--radiusMedium);
+  border-bottom-right-radius: var(--radiusLarge);
+  border-top-right-radius: var(--radiusLarge);
   box-sizing: border-box;
   display: flex;
   height: var(--spaceExtraLarge);

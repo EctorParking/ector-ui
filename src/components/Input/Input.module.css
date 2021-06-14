@@ -8,7 +8,7 @@
   box-sizing: border-box;
   color: var(--primary);
   border: 1px solid var(--neutral);
-  border-radius: var(--radiusMedium);
+  border-radius: var(--radiusLarge);
   display: block;
   height: 40px;
   padding: var(--spaceExtraSmall) var(--spaceSmall);

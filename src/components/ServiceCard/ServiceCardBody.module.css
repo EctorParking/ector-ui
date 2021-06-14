@@ -7,8 +7,8 @@
   align-items: flex-start;
   background-color: var(--background);
   padding: var(--spaceSmall);
-  border-top-left-radius: var(--radiusMedium);
-  border-top-right-radius: var(--radiusMedium);
+  border-top-left-radius: var(--radiusLarge);
+  border-top-right-radius: var(--radiusLarge);
 }
 
 .title {
@@ -44,7 +44,7 @@
     flex: 7;
     height: auto;
     padding: var(--spaceExtraSmall) var(--spaceSmall);
-    border-radius: var(--radiusMedium);
+    border-radius: var(--radiusLarge);
   }
 
   .title {

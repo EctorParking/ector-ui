@@ -2,7 +2,7 @@
 
 .select {
   align-items: center;
-  border-radius: var(--radiusMedium);
+  border-radius: var(--radiusLarge);
   border: 1px solid var(--neutral);
   box-sizing: border-box;
   color: var(--primary);
