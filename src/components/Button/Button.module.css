@@ -34,7 +34,7 @@
   cursor: not-allowed;
 
   &:hover {
-    background-color: var(--lightAccent);;
+    background-color: var(--lightAccent);
   }
 }
 
