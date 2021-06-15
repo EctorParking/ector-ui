@@ -30,11 +30,11 @@
 }
 
 .button[disabled] {
-  background-color: #7890A3;
+  background-color: var(--lightAccent);
   cursor: not-allowed;
 
   &:hover {
-    background-color: #7890A3;
+    background-color: var(--lightAccent);;
   }
 }
 

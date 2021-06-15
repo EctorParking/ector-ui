@@ -3,6 +3,7 @@
 .title {
   display: flex;
   flex-direction: column;
+  margin-top: 0;
   margin-bottom: var(--spaceLarge);
 }
 
@@ -16,8 +17,9 @@
 .newTitle {
   font-size: var(--fontSizeTitle);
   font-weight: var(--fontWeightBold);
-  line-height: 1;
-  margin: 0;
+  line-height: 44px;
+  margin-top: 0;
+  margin-bottom: var(--spaceLarge);
 }
 
 .title .horizontalRule {
