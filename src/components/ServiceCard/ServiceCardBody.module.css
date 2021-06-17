@@ -43,16 +43,21 @@
   .cardContent {
     flex: 7;
     height: auto;
-    padding: var(--spaceExtraSmall) var(--spaceSmall);
     border-radius: var(--radiusLarge);
   }
 
   .title {
-    font-size: 20px;
+    font-size: var(--fontSizeHeading);
     margin-right: 0;
   }
 
   .icon {
     display: none;
+  }
+}
+
+@media (--maxTablet) {
+  .cardContent {
+    padding: var(--spaceExtraSmall) var(--spaceSmall);
   }
 }
