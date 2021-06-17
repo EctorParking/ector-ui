@@ -199,7 +199,7 @@
 .Card-module_label__EcoX3 {
   position: absolute;
   top: -10px;
-  right: 20px;
+  right: 16px;
 }
 
 :root {
@@ -2208,6 +2208,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: 1;
 }
 
 .Label-module_text__147Rh {
@@ -2220,6 +2221,42 @@
   background-color: #000031;
 }
 
+.Label-module_lightPrimaryColor__2j0oP {
+  background-color: #708399;
+}
+
+.Label-module_neutralColor__1Mkxb {
+  background-color: #C7CDDA;
+}
+
+.Label-module_lightNeutralColor__3tn0M {
+  background-color: #ECEFF6;
+}
+
+.Label-module_darkNeutralColor__2oGbq {
+  background-color: #A9B3C5;
+}
+
+.Label-module_backgroundColor__FNQgX {
+  background-color: #FFFFFF;
+}
+
+.Label-module_accentColor__3Z3bi {
+  background-color: #F7D48A;
+}
+
+.Label-module_lightAccentColor__2T1Dx {
+  background-color: #F8E5B6;
+}
+
+.Label-module_infoColor__2S2OX {
+  background-color: #F5B400;
+}
+
+.Label-module_actionColor__1debO {
+  background-color: #9CA3FF;
+}
+
 .Label-module_successColor__3yDlR {
   background-color: #59C871;
 }
@@ -2228,12 +2265,20 @@
   background-color: #DF6262;
 }
 
-.Label-module_actionColor__1debO {
-  background-color: #9CA3FF;
+.Label-module_bronzeColor__1G0I_ {
+  background-color: #B96C47;
 }
 
-.Label-module_lightNeutralColor__3tn0M {
-  background-color: #ECEFF6;
+.Label-module_silverColor__2L214 {
+  background-color: #C6C6C6;
+}
+
+.Label-module_goldColor__39bkm {
+  background-color: #E6BA5E;
+}
+
+.Label-module_platinumColor__3er3W {
+  background-color: #A07584;
 }
 
 :root {
@@ -2905,7 +2950,7 @@
 
 .ServiceCard-module_labelContainer__14NKR {
   position: absolute;
-  top: -10px;
+  top:  -12px;
   right: 8%;
   display: -webkit-box;
   display: -ms-flexbox;

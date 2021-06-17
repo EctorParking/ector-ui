@@ -7,6 +7,7 @@
   padding: 0 var(--spaceExtraSmall);
   display: flex;
   align-items: center;
+  z-index: 1;
 }
 
 .text {
@@ -19,6 +20,42 @@
   background-color: var(--primary);
 }
 
+.lightPrimaryColor {
+  background-color: var(--lightPrimary);
+}
+
+.neutralColor {
+  background-color: var(--neutral);
+}
+
+.lightNeutralColor {
+  background-color: var(--lightNeutral);
+}
+
+.darkNeutralColor {
+  background-color: var(--darkNeutral);
+}
+
+.backgroundColor {
+  background-color: var(--background);
+}
+
+.accentColor {
+  background-color: var(--accent);
+}
+
+.lightAccentColor {
+  background-color: var(--lightAccent);
+}
+
+.infoColor {
+  background-color: var(--info);
+}
+
+.actionColor {
+  background-color: var(--action);
+}
+
 .successColor {
   background-color: var(--success);
 }
@@ -27,10 +64,18 @@
   background-color: var(--error);
 }
 
-.actionColor {
-  background-color: var(--action);
+.bronzeColor {
+  background-color: var(--bronze);
 }
 
-.lightNeutralColor {
-  background-color: var(--lightNeutral);
+.silverColor {
+  background-color: var(--silver);
+}
+
+.goldColor {
+  background-color: var(--gold);
+}
+
+.platinumColor {
+  background-color: var(--platinum);
 }
