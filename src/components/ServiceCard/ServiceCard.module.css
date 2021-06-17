@@ -17,7 +17,7 @@
 
 .labelContainer {
   position: absolute;
-  top:  calc(-1 * var(--fontSizeSmall));
+  top: calc(-1 * var(--fontSizeSmall));
   right: 8%;
   display: flex;
   align-items: center;
