@@ -2,22 +2,22 @@
 
 .alert {
   align-items: center;
-  border-radius: var(--borderRadius);
+  border-radius: var(--radiusLarge);
   box-sizing: border-box;
   color: var(--white);
   display: flex;
   flex: 1;
-  margin-bottom: var(--marginLarge);
+  margin-bottom: var(--spaceLarge);
   padding: var(--marginMedium);
   width: 100%;
 }
 
 .alert.success {
-  background-color: var(--green);
+  background-color: var(--success);
 }
 
 .alert.error {
-  background-color: var(--red);
+  background-color: var(--error);
 }
 
 .alert.warning {
@@ -38,7 +38,7 @@
 
 .title {
   display: block;
-  margin-bottom: var(--marginXSmall);
+  margin-bottom: var(--spaceExtraSmall);
 }
 
 .alert p {

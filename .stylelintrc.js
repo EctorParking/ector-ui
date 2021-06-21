@@ -2,9 +2,9 @@ module.exports = {
   ignoreFiles: ['node_modules/normalize.css/normalize.css'],
   rules: {
     'block-no-empty': true,
-    'color-hex-case': 'lower',
-    'color-hex-length': 'short',
-    'color-named': 'always-where-possible',
+    'color-hex-case': 'upper',
+    'color-hex-length': 'long',
+    'color-named': 'never',
     'color-no-invalid-hex': true,
     'declaration-bang-space-after': 'never',
     'declaration-bang-space-before': 'always',

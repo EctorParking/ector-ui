@@ -11,7 +11,7 @@ const PaymentMethodCardHeader = ({
 }) =>
   pendingDeletion ? null : (
     <div className={[s.container, className].join(' ')}>
-      <button className={s.button} title={texts.remove} onClick={onDelete}>
+      <button title={texts.remove} onClick={onDelete}>
         <i className={`icon-bin ${s.icon}`} />
       </button>
     </div>

@@ -2,7 +2,7 @@
 
 .option {
   align-items: center;
-  color: var(--deepBlue);
+  color: var(--primary);
   display: flex;
   justify-content: space-between;
 }
@@ -14,11 +14,11 @@
 
 .label i {
   font-size: 0.9em;
-  margin-left: var(--marginSmall);
+  margin-left: var(--spaceExtraSmall);
 }
 
 .label i:before {
-  color: var(--deepBlue);
+  color: var(--primary);
 }
 
 .price {

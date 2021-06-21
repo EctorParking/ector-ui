@@ -5,7 +5,7 @@
   display: flex;
   height: 44px;
   flex: 1;
-  margin: var(--marginXSmall) 0;
+  margin: var(--spaceExtraSmall) 0;
 }
 
 .field .label {

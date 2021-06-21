@@ -1,23 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-
 import centered from '@storybook/addon-centered';
 import { withKnobs, select, text } from '@storybook/addon-knobs';
-
 import Label from '.';
 
-const colors = [
-  'deepBlue',
-  'green',
-  'red',
-  'melrose',
-  'blue',
-  'lightGrey',
-  'metalGrey',
-  'darkMetalGrey',
-  'aquaHazeGrey',
-  'orange',
-];
+const colors = ['primary', 'success', 'error', 'action', 'lightNeutral'];
 
 storiesOf('Label', module)
   .addParameters({
@@ -25,7 +12,6 @@ storiesOf('Label', module)
   })
   .addDecorator(centered)
   .addDecorator(withKnobs)
-
   .add('with knobs', () => {
     const props = {
       label: text('Label', 'Label'),

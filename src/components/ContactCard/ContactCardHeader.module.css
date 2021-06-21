@@ -1,20 +1,20 @@
 @import '../../style/variable.global.css';
 
 .name {
-  color: var(--blue);
   display: flex;
+  color: var(--accent);
   font-size: var(--fontSizeSubtitle);
   justify-content: space-between;
-  margin-top: -0.75em;
 }
+
 .editIcon:before,
 .deleteIcon:before {
-  color: var(--blue);
+  color: var(--neutral);
 }
+
 .editButton {
-  background: none;
-  border: 0;
-  margin: 0;
-  margin-right: -0.75em;
-  padding: 0;
+  position: absolute;
+  top: var(--spaceExtraSmall);
+  right: var(--spaceExtraSmall);
+  font-size: var(--fontSizeHeading);
 }

@@ -10,20 +10,20 @@
 }
 
 .input {
-  margin-bottom: var(--marginSmall);
+  margin-bottom: var(--spaceExtraSmall);
   width: 100%;
 }
 
 .button {
-  margin: var(--marginSmall) 0;
+  margin: var(--spaceExtraSmall) 0;
 }
 
 .error {
-  color: var(--red);
+  color: var(--error);
 }
 
 .inputError {
-  border-color: var(--red);
+  border-color: var(--error);
 }
 
 .forgottenPasswordLink {

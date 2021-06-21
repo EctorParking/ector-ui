@@ -44,11 +44,12 @@ const CarCardHeader = ({
   }
 
   return (
-    <span className={s.name} id={id}>
-      {name}
-
+    <>
+      <span className={s.name} id={id}>
+        {name}
+      </span>
       {button}
-    </span>
+    </>
   );
 };
 

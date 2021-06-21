@@ -5,8 +5,7 @@
   box-sizing: border-box;
   display: flex;
   height: auto;
-  padding: var(--marginSmall);
-  margin-left: var(--marginSmall);
+  padding: var(--spaceExtraSmall);
   cursor: pointer;
 }
 
@@ -21,7 +20,7 @@
 }
 
 .subtitle {
-  font-size: var(--fontSizeMedium);
+  font-size: var(--fontSizeNormal);
 }
 
 .text {
@@ -48,11 +47,11 @@
 }
 
 .cardIconSmaller {
-  width: var(--marginLarge);
+  width: var(--spaceLarge);
 }
 
 .cardIconBigger {
-  width: var(--marginXLarge);
+  width: 50px;
 }
 
 .cardIconBusinessEdenred {

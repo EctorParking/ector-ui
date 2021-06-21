@@ -2,7 +2,7 @@
 
 .loader {
   border: 16px solid var(--blue);
-  border-top: 16px solid var(--deepBlue);
+  border-top: 16px solid var(--primary);
   border-radius: 50%;
   animation: spin 2s linear infinite;
   align-self: center;

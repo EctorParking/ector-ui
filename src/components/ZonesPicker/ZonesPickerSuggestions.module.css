@@ -24,8 +24,8 @@
 
   &:before {
     background: linear-gradient(to bottom, var(--white), rgba(255, 255, 255, 0.1));
-    border-top-left-radius: var(--marginXSmall);
-    border-top-right-radius: var(--marginXSmall);
+    border-top-left-radius: var(--spaceExtraSmall);
+    border-top-right-radius: var(--spaceExtraSmall);
     top: 0;
   }
 
@@ -87,7 +87,7 @@
   border-bottom-right-radius: var(--borderRadius);
   padding-left: 15px;
   height: 15%;
-  background-color: var(--lightGrey);
+  background-color: var(--lightNeutral);
 }
 
 .suggestionActionVisible {

@@ -5,52 +5,58 @@
   margin: 0 auto;
   width: 100%;
 }
+
 .input {
-  border-bottom-right-radius: 0;
-  border-right: 0;
-  border-top-right-radius: 0;
   width: 100%;
   margin: 0 auto;
 }
+
 .input,
 .button {
-  height: var(--fontSizeTitle);
+  height: 40px;
 }
+
 .button {
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0;
+  margin-left: var(--spaceMedium);
+  padding: var(--spaceExtraSmall) var(--spaceLarge);
 }
+
 .helpTextClassname {
-  color: var(--metalGrey);
+  color: var(--neutral);
   font-style: italic;
   margin: 0;
 }
+
 .error {
   text-align: left;
-  color: var(--red);
+  color: var(--error);
 }
+
 .iconContainer {
   align-items: center;
-  border: 2px solid var(--metalGrey);
+  border: 2px solid var(--neutral);
   border-left: 0;
-  border-bottom-right-radius: var(--inputBorderRadius);
-  border-top-right-radius: var(--inputBorderRadius);
+  border-bottom-right-radius: var(--radiusLarge);
+  border-top-right-radius: var(--radiusLarge);
   box-sizing: border-box;
   display: flex;
-  height: var(--marginMLarge);
+  height: var(--spaceExtraLarge);
 }
+
 .iconContainer:empty {
   display: none;
 }
+
 .iconContainerFocussed {
-  border-color: var(--yellow);
+  border-color: var(--accent);
   border-right: 0;
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
+
 .icon {
-  color: var(--deepBlue);
-  font-size: var(--fontSizeRegular);
+  color: var(--primary);
+  font-size: var(--fontSizeNormal);
   font-weight: var(--fontWeightRegular);
-  margin: 0 var(--marginSmall);
+  margin: 0 var(--spaceExtraSmall);
 }

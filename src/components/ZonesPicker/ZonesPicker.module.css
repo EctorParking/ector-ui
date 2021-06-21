@@ -9,7 +9,7 @@
 }
 
 .input::placeholder {
-  color: var(--darkGrey);
+  color: var(--darkNeutral);
   font-style: italic;
 }
 
@@ -18,7 +18,7 @@
 }
 
 .inputIcon {
-  color: var(--deepBlue);
+  color: var(--primary);
   font-size: 1.2rem;
 }
 
@@ -26,9 +26,9 @@
   align-items: center;
   display: flex;
   height: 100%;
-  left: var(--marginSmall);
+  left: var(--spaceExtraSmall);
   top: 0;
-  width: var(--marginLarge);
+  width: var(--spaceLarge);
 }
 
 .leftInputIcon + input {
@@ -37,7 +37,7 @@
 }
 
 .rightInputIconContainer {
-  right: var(--marginSmall);
+  right: var(--spaceExtraSmall);
 }
 
 .rightInputIcon {

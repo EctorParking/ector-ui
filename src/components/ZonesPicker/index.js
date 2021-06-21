@@ -221,7 +221,6 @@ class ZonesPicker extends React.PureComponent {
           this.renderInputLeftIconComponent(props, fromZone.type)
         }
         name={ZoneTypesToIconName[fromZone.type]}
-        variant="yellow"
         className={[s.inputIcon, s.leftInputIcon, className].join(' ')}
       />
     );
@@ -298,7 +297,6 @@ class ZonesPicker extends React.PureComponent {
           this.renderInputLeftIconComponent(props, toZone.type)
         }
         name={ZoneTypesToIconName[toZone.type]}
-        variant="yellow"
         className={[s.inputIcon, s.leftInputIcon, className].join(' ')}
       />
     );

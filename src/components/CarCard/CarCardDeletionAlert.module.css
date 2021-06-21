@@ -7,7 +7,7 @@
 }
 
 .deletionAlert p {
-  margin: var(--marginSmall) 0;
+  margin: var(--spaceExtraSmall) 0;
   text-align: center;
   width: 100%;
 }

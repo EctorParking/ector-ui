@@ -4,19 +4,18 @@
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
-  padding: var(--marginMedium) var(--marginSmall);
+  padding: var(--spaceSmall) var(--spaceExtraSmall);
 }
 
 .price {
-  color: var(--deepBlue);
-  font-size: 35px;
+  color: var(--primary);
+  font-size: 36px;
   font-weight: var(--fontWeightRegular);
 }
 
 .deleteButton {
   background: none;
   border: 0;
-  color: var(--blue);
   padding: 0;
   text-decoration: underline;
   font-style: italic;
@@ -31,7 +30,7 @@
     height: initial;
     flex-direction: column;
     justify-content: center;
-    padding: var(--marginSmall);
+    padding: var(--spaceExtraSmall);
   }
 
   .price {

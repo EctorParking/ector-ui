@@ -5,16 +5,17 @@
   flex: 1 1 auto;
 }
 
-.phoneInputCountryCode {
-  flex: 1 0 var(--marginXLarge);
+.countryLabel {
+  padding-right: var(--spaceSmall);
 }
 
 .inputContainer {
-  margin-left: var(--marginSmall);
+  flex: 1;
+  margin-left: var(--spaceExtraSmall);
 }
 
 .selectImage {
-  margin-right: var(--marginSmall);
+  margin-right: var(--spaceExtraSmall);
   max-height: var(--maxImageSize);
   max-width: var(--maxImageSize);
 }

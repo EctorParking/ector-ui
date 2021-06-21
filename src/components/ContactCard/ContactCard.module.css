@@ -1,7 +1,7 @@
 @import '../../style/variable.global.css';
 
 .pendingDeletion {
-  background-color: var(--lightGrey);
+  background-color: var(--lightNeutral);
   justify-content: center;
   padding: var(--marginMedium);
 }

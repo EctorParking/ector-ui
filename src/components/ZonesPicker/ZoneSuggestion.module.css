@@ -4,7 +4,7 @@
   align-items: flex-start;
   cursor: pointer;
   display: flex;
-  margin-bottom: var(--marginSmall);
+  margin-bottom: var(--spaceExtraSmall);
 
   &:last-child {
     margin-bottom: 0;
@@ -12,7 +12,7 @@
 }
 
 .zoneName {
-  margin-left: var(--marginSmall);
+  margin-left: var(--spaceExtraSmall);
 }
 
 .selected,
@@ -21,7 +21,7 @@
 }
 
 .disabled {
-  color: var(--darkGrey);
+  color: var(--darkNeutral);
 }
 
 .icon {
@@ -29,7 +29,7 @@
 }
 
 .activeIcon {
-  color: var(--deepBlue);
+  color: var(--primary);
 }
 
 .trainIcon {

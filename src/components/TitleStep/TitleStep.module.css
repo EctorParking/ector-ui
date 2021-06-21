@@ -18,7 +18,7 @@
 
 .step_button {
   align-items: center;
-  color: var(--aquaHazeGrey);
+  color: var(--darkNeutral);
   display: flex;
   font-size: 1.1rem;
   margin-right: 3rem;
@@ -32,13 +32,13 @@
   opacity: 1;
 
   &.active {
-    color: var(--yellow);
+    color: var(--accent);
     cursor: default;
     &:before {
-      background-color: white;
+      background-color: var(--background);
     }
     &:after {
-      border-right: 2px solid white;
+      border-right: 2px solid var(--white);
       content: '';
       height: 35px;
       left: 19px;
@@ -55,9 +55,9 @@
 
   &:before {
     align-items: center;
-    background-color: #9eb3c2;
+    background-color: #9EB3C2;
     border-radius: 50%;
-    color: var(--deepBlue);
+    color: var(--primary);
     content: '7';
     display: flex;
     font-size: 13px;
@@ -74,10 +74,10 @@
   }
 
   &:hover {
-    color: white;
+    color: var(--white);
     &:before,
     &:after {
-      background-color: white;
+      background-color: var(--background);
     }
 
     &:active {

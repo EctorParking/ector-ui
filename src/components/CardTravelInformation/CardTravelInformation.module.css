@@ -15,8 +15,8 @@
 }
 
 .mandatorySentence {
-  margin-top: var(--marginSmall);
-  margin-left: var(--marginSmall);
+  margin-top: var(--spaceExtraSmall);
+  margin-left: var(--spaceExtraSmall);
 }
 
 .unknownTravelingNumberTo {
@@ -29,7 +29,7 @@
 @media (--maxTablet) {
   .travelingNumberFromInputLabel,
   .travelingNumberToInputLabel {
-    margin: var(--marginSmall) auto;
+    margin: var(--spaceExtraSmall) auto;
   }
 }
 

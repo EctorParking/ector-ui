@@ -1,21 +1,12 @@
 @import '../../style/variable.global.css';
 
 .container {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-  font-size: var(--fontSizeSubtitle);
+  position: absolute;
+  top: var(--spaceExtraSmall);
+  right: var(--spaceExtraSmall);
+  font-size: var(--fontSizeHeading);
 }
 
-.icon {
-  -webkit-text-fill-color: var(--blue);
-  fill: var(--blue);
-}
-
-.button {
-  background: none;
-  border: 0;
-  margin: 0;
-  padding: 0;
+.icon::before {
+  color: var(--neutral);
 }

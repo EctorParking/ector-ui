@@ -1,117 +1,92 @@
 :root {
-  --iconFontSize: 2em;
-  --defaultFontSize: 0.8em;
-  --defaultMargin: 0;
-  --containerWidth: 1232px;
+  /* General */
+  --animationDuration: 0.3s;
+  --lineHeight: 24px;
 
-  --firstColor: #163457;
-  --secondColor: #ffcd02;
-  --thirdColor: #4b4b50;
-  --fourthColor: #32a0c5;
-  --fifthColor: #9ca3ff;
-  --sixthColor: #59c871;
-  --seventhColor: #fefefe;
-  --eighthColor: #a2b4c2;
-  --ninthColor: #ebeff6;
+  /* Colors */
+  --primary: #000031;
+  --lightPrimary: #708399;
+  --neutral: #C7CDDA;
+  --lightNeutral: #ECEFF6;
+  --darkNeutral: #A9B3C5;
+  --background: #FFFFFF;
+  --accent: #F7D48A;
+  --lightAccent: #F8E5B6;
+  --info: #F5B400;
+  --action: #9CA3FF;
+  --success: #59C871;
+  --error: #DF6262;
+  --bronze: #B96C47;
+  --silver: #C6C6C6;
+  --gold: #E6BA5E;
+  --platinum: #A07584;
 
-  --metalGrey: #d5d6d7;
-  --darkMetalGrey: color(#d5d6d7 blackness(20%));
-  --lightYellow: color(var(--yellow) whiteness(80%));
-  --aquaHazeGrey: #9eb3c2;
-  --darkGrey: #a9b3c5;
-  --lightGrey: #eceff6;
-  --red: #ff5757;
-  --magenta: #c73637;
-  --orange: #f39c12;
-  --lightMetalGrey: #dededf;
+  /* Font Sizes */
+  --fontSizeSmall: 12px;
+  --fontSizeNormal: 16px;
+  --fontSizeHeading: 20px;
+  --fontSizeSubtitle: 24px;
+  --fontSizeTitle: 32px;
 
-  --deepBlue: var(--firstColor);
-  --yellow: var(--secondColor);
-  --grey: var(--thirdColor);
-  --blue: var(--fourthColor);
-  --melrose: var(--fifthColor);
-  --green: var(--sixthColor);
-  --white: var(--seventhColor);
-  --bgrey: var(--eighthColor);
-  --bgClearBlue: var(--ninthColor);
-  --splitBorderColor: rgba(191, 196, 212, 0.52);
-
-  --bpDesktop: var(--containerWidth);
-  --bpTablet: var(--containerWidth);
-  --bpMobile: 600px;
-
-  --fontSizeLabel: 11px;
-  --fontSizeMedium: 14px;
-  --fontSizeRegular: 16px;
-  --fontSizeRegularBig: 20px;
-  --fontSizeSubtitle: 22px;
-  --fontSizeNewTitle: 30px;
-  --fontSizeTitle: 40px;
-  --fontSizeTotalPrice: 32px;
+  /* Font Weights */
   --fontWeightThin: 100;
   --fontWeightLight: 300;
-  --fontWeightRegular: 500;
+  --fontWeightRegular: 400;
   --fontWeightBold: 700;
 
-  --marginTitle: 15px 0 15px 0;
-  --lineHeight: 22px;
-  --widthfull: 100%;
-  --borderRadius: 8px;
-  --inputBorderRadius: 3px;
-  --inputFontSize: 11px;
-  --textFontSize: 13px;
-  --textLineHeight: 17px;
-  --fontFamilies: 'gtwalsheim', 'Arial', 'Helvetica', sans-serif;
-  --headerHeight: 60px;
-  --mobileHeaderHeight: 60px;
-  --titleHrWidth: 50px;
+  /* Radiuses */
+  --radiusSmall: 4px;
+  --radiusMedium: 15px;
+  --radiusLarge: 30px;
+
+  /* Spaces */
+  --spaceExtraSmall: 8px;
+  --spaceSmall: 16px;
+  --spaceMedium: 24px;
+  --spaceLarge: 32px;
+  --spaceExtraLarge: 40px;
+
+  /* Various */
+  --blue: #32A0C5;
+  --darkMetalGrey: color(#D5D6D7 blackness(20%));
+  --orange: #F39C12;
+  --white: #FFFFFF;
+  --splitBorderColor: rgba(191, 196, 212, 0.52);
+
   --alertIconSize: 40px;
-  --postCodeInputWidth: 80px;
-
-  --logoHeight: 48px;
-  --mobileLogoHeight: 20px;
-
-  --noMargin: 0;
-  --marginXSmall: 5px;
-  --marginSmall: 10px;
-  --marginXMedium: 15px;
-  --marginMedium: 20px;
-  --marginMediumXL: 25px;
-  --marginLarge: 30px;
-  --marginMLarge: 40px;
-  --marginXLarge: 50px;
-  --marginXXLarge: 60px;
-  --animationDuration: 0.3s;
-
-  --bpTablet: 768px;
-  --bpMobile: 480px;
   --bpMobileIPhoneFive: 320px;
-
+  --containerWidth: 1232px;
+  --headerHeight: 60px;
+  --iconFontSize: 2em;
   --maxImageSize: 24px;
   --pickerSuggestionsHeight: 275px;
-  --pickerBoxShadow: 0 4px 8px 2px rgba(0, 0, 0, 0.25);
+  --titleHrWidth: 50px;
+
+  --marginMedium: 20px;
+  --marginXLarge: 50px;
+  --marginXXLarge: 60px;
+
+  --borderRadius: 8px;
+  --pickerBoxShadow: 0 4px 19px rgba(0, 0, 0, 0.1);
 }
 
 @custom-media --maxTablet (max-width: 825px);
 @custom-media --maxMobile (max-width: 480px);
 @custom-media --maxPurchaseCanalMinWidth (max-width: 1130px);
-@custom-media --maxIPhone5 (max-width: 320px);
 
-@custom-media --minTablet (min-width: 768px);
-@custom-media --minMobile (min-width: 480px);
-@custom-media --minIPhone5 (min-width: 320px);
-
-@value deepBlue: var(--deepBlue);
-@value yellow: var(--yellow);
-@value grey: var(--grey);
-@value blue: var(--blue);
-@value melrose: var(--melrose);
-@value green: var(--green);
-@value white: var(--white);
-@value metalGrey: var(--metalGrey);
-@value lightMetalGrey: var(--lightMetalGrey);
-@value aquaHazeGrey: var(--aquaHazeGrey);
-@value darkGrey: var(--darkGrey);
-@value lightGrey: var(--lightGrey);
-@value red: var(--red);
-@value orange: var(--orange);
+@value primary: var(--primary);
+@value lightPrimary: var(--lightPrimary);
+@value neutral: var(--neutral);
+@value lightNeutral: var(--lightNeutral);
+@value darkNeutral: var(--darkNeutral);
+@value background: var(--background);
+@value accent: var(--accent);
+@value lightAccent: var(--lightAccent);
+@value info: var(--info);
+@value action: var(--action);
+@value success: var(--success);
+@value error: var(--error);
+@value bronze: var(--bronze);
+@value silver: var(--silver);
+@value gold: var(--gold);
+@value platinum: var(--platinum);

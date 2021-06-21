@@ -1,56 +1,81 @@
 @import '../../style/variable.global.css';
 
 .labelContainer {
-  border-radius: var(--inputBorderRadius);
   color: var(--white);
-  font-size: var(--fontSizeLabel);
-  padding: 0 var(--marginXSmall);
+  border-radius: var(--radiusLarge);
+  font-size: var(--fontSizeSmall);
+  padding: 0 var(--spaceExtraSmall);
   display: flex;
   align-items: center;
+  z-index: 1;
 }
 
 .text {
-  padding: 0 var(--marginXSmall);
+  padding: 0 var(--spaceExtraSmall);
   font-weight: var(--fontWeightRegular);
   letter-spacing: 1px;
 }
 
-.deepBlueColor {
-  background-color: var(--deepBlue);
+.primaryColor {
+  background-color: var(--primary);
 }
 
-.greenColor {
-  background-color: var(--green);
+.lightPrimaryColor {
+  background-color: var(--lightPrimary);
 }
 
-.redColor {
-  background-color: var(--red);
+.neutralColor {
+  background-color: var(--neutral);
 }
 
-.melroseColor {
-  background-color: var(--melrose);
+.lightNeutralColor {
+  background-color: var(--lightNeutral);
 }
 
-.blueColor {
-  background-color: var(--blue);
+.darkNeutralColor {
+  background-color: var(--darkNeutral);
 }
 
-.lightGreyColor {
-  background-color: var(--lightGrey);
+.backgroundColor {
+  background-color: var(--background);
 }
 
-.metalGreyColor {
-  background-color: var(--metalGrey);
+.accentColor {
+  background-color: var(--accent);
 }
 
-.darkMetalGreyColor {
-  background-color: var(--darkMetalGrey);
+.lightAccentColor {
+  background-color: var(--lightAccent);
 }
 
-.aquaHazeGreyColor {
-  background-color: var(--aquaHazeGrey);
+.infoColor {
+  background-color: var(--info);
 }
 
-.orangeColor {
-  background-color: var(--orange);
+.actionColor {
+  background-color: var(--action);
+}
+
+.successColor {
+  background-color: var(--success);
+}
+
+.errorColor {
+  background-color: var(--error);
+}
+
+.bronzeColor {
+  background-color: var(--bronze);
+}
+
+.silverColor {
+  background-color: var(--silver);
+}
+
+.goldColor {
+  background-color: var(--gold);
+}
+
+.platinumColor {
+  background-color: var(--platinum);
 }

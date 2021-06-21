@@ -2,12 +2,12 @@
 
 .alert {
   margin-top: var(--marginMedium);
-  margin-right: var(--marginLarge);
-  background-color: var(--bgClearBlue);
-  border-left: 5px solid var(--blue);
+  margin-right: var(--spaceLarge);
+  background-color: var(--lightNeutral);
+  border-left: 5px solid var(--primary);
   padding:
-    var(--marginSmall) var(--marginMediumXL) var(--marginXSmall)
-    var(--marginXMedium);
+    var(--spaceExtraSmall) var(--spaceMedium) var(--spaceExtraSmall)
+    var(--spaceSmall);
 }
 
 .alertTitle {
@@ -16,8 +16,8 @@
 }
 
 .alertIconContainer {
-  font-size: var(--fontSizeRegularBig);
-  margin-right: var(--marginSmall);
+  font-size: var(--fontSizeHeading);
+  margin-right: var(--spaceExtraSmall);
 }
 
 .alertDescription {

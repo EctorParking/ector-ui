@@ -3,21 +3,22 @@
 .container {
   position: relative;
   box-sizing: border-box;
-  color: var(--deepBlue);
+  color: var(--primary);
   border: none;
-  border-radius: var(--marginXSmall);
+  border-radius: var(--spaceExtraSmall);
   display: block;
-  height: var(--marginXLarge);
+  height: 50px;
   padding: 0;
   z-index: 1;
+
   &.active {
     z-index: 4;
   }
 }
 
 .shadowWrapper {
-  background-color: var(--white);
-  border-radius: var(--marginXSmall);
+  background-color: var(--background);
+  border-radius: var(--spaceExtraSmall);
   box-shadow: var(--pickerBoxShadow);
   display: flex;
   position: relative;
@@ -32,8 +33,8 @@
 }
 
 .pickerInput {
-  border-radius: var(--marginXSmall);
-  height: var(--marginXLarge);
+  border-radius: var(--spaceExtraSmall);
+  height: 50px;
   padding: 0;
   border: none;
   margin-top: 0;
@@ -41,7 +42,7 @@
 }
 
 .inputError {
-  color: var(--magenta);
+  color: var(--error);
 }
 
 .splitPickerInputContainer {
@@ -50,7 +51,7 @@
 
 .suggestionsContainer {
   min-height: 150px;
-  background-color: black;
+  background-color: #000000;
   position: absolute;
   width: 150%;
   top: 3.5rem;
@@ -62,7 +63,7 @@
 .error,
 .info {
   display: inline-table;
-  background-color: var(--magenta);
+  background-color: var(--error);
   border-top-left-radius: var(--borderRadius);
   border-top-right-radius: var(--borderRadius);
   box-sizing: border-box;
@@ -70,13 +71,13 @@
   height: 45px;
   left: 0;
   opacity: 0;
-  padding: var(--marginSmall);
+  padding: var(--spaceExtraSmall);
   position: absolute;
   top: 5px;
   transform: none;
   transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
   width: 100%;
-  font-size: var(--fontSizeMedium);
+  font-size: var(--fontSizeNormal);
   font-weight: var(--fontWeightBold);
   word-break: break-word;
   hyphens: auto;
