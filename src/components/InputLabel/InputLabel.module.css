@@ -23,12 +23,12 @@
 .input {
   display: block;
   width: 100%;
-  margin-top: 0;
 }
 
 .error {
   text-align: left;
-  color: var(--red);
+  color: var(--error);
+  margin-left: var(--spaceExtraSmall);
 }
 
 .mandatory {
@@ -44,5 +44,5 @@
 }
 
 .tooltip {
-  margin-left: var(--marginXSmall);
+  margin-left: var(--spaceExtraSmall);
 }

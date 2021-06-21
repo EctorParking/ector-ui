@@ -8,7 +8,7 @@
 
 .horizontalRule {
   border: 0;
-  border-top: 2px solid var(--deepBlue);
+  border-top: 2px solid var(--primary);
   margin: 8px 0;
   width: 100%;
 }
@@ -27,5 +27,5 @@
 }
 
 .bigPrice {
-  font-size: var(--fontSizeTotalPrice);
+  font-size: var(--fontSizeTitle);
 }

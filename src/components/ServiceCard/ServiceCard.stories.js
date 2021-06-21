@@ -7,7 +7,7 @@ import { withKnobs, text, boolean, select } from '@storybook/addon-knobs';
 
 import ServiceCard from '.';
 
-const colors = ['deepBlue', 'green', 'red', 'melrose', 'blue'];
+const colors = ['primary', 'success', 'error', 'action', 'blue'];
 
 storiesOf('ServiceCard', module)
   .addParameters({

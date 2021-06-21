@@ -1,7 +1,6 @@
 @import '../../style/variable.global.css';
 
 .title {
-  color: var(--blue);
   display: flex;
   font-size: var(--fontSizeSubtitle);
   justify-content: space-between;
@@ -22,11 +21,11 @@
 }
 
 .firstSection {
-  margin-right: var(--marginLarge);
+  margin-right: var(--spaceLarge);
 }
 
 .secondSection {
-  margin-left: var(--marginLarge);
+  margin-left: var(--spaceLarge);
 }
 
 .footer {
@@ -49,7 +48,7 @@
 }
 
 .contactFormInput {
-  margin-top: var(--marginSmall);
+  margin-top: var(--spaceExtraSmall);
 }
 
 .postalCodeInput {

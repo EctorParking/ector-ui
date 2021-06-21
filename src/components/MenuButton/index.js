@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { PickerSuggestions } from '..';
-
 import s from './MenuButton.module.css';
 
 class MenuButton extends React.PureComponent {

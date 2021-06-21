@@ -3,26 +3,26 @@
 .subtitle {
   display: flex;
   flex-direction: column;
-  margin-bottom: var(--marginLarge);
+  margin-bottom: var(--spaceMedium);
 }
 
 .h2 {
-  color: var(--deepBlue);
+  color: var(--primary);
   font-size: var(--fontSizeSubtitle);
   font-weight: var(--fontWeightRegular);
   line-height: 1;
-  margin: 0 0 var(--marginSmall);
+  margin: 0 0 var(--spaceExtraSmall);
 }
 
 .hr {
   border: 0;
-  border-top: 2px dotted var(--aquaHazeGrey);
+  border-top: 2px dotted var(--accent);
   margin: 0;
   width: var(--titleHrWidth);
 }
 
 @media (--maxPurchaseCanalMinWidth) {
   .h2 {
-    margin: 0 0 var(--marginXSmall);
+    margin: 0 0 var(--spaceExtraSmall);
   }
 }

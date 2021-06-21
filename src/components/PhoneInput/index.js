@@ -109,7 +109,7 @@ class PhoneInput extends React.Component {
               alt={country.label}
             />
           )}
-          <span>{country.label}</span>
+          <span className={s.countryLabel}>{country.label}</span>
         </Select>
         <Input
           placeholder="06 07 08 09 00" // Here to override the placeholder

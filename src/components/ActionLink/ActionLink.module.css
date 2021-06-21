@@ -10,13 +10,13 @@
 }
 
 .commonLabelStyle {
-  color: var(--melrose);
-  font-size: var(--defaultFontSize);
+  color: var(--action);
+  font-size: var(--fontSizeSmall);
 }
 
 .labelWithIcon {
   font-weight: var(--fontWeightRegular);
-  margin-left: var(--marginXSmall);
+  margin-left: var(--spaceExtraSmall);
 }
 
 .labelWithoutIcon {

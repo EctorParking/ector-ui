@@ -8,17 +8,8 @@ const ectorTheme = theme => ({
   ...theme,
   colors: {
     ...theme.colors,
-    primary: Colors.yellow,
-    primary25: Colors.white,
-    primary50: Colors.white,
-    neutral20: Colors.metalGrey,
-    neutral30: Colors.metalGrey,
-    neutral40: Colors.metalGrey,
-    neutral50: Colors.metalGrey,
-    neutral60: Colors.deepBlue,
-    neutral70: Colors.deepBlue,
-    neutral80: Colors.deepBlue,
-    neutral90: Colors.deepBlue,
+    text: Colors.primary,
+    primary: Colors.neutral,
   },
 });
 
@@ -32,26 +23,29 @@ const InputSelect = ({
   ...props
 }) => {
   const ectorStyles = {
-    menuPortal: base => ({ ...base, zIndex: 9999 }),
+    menu: styles => ({
+      ...styles,
+      borderRadius: 30,
+    }),
+    menuPortal: styles => ({
+      ...styles,
+      zIndex: 9999,
+    }),
     option: (styles, { isSelected, isFocused }) => ({
       ...styles,
-      color: Colors.deepBlue,
+      color: Colors.primary,
       fontWeight: isSelected || isFocused ? 'bold' : undefined,
       backgroundColor: Colors.white,
     }),
     control: styles => ({
       ...styles,
-      'borderColor': error ? Colors.red : styles.borderColor,
-      'borderWidth': 2,
+      'borderColor': error ? Colors.error : Colors.neutral,
+      'borderRadius': 30,
+      'borderWidth': 1,
       'boxShadow': 'none',
       '&:hover': {
-        borderColor: error ? Colors.red : styles.borderColor,
+        borderColor: error ? Colors.error : styles.borderColor,
       },
-    }),
-    placeholder: styles => ({
-      ...styles,
-      opacity: 0.8,
-      fontWeight: 500,
     }),
   };
 

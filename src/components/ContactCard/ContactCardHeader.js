@@ -44,11 +44,12 @@ const ContactCardHeader = ({
   }
 
   return (
-    <span className={s.name} id={id}>
-      {`${firstName} ${lastName}`}
-
+    <>
+      <span className={s.name} id={id}>
+        {`${firstName} ${lastName}`}
+      </span>
       {button}
-    </span>
+    </>
   );
 };
 

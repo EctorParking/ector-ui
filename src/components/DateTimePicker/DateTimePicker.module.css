@@ -42,11 +42,11 @@
 
 .datePickerInput {
   background: none;
-  padding-left: var(--marginMLarge);
+  padding-left: var(--spaceExtraLarge);
 }
 
 .datePickerInput::placeholder {
-  color: var(--darkGrey);
+  color: var(--darkNeutral);
   font-style: italic;
 }
 
@@ -58,14 +58,14 @@
 
 .timePickerInput {
   border: none !important;
-  border-radius: var(--borderRadius);
+  border-radius: var(--radiusLarge);
   max-width: 100px;
-  padding-left: calc(var(--marginLarge) + var(--marginXSmall));
+  padding-left: calc(var(--spaceLarge) + var(--spaceExtraSmall));
   margin-right: 1px;
 }
 
 .timePickerInput::placeholder {
-  color: var(--darkGrey);
+  color: var(--darkNeutral);
   font-style: italic;
 }
 
@@ -73,7 +73,7 @@
   background-color: var(--splitBorderColor);
   content: '';
   height: var(--marginMedium);
-  margin-top: calc(var(--marginSmall) * -1);
+  margin-top: calc(var(--spaceExtraSmall) * -1);
   position: absolute;
   top: 50%;
   width: 1px;
@@ -97,25 +97,25 @@
 
 .inputIcon {
   font-size: 1.2rem;
-  left: var(--marginSmall);
+  left: var(--spaceExtraSmall);
 }
 
 .inputError {
-  color: var(--red);
+  color: var(--error);
 }
 
 .inputError::placeholder {
-  color: var(--red);
+  color: var(--error);
   opacity: 0.5;
 }
 
 .inputError:-ms-input-placeholder {
-  color: var(--red);
+  color: var(--error);
   opacity: 0.5;
 }
 
 .inputError::-ms-input-placeholder {
-  color: var(--red);
+  color: var(--error);
   opacity: 0.5;
 }
 
@@ -134,7 +134,7 @@
 }
 
 .month {
-  color: var(--deepBlue);
+  color: var(--primary);
 }
 
 .hr {

@@ -1,19 +1,13 @@
 @import '../../style/variable.global.css';
 
 .button {
-  background-color: var(--yellow);
-  border-radius: var(--borderRadius);
-  cursor: pointer;
-  display: block;
-  font-size: var(--fontSizeRegular);
-  font-weight: bold;
-  line-height: 1;
-  margin: 0;
-  outline: none;
+  background-color: var(--accent);
+  border-radius: var(--radiusLarge);
+  font-weight: var(--fontWeightBold);
+  line-height: var(--fontSizeNormal);
   overflow: hidden;
-  padding: 0.8em 1.1em;
+  padding: var(--spaceSmall) var(--spaceLarge);
   position: relative;
-  text-decoration: none;
   text-transform: uppercase;
   transition: background-color 0.2s ease-in-out;
 }
@@ -24,8 +18,8 @@
 
 .button .track {
   animation: outFromFetching 0.2s linear forwards;
-  background-color: var(--yellow);
-  border-radius: var(--borderRadius);
+  background-color: var(--accent);
+  border-radius: var(--radiusLarge);
   content: '';
   height: 100%;
   left: 0;
@@ -36,16 +30,16 @@
 }
 
 .button[disabled] {
-  background-color: #7890a3;
+  background-color: var(--lightAccent);
   cursor: not-allowed;
 
   &:hover {
-    background-color: #7890a3;
+    background-color: var(--lightAccent);
   }
 }
 
 .button.fetching {
-  background-color: #ffcd026b;
+  background-color: var(--lightAccent);
 }
 
 .track.fetchingTrack {

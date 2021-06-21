@@ -7,7 +7,7 @@
 .optionContainer {
   display: flex;
   align-items: center;
-  padding-left: var(--marginSmall);
+  padding-left: var(--spaceExtraSmall);
 }
 
 .singleValueContainer {
@@ -22,5 +22,5 @@
 }
 
 .flagInput {
-  margin-right: var(--marginSmall);
+  margin-right: var(--spaceExtraSmall);
 }

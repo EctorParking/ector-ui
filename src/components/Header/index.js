@@ -9,10 +9,9 @@ import s from './Header.module.css';
 import TextsType, { DefaultTexts } from './HeaderTextsType';
 
 const DefaultRightComponent = ({ texts, className, disabledButtons }) => {
-  const renderHelpButton = ({ isActive }) => (
+  const renderHelpButton = () => (
     <TextIcon
       imageUrl={faqIcon}
-      variant={isActive && !disabledButtons ? 'yellow' : 'white'}
       position="right"
       backgroundClassName={s.backgroundTextIcon}
     >
@@ -20,12 +19,8 @@ const DefaultRightComponent = ({ texts, className, disabledButtons }) => {
     </TextIcon>
   );
 
-  const renderConnectionButton = ({ isActive }) => (
-    <TextIcon
-      imageUrl={headIcon}
-      variant={isActive ? 'yellow' : 'white'}
-      backgroundClassName={s.backgroundTextIcon}
-    >
+  const renderConnectionButton = () => (
+    <TextIcon imageUrl={headIcon} backgroundClassName={s.backgroundTextIcon}>
       {texts.login}
     </TextIcon>
   );
@@ -75,20 +70,15 @@ DefaultRightComponent.propTypes = {
 };
 
 const DefaultMiddleComponent = ({ texts, className, disabledButtons }) => {
-  const renderBusinessButton = ({ isActive }) => (
+  const renderBusinessButton = () => (
     <TextIcon
       imageUrl={businessIcon}
-      variant={isActive && !disabledButtons ? 'yellow' : 'melrose'}
       position="right"
       backgroundClassName={s.backgroundTextIcon}
     >
       {texts.business}
     </TextIcon>
   );
-
-  renderBusinessButton.propTypes = {
-    isActive: PropTypes.bool.isRequired,
-  };
 
   // eslint-disable-next-line
   const onClick = () =>

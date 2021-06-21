@@ -3,28 +3,28 @@
 .title {
   display: flex;
   flex-direction: column;
-  margin-bottom: var(--marginLarge);
+  margin-top: 0;
+  margin-bottom: var(--spaceLarge);
 }
 
 .title .element {
-  color: var(--deepBlue);
-  font-size: var(--fontSizeTitle);
+  font-size: 40px;
   font-weight: var(--fontWeightRegular);
   line-height: 1;
-  margin: 0 0 var(--marginSmall);
+  margin: 0 0 var(--spaceExtraSmall);
 }
 
 .newTitle {
-  color: var(--blue);
-  font-size: var(--fontSizeNewTitle);
+  font-size: var(--fontSizeTitle);
   font-weight: var(--fontWeightBold);
-  line-height: 1;
-  margin: 0;
+  line-height: 44px;
+  margin-top: 0;
+  margin-bottom: var(--spaceLarge);
 }
 
 .title .horizontalRule {
   border: 0;
-  border-top: 2px solid var(--blue);
+  border-top: 2px solid var(--accent);
   margin: 0;
   width: var(--titleHrWidth);
 }

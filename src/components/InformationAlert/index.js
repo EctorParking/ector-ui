@@ -1,15 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import s from './InformationAlert.module.css';
 import Icon from '../Icon';
+import s from './InformationAlert.module.css';
 
 const InformationAlert = ({ className, classNameIcon, title, description }) => (
   <div className={[s.alert, className].join(' ')}>
     <span className={s.alertTitle}>
       <Icon
         name="ec-info"
-        variant="none"
         className={s.alertIconContainer}
         iconClassName={classNameIcon}
       />

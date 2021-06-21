@@ -2,13 +2,13 @@
 
 .button {
   align-items: center;
-  color: var(--firstColor);
+  color: var(--primary);
   display: flex;
   justify-content: center;
-  padding: var(--marginXMedium);
+  padding: var(--spaceSmall);
   width: 100%;
 }
 
 .label {
-  margin-left: var(--marginSmall);
+  margin-left: var(--spaceExtraSmall);
 }

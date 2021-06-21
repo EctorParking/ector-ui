@@ -2,10 +2,10 @@
 
 .card {
   display: flex;
-  padding: var(--noMargin);
+  padding: 0;
   max-height: 100%;
-  border-radius: var(--borderRadius);
-  background-color: var(--seventhColor);
+  border-radius: var(--radiusLarge);
+  background-color: var(--background);
   box-shadow: 0 0 38px -2px rgba(0, 0, 0, 0.15);
 }
 
@@ -21,7 +21,7 @@
   background-size: 100% 100%;
   border-bottom-right-radius: var(--borderRadius);
   border-top-right-radius: var(--borderRadius);
-  width: var(--marginLarge);
+  width: var(--spaceLarge);
 }
 
 .imageContainerBig {

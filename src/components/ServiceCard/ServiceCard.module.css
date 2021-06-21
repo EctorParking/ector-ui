@@ -1,23 +1,23 @@
 @import '../../style/variable.global.css';
 
 .card {
-  box-sizing: border-box;
-  background-color: var(--lightGrey);
-  border-radius: var(--borderRadius);
-  padding: 5px;
-  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--lightNeutral);
+  border-radius: var(--radiusLarge);
+  padding: var(--spaceExtraSmall);
+  margin-top: var(--spaceMedium);
   position: relative;
   width: 250px;
-  height: 260px;
 }
 
 .optionCardContainerSelected {
-  background-color: var(--yellow);
+  background-color: var(--accent);
 }
 
 .labelContainer {
   position: absolute;
-  top: -10px;
+  top: calc(-1 * var(--fontSizeSmall));
   right: 8%;
   display: flex;
   align-items: center;
@@ -26,6 +26,7 @@
 @media (max-width: 1232px) {
   .card {
     display: flex;
+    flex-direction: row;
     flex: 1 1 auto;
     height: auto;
     margin-right: 0;

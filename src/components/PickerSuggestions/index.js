@@ -22,12 +22,6 @@ const PickerSuggestions = ({
     style={{ left: `calc(50% - ${containerOffset + 130}px)` }}
     {...rest}
   >
-    <div className={s.arrowContainer} style={{ left: `${containerOffset}px` }}>
-      <ArrowComponent
-        position="top"
-        className={[s.arrow, visible ? s.visible : undefined].join(' ')}
-      />
-    </div>
     {children}
   </div>
 );

@@ -1,22 +1,25 @@
 @import '../../style/variable.global.css';
 
 .cardContent {
-  box-sizing: border-box;
-  background-color: var(--white);
-  height: 197px;
-  padding: var(--marginSmall);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: var(--background);
+  padding: var(--spaceSmall);
+  border-top-left-radius: var(--radiusLarge);
+  border-top-right-radius: var(--radiusLarge);
 }
 
 .title {
-  color: var(--blue);
-  font-weight: var(--fontWeightLight);
-  font-size: var(--fontSizeSubtitle);
-  box-sizing: content-box;
-  margin: 0 20px 0 0;
+  color: var(--info);
+  font-size: var(--fontSizeHeading);
+  font-weight: var(--fontWeightRegular);
+  margin: 0;
 }
 
 .description {
-  color: var(--deepBlue);
+  color: var(--primary);
 }
 
 .icon {
@@ -25,7 +28,7 @@
 }
 
 .knowMore {
-  color: var(--melrose);
+  color: var(--action);
   cursor: pointer;
   display: block;
   padding: 0;
@@ -40,15 +43,21 @@
   .cardContent {
     flex: 7;
     height: auto;
-    padding: var(--marginSmall);
+    border-radius: var(--radiusLarge);
   }
 
   .title {
-    font-size: 20px;
+    font-size: var(--fontSizeHeading);
     margin-right: 0;
   }
 
   .icon {
     display: none;
+  }
+}
+
+@media (--maxTablet) {
+  .cardContent {
+    padding: var(--spaceExtraSmall) var(--spaceSmall);
   }
 }

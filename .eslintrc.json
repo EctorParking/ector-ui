@@ -19,7 +19,7 @@
     "import/no-extraneous-dependencies": 1,
 
     // eslint-plugin-react
-    "react/button-has-type": 1,
+    "react/button-has-type": 0,
     "react/forbid-prop-types": 1,
     "react/jsx-boolean-value": 1,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],

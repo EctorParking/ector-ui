@@ -6,9 +6,9 @@
 }
 
 .bookingSteps {
-  margin-right: var(--marginLarge);
+  margin-right: var(--spaceLarge);
 }
 
 .pricingSummary {
-  margin-left: var(--marginLarge);
+  margin-left: var(--spaceLarge);
 }

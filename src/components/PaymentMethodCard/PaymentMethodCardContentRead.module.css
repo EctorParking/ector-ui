@@ -2,14 +2,14 @@
 
 .content {
   display: block;
-  color: var(--deepBlue);
+  color: var(--primary);
   text-align: center;
 }
 
 .brandIcon {
   width: 75px;
   align-self: center;
-  margin-bottom: var(--marginSmall);
+  margin-bottom: var(--spaceExtraSmall);
 }
 
 .contentHalfLine {

@@ -1,9 +1,9 @@
 @import '../../style/variable.global.css';
 
 .referralCard {
-  background-color: var(--lightGrey);
-  border-radius: var(--borderRadius);
-  color: var(--deepBlue);
+  background-color: var(--lightNeutral);
+  border-radius: var(--radiusLarge);
+  color: var(--primary);
   display: flex;
   max-width: var(--bpMobileIPhoneFive);
   padding: var(--marginMedium);

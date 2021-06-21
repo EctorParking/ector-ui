@@ -1,36 +1,38 @@
 @import '../../style/variable.global.css';
 
 .card {
-  background-color: var(--lightGrey);
+  background-color: var(--lightNeutral);
   display: flex;
   flex-direction: column;
-  border-radius: 0.5rem;
-  padding: 0.3rem;
+  border-radius: var(--radiusMedium);
+  padding: var(--spaceExtraSmall);
   position: relative;
 }
 
 .card_selected {
-  background-color: var(--yellow);
+  background-color: var(--accent);
 }
 
 .card_clickable {
   &:hover {
     cursor: pointer;
-    background-color: var(--yellow);
+    background-color: var(--accent);
 
     &:active {
       cursor: default;
     }
   }
 }
+
 .card_content {
   flex: 1;
   flex-basis: auto;
-  background-color: white;
-  border-radius: 0.3rem;
+  position: relative;
+  background-color: var(--background);
+  border-radius: var(--radiusMedium);
   display: flex;
   flex-direction: column;
-  padding: 2rem 1.5rem;
+  padding: var(--spaceSmall);
 }
 
 .card_footer {
@@ -47,5 +49,5 @@
 .label {
   position: absolute;
   top: -10px;
-  right: 20px;
+  right: var(--spaceSmall);
 }
