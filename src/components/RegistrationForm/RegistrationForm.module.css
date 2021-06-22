@@ -36,10 +36,6 @@
   margin-top: var(--spaceExtraLarge);
 }
 
-.titleRadio {
-  flex-direction: column;
-}
-
 .genderPicker {
   margin-top: var(--spaceExtraSmall);
 }
