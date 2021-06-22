@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card, InputLabel, GenderPicker, PhoneInput } from '..';
+import { Card, InputLabel, PhoneInput } from '..';
 import s from './RegistrationForm.module.css';
 import RegistrationFormTextTypes, {
   defaultTexts,
@@ -18,7 +18,6 @@ class RegistrationForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleChangeGender = props.onChangeProperty.bind(this, 'title');
     this.handleChangeFirstName = this.handleChangeProperty.bind(
       this,
       'firstName'
@@ -29,10 +28,6 @@ class RegistrationForm extends React.Component {
     );
     this.handleChangeEmail = this.handleChangeProperty.bind(this, 'email');
     this.handleChangePhone = this.handleChangeProperty.bind(this, 'phone');
-    this.handleChangePostalCode = this.handleChangeProperty.bind(
-      this,
-      'postalCode'
-    );
     this.handleChangePassword = this.handleChangeProperty.bind(
       this,
       'password'
@@ -41,17 +36,6 @@ class RegistrationForm extends React.Component {
       this,
       'passwordConfirmation'
     );
-
-    this.genders = [
-      {
-        value: 'male',
-        label: props.texts.male,
-      },
-      {
-        value: 'female',
-        label: props.texts.female,
-      },
-    ];
   }
 
   handleChangeProperty(field, event) {
@@ -94,19 +78,8 @@ class RegistrationForm extends React.Component {
       <RootComponent {...actualCardProps}>
         <div className={s.columns}>
           <div className={[s.leftColumn, leftColumnClassName].join(' ')}>
-            <div className={s.titleRadio}>
-              <label htmlFor="title">{texts.title}</label>
-              <GenderPicker
-                className={s.genderPicker}
-                genders={this.genders}
-                onSelect={this.handleChangeGender}
-                selected={values.title || ''}
-                error={errors.title}
-              />
-            </div>
             <InputLabel
               id="registrationFormFirstNameInput"
-              className={s.inputLabel}
               label={texts.firstName}
               onChange={this.handleChangeFirstName}
               value={values.firstName || ''}
@@ -122,18 +95,9 @@ class RegistrationForm extends React.Component {
               error={errors.lastName}
               mandatory
             />
-            <InputLabel
-              id="registrationFormPostalCodeInput"
-              className={s.inputLabel}
-              label={texts.postalCode}
-              onChange={this.handleChangePostalCode}
-              value={values.postalCode || ''}
-              error={errors.postalCode}
-            />
-          </div>
-          <div>
             <PhoneInput
               id="registrationFormPhoneInput"
+              className={s.inputLabel}
               withFlag={phoneWithFlags}
               label={texts.phone}
               onChange={this.handleChangePhone}
@@ -143,9 +107,11 @@ class RegistrationForm extends React.Component {
               defaultCountry={defaultCountry}
               mandatory
             />
+          </div>
+          <div>
             <InputLabel
               id="registrationFormEmailInput"
-              className={[s.inputLabel, s.emailInputLabel].join(' ')}
+              className={s.emailInputLabel}
               label={texts.email}
               onChange={this.handleChangeEmail}
               value={values.email || ''}

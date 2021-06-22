@@ -7180,71 +7180,57 @@ AddItemCard.defaultProps = {
   linkClassName: undefined
 };
 
-var css$Y = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.RegistrationForm-module_columns__2mI8R {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.RegistrationForm-module_columns__2mI8R > div {\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  border-spacing: 20px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n}\n\n.RegistrationForm-module_columns__2mI8R > div > * {\n  height: 55px;\n}\n\n.RegistrationForm-module_leftColumn__xhQap {\n  margin-right: 8px;\n}\n\n.RegistrationForm-module_columns__2mI8R:nth-child(2) {\n  margin-left: 20px;\n}\n\n.RegistrationForm-module_flex__mWQse {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.RegistrationForm-module_leftRadio__2Iq2n {\n  margin-right: 8px;\n}\n\n.RegistrationForm-module_inputLabel__3IYO_ {\n  margin-top: 40px;\n}\n\n.RegistrationForm-module_titleRadio__PjgBi {\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n\n.RegistrationForm-module_genderPicker__2I3dC {\n  margin-top: 8px;\n}\n\n.RegistrationForm-module_var__2ZWgF(\\--error) {\n  text-align: left;\n  color: #DF6262;\n}\n\n.RegistrationForm-module_footerLabel__32y4D {\n  font-style: italic;\n  font-size: 12px;\n}\n\n@media (max-width: 480px) {\n  .RegistrationForm-module_card__3j0bC {\n    background: transparent;\n    padding: 0;\n  }\n  .RegistrationForm-module_contentCard__rslWZ {\n    padding: 0;\n  }\n  .RegistrationForm-module_columns__2mI8R {\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n  }\n  .RegistrationForm-module_columns__2mI8R > div > * {\n    height: auto;\n  }\n  .RegistrationForm-module_leftColumn__xhQap {\n    margin: 0 0 8px;\n  }\n  .RegistrationForm-module_inputLabel__3IYO_ {\n    margin-top: 8px;\n  }\n  .RegistrationForm-module_emailInputLabel__1t3GN {\n    display: none;\n  }\n}\n";
-var s$Y = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","-webkit-columns":"RegistrationForm-module_columns__2mI8R","columns":"RegistrationForm-module_columns__2mI8R","leftColumn":"RegistrationForm-module_leftColumn__xhQap","-webkit-box-flex":"RegistrationForm-module_flex__mWQse","-ms-flex":"RegistrationForm-module_flex__mWQse","flex":"RegistrationForm-module_flex__mWQse","leftRadio":"RegistrationForm-module_leftRadio__2Iq2n","inputLabel":"RegistrationForm-module_inputLabel__3IYO_","titleRadio":"RegistrationForm-module_titleRadio__PjgBi","genderPicker":"RegistrationForm-module_genderPicker__2I3dC","var":"RegistrationForm-module_var__2ZWgF","footerLabel":"RegistrationForm-module_footerLabel__32y4D","card":"RegistrationForm-module_card__3j0bC","contentCard":"RegistrationForm-module_contentCard__rslWZ","emailInputLabel":"RegistrationForm-module_emailInputLabel__1t3GN"};
+var css$Y = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.RegistrationForm-module_columns__2mI8R {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.RegistrationForm-module_columns__2mI8R > div {\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  border-spacing: 20px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n}\n\n.RegistrationForm-module_columns__2mI8R > div > * {\n  height: 55px;\n}\n\n.RegistrationForm-module_leftColumn__xhQap {\n  margin-right: 8px;\n}\n\n.RegistrationForm-module_columns__2mI8R:nth-child(2) {\n  margin-left: 20px;\n}\n\n.RegistrationForm-module_flex__mWQse {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.RegistrationForm-module_leftRadio__2Iq2n {\n  margin-right: 8px;\n}\n\n.RegistrationForm-module_inputLabel__3IYO_ {\n  margin-top: 40px;\n}\n\n.RegistrationForm-module_genderPicker__2I3dC {\n  margin-top: 8px;\n}\n\n.RegistrationForm-module_var__2ZWgF(\\--error) {\n  text-align: left;\n  color: #DF6262;\n}\n\n.RegistrationForm-module_footerLabel__32y4D {\n  font-style: italic;\n  font-size: 12px;\n}\n\n@media (max-width: 480px) {\n  .RegistrationForm-module_card__3j0bC {\n    background: transparent;\n    padding: 0;\n  }\n  .RegistrationForm-module_contentCard__rslWZ {\n    padding: 0;\n  }\n  .RegistrationForm-module_columns__2mI8R {\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n  }\n  .RegistrationForm-module_columns__2mI8R > div > * {\n    height: auto;\n  }\n  .RegistrationForm-module_leftColumn__xhQap {\n    margin: 0 0 8px;\n  }\n  .RegistrationForm-module_inputLabel__3IYO_ {\n    margin-top: 8px;\n  }\n  .RegistrationForm-module_emailInputLabel__1t3GN {\n    display: none;\n  }\n}\n";
+var s$Y = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","-webkit-columns":"RegistrationForm-module_columns__2mI8R","columns":"RegistrationForm-module_columns__2mI8R","leftColumn":"RegistrationForm-module_leftColumn__xhQap","-webkit-box-flex":"RegistrationForm-module_flex__mWQse","-ms-flex":"RegistrationForm-module_flex__mWQse","flex":"RegistrationForm-module_flex__mWQse","leftRadio":"RegistrationForm-module_leftRadio__2Iq2n","inputLabel":"RegistrationForm-module_inputLabel__3IYO_","genderPicker":"RegistrationForm-module_genderPicker__2I3dC","var":"RegistrationForm-module_var__2ZWgF","footerLabel":"RegistrationForm-module_footerLabel__32y4D","card":"RegistrationForm-module_card__3j0bC","contentCard":"RegistrationForm-module_contentCard__rslWZ","emailInputLabel":"RegistrationForm-module_emailInputLabel__1t3GN"};
 styleInject(css$Y);
 
 var RegistrationFormTextTypes = PropTypes$1.shape({
   firstName: PropTypes$1.string,
   lastName: PropTypes$1.string,
-  postalCode: PropTypes$1.string,
   phone: PropTypes$1.string,
   email: PropTypes$1.string,
   password: PropTypes$1.string,
-  passwordConfirmation: PropTypes$1.string,
-  title: PropTypes$1.string
+  passwordConfirmation: PropTypes$1.string
 });
 var defaultTexts$5 = {
-  male: 'M',
-  female: 'Mme',
   firstName: 'Prénom',
   lastName: 'Nom',
-  postalCode: 'Code postal',
   phone: 'Téléphone mobile',
   email: 'Email',
   password: 'Mot de passe',
-  passwordConfirmation: 'Confirmation de mot de passe',
-  title: 'Civilité'
+  passwordConfirmation: 'Confirmation de mot de passe'
 };
 var ValuesType = PropTypes$1.shape({
   firstName: PropTypes$1.string,
   lastName: PropTypes$1.string,
-  postalCode: PropTypes$1.string,
   phone: PropTypes$1.string,
   email: PropTypes$1.string,
   password: PropTypes$1.string,
-  passwordConfirmation: PropTypes$1.string,
-  title: PropTypes$1.string
+  passwordConfirmation: PropTypes$1.string
 });
 var ErrorsType = PropTypes$1.shape({
   firstName: PropTypes$1.string,
   lastName: PropTypes$1.string,
-  postalCode: PropTypes$1.string,
   phone: PropTypes$1.string,
   email: PropTypes$1.string,
   password: PropTypes$1.string,
-  passwordConfirmation: PropTypes$1.string,
-  title: PropTypes$1.string
+  passwordConfirmation: PropTypes$1.string
 });
 var defaultValues = {
   firstName: '',
   lastName: '',
-  postalCode: '',
   phone: '',
   email: '',
   password: '',
-  passwordConfirmation: '',
-  title: ''
+  passwordConfirmation: ''
 };
 var defaultErrors = {
   firstName: null,
   lastName: null,
-  postalCode: null,
   phone: null,
   email: null,
   password: null,
-  passwordConfirmation: null,
-  title: null
+  passwordConfirmation: null
 };
 
 var RegistrationForm =
@@ -7266,21 +7252,12 @@ function (_React$Component) {
       }, labelFooterPassword) : null;
     });
 
-    _this.handleChangeGender = props.onChangeProperty.bind(_assertThisInitialized(_this), 'title');
     _this.handleChangeFirstName = _this.handleChangeProperty.bind(_assertThisInitialized(_this), 'firstName');
     _this.handleChangeLastName = _this.handleChangeProperty.bind(_assertThisInitialized(_this), 'lastName');
     _this.handleChangeEmail = _this.handleChangeProperty.bind(_assertThisInitialized(_this), 'email');
     _this.handleChangePhone = _this.handleChangeProperty.bind(_assertThisInitialized(_this), 'phone');
-    _this.handleChangePostalCode = _this.handleChangeProperty.bind(_assertThisInitialized(_this), 'postalCode');
     _this.handleChangePassword = _this.handleChangeProperty.bind(_assertThisInitialized(_this), 'password');
     _this.handleChangePasswordConfirmation = _this.handleChangeProperty.bind(_assertThisInitialized(_this), 'passwordConfirmation');
-    _this.genders = [{
-      value: 'male',
-      label: props.texts.male
-    }, {
-      value: 'female',
-      label: props.texts.female
-    }];
     return _this;
   }
 
@@ -7316,19 +7293,8 @@ function (_React$Component) {
         className: s$Y.columns
       }, React__default.createElement("div", {
         className: [s$Y.leftColumn, leftColumnClassName].join(' ')
-      }, React__default.createElement("div", {
-        className: s$Y.titleRadio
-      }, React__default.createElement("label", {
-        htmlFor: "title"
-      }, texts.title), React__default.createElement(GenderPicker, {
-        className: s$Y.genderPicker,
-        genders: this.genders,
-        onSelect: this.handleChangeGender,
-        selected: values.title || '',
-        error: errors.title
-      })), React__default.createElement(InputLabel, {
+      }, React__default.createElement(InputLabel, {
         id: "registrationFormFirstNameInput",
-        className: s$Y.inputLabel,
         label: texts.firstName,
         onChange: this.handleChangeFirstName,
         value: values.firstName || '',
@@ -7342,15 +7308,9 @@ function (_React$Component) {
         value: values.lastName || '',
         error: errors.lastName,
         mandatory: true
-      }), React__default.createElement(InputLabel, {
-        id: "registrationFormPostalCodeInput",
-        className: s$Y.inputLabel,
-        label: texts.postalCode,
-        onChange: this.handleChangePostalCode,
-        value: values.postalCode || '',
-        error: errors.postalCode
-      })), React__default.createElement("div", null, React__default.createElement(PhoneInput, {
+      }), React__default.createElement(PhoneInput, {
         id: "registrationFormPhoneInput",
+        className: s$Y.inputLabel,
         withFlag: phoneWithFlags,
         label: texts.phone,
         onChange: this.handleChangePhone,
@@ -7359,9 +7319,9 @@ function (_React$Component) {
         countries: countries,
         defaultCountry: defaultCountry,
         mandatory: true
-      }), React__default.createElement(InputLabel, {
+      })), React__default.createElement("div", null, React__default.createElement(InputLabel, {
         id: "registrationFormEmailInput",
-        className: [s$Y.inputLabel, s$Y.emailInputLabel].join(' '),
+        className: s$Y.emailInputLabel,
         label: texts.email,
         onChange: this.handleChangeEmail,
         value: values.email || '',
