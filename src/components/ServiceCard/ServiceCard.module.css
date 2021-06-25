@@ -23,7 +23,7 @@
   align-items: center;
 }
 
-@media (max-width: 1232px) {
+@media (--maxContainerWidth) {
   .card {
     display: flex;
     flex-direction: row;

@@ -72,6 +72,7 @@
 
 @custom-media --maxTablet (max-width: 825px);
 @custom-media --maxMobile (max-width: 480px);
+@custom-media --maxContainerWidth (max-width: 1232px);
 @custom-media --maxPurchaseCanalMinWidth (max-width: 1130px);
 
 @value primary: var(--primary);

@@ -39,7 +39,7 @@
   content: '…';
 }
 
-@media (max-width: 1232px) {
+@media (--maxContainerWidth) {
   .cardContent {
     flex: 7;
     height: auto;

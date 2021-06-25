@@ -84,3 +84,16 @@
 .backgroundTextIcon {
   height: 1.5em;
 }
+
+@media (--maxContainerWidth) {
+  .container {
+    padding: 0 var(--spaceSmall);
+  }
+}
+
+@media (--maxTablet) {
+  .container {
+    padding: 0 var(--spaceExtraSmall);
+  }
+}
+
