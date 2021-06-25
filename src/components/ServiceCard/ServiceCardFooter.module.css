@@ -23,7 +23,7 @@
   text-align: end;
 }
 
-@media (max-width: 1232px) {
+@media (--maxContainerWidth) {
   .footerContainer {
     align-items: center;
     flex: 3;

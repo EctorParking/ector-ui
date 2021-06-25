@@ -14,10 +14,10 @@
   content: '';
   position: absolute;
   top: var(--spaceExtraSmall);
-  left: calc(var(--marginMedium) * -1);
+  left: calc(var(--spaceMedium) * -1);
   margin-left: calc(var(--spaceExtraSmall) - 1px);
   bottom: calc(var(--spaceExtraSmall) * -1);
-  border-right: 2px dotted var(--accent);
+  border-right: 2px dotted var(--lightPrimary);
 }
 
 .stepName {
@@ -36,7 +36,7 @@
   top: 50%;
   left: calc(var(--marginMedium) * -1);
   border-radius: 50%;
-  background-color: var(--accent);
+  background-color: var(--lightPrimary);
   margin-top: calc(var(--spaceExtraSmall) * -1);
 }
 
