@@ -7327,6 +7327,7 @@ function (_React$Component) {
         value: values.email || '',
         error: errors.email,
         onKeyDown: onKeyDownEmail,
+        readOnly: true,
         mandatory: true
       }), React__default.createElement(InputLabel, {
         id: "registrationFormPasswordInput",

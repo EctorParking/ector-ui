@@ -117,6 +117,7 @@ class RegistrationForm extends React.Component {
               value={values.email || ''}
               error={errors.email}
               onKeyDown={onKeyDownEmail}
+              readOnly
               mandatory
             />
             <InputLabel
