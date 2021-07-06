@@ -36,6 +36,10 @@
   margin-top: var(--spaceExtraLarge);
 }
 
+.emailInputLabel input {
+  background-color: var(--lightNeutral);
+}
+
 .genderPicker {
   margin-top: var(--spaceExtraSmall);
 }
