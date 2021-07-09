@@ -6,7 +6,7 @@
 }
 
 .rideSummaryTitle {
-  color: var(--blue);
+  color: var(--lightPrimary);
   font-size: var(--fontSizeSubtitle);
   margin: 0;
 }
