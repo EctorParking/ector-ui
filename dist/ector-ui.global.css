@@ -3458,7 +3458,7 @@
   display: -ms-flexbox;
   display: flex;
   height: 50px;
-  padding: 8px;
+  padding: 16px;
 }
 
 .RewardCardHeader-module_text__2_Rz0 {
@@ -5244,7 +5244,7 @@
 }
 
 .SavedCardsPicker-module_paymentMethodBox__1oVXr {
-  padding: 8px 0 8px 0;
+  padding: 16px;
   max-width: 720px;
   -ms-flex-item-align: center;
       align-self: center;
@@ -5287,12 +5287,6 @@
   padding-right: 130px;
 }
 
-@media (max-width: 480px) {
-  .SavedCardsPicker-module_paymentCardsHeaderRow__2V93H {
-    display: none;
-  }
-}
-
 .SavedCardsPicker-module_typeCardHeader__15vD1 {
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -5321,6 +5315,16 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media (max-width: 480px) {
+  .SavedCardsPicker-module_paymentCardsHeaderRow__2V93H {
+    display: none;
+  }
+
+  .SavedCardsPicker-module_paymentMethodBox__1oVXr {
+    padding: 8px;
+  }
 }
 
 :root {
