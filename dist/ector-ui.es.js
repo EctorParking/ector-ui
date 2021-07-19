@@ -5328,33 +5328,54 @@ var InputLabel = function InputLabel(_ref) {
       inputProps = _objectWithoutProperties(_ref, ["label", "id", "mandatory", "placeholder", "type", "className", "inputClassName", "error", "left", "children", "InputComponent", "LabelComponent", "inputContainerClassName", "LabelFooterComponent", "errorClassName", "onKeyDown", "tooltip", "tooltipIcon"]);
 
   var labelClassName = mandatory ? s$x.mandatory : '';
+
+  var renderLabel = function renderLabel() {
+    if (LabelComponent !== null && typeof LabelComponent === 'function' && LabelComponent()) {
+      return React__default.createElement(LabelComponent, {
+        className: [left ? s$x.leftLabel : undefined, labelClassName].join(' ')
+      });
+    }
+
+    if (label) {
+      return React__default.createElement("div", {
+        className: s$x.label
+      }, React__default.createElement("label", {
+        htmlFor: id,
+        className: [left ? s$x.leftLabel : undefined, labelClassName].join(' ')
+      }, label), tooltip && React__default.createElement(Tooltip, {
+        text: tooltip,
+        position: "top",
+        className: s$x.tooltip,
+        iconClassName: tooltipIcon
+      }));
+    }
+
+    return null;
+  };
+
+  var renderInput = function renderInput() {
+    if (InputComponent !== null && typeof InputComponent === 'function' && InputComponent()) {
+      return React__default.createElement(InputComponent, _extends({
+        className: [s$x.input, inputClassName].join(' '),
+        placeholder: placeholder,
+        type: type,
+        hasError: !!error
+      }, inputProps));
+    }
+
+    return React__default.createElement(Input, _extends({
+      className: [s$x.input, inputClassName].join(' '),
+      id: id,
+      placeholder: placeholder,
+      type: type,
+      hasError: !!error,
+      onKeyDown: onKeyDown
+    }, inputProps));
+  };
+
   return React__default.createElement("div", {
     className: [left ? s$x.leftContainer : s$x.container, className].join(' ')
-  }, LabelComponent !== null && typeof LabelComponent === 'function' && LabelComponent() ? React__default.createElement(LabelComponent, {
-    className: [left ? s$x.leftLabel : undefined, labelClassName].join(' ')
-  }) : React__default.createElement("div", {
-    className: s$x.label
-  }, React__default.createElement("label", {
-    htmlFor: id,
-    className: [left ? s$x.leftLabel : undefined, labelClassName].join(' ')
-  }, label), tooltip && React__default.createElement(Tooltip, {
-    text: tooltip,
-    position: "top",
-    className: s$x.tooltip,
-    iconClassName: tooltipIcon
-  })), InputComponent !== null && typeof InputComponent === 'function' && InputComponent() ? React__default.createElement(InputComponent, _extends({
-    className: [s$x.input, inputClassName].join(' '),
-    placeholder: placeholder,
-    type: type,
-    hasError: !!error
-  }, inputProps)) : React__default.createElement(Input, _extends({
-    className: [s$x.input, inputClassName].join(' '),
-    id: id,
-    placeholder: placeholder,
-    type: type,
-    hasError: !!error,
-    onKeyDown: onKeyDown
-  }, inputProps)), LabelFooterComponent !== null && typeof LabelFooterComponent === 'function' && LabelFooterComponent() && !error ? React__default.createElement(LabelFooterComponent, {
+  }, renderLabel(), renderInput(), LabelFooterComponent !== null && typeof LabelFooterComponent === 'function' && LabelFooterComponent() && !error ? React__default.createElement(LabelFooterComponent, {
     className: left ? s$x.leftText : undefined
   }) : !!error && React__default.createElement("div", {
     className: [s$x.error, left ? s$x.leftText : undefined, errorClassName].join(' ')
@@ -19445,7 +19466,7 @@ SavedCardsLine.defaultProps = {
   card: null
 };
 
-var css$1i = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.SavedCardsPicker-module_card__3Lo7m {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  border-radius: 30px;\n  background-color: #FFFFFF;\n  margin: 0 0 16px 0;\n  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, .15);\n          box-shadow: 0 0 10px 0 rgba(0, 0, 0, .15);\n  overflow-x: auto;\n  padding: 8px;\n  max-height: 100%;\n  max-width: 100%;\n}\n\n.SavedCardsPicker-module_left__vjeNi {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n\n.SavedCardsPicker-module_informationTotalRefund__2Obh8 {\n  border-top: 2px solid #ECEFF6;\n  padding: 8px 24px 0 24px;\n}\n\n.SavedCardsPicker-module_paymentMethodBox__1oVXr {\n  padding: 16px;\n  max-width: 720px;\n  -ms-flex-item-align: center;\n      align-self: center;\n  max-height: 100%;\n  border-radius: 8px;\n  background-color: #FFFFFF;\n  margin: 0;\n  width: 100%;\n  overflow-x: auto;\n  overflow-y: hidden;\n}\n\n.SavedCardsPicker-module_paymentCardsTable__Qpt3G {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  width: 100%;\n}\n\n.SavedCardsPicker-module_paymentCardsHeaderRow__2V93H {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-weight: 700;\n}\n\n.SavedCardsPicker-module_paymentCardsHeader__19KgR {\n  padding: 8px 40px 8px 0;\n}\n\n.SavedCardsPicker-module_numberHeader__3iCXE {\n  padding-right: 70px;\n}\n\n.SavedCardsPicker-module_expireHeader__1giX1 {\n  padding-right: 130px;\n}\n\n.SavedCardsPicker-module_typeCardHeader__15vD1 {\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  padding-left: 50px;\n}\n\n.SavedCardsPicker-module_paymentTableFooter__1lBCH {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding: 8px;\n  padding-left: 16px;\n}\n\n.SavedCardsPicker-module_addPaymentCardIcon__VUpeM {\n  width: 20px;\n  height: 20px;\n}\n\n.SavedCardsPicker-module_addCardButton__1FlP7 {\n  vertical-align: middle;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n@media (max-width: 480px) {\n  .SavedCardsPicker-module_paymentCardsHeaderRow__2V93H {\n    display: none;\n  }\n\n  .SavedCardsPicker-module_paymentMethodBox__1oVXr {\n    padding: 8px;\n  }\n}\n";
+var css$1i = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.SavedCardsPicker-module_card__3Lo7m {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  border-radius: 30px;\n  background-color: #FFFFFF;\n  margin: 0 0 16px 0;\n  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, .15);\n          box-shadow: 0 0 10px 0 rgba(0, 0, 0, .15);\n  overflow-x: auto;\n  padding: 8px;\n  max-height: 100%;\n  max-width: 100%;\n}\n\n.SavedCardsPicker-module_left__vjeNi {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n\n.SavedCardsPicker-module_informationTotalRefund__2Obh8 {\n  border-top: 2px solid #ECEFF6;\n  padding: 8px 24px 0 24px;\n}\n\n.SavedCardsPicker-module_paymentMethodBox__1oVXr {\n  padding: 8px 16px 16px;\n  max-width: 720px;\n  -ms-flex-item-align: center;\n      align-self: center;\n  max-height: 100%;\n  border-radius: 8px;\n  background-color: #FFFFFF;\n  margin: 0;\n  width: 100%;\n  overflow-x: auto;\n  overflow-y: hidden;\n}\n\n.SavedCardsPicker-module_paymentCardsTable__Qpt3G {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  width: 100%;\n}\n\n.SavedCardsPicker-module_paymentCardsHeaderRow__2V93H {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-weight: 700;\n}\n\n.SavedCardsPicker-module_paymentCardsHeader__19KgR {\n  padding: 8px 40px 8px 0;\n}\n\n.SavedCardsPicker-module_numberHeader__3iCXE {\n  padding-right: 70px;\n}\n\n.SavedCardsPicker-module_expireHeader__1giX1 {\n  padding-right: 130px;\n}\n\n.SavedCardsPicker-module_typeCardHeader__15vD1 {\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  padding-left: 50px;\n}\n\n.SavedCardsPicker-module_paymentTableFooter__1lBCH {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding: 8px;\n  padding-left: 16px;\n}\n\n.SavedCardsPicker-module_addPaymentCardIcon__VUpeM {\n  width: 20px;\n  height: 20px;\n}\n\n.SavedCardsPicker-module_addCardButton__1FlP7 {\n  vertical-align: middle;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n@media (max-width: 480px) {\n  .SavedCardsPicker-module_paymentCardsHeaderRow__2V93H {\n    display: none;\n  }\n\n  .SavedCardsPicker-module_paymentMethodBox__1oVXr {\n    padding: 0 8px 8px;\n  }\n\n  .SavedCardsPicker-module_informationTotalRefund__2Obh8 {\n    padding: 16px 0;\n  }\n}\n";
 var s$1g = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","card":"SavedCardsPicker-module_card__3Lo7m","left":"SavedCardsPicker-module_left__vjeNi","informationTotalRefund":"SavedCardsPicker-module_informationTotalRefund__2Obh8","paymentMethodBox":"SavedCardsPicker-module_paymentMethodBox__1oVXr","paymentCardsTable":"SavedCardsPicker-module_paymentCardsTable__Qpt3G","paymentCardsHeaderRow":"SavedCardsPicker-module_paymentCardsHeaderRow__2V93H","paymentCardsHeader":"SavedCardsPicker-module_paymentCardsHeader__19KgR","numberHeader":"SavedCardsPicker-module_numberHeader__3iCXE","expireHeader":"SavedCardsPicker-module_expireHeader__1giX1","typeCardHeader":"SavedCardsPicker-module_typeCardHeader__15vD1","paymentTableFooter":"SavedCardsPicker-module_paymentTableFooter__1lBCH","addPaymentCardIcon":"SavedCardsPicker-module_addPaymentCardIcon__VUpeM","addCardButton":"SavedCardsPicker-module_addCardButton__1FlP7"};
 styleInject(css$1i);
 

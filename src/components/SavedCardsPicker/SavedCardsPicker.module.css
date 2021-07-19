@@ -24,7 +24,7 @@
 }
 
 .paymentMethodBox {
-  padding: var(--spaceSmall);
+  padding: var(--spaceExtraSmall) var(--spaceSmall) var(--spaceSmall);
   max-width: 720px;
   align-self: center;
   max-height: 100%;
@@ -87,6 +87,10 @@
   }
 
   .paymentMethodBox {
-    padding: var(--spaceExtraSmall);
+    padding: 0 var(--spaceExtraSmall) var(--spaceExtraSmall);
+  }
+
+  .informationTotalRefund {
+    padding: var(--spaceSmall) 0;
   }
 }
