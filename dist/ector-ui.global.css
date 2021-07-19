@@ -5244,7 +5244,7 @@
 }
 
 .SavedCardsPicker-module_paymentMethodBox__1oVXr {
-  padding: 16px;
+  padding: 8px 16px 16px;
   max-width: 720px;
   -ms-flex-item-align: center;
       align-self: center;
@@ -5323,7 +5323,11 @@
   }
 
   .SavedCardsPicker-module_paymentMethodBox__1oVXr {
-    padding: 8px;
+    padding: 0 8px 8px;
+  }
+
+  .SavedCardsPicker-module_informationTotalRefund__2Obh8 {
+    padding: 16px 0;
   }
 }
 

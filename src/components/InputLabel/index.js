@@ -29,17 +29,21 @@ const InputLabel = ({
 }) => {
   const labelClassName = mandatory ? s.mandatory : '';
 
-  return (
-    <div
-      className={[left ? s.leftContainer : s.container, className].join(' ')}
-    >
-      {LabelComponent !== null &&
+  const renderLabel = () => {
+    if (
+      LabelComponent !== null &&
       typeof LabelComponent === 'function' &&
-      LabelComponent() ? (
+      LabelComponent()
+    ) {
+      return (
         <LabelComponent
           className={[left ? s.leftLabel : undefined, labelClassName].join(' ')}
         />
-      ) : (
+      );
+    }
+
+    if (label) {
+      return (
         <div className={s.label}>
           <label
             htmlFor={id}
@@ -58,10 +62,19 @@ const InputLabel = ({
             />
           )}
         </div>
-      )}
-      {InputComponent !== null &&
+      );
+    }
+
+    return null;
+  };
+
+  const renderInput = () => {
+    if (
+      InputComponent !== null &&
       typeof InputComponent === 'function' &&
-      InputComponent() ? (
+      InputComponent()
+    ) {
+      return (
         <InputComponent
           className={[s.input, inputClassName].join(' ')}
           placeholder={placeholder}
@@ -69,17 +82,26 @@ const InputLabel = ({
           hasError={!!error}
           {...inputProps}
         />
-      ) : (
-        <Input
-          className={[s.input, inputClassName].join(' ')}
-          id={id}
-          placeholder={placeholder}
-          type={type}
-          hasError={!!error}
-          onKeyDown={onKeyDown}
-          {...inputProps}
-        />
-      )}
+      );
+    }
+    return (
+      <Input
+        className={[s.input, inputClassName].join(' ')}
+        id={id}
+        placeholder={placeholder}
+        type={type}
+        hasError={!!error}
+        onKeyDown={onKeyDown}
+        {...inputProps}
+      />
+    );
+  };
+  return (
+    <div
+      className={[left ? s.leftContainer : s.container, className].join(' ')}
+    >
+      {renderLabel()}
+      {renderInput()}
       {LabelFooterComponent !== null &&
       typeof LabelFooterComponent === 'function' &&
       LabelFooterComponent() &&
