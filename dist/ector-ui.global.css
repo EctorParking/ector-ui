@@ -2017,6 +2017,12 @@
   width: 100%;
 }
 
+.InputLabel-module_input__2fkjR[type='text'],
+.InputLabel-module_input__2fkjR[type='email'],
+.InputLabel-module_input__2fkjR[type='password'] {
+  -webkit-appearance: none;
+}
+
 .InputLabel-module_var__A1o6O(\--error) {
   text-align: left;
   color: #DF6262;
