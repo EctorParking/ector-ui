@@ -29,14 +29,18 @@ const Button = ({
 
   return (
     <Element {...props}>
-      <span>
-        <Loader
-          size="sm"
-          className={s.buttonLoader}
-          visible={fetching}
-          noPadding
-        />
-        {!fetching && children}
+      <Loader
+        size="sm"
+        className={s.buttonLoader}
+        visible={fetching}
+        noPadding
+      />
+      <span
+        style={{
+          opacity: !fetching ? 1 : 0,
+        }}
+      >
+        {children}
       </span>
     </Element>
   );

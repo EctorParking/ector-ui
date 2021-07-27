@@ -760,15 +760,15 @@
 
 .Button-module_button__6y6Zv.Button-module_fetching__1tCOO {
   background-color: #F8E5B6;
-  padding: 24px 32px;
+  padding: 16px 32px;
 }
 
 .Button-module_buttonLoader__2oerA {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -25%);
-          transform: translate(-50%, -25%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 :root {
