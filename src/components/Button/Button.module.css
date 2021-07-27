@@ -27,12 +27,12 @@
 
 .button.fetching {
   background-color: var(--lightAccent);
-  padding: var(--spaceMedium) var(--spaceLarge);
+  padding: var(--spaceSmall) var(--spaceLarge);
 }
 
 .buttonLoader {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -25%);
+  transform: translate(-50%, -50%);
 }
