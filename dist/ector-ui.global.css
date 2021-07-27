@@ -675,6 +675,63 @@
   /* Various */
 }
 
+:root {
+  /* General */
+
+  /* Colors */
+
+  /* Font Sizes */
+
+  /* Font Weights */
+
+  /* Radiuses */
+
+  /* Spaces */
+
+  /* Various */
+}
+
+.Loader-module_xs__19WnN {
+  height: 24px;
+  width: 24px;
+}
+
+.Loader-module_sm__1M0A2 {
+  height: 32px;
+  width: 32px;
+}
+
+.Loader-module_md__Qqi6l {
+  height: 40px;
+  width: 40px;
+}
+
+.Loader-module_lg__1wWtT {
+  height: 60px;
+  width: 60px;
+}
+
+.Loader-module_xl__11baQ {
+  height: 120px;
+  width: 120px;
+}
+
+:root {
+  /* General */
+
+  /* Colors */
+
+  /* Font Sizes */
+
+  /* Font Weights */
+
+  /* Radiuses */
+
+  /* Spaces */
+
+  /* Various */
+}
+
 .Button-module_button__6y6Zv {
   background-color: #F7D48A;
   border-radius: 30px;
@@ -692,20 +749,6 @@
   position: relative;
 }
 
-.Button-module_button__6y6Zv .Button-module_track__n1eRD {
-  -webkit-animation: Button-module_outFromFetching__2D1oh 0.2s linear forwards;
-          animation: Button-module_outFromFetching__2D1oh 0.2s linear forwards;
-  background-color: #F7D48A;
-  border-radius: 30px;
-  content: '';
-  height: 100%;
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  width: 0%;
-}
-
 .Button-module_button__6y6Zv[disabled] {
   background-color: #F8E5B6;
   cursor: not-allowed
@@ -717,56 +760,15 @@
 
 .Button-module_button__6y6Zv.Button-module_fetching__1tCOO {
   background-color: #F8E5B6;
+  padding: 24px 32px;
 }
 
-.Button-module_track__n1eRD.Button-module_fetchingTrack__SjURZ {
-  -webkit-animation: Button-module_fetching__1tCOO 3s cubic-bezier(0.33, 0.6, 0.3, 0.69) forwards;
-          animation: Button-module_fetching__1tCOO 3s cubic-bezier(0.33, 0.6, 0.3, 0.69) forwards;
-  opacity: 1;
-}
-
-@-webkit-keyframes Button-module_fetching__1tCOO {
-  from {
-    width: 0%;
-  }
-
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes Button-module_fetching__1tCOO {
-  from {
-    width: 0%;
-  }
-
-  to {
-    width: 100%;
-  }
-}
-
-@-webkit-keyframes Button-module_outFromFetching__2D1oh {
-  from {
-    opacity: 1;
-    width: 100%;
-  }
-
-  to {
-    opacity: 0;
-    width: 100%;
-  }
-}
-
-@keyframes Button-module_outFromFetching__2D1oh {
-  from {
-    opacity: 1;
-    width: 100%;
-  }
-
-  to {
-    opacity: 0;
-    width: 100%;
-  }
+.Button-module_buttonLoader__2oerA {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 :root {
@@ -2021,6 +2023,8 @@
 .InputLabel-module_input__2fkjR[type='email'],
 .InputLabel-module_input__2fkjR[type='password'] {
   -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 
 .InputLabel-module_var__A1o6O(\--error) {
@@ -2285,79 +2289,6 @@
 
 .Label-module_platinumColor__3er3W {
   background-color: #A07584;
-}
-
-:root {
-  /* General */
-
-  /* Colors */
-
-  /* Font Sizes */
-
-  /* Font Weights */
-
-  /* Radiuses */
-
-  /* Spaces */
-
-  /* Various */
-}
-
-.Loader-module_loader__N9Oko {
-  border: 16px solid #32A0C5;
-  border-top: 16px solid #000031;
-  border-radius: 50%;
-  -webkit-animation: Loader-module_spin__MH2Fo 2s linear infinite;
-          animation: Loader-module_spin__MH2Fo 2s linear infinite;
-  -ms-flex-item-align: center;
-      align-self: center;
-  margin: 15px auto;
-}
-
-.Loader-module_large__9YkjD {
-  width: 120px;
-  height: 120px;
-  border-width: 16px;
-}
-
-.Loader-module_medium__TWZ7Q {
-  width: 60px;
-  height: 60px;
-  border-width: 8px;
-}
-
-.Loader-module_small__3uXVP {
-  width: 30px;
-  height: 30px;
-  border-width: 4px;
-}
-
-.Loader-module_xSmall__3N8aP {
-  width: 15px;
-  height: 15px;
-  border-width: 2px;
-}
-
-@-webkit-keyframes Loader-module_spin__MH2Fo {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-@keyframes Loader-module_spin__MH2Fo {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
 }
 
 :root {
@@ -4631,22 +4562,6 @@
 
 .InputSelect-module_defaultClassName__1OTDJ {
   width: 200px;
-}
-
-:root {
-  /* General */
-
-  /* Colors */
-
-  /* Font Sizes */
-
-  /* Font Weights */
-
-  /* Radiuses */
-
-  /* Spaces */
-
-  /* Various */
 }
 
 :root {

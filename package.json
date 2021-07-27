@@ -1,6 +1,6 @@
 {
   "name": "ector-ui",
-  "version": "3.4.100",
+  "version": "3.4.101",
   "description": "",
   "author": "EctorParking",
   "license": "MIT",
@@ -35,6 +35,7 @@
   "dependencies": {
     "core-js": "3",
     "react-dates": "^20.1.0",
+    "react-lottie": "^1.2.3",
     "react-select": "^2.4.2"
   },
   "devDependencies": {

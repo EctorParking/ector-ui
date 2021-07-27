@@ -16,19 +16,6 @@
   position: relative;
 }
 
-.button .track {
-  animation: outFromFetching 0.2s linear forwards;
-  background-color: var(--accent);
-  border-radius: var(--radiusLarge);
-  content: '';
-  height: 100%;
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  width: 0%;
-}
-
 .button[disabled] {
   background-color: var(--lightAccent);
   cursor: not-allowed;
@@ -40,31 +27,12 @@
 
 .button.fetching {
   background-color: var(--lightAccent);
+  padding: var(--spaceMedium) var(--spaceLarge);
 }
 
-.track.fetchingTrack {
-  animation: fetching 3s cubic-bezier(0.33, 0.6, 0.3, 0.69) forwards;
-  opacity: 1;
-}
-
-@keyframes fetching {
-  from {
-    width: 0%;
-  }
-
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes outFromFetching {
-  from {
-    opacity: 1;
-    width: 100%;
-  }
-
-  to {
-    opacity: 0;
-    width: 100%;
-  }
+.buttonLoader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
