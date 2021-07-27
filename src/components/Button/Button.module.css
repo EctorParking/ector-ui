@@ -27,7 +27,6 @@
 
 .button.fetching {
   background-color: var(--lightAccent);
-  padding: var(--spaceSmall) var(--spaceLarge);
 }
 
 .buttonLoader {

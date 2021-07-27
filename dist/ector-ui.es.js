@@ -16,6 +16,10 @@ function createCommonjsModule(fn, module) {
 	return module = { exports: {} }, fn(module, module.exports), module.exports;
 }
 
+function getCjsExportFromNamespace (n) {
+	return n && n.default || n;
+}
+
 var check = function (it) {
   return it && it.Math == Math && it;
 };
@@ -3636,9 +3640,17 @@ _setToStringTag(Math, 'Math', true);
 // 24.3.3 JSON[@@toStringTag]
 _setToStringTag(_global.JSON, 'JSON', true);
 
+
+
+var es6_object_toString = /*#__PURE__*/Object.freeze({
+
+});
+
 _wksDefine('asyncIterator');
 
 _wksDefine('observable');
+
+getCjsExportFromNamespace(es6_object_toString);
 
 var symbol = _core.Symbol;
 
@@ -19833,7 +19845,7 @@ Loader.propTypes = {
   visible: PropTypes$1.bool
 };
 
-var css$b = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.Button-module_button__6y6Zv {\n  background-color: #F7D48A;\n  border-radius: 30px;\n  font-weight: 700;\n  line-height: 16px;\n  overflow: hidden;\n  padding: 16px 32px;\n  position: relative;\n  text-transform: uppercase;\n  -webkit-transition: background-color 0.2s ease-in-out;\n  transition: background-color 0.2s ease-in-out;\n}\n\n.Button-module_button__6y6Zv span {\n  position: relative;\n}\n\n.Button-module_button__6y6Zv[disabled] {\n  background-color: #F8E5B6;\n  cursor: not-allowed\n}\n\n.Button-module_button__6y6Zv[disabled]:hover {\n  background-color: #F8E5B6;\n}\n\n.Button-module_button__6y6Zv.Button-module_fetching__1tCOO {\n  background-color: #F8E5B6;\n  padding: 16px 32px;\n}\n\n.Button-module_buttonLoader__2oerA {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n}\n";
+var css$b = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.Button-module_button__6y6Zv {\n  background-color: #F7D48A;\n  border-radius: 30px;\n  font-weight: 700;\n  line-height: 16px;\n  overflow: hidden;\n  padding: 16px 32px;\n  position: relative;\n  text-transform: uppercase;\n  -webkit-transition: background-color 0.2s ease-in-out;\n  transition: background-color 0.2s ease-in-out;\n}\n\n.Button-module_button__6y6Zv span {\n  position: relative;\n}\n\n.Button-module_button__6y6Zv[disabled] {\n  background-color: #F8E5B6;\n  cursor: not-allowed\n}\n\n.Button-module_button__6y6Zv[disabled]:hover {\n  background-color: #F8E5B6;\n}\n\n.Button-module_button__6y6Zv.Button-module_fetching__1tCOO {\n  background-color: #F8E5B6;\n}\n\n.Button-module_buttonLoader__2oerA {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n}\n";
 var s$a = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","button":"Button-module_button__6y6Zv","fetching":"Button-module_fetching__1tCOO","buttonLoader":"Button-module_buttonLoader__2oerA"};
 styleInject(css$b);
 
@@ -28500,7 +28512,7 @@ var performanceNow = createCommonjsModule(function (module) {
 
 }).call(commonjsGlobal);
 
-//# sourceMappingURL=performance-now.js.map
+
 });
 
 var root = typeof window === 'undefined' ? commonjsGlobal : window
@@ -29098,6 +29110,8 @@ exports.classNamesShape = classNamesShape;
 unwrapExports(PropTypes);
 var PropTypes_1 = PropTypes.classNamesShape;
 var PropTypes_2 = PropTypes.timeoutsShape;
+
+var _reactLifecyclesCompat = getCjsExportFromNamespace(reactLifecyclesCompat_es);
 
 var Transition_1 = createCommonjsModule(function (module, exports) {
 
@@ -29704,7 +29718,7 @@ Transition.ENTERING = 2;
 Transition.ENTERED = 3;
 Transition.EXITING = 4;
 
-var _default = (0, reactLifecyclesCompat_es.polyfill)(Transition);
+var _default = (0, _reactLifecyclesCompat.polyfill)(Transition);
 
 exports.default = _default;
 });
@@ -30425,7 +30439,7 @@ TransitionGroup.propTypes = process.env.NODE_ENV !== "production" ? {
 } : {};
 TransitionGroup.defaultProps = defaultProps;
 
-var _default = (0, reactLifecyclesCompat_es.polyfill)(TransitionGroup);
+var _default = (0, _reactLifecyclesCompat.polyfill)(TransitionGroup);
 
 exports.default = _default;
 module.exports = exports["default"];
