@@ -30,7 +30,12 @@ const Button = ({
   return (
     <Element {...props}>
       <span>
-        <Loader size="sm" className={s.buttonLoader} visible={fetching} noPadding />
+        <Loader
+          size="sm"
+          className={s.buttonLoader}
+          visible={fetching}
+          noPadding
+        />
         {!fetching && children}
       </span>
     </Element>
