@@ -14,6 +14,7 @@ const Button = ({
   className,
   fetching,
   disabled,
+  size,
 }) => {
   const props = {
     className: [s.button, fetching ? s.fetching : '', className].join(' '),
@@ -23,6 +24,7 @@ const Button = ({
     ...(to ? { to } : {}),
     ...(disabled ? { disabled } : {}),
     title,
+    size,
   };
 
   const Element = onClick || type !== '' ? 'button' : component;
@@ -30,7 +32,7 @@ const Button = ({
   return (
     <Element {...props}>
       <Loader
-        size="sm"
+        size={size}
         className={s.buttonLoader}
         visible={fetching}
         noPadding
@@ -56,6 +58,7 @@ Button.defaultProps = {
   disabled: false,
   component: 'a',
   title: undefined,
+  size: 'sm',
 };
 
 Button.propTypes = {
@@ -72,6 +75,7 @@ Button.propTypes = {
     PropTypes.node,
   ]).isRequired,
   component: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  size: PropTypes.string,
 };
 
 export default Button;

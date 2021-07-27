@@ -19847,7 +19847,8 @@ var Button = function Button(_ref) {
       onClick = _ref.onClick,
       className = _ref.className,
       fetching = _ref.fetching,
-      disabled = _ref.disabled;
+      disabled = _ref.disabled,
+      size = _ref.size;
 
   var props = _objectSpread({
     className: [s$a.button, fetching ? s$a.fetching : '', className].join(' ')
@@ -19862,12 +19863,13 @@ var Button = function Button(_ref) {
   } : {}, disabled ? {
     disabled: disabled
   } : {}, {
-    title: title
+    title: title,
+    size: size
   });
 
   var Element = onClick || type !== '' ? 'button' : component;
   return React__default.createElement(Element, props, React__default.createElement(Loader, {
-    size: "sm",
+    size: size,
     className: s$a.buttonLoader,
     visible: fetching,
     noPadding: true
@@ -19887,7 +19889,8 @@ Button.defaultProps = {
   fetching: false,
   disabled: false,
   component: 'a',
-  title: undefined
+  title: undefined,
+  size: 'sm'
 };
 Button.propTypes = {
   href: PropTypes$1.string,
@@ -19899,7 +19902,8 @@ Button.propTypes = {
   fetching: PropTypes$1.bool,
   disabled: PropTypes$1.bool,
   children: PropTypes$1.oneOfType([PropTypes$1.arrayOf(PropTypes$1.node), PropTypes$1.node]).isRequired,
-  component: PropTypes$1.oneOfType([PropTypes$1.string, PropTypes$1.node])
+  component: PropTypes$1.oneOfType([PropTypes$1.string, PropTypes$1.node]),
+  size: PropTypes$1.string
 };
 
 var quot = /"/g;
