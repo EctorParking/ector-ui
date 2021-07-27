@@ -18,12 +18,13 @@ storiesOf('Loader', module)
       size: select(
         'Size',
         {
-          xSmall: 'xSmall',
-          small: 'small',
-          medium: 'medium',
-          large: 'large',
+          xs: 'xs',
+          sm: 'sm',
+          md: 'md',
+          lg: 'lg',
+          xl: 'xl',
         },
-        'medium'
+        'md'
       ),
     };
 

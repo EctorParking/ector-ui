@@ -15,8 +15,6 @@ storiesOf('Button', module)
 
   .add('with knobs', () => {
     const props = {
-      animationDuration: number('Animation duration', 3),
-      fetchingDelay: number('Fetching duration', 0.5),
       children: text('Text', 'Rechercher'),
       title: text('Title', 'Accessibility title'),
       fetching: boolean('Fetching', false),

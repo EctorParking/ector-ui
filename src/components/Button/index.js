@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Loader from '../Loader';
 import s from './Button.module.css';
 
 const Button = ({
-  animationDuration,
-  fetchingDelay,
   children,
   href,
   to,
@@ -30,21 +29,15 @@ const Button = ({
 
   return (
     <Element {...props}>
-      <span
-        className={[s.track, fetching ? s.fetchingTrack : ''].join(' ')}
-        style={{
-          animationDuration: `${animationDuration}s`,
-          animationDelay: fetching ? `${fetchingDelay}s` : '',
-        }}
-      />
-      <span>{children}</span>
+      <span>
+        <Loader size="sm" className={s.buttonLoader} visible={fetching} noPadding />
+        {!fetching && children}
+      </span>
     </Element>
   );
 };
 
 Button.defaultProps = {
-  animationDuration: 4,
-  fetchingDelay: 0.5,
   href: '#',
   onClick: null,
   to: '',
@@ -57,8 +50,6 @@ Button.defaultProps = {
 };
 
 Button.propTypes = {
-  animationDuration: PropTypes.number,
-  fetchingDelay: PropTypes.number,
   href: PropTypes.string,
   onClick: PropTypes.func,
   to: PropTypes.string,
