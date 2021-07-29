@@ -27156,43 +27156,52 @@ FlightInformationForm.propTypes = {
   onDisplayFlightInformationClick: PropTypes$1.func
 };
 
-var shallowEqual = function shallowEqual(newValue, oldValue) {
-  return newValue === oldValue;
-};
-
-var simpleIsEqual = function simpleIsEqual(newArgs, lastArgs) {
-  return newArgs.length === lastArgs.length && newArgs.every(function (newArg, index) {
-    return shallowEqual(newArg, lastArgs[index]);
-  });
-};
-
-function index$1 (resultFn, isEqual) {
-  if (isEqual === void 0) {
-    isEqual = simpleIsEqual;
-  }
-
-  var lastThis;
-  var lastArgs = [];
-  var lastResult;
-  var calledOnce = false;
-
-  var result = function result() {
-    for (var _len = arguments.length, newArgs = new Array(_len), _key = 0; _key < _len; _key++) {
-      newArgs[_key] = arguments[_key];
+var safeIsNaN = Number.isNaN ||
+    function ponyfill(value) {
+        return typeof value === 'number' && value !== value;
+    };
+function isEqual(first, second) {
+    if (first === second) {
+        return true;
     }
-
-    if (calledOnce && lastThis === this && isEqual(newArgs, lastArgs)) {
-      return lastResult;
+    if (safeIsNaN(first) && safeIsNaN(second)) {
+        return true;
     }
+    return false;
+}
+function areInputsEqual(newInputs, lastInputs) {
+    if (newInputs.length !== lastInputs.length) {
+        return false;
+    }
+    for (var i = 0; i < newInputs.length; i++) {
+        if (!isEqual(newInputs[i], lastInputs[i])) {
+            return false;
+        }
+    }
+    return true;
+}
 
-    lastResult = resultFn.apply(this, newArgs);
-    calledOnce = true;
-    lastThis = this;
-    lastArgs = newArgs;
-    return lastResult;
-  };
-
-  return result;
+function memoizeOne(resultFn, isEqual) {
+    if (isEqual === void 0) { isEqual = areInputsEqual; }
+    var lastThis;
+    var lastArgs = [];
+    var lastResult;
+    var calledOnce = false;
+    function memoized() {
+        var newArgs = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            newArgs[_i] = arguments[_i];
+        }
+        if (calledOnce && lastThis === this && isEqual(newArgs, lastArgs)) {
+            return lastResult;
+        }
+        lastResult = resultFn.apply(this, newArgs);
+        calledOnce = true;
+        lastThis = this;
+        lastArgs = newArgs;
+        return lastResult;
+    }
+    return memoized;
 }
 
 function memoize(fn) {
@@ -28702,8 +28711,8 @@ var AutosizeInput = function (_Component) {
 			this.updateInputWidth();
 		}
 	}, {
-		key: 'componentWillReceiveProps',
-		value: function componentWillReceiveProps(nextProps) {
+		key: 'UNSAFE_componentWillReceiveProps',
+		value: function UNSAFE_componentWillReceiveProps(nextProps) {
 			var id = nextProps.id;
 
 			if (id !== this.props.id) {
@@ -28880,6 +28889,7 @@ function _interopRequireDefault(obj) {
 }
 
 module.exports = _interopRequireDefault;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
 });
 
 unwrapExports(interopRequireDefault);
@@ -29634,7 +29644,8 @@ Transition.propTypes = process.env.NODE_ENV !== "production" ? {
    * @type {number | { enter?: number, exit?: number, appear?: number }}
    */
   timeout: function timeout(props) {
-    var pt = process.env.NODE_ENV !== "production" ? PropTypes.timeoutsShape : {};    if (!props.addEndListener) pt = pt.isRequired;
+    var pt = PropTypes.timeoutsShape;
+    if (!props.addEndListener) pt = pt.isRequired;
 
     for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
       args[_key - 1] = arguments[_key];
@@ -29875,8 +29886,11 @@ function (_React$Component) {
     };
 
     _this.onEntered = function (node, appearing) {
-      var _this$getClassNames3 = _this.getClassNames('enter'),
-          doneClassName = _this$getClassNames3.doneClassName;
+      var appearClassName = _this.getClassNames('appear').doneClassName;
+
+      var enterClassName = _this.getClassNames('enter').doneClassName;
+
+      var doneClassName = appearing ? appearClassName + " " + enterClassName : enterClassName;
 
       _this.removeClasses(node, appearing ? 'appear' : 'enter');
 
@@ -29888,8 +29902,8 @@ function (_React$Component) {
     };
 
     _this.onExit = function (node) {
-      var _this$getClassNames4 = _this.getClassNames('exit'),
-          className = _this$getClassNames4.className;
+      var _this$getClassNames3 = _this.getClassNames('exit'),
+          className = _this$getClassNames3.className;
 
       _this.removeClasses(node, 'appear');
 
@@ -29903,8 +29917,8 @@ function (_React$Component) {
     };
 
     _this.onExiting = function (node) {
-      var _this$getClassNames5 = _this.getClassNames('exit'),
-          activeClassName = _this$getClassNames5.activeClassName;
+      var _this$getClassNames4 = _this.getClassNames('exit'),
+          activeClassName = _this$getClassNames4.activeClassName;
 
       _this.reflowAndAddClass(node, activeClassName);
 
@@ -29914,8 +29928,8 @@ function (_React$Component) {
     };
 
     _this.onExited = function (node) {
-      var _this$getClassNames6 = _this.getClassNames('exit'),
-          doneClassName = _this$getClassNames6.doneClassName;
+      var _this$getClassNames5 = _this.getClassNames('exit'),
+          doneClassName = _this$getClassNames5.doneClassName;
 
       _this.removeClasses(node, 'exit');
 
@@ -29928,9 +29942,11 @@ function (_React$Component) {
 
     _this.getClassNames = function (type) {
       var classNames = _this.props.classNames;
-      var className = typeof classNames !== 'string' ? classNames[type] : classNames + '-' + type;
-      var activeClassName = typeof classNames !== 'string' ? classNames[type + 'Active'] : className + '-active';
-      var doneClassName = typeof classNames !== 'string' ? classNames[type + 'Done'] : className + '-done';
+      var isStringClassNames = typeof classNames === 'string';
+      var prefix = isStringClassNames && classNames ? classNames + '-' : '';
+      var className = isStringClassNames ? prefix + type : classNames[type];
+      var activeClassName = isStringClassNames ? className + '-active' : classNames[type + 'Active'];
+      var doneClassName = isStringClassNames ? className + '-done' : classNames[type + 'Done'];
       return {
         className: className,
         activeClassName: activeClassName,
@@ -29944,10 +29960,10 @@ function (_React$Component) {
   var _proto = CSSTransition.prototype;
 
   _proto.removeClasses = function removeClasses(node, type) {
-    var _this$getClassNames7 = this.getClassNames(type),
-        className = _this$getClassNames7.className,
-        activeClassName = _this$getClassNames7.activeClassName,
-        doneClassName = _this$getClassNames7.doneClassName;
+    var _this$getClassNames6 = this.getClassNames(type),
+        className = _this$getClassNames6.className,
+        activeClassName = _this$getClassNames6.activeClassName,
+        doneClassName = _this$getClassNames6.doneClassName;
 
     className && removeClass$1(node, className);
     activeClassName && removeClass$1(node, activeClassName);
@@ -29983,19 +29999,34 @@ function (_React$Component) {
   return CSSTransition;
 }(_react.default.Component);
 
+CSSTransition.defaultProps = {
+  classNames: ''
+};
 CSSTransition.propTypes = process.env.NODE_ENV !== "production" ? _extends({}, _Transition.default.propTypes, {
   /**
-   * The animation classNames applied to the component as it enters, exits or has finished the transition.
-   * A single name can be provided and it will be suffixed for each stage: e.g.
+   * The animation classNames applied to the component as it enters, exits or
+   * has finished the transition. A single name can be provided and it will be
+   * suffixed for each stage: e.g.
    *
-   * `classNames="fade"` applies `fade-enter`, `fade-enter-active`, `fade-enter-done`,
-   * `fade-exit`, `fade-exit-active`, `fade-exit-done`, `fade-appear`, and `fade-appear-active`.
+   * `classNames="fade"` applies `fade-enter`, `fade-enter-active`,
+   * `fade-enter-done`, `fade-exit`, `fade-exit-active`, `fade-exit-done`,
+   * `fade-appear`, `fade-appear-active`, and `fade-appear-done`.
+   *
+   * **Note**: `fade-appear-done` and `fade-enter-done` will _both_ be applied.
+   * This allows you to define different behavior for when appearing is done and
+   * when regular entering is done, using selectors like
+   * `.fade-enter-done:not(.fade-appear-done)`. For example, you could apply an
+   * epic entrance animation when element first appears in the DOM using
+   * [Animate.css](https://daneden.github.io/animate.css/). Otherwise you can
+   * simply use `fade-enter-done` for defining both cases.
+   *
    * Each individual classNames can also be specified independently like:
    *
    * ```js
    * classNames={{
    *  appear: 'my-appear',
    *  appearActive: 'my-active-appear',
+   *  appearDone: 'my-done-appear',
    *  enter: 'my-enter',
    *  enterActive: 'my-active-enter',
    *  enterDone: 'my-done-enter',
@@ -30011,8 +30042,8 @@ CSSTransition.propTypes = process.env.NODE_ENV !== "production" ? _extends({}, _
    * import styles from './styles.css';
    * ```
    *
-   * you might want to use camelCase in your CSS file, that way could simply spread
-   * them instead of listing them one by one:
+   * you might want to use camelCase in your CSS file, that way could simply
+   * spread them instead of listing them one by one:
    *
    * ```js
    * classNames={{ ...styles }}
@@ -30021,6 +30052,7 @@ CSSTransition.propTypes = process.env.NODE_ENV !== "production" ? _extends({}, _
    * @type {string | {
    *  appear?: string,
    *  appearActive?: string,
+   *  appearDone?: string,
    *  enter?: string,
    *  enterActive?: string,
    *  enterDone?: string,
@@ -31206,7 +31238,9 @@ var menuCSS = function menuCSS(_ref2) {
       borderRadius = _ref2$theme.borderRadius,
       spacing = _ref2$theme.spacing,
       colors = _ref2$theme.colors;
-  return _ref3 = {}, _defineProperty$1(_ref3, alignToControl(placement), '100%'), _defineProperty$1(_ref3, "backgroundColor", colors.neutral0), _defineProperty$1(_ref3, "borderRadius", borderRadius), _defineProperty$1(_ref3, "boxShadow", '0 0 0 1px hsla(0, 0%, 0%, 0.1), 0 4px 11px hsla(0, 0%, 0%, 0.1)'), _defineProperty$1(_ref3, "marginBottom", spacing.menuGutter), _defineProperty$1(_ref3, "marginTop", spacing.menuGutter), _defineProperty$1(_ref3, "position", 'absolute'), _defineProperty$1(_ref3, "width", '100%'), _defineProperty$1(_ref3, "zIndex", 1), _ref3;
+  return _ref3 = {
+    label: 'menu'
+  }, _defineProperty$1(_ref3, alignToControl(placement), '100%'), _defineProperty$1(_ref3, "backgroundColor", colors.neutral0), _defineProperty$1(_ref3, "borderRadius", borderRadius), _defineProperty$1(_ref3, "boxShadow", '0 0 0 1px hsla(0, 0%, 0%, 0.1), 0 4px 11px hsla(0, 0%, 0%, 0.1)'), _defineProperty$1(_ref3, "marginBottom", spacing.menuGutter), _defineProperty$1(_ref3, "marginTop", spacing.menuGutter), _defineProperty$1(_ref3, "position", 'absolute'), _defineProperty$1(_ref3, "width", '100%'), _defineProperty$1(_ref3, "zIndex", 1), _ref3;
 }; // NOTE: internal only
 
 var MenuPlacer =
@@ -31893,6 +31927,7 @@ var A11yText = function A11yText(props) {
 
     /*#__PURE__*/
     css$16({
+      label: 'a11yText',
       zIndex: 9999,
       border: 0,
       clip: 'rect(1px, 1px, 1px, 1px)',
@@ -31941,6 +31976,7 @@ function (_Component) {
 
         /*#__PURE__*/
         css$16({
+          label: 'dummyInput',
           // get rid of any default styles
           background: 0,
           border: 0,
@@ -32506,6 +32542,7 @@ var containerCSS = function containerCSS(_ref) {
   var isDisabled = _ref.isDisabled,
       isRtl = _ref.isRtl;
   return {
+    label: 'container',
     direction: isRtl ? 'rtl' : null,
     pointerEvents: isDisabled ? 'none' : null,
     // cancel mouse events when disabled
@@ -32655,6 +32692,7 @@ var baseCSS = function baseCSS(_ref2) {
       baseUnit = _ref2$theme.spacing.baseUnit,
       colors = _ref2$theme.colors;
   return {
+    label: 'indicatorContainer',
     color: isFocused ? colors.neutral60 : colors.neutral20,
     display: 'flex',
     padding: baseUnit * 2,
@@ -32706,6 +32744,7 @@ var indicatorSeparatorCSS = function indicatorSeparatorCSS(_ref3) {
       baseUnit = _ref3$theme.spacing.baseUnit,
       colors = _ref3$theme.colors;
   return {
+    label: 'indicatorSeparator',
     alignSelf: 'stretch',
     backgroundColor: isDisabled ? colors.neutral10 : colors.neutral20,
     marginBottom: baseUnit * 2,
@@ -32738,6 +32777,7 @@ var loadingIndicatorCSS = function loadingIndicatorCSS(_ref4) {
       colors = _ref4$theme.colors,
       baseUnit = _ref4$theme.spacing.baseUnit;
   return {
+    label: 'loadingIndicator',
     color: isFocused ? colors.neutral60 : colors.neutral20,
     display: 'flex',
     padding: baseUnit * 2,
@@ -32826,6 +32866,7 @@ var css$1$1 = function css$$1(_ref) {
       borderRadius = _ref$theme.borderRadius,
       spacing = _ref$theme.spacing;
   return {
+    label: 'control',
     alignItems: 'center',
     backgroundColor: isDisabled ? colors.neutral5 : colors.neutral0,
     borderColor: isDisabled ? colors.neutral10 : isFocused ? colors.primary : colors.neutral20,
@@ -32905,6 +32946,7 @@ var Group = function Group(props) {
 var groupHeadingCSS = function groupHeadingCSS(_ref2) {
   var spacing = _ref2.theme.spacing;
   return {
+    label: 'group',
     color: '#999',
     cursor: 'default',
     display: 'block',
@@ -32951,6 +32993,7 @@ var inputCSS = function inputCSS(_ref) {
 
 var inputStyle = function inputStyle(isHidden) {
   return {
+    label: 'input',
     background: 0,
     border: 0,
     fontSize: 'inherit',
@@ -32996,6 +33039,7 @@ var multiValueCSS = function multiValueCSS(_ref) {
       borderRadius = _ref$theme.borderRadius,
       colors = _ref$theme.colors;
   return {
+    label: 'multiValue',
     backgroundColor: colors.neutral10,
     borderRadius: borderRadius / 2,
     display: 'flex',
@@ -33157,6 +33201,7 @@ var optionCSS = function optionCSS(_ref) {
       spacing = _ref$theme.spacing,
       colors = _ref$theme.colors;
   return {
+    label: 'option',
     backgroundColor: isSelected ? colors.primary : isFocused ? colors.primary25 : 'transparent',
     color: isDisabled ? colors.neutral20 : isSelected ? colors.neutral0 : 'inherit',
     cursor: 'default',
@@ -33168,7 +33213,7 @@ var optionCSS = function optionCSS(_ref) {
     WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
     // provide some affordance on touch devices
     ':active': {
-      backgroundColor: isSelected ? colors.primary : colors.primary50
+      backgroundColor: !isDisabled && (isSelected ? colors.primary : colors.primary50)
     }
   };
 };
@@ -33201,6 +33246,7 @@ var placeholderCSS = function placeholderCSS(_ref) {
       spacing = _ref$theme.spacing,
       colors = _ref$theme.colors;
   return {
+    label: 'placeholder',
     color: colors.neutral50,
     marginLeft: spacing.baseUnit / 2,
     marginRight: spacing.baseUnit / 2,
@@ -33231,6 +33277,7 @@ var css$2$1 = function css$$1(_ref) {
       spacing = _ref$theme.spacing,
       colors = _ref$theme.colors;
   return {
+    label: 'singleValue',
     color: isDisabled ? colors.neutral40 : colors.neutral80,
     marginLeft: spacing.baseUnit / 2,
     marginRight: spacing.baseUnit / 2,
@@ -33430,7 +33477,6 @@ function (_Component) {
       focusedValue: null,
       inputIsHidden: false,
       isFocused: false,
-      isComposing: false,
       menuOptions: {
         render: [],
         focusable: []
@@ -33439,6 +33485,8 @@ function (_Component) {
     });
 
     _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "blockOptionHover", false);
+
+    _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "isComposing", false);
 
     _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "clearFocusValueOnUpdate", false);
 
@@ -33790,15 +33838,11 @@ function (_Component) {
     });
 
     _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "onCompositionStart", function () {
-      _this.setState({
-        isComposing: true
-      });
+      _this.isComposing = true;
     });
 
     _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "onCompositionEnd", function () {
-      _this.setState({
-        isComposing: false
-      });
+      _this.isComposing = false;
     });
 
     _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "onTouchStart", function (_ref4) {
@@ -33955,7 +33999,6 @@ function (_Component) {
           tabSelectsValue = _this$props7.tabSelectsValue,
           openMenuOnFocus = _this$props7.openMenuOnFocus;
       var _this$state2 = _this.state,
-          isComposing = _this$state2.isComposing,
           focusedOption = _this$state2.focusedOption,
           focusedValue = _this$state2.focusedValue,
           selectValue = _this$state2.selectValue;
@@ -34006,7 +34049,7 @@ function (_Component) {
           break;
 
         case 'Tab':
-          if (isComposing) return;
+          if (_this.isComposing) return;
 
           if (event.shiftKey || !menuIsOpen || !tabSelectsValue || !focusedOption || // don't capture the event if the menu opens on focus and the focused
           // option is already selected; it breaks the flow of navigation
@@ -34019,9 +34062,15 @@ function (_Component) {
           break;
 
         case 'Enter':
+          if (event.keyCode === 229) {
+            // ignore the keydown event from an Input Method Editor(IME)
+            // ref. https://www.w3.org/TR/uievents/#determine-keydown-keyup-keyCode
+            break;
+          }
+
           if (menuIsOpen) {
             if (!focusedOption) return;
-            if (isComposing) return;
+            if (_this.isComposing) return;
 
             _this.selectOption(focusedOption);
 
@@ -34117,7 +34166,7 @@ function (_Component) {
     });
 
     var value = _props.value;
-    _this.cacheComponents = index$1(_this.cacheComponents, exportedEqual).bind(_assertThisInitialized$1(_assertThisInitialized$1(_this)));
+    _this.cacheComponents = memoizeOne(_this.cacheComponents, exportedEqual).bind(_assertThisInitialized$1(_assertThisInitialized$1(_this)));
 
     _this.cacheComponents(_props.components);
 
@@ -34820,14 +34869,14 @@ function (_Component) {
 
       if (isMulti) {
         var selectValues = selectValue.map(function (opt) {
-          var isFocused = opt === focusedValue;
+          var isOptionFocused = opt === focusedValue;
           return React__default.createElement(MultiValue, _extends$2({}, commonProps, {
             components: {
               Container: MultiValueContainer,
               Label: MultiValueLabel,
               Remove: MultiValueRemove
             },
-            isFocused: isFocused,
+            isFocused: isOptionFocused,
             isDisabled: isDisabled,
             key: _this4.getOptionValue(opt),
             removeProps: {
@@ -35884,7 +35933,7 @@ var MultiValue$1 = AnimatedComponents.MultiValue;
 var Placeholder$1 = AnimatedComponents.Placeholder;
 var SingleValue$1 = AnimatedComponents.SingleValue;
 var ValueContainer$1 = AnimatedComponents.ValueContainer;
-var index$2 = index$1(makeAnimated, exportedEqual);
+var index$1 = memoizeOne(makeAnimated, exportedEqual);
 
 var index$1$1 = manageState(Select$1);
 
@@ -37870,7 +37919,7 @@ DateTimePicker.defaultProps = {
   hasEndTimeError: false
 };
 
-var index$3 = './components';
+var index$2 = './components';
 
 exports.ActionLink = ActionLink;
 exports.AddItemCard = AddItemCard;
@@ -37934,5 +37983,5 @@ exports.TitleStep = TitleStep;
 exports.Tooltip = Tooltip;
 exports.ZonesPicker = ZonesPicker;
 exports.arbitraryUnsetMinutesValue = arbitraryUnsetMinutesValue;
-exports.default = index$3;
+exports.default = index$2;
 //# sourceMappingURL=ector-ui.js.map
