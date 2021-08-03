@@ -22540,7 +22540,7 @@ InputButton.propTypes = {
   SubTextComponent: PropTypes$1.func
 };
 
-var css$y = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n/* The input_checkbox */\n\n.InputCheckbox-module_input_checkbox__cqwzW {\n  display: block;\n  position: relative;\n  padding-left: 32px;\n  padding-left: 32px;\n  padding-left: 2rem;\n  padding-top: 2px;\n  cursor: pointer;\n  font-size: 16px;\n  font-size: 16px;\n  font-size: 1rem;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  height: 24px;\n  height: 24px;\n  height: 1.5rem\n}\n\n.InputCheckbox-module_input_checkbox__cqwzW:active {\n  opacity: 0.6;\n}\n\n/* Hide the browser's default checkbox */\n\n.InputCheckbox-module_input_checkbox__cqwzW input {\n  position: absolute;\n  border: 32px solid transparent;\n  border: 32px solid transparent;\n  border: 2rem solid transparent;\n  opacity: 0;\n  cursor: pointer;\n  top: 0;\n  left: 0;\n  height: 22px;\n  margin-top: 0;\n  width: 22px;\n  z-index: 1;\n}\n\n/* Create a custom checkbox */\n\n.InputCheckbox-module_checkmark__QSyLA {\n  background-color: #FFFFFF;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  position: absolute;\n  top: 0;\n  left: 0;\n  height: 22px;\n  width: 22px;\n  border-radius: 0.25rem;\n  border: 2px solid #C7CDDA;\n}\n\n/* On mouse-over, add a grey background color */\n\n.InputCheckbox-module_input_checkbox__cqwzW:hover input ~ .InputCheckbox-module_checkmark__QSyLA {\n  border-color: rgb(206, 206, 206);\n}\n\n/* When the checkbox is checked, add a blue background */\n\n.InputCheckbox-module_input_checkbox__cqwzW input:checked ~ .InputCheckbox-module_checkmark__QSyLA {\n  background-color: transparent;\n  border-color: rgb(206, 206, 206);\n}\n\n/* Create the checkmark/indicator (hidden when not checked) */\n\n.InputCheckbox-module_checkmark__QSyLA:after {\n  background-color: #F7D48A;\n  border-radius: 2px;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  content: '';\n  display: none;\n  height: 14px;\n  left: 2px;\n  position: absolute;\n  top: 2px;\n  width: 14px;\n}\n\n/* Show the checkmark when checked */\n\n.InputCheckbox-module_input_checkbox__cqwzW input:checked ~ .InputCheckbox-module_checkmark__QSyLA:after {\n  display: block;\n}\n";
+var css$y = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n/* The input_checkbox */\n\n.InputCheckbox-module_input_checkbox__cqwzW {\n  display: block;\n  position: relative;\n  padding-left: 32px;\n  padding-left: 32px;\n  padding-left: 2rem;\n  padding-top: 2px;\n  cursor: pointer;\n  font-size: 16px;\n  font-size: 16px;\n  font-size: 1rem;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  height: 22px;\n  width: 22px\n}\n\n.InputCheckbox-module_input_checkbox__cqwzW:active {\n  opacity: 0.6;\n}\n\n/* Hide the browser's default checkbox */\n\n.InputCheckbox-module_input_checkbox__cqwzW input {\n  position: absolute;\n  border: 2px solid transparent;\n  opacity: 0;\n  cursor: pointer;\n  top: 0;\n  left: 0;\n  height: 22px;\n  margin-top: 0;\n  width: 22px;\n  z-index: 1;\n}\n\n/* Create a custom checkbox */\n\n.InputCheckbox-module_checkmark__QSyLA {\n  background-color: #FFFFFF;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  position: absolute;\n  top: 0;\n  left: 0;\n  height: 22px;\n  width: 22px;\n  border-radius: 0.25rem;\n  border: 2px solid #C7CDDA;\n}\n\n/* On mouse-over, add a grey background color */\n\n.InputCheckbox-module_input_checkbox__cqwzW:hover input ~ .InputCheckbox-module_checkmark__QSyLA {\n  border-color: rgb(206, 206, 206);\n}\n\n/* When the checkbox is checked, add a blue background */\n\n.InputCheckbox-module_input_checkbox__cqwzW input:checked ~ .InputCheckbox-module_checkmark__QSyLA {\n  background-color: transparent;\n  border-color: rgb(206, 206, 206);\n}\n\n/* Create the checkmark/indicator (hidden when not checked) */\n\n.InputCheckbox-module_checkmark__QSyLA:after {\n  background-color: #F7D48A;\n  border-radius: 2px;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  content: '';\n  display: none;\n  height: 14px;\n  left: 2px;\n  position: absolute;\n  top: 2px;\n  width: 14px;\n}\n\n/* Show the checkmark when checked */\n\n.InputCheckbox-module_input_checkbox__cqwzW input:checked ~ .InputCheckbox-module_checkmark__QSyLA:after {\n  display: block;\n}\n";
 var s$x = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","input_checkbox":"InputCheckbox-module_input_checkbox__cqwzW","checkmark":"InputCheckbox-module_checkmark__QSyLA"};
 styleInject(css$y);
 
@@ -22554,7 +22554,7 @@ var InputCheckbox = function InputCheckbox(_ref) {
       restOfProps = _objectWithoutProperties(_ref, ["id", "children", "onChange", "checked", "className", "checkmarkClassName"]);
 
   return React__default.createElement("label", {
-    htmlFor: "".concat(id),
+    htmlFor: id ? "".concat(id) : undefined,
     className: "".concat(s$x.input_checkbox, " ").concat(className)
   }, children, React__default.createElement("input", _extends({
     type: "checkbox",
@@ -22568,14 +22568,15 @@ var InputCheckbox = function InputCheckbox(_ref) {
 
 InputCheckbox.defaultProps = {
   id: undefined,
+  children: undefined,
   onChange: function onChange() {},
   checked: false,
   className: '',
   checkmarkClassName: undefined
 };
 InputCheckbox.propTypes = {
-  children: PropTypes$1.node.isRequired,
   id: PropTypes$1.string,
+  children: PropTypes$1.node,
   onChange: PropTypes$1.func,
   checked: PropTypes$1.bool,
   className: PropTypes$1.string,

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import s from './InputCheckbox.module.css';
 
 const InputCheckbox = ({
@@ -12,9 +11,11 @@ const InputCheckbox = ({
   checkmarkClassName,
   ...restOfProps
 }) => (
-  <label htmlFor={`${id}`} className={`${s.input_checkbox} ${className}`}>
+  <label
+    htmlFor={id ? `${id}` : undefined}
+    className={`${s.input_checkbox} ${className}`}
+  >
     {children}
-
     <input
       type="checkbox"
       id={`${id}`}
@@ -28,6 +29,7 @@ const InputCheckbox = ({
 
 InputCheckbox.defaultProps = {
   id: undefined,
+  children: undefined,
   onChange: () => {},
   checked: false,
   className: '',
@@ -35,8 +37,8 @@ InputCheckbox.defaultProps = {
 };
 
 InputCheckbox.propTypes = {
-  children: PropTypes.node.isRequired,
   id: PropTypes.string,
+  children: PropTypes.node,
   onChange: PropTypes.func,
   checked: PropTypes.bool,
   className: PropTypes.string,
