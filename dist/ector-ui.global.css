@@ -1890,9 +1890,8 @@
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  height: 24px;
-  height: 24px;
-  height: 1.5rem
+  height: 22px;
+  width: 22px
 }
 
 .InputCheckbox-module_input_checkbox__cqwzW:active {
@@ -1903,9 +1902,7 @@
 
 .InputCheckbox-module_input_checkbox__cqwzW input {
   position: absolute;
-  border: 32px solid transparent;
-  border: 32px solid transparent;
-  border: 2rem solid transparent;
+  border: 2px solid transparent;
   opacity: 0;
   cursor: pointer;
   top: 0;
