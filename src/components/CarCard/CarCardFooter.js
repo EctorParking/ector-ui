@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import LinkUnderlined from '../LinkUnderlined';
 import s from './CarCardFooter.module.css';
 import TextsType, { DefaultTexts } from './CarCardTextsType';
-import carImage from '../../assets/images/voiture-01-trois-quart-grise.svg';
+import CarAvatarSvg from './CarAvatar';
 
-const CarCardFooter = ({ texts, mode, onClick, onSubmit, id }) => {
+const CarCardFooter = ({ texts, mode, onClick, onSubmit, id, color }) => {
   let what;
 
   if (mode.indexOf('delete') === 0) {
@@ -31,7 +31,7 @@ const CarCardFooter = ({ texts, mode, onClick, onSubmit, id }) => {
 
   return (
     <div className={s.footer} id={id}>
-      <img src={carImage} className={s.carImage} alt="Car" />
+      <CarAvatarSvg color={color} />
       {what}
     </div>
   );

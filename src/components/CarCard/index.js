@@ -52,6 +52,7 @@ const CarCard = ({
         onClick={onClick}
         onSubmit={onSubmit}
         id={`${idPrefix}Footer`}
+        color={car.color}
       />
     );
 
