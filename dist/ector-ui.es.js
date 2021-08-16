@@ -16,6 +16,10 @@ function createCommonjsModule(fn, module) {
 	return module = { exports: {} }, fn(module, module.exports), module.exports;
 }
 
+function getCjsExportFromNamespace (n) {
+	return n && n.default || n;
+}
+
 var check = function (it) {
   return it && it.Math == Math && it;
 };
@@ -3636,9 +3640,17 @@ _setToStringTag(Math, 'Math', true);
 // 24.3.3 JSON[@@toStringTag]
 _setToStringTag(_global.JSON, 'JSON', true);
 
+
+
+var es6_object_toString = /*#__PURE__*/Object.freeze({
+
+});
+
 _wksDefine('asyncIterator');
 
 _wksDefine('observable');
+
+getCjsExportFromNamespace(es6_object_toString);
 
 var symbol = _core.Symbol;
 
@@ -20393,7 +20405,6 @@ styleInject(css$h);
 
 var CarAvatarSvg = function CarAvatarSvg(_ref) {
   var color = _ref.color;
-  console.log(color);
   return React__default.createElement("svg", {
     width: "100",
     fill: "none",
@@ -28720,7 +28731,7 @@ var performanceNow = createCommonjsModule(function (module) {
 
 }).call(commonjsGlobal);
 
-//# sourceMappingURL=performance-now.js.map
+
 });
 
 var root = typeof window === 'undefined' ? commonjsGlobal : window
@@ -29318,6 +29329,8 @@ exports.classNamesShape = classNamesShape;
 unwrapExports(PropTypes);
 var PropTypes_1 = PropTypes.classNamesShape;
 var PropTypes_2 = PropTypes.timeoutsShape;
+
+var _reactLifecyclesCompat = getCjsExportFromNamespace(reactLifecyclesCompat_es);
 
 var Transition_1 = createCommonjsModule(function (module, exports) {
 
@@ -29924,7 +29937,7 @@ Transition.ENTERING = 2;
 Transition.ENTERED = 3;
 Transition.EXITING = 4;
 
-var _default = (0, reactLifecyclesCompat_es.polyfill)(Transition);
+var _default = (0, _reactLifecyclesCompat.polyfill)(Transition);
 
 exports.default = _default;
 });
@@ -30645,7 +30658,7 @@ TransitionGroup.propTypes = process.env.NODE_ENV !== "production" ? {
 } : {};
 TransitionGroup.defaultProps = defaultProps;
 
-var _default = (0, reactLifecyclesCompat_es.polyfill)(TransitionGroup);
+var _default = (0, _reactLifecyclesCompat.polyfill)(TransitionGroup);
 
 exports.default = _default;
 module.exports = exports["default"];
