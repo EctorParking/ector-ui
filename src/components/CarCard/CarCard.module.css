@@ -14,11 +14,6 @@
   padding-left: 0.5em;
 }
 
-.carImage {
-  margin-top: -0.5em;
-  width: 100px;
-}
-
 .checkIcon {
   color: var(--white);
   font-size: var(--fontSizeSubtitle);

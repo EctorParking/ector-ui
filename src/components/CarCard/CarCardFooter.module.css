@@ -5,10 +5,7 @@
   display: flex;
   justify-content: space-between;
   padding: 0 1rem;
-}
-.carImage {
-  margin-top: -0.5em;
-  width: 100px;
+  margin-top: -1em;
 }
 .checkIcon {
   color: var(--white);
