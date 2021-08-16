@@ -1,7 +1,7 @@
 import React from 'react';
 
-const CarAvatarSvg = color => (
-  <svg width="100" fill="none" xmlns="http://www.w3.org/2000/svg">
+const CarAvatarSvg = ({ color }) => { console.log(color); return (
+  <svg width="100" fill="none" viewBox="0 0 263 133" xmlns="http://www.w3.org/2000/svg">
     <path
       opacity="0.1"
       d="M186.856 44.2246H174.058V57.0231H186.856V44.2246Z"
@@ -506,6 +506,6 @@ const CarAvatarSvg = color => (
       fill={color}
     />
   </svg>
-);
+)};
 
 export default CarAvatarSvg;
