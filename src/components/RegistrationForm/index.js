@@ -13,6 +13,9 @@ import {
   CountryPropType,
   DefaultCountries,
 } from '../PhoneInput/PhoneInputCountries';
+import Icon from '../Icon';
+import eyeClosedIcon from '../../assets/images/eyeClosed.svg';
+import eyeOpenedIcon from '../../assets/images/eyeOpened.svg';
 
 class RegistrationForm extends React.Component {
   constructor(props) {
@@ -36,6 +39,10 @@ class RegistrationForm extends React.Component {
       this,
       'passwordConfirmation'
     );
+    this.state = {
+      hidePassword: true,
+      hidePasswordConfirmation: true,
+    };
   }
 
   handleChangeProperty(field, event) {
@@ -50,6 +57,28 @@ class RegistrationForm extends React.Component {
     return labelFooterPassword ? (
       <div className={s.footerLabel}>{labelFooterPassword}</div>
     ) : null;
+  };
+
+  renderEyeButton = () => {
+    const { hidePassword } = this.state;
+    return (
+      <Icon
+        src={hidePassword ? eyeClosedIcon : eyeOpenedIcon}
+        onClick={() => this.setState({ hidePassword: !hidePassword })}
+      />
+    );
+  };
+
+  renderEyeButtonConfirmation = () => {
+    const { hidePasswordConfirmation } = this.state;
+    return (
+      <Icon
+        src={hidePasswordConfirmation ? eyeClosedIcon : eyeOpenedIcon}
+        onClick={() =>
+          this.setState({ hidePasswordConfirmation: !hidePasswordConfirmation })
+        }
+      />
+    );
   };
 
   render() {
@@ -67,6 +96,8 @@ class RegistrationForm extends React.Component {
       defaultCountry,
       ...cardProps
     } = this.props;
+
+    const { hidePassword, hidePasswordConfirmation } = this.state;
 
     const actualCardProps = {
       ...cardProps,
@@ -129,8 +160,9 @@ class RegistrationForm extends React.Component {
               value={values.password || ''}
               error={errors.password}
               LabelFooterComponent={this.renderLabelFooterPasswordComponent}
-              type="password"
+              type={hidePassword ? 'password' : 'text'}
               mandatory
+              RightComponent={this.renderEyeButton}
             />
             <InputLabel
               id="registrationFormPasswordConfirmationInput"
@@ -139,8 +171,9 @@ class RegistrationForm extends React.Component {
               onChange={this.handleChangePasswordConfirmation}
               value={values.passwordConfirmation || ''}
               error={errors.passwordConfirmation}
-              type="password"
+              type={hidePasswordConfirmation ? 'password' : 'text'}
               mandatory
+              RightComponent={this.renderEyeButtonConfirmation}
             />
           </div>
         </div>

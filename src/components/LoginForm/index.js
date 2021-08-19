@@ -5,109 +5,139 @@ import s from './LoginForm.module.css';
 import { InputLabel, Card, LinkUnderlined, ActionLink } from '..';
 import TextsType, { DefaultTexts } from './LoginFormTextsType';
 import { LoginFormErrorsType, LoginFormValuesType } from './LoginType';
+import Icon from '../Icon';
+import eyeClosedIcon from '../../assets/images/eyeClosed.svg';
+import eyeOpenedIcon from '../../assets/images/eyeOpened.svg';
 
-const LoginForm = ({
-  className,
-  values,
-  errors,
-  texts,
-  onChangeEmail,
-  onChangePassword,
-  onSubmit,
-  onClickEditEmail,
-  emailInputClassName,
-  passwordInputClassName,
-  contentClassName,
-  buttonClassName,
-  fetching,
-  errorLogin,
-  buttonTestid,
-  RootComponent,
-  SubmitButtonComponent,
-  onClickPasswordForgotten,
-  shouldDisplayEmailField,
-  shouldDisplayEmailText,
-  ...cardProps
-}) => (
-  <RootComponent
-    {...cardProps}
-    className={[s.card, className].join(' ')}
-    contentClassName={[s.contentCard, contentClassName].join(' ')}
-  >
-    {shouldDisplayEmailField && !shouldDisplayEmailText && (
-      <InputLabel
-        className={[s.input, emailInputClassName].join('')}
-        hasError={
-          !!errors.email ||
-          (typeof errorLogin !== 'undefined' && errorLogin !== '')
-        }
-        label={texts.email}
-        mandatory
-        type="email"
-        id="loginFormEmailInput"
-        value={values.email || ''}
-        onChange={onChangeEmail}
-        error={errors.email}
+class LoginForm extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      hidePassword: true,
+    };
+  }
+
+  renderEyeButton = () => {
+    const { hidePassword } = this.state;
+    return (
+      <Icon
+        src={hidePassword ? eyeClosedIcon : eyeOpenedIcon}
+        onClick={() => this.setState({ hidePassword: !hidePassword })}
       />
-    )}
-    {shouldDisplayEmailText && (
-      <InputLabel
-        className={[s.input, emailInputClassName].join('')}
-        hasError={
-          !!errors.email ||
-          (typeof errorLogin !== 'undefined' && errorLogin !== '')
-        }
-        label={texts.email}
-        mandatory
-        type="email"
-        id="loginFormEmailInput"
-        InputComponent={() => (
-          <div className={s.emailTextContainer}>
-            {values.email}{' '}
-            <button onClick={onClickEditEmail} id="EditEmailButton">
-              <i className="icon-edit " id="EditIcon" />
-            </button>
-          </div>
+    );
+  };
+
+  render() {
+    const {
+      className,
+      values,
+      errors,
+      texts,
+      onChangeEmail,
+      onChangePassword,
+      onSubmit,
+      onClickEditEmail,
+      emailInputClassName,
+      passwordInputClassName,
+      contentClassName,
+      buttonClassName,
+      fetching,
+      errorLogin,
+      buttonTestid,
+      RootComponent,
+      SubmitButtonComponent,
+      onClickPasswordForgotten,
+      shouldDisplayEmailField,
+      shouldDisplayEmailText,
+      ...cardProps
+    } = this.props;
+
+    const { hidePassword } = this.state;
+
+    return (
+      <RootComponent
+        {...cardProps}
+        className={[s.card, className].join(' ')}
+        contentClassName={[s.contentCard, contentClassName].join(' ')}
+      >
+        {shouldDisplayEmailField && !shouldDisplayEmailText && (
+          <InputLabel
+            className={[s.input, emailInputClassName].join('')}
+            hasError={
+              !!errors.email ||
+              (typeof errorLogin !== 'undefined' && errorLogin !== '')
+            }
+            label={texts.email}
+            mandatory
+            type="email"
+            id="loginFormEmailInput"
+            value={values.email || ''}
+            onChange={onChangeEmail}
+            error={errors.email}
+          />
         )}
-        value={values.email || ''}
-        onChange={onChangeEmail}
-        error={errors.email}
-      />
-    )}
-    <InputLabel
-      className={[s.input, passwordInputClassName].join(' ')}
-      hasError={
-        !!errors.password ||
-        (typeof errorLogin !== 'undefined' && errorLogin !== '')
-      }
-      label={texts.password}
-      mandatory
-      type="password"
-      id="loginFormPasswordInput"
-      value={values.password || ''}
-      onChange={onChangePassword}
-      error={errors.password}
-    />
-    {onClickPasswordForgotten && (
-      <ActionLink
-        label={texts.onClickPasswordForgottenLabel}
-        className={s.forgottenPasswordLink}
-        onClick={onClickPasswordForgotten}
-      />
-    )}
-    {typeof errorLogin !== 'undefined' && errorLogin !== '' && (
-      <div className={s.error}>{errorLogin}</div>
-    )}
-    <SubmitButtonComponent
-      onClick={onSubmit}
-      className={[s.button, buttonClassName].join(' ')}
-      fetching={fetching}
-      testid={buttonTestid}
-    >
-      <span>{texts.submitButton}</span>
-    </SubmitButtonComponent>
-  </RootComponent>
-);
+        {shouldDisplayEmailText && (
+          <InputLabel
+            className={[s.input, emailInputClassName].join('')}
+            hasError={
+              !!errors.email ||
+              (typeof errorLogin !== 'undefined' && errorLogin !== '')
+            }
+            label={texts.email}
+            mandatory
+            type="email"
+            id="loginFormEmailInput"
+            InputComponent={() => (
+              <div className={s.emailTextContainer}>
+                {values.email}{' '}
+                <button onClick={onClickEditEmail} id="EditEmailButton">
+                  <i className="icon-edit " id="EditIcon" />
+                </button>
+              </div>
+            )}
+            value={values.email || ''}
+            onChange={onChangeEmail}
+            error={errors.email}
+          />
+        )}
+        <InputLabel
+          className={[s.input, passwordInputClassName].join(' ')}
+          hasError={
+            !!errors.password ||
+            (typeof errorLogin !== 'undefined' && errorLogin !== '')
+          }
+          label={texts.password}
+          mandatory
+          type={hidePassword ? 'password' : 'text'}
+          id="loginFormPasswordInput"
+          value={values.password || ''}
+          onChange={onChangePassword}
+          error={errors.password}
+          RightComponent={this.renderEyeButton}
+        />
+        {onClickPasswordForgotten && (
+          <ActionLink
+            label={texts.onClickPasswordForgottenLabel}
+            className={s.forgottenPasswordLink}
+            onClick={onClickPasswordForgotten}
+          />
+        )}
+        {typeof errorLogin !== 'undefined' && errorLogin !== '' && (
+          <div className={s.error}>{errorLogin}</div>
+        )}
+        <SubmitButtonComponent
+          onClick={onSubmit}
+          className={[s.button, buttonClassName].join(' ')}
+          fetching={fetching}
+          testid={buttonTestid}
+        >
+          <span>{texts.submitButton}</span>
+        </SubmitButtonComponent>
+      </RootComponent>
+    );
+  }
+}
 
 LoginForm.defaultProps = {
   texts: DefaultTexts,

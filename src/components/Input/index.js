@@ -18,7 +18,9 @@ const Input = ({
   ...restOfProps
 }) => (
   <div className={[s.container, containerClassName].join(' ')}>
-    <LeftComponent className={s.inputPrepend} />
+    <div className={s.inputPrepend}>
+      <LeftComponent />
+    </div>
     <input
       className={[s.input, hasError ? s.inputWithError : '', className].join(
         ' '
@@ -31,7 +33,9 @@ const Input = ({
       onKeyDown={onKeyDown}
       {...restOfProps}
     />
-    <RightComponent className={s.inputAppend} />
+    <div className={s.inputAppend}>
+      <RightComponent />
+    </div>
   </div>
 );
 
