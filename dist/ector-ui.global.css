@@ -1760,8 +1760,8 @@
   font-size: 2rem;
   height: 100%;
   position: absolute;
-  right: 5px;
-  top: 0;
+  right: 10px;
+  top: 3px;
 }
 
 :root {
@@ -2339,6 +2339,41 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+:root {
+  /* General */
+
+  /* Colors */
+
+  /* Font Sizes */
+
+  /* Font Weights */
+
+  /* Radiuses */
+
+  /* Spaces */
+
+  /* Various */
+}
+
+.Icon-module_withBackground__EomNm {
+  position: relative;
+  z-index: 2;
+}
+
+.Icon-module_var__WzdLB(\--background) {
+  position: absolute;
+  z-index: 1;
+  height: 20.8px;
+  height: 20.8px;
+  height: 1.3rem;
+  margin-top: -0.65em;
+  top: 50%;
+}
+
+.Icon-module_withBackground__EomNm.Icon-module_left__2QZ0s {
+  margin-left: 8px;
 }
 
 :root {
@@ -4217,41 +4252,6 @@
 
 .ZonesPicker-module_inputAction__qyPpy {
   cursor: pointer;
-}
-
-:root {
-  /* General */
-
-  /* Colors */
-
-  /* Font Sizes */
-
-  /* Font Weights */
-
-  /* Radiuses */
-
-  /* Spaces */
-
-  /* Various */
-}
-
-.Icon-module_withBackground__EomNm {
-  position: relative;
-  z-index: 2;
-}
-
-.Icon-module_var__WzdLB(\--background) {
-  position: absolute;
-  z-index: 1;
-  height: 20.8px;
-  height: 20.8px;
-  height: 1.3rem;
-  margin-top: -0.65em;
-  top: 50%;
-}
-
-.Icon-module_withBackground__EomNm.Icon-module_left__2QZ0s {
-  margin-left: 8px;
 }
 
 :root {
