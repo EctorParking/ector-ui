@@ -36116,15 +36116,17 @@ var InputSelect = function InputSelect(_ref) {
   var options = _ref.options,
       classname = _ref.classname,
       onChange = _ref.onChange,
+      onOpen = _ref.onOpen,
       value = _ref.value,
       error = _ref.error,
       modal = _ref.modal,
-      props = _objectWithoutProperties(_ref, ["options", "classname", "onChange", "value", "error", "modal"]);
+      props = _objectWithoutProperties(_ref, ["options", "classname", "onChange", "onOpen", "value", "error", "modal"]);
 
   var ectorStyles = {
     menu: function menu(styles) {
       return _objectSpread({}, styles, {
-        borderRadius: 30
+        borderRadius: 30,
+        overflow: 'hidden'
       });
     },
     menuPortal: function menuPortal(styles) {
@@ -36166,6 +36168,7 @@ var InputSelect = function InputSelect(_ref) {
     styles: ectorStyles,
     value: value,
     onChange: onChange,
+    onMenuOpen: onOpen,
     filterOption: createFilter({
       ignoreAccents: false
     }) // https://github.com/JedWatson/react-select/issues/3128#issuecomment-487256349
@@ -36192,6 +36195,7 @@ InputSelect.propTypes = {
   error: PropTypes$1.string,
   classname: PropTypes$1.string,
   onChange: PropTypes$1.func.isRequired,
+  onOpen: PropTypes$1.func,
   modal: PropTypes$1.bool
 };
 

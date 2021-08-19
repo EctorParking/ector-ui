@@ -17,6 +17,7 @@ const InputSelect = ({
   options,
   classname,
   onChange,
+  onOpen,
   value,
   error,
   modal,
@@ -26,6 +27,7 @@ const InputSelect = ({
     menu: styles => ({
       ...styles,
       borderRadius: 30,
+      overflow: 'hidden',
     }),
     menuPortal: styles => ({
       ...styles,
@@ -66,6 +68,7 @@ const InputSelect = ({
       styles={ectorStyles}
       value={value}
       onChange={onChange}
+      onMenuOpen={onOpen}
       filterOption={createFilter({ ignoreAccents: false })} // https://github.com/JedWatson/react-select/issues/3128#issuecomment-487256349
       {...modalProps}
       {...props}
@@ -95,6 +98,7 @@ InputSelect.propTypes = {
   error: PropTypes.string,
   classname: PropTypes.string,
   onChange: PropTypes.func.isRequired,
+  onOpen: PropTypes.func,
   modal: PropTypes.bool,
 };
 
