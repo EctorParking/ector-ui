@@ -5,7 +5,6 @@ import s from './LoginForm.module.css';
 import { InputLabel, Card, LinkUnderlined, ActionLink } from '..';
 import TextsType, { DefaultTexts } from './LoginFormTextsType';
 import { LoginFormErrorsType, LoginFormValuesType } from './LoginType';
-import Icon from '../Icon';
 import eyeClosedIcon from '../../assets/images/eyeClosed.svg';
 import eyeOpenedIcon from '../../assets/images/eyeOpened.svg';
 
@@ -18,13 +17,23 @@ class LoginForm extends React.Component {
     };
   }
 
+  onClickEye = e => {
+    const { hidePassword } = this.state;
+    e.preventDefault();
+    this.setState({ hidePassword: !hidePassword });
+  };
+
   renderEyeButton = () => {
     const { hidePassword } = this.state;
     return (
-      <Icon
-        src={hidePassword ? eyeClosedIcon : eyeOpenedIcon}
-        onClick={() => this.setState({ hidePassword: !hidePassword })}
-      />
+      <button onClick={this.onClickEye} id="HidePasswordButton">
+        <img
+          width="20px"
+          height="20px"
+          alt="Eye"
+          src={hidePassword ? eyeOpenedIcon : eyeClosedIcon}
+        />
+      </button>
     );
   };
 

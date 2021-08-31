@@ -24,10 +24,6 @@ function createCommonjsModule(fn, module) {
 	return module = { exports: {} }, fn(module, module.exports), module.exports;
 }
 
-function getCjsExportFromNamespace (n) {
-	return n && n.default || n;
-}
-
 var check = function (it) {
   return it && it.Math == Math && it;
 };
@@ -3648,17 +3644,9 @@ _setToStringTag(Math, 'Math', true);
 // 24.3.3 JSON[@@toStringTag]
 _setToStringTag(_global.JSON, 'JSON', true);
 
-
-
-var es6_object_toString = /*#__PURE__*/Object.freeze({
-
-});
-
 _wksDefine('asyncIterator');
 
 _wksDefine('observable');
-
-getCjsExportFromNamespace(es6_object_toString);
 
 var symbol = _core.Symbol;
 
@@ -22608,7 +22596,7 @@ GenderPicker.propTypes = {
   error: PropTypes$1.string
 };
 
-var css$w = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.Input-module_container__y-kIk {\n  position: relative;\n}\n\n.Input-module_input__1TjxO {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #000031;\n  border: 1px solid #C7CDDA;\n  border-radius: 30px;\n  display: block;\n  height: 40px;\n  padding: 8px 16px;\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  -ms-flex-preferred-size: auto;\n      flex-basis: auto;\n  margin-top: 4px\n}\n\n.Input-module_input__1TjxO::-webkit-input-placeholder {\n  opacity: 0.8;\n  color: #C7CDDA;\n}\n\n.Input-module_input__1TjxO::-ms-input-placeholder {\n  opacity: 0.8;\n  color: #C7CDDA;\n}\n\n.input::-webkit-input-placeholder {\n  opacity: 0.8;\n  color: #C7CDDA;\n}\n\n.input::-ms-input-placeholder {\n  opacity: 0.8;\n  color: #C7CDDA;\n}\n\n.Input-module_input__1TjxO::placeholder {\n  opacity: 0.8;\n  color: #C7CDDA;\n}\n\n.Input-module_input__1TjxO:focus {\n  border-color: #F7D48A;\n}\n\n/* Hide big cross in IE */\n\n.Input-module_input__1TjxO::-ms-clear {\n  display: none;\n}\n\n.Input-module_inputWithError__q0fcE {\n  border-color: #DF6262 !important;\n}\n\n.Input-module_inputPrepend__36mBv {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  color: #A9B3C5;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 32px;\n  font-size: 32px;\n  font-size: 2rem;\n  height: 100%;\n  left: 5px;\n  position: absolute;\n  top: 0;\n}\n\n.Input-module_inputAppend__2lJtU {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  color: #A9B3C5;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 32px;\n  font-size: 32px;\n  font-size: 2rem;\n  height: 100%;\n  position: absolute;\n  right: 10px;\n  top: 3px;\n}\n";
+var css$w = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.Input-module_container__y-kIk {\n  position: relative;\n}\n\n.Input-module_input__1TjxO {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #000031;\n  border: 1px solid #C7CDDA;\n  border-radius: 30px;\n  display: block;\n  height: 40px;\n  padding: 8px 16px;\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  -ms-flex-preferred-size: auto;\n      flex-basis: auto;\n  margin-top: 4px\n}\n\n.Input-module_input__1TjxO::-webkit-input-placeholder {\n  opacity: 0.8;\n  color: #C7CDDA;\n}\n\n.Input-module_input__1TjxO::-ms-input-placeholder {\n  opacity: 0.8;\n  color: #C7CDDA;\n}\n\n.input::-webkit-input-placeholder {\n  opacity: 0.8;\n  color: #C7CDDA;\n}\n\n.input::-ms-input-placeholder {\n  opacity: 0.8;\n  color: #C7CDDA;\n}\n\n.Input-module_input__1TjxO::placeholder {\n  opacity: 0.8;\n  color: #C7CDDA;\n}\n\n.Input-module_input__1TjxO:focus {\n  border-color: #F7D48A;\n}\n\n/* Hide big cross in IE */\n\n.Input-module_input__1TjxO::-ms-clear {\n  display: none;\n}\n\n.Input-module_inputWithError__q0fcE {\n  border-color: #DF6262 !important;\n}\n\n.Input-module_inputPrepend__36mBv {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  color: #A9B3C5;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 32px;\n  font-size: 32px;\n  font-size: 2rem;\n  height: 100%;\n  left: 5px;\n  position: absolute;\n  top: 0;\n}\n\n.Input-module_inputAppend__2lJtU {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  color: #A9B3C5;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 32px;\n  font-size: 32px;\n  font-size: 2rem;\n  height: 100%;\n  position: absolute;\n  right: 10px;\n  top: 1px;\n}\n";
 var s$v = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","container":"Input-module_container__y-kIk","input":"Input-module_input__1TjxO","inputWithError":"Input-module_inputWithError__q0fcE","inputPrepend":"Input-module_inputPrepend__36mBv","inputAppend":"Input-module_inputAppend__2lJtU"};
 styleInject(css$w);
 
@@ -23018,118 +23006,9 @@ var LoginFormErrorsType = PropTypes$1.shape({
   password: PropTypes$1.string
 });
 
-var bgWhite = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAAaCAYAAABLlle3AAAAAXNSR0IArs4c6QAAA/dJREFUSA291ttuVVUUxvFuOaiIKB7QYjkogpqgiZFEvdGH8IV8AV+Eay+8MMY7Q6LxgCYeEIECgqIFROVg2f5/q3s3paX1Rp3J37nXXHOOMb5vzFWcmfkPxng83rRR2NFGL9d7V9D7e/dXLI5Go9s9i7MjzDfi8bjYO7/XjM1rVlYtFHBbSxLcji0F+rN5Z7wVH8bxeCQOxDgMcTd19pf2Xx1WVvznrkknlW9p32LMxu6QbEGg5jfiYPQ4Pt9sz73xYDwUC3FPiL8m6Rp7JwlZNRe/xpF4NBQxH9vjULBQUSeCjfp4IexV2JW4Fl+m9lbz8ribUodfCFY9F5JT4eDeuBQCbg293R8PBJUfhAJuhmHPE3HWw3SwgEcrFav+q3CY0jMhqL7avysMz5BYEja+HntCj/Xd/stxx9g8Sbi1WTLJHw6BKN4X1jEbFErgN+X2sd1l00vKJNf/P0JCce4YU3tZSY2kLsjhEOTZEFwgCvXxo/gpXg4FPhaSXw/uiKOXEor3VCh2eQz29sQmB4xzofo3Q1AXR+DnQ48ll3Q+qNAzt9sFwtNhKFRSLoq3PDZ3s6iESq+34fdmjZdcEP1h333hW30tXJrvQ9HgitkdYD+1zrBYYXPFvTD5xmf01CKbb7UoqJsq8RfBQv1jn6qhkFdDop0xLUY/KdL/l4L6H2IhngznPo4h2VTptgqQUBGsZKN+CuJieMeNqeo9k3U2KlpyhXhm8VxQqjDFvLcUf3STvf52Cs4e/VMVRfrJWv1WiJ4LYChUXyXTUwkvBmslEMvM5k9DwVfLdaODI4dmeijvkJgqa5+HgwoQaKqYhVrwW1AtqFlh9lHmnSL81mP2ngkxqBkPSYeH0WixxFf6fSHMlL4SeqGnChKYYhZaOx0SUyuxT4q183EsvgtnriVMzGFQs3K4TGdbUJWZNapUPcuts01ifbZ+In4OlnsWXDt2hLUDsTtBLB7GstLpQi8pdCEo/iQkcmnYei4EVeyloO5yfB37g2q9dV4rpt+4Nr1b7NOJWlyd1Pd3ONgmKGvsORgCfROUzQYrF8Jlo15vFUYlVzyLZ+gvZ4axOqnDJ0P1Auya4M/aj3E2BHVRzofCuGAWdHrb9/bbp/VtUM9qAsQcVJinw23LgeGPhH992Khqlr4fDm+P46EI76nXLxZ6z4FTYc9nsS8kNuy/096SaTymg2qXRn+NU6HHlJkls+dIUEYhK+1XjBvuvP66K0QNKszrjtRSyjY302ezqeJYtfLfYSpZ/kzMxqF4JyijXkEnO6eAfx4snti84ebpnua98WJsif7nbGY0Pnq0+e3iLImk4l8bJaEMLobP6f8Zg7LxUuL1Mv4Nki9xooUuN/EAAAAASUVORK5CYII=";
+var eyeClosedIcon = 'data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20class%3D%22ionicon%22%20viewBox%3D%220%200%20512%20512%22%20fill%3D%22%23000031%22%3E%3Ctitle%3EEye%20Off%3C%2Ftitle%3E%3Cpath%20d%3D%22M432%20448a15.92%2015.92%200%2001-11.31-4.69l-352-352a16%2016%200%200122.62-22.62l352%20352A16%2016%200%2001432%20448zM255.66%20384c-41.49%200-81.5-12.28-118.92-36.5-34.07-22-64.74-53.51-88.7-91v-.08c19.94-28.57%2041.78-52.73%2065.24-72.21a2%202%200%2000.14-2.94L93.5%20161.38a2%202%200%2000-2.71-.12c-24.92%2021-48.05%2046.76-69.08%2076.92a31.92%2031.92%200%2000-.64%2035.54c26.41%2041.33%2060.4%2076.14%2098.28%20100.65C162%20402%20207.9%20416%20255.66%20416a239.13%20239.13%200%200075.8-12.58%202%202%200%2000.77-3.31l-21.58-21.58a4%204%200%2000-3.83-1%20204.8%20204.8%200%2001-51.16%206.47zM490.84%20238.6c-26.46-40.92-60.79-75.68-99.27-100.53C349%20110.55%20302%2096%20255.66%2096a227.34%20227.34%200%2000-74.89%2012.83%202%202%200%2000-.75%203.31l21.55%2021.55a4%204%200%20003.88%201%20192.82%20192.82%200%200150.21-6.69c40.69%200%2080.58%2012.43%20118.55%2037%2034.71%2022.4%2065.74%2053.88%2089.76%2091a.13.13%200%20010%20.16%20310.72%20310.72%200%2001-64.12%2072.73%202%202%200%2000-.15%202.95l19.9%2019.89a2%202%200%20002.7.13%20343.49%20343.49%200%200068.64-78.48%2032.2%2032.2%200%2000-.1-34.78z%22%2F%3E%3Cpath%20d%3D%22M256%20160a95.88%2095.88%200%2000-21.37%202.4%202%202%200%2000-1%203.38l112.59%20112.56a2%202%200%20003.38-1A96%2096%200%2000256%20160zM165.78%20233.66a2%202%200%2000-3.38%201%2096%2096%200%2000115%20115%202%202%200%20001-3.38z%22%2F%3E%3C%2Fsvg%3E';
 
-var bgGrey = "data:image/png;base64,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";
-
-var bgBlue = "data:image/png;base64,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";
-
-var bgYellow = "data:image/png;base64,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";
-
-var bgMelrose = "data:image/png;base64,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";
-
-var css$D = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.Icon-module_withBackground__EomNm {\n  position: relative;\n  z-index: 2;\n}\n\n.Icon-module_var__WzdLB(\\--background) {\n  position: absolute;\n  z-index: 1;\n  height: 20.8px;\n  height: 20.8px;\n  height: 1.3rem;\n  margin-top: -0.65em;\n  top: 50%;\n}\n\n.Icon-module_withBackground__EomNm.Icon-module_left__2QZ0s {\n  margin-left: 8px;\n}\n";
-var s$C = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","withBackground":"Icon-module_withBackground__EomNm","var":"Icon-module_var__WzdLB","left":"Icon-module_left__2QZ0s"};
-styleInject(css$D);
-
-var _BackgroundImages;
-var Backgrounds = {
-  none: 'none',
-  white: 'white',
-  grey: 'grey',
-  melrose: 'melrose',
-  yellow: 'yellow',
-  blue: 'blue'
-};
-var BackgroundImages = (_BackgroundImages = {}, _defineProperty(_BackgroundImages, Backgrounds.none, undefined), _defineProperty(_BackgroundImages, Backgrounds.white, bgWhite), _defineProperty(_BackgroundImages, Backgrounds.grey, bgGrey), _defineProperty(_BackgroundImages, Backgrounds.yellow, bgYellow), _defineProperty(_BackgroundImages, Backgrounds.blue, bgBlue), _defineProperty(_BackgroundImages, Backgrounds.melrose, bgMelrose), _BackgroundImages);
-var Positions = ['left', 'right', 'top', 'bottom'];
-
-var IconComponent = function IconComponent(_ref) {
-  var src = _ref.src,
-      name = _ref.name,
-      children = _ref.children,
-      className = _ref.className;
-
-  if (src) {
-    return React__default.createElement("img", {
-      src: src,
-      alt: "icon",
-      className: className
-    });
-  }
-
-  if (name) {
-    return React__default.createElement("i", {
-      className: ["icon icon-".concat(name), className].join(' ')
-    });
-  }
-
-  return children;
-};
-
-IconComponent.defaultProps = {
-  src: undefined,
-  name: undefined,
-  className: undefined,
-  children: null
-};
-IconComponent.propTypes = {
-  src: PropTypes$1.string,
-  name: PropTypes$1.string,
-  className: PropTypes$1.string,
-  separator: PropTypes$1.string,
-  children: PropTypes$1.oneOfType([PropTypes$1.arrayOf(PropTypes$1.node), PropTypes$1.node])
-};
-
-var Icon = function Icon(_ref2) {
-  var variant = _ref2.variant,
-      position = _ref2.position,
-      src = _ref2.src,
-      name = _ref2.name,
-      children = _ref2.children,
-      backgroundClassName = _ref2.backgroundClassName,
-      Component = _ref2.IconComponent,
-      iconClassName = _ref2.iconClassName,
-      containerProps = _objectWithoutProperties(_ref2, ["variant", "position", "src", "name", "children", "backgroundClassName", "IconComponent", "iconClassName"]);
-
-  var hasBackground = typeof BackgroundImages[variant] !== 'undefined';
-  return React__default.createElement("span", containerProps, hasBackground ? React__default.createElement("img", {
-    src: BackgroundImages[variant],
-    alt: "icon background",
-    className: [s$C.background, backgroundClassName].join(' ')
-  }) : null, React__default.createElement(Component, {
-    src: src,
-    name: name,
-    className: [hasBackground ? s$C.withBackground : undefined, position ? s$C[position] : undefined, iconClassName].join(' ')
-  }, children));
-};
-
-Icon.defaultProps = {
-  src: undefined,
-  name: undefined,
-  className: undefined,
-  backgroundClassName: undefined,
-  variant: Backgrounds.none,
-  position: null,
-  children: null,
-  IconComponent: IconComponent,
-  iconClassName: undefined
-};
-Icon.propTypes = {
-  src: PropTypes$1.string,
-  name: PropTypes$1.string,
-  className: PropTypes$1.string,
-  backgroundClassName: PropTypes$1.string,
-  variant: PropTypes$1.oneOf(Object.keys(Backgrounds)),
-  position: PropTypes$1.oneOf(Positions),
-  children: PropTypes$1.oneOfType([PropTypes$1.arrayOf(PropTypes$1.node), PropTypes$1.node]),
-  IconComponent: PropTypes$1.func,
-  iconClassName: PropTypes$1.string
-};
-
-var eyeClosedIcon = 'data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2224px%22%20viewBox%3D%220%200%2024%2024%22%20width%3D%2224px%22%20fill%3D%22%23000000%22%3E%20%20%20%3Cpath%20d%3D%22M0%200h24v24H0V0zm0%200h24v24H0V0zm0%200h24v24H0V0zm0%200h24v24H0V0z%22%20fill%3D%22none%22%20%2F%3E%20%20%20%3Cpath%20d%3D%22M12%206c3.79%200%207.17%202.13%208.82%205.5-.59%201.22-1.42%202.27-2.41%203.12l1.41%201.41c1.39-1.23%202.49-2.77%203.18-4.53C21.27%207.11%2017%204%2012%204c-1.27%200-2.49.2-3.64.57l1.65%201.65C10.66%206.09%2011.32%206%2012%206zm-1.07%201.14L13%209.21c.57.25%201.03.71%201.28%201.28l2.07%202.07c.08-.34.14-.7.14-1.07C16.5%209.01%2014.48%207%2012%207c-.37%200-.72.05-1.07.14zM2.01%203.87l2.68%202.68C3.06%207.83%201.77%209.53%201%2011.5%202.73%2015.89%207%2019%2012%2019c1.52%200%202.98-.29%204.32-.82l3.42%203.42%201.41-1.41L3.42%202.45%202.01%203.87zm7.5%207.5l2.61%202.61c-.04.01-.08.02-.12.02-1.38%200-2.5-1.12-2.5-2.5%200-.05.01-.08.01-.13zm-3.4-3.4l1.75%201.75c-.23.55-.36%201.15-.36%201.78%200%202.48%202.02%204.5%204.5%204.5.63%200%201.23-.13%201.77-.36l.98.98c-.88.24-1.8.38-2.75.38-3.79%200-7.17-2.13-8.82-5.5.7-1.43%201.72-2.61%202.93-3.53z%22%20%2F%3E%3C%2Fsvg%3E';
-
-var eyeOpenedIcon = 'data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2224px%22%20viewBox%3D%220%200%2024%2024%22%20width%3D%2224px%22%20fill%3D%22%23000000%22%3E%20%20%20%3Cpath%20d%3D%22M0%200h24v24H0V0z%22%20fill%3D%22none%22%20%2F%3E%20%20%20%3Cpath%20d%3D%22M12%206c3.79%200%207.17%202.13%208.82%205.5C19.17%2014.87%2015.79%2017%2012%2017s-7.17-2.13-8.82-5.5C4.83%208.13%208.21%206%2012%206m0-2C7%204%202.73%207.11%201%2011.5%202.73%2015.89%207%2019%2012%2019s9.27-3.11%2011-7.5C21.27%207.11%2017%204%2012%204zm0%205c1.38%200%202.5%201.12%202.5%202.5S13.38%2014%2012%2014s-2.5-1.12-2.5-2.5S10.62%209%2012%209m0-2c-2.48%200-4.5%202.02-4.5%204.5S9.52%2016%2012%2016s4.5-2.02%204.5-4.5S14.48%207%2012%207z%22%20%2F%3E%3C%2Fsvg%3E';
+var eyeOpenedIcon = 'data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20class%3D%22ionicon%22%20viewBox%3D%220%200%20512%20512%22%20fill%3D%22%23000031%22%3E%3Ctitle%3EEye%3C%2Ftitle%3E%3Cpath%20d%3D%22M255.66%20112c-77.94%200-157.89%2045.11-220.83%20135.33a16%2016%200%2000-.27%2017.77C82.92%20340.8%20161.8%20400%20255.66%20400c92.84%200%20173.34-59.38%20221.79-135.25a16.14%2016.14%200%20000-17.47C428.89%20172.28%20347.8%20112%20255.66%20112z%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2232%22%2F%3E%3Ccircle%20cx%3D%22256%22%20cy%3D%22256%22%20r%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-miterlimit%3D%2210%22%20stroke-width%3D%2232%22%2F%3E%3C%2Fsvg%3E';
 
 var LoginForm =
 /*#__PURE__*/
@@ -23143,16 +23022,26 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(LoginForm).call(this, props));
 
+    _defineProperty(_assertThisInitialized(_this), "onClickEye", function (e) {
+      var hidePassword = _this.state.hidePassword;
+      e.preventDefault();
+
+      _this.setState({
+        hidePassword: !hidePassword
+      });
+    });
+
     _defineProperty(_assertThisInitialized(_this), "renderEyeButton", function () {
       var hidePassword = _this.state.hidePassword;
-      return React__default.createElement(Icon, {
-        src: hidePassword ? eyeClosedIcon : eyeOpenedIcon,
-        onClick: function onClick() {
-          return _this.setState({
-            hidePassword: !hidePassword
-          });
-        }
-      });
+      return React__default.createElement("button", {
+        onClick: _this.onClickEye,
+        id: "HidePasswordButton"
+      }, React__default.createElement("img", {
+        width: "20px",
+        height: "20px",
+        alt: "Eye",
+        src: hidePassword ? eyeOpenedIcon : eyeClosedIcon
+      }));
     });
 
     _this.state = {
@@ -23304,9 +23193,9 @@ LoginForm.propTypes = {
   shouldDisplayEmailText: PropTypes$1.bool
 };
 
-var css$E = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.PaymentMethodCard-module_card__1P35E {\n  position: relative;\n}\n\n.PaymentMethodCard-module_cardContent__CnD6V {\n  position: relative;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\n\n.PaymentMethodCard-module_pendingDeletion__-WJj3 {\n  background-color: #ECEFF6;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  padding: 20px;\n  text-align: center;\n}\n\n.PaymentMethodCard-module_footer__2mmr8 {\n  display: block;\n}\n";
-var s$D = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","card":"PaymentMethodCard-module_card__1P35E","cardContent":"PaymentMethodCard-module_cardContent__CnD6V","pendingDeletion":"PaymentMethodCard-module_pendingDeletion__-WJj3","footer":"PaymentMethodCard-module_footer__2mmr8"};
-styleInject(css$E);
+var css$D = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.PaymentMethodCard-module_card__1P35E {\n  position: relative;\n}\n\n.PaymentMethodCard-module_cardContent__CnD6V {\n  position: relative;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\n\n.PaymentMethodCard-module_pendingDeletion__-WJj3 {\n  background-color: #ECEFF6;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  padding: 20px;\n  text-align: center;\n}\n\n.PaymentMethodCard-module_footer__2mmr8 {\n  display: block;\n}\n";
+var s$C = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","card":"PaymentMethodCard-module_card__1P35E","cardContent":"PaymentMethodCard-module_cardContent__CnD6V","pendingDeletion":"PaymentMethodCard-module_pendingDeletion__-WJj3","footer":"PaymentMethodCard-module_footer__2mmr8"};
+styleInject(css$D);
 
 var DefaultTexts$5 = {
   select: 'Sélectionner',
@@ -23459,9 +23348,9 @@ React__default.createElement("g", {
 
 var iconTotal = 'data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%3Csvg%20version%3D%221.1%22%20%20id%3D%22svg24%22%20inkscape%3Aversion%3D%220.92.4%20%285da689c313%2C%202019-01-14%29%22%20sodipodi%3Adocname%3D%22TOTAL_SA_logo.svg%22%20xmlns%3Acc%3D%22http%3A%2F%2Fcreativecommons.org%2Fns%23%22%20xmlns%3Adc%3D%22http%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%22%20xmlns%3Ainkscape%3D%22http%3A%2F%2Fwww.inkscape.org%2Fnamespaces%2Finkscape%22%20xmlns%3Ardf%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%22%20xmlns%3Asodipodi%3D%22http%3A%2F%2Fsodipodi.sourceforge.net%2FDTD%2Fsodipodi-0.dtd%22%20xmlns%3Asvg%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%20viewBox%3D%220%200%2090.3%2028.5%22%20%20style%3D%22enable-background%3Anew%200%200%2090.3%2028.5%3B%22%20xml%3Aspace%3D%22preserve%22%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%20.st0%7Bfill%3A%23E4032E%3B%7D%20.st1%7Bfill%3A%23F49600%3B%7D%20.st2%7Bfill%3A%23164194%3B%7D%20.st3%7Bfill%3A%234A96D2%3B%7D%3C%2Fstyle%3E%3Csodipodi%3Anamedview%20%20bordercolor%3D%22%23666666%22%20borderopacity%3D%221%22%20fit-margin-bottom%3D%220%22%20fit-margin-left%3D%220%22%20fit-margin-right%3D%220%22%20fit-margin-top%3D%220%22%20gridtolerance%3D%2210%22%20guidetolerance%3D%2210%22%20id%3D%22namedview26%22%20inkscape%3Acurrent-layer%3D%22svg24%22%20inkscape%3Acx%3D%221672.5126%22%20inkscape%3Acy%3D%22411.77806%22%20inkscape%3Apageopacity%3D%220%22%20inkscape%3Apageshadow%3D%222%22%20inkscape%3Awindow-height%3D%221001%22%20inkscape%3Awindow-maximized%3D%221%22%20inkscape%3Awindow-width%3D%221920%22%20inkscape%3Awindow-x%3D%22-9%22%20inkscape%3Awindow-y%3D%22-9%22%20inkscape%3Azoom%3D%220.25%22%20objecttolerance%3D%2210%22%20pagecolor%3D%22%23ffffff%22%20showgrid%3D%22false%22%3E%20%3C%2Fsodipodi%3Anamedview%3E%3Cg%20id%3D%22g12%22%20transform%3D%22matrix%286.4121534%2C0%2C0%2C6.4121534%2C-8.4827436%2C-8.4827551%29%22%3E%20%3Cpath%20id%3D%22path2%22%20inkscape%3Aconnector-curvature%3D%220%22%20class%3D%22st0%22%20d%3D%22M9.2%2C3.4C8.6%2C3.4%2C8.3%2C3.6%2C8.3%2C4c0%2C0.4%2C0.3%2C0.7%2C0.9%2C0.7%20%20c0.6%2C0%2C0.9-0.2%2C0.9-0.7C10.1%2C3.6%2C9.8%2C3.4%2C9.2%2C3.4%20M9.2%2C4.4C8.9%2C4.4%2C8.7%2C4.3%2C8.7%2C4c0-0.2%2C0.2-0.4%2C0.5-0.4c0.3%2C0%2C0.5%2C0.1%2C0.5%2C0.4%20%20C9.7%2C4.3%2C9.5%2C4.4%2C9.2%2C4.4%22%2F%3E%20%3Cpath%20id%3D%22path4%22%20inkscape%3Aconnector-curvature%3D%220%22%20class%3D%22st0%22%20d%3D%22M10.2%2C3.4v0.3h0.5v0.9c0%2C0.1%2C0.1%2C0.1%2C0.2%2C0.1%20%20c0.1%2C0%2C0.2%2C0%2C0.2-0.1V3.7h0.5V3.4H10.2z%22%2F%3E%20%3Cpath%20id%3D%22path6%22%20inkscape%3Aconnector-curvature%3D%220%22%20class%3D%22st0%22%20d%3D%22M14.7%2C4.4c-0.1%2C0-0.2%2C0-0.3-0.1c-0.1-0.1-0.1-0.1-0.1-0.2V3.5%20%20c0-0.1-0.1-0.1-0.2-0.1c-0.1%2C0-0.2%2C0-0.2%2C0.1v0.6c0%2C0.2%2C0.1%2C0.4%2C0.2%2C0.5c0.2%2C0.1%2C0.5%2C0.1%2C0.8%2C0.1h0.4l0-0.1V4.4L14.7%2C4.4z%22%2F%3E%20%3Cpath%20id%3D%22path8%22%20inkscape%3Aconnector-curvature%3D%220%22%20class%3D%22st0%22%20d%3D%22M7.3%2C4.3c0%2C0.2%2C0.2%2C0.4%2C0.5%2C0.4V3.3h0.7V3H6.6v0.3h0.7V4.3z%22%2F%3E%20%3Cpath%20id%3D%22path10%22%20inkscape%3Aconnector-curvature%3D%220%22%20class%3D%22st0%22%20d%3D%22M13.7%2C4.7L13.7%2C4.7c-0.1-0.6-0.7-1.2-0.8-1.3c0%2C0-0.1%2C0-0.1%2C0%20%20c-0.1%2C0-0.1%2C0-0.1%2C0c-0.1%2C0.1-0.7%2C0.7-0.8%2C1.2l0%2C0.1h0.4l0%2C0c0-0.1%2C0-0.2%2C0.1-0.2h0.9c0%2C0.1%2C0.1%2C0.2%2C0.1%2C0.2l0%2C0H13.7z%20M12.4%2C4.1%20%20c0.1-0.1%2C0.2-0.3%2C0.3-0.4C12.9%2C3.9%2C13%2C4%2C13.1%2C4.1H12.4z%22%2F%3E%3C%2Fg%3E%3Cpath%20id%3D%22path14%22%20inkscape%3Aconnector-curvature%3D%220%22%20class%3D%22st1%22%20d%3D%22M26%2C15.8c0-0.1%2C0-0.1-0.1-0.2c-2%2C2.3-7%2C3.8-11.5%2C3.5%20c-2.6-0.2-7.5-1.6-10-3.1c2.6%2C2.5%2C5.7%2C4.4%2C9.1%2C5.4c4.1%2C1.2%2C8.5%2C1.1%2C10.9-0.1C26.3%2C20.1%2C26.7%2C18%2C26%2C15.8%22%2F%3E%3Cpath%20id%3D%22path16%22%20inkscape%3Aconnector-curvature%3D%220%22%20class%3D%22st2%22%20d%3D%22M20.3%2C1.3c8.1%2C4.8%2C3.3%2C19.8-3.2%2C24.6c-6%2C4.5-12.3%2C2.4-13.7-1.7%20c1.2%2C1.8%2C3.6%2C2.4%2C5.7%2C1.7c5.9-2.4%2C8.9-13.1%2C9.3-16.8c0.3-3.2-0.2-5.3-1.3-6.7c-1.3-1.3-3.2-2-6.1-1.1C13.1-0.3%2C17.3-0.5%2C20.3%2C1.3%22%2F%3E%3Cpath%20id%3D%22path18%22%20inkscape%3Aconnector-curvature%3D%220%22%20class%3D%22st0%22%20d%3D%22M24.8%2C21.1C24.9%2C21.1%2C24.9%2C21.1%2C24.8%2C21.1%20c0.1-0.1%2C0.1-0.1%2C0.1-0.1c0.2-0.1%2C0.3-0.2%2C0.5-0.4c0.1-0.1%2C0.1-0.1%2C0.2-0.2c3.1-3.2%2C3.8-12-3.9-16.2C19%2C2.7%2C12.6%2C0.7%2C6.2%2C3.9%20c-2.1%2C1.1-4.3%2C3.3-5.5%2C6.3C1.6%2C8.7%2C3.1%2C7.8%2C6%2C7.4C9%2C7%2C13%2C7.4%2C17%2C8.8c2.6%2C0.9%2C4.6%2C2.1%2C6.3%2C3.4c1.3%2C1.1%2C2.2%2C2.2%2C2.6%2C3.4%20c0%2C0.1%2C0%2C0.1%2C0.1%2C0.2c0.7%2C2.1%2C0.3%2C4.3-1.5%2C5.5c0%2C0%2C0%2C0%2C0%2C0c0.1%2C0%2C0.2-0.1%2C0.3-0.1C24.7%2C21.2%2C24.8%2C21.2%2C24.8%2C21.1%20C24.8%2C21.2%2C24.8%2C21.2%2C24.8%2C21.1%22%2F%3E%3Cpath%20id%3D%22path20%22%20inkscape%3Aconnector-curvature%3D%220%22%20class%3D%22st1%22%20d%3D%22M1.7%2C15.3c0.1%2C0.2%2C0.5%2C0.6%2C0.7%2C0.9c1.6-3.6%2C10-6%2C12.6-6%20c-5.6-1.8-11.1-0.9-13.4%2C1C0.8%2C12%2C0.5%2C13.4%2C1.7%2C15.3%22%2F%3E%3Cpath%20id%3D%22path22%22%20inkscape%3Aconnector-curvature%3D%220%22%20class%3D%22st3%22%20d%3D%22M18.3%2C23.5c-4.5-0.3-11.1-2-15.8-7.3c0%2C0-0.1-0.1-0.1-0.1%20c-0.2-0.3-0.6-0.7-0.7-0.9c-1.2-1.9-0.9-3.2-0.1-4.1c-0.1%2C0.1-0.3%2C0.3-0.5%2C0.6c-1.2%2C1.5-1.3%2C4.1-0.5%2C6.7c1.8%2C5.8%2C9.6%2C9.2%2C15.9%2C8.3%20c4-0.6%2C6.6-2.9%2C7.6-3.8C21.8%2C23.6%2C20.1%2C23.6%2C18.3%2C23.5%22%2F%3E%3C%2Fsvg%3E';
 
-var css$F = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.PaymentMethodCardContentRead-module_content__2127O {\n  display: block;\n  color: #000031;\n  text-align: center;\n}\n\n.PaymentMethodCardContentRead-module_brandIcon__3r5qJ {\n  width: 75px;\n  -ms-flex-item-align: center;\n      align-self: center;\n  margin-bottom: 8px;\n}\n\n.PaymentMethodCardContentRead-module_contentHalfLine__ZEtn4 {\n  line-height: 0.7em;\n}\n";
-var s$E = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","content":"PaymentMethodCardContentRead-module_content__2127O","brandIcon":"PaymentMethodCardContentRead-module_brandIcon__3r5qJ","contentHalfLine":"PaymentMethodCardContentRead-module_contentHalfLine__ZEtn4"};
-styleInject(css$F);
+var css$E = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.PaymentMethodCardContentRead-module_content__2127O {\n  display: block;\n  color: #000031;\n  text-align: center;\n}\n\n.PaymentMethodCardContentRead-module_brandIcon__3r5qJ {\n  width: 75px;\n  -ms-flex-item-align: center;\n      align-self: center;\n  margin-bottom: 8px;\n}\n\n.PaymentMethodCardContentRead-module_contentHalfLine__ZEtn4 {\n  line-height: 0.7em;\n}\n";
+var s$D = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","content":"PaymentMethodCardContentRead-module_content__2127O","brandIcon":"PaymentMethodCardContentRead-module_brandIcon__3r5qJ","contentHalfLine":"PaymentMethodCardContentRead-module_contentHalfLine__ZEtn4"};
+styleInject(css$E);
 
 var creditCardBrandIcons = {
   visa: iconVisa,
@@ -23479,19 +23368,19 @@ var PaymentMethodCardContentRead = function PaymentMethodCardContentRead(_ref) {
   var paymentMethod = _ref.paymentMethod,
       texts = _ref.texts;
   return React__default.createElement(React__default.Fragment, null, (paymentMethod.type === paymentMethodType.card || paymentMethod.type === paymentMethodType.total) && React__default.createElement("img", {
-    className: s$E.brandIcon,
+    className: s$D.brandIcon,
     src: creditCardBrandIcons[paymentMethod.brand],
     alt: paymentMethod.brand
   }), !paymentMethod.cardName ? React__default.createElement("span", {
-    className: s$E.contentHalfLine
+    className: s$D.contentHalfLine
   }, React__default.createElement("br", null)) : React__default.createElement("span", {
-    className: s$E.content
+    className: s$D.content
   }, paymentMethod.cardName), React__default.createElement("span", {
-    className: s$E.content
+    className: s$D.content
   }, "\xB7\xB7\xB7\xB7\xA0\xB7\xB7\xB7\xB7\xA0\xB7\xB7\xB7\xB7\xA0", paymentMethod.last4digits), React__default.createElement("span", {
-    className: s$E.content
+    className: s$D.content
   }, texts.expireAt, "\xA0:\xA0", paymentMethod.expireAt), !paymentMethod.cardName && React__default.createElement("span", {
-    className: s$E.contentHalfLine
+    className: s$D.contentHalfLine
   }, React__default.createElement("br", null)));
 };
 
@@ -23500,20 +23389,20 @@ PaymentMethodCardContentRead.propTypes = {
   texts: TextsType$5.isRequired
 };
 
-var css$G = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.PaymentmethodCardContentDelete-module_container__2q5zt {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n\n.PaymentmethodCardContentDelete-module_sentence__4dwCI {\n  margin: 8px 0;\n  width: 100%;\n}\n\n.PaymentmethodCardContentDelete-module_buttons__1lGiu {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: distribute;\n      justify-content: space-around;\n  width: 100%;\n}\n";
-var s$F = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","container":"PaymentmethodCardContentDelete-module_container__2q5zt","sentence":"PaymentmethodCardContentDelete-module_sentence__4dwCI","buttons":"PaymentmethodCardContentDelete-module_buttons__1lGiu"};
-styleInject(css$G);
+var css$F = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.PaymentmethodCardContentDelete-module_container__2q5zt {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n\n.PaymentmethodCardContentDelete-module_sentence__4dwCI {\n  margin: 8px 0;\n  width: 100%;\n}\n\n.PaymentmethodCardContentDelete-module_buttons__1lGiu {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: distribute;\n      justify-content: space-around;\n  width: 100%;\n}\n";
+var s$E = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","container":"PaymentmethodCardContentDelete-module_container__2q5zt","sentence":"PaymentmethodCardContentDelete-module_sentence__4dwCI","buttons":"PaymentmethodCardContentDelete-module_buttons__1lGiu"};
+styleInject(css$F);
 
 var PaymentMethodCardContentDelete = function PaymentMethodCardContentDelete(_ref) {
   var texts = _ref.texts,
       onConfirmDeletion = _ref.onConfirmDeletion,
       onCancelDeletion = _ref.onCancelDeletion;
   return React__default.createElement("div", {
-    className: s$F.container
+    className: s$E.container
   }, React__default.createElement("strong", null, texts.confirmDeletionTitle), React__default.createElement("p", {
-    className: s$F.sentence
+    className: s$E.sentence
   }, texts.confirmDeletionSentence), React__default.createElement("div", {
-    className: s$F.buttons
+    className: s$E.buttons
   }, React__default.createElement(LinkUnderlined, {
     onClick: onCancelDeletion
   }, React__default.createElement("strong", null, texts.cancel)), React__default.createElement(LinkUnderlined, {
@@ -23542,9 +23431,9 @@ PaymentMethodCardContent.propTypes = {
   onCancelDeletion: PropTypes$1.func.isRequired
 };
 
-var css$H = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.PaymentMethodCardFooter-module_container__iE-kv {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.PaymentMethodCardFooter-module_checkIcon__xbtB2 {\n  color: #FFFFFF;\n  font-size: 24px;\n}\n";
-var s$G = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","container":"PaymentMethodCardFooter-module_container__iE-kv","checkIcon":"PaymentMethodCardFooter-module_checkIcon__xbtB2"};
-styleInject(css$H);
+var css$G = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.PaymentMethodCardFooter-module_container__iE-kv {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.PaymentMethodCardFooter-module_checkIcon__xbtB2 {\n  color: #FFFFFF;\n  font-size: 24px;\n}\n";
+var s$F = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","container":"PaymentMethodCardFooter-module_container__iE-kv","checkIcon":"PaymentMethodCardFooter-module_checkIcon__xbtB2"};
+styleInject(css$G);
 
 var PaymentMethodCardFooter = function PaymentMethodCardFooter(_ref) {
   var className = _ref.className,
@@ -23553,9 +23442,9 @@ var PaymentMethodCardFooter = function PaymentMethodCardFooter(_ref) {
       onClick = _ref.onClick,
       testid = _ref.testid;
   return React__default.createElement("div", {
-    className: [s$G.container, className].join(' ')
+    className: [s$F.container, className].join(' ')
   }, selected ? React__default.createElement("i", {
-    className: "icon-checkmark ".concat(s$G.checkIcon)
+    className: "icon-checkmark ".concat(s$F.checkIcon)
   }) : React__default.createElement(LinkUnderlined, {
     onClick: onClick,
     testid: "".concat(testid, "Button")
@@ -23574,9 +23463,9 @@ PaymentMethodCardFooter.propTypes = {
   testid: PropTypes$1.string
 };
 
-var css$I = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.PaymentMethodCardHeader-module_container__1NB8- {\n  position: absolute;\n  top: 8px;\n  right: 8px;\n  font-size: 20px;\n}\n\n.PaymentMethodCardHeader-module_icon__Rh3J2::before {\n  color: #C7CDDA;\n}\n";
-var s$H = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","container":"PaymentMethodCardHeader-module_container__1NB8-","icon":"PaymentMethodCardHeader-module_icon__Rh3J2"};
-styleInject(css$I);
+var css$H = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.PaymentMethodCardHeader-module_container__1NB8- {\n  position: absolute;\n  top: 8px;\n  right: 8px;\n  font-size: 20px;\n}\n\n.PaymentMethodCardHeader-module_icon__Rh3J2::before {\n  color: #C7CDDA;\n}\n";
+var s$G = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","container":"PaymentMethodCardHeader-module_container__1NB8-","icon":"PaymentMethodCardHeader-module_icon__Rh3J2"};
+styleInject(css$H);
 
 var PaymentMethodCardHeader = function PaymentMethodCardHeader(_ref) {
   var onDelete = _ref.onDelete,
@@ -23584,12 +23473,12 @@ var PaymentMethodCardHeader = function PaymentMethodCardHeader(_ref) {
       pendingDeletion = _ref.pendingDeletion,
       className = _ref.className;
   return pendingDeletion ? null : React__default.createElement("div", {
-    className: [s$H.container, className].join(' ')
+    className: [s$G.container, className].join(' ')
   }, React__default.createElement("button", {
     title: texts.remove,
     onClick: onDelete
   }, React__default.createElement("i", {
-    className: "icon-bin ".concat(s$H.icon)
+    className: "icon-bin ".concat(s$G.icon)
   })));
 };
 
@@ -23678,10 +23567,10 @@ function (_React$Component) {
         pendingDeletion: pendingDeletion
       };
       return React__default.createElement(Card, _extends({}, cardProps, {
-        className: [s$D.card, className].join(' '),
+        className: [s$C.card, className].join(' '),
         FooterComponent: this.renderFooter,
         isSelected: selected,
-        contentClassName: [s$D.cardContent, pendingDeletion ? s$D.pendingDeletion : undefined, contentClassName].join(' ')
+        contentClassName: [s$C.cardContent, pendingDeletion ? s$C.pendingDeletion : undefined, contentClassName].join(' ')
       }), deletable && React__default.createElement(PaymentMethodCardHeader, cardHeaderProps), children === null ? React__default.createElement(PaymentMethodCardContent, cardContentProps) : children);
     }
   }]);
@@ -23797,9 +23686,9 @@ _export({ target: 'String', proto: true, forced: !MDN_POLYFILL_BUG && !CORRECT_I
   }
 });
 
-var css$J = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.PhoneInput-module_phoneInput__28kFN {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 1;\n      -ms-flex: 1 1 auto;\n          flex: 1 1 auto;\n}\n\n.PhoneInput-module_countryLabel__vyRg- {\n  padding-right: 16px;\n}\n\n.PhoneInput-module_inputContainer__3-cxE {\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  margin-left: 8px;\n}\n\n.PhoneInput-module_selectImage__2afak {\n  margin-right: 8px;\n  max-height: 24px;\n  max-width: 24px;\n}\n";
-var s$I = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","phoneInput":"PhoneInput-module_phoneInput__28kFN","countryLabel":"PhoneInput-module_countryLabel__vyRg-","inputContainer":"PhoneInput-module_inputContainer__3-cxE","selectImage":"PhoneInput-module_selectImage__2afak"};
-styleInject(css$J);
+var css$I = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.PhoneInput-module_phoneInput__28kFN {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 1;\n      -ms-flex: 1 1 auto;\n          flex: 1 1 auto;\n}\n\n.PhoneInput-module_countryLabel__vyRg- {\n  padding-right: 16px;\n}\n\n.PhoneInput-module_inputContainer__3-cxE {\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  margin-left: 8px;\n}\n\n.PhoneInput-module_selectImage__2afak {\n  margin-right: 8px;\n  max-height: 24px;\n  max-width: 24px;\n}\n";
+var s$H = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","phoneInput":"PhoneInput-module_phoneInput__28kFN","countryLabel":"PhoneInput-module_countryLabel__vyRg-","inputContainer":"PhoneInput-module_inputContainer__3-cxE","selectImage":"PhoneInput-module_selectImage__2afak"};
+styleInject(css$I);
 
 var PhoneInput =
 /*#__PURE__*/
@@ -23832,23 +23721,23 @@ function (_React$Component) {
           country = _this$state.country,
           phone = _this$state.phone;
       return React__default.createElement("div", {
-        className: s$I.phoneInput
+        className: s$H.phoneInput
       }, React__default.createElement(Select, {
         options: countries,
         value: country.value,
         renderOption: _this.renderSelectOption,
         onChange: _this.onCountryCodeChange,
-        className: s$I.phoneInputCountryCode
+        className: s$H.phoneInputCountryCode
       }, withFlag && React__default.createElement("img", {
         src: country.image,
-        className: s$I.selectImage,
+        className: s$H.selectImage,
         alt: country.label
       }), React__default.createElement("span", {
-        className: s$I.countryLabel
+        className: s$H.countryLabel
       }, country.label)), React__default.createElement(Input, _extends({
         placeholder: "06 07 08 09 00" // Here to override the placeholder
         ,
-        containerClassName: s$I.inputContainer
+        containerClassName: s$H.inputContainer
       }, phoneInputProps, {
         className: inputClassName,
         hasError: !!error && error.length > 0,
@@ -23994,22 +23883,22 @@ PhoneInput.propTypes = {
   inputClassName: PropTypes$1.string
 };
 
-var css$K = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.PricingSummaryOption-module_option__1G-X7 {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  color: #000031;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n}\n\n.PricingSummaryOption-module_label__goVjq {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.PricingSummaryOption-module_label__goVjq i {\n  font-size: 0.9em;\n  margin-left: 8px;\n}\n\n.PricingSummaryOption-module_label__goVjq i:before {\n  color: #000031;\n}\n\n.PricingSummaryOption-module_price__2ZK97 {\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  font-weight: 700;\n}\n\n.PricingSummaryOption-module_currency-after__3ttKX {\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n}\n\n.PricingSummaryOption-module_currency-before__1lVgh {\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: reverse;\n      -ms-flex-direction: row-reverse;\n          flex-direction: row-reverse;\n}\n";
-var s$J = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","option":"PricingSummaryOption-module_option__1G-X7","label":"PricingSummaryOption-module_label__goVjq","price":"PricingSummaryOption-module_price__2ZK97","currency-after":"PricingSummaryOption-module_currency-after__3ttKX","currency-before":"PricingSummaryOption-module_currency-before__1lVgh"};
-styleInject(css$K);
+var css$J = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.PricingSummaryOption-module_option__1G-X7 {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  color: #000031;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n}\n\n.PricingSummaryOption-module_label__goVjq {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.PricingSummaryOption-module_label__goVjq i {\n  font-size: 0.9em;\n  margin-left: 8px;\n}\n\n.PricingSummaryOption-module_label__goVjq i:before {\n  color: #000031;\n}\n\n.PricingSummaryOption-module_price__2ZK97 {\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  font-weight: 700;\n}\n\n.PricingSummaryOption-module_currency-after__3ttKX {\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n}\n\n.PricingSummaryOption-module_currency-before__1lVgh {\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: reverse;\n      -ms-flex-direction: row-reverse;\n          flex-direction: row-reverse;\n}\n";
+var s$I = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","option":"PricingSummaryOption-module_option__1G-X7","label":"PricingSummaryOption-module_label__goVjq","price":"PricingSummaryOption-module_price__2ZK97","currency-after":"PricingSummaryOption-module_currency-after__3ttKX","currency-before":"PricingSummaryOption-module_currency-before__1lVgh"};
+styleInject(css$J);
 
 var PricingSummaryOption = function PricingSummaryOption(_ref) {
   var currency = _ref.currency,
       currencyPosition = _ref.currencyPosition,
       option = _ref.option;
   return React__default.createElement("div", {
-    className: s$J.option
+    className: s$I.option
   }, React__default.createElement("span", {
-    className: s$J.label
+    className: s$I.label
   }, option.label, React__default.createElement("i", {
     className: "icon icon-ec-info"
   })), React__default.createElement("span", {
-    className: "".concat(s$J.price, " ").concat(s$J["currency-".concat(currencyPosition)])
+    className: "".concat(s$I.price, " ").concat(s$I["currency-".concat(currencyPosition)])
   }, React__default.createElement("span", null, option.price), React__default.createElement("span", null, currency)));
 };
 
@@ -24022,9 +23911,9 @@ PricingSummaryOption.propTypes = {
   option: PricingSummaryOptionType.isRequired
 };
 
-var css$L = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.PricingSummary-module_pricingSummary__2eJwY {\n  width: 250px;\n}\n\n.PricingSummary-module_total__2vek1 {\n  -webkit-box-align: end;\n      -ms-flex-align: end;\n          align-items: flex-end;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  margin-top: 20px;\n}\n\n.PricingSummary-module_totalLabel__2o3Rh {\n  font-weight: 700;\n  text-transform: uppercase;\n}\n\n.PricingSummary-module_totalPrice__1_-UG {\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  font-size: 40px;\n  line-height: 1;\n}\n\n.PricingSummary-module_currency-after__27MYY {\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n}\n\n.PricingSummary-module_currency-before__345FN {\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: reverse;\n      -ms-flex-direction: row-reverse;\n          flex-direction: row-reverse;\n}\n\n.PricingSummary-module_add__2494l {\n  border: 0;\n  color: rgb(206, 206, 206);\n  padding: 0;\n  margin: 0;\n  background: transparent;\n}\n\n.PricingSummary-module_add__2494l span {\n  margin-left: 8px;\n  text-decoration: underline;\n}\n";
-var s$K = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","pricingSummary":"PricingSummary-module_pricingSummary__2eJwY","total":"PricingSummary-module_total__2vek1","totalLabel":"PricingSummary-module_totalLabel__2o3Rh","totalPrice":"PricingSummary-module_totalPrice__1_-UG","currency-after":"PricingSummary-module_currency-after__27MYY","currency-before":"PricingSummary-module_currency-before__345FN","add":"PricingSummary-module_add__2494l"};
-styleInject(css$L);
+var css$K = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.PricingSummary-module_pricingSummary__2eJwY {\n  width: 250px;\n}\n\n.PricingSummary-module_total__2vek1 {\n  -webkit-box-align: end;\n      -ms-flex-align: end;\n          align-items: flex-end;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  margin-top: 20px;\n}\n\n.PricingSummary-module_totalLabel__2o3Rh {\n  font-weight: 700;\n  text-transform: uppercase;\n}\n\n.PricingSummary-module_totalPrice__1_-UG {\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  font-size: 40px;\n  line-height: 1;\n}\n\n.PricingSummary-module_currency-after__27MYY {\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n}\n\n.PricingSummary-module_currency-before__345FN {\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: reverse;\n      -ms-flex-direction: row-reverse;\n          flex-direction: row-reverse;\n}\n\n.PricingSummary-module_add__2494l {\n  border: 0;\n  color: rgb(206, 206, 206);\n  padding: 0;\n  margin: 0;\n  background: transparent;\n}\n\n.PricingSummary-module_add__2494l span {\n  margin-left: 8px;\n  text-decoration: underline;\n}\n";
+var s$J = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","pricingSummary":"PricingSummary-module_pricingSummary__2eJwY","total":"PricingSummary-module_total__2vek1","totalLabel":"PricingSummary-module_totalLabel__2o3Rh","totalPrice":"PricingSummary-module_totalPrice__1_-UG","currency-after":"PricingSummary-module_currency-after__27MYY","currency-before":"PricingSummary-module_currency-before__345FN","add":"PricingSummary-module_add__2494l"};
+styleInject(css$K);
 
 var PricingSummary = function PricingSummary(_ref) {
   var currency = _ref.currency,
@@ -24034,9 +23923,9 @@ var PricingSummary = function PricingSummary(_ref) {
       onAddClick = _ref.onAddClick,
       className = _ref.className;
   return React__default.createElement("div", {
-    className: "".concat(s$K.pricingSummary, " ").concat(className)
+    className: "".concat(s$J.pricingSummary, " ").concat(className)
   }, React__default.createElement("div", {
-    className: s$K.options
+    className: s$J.options
   }, options.map(function (option) {
     return React__default.createElement(PricingSummaryOption, {
       currency: currency,
@@ -24046,13 +23935,13 @@ var PricingSummary = function PricingSummary(_ref) {
     });
   })), React__default.createElement("button", {
     onClick: onAddClick,
-    className: s$K.add
+    className: s$J.add
   }, "+", React__default.createElement("span", null, texts.addOption)), React__default.createElement("div", {
-    className: s$K.total
+    className: s$J.total
   }, React__default.createElement("span", {
-    className: s$K.totalLabel
+    className: s$J.totalLabel
   }, texts.total), React__default.createElement("span", {
-    className: "".concat(s$K.totalPrice, " ").concat(s$K["currency-".concat(currencyPosition)])
+    className: "".concat(s$J.totalPrice, " ").concat(s$J["currency-".concat(currencyPosition)])
   }, React__default.createElement("span", null, options.reduce(function (acc, val) {
     return acc + val.price;
   }, 0)), React__default.createElement("span", null, currency))));
@@ -24082,15 +23971,15 @@ var defaultTexts$3 = {
   description: 'Devenez parrain Ector et faites profiter à votre filleul de 10€ offert lors de sa première réservation'
 };
 
-var css$M = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.ReferralCard-module_referralCard__2OSJ1 {\n  background-color: #ECEFF6;\n  border-radius: 30px;\n  color: #000031;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  max-width: 320px;\n  padding: 20px;\n}\n\n.ReferralCard-module_referralCard__2OSJ1 i {\n  margin-right: 20px;\n}\n\n.ReferralCard-module_referralCard__2OSJ1 p {\n  margin: 0;\n}\n";
-var s$L = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","referralCard":"ReferralCard-module_referralCard__2OSJ1"};
-styleInject(css$M);
+var css$L = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.ReferralCard-module_referralCard__2OSJ1 {\n  background-color: #ECEFF6;\n  border-radius: 30px;\n  color: #000031;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  max-width: 320px;\n  padding: 20px;\n}\n\n.ReferralCard-module_referralCard__2OSJ1 i {\n  margin-right: 20px;\n}\n\n.ReferralCard-module_referralCard__2OSJ1 p {\n  margin: 0;\n}\n";
+var s$K = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","referralCard":"ReferralCard-module_referralCard__2OSJ1"};
+styleInject(css$L);
 
 var ReferralCard = function ReferralCard(_ref) {
   var texts = _ref.texts,
       className = _ref.className;
   return React__default.createElement("div", {
-    className: "".concat(s$L.referralCard, " ").concat(className)
+    className: "".concat(s$K.referralCard, " ").concat(className)
   }, React__default.createElement("i", {
     className: "icon icon-ec-referral"
   }), React__default.createElement("div", null, React__default.createElement("strong", null, texts.title), React__default.createElement("p", null, texts.description)));
@@ -24118,24 +24007,24 @@ var defaultTexts$4 = {
   travelingNumber: 'N° Vol/Train: Non Renseigné'
 };
 
-var css$N = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.RideSummary-module_rideSummary__2oiET {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n\n.RideSummary-module_rideSummaryTitle__1uusE {\n  color: #708399;\n  font-size: 24px;\n  margin: 0;\n}\n\n.RideSummary-module_rideSummaryText__1cZNU {\n  margin: 0;\n  color: #000031;\n}\n";
-var s$M = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","rideSummary":"RideSummary-module_rideSummary__2oiET","rideSummaryTitle":"RideSummary-module_rideSummaryTitle__1uusE","rideSummaryText":"RideSummary-module_rideSummaryText__1cZNU"};
-styleInject(css$N);
+var css$M = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.RideSummary-module_rideSummary__2oiET {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n\n.RideSummary-module_rideSummaryTitle__1uusE {\n  color: #708399;\n  font-size: 24px;\n  margin: 0;\n}\n\n.RideSummary-module_rideSummaryText__1cZNU {\n  margin: 0;\n  color: #000031;\n}\n";
+var s$L = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","rideSummary":"RideSummary-module_rideSummary__2oiET","rideSummaryTitle":"RideSummary-module_rideSummaryTitle__1uusE","rideSummaryText":"RideSummary-module_rideSummaryText__1cZNU"};
+styleInject(css$M);
 
 var RideSummary = function RideSummary(_ref) {
   var texts = _ref.texts,
       className = _ref.className,
       type = _ref.type;
   return React__default.createElement("div", {
-    className: "".concat(s$M.rideSummary, " ").concat(className)
+    className: "".concat(s$L.rideSummary, " ").concat(className)
   }, React__default.createElement("p", {
-    className: s$M.rideSummaryTitle
+    className: s$L.rideSummaryTitle
   }, texts.title), React__default.createElement("p", {
-    className: s$M.rideSummaryText
+    className: s$L.rideSummaryText
   }, texts.date), React__default.createElement("p", {
-    className: s$M.rideSummaryText
+    className: s$L.rideSummaryText
   }, texts.spot), type === 'out' && React__default.createElement("p", {
-    className: s$M.rideSummaryText
+    className: s$L.rideSummaryText
   }, texts.travelingNumber));
 };
 
@@ -24156,9 +24045,9 @@ var SelectValueType = PropTypes$1.shape({
   image: PropTypes$1.string
 });
 
-var css$O = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.Select-module_select__3oApo {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  border-radius: 30px;\n  border: 1px solid #C7CDDA;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #000031;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: 40px;\n  margin-top: 4px;\n  padding: 8px 16px;\n  position: relative;\n}\n\n.Select-module_select__3oApo:after {\n  content: '\\E954';\n  font-family: 'icomoon';\n  font-size: 80%;\n  margin-right: 8px;\n  position: absolute;\n  right: 0;\n}\n\n.Select-module_select__3oApo select {\n  position: absolute;\n  opacity: 0;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n}\n\n.Select-module_select__3oApo select:disabled {\n  cursor: not-allowed;\n}\n\n.Select-module_disabled__1fHPm {\n  background-color: #ECEFF6;\n}\n";
-var s$N = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","select":"Select-module_select__3oApo","disabled":"Select-module_disabled__1fHPm"};
-styleInject(css$O);
+var css$N = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.Select-module_select__3oApo {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  border-radius: 30px;\n  border: 1px solid #C7CDDA;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: #000031;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: 40px;\n  margin-top: 4px;\n  padding: 8px 16px;\n  position: relative;\n}\n\n.Select-module_select__3oApo:after {\n  content: '\\E954';\n  font-family: 'icomoon';\n  font-size: 80%;\n  margin-right: 8px;\n  position: absolute;\n  right: 0;\n}\n\n.Select-module_select__3oApo select {\n  position: absolute;\n  opacity: 0;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n}\n\n.Select-module_select__3oApo select:disabled {\n  cursor: not-allowed;\n}\n\n.Select-module_disabled__1fHPm {\n  background-color: #ECEFF6;\n}\n";
+var s$M = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","select":"Select-module_select__3oApo","disabled":"Select-module_disabled__1fHPm"};
+styleInject(css$N);
 
 var renderSelectOption = function renderSelectOption(option) {
   return React__default.createElement("option", {
@@ -24177,11 +24066,11 @@ var Select = function Select(props) {
 
   var optionRenderer = renderOption || renderSelectOption;
   return React__default.createElement("div", {
-    className: [s$N.select, selectProps.disabled ? s$N.disabled : undefined, className].join(' ')
+    className: [s$M.select, selectProps.disabled ? s$M.disabled : undefined, className].join(' ')
   }, React__default.createElement("select", _extends({
     value: value
   }, selectProps), options.map(optionRenderer)), children !== null ? children : React__default.createElement("span", {
-    className: s$N.label
+    className: s$M.label
   }, value));
 };
 
@@ -24200,9 +24089,9 @@ Select.propTypes = {
   disabled: PropTypes$1.bool
 };
 
-var css$P = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.ServiceCard-module_card__2WAwR {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  background-color: #ECEFF6;\n  border-radius: 30px;\n  padding: 8px;\n  margin-top: 24px;\n  position: relative;\n  width: 250px;\n}\n\n.ServiceCard-module_optionCardContainerSelected__1EDYO {\n  background-color: #F7D48A;\n}\n\n.ServiceCard-module_labelContainer__14NKR {\n  position: absolute;\n  top: -12px;\n  right: 8%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n@media (max-width: 1232px) {\n  .ServiceCard-module_card__2WAwR {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -webkit-box-flex: 1;\n        -ms-flex: 1 1 auto;\n            flex: 1 1 auto;\n    height: auto;\n    margin-right: 0;\n    width: 100%;\n  }\n}\n";
-var s$O = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","card":"ServiceCard-module_card__2WAwR","optionCardContainerSelected":"ServiceCard-module_optionCardContainerSelected__1EDYO","labelContainer":"ServiceCard-module_labelContainer__14NKR"};
-styleInject(css$P);
+var css$O = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.ServiceCard-module_card__2WAwR {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  background-color: #ECEFF6;\n  border-radius: 30px;\n  padding: 8px;\n  margin-top: 24px;\n  position: relative;\n  width: 250px;\n}\n\n.ServiceCard-module_optionCardContainerSelected__1EDYO {\n  background-color: #F7D48A;\n}\n\n.ServiceCard-module_labelContainer__14NKR {\n  position: absolute;\n  top: -12px;\n  right: 8%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n@media (max-width: 1232px) {\n  .ServiceCard-module_card__2WAwR {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -webkit-box-flex: 1;\n        -ms-flex: 1 1 auto;\n            flex: 1 1 auto;\n    height: auto;\n    margin-right: 0;\n    width: 100%;\n  }\n}\n";
+var s$N = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","card":"ServiceCard-module_card__2WAwR","optionCardContainerSelected":"ServiceCard-module_optionCardContainerSelected__1EDYO","labelContainer":"ServiceCard-module_labelContainer__14NKR"};
+styleInject(css$O);
 
 var wordwrap_1 = createCommonjsModule(function (module) {
 var wordwrap = module.exports = function (start, stop, params) {
@@ -24283,9 +24172,9 @@ wordwrap.hard = function (start, stop) {
 };
 });
 
-var css$Q = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.ServiceCardBody-module_cardContent__1u4QW {\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-align: start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  background-color: #FFFFFF;\n  padding: 16px;\n  border-top-left-radius: 30px;\n  border-top-right-radius: 30px;\n}\n\n.ServiceCardBody-module_title__18Brj {\n  color: #F5B400;\n  font-size: 20px;\n  font-weight: 400;\n  margin: 0;\n}\n\n.ServiceCardBody-module_description__3F2b6 {\n  color: #000031;\n}\n\n.ServiceCardBody-module_icon__3pkKY {\n  height: 45px;\n  width: 45px;\n}\n\n.ServiceCardBody-module_knowMore__3FUFJ {\n  color: #9CA3FF;\n  cursor: pointer;\n  display: block;\n  padding: 0;\n  text-decoration: underline;\n}\n\n.ServiceCardBody-module_punctuationKnowMore__1aKtN:after {\n  content: '\\2026';\n}\n\n@media (max-width: 1232px) {\n  .ServiceCardBody-module_cardContent__1u4QW {\n    -webkit-box-flex: 7;\n        -ms-flex: 7;\n            flex: 7;\n    height: auto;\n    border-radius: 30px;\n  }\n\n  .ServiceCardBody-module_title__18Brj {\n    font-size: 20px;\n    margin-right: 0;\n  }\n\n  .ServiceCardBody-module_icon__3pkKY {\n    display: none;\n  }\n}\n\n@media (max-width: 825px) {\n  .ServiceCardBody-module_cardContent__1u4QW {\n    padding: 8px 16px;\n  }\n}\n";
-var s$P = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","cardContent":"ServiceCardBody-module_cardContent__1u4QW","title":"ServiceCardBody-module_title__18Brj","description":"ServiceCardBody-module_description__3F2b6","icon":"ServiceCardBody-module_icon__3pkKY","knowMore":"ServiceCardBody-module_knowMore__3FUFJ","punctuationKnowMore":"ServiceCardBody-module_punctuationKnowMore__1aKtN"};
-styleInject(css$Q);
+var css$P = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.ServiceCardBody-module_cardContent__1u4QW {\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-align: start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  background-color: #FFFFFF;\n  padding: 16px;\n  border-top-left-radius: 30px;\n  border-top-right-radius: 30px;\n}\n\n.ServiceCardBody-module_title__18Brj {\n  color: #F5B400;\n  font-size: 20px;\n  font-weight: 400;\n  margin: 0;\n}\n\n.ServiceCardBody-module_description__3F2b6 {\n  color: #000031;\n}\n\n.ServiceCardBody-module_icon__3pkKY {\n  height: 45px;\n  width: 45px;\n}\n\n.ServiceCardBody-module_knowMore__3FUFJ {\n  color: #9CA3FF;\n  cursor: pointer;\n  display: block;\n  padding: 0;\n  text-decoration: underline;\n}\n\n.ServiceCardBody-module_punctuationKnowMore__1aKtN:after {\n  content: '\\2026';\n}\n\n@media (max-width: 1232px) {\n  .ServiceCardBody-module_cardContent__1u4QW {\n    -webkit-box-flex: 7;\n        -ms-flex: 7;\n            flex: 7;\n    height: auto;\n    border-radius: 30px;\n  }\n\n  .ServiceCardBody-module_title__18Brj {\n    font-size: 20px;\n    margin-right: 0;\n  }\n\n  .ServiceCardBody-module_icon__3pkKY {\n    display: none;\n  }\n}\n\n@media (max-width: 825px) {\n  .ServiceCardBody-module_cardContent__1u4QW {\n    padding: 8px 16px;\n  }\n}\n";
+var s$O = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","cardContent":"ServiceCardBody-module_cardContent__1u4QW","title":"ServiceCardBody-module_title__18Brj","description":"ServiceCardBody-module_description__3F2b6","icon":"ServiceCardBody-module_icon__3pkKY","knowMore":"ServiceCardBody-module_knowMore__3FUFJ","punctuationKnowMore":"ServiceCardBody-module_punctuationKnowMore__1aKtN"};
+styleInject(css$P);
 
 var ServiceCardBody = function ServiceCardBody(_ref) {
   var image = _ref.image,
@@ -24304,13 +24193,13 @@ var ServiceCardBody = function ServiceCardBody(_ref) {
   }
 
   return React__default.createElement("div", {
-    className: "".concat(s$P.cardContent, " ").concat(contentClassName)
+    className: "".concat(s$O.cardContent, " ").concat(contentClassName)
   }, image, React__default.createElement("h2", {
-    className: s$P.title
+    className: s$O.title
   }, title), React__default.createElement("span", {
-    className: "".concat(s$P.description, " ").concat(showKnowMoreLink ? s$P.punctuationKnowMore : '')
+    className: "".concat(s$O.description, " ").concat(showKnowMoreLink ? s$O.punctuationKnowMore : '')
   }, descriptionFormatted), showKnowMoreLink && React__default.createElement("button", {
-    className: s$P.knowMore,
+    className: s$O.knowMore,
     onClick: openShowMore,
     type: "button"
   }, React__default.createElement("span", null, knowMoreLabel)));
@@ -24331,9 +24220,9 @@ ServiceCardBody.propTypes = {
   knowMoreLabel: PropTypes$1.string
 };
 
-var css$R = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.ServiceCardFooter-module_footerContainer__3xZao {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  padding: 16px 8px;\n}\n\n.ServiceCardFooter-module_price__1o6fm {\n  color: #000031;\n  font-size: 36px;\n  font-weight: 400;\n}\n\n.ServiceCardFooter-module_deleteButton__W6dqf {\n  background: none;\n  border: 0;\n  padding: 0;\n  text-decoration: underline;\n  font-style: italic;\n  font-weight: 300;\n  text-align: end;\n}\n\n@media (max-width: 1232px) {\n  .ServiceCardFooter-module_footerContainer__3xZao {\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-flex: 3;\n        -ms-flex: 3;\n            flex: 3;\n    height: auto;\n    height: initial;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    padding: 8px;\n  }\n\n  .ServiceCardFooter-module_price__1o6fm {\n    font-size: 24px;\n    line-height: 1;\n  }\n\n  .ServiceCardFooter-module_price__1o6fm small {\n    font-size: 70%;\n  }\n}\n";
-var s$Q = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","footerContainer":"ServiceCardFooter-module_footerContainer__3xZao","price":"ServiceCardFooter-module_price__1o6fm","deleteButton":"ServiceCardFooter-module_deleteButton__W6dqf"};
-styleInject(css$R);
+var css$Q = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.ServiceCardFooter-module_footerContainer__3xZao {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  padding: 16px 8px;\n}\n\n.ServiceCardFooter-module_price__1o6fm {\n  color: #000031;\n  font-size: 36px;\n  font-weight: 400;\n}\n\n.ServiceCardFooter-module_deleteButton__W6dqf {\n  background: none;\n  border: 0;\n  padding: 0;\n  text-decoration: underline;\n  font-style: italic;\n  font-weight: 300;\n  text-align: end;\n}\n\n@media (max-width: 1232px) {\n  .ServiceCardFooter-module_footerContainer__3xZao {\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-flex: 3;\n        -ms-flex: 3;\n            flex: 3;\n    height: auto;\n    height: initial;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    padding: 8px;\n  }\n\n  .ServiceCardFooter-module_price__1o6fm {\n    font-size: 24px;\n    line-height: 1;\n  }\n\n  .ServiceCardFooter-module_price__1o6fm small {\n    font-size: 70%;\n  }\n}\n";
+var s$P = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","footerContainer":"ServiceCardFooter-module_footerContainer__3xZao","price":"ServiceCardFooter-module_price__1o6fm","deleteButton":"ServiceCardFooter-module_deleteButton__W6dqf"};
+styleInject(css$Q);
 
 var ServiceCardFooter = function ServiceCardFooter(_ref) {
   var PriceComponent = _ref.PriceComponent,
@@ -24343,15 +24232,15 @@ var ServiceCardFooter = function ServiceCardFooter(_ref) {
       testid = _ref.testid,
       showButton = _ref.showButton;
   return React__default.createElement("div", {
-    className: s$Q.footerContainer
+    className: s$P.footerContainer
   }, React__default.createElement("span", {
-    className: s$Q.price
+    className: s$P.price
   }, PriceComponent), !isSubscribed && React__default.createElement(LinkUnderlined, {
     onClick: actionFooter,
     testid: testid
   }, buttonLabelFooter), isSubscribed && showButton && React__default.createElement("button", {
     testid: testid,
-    className: s$Q.deleteButton,
+    className: s$P.deleteButton,
     onClick: actionFooter,
     type: "button"
   }, buttonLabelFooter));
@@ -24387,14 +24276,14 @@ var ServiceCard = function ServiceCard(_ref) {
       id = _ref.id,
       showButton = _ref.showButton,
       knowMoreLabel = _ref.knowMoreLabel;
-  var cardClassName = "\n        ".concat(s$O.card, "\n        ").concat(className, "\n        ").concat(isSubscribed ? s$O.optionCardContainerSelected : '', "\n    ");
+  var cardClassName = "\n        ".concat(s$N.card, "\n        ").concat(className, "\n        ").concat(isSubscribed ? s$N.optionCardContainerSelected : '', "\n    ");
   return React__default.createElement("div", {
     className: cardClassName
   }, labelColor !== '' && labelLogo !== '' && labelText !== '' && React__default.createElement(Label, {
     logo: labelLogo,
     label: labelText,
     color: labelColor,
-    className: s$O.labelContainer
+    className: s$N.labelContainer
   }), React__default.createElement(ServiceCardBody, {
     image: image,
     title: title,
@@ -24446,19 +24335,19 @@ ServiceCard.propTypes = {
   knowMoreLabel: PropTypes$1.string
 };
 
-var css$S = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.Subtitle-module_subtitle__3qud- {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  margin-bottom: 24px;\n}\n\n.Subtitle-module_h2__3Utt_ {\n  color: #000031;\n  font-size: 24px;\n  font-weight: 400;\n  line-height: 1;\n  margin: 0 0 8px;\n}\n\n.Subtitle-module_hr__2cWQK {\n  border: 0;\n  border-top: 2px dotted #F7D48A;\n  margin: 0;\n  width: 50px;\n}\n\n@media (max-width: 1130px) {\n  .Subtitle-module_h2__3Utt_ {\n    margin: 0 0 8px;\n  }\n}\n";
-var s$R = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","subtitle":"Subtitle-module_subtitle__3qud-","h2":"Subtitle-module_h2__3Utt_","hr":"Subtitle-module_hr__2cWQK"};
-styleInject(css$S);
+var css$R = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.Subtitle-module_subtitle__3qud- {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  margin-bottom: 24px;\n}\n\n.Subtitle-module_h2__3Utt_ {\n  color: #000031;\n  font-size: 24px;\n  font-weight: 400;\n  line-height: 1;\n  margin: 0 0 8px;\n}\n\n.Subtitle-module_hr__2cWQK {\n  border: 0;\n  border-top: 2px dotted #F7D48A;\n  margin: 0;\n  width: 50px;\n}\n\n@media (max-width: 1130px) {\n  .Subtitle-module_h2__3Utt_ {\n    margin: 0 0 8px;\n  }\n}\n";
+var s$Q = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","subtitle":"Subtitle-module_subtitle__3qud-","h2":"Subtitle-module_h2__3Utt_","hr":"Subtitle-module_hr__2cWQK"};
+styleInject(css$R);
 
 var Subtitle = function Subtitle(_ref) {
   var label = _ref.label,
       className = _ref.className;
   return React__default.createElement("div", {
-    className: "".concat(s$R.subtitle, " ").concat(className)
+    className: "".concat(s$Q.subtitle, " ").concat(className)
   }, React__default.createElement("h2", {
-    className: s$R.h2
+    className: s$Q.h2
   }, label), React__default.createElement("hr", {
-    className: s$R.hr
+    className: s$Q.hr
   }));
 };
 
@@ -24470,9 +24359,9 @@ Subtitle.propTypes = {
   className: PropTypes$1.string
 };
 
-var css$T = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.Title-module_title__gpPet {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  margin-top: 0;\n  margin-bottom: 32px;\n}\n\n.Title-module_title__gpPet .Title-module_element__1EYDR {\n  font-size: 40px;\n  font-weight: 400;\n  line-height: 1;\n  margin: 0 0 8px;\n}\n\n.Title-module_newTitle__3v8No {\n  font-size: 32px;\n  font-weight: 700;\n  line-height: 44px;\n  margin-top: 0;\n  margin-bottom: 32px;\n}\n\n.Title-module_title__gpPet .Title-module_horizontalRule__1wwO9 {\n  border: 0;\n  border-top: 2px solid #F7D48A;\n  margin: 0;\n  width: 50px;\n}\n\n@media (max-width: 480px) {\n  .Title-module_title__gpPet .Title-module_element__1EYDR,\n  .Title-module_newTitle__3v8No {\n    font-size: 24px;\n  }\n}\n";
-var s$S = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","title":"Title-module_title__gpPet","element":"Title-module_element__1EYDR","newTitle":"Title-module_newTitle__3v8No","horizontalRule":"Title-module_horizontalRule__1wwO9"};
-styleInject(css$T);
+var css$S = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.Title-module_title__gpPet {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  margin-top: 0;\n  margin-bottom: 32px;\n}\n\n.Title-module_title__gpPet .Title-module_element__1EYDR {\n  font-size: 40px;\n  font-weight: 400;\n  line-height: 1;\n  margin: 0 0 8px;\n}\n\n.Title-module_newTitle__3v8No {\n  font-size: 32px;\n  font-weight: 700;\n  line-height: 44px;\n  margin-top: 0;\n  margin-bottom: 32px;\n}\n\n.Title-module_title__gpPet .Title-module_horizontalRule__1wwO9 {\n  border: 0;\n  border-top: 2px solid #F7D48A;\n  margin: 0;\n  width: 50px;\n}\n\n@media (max-width: 480px) {\n  .Title-module_title__gpPet .Title-module_element__1EYDR,\n  .Title-module_newTitle__3v8No {\n    font-size: 24px;\n  }\n}\n";
+var s$R = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","title":"Title-module_title__gpPet","element":"Title-module_element__1EYDR","newTitle":"Title-module_newTitle__3v8No","horizontalRule":"Title-module_horizontalRule__1wwO9"};
+styleInject(css$S);
 
 var TitleVariants = {
   underlined: 'underlined',
@@ -24489,18 +24378,18 @@ var Title = function Title(_ref) {
 
   if (variant === TitleVariants.underlined) {
     return React__default.createElement("div", {
-      className: "".concat(s$S.title, " ").concat(className),
+      className: "".concat(s$R.title, " ").concat(className),
       testid: testid
     }, React__default.createElement(htmlElement, {
-      className: [s$S.element, elementClassName].join(' ')
+      className: [s$R.element, elementClassName].join(' ')
     }, label), React__default.createElement("hr", {
-      className: s$S.horizontalRule
+      className: s$R.horizontalRule
     }));
   }
 
   if (variant === TitleVariants.none) {
     return React__default.createElement(htmlElement, {
-      className: "".concat(s$S.newTitle, " ").concat(className)
+      className: "".concat(s$R.newTitle, " ").concat(className)
     }, label, testid);
   }
 
@@ -24523,9 +24412,9 @@ Title.propTypes = {
   elementClassName: PropTypes$1.string
 };
 
-var css$U = "/**\n* This element has to be wrapped in a .steps div to increment the counter\n*/\n\n:root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.TitleStep-module_steps__1Ryhp {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  counter-reset: steps;\n}\n\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0:before,\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0 + .TitleStep-module_step_button__1xXOY:before,\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0 + .TitleStep-module_step_button__1xXOY + .TitleStep-module_step_button__1xXOY:before {\n  content: counter(steps);\n}\n\n.TitleStep-module_step_button__1xXOY {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  color: #A9B3C5;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 17.6px;\n  font-size: 17.6px;\n  font-size: 1.1rem;\n  margin-right: 48px;\n  margin-right: 48px;\n  margin-right: 3rem;\n  position: relative;\n  background-color: transparent;\n  border: 0;\n  counter-increment: steps;\n  cursor: pointer;\n  font-weight: 300;\n  -webkit-transition: all 0.3s ease-in-out;\n  transition: all 0.3s ease-in-out;\n  opacity: 1\n}\n\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0 {\n  color: #F7D48A;\n  cursor: default;\n}\n\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0:before {\n  background-color: #FFFFFF;\n}\n\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0:after {\n  border-right: 2px solid #FFFFFF;\n  content: '';\n  height: 35px;\n  left: 19px;\n  position: absolute;\n  top: 26px;\n}\n\n.TitleStep-module_step_button__1xXOY.TitleStep-module_done__1vIiB:before {\n  content: '\\2713';\n}\n\n.TitleStep-module_step_button__1xXOY:before {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  background-color: #9EB3C2;\n  border-radius: 50%;\n  color: #000031;\n  content: '7';\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 13px;\n  font-weight: bold;\n  height: 25px;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  margin-right: 10px;\n  width: 25px;\n}\n\n.TitleStep-module_step_button__1xXOY:before,\n  .TitleStep-module_step_button__1xXOY:after {\n  -webkit-transition: all 0.3s ease-in-out;\n  transition: all 0.3s ease-in-out;\n}\n\n.TitleStep-module_step_button__1xXOY:hover {\n  color: #FFFFFF;\n}\n\n.TitleStep-module_step_button__1xXOY:hover:before,\n    .TitleStep-module_step_button__1xXOY:hover:after {\n  background-color: #FFFFFF;\n}\n\n.TitleStep-module_step_button__1xXOY:hover:active {\n  -webkit-transition: all 0s ease-in-out;\n  transition: all 0s ease-in-out;\n  opacity: 0.6;\n}\n";
-var s$T = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","steps":"TitleStep-module_steps__1Ryhp","step_button":"TitleStep-module_step_button__1xXOY","active":"TitleStep-module_active__3zKP0","done":"TitleStep-module_done__1vIiB"};
-styleInject(css$U);
+var css$T = "/**\n* This element has to be wrapped in a .steps div to increment the counter\n*/\n\n:root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.TitleStep-module_steps__1Ryhp {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  counter-reset: steps;\n}\n\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0:before,\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0 + .TitleStep-module_step_button__1xXOY:before,\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0 + .TitleStep-module_step_button__1xXOY + .TitleStep-module_step_button__1xXOY:before {\n  content: counter(steps);\n}\n\n.TitleStep-module_step_button__1xXOY {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  color: #A9B3C5;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 17.6px;\n  font-size: 17.6px;\n  font-size: 1.1rem;\n  margin-right: 48px;\n  margin-right: 48px;\n  margin-right: 3rem;\n  position: relative;\n  background-color: transparent;\n  border: 0;\n  counter-increment: steps;\n  cursor: pointer;\n  font-weight: 300;\n  -webkit-transition: all 0.3s ease-in-out;\n  transition: all 0.3s ease-in-out;\n  opacity: 1\n}\n\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0 {\n  color: #F7D48A;\n  cursor: default;\n}\n\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0:before {\n  background-color: #FFFFFF;\n}\n\n.TitleStep-module_step_button__1xXOY.TitleStep-module_active__3zKP0:after {\n  border-right: 2px solid #FFFFFF;\n  content: '';\n  height: 35px;\n  left: 19px;\n  position: absolute;\n  top: 26px;\n}\n\n.TitleStep-module_step_button__1xXOY.TitleStep-module_done__1vIiB:before {\n  content: '\\2713';\n}\n\n.TitleStep-module_step_button__1xXOY:before {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  background-color: #9EB3C2;\n  border-radius: 50%;\n  color: #000031;\n  content: '7';\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-size: 13px;\n  font-weight: bold;\n  height: 25px;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  margin-right: 10px;\n  width: 25px;\n}\n\n.TitleStep-module_step_button__1xXOY:before,\n  .TitleStep-module_step_button__1xXOY:after {\n  -webkit-transition: all 0.3s ease-in-out;\n  transition: all 0.3s ease-in-out;\n}\n\n.TitleStep-module_step_button__1xXOY:hover {\n  color: #FFFFFF;\n}\n\n.TitleStep-module_step_button__1xXOY:hover:before,\n    .TitleStep-module_step_button__1xXOY:hover:after {\n  background-color: #FFFFFF;\n}\n\n.TitleStep-module_step_button__1xXOY:hover:active {\n  -webkit-transition: all 0s ease-in-out;\n  transition: all 0s ease-in-out;\n  opacity: 0.6;\n}\n";
+var s$S = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","steps":"TitleStep-module_steps__1Ryhp","step_button":"TitleStep-module_step_button__1xXOY","active":"TitleStep-module_active__3zKP0","done":"TitleStep-module_done__1vIiB"};
+styleInject(css$T);
 
 var TitleStep = function TitleStep(_ref) {
   var Active = _ref.Active,
@@ -24533,7 +24422,7 @@ var TitleStep = function TitleStep(_ref) {
       Done = _ref.Done,
       onClick = _ref.onClick,
       className = _ref.className;
-  var classNameString = "\n        ".concat(s$T.step_button, "\n        ").concat(Done ? s$T.done : '', "\n        ").concat(Active ? s$T.active : '', "\n        ").concat(className, "\n    ");
+  var classNameString = "\n        ".concat(s$S.step_button, "\n        ").concat(Done ? s$S.done : '', "\n        ").concat(Active ? s$S.active : '', "\n        ").concat(className, "\n    ");
   return React__default.createElement("button", {
     className: classNameString,
     onClick: onClick
@@ -24553,9 +24442,9 @@ TitleStep.propTypes = {
   className: PropTypes$1.string
 };
 
-var css$V = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.RewardCard-module_card__1Znmy {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: 0;\n  max-height: 100%;\n  border-radius: 30px;\n  background-color: #FFFFFF;\n  -webkit-box-shadow: 0 0 38px -2px rgba(0, 0, 0, .15);\n          box-shadow: 0 0 38px -2px rgba(0, 0, 0, .15);\n}\n\n.RewardCard-module_left__3Vghj {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n\n.RewardCard-module_imageContainer__ZBjX1 {\n  background-position: center center;\n  background-repeat: no-repeat;\n  background-size: 100% 100%;\n  border-bottom-right-radius: 8px;\n  border-top-right-radius: 8px;\n  width: 32px;\n}\n\n.RewardCard-module_imageContainerBig__7BCdx {\n  width: 65px;\n}\n\n@media (max-width: 480px) {\n  .RewardCard-module_imageContainer__ZBjX1 {\n    display: none;\n  }\n}\n";
-var s$U = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","card":"RewardCard-module_card__1Znmy","left":"RewardCard-module_left__3Vghj","imageContainer":"RewardCard-module_imageContainer__ZBjX1","imageContainerBig":"RewardCard-module_imageContainerBig__7BCdx"};
-styleInject(css$V);
+var css$U = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.RewardCard-module_card__1Znmy {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: 0;\n  max-height: 100%;\n  border-radius: 30px;\n  background-color: #FFFFFF;\n  -webkit-box-shadow: 0 0 38px -2px rgba(0, 0, 0, .15);\n          box-shadow: 0 0 38px -2px rgba(0, 0, 0, .15);\n}\n\n.RewardCard-module_left__3Vghj {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n\n.RewardCard-module_imageContainer__ZBjX1 {\n  background-position: center center;\n  background-repeat: no-repeat;\n  background-size: 100% 100%;\n  border-bottom-right-radius: 8px;\n  border-top-right-radius: 8px;\n  width: 32px;\n}\n\n.RewardCard-module_imageContainerBig__7BCdx {\n  width: 65px;\n}\n\n@media (max-width: 480px) {\n  .RewardCard-module_imageContainer__ZBjX1 {\n    display: none;\n  }\n}\n";
+var s$T = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","card":"RewardCard-module_card__1Znmy","left":"RewardCard-module_left__3Vghj","imageContainer":"RewardCard-module_imageContainer__ZBjX1","imageContainerBig":"RewardCard-module_imageContainerBig__7BCdx"};
+styleInject(css$U);
 
 var RewardCardTextTypes = PropTypes$1.shape({
   rewardText: PropTypes$1.string,
@@ -24567,9 +24456,9 @@ var RewardCardTextTypes = PropTypes$1.shape({
   updateExternalCard: PropTypes$1.string
 });
 
-var css$W = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.RewardCardHeader-module_header__16x0N {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: 50px;\n  padding: 16px;\n}\n\n.RewardCardHeader-module_text__2_Rz0 {\n  -webkit-box-align: start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n}\n\n.RewardCardHeader-module_textMobile__1E4IT {\n  display: none;\n}\n\n.RewardCardHeader-module_tooltip__26usu {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -ms-flex-item-align: center;\n      align-self: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  margin-left: 8px;\n}\n\n.RewardCardHeader-module_rewardValue__1CNXp:after {\n  content: '\\A0';\n}\n\n@media (max-width: 1130px) {\n  .RewardCardHeader-module_textDesktop__14Q6S {\n    display: none;\n  }\n  .RewardCardHeader-module_textMobile__1E4IT {\n    display: inline;\n  }\n}\n";
-var s$V = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","header":"RewardCardHeader-module_header__16x0N","text":"RewardCardHeader-module_text__2_Rz0","textMobile":"RewardCardHeader-module_textMobile__1E4IT","tooltip":"RewardCardHeader-module_tooltip__26usu","rewardValue":"RewardCardHeader-module_rewardValue__1CNXp","textDesktop":"RewardCardHeader-module_textDesktop__14Q6S"};
-styleInject(css$W);
+var css$V = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.RewardCardHeader-module_header__16x0N {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: 50px;\n  padding: 16px;\n}\n\n.RewardCardHeader-module_text__2_Rz0 {\n  -webkit-box-align: start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n}\n\n.RewardCardHeader-module_textMobile__1E4IT {\n  display: none;\n}\n\n.RewardCardHeader-module_tooltip__26usu {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -ms-flex-item-align: center;\n      align-self: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  margin-left: 8px;\n}\n\n.RewardCardHeader-module_rewardValue__1CNXp:after {\n  content: '\\A0';\n}\n\n@media (max-width: 1130px) {\n  .RewardCardHeader-module_textDesktop__14Q6S {\n    display: none;\n  }\n  .RewardCardHeader-module_textMobile__1E4IT {\n    display: inline;\n  }\n}\n";
+var s$U = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","header":"RewardCardHeader-module_header__16x0N","text":"RewardCardHeader-module_text__2_Rz0","textMobile":"RewardCardHeader-module_textMobile__1E4IT","tooltip":"RewardCardHeader-module_tooltip__26usu","rewardValue":"RewardCardHeader-module_rewardValue__1CNXp","textDesktop":"RewardCardHeader-module_textDesktop__14Q6S"};
+styleInject(css$V);
 
 var RewardCardHeader = function RewardCardHeader(_ref) {
   var texts = _ref.texts,
@@ -24579,22 +24468,22 @@ var RewardCardHeader = function RewardCardHeader(_ref) {
       rewardValue = _ref.rewardValue,
       rewardTooltipIcon = _ref.rewardTooltipIcon;
   return React__default.createElement("div", {
-    className: s$V.header
+    className: s$U.header
   }, React__default.createElement(RadioButton, {
     label: "\xA0",
     checked: isSelected,
     onSelect: onRadioButtonChange,
     name: name
   }), React__default.createElement("span", {
-    className: s$V.text
+    className: s$U.text
   }, React__default.createElement("strong", {
-    className: s$V.rewardValue
+    className: s$U.rewardValue
   }, rewardValue), React__default.createElement("span", {
-    className: s$V.textDesktop
+    className: s$U.textDesktop
   }, texts.rewardText), React__default.createElement("span", {
-    className: s$V.textMobile
+    className: s$U.textMobile
   }, texts.rewardTextMobile), React__default.createElement(Tooltip, {
-    className: s$V.tooltip,
+    className: s$U.tooltip,
     iconClassName: rewardTooltipIcon,
     text: texts.rewardTooltip
   })));
@@ -24609,15 +24498,15 @@ RewardCardHeader.propTypes = {
   rewardTooltipIcon: PropTypes$1.string.isRequired
 };
 
-var css$X = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.RewardCardContent-module_content__2HvzU {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  padding: 8px;\n}\n\n.RewardCardContent-module_content__2HvzU:empty {\n  display: none;\n}\n";
-var s$W = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","content":"RewardCardContent-module_content__2HvzU"};
-styleInject(css$X);
+var css$W = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.RewardCardContent-module_content__2HvzU {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  padding: 8px;\n}\n\n.RewardCardContent-module_content__2HvzU:empty {\n  display: none;\n}\n";
+var s$V = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","content":"RewardCardContent-module_content__2HvzU"};
+styleInject(css$W);
 
 var RewardCardContent = function RewardCardContent(_ref) {
   var children = _ref.children,
       className = _ref.className;
   return React__default.createElement("div", {
-    className: [s$W.content, className].join(' ')
+    className: [s$V.content, className].join(' ')
   }, children);
 };
 
@@ -24652,9 +24541,9 @@ var RewardCard = function RewardCard(_ref) {
       cardProps = _objectWithoutProperties(_ref, ["name", "image", "rewardValue", "rewardTooltipIcon", "onRadioButtonChange", "prefixTestId", "isSelected", "selectedIcon", "isConnected", "texts", "hasExternalCard", "children", "isExternalCardUpdatable", "onClickEditExternalCard", "editExternalCardClassName", "fetching", "className", "contentClassName"]);
 
   return React__default.createElement("div", {
-    className: [s$U.card, className].join(' ')
+    className: [s$T.card, className].join(' ')
   }, React__default.createElement("div", {
-    className: s$U.left
+    className: s$T.left
   }, React__default.createElement(RewardCardHeader, {
     texts: texts,
     isSelected: isSelected,
@@ -24665,7 +24554,7 @@ var RewardCard = function RewardCard(_ref) {
   }), isSelected && React__default.createElement(RewardCardContent, {
     className: contentClassName
   }, children)), React__default.createElement("div", {
-    className: [s$U.imageContainer, isSelected && children ? s$U.imageContainerBig : undefined].join(' '),
+    className: [s$T.imageContainer, isSelected && children ? s$T.imageContainerBig : undefined].join(' '),
     style: {
       backgroundImage: "url(".concat(image, ")")
     }
@@ -24708,9 +24597,9 @@ RewardCard.defaultProps = {
   onClickEditExternalCard: undefined
 };
 
-var css$Y = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.RoundedButton-module_buttonContainer__1mUSj {\n  border: 2px solid;\n  border-radius: 15px;\n  padding: 8px 20px;\n  font-weight: bold;\n}\n\n.RoundedButton-module_fetching__1KXE5 {\n  background: none;\n  background-color: transparent !important;\n  color: transparent !important;\n  cursor: not-allowed !important;\n  opacity: 1 !important;\n  overflow: hidden;\n  position: relative\n}\n\n.RoundedButton-module_fetching__1KXE5:hover {\n  background-color: transparent;\n}\n\n.RoundedButton-module_fetching__1KXE5:before {\n  background-color: #FFE8AD;\n  border-radius: 2px;\n  content: '';\n  height: 4px;\n  position: absolute;\n  top: 50%;\n  left: 0;\n  right: 0;\n  margin-top: -2px;\n}\n\n.RoundedButton-module_fetching__1KXE5:after {\n  -webkit-animation: RoundedButton-module_fetching__1KXE5 3s linear infinite;\n          animation: RoundedButton-module_fetching__1KXE5 3s linear infinite;\n  background-color: #FFB201;\n  border-radius: 2px;\n  content: '';\n  height: 4px;\n  position: absolute;\n  top: 50%;\n  margin-top: -2px;\n  left: 0;\n  width: 20%;\n}\n\n@-webkit-keyframes RoundedButton-module_fetching__1KXE5 {\n  from {\n    -webkit-transform: translateX(-100%);\n            transform: translateX(-100%);\n  }\n\n  to {\n    -webkit-transform: translateX(500%);\n            transform: translateX(500%);\n  }\n}\n\n@keyframes RoundedButton-module_fetching__1KXE5 {\n  from {\n    -webkit-transform: translateX(-100%);\n            transform: translateX(-100%);\n  }\n\n  to {\n    -webkit-transform: translateX(500%);\n            transform: translateX(500%);\n  }\n}\n";
-var s$X = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","buttonContainer":"RoundedButton-module_buttonContainer__1mUSj","fetching":"RoundedButton-module_fetching__1KXE5"};
-styleInject(css$Y);
+var css$X = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.RoundedButton-module_buttonContainer__1mUSj {\n  border: 2px solid;\n  border-radius: 15px;\n  padding: 8px 20px;\n  font-weight: bold;\n}\n\n.RoundedButton-module_fetching__1KXE5 {\n  background: none;\n  background-color: transparent !important;\n  color: transparent !important;\n  cursor: not-allowed !important;\n  opacity: 1 !important;\n  overflow: hidden;\n  position: relative\n}\n\n.RoundedButton-module_fetching__1KXE5:hover {\n  background-color: transparent;\n}\n\n.RoundedButton-module_fetching__1KXE5:before {\n  background-color: #FFE8AD;\n  border-radius: 2px;\n  content: '';\n  height: 4px;\n  position: absolute;\n  top: 50%;\n  left: 0;\n  right: 0;\n  margin-top: -2px;\n}\n\n.RoundedButton-module_fetching__1KXE5:after {\n  -webkit-animation: RoundedButton-module_fetching__1KXE5 3s linear infinite;\n          animation: RoundedButton-module_fetching__1KXE5 3s linear infinite;\n  background-color: #FFB201;\n  border-radius: 2px;\n  content: '';\n  height: 4px;\n  position: absolute;\n  top: 50%;\n  margin-top: -2px;\n  left: 0;\n  width: 20%;\n}\n\n@-webkit-keyframes RoundedButton-module_fetching__1KXE5 {\n  from {\n    -webkit-transform: translateX(-100%);\n            transform: translateX(-100%);\n  }\n\n  to {\n    -webkit-transform: translateX(500%);\n            transform: translateX(500%);\n  }\n}\n\n@keyframes RoundedButton-module_fetching__1KXE5 {\n  from {\n    -webkit-transform: translateX(-100%);\n            transform: translateX(-100%);\n  }\n\n  to {\n    -webkit-transform: translateX(500%);\n            transform: translateX(500%);\n  }\n}\n";
+var s$W = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","buttonContainer":"RoundedButton-module_buttonContainer__1mUSj","fetching":"RoundedButton-module_fetching__1KXE5"};
+styleInject(css$X);
 
 var RoundedButton = function RoundedButton(_ref) {
   var text = _ref.text,
@@ -24720,7 +24609,7 @@ var RoundedButton = function RoundedButton(_ref) {
       fetching = _ref.fetching;
   return React__default.createElement("button", {
     onClick: onClick,
-    className: [s$X.buttonContainer, className, fetching ? s$X.fetching : undefined].join(' '),
+    className: [s$W.buttonContainer, className, fetching ? s$W.fetching : undefined].join(' '),
     textid: testid
   }, text.toUpperCase());
 };
@@ -24738,16 +24627,16 @@ RoundedButton.defaultProps = {
   fetching: false
 };
 
-var css$Z = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.AddItemCard-module_addItemButton__3S4yl {\n  background-color: #ECEFF6;\n  padding: 5px;\n  border-radius: 30px;\n  margin-top: 25px;\n  margin-right: 25px;\n  position: relative\n}\n\n.AddItemCard-module_addItemButton__3S4yl:hover {\n  background-color: #F7D48A;\n}\n\n.AddItemCard-module_forPaymentMethod__pm0VB {\n  -webkit-box-flex: 0;\n      -ms-flex: 0 0 185px;\n          flex: 0 0 185px;\n  border-radius: 8px;\n  width: 185px;\n}\n\n.AddItemCard-module_addItemButtonContent__16LVO {\n  background-color: #FFFFFF;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  padding: 16px !important;\n  padding: 16px !important;\n  padding: 1rem !important;\n}\n\n.AddItemCard-module_addItemButtonPlus__2wFvd {\n  color: #ECEFF6;\n  font-size: 80px;\n  font-weight: 700;\n  line-height: 0.9;\n  text-align: center\n}\n\n.AddItemCard-module_addItemButtonPlus__2wFvd.AddItemCard-module_smallButtonPlus__3q3hi {\n  font-size: 59px;\n  margin-bottom: 15px;\n}\n\n.AddItemCard-module_addItemButtonLink__2TXY8 {\n  justify-self: flex-end;\n  margin-bottom: 8px;\n}\n\n.AddItemCard-module_text__23fiP {\n  white-space: nowrap;\n}\n\n.AddItemCard-module_linkCenter__1V6Ss {\n  -webkit-box-pack: center !important;\n      -ms-flex-pack: center !important;\n          justify-content: center !important;\n}\n\n@media (max-width: 480px) {\n  .AddItemCard-module_addItemButton__3S4yl {\n    margin-right: 0;\n  }\n\n  .AddItemCard-module_addItemButtonPlus__2wFvd {\n    font-size: 70px;\n  }\n}\n";
-var s$Y = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","addItemButton":"AddItemCard-module_addItemButton__3S4yl","forPaymentMethod":"AddItemCard-module_forPaymentMethod__pm0VB","addItemButtonContent":"AddItemCard-module_addItemButtonContent__16LVO","addItemButtonPlus":"AddItemCard-module_addItemButtonPlus__2wFvd","smallButtonPlus":"AddItemCard-module_smallButtonPlus__3q3hi","addItemButtonLink":"AddItemCard-module_addItemButtonLink__2TXY8","text":"AddItemCard-module_text__23fiP","linkCenter":"AddItemCard-module_linkCenter__1V6Ss"};
-styleInject(css$Z);
+var css$Y = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.AddItemCard-module_addItemButton__3S4yl {\n  background-color: #ECEFF6;\n  padding: 5px;\n  border-radius: 30px;\n  margin-top: 25px;\n  margin-right: 25px;\n  position: relative\n}\n\n.AddItemCard-module_addItemButton__3S4yl:hover {\n  background-color: #F7D48A;\n}\n\n.AddItemCard-module_forPaymentMethod__pm0VB {\n  -webkit-box-flex: 0;\n      -ms-flex: 0 0 185px;\n          flex: 0 0 185px;\n  border-radius: 8px;\n  width: 185px;\n}\n\n.AddItemCard-module_addItemButtonContent__16LVO {\n  background-color: #FFFFFF;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  padding: 16px !important;\n  padding: 16px !important;\n  padding: 1rem !important;\n}\n\n.AddItemCard-module_addItemButtonPlus__2wFvd {\n  color: #ECEFF6;\n  font-size: 80px;\n  font-weight: 700;\n  line-height: 0.9;\n  text-align: center\n}\n\n.AddItemCard-module_addItemButtonPlus__2wFvd.AddItemCard-module_smallButtonPlus__3q3hi {\n  font-size: 59px;\n  margin-bottom: 15px;\n}\n\n.AddItemCard-module_addItemButtonLink__2TXY8 {\n  justify-self: flex-end;\n  margin-bottom: 8px;\n}\n\n.AddItemCard-module_text__23fiP {\n  white-space: nowrap;\n}\n\n.AddItemCard-module_linkCenter__1V6Ss {\n  -webkit-box-pack: center !important;\n      -ms-flex-pack: center !important;\n          justify-content: center !important;\n}\n\n@media (max-width: 480px) {\n  .AddItemCard-module_addItemButton__3S4yl {\n    margin-right: 0;\n  }\n\n  .AddItemCard-module_addItemButtonPlus__2wFvd {\n    font-size: 70px;\n  }\n}\n";
+var s$X = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","addItemButton":"AddItemCard-module_addItemButton__3S4yl","forPaymentMethod":"AddItemCard-module_forPaymentMethod__pm0VB","addItemButtonContent":"AddItemCard-module_addItemButtonContent__16LVO","addItemButtonPlus":"AddItemCard-module_addItemButtonPlus__2wFvd","smallButtonPlus":"AddItemCard-module_smallButtonPlus__3q3hi","addItemButtonLink":"AddItemCard-module_addItemButtonLink__2TXY8","text":"AddItemCard-module_text__23fiP","linkCenter":"AddItemCard-module_linkCenter__1V6Ss"};
+styleInject(css$Y);
 
 var AddItemCardFooter = function AddItemCardFooter(_ref) {
   var label = _ref.label,
       onClick = _ref.onClick,
       testid = _ref.testid,
       className = _ref.className;
-  var linkClass = [s$Y.addItemButtonLink, s$Y.linkCenter];
+  var linkClass = [s$X.addItemButtonLink, s$X.linkCenter];
   return React__default.createElement(LinkUnderlined, {
     testid: testid,
     className: [className, linkClass].join(' '),
@@ -24781,7 +24670,7 @@ var AddItemCardButtonPlus = function AddItemCardButtonPlus(_ref) {
   return React__default.createElement("button", {
     type: "button",
     onClick: onClick,
-    className: [s$Y.addItemButtonPlus, s$Y.smallButtonPlus, className].join(' ')
+    className: [s$X.addItemButtonPlus, s$X.smallButtonPlus, className].join(' ')
   }, isPending ? React__default.createElement(Loader, {
     size: loaderSize
   }) : '+');
@@ -24828,7 +24717,7 @@ var AddItemCard = function AddItemCard(_ref) {
     label: label,
     className: linkClassName
   });
-  var cardClassName = "\n    ".concat(s$Y.addItemButtonContent, "\n    ").concat(isPaymentMethod ? s$Y.forPaymentMethod : '', "\n  ");
+  var cardClassName = "\n    ".concat(s$X.addItemButtonContent, "\n    ").concat(isPaymentMethod ? s$X.forPaymentMethod : '', "\n  ");
   return React__default.createElement(Card, _extends({}, cardProps, {
     footerChildren: linkUnderlined,
     contentClassName: cardClassName
@@ -24862,9 +24751,9 @@ AddItemCard.defaultProps = {
   linkClassName: undefined
 };
 
-var css$_ = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.RegistrationForm-module_columns__2mI8R {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.RegistrationForm-module_columns__2mI8R > div {\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  border-spacing: 20px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n}\n\n.RegistrationForm-module_columns__2mI8R > div > * {\n  height: 55px;\n}\n\n.RegistrationForm-module_leftColumn__xhQap {\n  margin-right: 8px;\n}\n\n.RegistrationForm-module_columns__2mI8R:nth-child(2) {\n  margin-left: 20px;\n}\n\n.RegistrationForm-module_flex__mWQse {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.RegistrationForm-module_leftRadio__2Iq2n {\n  margin-right: 8px;\n}\n\n.RegistrationForm-module_inputLabel__3IYO_ {\n  margin-top: 40px;\n}\n\n.RegistrationForm-module_emailInputLabel__1t3GN input {\n  background-color: #ECEFF6;\n}\n\n.RegistrationForm-module_genderPicker__2I3dC {\n  margin-top: 8px;\n}\n\n.RegistrationForm-module_var__2ZWgF(\\--error) {\n  text-align: left;\n  color: #DF6262;\n}\n\n.RegistrationForm-module_footerLabel__32y4D {\n  font-style: italic;\n  font-size: 12px;\n}\n\n@media (max-width: 480px) {\n  .RegistrationForm-module_card__3j0bC {\n    background: transparent;\n    padding: 0;\n  }\n  .RegistrationForm-module_contentCard__rslWZ {\n    padding: 0;\n  }\n  .RegistrationForm-module_columns__2mI8R {\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n  }\n  .RegistrationForm-module_columns__2mI8R > div > * {\n    height: auto;\n  }\n  .RegistrationForm-module_leftColumn__xhQap {\n    margin: 0 0 8px;\n  }\n  .RegistrationForm-module_inputLabel__3IYO_ {\n    margin-top: 8px;\n  }\n  .RegistrationForm-module_emailInputLabel__1t3GN {\n    display: none;\n  }\n}\n";
-var s$Z = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","-webkit-columns":"RegistrationForm-module_columns__2mI8R","columns":"RegistrationForm-module_columns__2mI8R","leftColumn":"RegistrationForm-module_leftColumn__xhQap","-webkit-box-flex":"RegistrationForm-module_flex__mWQse","-ms-flex":"RegistrationForm-module_flex__mWQse","flex":"RegistrationForm-module_flex__mWQse","leftRadio":"RegistrationForm-module_leftRadio__2Iq2n","inputLabel":"RegistrationForm-module_inputLabel__3IYO_","emailInputLabel":"RegistrationForm-module_emailInputLabel__1t3GN","genderPicker":"RegistrationForm-module_genderPicker__2I3dC","var":"RegistrationForm-module_var__2ZWgF","footerLabel":"RegistrationForm-module_footerLabel__32y4D","card":"RegistrationForm-module_card__3j0bC","contentCard":"RegistrationForm-module_contentCard__rslWZ"};
-styleInject(css$_);
+var css$Z = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.RegistrationForm-module_columns__2mI8R {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.RegistrationForm-module_columns__2mI8R > div {\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  border-spacing: 20px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n}\n\n.RegistrationForm-module_columns__2mI8R > div > * {\n  height: 55px;\n}\n\n.RegistrationForm-module_leftColumn__xhQap {\n  margin-right: 8px;\n}\n\n.RegistrationForm-module_columns__2mI8R:nth-child(2) {\n  margin-left: 20px;\n}\n\n.RegistrationForm-module_flex__mWQse {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.RegistrationForm-module_leftRadio__2Iq2n {\n  margin-right: 8px;\n}\n\n.RegistrationForm-module_inputLabel__3IYO_ {\n  margin-top: 40px;\n}\n\n.RegistrationForm-module_emailInputLabel__1t3GN input {\n  background-color: #ECEFF6;\n}\n\n.RegistrationForm-module_genderPicker__2I3dC {\n  margin-top: 8px;\n}\n\n.RegistrationForm-module_var__2ZWgF(\\--error) {\n  text-align: left;\n  color: #DF6262;\n}\n\n.RegistrationForm-module_footerLabel__32y4D {\n  font-style: italic;\n  font-size: 12px;\n}\n\n@media (max-width: 480px) {\n  .RegistrationForm-module_card__3j0bC {\n    background: transparent;\n    padding: 0;\n  }\n  .RegistrationForm-module_contentCard__rslWZ {\n    padding: 0;\n  }\n  .RegistrationForm-module_columns__2mI8R {\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n  }\n  .RegistrationForm-module_columns__2mI8R > div > * {\n    height: auto;\n  }\n  .RegistrationForm-module_leftColumn__xhQap {\n    margin: 0 0 8px;\n  }\n  .RegistrationForm-module_inputLabel__3IYO_ {\n    margin-top: 8px;\n  }\n  .RegistrationForm-module_emailInputLabel__1t3GN {\n    display: none;\n  }\n}\n";
+var s$Y = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","-webkit-columns":"RegistrationForm-module_columns__2mI8R","columns":"RegistrationForm-module_columns__2mI8R","leftColumn":"RegistrationForm-module_leftColumn__xhQap","-webkit-box-flex":"RegistrationForm-module_flex__mWQse","-ms-flex":"RegistrationForm-module_flex__mWQse","flex":"RegistrationForm-module_flex__mWQse","leftRadio":"RegistrationForm-module_leftRadio__2Iq2n","inputLabel":"RegistrationForm-module_inputLabel__3IYO_","emailInputLabel":"RegistrationForm-module_emailInputLabel__1t3GN","genderPicker":"RegistrationForm-module_genderPicker__2I3dC","var":"RegistrationForm-module_var__2ZWgF","footerLabel":"RegistrationForm-module_footerLabel__32y4D","card":"RegistrationForm-module_card__3j0bC","contentCard":"RegistrationForm-module_contentCard__rslWZ"};
+styleInject(css$Z);
 
 var RegistrationFormTextTypes = PropTypes$1.shape({
   firstName: PropTypes$1.string,
@@ -24915,6 +24804,115 @@ var defaultErrors = {
   passwordConfirmation: null
 };
 
+var bgWhite = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAAaCAYAAABLlle3AAAAAXNSR0IArs4c6QAAA/dJREFUSA291ttuVVUUxvFuOaiIKB7QYjkogpqgiZFEvdGH8IV8AV+Eay+8MMY7Q6LxgCYeEIECgqIFROVg2f5/q3s3paX1Rp3J37nXXHOOMb5vzFWcmfkPxng83rRR2NFGL9d7V9D7e/dXLI5Go9s9i7MjzDfi8bjYO7/XjM1rVlYtFHBbSxLcji0F+rN5Z7wVH8bxeCQOxDgMcTd19pf2Xx1WVvznrkknlW9p32LMxu6QbEGg5jfiYPQ4Pt9sz73xYDwUC3FPiL8m6Rp7JwlZNRe/xpF4NBQxH9vjULBQUSeCjfp4IexV2JW4Fl+m9lbz8ribUodfCFY9F5JT4eDeuBQCbg293R8PBJUfhAJuhmHPE3HWw3SwgEcrFav+q3CY0jMhqL7avysMz5BYEja+HntCj/Xd/stxx9g8Sbi1WTLJHw6BKN4X1jEbFErgN+X2sd1l00vKJNf/P0JCce4YU3tZSY2kLsjhEOTZEFwgCvXxo/gpXg4FPhaSXw/uiKOXEor3VCh2eQz29sQmB4xzofo3Q1AXR+DnQ48ll3Q+qNAzt9sFwtNhKFRSLoq3PDZ3s6iESq+34fdmjZdcEP1h333hW30tXJrvQ9HgitkdYD+1zrBYYXPFvTD5xmf01CKbb7UoqJsq8RfBQv1jn6qhkFdDop0xLUY/KdL/l4L6H2IhngznPo4h2VTptgqQUBGsZKN+CuJieMeNqeo9k3U2KlpyhXhm8VxQqjDFvLcUf3STvf52Cs4e/VMVRfrJWv1WiJ4LYChUXyXTUwkvBmslEMvM5k9DwVfLdaODI4dmeijvkJgqa5+HgwoQaKqYhVrwW1AtqFlh9lHmnSL81mP2ngkxqBkPSYeH0WixxFf6fSHMlL4SeqGnChKYYhZaOx0SUyuxT4q183EsvgtnriVMzGFQs3K4TGdbUJWZNapUPcuts01ifbZ+In4OlnsWXDt2hLUDsTtBLB7GstLpQi8pdCEo/iQkcmnYei4EVeyloO5yfB37g2q9dV4rpt+4Nr1b7NOJWlyd1Pd3ONgmKGvsORgCfROUzQYrF8Jlo15vFUYlVzyLZ+gvZ4axOqnDJ0P1Auya4M/aj3E2BHVRzofCuGAWdHrb9/bbp/VtUM9qAsQcVJinw23LgeGPhH992Khqlr4fDm+P46EI76nXLxZ6z4FTYc9nsS8kNuy/096SaTymg2qXRn+NU6HHlJkls+dIUEYhK+1XjBvuvP66K0QNKszrjtRSyjY302ezqeJYtfLfYSpZ/kzMxqF4JyijXkEnO6eAfx4snti84ebpnua98WJsif7nbGY0Pnq0+e3iLImk4l8bJaEMLobP6f8Zg7LxUuL1Mv4Nki9xooUuN/EAAAAASUVORK5CYII=";
+
+var bgGrey = "data:image/png;base64,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";
+
+var bgBlue = "data:image/png;base64,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";
+
+var bgYellow = "data:image/png;base64,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";
+
+var bgMelrose = "data:image/png;base64,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";
+
+var css$_ = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.Icon-module_withBackground__EomNm {\n  position: relative;\n  z-index: 2;\n}\n\n.Icon-module_var__WzdLB(\\--background) {\n  position: absolute;\n  z-index: 1;\n  height: 20.8px;\n  height: 20.8px;\n  height: 1.3rem;\n  margin-top: -0.65em;\n  top: 50%;\n}\n\n.Icon-module_withBackground__EomNm.Icon-module_left__2QZ0s {\n  margin-left: 8px;\n}\n";
+var s$Z = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584","withBackground":"Icon-module_withBackground__EomNm","var":"Icon-module_var__WzdLB","left":"Icon-module_left__2QZ0s"};
+styleInject(css$_);
+
+var _BackgroundImages;
+var Backgrounds = {
+  none: 'none',
+  white: 'white',
+  grey: 'grey',
+  melrose: 'melrose',
+  yellow: 'yellow',
+  blue: 'blue'
+};
+var BackgroundImages = (_BackgroundImages = {}, _defineProperty(_BackgroundImages, Backgrounds.none, undefined), _defineProperty(_BackgroundImages, Backgrounds.white, bgWhite), _defineProperty(_BackgroundImages, Backgrounds.grey, bgGrey), _defineProperty(_BackgroundImages, Backgrounds.yellow, bgYellow), _defineProperty(_BackgroundImages, Backgrounds.blue, bgBlue), _defineProperty(_BackgroundImages, Backgrounds.melrose, bgMelrose), _BackgroundImages);
+var Positions = ['left', 'right', 'top', 'bottom'];
+
+var IconComponent = function IconComponent(_ref) {
+  var src = _ref.src,
+      name = _ref.name,
+      children = _ref.children,
+      className = _ref.className;
+
+  if (src) {
+    return React__default.createElement("img", {
+      src: src,
+      alt: "icon",
+      className: className
+    });
+  }
+
+  if (name) {
+    return React__default.createElement("i", {
+      className: ["icon icon-".concat(name), className].join(' ')
+    });
+  }
+
+  return children;
+};
+
+IconComponent.defaultProps = {
+  src: undefined,
+  name: undefined,
+  className: undefined,
+  children: null
+};
+IconComponent.propTypes = {
+  src: PropTypes$1.string,
+  name: PropTypes$1.string,
+  className: PropTypes$1.string,
+  separator: PropTypes$1.string,
+  children: PropTypes$1.oneOfType([PropTypes$1.arrayOf(PropTypes$1.node), PropTypes$1.node])
+};
+
+var Icon = function Icon(_ref2) {
+  var variant = _ref2.variant,
+      position = _ref2.position,
+      src = _ref2.src,
+      name = _ref2.name,
+      children = _ref2.children,
+      backgroundClassName = _ref2.backgroundClassName,
+      Component = _ref2.IconComponent,
+      iconClassName = _ref2.iconClassName,
+      containerProps = _objectWithoutProperties(_ref2, ["variant", "position", "src", "name", "children", "backgroundClassName", "IconComponent", "iconClassName"]);
+
+  var hasBackground = typeof BackgroundImages[variant] !== 'undefined';
+  return React__default.createElement("span", containerProps, hasBackground ? React__default.createElement("img", {
+    src: BackgroundImages[variant],
+    alt: "icon background",
+    className: [s$Z.background, backgroundClassName].join(' ')
+  }) : null, React__default.createElement(Component, {
+    src: src,
+    name: name,
+    className: [hasBackground ? s$Z.withBackground : undefined, position ? s$Z[position] : undefined, iconClassName].join(' ')
+  }, children));
+};
+
+Icon.defaultProps = {
+  src: undefined,
+  name: undefined,
+  className: undefined,
+  backgroundClassName: undefined,
+  variant: Backgrounds.none,
+  position: null,
+  children: null,
+  IconComponent: IconComponent,
+  iconClassName: undefined
+};
+Icon.propTypes = {
+  src: PropTypes$1.string,
+  name: PropTypes$1.string,
+  className: PropTypes$1.string,
+  backgroundClassName: PropTypes$1.string,
+  variant: PropTypes$1.oneOf(Object.keys(Backgrounds)),
+  position: PropTypes$1.oneOf(Positions),
+  children: PropTypes$1.oneOfType([PropTypes$1.arrayOf(PropTypes$1.node), PropTypes$1.node]),
+  IconComponent: PropTypes$1.func,
+  iconClassName: PropTypes$1.string
+};
+
 var RegistrationForm =
 /*#__PURE__*/
 function (_React$Component) {
@@ -24930,32 +24928,52 @@ function (_React$Component) {
     _defineProperty(_assertThisInitialized(_this), "renderLabelFooterPasswordComponent", function () {
       var labelFooterPassword = _this.props.labelFooterPassword;
       return labelFooterPassword ? React__default.createElement("div", {
-        className: s$Z.footerLabel
+        className: s$Y.footerLabel
       }, labelFooterPassword) : null;
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onClickEye", function (e) {
+      var hidePassword = _this.state.hidePassword;
+      e.preventDefault();
+
+      _this.setState({
+        hidePassword: !hidePassword
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onClickEyeConfirmation", function (e) {
+      var hidePasswordConfirmation = _this.state.hidePasswordConfirmation;
+      e.preventDefault();
+
+      _this.setState({
+        hidePasswordConfirmation: !hidePasswordConfirmation
+      });
     });
 
     _defineProperty(_assertThisInitialized(_this), "renderEyeButton", function () {
       var hidePassword = _this.state.hidePassword;
-      return React__default.createElement(Icon, {
-        src: hidePassword ? eyeClosedIcon : eyeOpenedIcon,
-        onClick: function onClick() {
-          return _this.setState({
-            hidePassword: !hidePassword
-          });
-        }
-      });
+      return React__default.createElement("button", {
+        onClick: _this.onClickEye,
+        id: "HidePasswordButton"
+      }, React__default.createElement("img", {
+        width: "20px",
+        height: "20px",
+        alt: "Eye",
+        src: hidePassword ? eyeOpenedIcon : eyeClosedIcon
+      }));
     });
 
     _defineProperty(_assertThisInitialized(_this), "renderEyeButtonConfirmation", function () {
       var hidePasswordConfirmation = _this.state.hidePasswordConfirmation;
-      return React__default.createElement(Icon, {
-        src: hidePasswordConfirmation ? eyeClosedIcon : eyeOpenedIcon,
-        onClick: function onClick() {
-          return _this.setState({
-            hidePasswordConfirmation: !hidePasswordConfirmation
-          });
-        }
-      });
+      return React__default.createElement("button", {
+        onClick: _this.onClickEyeConfirmation,
+        id: "HidePasswordButton"
+      }, React__default.createElement("img", {
+        width: "20px",
+        height: "20px",
+        alt: "Eye",
+        src: hidePasswordConfirmation ? eyeOpenedIcon : eyeClosedIcon
+      }));
     });
 
     _this.handleChangeFirstName = _this.handleChangeProperty.bind(_assertThisInitialized(_this), 'firstName');
@@ -24999,14 +25017,14 @@ function (_React$Component) {
           hidePasswordConfirmation = _this$state.hidePasswordConfirmation;
 
       var actualCardProps = _objectSpread({}, cardProps, {
-        className: [s$Z.card, className].join(' '),
-        contentClassName: [s$Z.contentCard, contentClassName].join(' ')
+        className: [s$Y.card, className].join(' '),
+        contentClassName: [s$Y.contentCard, contentClassName].join(' ')
       });
 
       return React__default.createElement(RootComponent, actualCardProps, React__default.createElement("div", {
-        className: s$Z.columns
+        className: s$Y.columns
       }, React__default.createElement("div", {
-        className: [s$Z.leftColumn, leftColumnClassName].join(' ')
+        className: [s$Y.leftColumn, leftColumnClassName].join(' ')
       }, React__default.createElement(InputLabel, {
         id: "registrationFormFirstNameInput",
         label: texts.firstName,
@@ -25016,7 +25034,7 @@ function (_React$Component) {
         mandatory: true
       }), React__default.createElement(InputLabel, {
         id: "registrationFormLastNameInput",
-        className: s$Z.inputLabel,
+        className: s$Y.inputLabel,
         label: texts.lastName,
         onChange: this.handleChangeLastName,
         value: values.lastName || '',
@@ -25024,7 +25042,7 @@ function (_React$Component) {
         mandatory: true
       }), React__default.createElement(PhoneInput, {
         id: "registrationFormPhoneInput",
-        className: s$Z.inputLabel,
+        className: s$Y.inputLabel,
         withFlag: phoneWithFlags,
         label: texts.phone,
         onChange: this.handleChangePhone,
@@ -25035,7 +25053,7 @@ function (_React$Component) {
         mandatory: true
       })), React__default.createElement("div", null, React__default.createElement(InputLabel, {
         id: "registrationFormEmailInput",
-        className: s$Z.emailInputLabel,
+        className: s$Y.emailInputLabel,
         label: texts.email,
         onChange: this.handleChangeEmail,
         value: values.email || '',
@@ -25046,7 +25064,7 @@ function (_React$Component) {
         mandatory: true
       }), React__default.createElement(InputLabel, {
         id: "registrationFormPasswordInput",
-        className: s$Z.inputLabel,
+        className: s$Y.inputLabel,
         label: texts.password,
         onChange: this.handleChangePassword,
         value: values.password || '',
@@ -25057,7 +25075,7 @@ function (_React$Component) {
         RightComponent: this.renderEyeButton
       }), React__default.createElement(InputLabel, {
         id: "registrationFormPasswordConfirmationInput",
-        className: s$Z.inputLabel,
+        className: s$Y.inputLabel,
         label: texts.passwordConfirmation,
         onChange: this.handleChangePasswordConfirmation,
         value: values.passwordConfirmation || '',
@@ -28825,7 +28843,7 @@ var performanceNow = createCommonjsModule(function (module) {
 
 }).call(commonjsGlobal);
 
-
+//# sourceMappingURL=performance-now.js.map
 });
 
 var root = typeof window === 'undefined' ? commonjsGlobal : window
@@ -29424,8 +29442,6 @@ exports.classNamesShape = classNamesShape;
 unwrapExports(PropTypes);
 var PropTypes_1 = PropTypes.classNamesShape;
 var PropTypes_2 = PropTypes.timeoutsShape;
-
-var _reactLifecyclesCompat = getCjsExportFromNamespace(reactLifecyclesCompat_es);
 
 var Transition_1 = createCommonjsModule(function (module, exports) {
 
@@ -30033,7 +30049,7 @@ Transition.ENTERING = 2;
 Transition.ENTERED = 3;
 Transition.EXITING = 4;
 
-var _default = (0, _reactLifecyclesCompat.polyfill)(Transition);
+var _default = (0, reactLifecyclesCompat_es.polyfill)(Transition);
 
 exports.default = _default;
 });
@@ -30775,7 +30791,7 @@ TransitionGroup.propTypes = process.env.NODE_ENV !== "production" ? {
 } : {};
 TransitionGroup.defaultProps = defaultProps;
 
-var _default = (0, _reactLifecyclesCompat.polyfill)(TransitionGroup);
+var _default = (0, reactLifecyclesCompat_es.polyfill)(TransitionGroup);
 
 exports.default = _default;
 module.exports = exports["default"];
