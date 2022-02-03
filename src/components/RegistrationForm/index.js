@@ -133,6 +133,7 @@ class RegistrationForm extends React.Component {
               value={values.firstName || ''}
               error={errors.firstName}
               mandatory
+              autocomplete="on"
             />
             <InputLabel
               id="registrationFormLastNameInput"
@@ -142,6 +143,7 @@ class RegistrationForm extends React.Component {
               value={values.lastName || ''}
               error={errors.lastName}
               mandatory
+              autocomplete="on"
             />
             <PhoneInput
               id="registrationFormPhoneInput"
@@ -154,6 +156,7 @@ class RegistrationForm extends React.Component {
               countries={countries}
               defaultCountry={defaultCountry}
               mandatory
+              autocomplete="on"
             />
           </div>
           <div>
