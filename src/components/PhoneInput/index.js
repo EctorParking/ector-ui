@@ -89,6 +89,7 @@ class PhoneInput extends React.Component {
       countries,
       withFlag,
       inputClassName,
+      name,
       ...phoneInputProps
     } = this.props;
     const { country, phone } = this.state;
@@ -120,6 +121,7 @@ class PhoneInput extends React.Component {
           type="text"
           onChange={this.onPhoneNumberChange}
           value={phone}
+          name={name}
         />
       </div>
     );
@@ -155,6 +157,7 @@ PhoneInput.defaultProps = {
   withFlag: true,
   inputClassName: '',
   defaultCountry: null,
+  name: '',
 };
 
 PhoneInput.propTypes = {
@@ -171,6 +174,7 @@ PhoneInput.propTypes = {
   defaultCountry: CountryPropType,
   withFlag: PropTypes.bool,
   inputClassName: PropTypes.string,
+  name: PropTypes.string,
 };
 
 export default PhoneInput;
