@@ -25,6 +25,7 @@ const InputLabel = ({
   onKeyDown,
   tooltip,
   tooltipIcon,
+  name,
   ...inputProps
 }) => {
   const labelClassName = mandatory ? s.mandatory : '';
@@ -50,6 +51,7 @@ const InputLabel = ({
             className={[left ? s.leftLabel : undefined, labelClassName].join(
               ' '
             )}
+            name={name}
           >
             {label}
           </label>
@@ -80,6 +82,7 @@ const InputLabel = ({
           placeholder={placeholder}
           type={type}
           hasError={!!error}
+          name={name}
           {...inputProps}
         />
       );
@@ -92,6 +95,7 @@ const InputLabel = ({
         type={type}
         hasError={!!error}
         onKeyDown={onKeyDown}
+        name={name}
         {...inputProps}
       />
     );
@@ -142,6 +146,7 @@ InputLabel.defaultProps = {
   tooltip: null,
   tooltipIcon: 'icon-ec-info',
   onKeyDown: () => {},
+  name: '',
 };
 
 InputLabel.propTypes = {
@@ -163,6 +168,7 @@ InputLabel.propTypes = {
   tooltip: PropTypes.string,
   tooltipIcon: PropTypes.string,
   onKeyDown: PropTypes.func,
+  name: PropTypes.string,
 };
 
 export default InputLabel;

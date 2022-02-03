@@ -124,79 +124,84 @@ class RegistrationForm extends React.Component {
 
     return (
       <RootComponent {...actualCardProps}>
-        <div className={s.columns}>
-          <div className={[s.leftColumn, leftColumnClassName].join(' ')}>
-            <InputLabel
-              id="registrationFormFirstNameInput"
-              label={texts.firstName}
-              onChange={this.handleChangeFirstName}
-              value={values.firstName || ''}
-              error={errors.firstName}
-              mandatory
-              autocomplete="on"
-            />
-            <InputLabel
-              id="registrationFormLastNameInput"
-              className={s.inputLabel}
-              label={texts.lastName}
-              onChange={this.handleChangeLastName}
-              value={values.lastName || ''}
-              error={errors.lastName}
-              mandatory
-              autocomplete="on"
-            />
-            <PhoneInput
-              id="registrationFormPhoneInput"
-              className={s.inputLabel}
-              withFlag={phoneWithFlags}
-              label={texts.phone}
-              onChange={this.handleChangePhone}
-              value={values.phone || ''}
-              error={errors.phone}
-              countries={countries}
-              defaultCountry={defaultCountry}
-              mandatory
-              autocomplete="on"
-            />
+        <form autoComplete="on">
+          <div className={s.columns}>
+            <div className={[s.leftColumn, leftColumnClassName].join(' ')}>
+              <InputLabel
+                id="registrationFormFirstNameInput"
+                label={texts.firstName}
+                onChange={this.handleChangeFirstName}
+                value={values.firstName || ''}
+                error={errors.firstName}
+                mandatory
+                autocomplete="on"
+                name="given-name"
+              />
+              <InputLabel
+                id="registrationFormLastNameInput"
+                className={s.inputLabel}
+                label={texts.lastName}
+                onChange={this.handleChangeLastName}
+                value={values.lastName || ''}
+                error={errors.lastName}
+                mandatory
+                autocomplete="on"
+                name="family-name"
+              />
+              <PhoneInput
+                id="registrationFormPhoneInput"
+                className={s.inputLabel}
+                withFlag={phoneWithFlags}
+                label={texts.phone}
+                onChange={this.handleChangePhone}
+                value={values.phone || ''}
+                error={errors.phone}
+                countries={countries}
+                defaultCountry={defaultCountry}
+                mandatory
+                autocomplete="on"
+                name="tel"
+              />
+            </div>
+            <div>
+              <InputLabel
+                id="registrationFormEmailInput"
+                className={s.emailInputLabel}
+                label={texts.email}
+                onChange={this.handleChangeEmail}
+                value={values.email || ''}
+                error={errors.email}
+                onKeyDown={onKeyDownEmail}
+                autocomplete="off"
+                readOnly
+                mandatory
+              />
+              <InputLabel
+                id="registrationFormPasswordInput"
+                className={s.inputLabel}
+                label={texts.password}
+                onChange={this.handleChangePassword}
+                value={values.password || ''}
+                error={errors.password}
+                LabelFooterComponent={this.renderLabelFooterPasswordComponent}
+                type={hidePassword ? 'password' : 'text'}
+                mandatory
+                RightComponent={this.renderEyeButton}
+              />
+              <InputLabel
+                id="registrationFormPasswordConfirmationInput"
+                className={s.inputLabel}
+                label={texts.passwordConfirmation}
+                onChange={this.handleChangePasswordConfirmation}
+                value={values.passwordConfirmation || ''}
+                error={errors.passwordConfirmation}
+                type={hidePasswordConfirmation ? 'password' : 'text'}
+                mandatory
+                RightComponent={this.renderEyeButtonConfirmation}
+              />
+            </div>
           </div>
-          <div>
-            <InputLabel
-              id="registrationFormEmailInput"
-              className={s.emailInputLabel}
-              label={texts.email}
-              onChange={this.handleChangeEmail}
-              value={values.email || ''}
-              error={errors.email}
-              onKeyDown={onKeyDownEmail}
-              autocomplete="off"
-              readOnly
-              mandatory
-            />
-            <InputLabel
-              id="registrationFormPasswordInput"
-              className={s.inputLabel}
-              label={texts.password}
-              onChange={this.handleChangePassword}
-              value={values.password || ''}
-              error={errors.password}
-              LabelFooterComponent={this.renderLabelFooterPasswordComponent}
-              type={hidePassword ? 'password' : 'text'}
-              mandatory
-              RightComponent={this.renderEyeButton}
-            />
-            <InputLabel
-              id="registrationFormPasswordConfirmationInput"
-              className={s.inputLabel}
-              label={texts.passwordConfirmation}
-              onChange={this.handleChangePasswordConfirmation}
-              value={values.passwordConfirmation || ''}
-              error={errors.passwordConfirmation}
-              type={hidePasswordConfirmation ? 'password' : 'text'}
-              mandatory
-              RightComponent={this.renderEyeButtonConfirmation}
-            />
-          </div>
-        </div>
+        </form>
       </RootComponent>
     );
   }
