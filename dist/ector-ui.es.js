@@ -22859,7 +22859,8 @@ var InputLabel = function InputLabel(_ref) {
       onKeyDown = _ref.onKeyDown,
       tooltip = _ref.tooltip,
       tooltipIcon = _ref.tooltipIcon,
-      inputProps = _objectWithoutProperties(_ref, ["label", "id", "mandatory", "placeholder", "type", "className", "inputClassName", "error", "left", "children", "InputComponent", "LabelComponent", "inputContainerClassName", "LabelFooterComponent", "errorClassName", "onKeyDown", "tooltip", "tooltipIcon"]);
+      name = _ref.name,
+      inputProps = _objectWithoutProperties(_ref, ["label", "id", "mandatory", "placeholder", "type", "className", "inputClassName", "error", "left", "children", "InputComponent", "LabelComponent", "inputContainerClassName", "LabelFooterComponent", "errorClassName", "onKeyDown", "tooltip", "tooltipIcon", "name"]);
 
   var labelClassName = mandatory ? s$y.mandatory : '';
 
@@ -22875,7 +22876,8 @@ var InputLabel = function InputLabel(_ref) {
         className: s$y.label
       }, React__default.createElement("label", {
         htmlFor: id,
-        className: [left ? s$y.leftLabel : undefined, labelClassName].join(' ')
+        className: [left ? s$y.leftLabel : undefined, labelClassName].join(' '),
+        name: name
       }, label), tooltip && React__default.createElement(Tooltip, {
         text: tooltip,
         position: "top",
@@ -22893,7 +22895,8 @@ var InputLabel = function InputLabel(_ref) {
         className: [s$y.input, inputClassName].join(' '),
         placeholder: placeholder,
         type: type,
-        hasError: !!error
+        hasError: !!error,
+        name: name
       }, inputProps));
     }
 
@@ -22903,7 +22906,8 @@ var InputLabel = function InputLabel(_ref) {
       placeholder: placeholder,
       type: type,
       hasError: !!error,
-      onKeyDown: onKeyDown
+      onKeyDown: onKeyDown,
+      name: name
     }, inputProps));
   };
 
@@ -22933,7 +22937,8 @@ InputLabel.defaultProps = {
   errorClassName: '',
   tooltip: null,
   tooltipIcon: 'icon-ec-info',
-  onKeyDown: function onKeyDown() {}
+  onKeyDown: function onKeyDown() {},
+  name: ''
 };
 InputLabel.propTypes = {
   label: PropTypes$1.string.isRequired,
@@ -22953,7 +22958,8 @@ InputLabel.propTypes = {
   errorClassName: PropTypes$1.string,
   tooltip: PropTypes$1.string,
   tooltipIcon: PropTypes$1.string,
-  onKeyDown: PropTypes$1.func
+  onKeyDown: PropTypes$1.func,
+  name: PropTypes$1.string
 };
 
 var css$B = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.Label-module_labelContainer__22ERg {\n  color: #FFFFFF;\n  border-radius: 30px;\n  font-size: 12px;\n  padding: 0 8px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  z-index: 1;\n}\n\n.Label-module_text__147Rh {\n  padding: 0 8px;\n  font-weight: 400;\n  letter-spacing: 1px;\n}\n\n.Label-module_primaryColor__1Cgvo {\n  background-color: #000031;\n}\n\n.Label-module_lightPrimaryColor__2j0oP {\n  background-color: #708399;\n}\n\n.Label-module_neutralColor__1Mkxb {\n  background-color: #C7CDDA;\n}\n\n.Label-module_lightNeutralColor__3tn0M {\n  background-color: #ECEFF6;\n}\n\n.Label-module_darkNeutralColor__2oGbq {\n  background-color: #A9B3C5;\n}\n\n.Label-module_backgroundColor__FNQgX {\n  background-color: #FFFFFF;\n}\n\n.Label-module_accentColor__3Z3bi {\n  background-color: #F7D48A;\n}\n\n.Label-module_lightAccentColor__2T1Dx {\n  background-color: #F8E5B6;\n}\n\n.Label-module_infoColor__2S2OX {\n  background-color: #F5B400;\n}\n\n.Label-module_actionColor__1debO {\n  background-color: #9CA3FF;\n}\n\n.Label-module_successColor__3yDlR {\n  background-color: #59C871;\n}\n\n.Label-module_errorColor__2jYWP {\n  background-color: #DF6262;\n}\n\n.Label-module_bronzeColor__1G0I_ {\n  background-color: #B96C47;\n}\n\n.Label-module_silverColor__2L214 {\n  background-color: #C6C6C6;\n}\n\n.Label-module_goldColor__39bkm {\n  background-color: #E6BA5E;\n}\n\n.Label-module_platinumColor__3er3W {\n  background-color: #A07584;\n}\n";
@@ -23818,7 +23824,8 @@ function (_React$Component) {
           countries = _this$props.countries,
           withFlag = _this$props.withFlag,
           inputClassName = _this$props.inputClassName,
-          phoneInputProps = _objectWithoutProperties(_this$props, ["error", "countries", "withFlag", "inputClassName"]);
+          name = _this$props.name,
+          phoneInputProps = _objectWithoutProperties(_this$props, ["error", "countries", "withFlag", "inputClassName", "name"]);
 
       var _this$state = _this.state,
           country = _this$state.country,
@@ -23846,7 +23853,8 @@ function (_React$Component) {
         hasError: !!error && error.length > 0,
         type: "text",
         onChange: _this.onPhoneNumberChange,
-        value: phone
+        value: phone,
+        name: name
       })));
     });
 
@@ -23968,7 +23976,8 @@ PhoneInput.defaultProps = {
   countries: DefaultCountries,
   withFlag: true,
   inputClassName: '',
-  defaultCountry: null
+  defaultCountry: null,
+  name: ''
 };
 PhoneInput.propTypes = {
   onChange: PropTypes$1.func,
@@ -23983,7 +23992,8 @@ PhoneInput.propTypes = {
   countries: PropTypes$1.arrayOf(CountryPropType),
   defaultCountry: CountryPropType,
   withFlag: PropTypes$1.bool,
-  inputClassName: PropTypes$1.string
+  inputClassName: PropTypes$1.string,
+  name: PropTypes$1.string
 };
 
 var css$K = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n\n.PricingSummaryOption-module_option__1G-X7 {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  color: #000031;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n}\n\n.PricingSummaryOption-module_label__goVjq {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.PricingSummaryOption-module_label__goVjq i {\n  font-size: 0.9em;\n  margin-left: 8px;\n}\n\n.PricingSummaryOption-module_label__goVjq i:before {\n  color: #000031;\n}\n\n.PricingSummaryOption-module_price__2ZK97 {\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  font-weight: 700;\n}\n\n.PricingSummaryOption-module_currency-after__3ttKX {\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n}\n\n.PricingSummaryOption-module_currency-before__1lVgh {\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: reverse;\n      -ms-flex-direction: row-reverse;\n          flex-direction: row-reverse;\n}\n";
@@ -24995,7 +25005,9 @@ function (_React$Component) {
         contentClassName: [s$Z.contentCard, contentClassName].join(' ')
       });
 
-      return React__default.createElement(RootComponent, actualCardProps, React__default.createElement("div", {
+      return React__default.createElement(RootComponent, actualCardProps, React__default.createElement("form", {
+        autoComplete: "on"
+      }, React__default.createElement("div", {
         className: s$Z.columns
       }, React__default.createElement("div", {
         className: [s$Z.leftColumn, leftColumnClassName].join(' ')
@@ -25005,7 +25017,9 @@ function (_React$Component) {
         onChange: this.handleChangeFirstName,
         value: values.firstName || '',
         error: errors.firstName,
-        mandatory: true
+        mandatory: true,
+        autocomplete: "on",
+        name: "given-name"
       }), React__default.createElement(InputLabel, {
         id: "registrationFormLastNameInput",
         className: s$Z.inputLabel,
@@ -25013,7 +25027,9 @@ function (_React$Component) {
         onChange: this.handleChangeLastName,
         value: values.lastName || '',
         error: errors.lastName,
-        mandatory: true
+        mandatory: true,
+        autocomplete: "on",
+        name: "family-name"
       }), React__default.createElement(PhoneInput, {
         id: "registrationFormPhoneInput",
         className: s$Z.inputLabel,
@@ -25024,7 +25040,9 @@ function (_React$Component) {
         error: errors.phone,
         countries: countries,
         defaultCountry: defaultCountry,
-        mandatory: true
+        mandatory: true,
+        autocomplete: "on",
+        name: "tel"
       })), React__default.createElement("div", null, React__default.createElement(InputLabel, {
         id: "registrationFormEmailInput",
         className: s$Z.emailInputLabel,
@@ -25057,7 +25075,7 @@ function (_React$Component) {
         type: hidePasswordConfirmation ? 'password' : 'text',
         mandatory: true,
         RightComponent: this.renderEyeButtonConfirmation
-      }))));
+      })))));
     }
   }]);
 
