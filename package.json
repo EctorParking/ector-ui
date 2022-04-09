@@ -25,7 +25,7 @@
   },
   "peerDependencies": {
     "fast-levenshtein": "^2.0.6",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "normalize.css": "8.0.1",
     "prop-types": "^15.5.4",
     "react": ">16.6.0",
@@ -68,7 +68,7 @@
     "fast-levenshtein": "^2.0.6",
     "file-loader": "^3.0.1",
     "gh-pages": "^1.2.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "normalize.css": "^8.0.1",
     "postcss-cssnext": "^3.1.0",
     "postcss-global-import": "^1.0.6",
