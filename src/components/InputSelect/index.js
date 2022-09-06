@@ -97,7 +97,7 @@ InputSelect.propTypes = {
   }),
   error: PropTypes.string,
   classname: PropTypes.string,
-  onChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func,
   onOpen: PropTypes.func,
   modal: PropTypes.bool,
 };
