@@ -12,6 +12,7 @@ import CarCardContentEdit from './CarCardContentEdit';
 
 const CarCard = ({
   car,
+  carName,
   editable,
   deletable,
   texts,
@@ -83,6 +84,7 @@ const CarCard = ({
       <CarCardHeader
         texts={texts}
         car={car}
+        carName={carName}
         editable={editable}
         deletable={deletable}
         pendingDeletion={pendingDeletion}
@@ -113,6 +115,7 @@ const CarCard = ({
 
 CarCard.propTypes = {
   car: CarType.isRequired,
+  carName: PropTypes.string,
   editable: PropTypes.bool,
   deletable: PropTypes.bool,
   selected: PropTypes.bool,
@@ -134,6 +137,7 @@ CarCard.propTypes = {
 
 CarCard.defaultProps = {
   texts: DefaultTexts,
+  carName: null,
   editable: true,
   selected: false,
   pendingModification: false,

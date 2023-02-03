@@ -6,6 +6,7 @@ import TextsType, { DefaultTexts } from './CarCardTextsType';
 
 const CarCardHeader = ({
   car,
+  carName,
   editable,
   deletable,
   pendingDeletion,
@@ -46,7 +47,7 @@ const CarCardHeader = ({
   return (
     <>
       <span className={s.name} id={id}>
-        {name}
+        {carName || name}
       </span>
       {button}
     </>
@@ -55,10 +56,12 @@ const CarCardHeader = ({
 
 CarCardHeader.defaultProps = {
   texts: DefaultTexts,
+  carName: null,
 };
 
 CarCardHeader.propTypes = {
   car: CarType.isRequired,
+  carName: CarType.string,
   editable: PropTypes.bool.isRequired,
   deletable: PropTypes.bool.isRequired,
   pendingDeletion: PropTypes.bool.isRequired,
