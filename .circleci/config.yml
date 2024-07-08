@@ -1,28 +1,24 @@
-version: 2
+version: 2.1
 jobs:
   build:
     docker:
       - image: ectorparking/ector-docker-rn-cp:0.0.1
     steps:
       - checkout
-      - restore_cache:
-          name: Restore Yarn Package Cache
-          keys:
-            - yarn-packages-{{ checksum "yarn.lock" }}
-      - run:
-          name: Install Dependencies
-          command: yarn install --frozen-lockfile
+      - node/install:
+          install-yarn: true
+          node-version: '16.14.0'
+      - node/install-packages:
+          cache-path: ~/project/node_modules
+          pkg-manager: yarn
+          override-ci-command: yarn install
+          cache-version: v1
       - run:
           name: Lint
           command: yarn lint
       - run:
           name: Build
           command: yarn build:storybook
-      - save_cache:
-          name: Save Yarn Package Cache
-          key: yarn-packages-{{ checksum "yarn.lock" }}
-          paths:
-            - ~/.cache/yarn
       - deploy:
           name: Deploy
           filters:
