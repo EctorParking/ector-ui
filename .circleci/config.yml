@@ -25,9 +25,6 @@ jobs:
       - run:
           name: Lint
           command: yarn lint
-      - run:
-          name: Build
-          command: yarn build:storybook
       - deploy:
           name: Deploy
           filters:
