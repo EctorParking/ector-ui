@@ -1,8 +1,17 @@
 version: 2.1
+orbs:
+  node: circleci/node@5.0.2
+  aws-cli: circleci/aws-cli@1.2.1
+workflows:
+  full:
+    jobs:
+      - build:
+          context: org-global
+
 jobs:
   build:
     docker:
-      - image: ectorparking/ector-docker-rn-cp:0.0.1
+      - image: cimg/node:20.5-browsers
     steps:
       - checkout
       - node/install:
