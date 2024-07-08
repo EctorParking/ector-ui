@@ -27,11 +27,6 @@ jobs:
           command: yarn lint
       - deploy:
           name: Deploy
-          filters:
-            branches:
-              only:
-                - master
-                - staging
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               bash ./deploy.sh
