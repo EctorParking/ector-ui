@@ -156,7 +156,6 @@ class RegistrationForm extends React.Component {
                 error={errors.email}
                 onKeyDown={onKeyDownEmail}
                 autocomplete="off"
-                readOnly
                 mandatory
               />
               <InputLabel
