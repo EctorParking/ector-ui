@@ -13,7 +13,6 @@ import {
   CountryPropType,
   DefaultCountries,
 } from '../PhoneInput/PhoneInputCountries';
-import Icon from '../Icon';
 import eyeClosedIcon from '../../assets/images/eyeClosed.svg';
 import eyeOpenedIcon from '../../assets/images/eyeOpened.svg';
 
@@ -59,25 +58,43 @@ class RegistrationForm extends React.Component {
     ) : null;
   };
 
+  onClickEye = e => {
+    const { hidePassword } = this.state;
+    e.preventDefault();
+    this.setState({ hidePassword: !hidePassword });
+  };
+
+  onClickEyeConfirmation = e => {
+    const { hidePasswordConfirmation } = this.state;
+    e.preventDefault();
+    this.setState({ hidePasswordConfirmation: !hidePasswordConfirmation });
+  };
+
   renderEyeButton = () => {
     const { hidePassword } = this.state;
     return (
-      <Icon
-        src={hidePassword ? eyeClosedIcon : eyeOpenedIcon}
-        onClick={() => this.setState({ hidePassword: !hidePassword })}
-      />
+      <button onClick={this.onClickEye} id="HidePasswordButton">
+        <img
+          width="20px"
+          height="20px"
+          alt="Eye"
+          src={hidePassword ? eyeOpenedIcon : eyeClosedIcon}
+        />
+      </button>
     );
   };
 
   renderEyeButtonConfirmation = () => {
     const { hidePasswordConfirmation } = this.state;
     return (
-      <Icon
-        src={hidePasswordConfirmation ? eyeClosedIcon : eyeOpenedIcon}
-        onClick={() =>
-          this.setState({ hidePasswordConfirmation: !hidePasswordConfirmation })
-        }
-      />
+      <button onClick={this.onClickEyeConfirmation} id="HidePasswordButton">
+        <img
+          width="20px"
+          height="20px"
+          alt="Eye"
+          src={hidePasswordConfirmation ? eyeOpenedIcon : eyeClosedIcon}
+        />
+      </button>
     );
   };
 
