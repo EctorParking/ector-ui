@@ -2532,23 +2532,6 @@ BookingSteps.propTypes = {
   returnTitle: PropTypes$1.string.isRequired
 };
 
-const v="5.7.4";const fr=30;const ip=0;const op=53;const w=400;const h=400;const nm="Composition 1";const ddd=0;const assets=[];const layers=[{ddd:0,ind:2,ty:4,nm:"Calque de forme 3",sr:1,ks:{o:{a:0,k:100,ix:11},r:{a:0,k:0,ix:10},p:{a:0,k:[200,200,0],ix:2,l:2},a:{a:0,k:[0,0,0],ix:1,l:2},s:{a:0,k:[60,60,100],ix:6,l:2}},ao:0,shapes:[{ty:"gr",it:[{d:1,ty:"el",s:{a:0,k:[400,400],ix:2},p:{a:0,k:[0,0],ix:3},nm:"Tracé d'ellipse 1",mn:"ADBE Vector Shape - Ellipse",hd:false},{ty:"st",c:{a:0,k:[0,0,0.192156862745,1],ix:3},o:{a:0,k:100,ix:4},w:{a:0,k:50,ix:5},lc:2,lj:1,ml:4,bm:0,nm:"Contour 1",mn:"ADBE Vector Graphic - Stroke",hd:false},{ty:"tr",p:{a:0,k:[0,0],ix:2},a:{a:0,k:[0,0],ix:1},s:{a:0,k:[83.902,83.902],ix:3},r:{a:1,k:[{i:{x:[0.667],y:[1]},o:{x:[0.333],y:[0]},t:0,s:[0]},{t:48,s:[270]}],ix:6},o:{a:0,k:100,ix:7},sk:{a:0,k:0,ix:4},sa:{a:0,k:0,ix:5},nm:"Transformer "}],nm:"Ellipse 1",np:3,cix:2,bm:0,ix:1,mn:"ADBE Vector Group",hd:false},{ty:"tm",s:{a:1,k:[{i:{x:[0.667],y:[1]},o:{x:[0.333],y:[0]},t:18.206,s:[0]},{t:48,s:[100]}],ix:1},e:{a:1,k:[{i:{x:[0.667],y:[1]},o:{x:[0.333],y:[0]},t:0,s:[0]},{t:23.171875,s:[100]}],ix:2},o:{a:0,k:90,ix:3},m:1,ix:2,nm:"Réduire les tracés 1",mn:"ADBE Vector Filter - Trim",hd:false}],ip:0,op:48,st:0,bm:0}];const markers=[];var loader = {v:v,fr:fr,ip:ip,op:op,w:w,h:h,nm:nm,ddd:ddd,assets:assets,layers:layers,markers:markers};
-
-var animationData = /*#__PURE__*/Object.freeze({
-	v: v,
-	fr: fr,
-	ip: ip,
-	op: op,
-	w: w,
-	h: h,
-	nm: nm,
-	ddd: ddd,
-	assets: assets,
-	layers: layers,
-	markers: markers,
-	default: loader
-});
-
 var css$9 = ":root {\n  /* General */\n\n  /* Colors */\n\n  /* Font Sizes */\n\n  /* Font Weights */\n\n  /* Radiuses */\n\n  /* Spaces */\n\n  /* Various */\n}\n";
 var Colors = {"primary":"#000031","lightPrimary":"#708399","neutral":"#C7CDDA","lightNeutral":"#ECEFF6","darkNeutral":"#A9B3C5","background":"#FFFFFF","accent":"#F7D48A","lightAccent":"#F8E5B6","info":"#F5B400","action":"#9CA3FF","success":"#59C871","error":"#DF6262","bronze":"#B96C47","silver":"#C6C6C6","gold":"#E6BA5E","platinum":"#A07584"};
 styleInject(css$9);
@@ -2590,7 +2573,7 @@ var Loader = function Loader(_ref) {
     options: {
       loop: true,
       autoplay: true,
-      animationData: animationData,
+      animationData: require('../../assets/lottie/loader.json'),
       rendererSettings: {
         preserveAspectRatio: 'xMidYMid slice'
       }
