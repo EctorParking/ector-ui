@@ -1,7 +1,7 @@
 import React from 'react';
 import Lottie from 'react-lottie';
 import PropTypes from 'prop-types';
-import * as animationData from '../../assets/lottie/loader.json';
+import animationData from '../../assets/lottie/loader.json';
 import Colors from '../../style/variable.global.css';
 import s from './Loader.module.css';
 
