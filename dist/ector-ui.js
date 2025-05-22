@@ -36383,7 +36383,7 @@ InputSelect.propTypes = {
   }),
   error: PropTypes$1.string,
   classname: PropTypes$1.string,
-  onChange: PropTypes$1.func.isRequired,
+  onChange: PropTypes$1.func,
   onOpen: PropTypes$1.func,
   modal: PropTypes$1.bool
 };
