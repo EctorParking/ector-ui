@@ -31,7 +31,7 @@
   "dependencies": {
     "core-js": "3.6.5",
     "react-dates": "20.1.0",
-    "react-lottie": "1.2.3",
+    "react-lottie": "1.2.10",
     "react-select": "2.4.4"
   },
   "devDependencies": {
