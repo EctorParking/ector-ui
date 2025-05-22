@@ -78,7 +78,7 @@
     "react-dom": "16.8.6",
     "react-scripts": "1.1.5",
     "rimraf": "2.6.3",
-    "rollup": "1.7.4",
+    "rollup": "2.79.2",
     "rollup-plugin-babel": "4.3.2",
     "rollup-plugin-commonjs": "9.2.2",
     "rollup-plugin-json": "4.0.0",
