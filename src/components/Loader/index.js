@@ -1,6 +1,7 @@
 import React from 'react';
 import Lottie from 'react-lottie';
 import PropTypes from 'prop-types';
+import animationData from '../../assets/lottie/loader.json';
 import Colors from '../../style/variable.global.css';
 import s from './Loader.module.css';
 
@@ -30,7 +31,7 @@ const Loader = ({ size, className, testid, noPadding, visible }) => (
       options={{
         loop: true,
         autoplay: true,
-        animationData: require('../../assets/lottie/loader.json'),
+        animationData,
         rendererSettings: {
           preserveAspectRatio: 'xMidYMid slice',
         },
