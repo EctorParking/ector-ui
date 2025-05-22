@@ -11,7 +11,7 @@ workflows:
 jobs:
   build:
     docker:
-      - image: cimg/node:16.20.2
+      - image: cimg/node:18.20.8
     steps:
       - checkout
       - aws-cli/setup
