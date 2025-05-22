@@ -1,7 +1,7 @@
 version: 2.1
 orbs:
-  node: circleci/node@5.0.2
-  aws-cli: circleci/aws-cli@1.2.1
+  node: circleci/node@7.1.0
+  aws-cli: circleci/aws-cli@5.3.4
 workflows:
   full:
     jobs:
@@ -11,17 +11,13 @@ workflows:
 jobs:
   build:
     docker:
-      - image: cimg/node:20.5-browsers
+      - image: cimg/node:16.20.2
     steps:
       - checkout
-      - node/install:
-          install-yarn: true
-          node-version: '16.14.0'
       - node/install-packages:
           cache-path: ~/project/node_modules
           pkg-manager: yarn
           override-ci-command: yarn install
-          cache-version: v1
       - run:
           name: Lint
           command: yarn lint
